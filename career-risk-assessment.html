@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Risk Assessment — Alessandro Capezza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0c0a;
+  --paper: #f8f6f1;
+  --cream: #edf7e6;
+  --green: #9fe870;
+  --green-deep: #163300;
+  --green-mid: #1a4d00;
+  --warm-grey: #7a7670;
+  --border: rgba(13,12,10,0.1);
+  --status-high: #c17f24;
+  --status-low: #2d7a4f;
+  --status-red: #a32d2d;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#f8f6f1;color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:0.03;pointer-events:none;z-index:9999;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem;border-bottom:1px solid var(--border);background:rgba(245,240,232,0.92);backdrop-filter:blur(12px);}
+.nav-logo{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+.nav-back{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--warm-grey);display:flex;align-items:center;gap:0.5rem;transition:color 0.2s;}
+.nav-back:hover{color:var(--green);}
+
+/* WRAPPER */
+.quiz-wrapper{max-width:820px;margin:0 auto;padding:8rem 2rem 5rem;}
+
+/* HERO HEADER */
+.quiz-header{text-align:center;margin-bottom:4rem;}
+.quiz-eyebrow{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--green);margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;gap:0.8rem;}
+.quiz-eyebrow::before,.quiz-eyebrow::after{content:'';display:block;width:2rem;height:1px;background:var(--green);}
+.quiz-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1.2rem;}
+.quiz-title em{font-style:italic;color:var(--green);}
+.quiz-desc{font-size:1rem;line-height:1.75;color:var(--warm-grey);max-width:560px;margin:0 auto 2rem;}
+.quiz-meta{display:inline-flex;align-items:center;gap:2rem;border:1px solid var(--border);padding:0.8rem 1.8rem;background:#edf7e6;}
+.quiz-meta span{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-grey);display:flex;align-items:center;gap:0.4rem;}
+.quiz-meta span b{color:var(--ink);}
+
+/* PROGRESS */
+.progress-bar-wrap{margin-bottom:3rem;}
+.progress-labels{display:flex;justify-content:space-between;margin-bottom:0.6rem;}
+.progress-labels span{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-grey);}
+.progress-labels .prog-current{color:var(--green);}
+.progress-track{height:2px;background:var(--border);position:relative;}
+.progress-fill{height:2px;background:var(--green);transition:width 0.5s cubic-bezier(0.4,0,0.2,1);width:0%;}
+
+/* STEP */
+.step-container{display:none;animation:stepIn 0.4s ease forwards;}
+.step-container.active{display:block;}
+@keyframes stepIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+.step-label{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-grey);margin-bottom:1rem;}
+.step-question{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1.2;margin-bottom:0.6rem;}
+.step-sub{font-size:0.9rem;color:var(--warm-grey);line-height:1.6;margin-bottom:2.5rem;}
+
+/* INDUSTRY GRID */
+.industry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;margin-bottom:2.5rem;}
+.industry-card{border:1px solid var(--border);padding:1.2rem 1.5rem;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:center;background:#f8f6f1;}
+.industry-card:hover{border-color:var(--green);background:#edf7e6;}
+.industry-card.selected{border-color:var(--green);background:var(--green);color:var(--green-deep);}
+.ind-left h4{font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;margin-bottom:0.2rem;}
+.ind-left p{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-grey);}
+.industry-card.selected .ind-left p{color:rgba(245,240,232,0.65);}
+.ind-risk{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--green);}
+.industry-card.selected .ind-risk{color:#f8f6f1;}
+
+/* JOB LIST */
+.job-search-wrap{position:relative;margin-bottom:1.5rem;}
+.job-search{width:100%;padding:0.9rem 1rem 0.9rem 2.8rem;border:1px solid var(--border);background:#f8f6f1;font-family:'DM Sans',sans-serif;font-size:0.95rem;color:var(--ink);outline:none;transition:border-color 0.2s;}
+.job-search:focus{border-color:var(--green);}
+.job-search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--warm-grey);font-size:0.9rem;}
+.job-list{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2.5rem;}
+.job-item{border:1px solid var(--border);padding:1rem 1.5rem;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:center;background:#f8f6f1;}
+.job-item:hover{border-color:var(--green);background:#edf7e6;}
+.job-item.selected{border-color:var(--green);background:var(--green);color:var(--green-deep);}
+.job-left h4{font-size:0.95rem;font-weight:500;margin-bottom:0.15rem;}
+.job-left p{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-grey);}
+.job-item.selected .job-left p{color:rgba(245,240,232,0.65);}
+.job-risk{display:flex;align-items:center;gap:0.5rem;}
+.risk-pct{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;}
+.risk-label{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;}
+.risk-critical{color:var(--status-red);}
+.risk-high{color:var(--status-high);}
+.risk-medium{color:var(--status-high);}
+.risk-low{color:var(--status-low);}
+.job-item.selected .risk-pct,.job-item.selected .risk-label{color:rgba(245,240,232,0.9);}
+
+/* EXPERIENCE */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;margin-bottom:2.5rem;}
+.exp-card{border:1px solid var(--border);padding:1.4rem;cursor:pointer;transition:all 0.2s;background:#f8f6f1;}
+.exp-card:hover{border-color:var(--green);background:#edf7e6;}
+.exp-card.selected{border-color:var(--green);background:var(--green);color:var(--green-deep);}
+.exp-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.3rem;}
+.exp-card p{font-size:0.8rem;color:var(--warm-grey);line-height:1.5;}
+.exp-card.selected p{color:rgba(245,240,232,0.7);}
+
+/* AI EXPOSURE */
+.ai-list{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2.5rem;}
+.ai-item{border:1px solid var(--border);padding:1.2rem 1.5rem;cursor:pointer;transition:all 0.2s;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;background:#f8f6f1;}
+.ai-item:hover{border-color:var(--green);background:#edf7e6;}
+.ai-item.selected{border-color:var(--green);background:var(--green);color:var(--green-deep);}
+.ai-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--border);transition:all 0.2s;flex-shrink:0;}
+.ai-item.selected .ai-dot{background:#f8f6f1;border-color:#f8f6f1;}
+.ai-item h4{font-size:0.9rem;font-weight:500;margin-bottom:0.2rem;}
+.ai-item p{font-size:0.8rem;color:var(--warm-grey);line-height:1.4;}
+.ai-item.selected p{color:rgba(245,240,232,0.7);}
+
+/* BUTTONS */
+.btn-row{display:flex;gap:1rem;align-items:center;margin-top:1rem;}
+.btn-next{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--green-deep);padding:1rem 2.2rem;font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+.btn-next:hover{background:var(--ink);}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed;}
+.btn-back-step{background:none;border:1px solid var(--border);padding:1rem 1.5rem;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-grey);cursor:pointer;transition:all 0.2s;}
+.btn-back-step:hover{border-color:var(--ink);color:var(--ink);}
+
+/* LOADING */
+.loading-screen{display:none;text-align:center;padding:4rem 0;}
+.loading-screen.active{display:block;}
+.loading-bar-wrap{width:100%;max-width:420px;margin:2rem auto;}
+.loading-track{height:3px;background:var(--border);position:relative;overflow:hidden;}
+.loading-fill{height:3px;background:var(--green);animation:loadPulse 2s ease-in-out infinite;}
+@keyframes loadPulse{0%{width:0%;left:0;}50%{width:70%;left:0;}100%{width:100%;left:0;}}
+.loading-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:0.8rem;}
+.loading-sub{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-grey);}
+.loading-steps{display:flex;flex-direction:column;gap:0.6rem;margin-top:2rem;text-align:left;max-width:380px;margin-left:auto;margin-right:auto;}
+.loading-step-item{display:flex;align-items:center;gap:0.8rem;font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;color:var(--warm-grey);opacity:0;transition:opacity 0.4s;}
+.loading-step-item.show{opacity:1;}
+.loading-step-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background 0.3s;}
+.loading-step-item.done::before{background:var(--green);}
+
+/* RESULTS */
+.results-screen{display:none;animation:stepIn 0.5s ease forwards;}
+.results-screen.active{display:block;}
+
+.results-header{text-align:center;padding:2rem 0 3rem;border-bottom:1px solid var(--border);margin-bottom:3rem;}
+.results-header h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;line-height:1.1;margin-bottom:0.8rem;}
+.results-header p{color:var(--warm-grey);line-height:1.7;}
+
+.scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;}
+.score-card{border:1px solid var(--border);padding:2rem;position:relative;overflow:hidden;}
+.score-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--border);}
+.score-card.displacement::after{background:var(--status-high);}
+.score-card.replacement::after{background:var(--status-red);}
+.score-type{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-grey);margin-bottom:1rem;}
+.score-num{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;line-height:1;margin-bottom:0.4rem;}
+.score-card.displacement .score-num{color:var(--status-high);}
+.score-card.replacement .score-num{color:var(--status-red);}
+.score-desc{font-size:0.85rem;line-height:1.6;color:var(--warm-grey);}
+.score-badge{display:inline-block;margin-top:1rem;padding:0.25rem 0.7rem;font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;}
+.badge-critical{background:var(--green);color:var(--green-deep);}
+.badge-high{background:var(--status-high);color:#fff;}
+.badge-moderate{background:var(--green-deep);color:var(--green);}
+.badge-low{background:var(--green);color:var(--green-deep);}
+
+.action-section{border:1px solid var(--border);background:#edf7e6;padding:2.5rem;margin-bottom:2rem;}
+.action-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:1.5rem;}
+.action-items{display:flex;flex-direction:column;gap:1rem;}
+.action-item{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;}
+.action-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--green);line-height:1;padding-top:0.1rem;}
+.action-item h4{font-size:0.95rem;font-weight:500;margin-bottom:0.2rem;}
+.action-item p{font-size:0.85rem;color:var(--warm-grey);line-height:1.6;}
+
+.cta-result{background:var(--ink);color:#f8f6f1;padding:2.5rem;text-align:center;margin-bottom:1rem;}
+.cta-result h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.8rem;}
+.cta-result p{font-size:0.9rem;opacity:0.7;line-height:1.7;max-width:400px;margin:0 auto 1.8rem;}
+.btn-cta-result{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--green-deep);padding:1rem 2rem;font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-cta-result:hover{background:var(--green);}
+.cta-note{margin-top:0.8rem;font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;opacity:0.4;text-transform:uppercase;}
+
+.retake-btn{background:none;border:1px solid var(--border);padding:0.8rem 1.5rem;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-grey);cursor:pointer;transition:all 0.2s;display:block;margin:0 auto;}
+.retake-btn:hover{border-color:var(--ink);color:var(--ink);}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  nav{padding:1.2rem 1.5rem;}
+  .quiz-wrapper{padding:7rem 1rem 4rem;}
+  .industry-grid{grid-template-columns:1fr;}
+  .exp-grid{grid-template-columns:1fr;}
+  .scores-grid{grid-template-columns:1fr;}
+  .quiz-meta{flex-direction:column;gap:0.8rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Alessandro Capezza</a>
+  <a href="index.html" class="nav-back">← Back to Coaching</a>
+</nav>
+
+<div class="quiz-wrapper">
+
+  <!-- HEADER -->
+  <div class="quiz-header">
+    <div class="quiz-eyebrow">Free Assessment</div>
+    <h1 class="quiz-title">How <em>Exposed</em> Is<br>Your Career to AI?</h1>
+    <p class="quiz-desc">Find out in 2 minutes. Get your personalized displacement risk score and a plan to stay ahead. 289 professions across 26 industries.</p>
+    <div class="quiz-meta">
+      <span>⏱ <b>2 minutes</b></span>
+      <span>📊 <b>289</b> professions</span>
+      <span>🏭 <b>26</b> industries</span>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-bar-wrap" id="progressWrap">
+    <div class="progress-labels">
+      <span class="prog-current" id="progLabel">Step 1 of 4</span>
+      <span id="progPct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <!-- STEP 1: INDUSTRY -->
+  <div class="step-container active" id="step1">
+    <div class="step-label">Step 01 / 04 · Industry</div>
+    <h2 class="step-question">What industry are you in?</h2>
+    <p class="step-sub">Select the sector that best matches your current or target career. We'll narrow down to specific roles next.</p>
+    <div class="industry-grid" id="industryGrid"></div>
+    <div class="btn-row">
+      <button class="btn-next" id="btn1" disabled onclick="goToStep(2)">Select an Industry →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: JOB ROLE -->
+  <div class="step-container" id="step2">
+    <div class="step-label">Step 02 / 04 · Your Role</div>
+    <h2 class="step-question">Select your role.</h2>
+    <p class="step-sub">Choose the job title that best matches your current or target position in <span id="selectedIndustryName" style="color:var(--green);font-style:italic;"></span>.</p>
+    <div class="job-search-wrap">
+      <span class="job-search-icon">⌕</span>
+      <input type="text" class="job-search" placeholder="Search jobs..." id="jobSearch" oninput="filterJobs()">
+    </div>
+    <div class="job-list" id="jobList"></div>
+    <div class="btn-row">
+      <button class="btn-back-step" onclick="goToStep(1)">← Back</button>
+      <button class="btn-next" id="btn2" disabled onclick="goToStep(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: EXPERIENCE -->
+  <div class="step-container" id="step3">
+    <div class="step-label">Step 03 / 04 · Experience</div>
+    <h2 class="step-question">How long have you been in your role or industry?</h2>
+    <p class="step-sub">This helps calibrate your actual displacement risk vs. a junior entering the field.</p>
+    <div class="exp-grid">
+      <div class="exp-card" onclick="selectExp(this, 'lt2', 1.15)">
+        <h4>Less than 2 years</h4>
+        <p>Early stage — building fundamentals, highest raw exposure to automation of entry-level tasks.</p>
+      </div>
+      <div class="exp-card" onclick="selectExp(this, '2to5', 1.05)">
+        <h4>2–5 years</h4>
+        <p>Growing — some specialisation starting to emerge, moderate exposure.</p>
+      </div>
+      <div class="exp-card" onclick="selectExp(this, '5to10', 0.95)">
+        <h4>5–10 years</h4>
+        <p>Established — deeper expertise buffers some risk, but the mid-career plateau is real.</p>
+      </div>
+      <div class="exp-card" onclick="selectExp(this, '10plus', 0.88)">
+        <h4>10+ years</h4>
+        <p>Senior — domain authority provides some protection, but institutional inertia can be a trap.</p>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-back-step" onclick="goToStep(2)">← Back</button>
+      <button class="btn-next" id="btn3" disabled onclick="goToStep(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: AI EXPOSURE -->
+  <div class="step-container" id="step4">
+    <div class="step-label">Step 04 / 04 · AI Fluency</div>
+    <h2 class="step-question">What's your current exposure to AI tools?</h2>
+    <p class="step-sub">Your hands-on experience with AI directly reduces your personal displacement risk, even in high-risk industries.</p>
+    <div class="ai-list">
+      <div class="ai-item" onclick="selectAI(this, 'none', 1.2)">
+        <div class="ai-dot"></div>
+        <div><h4>None</h4><p>I haven't used any AI tools in my work.</p></div>
+      </div>
+      <div class="ai-item" onclick="selectAI(this, 'minimal', 1.08)">
+        <div class="ai-dot"></div>
+        <div><h4>Minimal</h4><p>I've tried some AI tools occasionally.</p></div>
+      </div>
+      <div class="ai-item" onclick="selectAI(this, 'moderate', 0.92)">
+        <div class="ai-dot"></div>
+        <div><h4>Moderate</h4><p>I use AI tools regularly for some tasks.</p></div>
+      </div>
+      <div class="ai-item" onclick="selectAI(this, 'high', 0.78)">
+        <div class="ai-dot"></div>
+        <div><h4>High</h4><p>AI tools are integrated into my daily workflow.</p></div>
+      </div>
+      <div class="ai-item" onclick="selectAI(this, 'extensive', 0.62)">
+        <div class="ai-dot"></div>
+        <div><h4>Extensive</h4><p>I work directly with AI systems or build them.</p></div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-back-step" onclick="goToStep(3)">← Back</button>
+      <button class="btn-next" id="btn4" disabled onclick="calculateResults()">Calculate My Risk Score →</button>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-title">Analysing your profile…</div>
+    <div class="loading-bar-wrap"><div class="loading-track"><div class="loading-fill"></div></div></div>
+    <div class="loading-steps">
+      <div class="loading-step-item" id="ls1">Cross-referencing 289 profession data points</div>
+      <div class="loading-step-item" id="ls2">Calculating displacement vs. replacement vectors</div>
+      <div class="loading-step-item" id="ls3">Applying experience and AI fluency adjustments</div>
+      <div class="loading-step-item" id="ls4">Generating personalised action plan</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-screen" id="resultsScreen">
+    <div class="results-header">
+      <h2 id="resultsTitle">Your AI Era Risk Report</h2>
+      <p id="resultsSubtitle"></p>
+    </div>
+
+    <div class="scores-grid">
+      <div class="score-card displacement">
+        <div class="score-type">Displacement Risk</div>
+        <div class="score-num" id="displScore">—</div>
+        <div class="score-desc">Chance of being outcompeted by AI-augmented workers in your role within 3–5 years.</div>
+        <div class="score-badge" id="displBadge"></div>
+      </div>
+      <div class="score-card replacement">
+        <div class="score-type">Replacement Risk</div>
+        <div class="score-num" id="replScore">—</div>
+        <div class="score-desc">Probability of full job elimination by AI automation within 5–10 years.</div>
+        <div class="score-badge" id="replBadge"></div>
+      </div>
+    </div>
+
+    <div class="action-section">
+      <div class="action-title">Your Personalised Action Plan</div>
+      <div class="action-items" id="actionItems"></div>
+    </div>
+
+    <div class="cta-result">
+      <h3>Get your full transition roadmap.</h3>
+      <p>This assessment identifies the risk. The 29€ diagnostic call maps the exact path forward — specifically for your role, industry, and experience level.</p>
+      <a href="/cdn-cgi/l/email-protection#81e9e4ededeec1e0ede4f2f2e0efe5f3eee2e0f1e4fbfbe0afe2eeecbef2f4e3ebe4e2f5bcc5e8e0e6efeef2f5e8e2a4b3b1c2e0ededa4b3b1aca4b3b1c0e7f5e4f3a4b3b1d3e8f2eaa4b3b1c0f2f2e4f2f2ece4eff5" class="btn-cta-result">Book Diagnostic Call — 29€</a>
+      <div class="cta-note">30-minute audit · immediate clarity · not a sales pitch</div>
+    </div>
+
+    <button class="retake-btn" onclick="retake()">← Retake Assessment</button>
+  </div>
+
+</div><!-- /quiz-wrapper -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+const INDUSTRIES = [
+  { id: 'office', name: 'Office & Administrative Support', jobs: 9, avg: 90 },
+  { id: 'finance', name: 'Finance & Accounting', jobs: 12, avg: 84 },
+  { id: 'retail', name: 'Retail, Sales & Customer Support', jobs: 10, avg: 82 },
+  { id: 'marketing', name: 'Marketing & Public Relations', jobs: 10, avg: 79 },
+  { id: 'tech', name: 'Technology & IT', jobs: 17, avg: 75 },
+  { id: 'law', name: 'Law & Legal Services', jobs: 8, avg: 74 },
+  { id: 'manufacturing', name: 'Manufacturing & Production', jobs: 10, avg: 72 },
+  { id: 'transport', name: 'Transportation & Logistics', jobs: 12, avg: 72 },
+  { id: 'business', name: 'Business & Management', jobs: 12, avg: 71 },
+  { id: 'gig', name: 'Gig & Freelance', jobs: 10, avg: 69 },
+  { id: 'gov', name: 'Government & Public Administration', jobs: 10, avg: 63 },
+  { id: 'seasonal', name: 'Seasonal & Temporary', jobs: 10, avg: 63 },
+  { id: 'hospitality', name: 'Hospitality & Tourism', jobs: 10, avg: 62 },
+  { id: 'agri', name: 'Agriculture & Natural Resources', jobs: 10, avg: 57 },
+  { id: 'safety', name: 'Public Safety & Law Enforcement', jobs: 10, avg: 57 },
+  { id: 'military', name: 'Military & Defense', jobs: 10, avg: 57 },
+  { id: 'energy', name: 'Energy & Utilities', jobs: 10, avg: 56 },
+  { id: 'education', name: 'Education & Training', jobs: 10, avg: 56 },
+  { id: 'food', name: 'Food Service & Culinary', jobs: 11, avg: 54 },
+  { id: 'health', name: 'Healthcare & Medical', jobs: 15, avg: 54 },
+  { id: 'social', name: 'Social Services & Non-Profit', jobs: 13, avg: 53 },
+  { id: 'arts', name: 'Arts, Media & Entertainment', jobs: 14, avg: 50 },
+  { id: 'construction', name: 'Construction & Skilled Trades', jobs: 14, avg: 46 },
+  { id: 'engineering', name: 'Engineering & Architecture', jobs: 12, avg: 41 },
+  { id: 'science', name: 'Science & Research', jobs: 10, avg: 38 },
+  { id: 'care', name: 'Personal Care & Services', jobs: 12, avg: 34 },
+];
+
+const JOBS = {
+  office:       [{t:'Data Entry Clerk',sub:'Task-based · 5-10 yrs',risk:97},{t:'Administrative Assistant',sub:'Mixed role · 5-10 yrs',risk:93},{t:'Bookkeeper',sub:'Task-based · 5-10 yrs',risk:91},{t:'Receptionist',sub:'Human-centric · 5-10 yrs',risk:89},{t:'Office Manager',sub:'Management · 10-20 yrs',risk:85},{t:'Executive Assistant',sub:'Human-centric · 10-20 yrs',risk:82},{t:'Payroll Clerk',sub:'Task-based · 5-10 yrs',risk:95},{t:'Document Controller',sub:'Task-based · 5-10 yrs',risk:93},{t:'Records Manager',sub:'Task-based · 5-10 yrs',risk:88}],
+  finance:      [{t:'Financial Analyst',sub:'Analytical · 5-10 yrs',risk:88},{t:'Accountant',sub:'Task-based · 5-10 yrs',risk:85},{t:'Tax Preparer',sub:'Task-based · 5-10 yrs',risk:95},{t:'Investment Banker',sub:'Strategic · 10-20 yrs',risk:72},{t:'Financial Advisor',sub:'Human-centric · 10-20 yrs',risk:65},{t:'Auditor',sub:'Analytical · 5-10 yrs',risk:82},{t:'Insurance Underwriter',sub:'Analytical · 5-10 yrs',risk:90},{t:'Credit Analyst',sub:'Analytical · 5-10 yrs',risk:86},{t:'Risk Manager',sub:'Strategic · 10-20 yrs',risk:74},{t:'Compliance Officer',sub:'Mixed role · 5-10 yrs',risk:78},{t:'Portfolio Manager',sub:'Strategic · 10-20 yrs',risk:68},{t:'Actuary',sub:'Analytical · 5-10 yrs',risk:75}],
+  retail:       [{t:'Retail Sales Associate',sub:'Human-centric · 0-5 yrs',risk:88},{t:'Customer Service Rep',sub:'Human-centric · 0-5 yrs',risk:91},{t:'Call Centre Agent',sub:'Task-based · 0-5 yrs',risk:94},{t:'Account Manager',sub:'Human-centric · 5-10 yrs',risk:72},{t:'Sales Manager',sub:'Management · 10-20 yrs',risk:68},{t:'E-commerce Manager',sub:'Mixed role · 5-10 yrs',risk:76},{t:'Buyer / Procurement',sub:'Analytical · 5-10 yrs',risk:80},{t:'Visual Merchandiser',sub:'Creative · 5-10 yrs',risk:70},{t:'Category Manager',sub:'Analytical · 5-10 yrs',risk:78},{t:'CRM Specialist',sub:'Technical · 5-10 yrs',risk:82}],
+  marketing:    [{t:'Social Media Manager',sub:'Creative · 5-10 yrs',risk:82},{t:'Content Writer',sub:'Creative · 5-10 yrs',risk:88},{t:'SEO Specialist',sub:'Technical · 5-10 yrs',risk:85},{t:'Marketing Analyst',sub:'Analytical · 5-10 yrs',risk:80},{t:'Copywriter',sub:'Creative · 5-10 yrs',risk:86},{t:'Brand Manager',sub:'Strategic · 10-20 yrs',risk:70},{t:'PR Specialist',sub:'Human-centric · 5-10 yrs',risk:72},{t:'Growth Marketer',sub:'Technical · 5-10 yrs',risk:76},{t:'Media Buyer',sub:'Technical · 5-10 yrs',risk:84},{t:'CMO',sub:'Executive · 10-20 yrs',risk:58}],
+  tech:         [{t:'Software Developer',sub:'Technical · 5-10 yrs',risk:72},{t:'QA Tester',sub:'Technical · 5-10 yrs',risk:88},{t:'Data Scientist',sub:'Analytical · 5-10 yrs',risk:65},{t:'IT Support Specialist',sub:'Technical · 0-5 yrs',risk:82},{t:'DevOps Engineer',sub:'Technical · 5-10 yrs',risk:68},{t:'Product Manager',sub:'Strategic · 5-10 yrs',risk:62},{t:'UX Designer',sub:'Creative · 5-10 yrs',risk:70},{t:'Cybersecurity Analyst',sub:'Technical · 5-10 yrs',risk:58},{t:'ML Engineer',sub:'Technical · 5-10 yrs',risk:55},{t:'Cloud Architect',sub:'Technical · 10-20 yrs',risk:60},{t:'Network Admin',sub:'Technical · 5-10 yrs',risk:78},{t:'Database Admin',sub:'Technical · 5-10 yrs',risk:80},{t:'Business Analyst',sub:'Analytical · 5-10 yrs',risk:74},{t:'AI/ML Researcher',sub:'Specialist · 10-20 yrs',risk:42},{t:'CTO',sub:'Executive · 10-20 yrs',risk:45},{t:'Scrum Master',sub:'Mixed role · 5-10 yrs',risk:66},{t:'Technical Writer',sub:'Creative · 5-10 yrs',risk:84}],
+  gig:          [{t:'Freelance Writer / Content Creator',sub:'Human-centric · 10-20 yrs',risk:90},{t:'Freelance Graphic Designer',sub:'Human-centric · 10-20 yrs',risk:88},{t:'Personal Shopper (Instacart)',sub:'Task-based · 10-20 yrs',risk:85},{t:'Rideshare Driver (Uber/Lyft)',sub:'Task-based · 5-10 yrs',risk:80},{t:'Online Tutor / ESL Teacher',sub:'Human-centric · 10-20 yrs',risk:80},{t:'Freelance Photographer',sub:'Creative · 10-20 yrs',risk:72},{t:'Virtual Assistant',sub:'Task-based · 10-20 yrs',risk:92},{t:'Freelance Video Editor',sub:'Creative · 10-20 yrs',risk:78},{t:'Delivery Driver',sub:'Task-based · 5-10 yrs',risk:82},{t:'Freelance Developer',sub:'Technical · 10-20 yrs',risk:70}],
+  law:          [{t:'Paralegal',sub:'Analytical · 5-10 yrs',risk:85},{t:'Legal Researcher',sub:'Analytical · 5-10 yrs',risk:88},{t:'Contract Lawyer',sub:'Specialist · 10-20 yrs',risk:78},{t:'Litigation Lawyer',sub:'Human-centric · 10-20 yrs',risk:62},{t:'Judge',sub:'Human-centric · 10-20 yrs',risk:35},{t:'Legal Secretary',sub:'Task-based · 0-5 yrs',risk:91},{t:'IP Attorney',sub:'Specialist · 10-20 yrs',risk:68},{t:'Public Defender',sub:'Human-centric · 10-20 yrs',risk:55}],
+  health:       [{t:'Radiologist',sub:'Specialist · 10-20 yrs',risk:72},{t:'General Practitioner',sub:'Human-centric · 10-20 yrs',risk:48},{t:'Nurse',sub:'Human-centric · 10-20 yrs',risk:38},{t:'Medical Coder',sub:'Task-based · 5-10 yrs',risk:92},{t:'Pharmacist',sub:'Specialist · 10-20 yrs',risk:65},{t:'Surgeon',sub:'Specialist · 10-20 yrs',risk:28},{t:'Mental Health Therapist',sub:'Human-centric · 10-20 yrs',risk:32},{t:'Physiotherapist',sub:'Human-centric · 10-20 yrs',risk:35},{t:'Dentist',sub:'Specialist · 10-20 yrs',risk:40},{t:'Lab Technician',sub:'Technical · 5-10 yrs',risk:78},{t:'Medical Transcriptionist',sub:'Task-based · 5-10 yrs',risk:95},{t:'Healthcare Admin',sub:'Mixed role · 5-10 yrs',risk:84},{t:'Nutritionist',sub:'Human-centric · 10-20 yrs',risk:58},{t:'Paramedic',sub:'Human-centric · 5-10 yrs',risk:30},{t:'Optometrist',sub:'Specialist · 10-20 yrs',risk:45}],
+  education:    [{t:'K-12 Teacher',sub:'Human-centric · 10-20 yrs',risk:52},{t:'University Professor',sub:'Human-centric · 10-20 yrs',risk:48},{t:'Instructional Designer',sub:'Creative · 5-10 yrs',risk:70},{t:'Corporate Trainer',sub:'Human-centric · 5-10 yrs',risk:65},{t:'Curriculum Developer',sub:'Creative · 5-10 yrs',risk:72},{t:'Special Education Teacher',sub:'Human-centric · 10-20 yrs',risk:35},{t:'School Counsellor',sub:'Human-centric · 10-20 yrs',risk:30},{t:'Online Course Creator',sub:'Creative · 5-10 yrs',risk:68},{t:'Librarian',sub:'Mixed role · 5-10 yrs',risk:75},{t:'Academic Advisor',sub:'Human-centric · 5-10 yrs',risk:62}],
+  arts:         [{t:'Graphic Designer',sub:'Creative · 5-10 yrs',risk:78},{t:'Illustrator',sub:'Creative · 5-10 yrs',risk:72},{t:'Journalist',sub:'Human-centric · 10-20 yrs',risk:65},{t:'Film Director',sub:'Creative · 10-20 yrs',risk:40},{t:'Music Producer',sub:'Creative · 10-20 yrs',risk:55},{t:'Game Designer',sub:'Creative · 5-10 yrs',risk:60},{t:'Animator',sub:'Technical · 5-10 yrs',risk:70},{t:'Photographer',sub:'Creative · 5-10 yrs',risk:68},{t:'Actor',sub:'Human-centric · 10-20 yrs',risk:35},{t:'Video Editor',sub:'Technical · 5-10 yrs',risk:74},{t:'UX/UI Designer',sub:'Creative · 5-10 yrs',risk:65},{t:'Brand Designer',sub:'Creative · 10-20 yrs',risk:72},{t:'Social Media Influencer',sub:'Human-centric · 5-10 yrs',risk:62},{t:'Podcast Producer',sub:'Creative · 5-10 yrs',risk:58}],
+  engineering:  [{t:'Civil Engineer',sub:'Specialist · 10-20 yrs',risk:45},{t:'Mechanical Engineer',sub:'Specialist · 10-20 yrs',risk:48},{t:'Electrical Engineer',sub:'Specialist · 10-20 yrs',risk:44},{t:'Structural Engineer',sub:'Specialist · 10-20 yrs',risk:42},{t:'Architect',sub:'Creative · 10-20 yrs',risk:52},{t:'Industrial Designer',sub:'Creative · 10-20 yrs',risk:55},{t:'Environmental Engineer',sub:'Specialist · 10-20 yrs',risk:38},{t:'Aerospace Engineer',sub:'Specialist · 10-20 yrs',risk:35},{t:'Chemical Engineer',sub:'Specialist · 10-20 yrs',risk:40},{t:'Project Engineer',sub:'Mixed role · 10-20 yrs',risk:58},{t:'CAD Drafter',sub:'Technical · 5-10 yrs',risk:82},{t:'Surveyor',sub:'Technical · 10-20 yrs',risk:68}],
+  science:      [{t:'Research Scientist',sub:'Specialist · 10-20 yrs',risk:42},{t:'Data Analyst',sub:'Analytical · 5-10 yrs',risk:75},{t:'Biologist',sub:'Specialist · 10-20 yrs',risk:38},{t:'Chemist',sub:'Specialist · 10-20 yrs',risk:40},{t:'Physicist',sub:'Specialist · 10-20 yrs',risk:32},{t:'Geologist',sub:'Specialist · 10-20 yrs',risk:45},{t:'Epidemiologist',sub:'Specialist · 10-20 yrs',risk:48},{t:'Statistician',sub:'Analytical · 10-20 yrs',risk:55},{t:'Psychologist',sub:'Human-centric · 10-20 yrs',risk:28},{t:'Neuroscientist',sub:'Specialist · 10-20 yrs',risk:35}],
+  business:     [{t:'Project Manager',sub:'Management · 10-20 yrs',risk:68},{t:'Strategy Consultant',sub:'Strategic · 10-20 yrs',risk:62},{t:'Operations Manager',sub:'Management · 10-20 yrs',risk:72},{t:'HR Manager',sub:'Human-centric · 10-20 yrs',risk:65},{t:'Supply Chain Manager',sub:'Analytical · 10-20 yrs',risk:74},{t:'Business Development Manager',sub:'Human-centric · 10-20 yrs',risk:60},{t:'General Manager',sub:'Management · 10-20 yrs',risk:58},{t:'Management Consultant',sub:'Strategic · 10-20 yrs',risk:66},{t:'Entrepreneur / Founder',sub:'Strategic · variable',risk:50},{t:'Chief Operating Officer',sub:'Executive · 10-20 yrs',risk:52},{t:'Chief Executive Officer',sub:'Executive · 10-20 yrs',risk:45},{t:'Change Manager',sub:'Strategic · 10-20 yrs',risk:55}],
+  construction: [{t:'Electrician',sub:'Skilled trade · 10-20 yrs',risk:42},{t:'Plumber',sub:'Skilled trade · 10-20 yrs',risk:38},{t:'Carpenter',sub:'Skilled trade · 10-20 yrs',risk:44},{t:'Welder',sub:'Skilled trade · 5-10 yrs',risk:55},{t:'HVAC Technician',sub:'Skilled trade · 5-10 yrs',risk:48},{t:'Construction Manager',sub:'Management · 10-20 yrs',risk:58},{t:'Bricklayer / Mason',sub:'Skilled trade · 10-20 yrs',risk:40},{t:'Roofer',sub:'Skilled trade · 5-10 yrs',risk:42},{t:'Pipefitter',sub:'Skilled trade · 10-20 yrs',risk:45},{t:'Crane Operator',sub:'Technical · 5-10 yrs',risk:60},{t:'Site Safety Officer',sub:'Mixed role · 10-20 yrs',risk:50},{t:'Quantity Surveyor',sub:'Analytical · 10-20 yrs',risk:65},{t:'Interior Designer',sub:'Creative · 10-20 yrs',risk:58},{t:'Landscaper',sub:'Physical · 5-10 yrs',risk:35}],
+  care:         [{t:'Hairdresser / Barber',sub:'Personal service · 5-10 yrs',risk:28},{t:'Personal Trainer',sub:'Human-centric · 5-10 yrs',risk:35},{t:'Massage Therapist',sub:'Physical · 5-10 yrs',risk:22},{t:'Nail Technician',sub:'Personal service · 5-10 yrs',risk:30},{t:'Childcare Worker',sub:'Human-centric · 5-10 yrs',risk:32},{t:'Elder Care Worker',sub:'Human-centric · 5-10 yrs',risk:28},{t:'Life Coach',sub:'Human-centric · 10-20 yrs',risk:42},{t:'Tattoo Artist',sub:'Creative · 10-20 yrs',risk:20},{t:'Dog Groomer',sub:'Physical · 5-10 yrs',risk:25},{t:'Yoga Instructor',sub:'Human-centric · 5-10 yrs',risk:30},{t:'Spa Therapist',sub:'Physical · 5-10 yrs',risk:25},{t:'Pet Sitter',sub:'Physical · 0-5 yrs',risk:22}],
+  transport:    [{t:'Truck Driver',sub:'Physical · 5-10 yrs',risk:82},{t:'Bus Driver',sub:'Physical · 5-10 yrs',risk:78},{t:'Warehouse Worker',sub:'Physical · 0-5 yrs',risk:88},{t:'Logistics Coordinator',sub:'Analytical · 5-10 yrs',risk:74},{t:'Supply Chain Analyst',sub:'Analytical · 5-10 yrs',risk:76},{t:'Delivery Driver',sub:'Physical · 0-5 yrs',risk:85},{t:'Customs Officer',sub:'Analytical · 5-10 yrs',risk:70},{t:'Freight Broker',sub:'Human-centric · 5-10 yrs',risk:72},{t:'Port Operations Manager',sub:'Management · 10-20 yrs',risk:62},{t:'Air Traffic Controller',sub:'Specialist · 10-20 yrs',risk:55},{t:'Pilot',sub:'Specialist · 10-20 yrs',risk:50},{t:'Maritime Captain',sub:'Specialist · 10-20 yrs',risk:45}],
+  manufacturing:[{t:'Assembly Line Worker',sub:'Physical · 0-5 yrs',risk:92},{t:'Machine Operator',sub:'Technical · 5-10 yrs',risk:88},{t:'Quality Inspector',sub:'Technical · 5-10 yrs',risk:82},{t:'CNC Machinist',sub:'Technical · 5-10 yrs',risk:70},{t:'Manufacturing Engineer',sub:'Specialist · 10-20 yrs',risk:58},{t:'Production Manager',sub:'Management · 10-20 yrs',risk:65},{t:'Industrial Maintenance Tech',sub:'Technical · 5-10 yrs',risk:55},{t:'Forklift Operator',sub:'Physical · 0-5 yrs',risk:85},{t:'Process Engineer',sub:'Specialist · 10-20 yrs',risk:60},{t:'Toolmaker',sub:'Skilled trade · 10-20 yrs',risk:62}],
+  food:         [{t:'Fast Food Worker',sub:'Physical · 0-5 yrs',risk:78},{t:'Chef',sub:'Creative · 10-20 yrs',risk:42},{t:'Line Cook',sub:'Physical · 0-5 yrs',risk:65},{t:'Pastry Chef',sub:'Creative · 10-20 yrs',risk:38},{t:'Restaurant Manager',sub:'Management · 10-20 yrs',risk:55},{t:'Barista',sub:'Physical · 0-5 yrs',risk:62},{t:'Food Scientist',sub:'Specialist · 10-20 yrs',risk:48},{t:'Nutritional Consultant',sub:'Human-centric · 10-20 yrs',risk:52},{t:'Sommelier',sub:'Specialist · 10-20 yrs',risk:35},{t:'Caterer',sub:'Physical · 5-10 yrs',risk:58},{t:'Food Safety Inspector',sub:'Analytical · 5-10 yrs',risk:68}],
+  hospitality:  [{t:'Hotel Receptionist',sub:'Human-centric · 0-5 yrs',risk:72},{t:'Event Planner',sub:'Human-centric · 5-10 yrs',risk:58},{t:'Travel Agent',sub:'Human-centric · 10-20 yrs',risk:82},{t:'Tour Guide',sub:'Human-centric · 5-10 yrs',risk:55},{t:'Hotel Manager',sub:'Management · 10-20 yrs',risk:55},{t:'Concierge',sub:'Human-centric · 5-10 yrs',risk:65},{t:'Flight Attendant',sub:'Human-centric · 5-10 yrs',risk:48},{t:'Casino Dealer',sub:'Human-centric · 5-10 yrs',risk:72},{t:'Resort Activity Coordinator',sub:'Human-centric · 5-10 yrs',risk:52},{t:'Cruise Director',sub:'Human-centric · 10-20 yrs',risk:45}],
+  gov:          [{t:'Civil Servant / Policy Analyst',sub:'Analytical · 10-20 yrs',risk:68},{t:'Tax Officer',sub:'Task-based · 5-10 yrs',risk:82},{t:'Urban Planner',sub:'Strategic · 10-20 yrs',risk:55},{t:'Diplomat',sub:'Human-centric · 10-20 yrs',risk:30},{t:'Government IT Specialist',sub:'Technical · 5-10 yrs',risk:70},{t:'Public Health Officer',sub:'Mixed role · 10-20 yrs',risk:52},{t:'Social Worker',sub:'Human-centric · 5-10 yrs',risk:38},{t:'Postal Worker',sub:'Physical · 0-5 yrs',risk:80},{t:'Immigration Officer',sub:'Analytical · 5-10 yrs',risk:72},{t:'Electoral Commissioner',sub:'Mixed role · 10-20 yrs',risk:48}],
+  social:       [{t:'Social Worker',sub:'Human-centric · 5-10 yrs',risk:38},{t:'Non-profit Manager',sub:'Management · 10-20 yrs',risk:55},{t:'Community Organiser',sub:'Human-centric · 5-10 yrs',risk:48},{t:'Fundraiser / Development Officer',sub:'Human-centric · 5-10 yrs',risk:62},{t:'Counsellor / Therapist',sub:'Human-centric · 10-20 yrs',risk:30},{t:'Youth Worker',sub:'Human-centric · 5-10 yrs',risk:35},{t:'Case Manager',sub:'Human-centric · 5-10 yrs',risk:58},{t:'Volunteer Coordinator',sub:'Human-centric · 5-10 yrs',risk:65},{t:'Policy Advocate',sub:'Strategic · 10-20 yrs',risk:52},{t:'Grant Writer',sub:'Creative · 5-10 yrs',risk:72},{t:'Humanitarian Aid Worker',sub:'Human-centric · 5-10 yrs',risk:42},{t:'NGO Programme Manager',sub:'Management · 10-20 yrs',risk:50},{t:'Social Media Coordinator',sub:'Creative · 5-10 yrs',risk:78}],
+  energy:       [{t:'Petroleum Engineer',sub:'Specialist · 10-20 yrs',risk:55},{t:'Renewable Energy Tech',sub:'Technical · 5-10 yrs',risk:48},{t:'Power Plant Operator',sub:'Technical · 5-10 yrs',risk:65},{t:'Energy Analyst',sub:'Analytical · 5-10 yrs',risk:62},{t:'Utility Manager',sub:'Management · 10-20 yrs',risk:55},{t:'Wind Turbine Technician',sub:'Technical · 5-10 yrs',risk:42},{t:'Solar Panel Installer',sub:'Physical · 0-5 yrs',risk:45},{t:'Grid Operations Manager',sub:'Technical · 10-20 yrs',risk:58},{t:'Environmental Compliance Officer',sub:'Analytical · 5-10 yrs',risk:55},{t:'Energy Trader',sub:'Analytical · 10-20 yrs',risk:70}],
+  agri:         [{t:'Agricultural Engineer',sub:'Specialist · 10-20 yrs',risk:52},{t:'Farm Manager',sub:'Management · 10-20 yrs',risk:58},{t:'Environmental Scientist',sub:'Specialist · 10-20 yrs',risk:40},{t:'Forester',sub:'Specialist · 10-20 yrs',risk:45},{t:'Agronomist',sub:'Specialist · 10-20 yrs',risk:50},{t:'Fishing Industry Worker',sub:'Physical · 5-10 yrs',risk:62},{t:'Wildlife Biologist',sub:'Specialist · 10-20 yrs',risk:38},{t:'Conservation Officer',sub:'Human-centric · 10-20 yrs',risk:42},{t:'Landscape Architect',sub:'Creative · 10-20 yrs',risk:55},{t:'Irrigation Technician',sub:'Technical · 5-10 yrs',risk:60}],
+  safety:       [{t:'Police Officer',sub:'Human-centric · 10-20 yrs',risk:52},{t:'Firefighter',sub:'Physical · 5-10 yrs',risk:30},{t:'Prison Officer',sub:'Human-centric · 5-10 yrs',risk:48},{t:'Security Guard',sub:'Physical · 0-5 yrs',risk:72},{t:'Emergency Dispatcher',sub:'Human-centric · 5-10 yrs',risk:62},{t:'Forensic Analyst',sub:'Technical · 5-10 yrs',risk:55},{t:'Border Control Officer',sub:'Human-centric · 5-10 yrs',risk:58},{t:'Crime Scene Investigator',sub:'Analytical · 5-10 yrs',risk:60},{t:'Cybercrime Investigator',sub:'Technical · 5-10 yrs',risk:48},{t:'Emergency Manager',sub:'Management · 10-20 yrs',risk:52}],
+  military:     [{t:'Military Officer',sub:'Leadership · 10-20 yrs',risk:45},{t:'Intelligence Analyst',sub:'Analytical · 10-20 yrs',risk:55},{t:'Cybersecurity Specialist (Military)',sub:'Technical · 5-10 yrs',risk:48},{t:'Drone Operator',sub:'Technical · 5-10 yrs',risk:62},{t:'Logistics Officer',sub:'Analytical · 5-10 yrs',risk:65},{t:'Military Engineer',sub:'Specialist · 10-20 yrs',risk:50},{t:'Combat Medic',sub:'Human-centric · 5-10 yrs',risk:35},{t:'Intelligence Officer',sub:'Analytical · 10-20 yrs',risk:52},{t:'Military Pilot',sub:'Specialist · 10-20 yrs',risk:58},{t:'Strategic Planner',sub:'Strategic · 10-20 yrs',risk:48}],
+  seasonal:     [{t:'Seasonal Retail Worker',sub:'Physical · 0-5 yrs',risk:88},{t:'Summer Camp Counsellor',sub:'Human-centric · 0-5 yrs',risk:42},{t:'Tax Season Accountant',sub:'Task-based · 5-10 yrs',risk:85},{t:'Agricultural Seasonal Worker',sub:'Physical · 0-5 yrs',risk:70},{t:'Event Staff',sub:'Physical · 0-5 yrs',risk:60},{t:'Holiday Temp Worker',sub:'Physical · 0-5 yrs',risk:82},{t:'Festival Organiser',sub:'Human-centric · 5-10 yrs',risk:45},{t:'Lifeguard',sub:'Physical · 0-5 yrs',risk:35},{t:'Snow Removal Operator',sub:'Physical · 0-5 yrs',risk:52},{t:'Tour Season Guide',sub:'Human-centric · 5-10 yrs',risk:48}],
+};
+
+// Action plans by risk tier
+const ACTION_PLANS = {
+  critical: [
+    { title: 'Conduct an immediate skill audit', desc: 'Map every task in your current role against what AI can already do well. The tasks it handles today are where you\'re most exposed.' },
+    { title: 'Build your "AI Orchestrator" identity', desc: 'Stop thinking of AI as competition. Start positioning yourself as the person who directs, refines, and takes accountability for AI outputs in your domain.' },
+    { title: 'Identify your human-only leverage', desc: 'Client relationships, institutional knowledge, creative judgment, ethical reasoning — these are your moats. Lean into them deliberately.' },
+  ],
+  high: [
+    { title: 'Integrate AI tools into your workflow now', desc: 'Your displacement risk drops significantly when you\'re the person who knows how to use the tools. Start with the AI equivalent of what you do daily.' },
+    { title: 'Shift from executor to strategist', desc: 'The tactical parts of your role are being automated. Pivot your energy toward the decisions, judgment calls, and relationships only a human can own.' },
+    { title: 'Build a visible body of work', desc: 'In the AI era, your ability to synthesise, explain, and communicate complex ideas becomes your primary differentiator. Start publishing your thinking.' },
+  ],
+  moderate: [
+    { title: 'Deepen your domain specialisation', desc: 'Generic competence is being commoditised. Hyper-specific expertise — the kind that takes years to build — is becoming more valuable, not less.' },
+    { title: 'Develop AI fluency in your specific domain', desc: 'Generic AI tools are not your competitive threat — AI trained on your exact domain is. Learn to deploy and evaluate those tools before others in your field do.' },
+    { title: 'Strengthen stakeholder relationships', desc: 'The roles most protected from AI are those deeply embedded in trust networks. Invest in relationships that take time to build.' },
+  ],
+  low: [
+    { title: 'Document and systematise your methods', desc: 'You\'re in a lower-risk position, but that won\'t last if you don\'t codify what makes your work excellent. Your methods can become an asset.' },
+    { title: 'Expand into AI-adjacent territory', desc: 'Your domain is relatively protected — but the professionals who thrive will be those who use AI to 10x their output while others ignore it.' },
+    { title: 'Consider cross-domain positioning', desc: 'Your skills combined with AI literacy and adjacent domains (business, communication, data) create roles that barely exist yet. Explore them.' },
+  ],
+};
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let state = {
+  industry: null,
+  job: null,
+  jobRisk: null,
+  expMultiplier: null,
+  aiMultiplier: null,
+};
+let allJobs = [];
+let filteredJobs = [];
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+function init() {
+  const grid = document.getElementById('industryGrid');
+  INDUSTRIES.forEach(ind => {
+    const div = document.createElement('div');
+    div.className = 'industry-card';
+    div.innerHTML = `<div class="ind-left"><h4>${ind.name}</h4><p>${ind.jobs} jobs</p></div><div class="ind-risk">${ind.avg}%</div>`;
+    div.onclick = () => selectIndustry(div, ind);
+    grid.appendChild(div);
+  });
+}
+
+// ── STEP NAVIGATION ───────────────────────────────────────────────────────────
+function goToStep(n) {
+  document.querySelectorAll('.step-container').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById('step' + n);
+  if (target) { target.classList.add('active'); }
+  updateProgress(n);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateProgress(step) {
+  const pct = Math.round(((step - 1) / 4) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progLabel').textContent = `Step ${step} of 4`;
+  document.getElementById('progPct').textContent = pct + '%';
+}
+
+// ── SELECTIONS ────────────────────────────────────────────────────────────────
+function selectIndustry(el, ind) {
+  document.querySelectorAll('.industry-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.industry = ind;
+  document.getElementById('btn1').disabled = false;
+  document.getElementById('btn1').textContent = `Continue with ${ind.name.split(' ')[0]} →`;
+  // Populate jobs
+  document.getElementById('selectedIndustryName').textContent = ind.name;
+  allJobs = JOBS[ind.id] || [];
+  filteredJobs = [...allJobs];
+  renderJobs();
+  state.job = null;
+  state.jobRisk = null;
+  document.getElementById('btn2').disabled = true;
+  document.getElementById('jobSearch').value = '';
+}
+
+function renderJobs() {
+  const list = document.getElementById('jobList');
+  list.innerHTML = '';
+  filteredJobs.forEach(job => {
+    const div = document.createElement('div');
+    div.className = 'job-item';
+    const riskClass = job.risk >= 85 ? 'risk-critical' : job.risk >= 70 ? 'risk-high' : job.risk >= 50 ? 'risk-medium' : 'risk-low';
+    const riskLbl = job.risk >= 85 ? 'CRITICAL' : job.risk >= 70 ? 'HIGH' : job.risk >= 50 ? 'MODERATE' : 'LOW';
+    div.innerHTML = `<div class="job-left"><h4>${job.t}</h4><p>${job.sub}</p></div><div class="job-risk"><div><span class="risk-pct ${riskClass}">${job.risk}%</span><br><span class="risk-label ${riskClass}">${riskLbl}</span></div></div>`;
+    div.onclick = () => selectJob(div, job);
+    list.appendChild(div);
+  });
+}
+
+function filterJobs() {
+  const q = document.getElementById('jobSearch').value.toLowerCase();
+  filteredJobs = q ? allJobs.filter(j => j.t.toLowerCase().includes(q)) : [...allJobs];
+  renderJobs();
+}
+
+function selectJob(el, job) {
+  document.querySelectorAll('.job-item').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.job = job.t;
+  state.jobRisk = job.risk;
+  document.getElementById('btn2').disabled = false;
+  document.getElementById('btn2').textContent = `Continue →`;
+}
+
+function selectExp(el, id, mult) {
+  document.querySelectorAll('.exp-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.expMultiplier = mult;
+  document.getElementById('btn3').disabled = false;
+}
+
+function selectAI(el, id, mult) {
+  document.querySelectorAll('.ai-item').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.aiMultiplier = mult;
+  document.getElementById('btn4').disabled = false;
+}
+
+// ── CALCULATE ─────────────────────────────────────────────────────────────────
+function calculateResults() {
+  // Hide all steps, show loading
+  document.querySelectorAll('.step-container').forEach(s => s.classList.remove('active'));
+  document.getElementById('progressWrap').style.display = 'none';
+  const ls = document.getElementById('loadingScreen');
+  ls.classList.add('active');
+
+  const steps = ['ls1','ls2','ls3','ls4'];
+  steps.forEach((id, i) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      el.classList.add('show');
+      setTimeout(() => el.classList.add('done'), 400);
+    }, i * 520);
+  });
+
+  setTimeout(() => {
+    ls.classList.remove('active');
+    showResults();
+  }, 2600);
+}
+
+function showResults() {
+  const base = state.jobRisk;
+  const expMult = state.expMultiplier || 1;
+  const aiMult = state.aiMultiplier || 1;
+
+  let displacement = Math.round(base * expMult * aiMult);
+  let replacement = Math.round(base * 0.72 * expMult * (aiMult * 0.9));
+
+  displacement = Math.min(99, Math.max(5, displacement));
+  replacement = Math.min(95, Math.max(3, replacement));
+
+  const displTier = displacement >= 80 ? 'critical' : displacement >= 65 ? 'high' : displacement >= 45 ? 'moderate' : 'low';
+  const replTier = replacement >= 75 ? 'critical' : replacement >= 60 ? 'high' : replacement >= 40 ? 'moderate' : 'low';
+  const overallTier = displTier;
+
+  const badgeClass = { critical:'badge-critical', high:'badge-high', moderate:'badge-moderate', low:'badge-low' };
+  const badgeLabel = { critical:'Critical', high:'High Risk', moderate:'Moderate', low:'Low Risk' };
+
+  document.getElementById('displScore').textContent = displacement + '%';
+  document.getElementById('replScore').textContent = replacement + '%';
+  document.getElementById('displBadge').className = `score-badge ${badgeClass[displTier]}`;
+  document.getElementById('displBadge').textContent = badgeLabel[displTier];
+  document.getElementById('replBadge').className = `score-badge ${badgeClass[replTier]}`;
+  document.getElementById('replBadge').textContent = badgeLabel[replTier];
+
+  document.getElementById('resultsSubtitle').textContent = `Based on your role as ${state.job} in ${state.industry.name}.`;
+
+  // Render actions
+  const plan = ACTION_PLANS[overallTier];
+  const container = document.getElementById('actionItems');
+  container.innerHTML = plan.map((a, i) => `
+    <div class="action-item">
+      <div class="action-num">0${i+1}</div>
+      <div><h4>${a.title}</h4><p>${a.desc}</p></div>
+    </div>`).join('');
+
+  document.getElementById('resultsScreen').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function retake() {
+  state = { industry:null, job:null, jobRisk:null, expMultiplier:null, aiMultiplier:null };
+  document.getElementById('resultsScreen').classList.remove('active');
+  document.getElementById('progressWrap').style.display = 'block';
+  document.querySelectorAll('.industry-card').forEach(c => c.classList.rem
