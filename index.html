@@ -17,6 +17,18 @@ body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sa
 .cursor.big{width:40px;height:40px;}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3.5rem;mix-blend-mode:difference;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform 0.2s,opacity 0.2s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-menu{display:none;position:fixed;inset:0;background:var(--black);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:3rem;padding:2rem;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);cursor:pointer;padding:8px;}
+.nav-mobile-close svg{width:28px;height:28px;}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:2rem;text-align:center;}
+.nav-mobile-links a{font-family:'Fraunces',serif;font-size:clamp(1.8rem,6vw,2.5rem);font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;}
+.nav-mobile-cta{display:inline-flex;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;}
 .nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);}
@@ -214,16 +226,18 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 .reveal.in{opacity:1;transform:translateY(0);}
 
 @media(max-width:900px){
-  nav{padding:1.2rem 1.5rem;mix-blend-mode:normal;background:var(--black);}
+  nav{padding:1.2rem 1.5rem;mix-blend-mode:normal;background:var(--black);justify-content:space-between;}
   .nav-logo,.nav-cta{color:var(--white);}
   .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-cta{display:none;}
   .hero{min-height:auto;display:flex;flex-direction:column;padding:0;gap:0;}
   .hero-type{display:none;}
-  .hero-mobile-headline{display:block;padding:1.5rem 1.5rem 0.5rem;order:1;}
+  .hero-mobile-headline{display:block;padding:1rem 1.5rem 0.25rem;order:1;}
   .hero-type-mobile{font-family:'Fraunces',serif;font-size:clamp(1.8rem,8vw,3rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#f8f6f1;}
   .hero-type-mobile em{font-style:italic;color:#9fe870;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
-  .hero-content{gap:1.5rem;padding:2rem 1.5rem;order:3;}
+  .hero-content{gap:0.75rem;padding:1rem 1.5rem;order:3;}
   .hero-type{font-size:clamp(2.8rem,12vw,5rem);}
   .hero-aside{max-width:100%;}
   .hero-phone{order:2;display:block;}
@@ -262,13 +276,21 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 
 <nav>
   <a href="#" class="nav-logo">Alessandro Capezza</a>
-  <ul class="nav-links">
-    <li><a href="#framework">Method</a></li>
-    <li><a href="career-risk-assessment.html">Risk Quiz</a></li>
-    <li><a href="#proof">Work</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-  </ul>
-  <a href="#pricing" class="nav-cta">Book Diagnostic — 29€</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <button class="nav-mobile-close" id="navMobileClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <ul class="nav-mobile-links">
+      <li><a href="#framework">Method</a></li>
+      <li><a href="career-risk-assessment.html">Risk Quiz</a></li>
+      <li><a href="#proof">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <a href="#pricing" class="nav-mobile-cta">Book Diagnostic — 29€</a>
+  </div>
 </nav>
 
 <section class="hero" id="heroSection">
@@ -630,4 +652,28 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+
+// Mobile nav hamburger
+const navHamburger = document.getElementById('navHamburger');
+const navMobileMenu = document.getElementById('navMobileMenu');
+const navMobileClose = document.getElementById('navMobileClose');
+if (navHamburger && navMobileMenu) {
+  navHamburger.addEventListener('click', () => {
+    navMobileMenu.classList.add('open');
+    navHamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  navMobileClose && navMobileClose.addEventListener('click', () => {
+    navMobileMenu.classList.remove('open');
+    navHamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  navMobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navMobileMenu.classList.remove('open');
+      navHamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 </script>
