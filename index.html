@@ -218,6 +218,10 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   .nav-logo,.nav-cta{color:var(--white);}
   .nav-links{display:none;}
   .hero{min-height:auto;display:flex;flex-direction:column;padding:0;gap:0;}
+  .hero-type{display:none;}
+  .hero-mobile-headline{display:block;padding:1.5rem 1.5rem 0.5rem;order:1;}
+  .hero-type-mobile{font-family:'Fraunces',serif;font-size:clamp(1.8rem,8vw,3rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#f8f6f1;}
+  .hero-type-mobile em{font-style:italic;color:#9fe870;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
   .hero-content{gap:1.5rem;padding:2rem 1.5rem;order:3;}
   .hero-type{font-size:clamp(2.8rem,12vw,5rem);}
@@ -227,7 +231,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   .hero-phone .hero-phone-bezel::before{display:none;}
   .hero-phone .hero-video{border-radius:0;aspect-ratio:9/16;max-height:70vh;margin:0 auto;}
   .hero-phone-controls-left{}
-  .hero-scroll{margin-top:1.5rem;padding:0 1.5rem;order:4;}
+  .hero-scroll{margin-top:1.5rem;padding:0 1.5rem;order:5;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
   .era-section{grid-template-columns:1fr;}
   .era-col{border-right:none;border-bottom:1px solid var(--border);}
@@ -279,6 +283,9 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
       <p>Mid-career professionals with 5–15 years experience are the most underserved — too senior for cheap AI tools, too specific for generic coaches.</p>
       <a href="#pricing" class="btn-hero">Book Diagnostic — 29€ ↗</a>
     </div>
+  </div>
+  <div class="hero-mobile-headline">
+    <h1 class="hero-type-mobile">You got <em>comfortable.</em><br>It's not too late.</h1>
   </div>
   <div class="hero-phone" id="heroPhone">
     <div class="hero-phone-bezel">
