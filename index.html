@@ -23,19 +23,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);border:1px solid rgba(248,246,241,0.4);padding:0.55rem 1.2rem;}
 
 .hero{min-height:100vh;background:var(--black);display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 3.5rem;position:relative;overflow:hidden;}
-.hero-era-track{position:absolute;top:0;left:0;right:0;display:flex;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.2);overflow:hidden;z-index:1;}
+.hero-era-track{position:absolute;top:0;left:0;right:0;display:flex;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.2);overflow:hidden;z-index:2;}
 .hero-era-track span{flex:1;padding:1.5rem 3.5rem;border-right:1px solid rgba(248,246,241,0.07);white-space:nowrap;}
 .hero-era-track span.current{color:var(--green);}
-.hero-main{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:flex-end;position:relative;z-index:1;}
-.hero-type{font-family:'Fraunces',serif;font-size:clamp(4.5rem,11vw,12rem);font-weight:900;line-height:0.9;letter-spacing:-0.04em;color:var(--white);}
+.hero-center{position:relative;z-index:3;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;width:100%;}
+.hero-type{font-family:'Fraunces',serif;font-size:clamp(3.5rem,8vw,10rem);font-weight:900;line-height:0.9;letter-spacing:-0.04em;color:var(--white);}
 .hero-type em{font-style:italic;color:var(--green);}
-.hero-aside{max-width:280px;padding-bottom:0.3rem;display:flex;flex-direction:column;gap:1.5rem;align-items:flex-end;position:relative;z-index:1;}
+.hero-phone{position:relative;display:flex;justify-content:center;}
+.hero-phone-bezel{position:relative;width:260px;border-radius:36px;padding:12px;background:linear-gradient(145deg,#2a2a2a,#111);box-shadow:0 25px 80px rgba(0,0,0,0.8),0 0 0 1px rgba(255,255,255,0.05),inset 0 1px 0 rgba(255,255,255,0.1);}
+.hero-phone-bezel::before{content:'';position:absolute;top:18px;left:50%;transform:translateX(-50%);width:80px;height:6px;border-radius:3px;background:rgba(0,0,0,0.6);z-index:5;}
+.hero-video{width:100%;aspect-ratio:9/16;border-radius:24px;object-fit:cover;display:block;}
+.audio-toggle{position:absolute;bottom:16px;right:16px;width:36px;height:36px;border-radius:50%;border:none;background:var(--green);color:var(--black);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:transform 0.15s,background 0.15s;}
+.audio-toggle:hover{transform:scale(1.1);background:#7de050;}
+.audio-toggle svg{width:18px;height:18px;}
+.hero-aside{max-width:300px;padding-bottom:0.3rem;display:flex;flex-direction:column;gap:1.5rem;align-items:flex-end;}
 .hero-aside p{font-size:0.88rem;line-height:1.75;color:rgba(248,246,241,0.5);text-align:right;}
 .btn-hero{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:0.9rem 1.8rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;white-space:nowrap;transition:background 0.2s;}
 .btn-hero:hover{background:#7de050;}
-.hero-scroll{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.25);margin-top:3rem;display:flex;align-items:center;gap:0.8rem;position:relative;z-index:1;}
+.hero-scroll{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.25);margin-top:2rem;display:flex;align-items:center;gap:0.8rem;position:relative;z-index:3;}
 .hero-scroll::before{content:'';display:block;width:1.5rem;height:1px;background:currentColor;}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;z-index:0;pointer-events:none;}
 
 .marquee-strip{background:var(--green);overflow:hidden;padding:0.85rem 0;}
 .marquee-track{display:flex;gap:3rem;white-space:nowrap;animation:marquee 22s linear infinite;width:max-content;}
@@ -183,7 +189,10 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   .nav-logo,.nav-cta{color:var(--white);}
   .nav-links{display:none;}
   .hero{padding:0 1.5rem 2.5rem;}
-  .hero-main{grid-template-columns:1fr;}
+  .hero-center{grid-template-columns:1fr;gap:2rem;}
+  .hero-type{font-size:clamp(2.8rem,12vw,5rem);}
+  .hero-phone{order:-1;}
+  .hero-phone-bezel{width:200px;}
   .hero-aside{max-width:100%;align-items:flex-start;}
   .hero-aside p{text-align:left;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
@@ -226,16 +235,24 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 </nav>
 
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="assets/first_content_Ua09.5.mp4" type="video/mp4">
-  </video>
   <div class="hero-era-track">
     <span>Industrial Era</span>
     <span>Digital Era</span>
     <span class="current">AI Era · Today ↗</span>
   </div>
-  <div class="hero-main">
+  <div class="hero-center">
     <h1 class="hero-type">You got<br><em>comfort-<br>able.</em><br>It's not<br>too late.</h1>
+    <div class="hero-phone">
+      <div class="hero-phone-bezel">
+        <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+          <source src="assets/first_content_Ua09.5.mp4" type="video/mp4">
+        </video>
+        <button class="audio-toggle" id="audioToggle" aria-label="Toggle audio">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
+          <svg class="icon-unmuted" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="hero-aside">
       <p>Mid-career professionals with 5–15 years experience are the most underserved — too senior for cheap AI tools, too specific for generic coaches.</p>
       <a href="#pricing" class="btn-hero">Book Diagnostic — 29€ ↗</a>
@@ -475,9 +492,39 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Custom cursor
 const cursor = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
 });
-docum
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+});
+
+// Scroll reveal
+const reveal = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveal.forEach(el => revealObs.observe(el));
+
+// Audio toggle
+const audioToggle = document.getElementById('audioToggle');
+const heroVideo = document.getElementById('heroVideo');
+if (audioToggle && heroVideo) {
+  audioToggle.addEventListener('click', () => {
+    heroVideo.muted = !heroVideo.muted;
+    const mutedIcon = audioToggle.querySelector('.icon-muted');
+    const unmutedIcon = audioToggle.querySelector('.icon-unmuted');
+    if (heroVideo.muted) {
+      mutedIcon.style.display = '';
+      unmutedIcon.style.display = 'none';
+    } else {
+      mutedIcon.style.display = 'none';
+      unmutedIcon.style.display = '';
+    }
+  });
+}
+</script>
