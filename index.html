@@ -217,14 +217,17 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   nav{padding:1.2rem 1.5rem;mix-blend-mode:normal;background:var(--black);}
   .nav-logo,.nav-cta{color:var(--white);}
   .nav-links{display:none;}
-  .hero{grid-template-columns:1fr;padding:0 1.5rem 2.5rem;gap:0;}
+  .hero{min-height:auto;display:flex;flex-direction:column;padding:0;gap:0;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
-  .hero-content{gap:1.5rem;padding:2rem 0 0;}
+  .hero-content{gap:1.5rem;padding:2rem 1.5rem;grid-column:1;grid-row:3;}
   .hero-type{font-size:clamp(2.8rem,12vw,5rem);}
   .hero-aside{max-width:100%;}
-  .hero-phone{display:none;}
-  .hero-phone-controls-left{display:none;}
-  .hero-scroll{margin-top:1.5rem;}
+  .hero-phone{grid-column:1;padding:0;display:block;grid-row:2;}
+  .hero-phone .hero-phone-bezel{width:100%;border-radius:0;padding:0;box-shadow:none;}
+  .hero-phone .hero-phone-bezel::before{display:none;}
+  .hero-phone .hero-video{border-radius:0;aspect-ratio:9/16;max-height:70vh;margin:0 auto;}
+  .hero-phone-controls-left,.hero-phone-controls{display:none;}
+  .hero-scroll{margin-top:1.5rem;padding:0 1.5rem;grid-row:4;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
   .era-section{grid-template-columns:1fr;}
   .era-col{border-right:none;border-bottom:1px solid var(--border);}
@@ -270,13 +273,6 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <span>Digital Era</span>
     <span class="current">AI Era · Today ↗</span>
   </div>
-  <div class="hero-content">
-    <h1 class="hero-type">You got<br><em>comfort-<br>able.</em><br>It's not<br>too late.</h1>
-    <div class="hero-aside">
-      <p>Mid-career professionals with 5–15 years experience are the most underserved — too senior for cheap AI tools, too specific for generic coaches.</p>
-      <a href="#pricing" class="btn-hero">Book Diagnostic — 29€ ↗</a>
-    </div>
-  </div>
   <div class="hero-phone" id="heroPhone">
     <div class="hero-phone-bezel">
       <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
@@ -296,6 +292,13 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-type">You got<br><em>comfort-<br>able.</em><br>It's not<br>too late.</h1>
+    <div class="hero-aside">
+      <p>Mid-career professionals with 5–15 years experience are the most underserved — too senior for cheap AI tools, too specific for generic coaches.</p>
+      <a href="#pricing" class="btn-hero">Book Diagnostic — 29€ ↗</a>
     </div>
   </div>
   <div class="hero-scroll">Scroll to explore</div>
