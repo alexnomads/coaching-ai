@@ -268,6 +268,20 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   *{cursor:auto!important;}
   .cursor{display:none;}
 }
+
+/* Era carousel — mobile only */
+.era-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:0;padding:0;margin:0;}
+.era-carousel::-webkit-scrollbar{display:none;}
+.era-carousel .era-col{min-width:85vw;scroll-snap-align:start;padding:3rem 1.5rem;border-right:1px solid var(--border);border-bottom:none;}
+.era-scroll-hint{display:none;}
+
+/* Desktop: grid overrides */
+@media(min-width:901px){
+  .era-carousel{display:grid;grid-template-columns:repeat(3,1fr);overflow-x:visible;scroll-snap-type:none;}
+  .era-carousel .era-col{min-width:auto;border-bottom:1px solid var(--border);padding:5rem 3.5rem;}
+  .era-scroll-hint{display:none;}
+}
+
 </style>
 </head>
 <body>
@@ -341,30 +355,33 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 </div>
 
 <section class="era-section">
-  <div class="era-col reveal">
-    <div class="era-num">01</div>
-    <div>
-      <div class="era-name">The Industrial<br><em>Era</em></div>
-      <p class="era-body">Execution was everything. You showed up, followed process, specialised in a task. The machine was literal — steel, assembly lines, repeatable labour.</p>
-      <div class="era-tag">Execution</div>
+  <div class="era-carousel">
+    <div class="era-col reveal">
+      <div class="era-num">01</div>
+      <div>
+        <div class="era-name">The Industrial<br><em>Era</em></div>
+        <p class="era-body">Execution was everything. You showed up, followed process, specialised in a task. The machine was literal — steel, assembly lines, repeatable labour.</p>
+        <div class="era-tag">Execution</div>
+      </div>
+    </div>
+    <div class="era-col reveal">
+      <div class="era-num">02</div>
+      <div>
+        <div class="era-name">The Digital<br><em>Era</em></div>
+        <p class="era-body">Software ate the world. Adapting meant learning new tools, platforms, workflows. Winners moved fast and accumulated digital skills on top of domain expertise.</p>
+        <div class="era-tag">Adaptation</div>
+      </div>
+    </div>
+    <div class="era-col active-era reveal">
+      <div class="era-num">03</div>
+      <div>
+        <div class="era-name">The AI<br><em>Era · Now</em></div>
+        <p class="era-body">The new machine thinks — and most professionals haven't noticed yet. The window to reposition is open. But not forever. Orchestration beats execution every time.</p>
+        <div class="era-tag">Orchestration</div>
+      </div>
     </div>
   </div>
-  <div class="era-col reveal">
-    <div class="era-num">02</div>
-    <div>
-      <div class="era-name">The Digital<br><em>Era</em></div>
-      <p class="era-body">Software ate the world. Adapting meant learning new tools, platforms, workflows. Winners moved fast and accumulated digital skills on top of domain expertise.</p>
-      <div class="era-tag">Adaptation</div>
-    </div>
-  </div>
-  <div class="era-col active-era reveal">
-    <div class="era-num">03</div>
-    <div>
-      <div class="era-name">The AI<br><em>Era · Now</em></div>
-      <p class="era-body">The new machine thinks — and most professionals haven't noticed yet. The window to reposition is open. But not forever. Orchestration beats execution every time.</p>
-      <div class="era-tag">Orchestration</div>
-    </div>
-  </div>
+  <div class="era-scroll-hint">Swipe to explore →</div>
 </section>
 
 <section class="statement" id="about-brief">
