@@ -1,0 +1,5 @@
+# Career Coach Website Dependencies
+# Static HTML site - no Python dependencies required for production
+
+# Development dependencies
+watchdog>=3.0.0  # For auto-reload during development
