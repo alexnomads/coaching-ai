@@ -612,4 +612,21 @@ function retake() {
   state = { industry:null, job:null, jobRisk:null, expMultiplier:null, aiMultiplier:null };
   document.getElementById('resultsScreen').classList.remove('active');
   document.getElementById('progressWrap').style.display = 'block';
-  document.querySelectorAll('.industry-card').forEach(c => c.classList.rem
+  document.querySelectorAll('.industry-card').forEach(c => c.classList.rem  document.querySelectorAll('.industry-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.job-item').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.exp-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.ai-item').forEach(c => c.classList.remove('selected'));
+  document.getElementById('btn1').disabled = true;
+  document.getElementById('btn1').textContent = 'Select an Industry →';
+  document.getElementById('btn2').disabled = true;
+  document.getElementById('btn2').textContent = 'Continue →';
+  document.getElementById('btn3').disabled = true;
+  document.getElementById('btn3').textContent = 'Continue →';
+  goToStep(1);
+}
+
+// Initialize the app
+init();
+</script>
+</body>
+</html>
