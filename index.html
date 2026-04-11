@@ -34,7 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);}
 .nav-cta{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);border:1px solid rgba(248,246,241,0.4);padding:0.55rem 1.2rem;}
 
-.hero{min-height:100vh;background:var(--black);display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;padding:0 3.5rem 3.5rem;position:relative;overflow:hidden;align-items:start;}
+.hero{min-height:100vh;background:var(--black);display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto 1fr auto;padding:0 3.5rem 3.5rem;position:relative;overflow:hidden;align-items:center;}
 
 /* Era track — spans full width at top */
 .hero-era-track{grid-column:1/-1;display:flex;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.2);overflow:hidden;z-index:4;}
@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-era-track span.current{color:var(--green);}
 
 /* Content — left side */
-.hero-content{grid-column:1/2;display:flex;flex-direction:column;align-items:flex-start;gap:2.5rem;z-index:3;padding:4rem 0 0;}
+.hero-content{grid-column:1/2;display:flex;flex-direction:column;justify-content:center;gap:2.5rem;z-index:3;padding:0;}
 .hero-type{font-family:'Fraunces',serif;font-size:clamp(3.5rem,7vw,9rem);font-weight:900;line-height:0.9;letter-spacing:-0.04em;color:var(--white);}
 .hero-type em{font-style:italic;color:var(--green);}
 .hero-aside{display:flex;flex-direction:column;gap:1.5rem;max-width:320px;}
@@ -51,7 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-hero:hover{background:#7de050;}
 
 /* Phone — center-right, dominant */
-.hero-phone{grid-column:2/4;position:relative;display:flex;justify-content:center;align-items:start;z-index:2;padding:0;}
+.hero-phone{grid-column:2/4;position:relative;display:flex;justify-content:center;align-items:center;z-index:2;padding:2rem 0;}
 .hero-phone-bezel{position:relative;width:380px;border-radius:44px;padding:14px;background:linear-gradient(145deg,#2a2a2a,#111);box-shadow:0 40px 120px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.05),inset 0 1px 0 rgba(255,255,255,0.1);}
 .hero-phone-bezel::before{content:'';position:absolute;top:20px;left:50%;transform:translateX(-50%);width:100px;height:8px;border-radius:4px;background:rgba(0,0,0,0.7);z-index:5;}
 .hero-video{width:100%;aspect-ratio:9/16;border-radius:30px;object-fit:cover;display:block;}
