@@ -34,15 +34,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);}
 .nav-cta{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);border:1px solid rgba(248,246,241,0.4);padding:0.55rem 1.2rem;}
 
-.hero{min-height:100vh;background:var(--black);display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;padding:0 3.5rem 3.5rem;position:relative;overflow:hidden;align-items:start;}
+/* ── HERO FIX ────────────────────────────────────────────────────────────────
+   Root cause: align-items:start caused text (short) and phone (tall 9:16) to
+   both anchor at the top — visually splitting them into two rows.
+   Fix: align-items:center so both columns meet in the middle vertically.
+   Also: reduce phone column width so text gets more breathing room.
+   ─────────────────────────────────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  background:var(--black);
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:auto 1fr auto;
+  padding:0 3.5rem 3.5rem;
+  position:relative;
+  overflow:hidden;
+  align-items:center;        /* FIXED: was start */
+}
 
 /* Era track — spans full width at top */
-.hero-era-track{grid-column:1/-1;display:flex;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.2);overflow:hidden;z-index:4;}
+.hero-era-track{grid-column:1/-1;grid-row:1;display:flex;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.2);overflow:hidden;z-index:4;align-self:start;}
 .hero-era-track span{flex:1;padding:1.5rem 3.5rem;border-right:1px solid rgba(248,246,241,0.07);white-space:nowrap;}
 .hero-era-track span.current{color:var(--green);}
 
-/* Content — left side */
-.hero-content{grid-column:1/2;display:flex;flex-direction:column;align-items:flex-start;gap:2.5rem;z-index:3;padding:0;padding-top:clamp(80px, 18vh, 180px);}
+/* Content — left side, vertically centered */
+.hero-content{
+  grid-column:1/2;
+  grid-row:2;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:2.5rem;
+  z-index:3;
+  padding:0;
+  padding-top:0;             /* FIXED: was clamp(80px,18vh,180px) — now handled by grid centering */
+  align-self:center;
+}
 .hero-type{font-family:'Fraunces',serif;font-size:clamp(3.5rem,7vw,9rem);font-weight:900;line-height:0.9;letter-spacing:-0.04em;color:var(--white);}
 .hero-type em{font-style:italic;color:var(--green);}
 .hero-aside{display:flex;flex-direction:column;gap:1.5rem;max-width:320px;}
@@ -50,11 +77,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-hero{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:0.9rem 1.8rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;white-space:nowrap;transition:background 0.2s;}
 .btn-hero:hover{background:#7de050;}
 
-/* Phone — center-right, dominant */
-.hero-phone{grid-column:2/4;position:relative;display:flex;justify-content:center;align-items:flex-start;z-index:2;padding:0;padding-top:clamp(80px, 18vh, 180px);}
-.hero-phone-bezel{position:relative;width:380px;border-radius:44px;padding:14px;background:linear-gradient(145deg,#2a2a2a,#111);box-shadow:0 40px 120px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.05),inset 0 1px 0 rgba(255,255,255,0.1);}
+/* Phone — columns 2–3, centered vertically */
+.hero-phone{
+  grid-column:2/4;
+  grid-row:2;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;        /* FIXED: was flex-start */
+  z-index:2;
+  padding:0;
+  padding-top:0;             /* FIXED: was clamp(80px,18vh,180px) */
+  align-self:center;
+}
+.hero-phone-bezel{position:relative;width:320px;border-radius:44px;padding:14px;background:linear-gradient(145deg,#2a2a2a,#111);box-shadow:0 40px 120px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.05),inset 0 1px 0 rgba(255,255,255,0.1);}
 .hero-phone-bezel::before{content:'';position:absolute;top:20px;left:50%;transform:translateX(-50%);width:100px;height:8px;border-radius:4px;background:rgba(0,0,0,0.7);z-index:5;}
-.hero-video{width:100%;aspect-ratio:9/16;border-radius:30px;object-fit:cover;display:block;}
+.hero-video{width:100%;aspect-ratio:9/16;border-radius:30px;object-fit:cover;display:block;max-height:70vh;}
 .hero-phone-controls{display:flex;gap:8px;position:absolute;bottom:20px;right:20px;z-index:10;}
 .hero-phone-controls-left{display:flex;gap:8px;position:absolute;bottom:20px;left:20px;z-index:10;}
 .audio-toggle,.phone-close,.telegram-btn{width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 0.15s,background 0.15s;}
@@ -70,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-phone.floating{position:fixed;bottom:2rem;right:2rem;top:auto;left:auto;z-index:1000;padding:0;animation:fadeInPhone 0.3s ease;}
 .hero-phone.floating .hero-phone-bezel{width:220px;border-radius:32px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.08);}
 .hero-phone.floating .hero-phone-bezel::before{top:14px;width:60px;height:5px;}
-.hero-phone.floating .hero-video{border-radius:22px;}
+.hero-phone.floating .hero-video{border-radius:22px;max-height:none;}
 .hero-phone.floating .hero-phone-controls{bottom:14px;right:14px;}
 .hero-phone.floating .hero-phone-controls-left{bottom:14px;left:14px;}
 .hero-phone.floating .audio-toggle,.hero-phone.floating .phone-close,.hero-phone.floating .telegram-btn{width:32px;height:32px;}
@@ -79,7 +117,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* Hidden — closed state */
 .hero-phone.hidden{display:none;}
 
-.hero-scroll{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.25);display:flex;align-items:center;gap:0.8rem;z-index:3;grid-column:1/-1;}
+/* Scroll hint — bottom row */
+.hero-scroll{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.25);display:flex;align-items:center;gap:0.8rem;z-index:3;grid-column:1/-1;grid-row:3;align-self:end;padding-top:2rem;}
 .hero-scroll::before{content:'';display:block;width:1.5rem;height:1px;background:currentColor;}
 
 @keyframes fadeInPhone{from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
@@ -238,15 +277,12 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   .hero-type-mobile em{font-style:italic;color:#9fe870;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
   .hero-content{gap:0.75rem;padding:1rem 1.5rem;order:3;}
-  .hero-type{font-size:clamp(2.8rem,12vw,5rem);}
   .hero-aside{max-width:100%;}
-  .hero-phone{order:2;display:block;}
+  .hero-phone{order:2;display:block;padding:0;}
   .hero-phone .hero-phone-bezel{width:100%;border-radius:0;padding:0;box-shadow:none;}
   .hero-phone .hero-phone-bezel::before{display:none;}
   .hero-phone .hero-video{border-radius:0;aspect-ratio:9/16;max-height:70vh;margin:0 auto;}
-  .hero-phone-controls-left{}
   .hero-scroll{margin-top:1.5rem;padding:0 1.5rem;order:5;}
-  .hero-era-track span{padding:1.2rem 1.5rem;}
   .era-section{grid-template-columns:1fr;}
   .era-col{border-right:none;border-bottom:1px solid var(--border);}
   .statement{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem;}
@@ -275,13 +311,11 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 .era-carousel .era-col{min-width:85vw;scroll-snap-align:start;padding:3rem 1.5rem;border-right:1px solid var(--border);border-bottom:none;}
 .era-scroll-hint{display:none;}
 
-/* Desktop: grid overrides */
 @media(min-width:901px){
   .era-carousel{display:grid;grid-template-columns:repeat(3,1fr);overflow-x:visible;scroll-snap-type:none;}
   .era-carousel .era-col{min-width:auto;border-bottom:1px solid var(--border);padding:5rem 3.5rem;}
   .era-scroll-hint{display:none;}
 }
-
 </style>
 </head>
 <body>
@@ -305,6 +339,13 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     </ul>
     <a href="#pricing" class="nav-mobile-cta">Book Diagnostic — 29€</a>
   </div>
+  <ul class="nav-links">
+    <li><a href="#framework">Method</a></li>
+    <li><a href="career-risk-assessment.html">Risk Quiz</a></li>
+    <li><a href="#proof">Work</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <a href="#pricing" class="nav-cta">Book Diagnostic — 29€</a>
 </nav>
 
 <section class="hero" id="heroSection">
@@ -499,7 +540,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
         <li>Custom pivot direction</li>
         <li>Clear next steps regardless of continuing</li>
       </ul>
-      <a href="/cdn-cgi/l/email-protection#751d1019191a351419100606141b11071a161405100f0f145b161a184a0600171f10160148311c14121b1a06011c165536141919" class="btn-price">Book Diagnostic →</a>
+      <a href="mailto:hello@alessandrocapezza.com?subject=Diagnostic Call" class="btn-price">Book Diagnostic →</a>
     </div>
     <div class="price-col featured reveal">
       <div class="p-type">Monthly Engagement</div>
@@ -514,7 +555,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
         <li>Career Risk Assessment framework</li>
         <li>Async support via Telegram</li>
       </ul>
-      <a href="/cdn-cgi/l/email-protection#1b737e7777745b7a777e68687a757f6974787a6b7e61617a3578747624686e79717e786f265674756f7377623b58747a787372757c" class="btn-price">Start Monthly →</a>
+      <a href="mailto:hello@alessandrocapezza.com?subject=Monthly Coaching" class="btn-price">Start Monthly →</a>
     </div>
     <div class="price-col reveal">
       <div class="p-type">3-Month Programme</div>
@@ -529,7 +570,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
         <li>LinkedIn authority content plan</li>
         <li>Case study of your transformation</li>
       </ul>
-      <a href="/cdn-cgi/l/email-protection#ef878a838380af8e838a9c9c8e818b9d808c8e9f8a95958ec18c8082d09c9a8d858a8c9bd2dcc2a280819b87cfbf9d80889d8e82828a" class="btn-price">Apply for 3-Month →</a>
+      <a href="mailto:hello@alessandrocapezza.com?subject=3-Month Programme" class="btn-price">Apply for 3-Month →</a>
     </div>
   </div>
 </section>
@@ -565,7 +606,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <div class="cta-label">Ready?</div>
     <h2 class="cta-headline reveal">Book your<br>diagnostic.<br><em>Today.</em></h2>
     <div class="cta-row reveal">
-      <a href="/cdn-cgi/l/email-protection#c7afa2ababa887a6aba2b4b4a6a9a3b5a8a4a6b7a2bdbda6e9a4a8aaf8b4b2a5ada2a4b3fa83aea6a0a9a8b4b3aea4e2f5f784a6ababe2f5f7eae2f5f7868ee2f5f782b5a6" class="btn-cta-main">Reserve Your Spot — 29€ →</a>
+      <a href="mailto:hello@alessandrocapezza.com?subject=Diagnostic%20Call%20-%20AI%20Era" class="btn-cta-main">Reserve Your Spot — 29€ →</a>
       <div class="cta-aside">30 minutes · immediate clarity<br><strong>Not a sales pitch. A diagnostic audit.</strong></div>
     </div>
   </div>
@@ -576,12 +617,11 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   <ul class="foot-links">
     <li><a href="https://linkedin.com/in/alessandrocapezza" target="_blank">LinkedIn</a></li>
     <li><a href="https://x.com/alexNomads" target="_blank">X / Twitter</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#b5ddd0d9d9daf5d4d9d0c6c6d4dbd1c7dad6d4c5d0cfcfd49bd6dad8">Email</a></li>
+    <li><a href="mailto:hello@alessandrocapezza.com">Email</a></li>
   </ul>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Custom cursor
+<script>
 const cursor = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
   cursor.style.left = e.clientX + 'px';
@@ -592,14 +632,12 @@ document.querySelectorAll('a,button').forEach(el => {
   el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
 });
 
-// Scroll reveal
 const reveal = document.querySelectorAll('.reveal');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.1 });
 reveal.forEach(el => revealObs.observe(el));
 
-// Audio toggle
 const audioToggle = document.getElementById('audioToggle');
 const heroVideo = document.getElementById('heroVideo');
 let audioWasOn = false;
@@ -618,21 +656,14 @@ if (audioToggle && heroVideo) {
   });
 }
 
-// Floating phone on scroll (desktop only)
 const heroPhone = document.getElementById('heroPhone');
 const heroSection = document.getElementById('heroSection');
 const phoneClose = document.getElementById('phoneClose');
 let phoneClosed = false;
 let isMobile = window.matchMedia('(max-width:900px)').matches;
 
-const makeFloating = () => {
-  if (isMobile || phoneClosed) return;
-  heroPhone.classList.add('floating');
-};
-const removeFloating = () => {
-  if (isMobile || phoneClosed) return;
-  heroPhone.classList.remove('floating');
-};
+const makeFloating = () => { if (isMobile || phoneClosed) return; heroPhone.classList.add('floating'); };
+const removeFloating = () => { if (isMobile || phoneClosed) return; heroPhone.classList.remove('floating'); };
 
 window.addEventListener('scroll', () => {
   const heroBottom = heroSection.getBoundingClientRect().bottom;
@@ -641,7 +672,6 @@ window.addEventListener('scroll', () => {
   else removeFloating();
 });
 
-// Close button
 if (phoneClose) {
   phoneClose.addEventListener('click', () => {
     phoneClosed = true;
@@ -658,7 +688,6 @@ if (phoneClose) {
   });
 }
 
-// Re-open on scroll back up (desktop only)
 window.addEventListener('scroll', () => {
   if (phoneClosed) {
     const heroBottom = heroSection.getBoundingClientRect().bottom;
@@ -670,7 +699,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Mobile nav hamburger
 const navHamburger = document.getElementById('navHamburger');
 const navMobileMenu = document.getElementById('navMobileMenu');
 const navMobileClose = document.getElementById('navMobileClose');
@@ -694,3 +722,5 @@ if (navHamburger && navMobileMenu) {
   });
 }
 </script>
+</body>
+</html>
