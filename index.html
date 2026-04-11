@@ -129,18 +129,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .marquee-track .dot{color:var(--green-deep);}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-.era-section{display:grid;grid-template-columns:repeat(3,1fr);}
-.era-col{padding:5rem 3.5rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;transition:background 0.3s;}
+.era-section{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);}
+.era-col{padding:5rem 6rem 5rem 3.5rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;transition:background 0.3s;}
 .era-col:last-child{border-right:none;}
 .era-col:hover,.era-col.active-era{background:var(--green-deep);}
 .era-col:hover .era-num,.era-col.active-era .era-num{color:rgba(159,232,112,0.12);}
 .era-col:hover .era-name,.era-col.active-era .era-name{color:var(--green);}
 .era-col:hover .era-body,.era-col.active-era .era-body{color:rgba(159,232,112,0.6);}
 .era-col:hover .era-tag,.era-col.active-era .era-tag{background:var(--green);color:var(--black);border-color:var(--green);}
-.era-num{font-family:'Fraunces',serif;font-size:5rem;font-weight:900;line-height:1;letter-spacing:-0.05em;color:rgba(13,12,10,0.08);margin-bottom:auto;transition:color 0.3s;}
-.era-name{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin:2rem 0 1rem;transition:color 0.3s;}
+.era-num{font-family:'Fraunces',serif;font-size:7rem;font-weight:900;line-height:1;letter-spacing:-0.05em;color:rgba(13,12,10,0.08);margin-bottom:auto;transition:color 0.3s;}
+.era-name{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin:2rem 0 1rem;transition:color 0.3s;}
 .era-name em{font-style:italic;}
-.era-body{font-size:0.87rem;line-height:1.75;color:var(--muted);transition:color 0.3s;}
+.era-body{font-size:1rem;line-height:1.75;color:var(--muted);transition:color 0.3s;}
 .era-tag{display:inline-block;margin-top:2rem;padding:0.3rem 0.8rem;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);transition:all 0.3s;}
 
 .statement{padding:8rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;border-top:1px solid var(--border);}
