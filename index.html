@@ -63,18 +63,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   grid-row:2;
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
+  justify-content:space-between;
   gap:2.5rem;
   z-index:3;
   padding:0 15% 0 3.5rem;
   padding-top:0;
-  align-self:center;
+  min-height:calc(100vh - 180px);
 }
 .hero-type{font-family:'Fraunces',serif;font-size:clamp(3.5rem,7vw,9rem);font-weight:900;line-height:0.9;letter-spacing:-0.04em;color:var(--white);}
 .hero-type em{font-style:italic;color:var(--green);}
-.hero-aside{display:flex;flex-direction:column;gap:1.2rem;max-width:520px;}
+.hero-aside{display:flex;flex-direction:column;justify-content:flex-end;gap:1.2rem;max-width:520px;padding-top:2rem;}
 .hero-aside p{font-size:1.3rem;line-height:1.6;color:rgba(248,246,241,0.5);}
-.btn-hero{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green);color:var(--black);padding:0.8rem 1.6rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;white-space:nowrap;transition:background 0.2s;}
+.btn-hero{display:flex;align-items:center;justify-content:center;gap:0.6rem;background:var(--green);color:var(--black);padding:2.5rem 4rem;font-size:1.1rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;white-space:nowrap;transition:background 0.2s;min-height:120px;}
 .btn-hero:hover{background:#7de050;}
 
 /* Phone — columns 2–3, centered vertically */
@@ -276,8 +276,9 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   .hero-type-mobile{font-family:'Fraunces',serif;font-size:clamp(1.8rem,8vw,3rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#f8f6f1;}
   .hero-type-mobile em{font-style:italic;color:#9fe870;}
   .hero-era-track span{padding:1.2rem 1.5rem;}
-  .hero-content{gap:0.75rem;padding:1rem 1.5rem;order:3;}
-  .hero-aside{max-width:100%;}
+  .hero-content{gap:0.75rem;padding:1rem 1.5rem;order:3;min-height:auto;}
+  .hero-aside{max-width:100%;padding-top:0;}
+  .btn-hero{padding:1rem 2rem;font-size:0.8rem;min-height:auto;}
   .hero-phone{order:2;display:block;padding:0;}
   .hero-phone .hero-phone-bezel{width:100%;border-radius:0;padding:0;box-shadow:none;}
   .hero-phone .hero-phone-bezel::before{display:none;}
