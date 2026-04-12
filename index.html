@@ -57,16 +57,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-era-track span{flex:1;padding:1.5rem 3.5rem;border-right:1px solid rgba(248,246,241,0.07);white-space:nowrap;}
 .hero-era-track span.current{color:var(--green);}
 
-/* Content — spans most of the width for better space usage */
+/* Content — column 1 only, stays left of phone */
 .hero-content{
-  grid-column:1/-1;
+  grid-column:1/2;
   grid-row:2;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   gap:2.5rem;
   z-index:3;
-  padding:0 15% 0 3.5rem;
+  padding:0 3rem 0 3.5rem;
   padding-top:0;
   align-self:stretch;
 }
