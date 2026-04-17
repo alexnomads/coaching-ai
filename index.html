@@ -601,7 +601,7 @@ flex-grow:1;
 /* ADDED: Custom positioning for specific photos */
 .case-card:nth-child(1) .case-image img {
   /* The Sandbox - faces slightly right + upper */
-  object-position: 50% 5%;
+  object-position: 70% 5%;
 }
 
 .case-card:nth-child(2) .case-image img {
@@ -640,6 +640,31 @@ flex-grow:1;
 @media (max-width: 767px) {
   .case-image {
     height: 220px; /* CHANGED: was 160px - keep taller on mobile too */
+  }
+}
+
+ /* Horizontal video case study - wide crop */
+.case-video-wide {
+  width: 100%;
+  height: 280px; /* Wider aspect */
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a0a2e; /* Match your ROJ app purple background */
+  position: relative;
+}
+
+.case-video-wide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Crops vertical video to show middle */
+}
+
+/* Mobile: slightly taller */
+@media (max-width: 767px) {
+  .case-video-wide {
+    height: 240px;
   }
 }
  
@@ -1318,21 +1343,22 @@ flex-grow:1;
       </div>
     </div>
 
-    <!-- CASE 3: Safe -->
-    <div class="case-card">
-      <div class="case-image">
-        <!-- TODO: Add photo here -->
-        <div class="case-image-placeholder">Image: Safe</div>
+   <!-- CASE 3: Rose of Jericho (VIDEO - horizontal crop) -->
+    <div class="case-card case-card-video">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/roj-video.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="case-content">
         <div class="case-meta">
-          <span class="case-tag">DeFi</span>
-          <span class="case-tag">Security</span>
-          <span class="case-tag">DevTools</span>
+          <span class="case-tag">AI</span>
+          <span class="case-tag">Web3</span>
+          <span class="case-tag">Product</span>
         </div>
-        <h3 class="case-title">Safe{Wallet} — $100B Secured Ecosystem</h3>
-        <p class="case-desc">Helped Safe drive 1M+ monthly impressions and deliver 30%+ increase in dev adoption through technical content, case studies, and product marketing for the largest wallet ecosystem securing $100B+ in assets.</p>
-        <div class="case-stat">$100B<span>secured · 1M+ impressions · 30% dev growth</span></div>
+        <h3 class="case-title">Rose of Jericho — AI Wellness App</h3>
+        <p class="case-desc">Built MVP combining AI personalisation, onchain rewards, and N8N agent workflows. Won Polygon ecosystem grant and Soonami hackathon to fund development.</p>
+        <div class="case-stat">18h+<span>Avg session time · Polygon grant awarded</span></div>
       </div>
     </div>
 
