@@ -572,10 +572,11 @@ flex-grow:1;
 /* Case study images */
 .case-image {
   width: 100%;
-  height: 200px;
+  height: 280px; /* CHANGED: was 200px - taller for better face framing */
   margin-bottom: 1.5rem;
   border-radius: 8px;
   overflow: hidden;
+  position: relative; /* ADDED: needed for positioning context */
 }
 
 .case-image-placeholder {
@@ -594,6 +595,18 @@ flex-grow:1;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%; /* ADDED: focus on upper portion (faces) */
+}
+
+/* ADDED: Custom positioning for specific photos */
+.case-card:nth-child(1) .case-image img {
+  /* The Sandbox - faces slightly right + upper */
+  object-position: 60% 15%;
+}
+
+.case-card:nth-child(2) .case-image img {
+  /* Sam Huber's photo - face is higher up */
+  object-position: 50% 5%;
 }
 
 /* Testimonial quotes */
@@ -626,7 +639,7 @@ flex-grow:1;
 
 @media (max-width: 767px) {
   .case-image {
-    height: 160px;
+    height: 220px; /* CHANGED: was 160px - keep taller on mobile too */
   }
 }
  
