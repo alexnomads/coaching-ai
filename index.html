@@ -560,6 +560,67 @@ flex-grow:1;
 
 .case-stat span{display:block;font-family:'Instrument Sans',sans-serif;font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;}
 
+/* Case study images */
+.case-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.case-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 2px dashed var(--border);
+}
+
+.case-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Testimonial quotes */
+.case-quote {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(159, 232, 112, 0.05);
+  border-left: 3px solid var(--green);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.case-quote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 0.8rem;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .case-image {
+    height: 160px;
+  }
+}
+ 
 /* ============================================
    MOBILE RESPONSIVE QUIZ STRIP
    ============================================ */
@@ -1190,63 +1251,128 @@ flex-grow:1;
   <div class="cases-section-header">
     <span class="cases-label">Track Record</span>
     <h2 class="cases-title">I don't just coach it. I've <em>shipped it.</em></h2>
-    <p class="cases-subtitle">7+ years at the intersection of Product, Marketing & Community Growth.</p>
+    <p class="cases-subtitle">7+ years driving growth for Web3, AI, and gaming—from $0 to 500M users.</p>
   </div>
   
   <div class="cases-grid">
+    <!-- CASE 1: The Sandbox -->
     <div class="case-card">
-      <div>
-        <div class="case-meta">
-          <span class="case-tag">AI · Web3 · Product</span>
-        </div>
-        <h3 class="case-title">Rose of Jericho — AI Wellness App</h3>
-        <p class="case-desc">Built MVP combining AI personalisation, onchain rewards, and N8N agent workflows. Won Polygon ecosystem grant and Soonami hackathon to fund it.</p>
+      <div class="case-image">
+        <!-- TODO: Add photo here -->
+        <div class="case-image-placeholder">Image: The Sandbox</div>
       </div>
-      <div class="case-stat">18h+<span>Avg session time · Polygon grant awarded</span></div>
-    </div>
-    
-    <div class="case-card">
-      <div>
+      <div class="case-content">
         <div class="case-meta">
-          <span class="case-tag">GTM · Content · Virality</span>
+          <span class="case-tag">Gaming</span>
+          <span class="case-tag">NFTs</span>
+          <span class="case-tag">Community</span>
+        </div>
+        <h3 class="case-title">The Sandbox — Gaming Community Growth</h3>
+        <p class="case-desc">Reached $200k in sales selling 224+ NFT LANDs through affiliates and KOLs. Built partnerships with exchanges & gaming schools. Educated thousands via IRL meetups and National TV podcasts.</p>
+        <div class="case-stat">$200k<span>224+ NFTs sold</span></div>
+        <blockquote class="case-quote">
+          "Alex has been hosting meetups in art galleries in Barcelona to present the potential of NFTs to aspiring artists! He educates and shows the benefits for Creators."
+          <cite>— Sebastien Borget, Founder, The Sandbox</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- CASE 2: Safe -->
+    <div class="case-card">
+      <div class="case-image">
+        <!-- TODO: Add photo here -->
+        <div class="case-image-placeholder">Image: Safe</div>
+      </div>
+      <div class="case-content">
+        <div class="case-meta">
+          <span class="case-tag">DeFi</span>
+          <span class="case-tag">Security</span>
+          <span class="case-tag">DevTools</span>
+        </div>
+        <h3 class="case-title">Safe{Wallet} — $100B Secured Ecosystem</h3>
+        <p class="case-desc">Helped Safe drive 1M+ monthly impressions and deliver 30%+ increase in dev adoption through technical content, case studies, and product marketing for the largest wallet ecosystem securing $100B+ in assets.</p>
+        <div class="case-stat">$100B<span>secured · 1M+ impressions · 30% dev growth</span></div>
+      </div>
+    </div>
+
+    <!-- CASE 3: LandVault -->
+    <div class="case-card">
+      <div class="case-image">
+        <!-- TODO: Add photo here -->
+        <div class="case-image-placeholder">Image: LandVault</div>
+      </div>
+      <div class="case-content">
+        <div class="case-meta">
+          <span class="case-tag">Metaverse</span>
+          <span class="case-tag">Series B</span>
+          <span class="case-tag">Partnerships</span>
+        </div>
+        <h3 class="case-title">LandVault — Series B & Napster Rebrand</h3>
+        <p class="case-desc">Built 30+ partnerships (Chainlink, DappRadar), hired & trained marketing team, led rebrand following $25M Series B, launched Matera protocol, and joined 100+ conferences increasing reach 15%.</p>
+        <div class="case-stat">$25M<span>Series B · 30+ partnerships · Rebranded to Napster</span></div>
+        <blockquote class="case-quote">
+          "Alex is a wealth of knowledge in blockchain and web3... critical part of launching LandVault into the largest builder in the metaverse."
+          <cite>— Sam Huber, CEO, LandVault</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- CASE 4: BlueStacks -->
+    <div class="case-card">
+      <div class="case-image">
+        <!-- TODO: Add photo here -->
+        <div class="case-image-placeholder">Image: BlueStacks</div>
+      </div>
+      <div class="case-content">
+        <div class="case-meta">
+          <span class="case-tag">Gaming</span>
+          <span class="case-tag">Esports</span>
+          <span class="case-tag">Content</span>
+        </div>
+        <h3 class="case-title">BlueStacks + Game.tv — 500M+ Gamers</h3>
+        <p class="case-desc">Generated 100k eSports participants, produced 1,300+ videos reaching 2.4M impressions, organized LIVE events (300+ attendees), grew affiliate traffic 271%.</p>
+        <div class="case-stat">500M+<span>gamers reached · 7M YouTube views · 271% affiliate growth</span></div>
+        <blockquote class="case-quote">
+          "Among the top performers with 100,000+ mobile app installs... managed large external stakeholders while leading a massive community."
+          <cite>— Fürkan Aslım, Affiliate Manager</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- CASE 5: GenLayer -->
+    <div class="case-card">
+      <div class="case-image">
+        <!-- TODO: Add photo here -->
+        <div class="case-image-placeholder">Image: GenLayer</div>
+      </div>
+      <div class="case-content">
+        <div class="case-meta">
+          <span class="case-tag">AI</span>
+          <span class="case-tag">Content</span>
+          <span class="case-tag">Virality</span>
         </div>
         <h3 class="case-title">GenLayer — Video Content Pipeline</h3>
-        <p class="case-desc">LLM-assisted script generation, editorial workflows, automated scheduler for a $7.5M AI blockchain company. One video crossed half a million views.</p>
+        <p class="case-desc">LLM-assisted script generation, editorial workflows, automated scheduler for $7.5M AI blockchain company. One video crossed half a million views.</p>
+        <div class="case-stat">550k<span>organic views · Zero ad spend</span></div>
       </div>
-      <div class="case-stat">550k<span>Organic views · Zero ad spend</span></div>
     </div>
-    
+
+    <!-- CASE 6: Qubit Wallet -->
     <div class="case-card">
-      <div>
-        <div class="case-meta">
-          <span class="case-tag">Series B · GTM Coordination</span>
-        </div>
-        <h3 class="case-title">LandVault — Series B Launch</h3>
-        <p class="case-desc">GTM coordination across Product, Community, Partnerships, Video, Content. Retool dashboards, Zapier automations, centralised campaign hub.</p>
+      <div class="case-image">
+        <!-- TODO: Add photo here -->
+        <div class="case-image-placeholder">Image: Qubit</div>
       </div>
-      <div class="case-stat">Series B<span>Successful launch · faster cycles</span></div>
-    </div>
-    
-    <div class="case-card">
-      <div>
+      <div class="case-content">
         <div class="case-meta">
-          <span class="case-tag">Product Hunt · Community</span>
+          <span class="case-tag">Web3</span>
+          <span class="case-tag">GTM</span>
+          <span class="case-tag">Product</span>
         </div>
-        <h3 class="case-title">Qubit Wallet — Early Traction</h3>
-        <p class="case-desc">Ambassador flows, GPT-generated A/B copy variants, lifecycle automation. First 500+ users through gamification and Product Hunt.</p>
+        <h3 class="case-title">Qubit Wallet — GTM From Scratch</h3>
+        <p class="case-desc">Crafted GTM & brand identity from scratch, secured 500 Beta testers, reached 8.4% engagement rate, 54% community growth, secured partnerships (Polygon, Arbitrum, Optimism, Safe).</p>
+        <div class="case-stat">500+<span>Beta testers · 54% community growth · 8.4% engagement</span></div>
       </div>
-      <div class="case-stat">500+<span>First users · Top crypto category</span></div>
-    </div>
-    
-    <div class="case-card">
-      <div>
-        <div class="case-meta">
-          <span class="case-tag">Ecosystem BD · Web3</span>
-        </div>
-        <h3 class="case-title">The Sandbox — Ambassador Program</h3>
-        <p class="case-desc">Typeform → Airtable → Retool ambassador onboarding with automated token distribution triggers and partner outreach sequences globally.</p>
-      </div>
-      <div class="case-stat">Global<span>Affiliate rollout · improved B2B conversion</span></div>
     </div>
   </div>
 </section>
