@@ -141,7 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .statement-text em{font-style:italic;color:var(--green);}
 
 /* ============================================
-   METHOD DECK - CARD CAROUSEL (Performance-Optimized)
+   METHOD DECK - CARD CAROUSEL 
    ========================================= */
 .method-deck{padding:6rem 1.5rem;background:var(--white);border-top:1px solid var(--border);position:relative;overflow:hidden;}
 @media (min-width:768px){.method-deck{padding:8rem 3.5rem;}}
@@ -185,6 +185,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .card-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:bold;}
 .card-cta{display:inline-block;background:var(--green);color:var(--black);padding:0.75rem 1.5rem;font-size:0.85rem;font-weight:600;text-decoration:none;border-radius:4px;margin-top:0.5rem;transition:all 0.2s ease;}
 .card-cta:hover{background:#7de050;transform:translateY(-2px);}
+
+/* FIXED: Clean card-expand styles */
 .card-expand{
   position:absolute;
   bottom:1.5rem;
@@ -201,34 +203,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   align-items:center;
   justify-content:center;
   transition:all 0.3s ease;
-   display:inline-block;
-  background:var(--green);
-  color:var(--black);
-  padding:0.75rem 1.5rem;
-  font-size:0.85rem;
-  font-weight:600;
-  text-decoration:none;
-  border-radius:4px;
-  margin-top:0.5rem;
-  transition:all 0.2s ease;
-  position:relative; /* Add this */
-  z-index:10; /* Add this - higher than expand button */
 }
 @media (max-width:767px){.card-expand{display:none;}}
 .method-card:hover .card-expand{border-color:var(--green);color:var(--green-deep);transform:rotate(90deg);}
 .method-card.expanded .card-expand{transform:rotate(45deg);border-color:var(--green);background:var(--green);color:var(--black);}
+
 .card-overlay{
   position:fixed;
   inset:0;
-  background:rgba(13,12,10,0); /* --black with opacity */
+  background:rgba(13,12,10,0);
   backdrop-filter:blur(0px);
   pointer-events:none;
   z-index:15;
   transition:all 0.3s ease;
 }
 .card-overlay.active{
-  background:rgba(13,12,10,0.7); /* Darker overlay */
-  backdrop-filter:blur(8px); /* Blur effect */
+  background:rgba(13,12,10,0.7);
+  backdrop-filter:blur(8px);
   pointer-events:all;
 }
 .swipe-indicator{display:flex;flex-direction:column;align-items:center;gap:0.75rem;margin-top:2rem;color:var(--muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;}
@@ -667,9 +658,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <div class="cases-grid">
     <!-- CASE 1: The Sandbox -->
     <div class="case-card">
-   <div class="case-video-wide">
-        <video autoplay="" muted="" loop="" playsinline="">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
           <source src="assets/sandbox-snoopdogg.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="case-meta">
         <span class="case-tag">Gaming</span>
@@ -686,13 +678,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
     <!-- CASE 2: LandVault -->
     <div class="case-card">
-       <div class="case-video-wide">
-        <video autoplay="" muted="" loop="" playsinline="">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
           <source src="assets/landvault.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="case-meta">
         <span class="case-tag">Series B</span>
-        <span class="case-tag">Markteting Team Building</span>
+        <span class="case-tag">Marketing Team Building</span>
         <span class="case-tag">Partnerships</span>
       </div>
       <h3 class="case-title">LandVault — Series B &amp; Napster Rebrand</h3>
@@ -707,7 +700,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <!-- CASE 3: Rose of Jericho -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay="" muted="" loop="" playsinline="">
+        <video autoplay muted loop playsinline>
           <source src="assets/roj-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -723,21 +716,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
     <!-- CASE 4: BlueStacks -->
     <div class="case-card">
-           <div class="case-video-wide">
-        <video autoplay="" muted="" loop="" playsinline="">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
           <source src="assets/gametv-video.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="case-meta">
         <span class="case-tag">Gaming</span>
         <span class="case-tag">Esports</span>
         <span class="case-tag">Content</span>
       </div>
-      <h3 class="case-title">BlueStacks + Game.tv — 500M+ Gamers</h3>
       <h3 class="case-title">BlueStacks + Game.tv — 500M+ Users</h3>
       <p class="case-desc">Generated 100k eSports participants, produced 1,300+ videos reaching 2.4M impressions, organized LIVE events (300+ attendees), grew affiliate traffic 271%.</p>
       <div class="case-stat">500M+<span>gamers reached · 7M YouTube views · 271% affiliate growth</span></div>
       <blockquote class="case-quote">
-        "Among the top performers with 100,000+ mobile app installs... managed large external stakeholders while leading a massive community."
+        "Among the top performers with 100,000+ mobile app installs, managed large external stakeholders while leading a massive community."
         <cite>— Fürkan Aslım, Affiliate Manager</cite>
       </blockquote>
     </div>
@@ -745,7 +738,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <!-- CASE 5: GenLayer -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay="" muted="" loop="" playsinline="">
+        <video autoplay muted loop playsinline>
           <source src="assets/genlayer-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -762,8 +755,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <!-- CASE 6: Qubit Wallet -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay="" muted="" loop="" playsinline="">
+        <video autoplay muted loop playsinline>
           <source src="assets/qubit-video.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="case-meta">
         <span class="case-tag">Web3</span>
@@ -776,6 +770,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     </div>
   </div>
 </section>
+
 <!-- Pricing Section -->
 <section class="pricing-section" id="pricing">
   <div class="pricing-header">
@@ -884,7 +879,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       </a>
       
       <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram
       </a>
       
@@ -1001,7 +996,6 @@ col.classList.add('active-era');
 
 // ============================================
 // METHOD DECK - CARD CAROUSEL (Lazy-loaded)
-// Only initialize when in viewport for performance
 // ============================================
 const cardDeck=document.getElementById('cardDeck');
 const cards=document.querySelectorAll('.method-card');
