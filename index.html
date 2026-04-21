@@ -185,12 +185,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .card-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:bold;}
 .card-cta{display:inline-block;background:var(--green);color:var(--black);padding:0.75rem 1.5rem;font-size:0.85rem;font-weight:600;text-decoration:none;border-radius:4px;margin-top:0.5rem;transition:all 0.2s ease;}
 .card-cta:hover{background:#7de050;transform:translateY(-2px);}
-.card-expand{position:absolute;bottom:1.5rem;right:1.5rem;width:40px;height:40px;border-radius:50%;border:2px solid var(--border);background:transparent;color:var(--muted);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;}
+.card-expand{
+  position:absolute;
+  bottom:1.5rem;
+  right:1.5rem;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:2px solid var(--border);
+  background:transparent;
+  color:var(--muted);
+  font-size:1.2rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.3s ease;
+   display:inline-block;
+  background:var(--green);
+  color:var(--black);
+  padding:0.75rem 1.5rem;
+  font-size:0.85rem;
+  font-weight:600;
+  text-decoration:none;
+  border-radius:4px;
+  margin-top:0.5rem;
+  transition:all 0.2s ease;
+  position:relative; /* Add this */
+  z-index:10; /* Add this - higher than expand button */
+}
 @media (max-width:767px){.card-expand{display:none;}}
 .method-card:hover .card-expand{border-color:var(--green);color:var(--green-deep);transform:rotate(90deg);}
 .method-card.expanded .card-expand{transform:rotate(45deg);border-color:var(--green);background:var(--green);color:var(--black);}
-.card-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);pointer-events:none;z-index:15;transition:background 0.3s ease;}
-.card-overlay.active{background:rgba(0,0,0,0.3);pointer-events:all;}
+.card-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(13,12,10,0); /* --black with opacity */
+  backdrop-filter:blur(0px);
+  pointer-events:none;
+  z-index:15;
+  transition:all 0.3s ease;
+}
+.card-overlay.active{
+  background:rgba(13,12,10,0.7); /* Darker overlay */
+  backdrop-filter:blur(8px); /* Blur effect */
+  pointer-events:all;
+}
 .swipe-indicator{display:flex;flex-direction:column;align-items:center;gap:0.75rem;margin-top:2rem;color:var(--muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;}
 @media (min-width:768px){.swipe-indicator{display:none;}}
 .swipe-dots{display:flex;gap:0.5rem;}
