@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Jobs Will AI Replace First (And Which Ones Are Safe) — Alessandro Capezza</title>
+<meta name="description" content="Based on analysis of 289 professions across 26 industries. The data shows a clear pattern — and it's not what most people expect.">
+<link rel="canonical" href="https://alexnomads.github.io/coaching-ai/blog/which-jobs-ai-will-replace-first.html">
+<meta property="og:title" content="Which Jobs Will AI Replace First (And Which Ones Are Safe)">
+<meta property="og:description" content="Based on analysis of 289 professions. The data shows a clear pattern — and it's not what most people expect.">
+<meta property="og:type" content="article">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo">Alessandro Capezza</a>
+  <ul class="nav-links">
+    <li><a href="../#method">Method</a></li>
+    <li><a href="../career-risk-assessment.html">Risk Quiz</a></li>
+    <li><a href="../#pricing">Pricing</a></li>
+    <li><a href="./">Blog</a></li>
+  </ul>
+</nav>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI & Jobs</span>
+      <span>7 min read</span>
+    </div>
+    <h1 class="article-title">Which Jobs Will AI Replace First <em>(And Which Ones Are Safe)</em></h1>
+  </header>
+
+  <div class="article-body">
+
+    <p>Everyone has an opinion about AI and jobs. Most of those opinions are based on headlines, not data. I've spent months analyzing 289 professions across 26 industries, and the pattern is clearer than you'd expect — but probably not what you think.</p>
+
+    <p>Here's the short version: <strong>AI doesn't replace jobs. It compresses tasks.</strong> And the jobs that feel the squeeze first aren't the ones most people assume.</p>
+
+    <h2>The Pattern Nobody's Talking About</h2>
+
+    <p>When people ask "will AI replace my job?", they're asking the wrong question. The right question is: <em>how much of what I do daily is pure execution versus judgment?</em></p>
+
+    <p>Execution is repeatable, rule-based, and follows patterns. Judgment requires context, stakeholder awareness, and the ability to navigate ambiguity. AI is getting very good at the first. It's nowhere near the second.</p>
+
+    <p>This creates a clear framework for predicting displacement risk:</p>
+
+    <ul>
+      <li><strong>High risk:</strong> Role is >70% execution-based tasks with structured outputs</li>
+      <li><strong>Medium risk:</strong> Role is 40-70% execution, but requires client/stakeholder judgment</li>
+      <li><strong>Low risk:</strong> Role is <40% execution, high on strategic judgment and relationship orchestration</li>
+    </ul>
+
+    <p>Notice what's not on this list: "creative" vs "technical." That's because the old assumption — that creative jobs are safe and technical jobs are at risk — is backwards. A junior copywriter churning out product descriptions is at high risk. A senior engineer making architecture decisions is at low risk. It's about task composition, not industry.</p>
+
+    <h2>The High-Risk Roles (Displacement Already Happening)</h2>
+
+    <p>These roles share a common trait: the core value proposition is "I can produce this specific output efficiently." When AI can produce the same output faster, the value collapses.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Industry</th>
+          <th>Risk Level</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Junior Copywriter</strong></td>
+          <td>Marketing</td>
+          <td class="risk-high">High</td>
+          <td>80%+ of tasks are structured content generation</td>
+        </tr>
+        <tr>
+          <td><strong>Data Entry Specialist</strong></td>
+          <td>Operations</td>
+          <td class="risk-high">High</td>
+          <td>Pure execution, rule-based, zero judgment layer</td>
+        </tr>
+        <tr>
+          <td><strong>Basic Bookkeeper</strong></td>
+          <td>Finance</td>
+          <td class="risk-high">High</td>
+          <td>Categorization and reconciliation are automatable now</td>
+        </tr>
+        <tr>
+          <td><strong>First-Line Support</strong></td>
+          <td>Customer Service</td>
+          <td class="risk-high">High</td>
+          <td>Tier 1 queries are pattern-matched, not solved</td>
+        </tr>
+        <tr>
+          <td><strong>SEO Content Writer</strong></td>
+          <td>Marketing</td>
+          <td class="risk-high">High</td>
+          <td>Formulaic structure, keyword targeting, low originality</td>
+        </tr>
+        <tr>
+          <td><strong>Translation (General)</strong></td>
+          <td>Language Services</td>
+          <td class="risk-high">High</td>
+          <td>Non-specialized translation is already AI-grade</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>If your role is on this list, the move isn't panic — it's repositioning. More on that below.</p>
+
+    <h2>The Medium-Risk Roles (Compression, Not Replacement)</h2>
+
+    <p>These roles won't disappear. But the number of people needed to do them will shrink significantly. One senior professional with AI tools will do the work that used to require a team of five.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Industry</th>
+          <th>Risk Level</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mid-Level Marketing Manager</strong></td>
+          <td>Marketing</td>
+          <td class="risk-med">Medium</td>
+          <td>Execution is automatable; strategy and stakeholder management aren't</td>
+        </tr>
+        <tr>
+          <td><strong>Financial Analyst</strong></td>
+          <td>Finance</td>
+          <td class="risk-med">Medium</td>
+          <td>Modeling and data processing compress; interpretation and advisory don't</td>
+        </tr>
+        <tr>
+          <td><strong>Project Manager</strong></td>
+          <td>Operations</td>
+          <td class="risk-med">Medium</td>
+          <td>Status tracking automates; stakeholder alignment and risk calls don't</td>
+        </tr>
+        <tr>
+          <td><strong>Graphic Designer (Production)</strong></td>
+          <td>Design</td>
+          <td class="risk-med">Medium</td>
+          <td>Asset production compresses; creative direction and brand judgment don't</td>
+        </tr>
+        <tr>
+          <td><strong>Recruiter (Sourcing)</strong></td>
+          <td>HR</td>
+          <td class="risk-med">Medium</td>
+          <td>Profile matching automates; candidate assessment and closing don't</td>
+        </tr>
+        <tr>
+          <td><strong>Legal (Contract Review)</strong></td>
+          <td>Legal</td>
+          <td class="risk-med">Medium</td>
+          <td>Standard contract review automates; negotiation and strategy don't</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The professionals in these roles who thrive will be the ones who shift their identity from "I do the work" to "I direct the work and make the calls AI can't."</p>
+
+    <h2>The Low-Risk Roles (Actually Increasing in Value)</h2>
+
+    <p>Counterintuitively, some roles become <em>more</em> valuable in the AI era. Not because they're immune to AI, but because AI increases the demand for human judgment.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Industry</th>
+          <th>Risk Level</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Strategy Consultant</strong></td>
+          <td>Consulting</td>
+          <td class="risk-low">Low</td>
+          <td>AI produces analysis; humans produce judgment calls under uncertainty</td>
+        </tr>
+        <tr>
+          <td><strong>Senior Engineer (Architecture)</strong></td>
+          <td>Technology</td>
+          <td class="risk-low">Low</td>
+          <td>AI writes code; humans design systems and make tradeoff decisions</td>
+        </tr>
+        <tr>
+          <td><strong>Sales (Enterprise)</strong></td>
+          <td>Sales</td>
+          <td class="risk-low">Low</td>
+          <td>Relationship building, trust, and negotiation are deeply human</td>
+        </tr>
+        <tr>
+          <td><strong>Product Manager</strong></td>
+          <td>Technology</td>
+          <td class="risk-low">Low</td>
+          <td>Prioritization under ambiguity, stakeholder alignment, vision</td>
+        </tr>
+        <tr>
+          <td><strong>Executive Coach</strong></td>
+          <td>Professional Dev</td>
+          <td class="risk-low">Low</td>
+          <td>Pattern recognition + accountability + human context = irreplaceable</td>
+        </tr>
+        <tr>
+          <td><strong>Creative Director</strong></td>
+          <td>Design/Marketing</td>
+          <td class="risk-low">Low</td>
+          <td>Taste, brand intuition, and cultural context are not automatable</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>The question isn't "will AI replace my job?" It's "can I shift my value from execution to judgment before the market forces me to?"</blockquote>
+
+    <h2>The Timeline Nobody Wants to Hear</h2>
+
+    <p>Here's what the data suggests about timing:</p>
+
+    <ul>
+      <li><strong>Now — 2025:</strong> High-risk roles already seeing compression. Freelance content writers, entry-level analysts, basic support roles. If you're in this bucket, you should be repositioning <em>now</em>, not next quarter.</li>
+      <li><strong>2025 — 2027:</strong> Medium-risk roles hit the inflection point. Companies realize they can do the same output with 40% fewer people — or 40% more output with the same people. The ones who've learned to orchestrate AI keep their jobs. The ones who haven't become the "before" in a restructuring deck.</li>
+      <li><strong>2027+:</strong> The new equilibrium. AI-augmented professionals are the standard. Non-augmented professionals are the exception — and not in a good way.</li>
+    </ul>
+
+    <p>The window for proactive repositioning is open. It won't stay open forever.</p>
+
+    <h2>What to Do If Your Role Is at Risk</h2>
+
+    <h3>If you're in a high-risk role:</h3>
+    <p>Stop trying to get better at the execution tasks. You will not out-execute AI. Instead, move one layer up. If you're a junior copywriter, become a content strategist. If you're a data entry specialist, become an operations analyst. The execution becomes AI-assisted; the judgment becomes your value.</p>
+
+    <h3>If you're in a medium-risk role:</h3>
+    <p>You have more time but less urgency. Use it. Build your AI orchestration stack now. Learn to direct AI tools for the execution parts of your job. Start documenting and communicating the judgment you bring — the decisions, the stakeholder management, the pattern recognition. Make that visible.</p>
+
+    <h3>If you're in a low-risk role:</h3>
+    <p>Don't get comfortable. Low risk doesn't mean no risk. The composition of your role will shift. Embrace AI tools to handle the execution parts so you can spend more time on the judgment layer. The professionals who thrive will be the ones who use AI to amplify their judgment, not the ones who ignore it.</p>
+
+    <h2>The Uncomfortable Truth</h2>
+
+    <p>Most professionals reading this will nod, agree, and do nothing. Not because they don't believe it, but because the shift feels abstract until it's personal. Until their company restructures. Until their role gets compressed. Until they're updating their LinkedIn and realizing their skill description reads like a list of things AI now does for free.</p>
+
+    <p>The professionals who act now — who reposition before they're forced to — will be the ones who come out ahead. Not because they're smarter. Because they moved first.</p>
+
+    <div class="article-cta">
+      <h3>Want to know your exact risk score?</h3>
+      <p>Take the free 2-minute Career Risk Assessment. You'll get a personalised displacement risk score across 289 professions and 26 industries — plus a plan based on your result.</p>
+      <a href="../career-risk-assessment.html">Take the Free Quiz →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
