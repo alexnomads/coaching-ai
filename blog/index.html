@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Alessandro Capezza | AI Era Career Coach</title>
+<meta name="description" content="Practical strategies for mid-career professionals navigating the AI era. Career positioning, AI tools, and staying relevant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.blog-header{padding:8rem 1.5rem 4rem;max-width:900px;margin:0 auto;}
+@media (min-width:768px){.blog-header{padding:10rem 3.5rem 6rem;}}
+.blog-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.blog-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1rem;}
+.blog-title em{font-style:italic;color:var(--green-deep);}
+.blog-subtitle{font-size:1.1rem;color:var(--muted);max-width:600px;line-height:1.6;}
+.blog-grid{max-width:900px;margin:0 auto;padding:0 1.5rem 6rem;display:flex;flex-direction:column;gap:0;}
+@media (min-width:768px){.blog-grid{padding:0 3.5rem 8rem;}}
+.blog-card{border-top:1px solid var(--border);padding:2.5rem 0;display:flex;flex-direction:column;gap:1rem;text-decoration:none;color:inherit;transition:background 0.2s;}
+@media (min-width:768px){.blog-card{padding:3rem 0;}}
+.blog-card:last-child{border-bottom:1px solid var(--border);}
+.blog-card:hover{background:rgba(159,232,112,0.03);padding-left:1rem;padding-right:1rem;}
+.blog-card-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.blog-card-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.blog-card-title{font-family:'Fraunces',serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;line-height:1.2;letter-spacing:-0.02em;}
+.blog-card:hover .blog-card-title{color:var(--green-deep);}
+.blog-card-excerpt{font-size:1rem;color:var(--muted);line-height:1.6;max-width:650px;}
+.blog-card-read{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-deep);font-weight:500;display:inline-flex;align-items:center;gap:0.5rem;}
+.blog-card-read::after{content:'→';transition:transform 0.2s;}
+.blog-card:hover .blog-card-read::after{transform:translateX(4px);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo">Alessandro Capezza</a>
+  <ul class="nav-links">
+    <li><a href="../#method">Method</a></li>
+    <li><a href="../career-risk-assessment.html">Risk Quiz</a></li>
+    <li><a href="../#pricing">Pricing</a></li>
+    <li><a href="./">Blog</a></li>
+  </ul>
+</nav>
+
+<section class="blog-header">
+  <span class="blog-label">Blog</span>
+  <h1 class="blog-title">Strategies for the <em>AI era.</em></h1>
+  <p class="blog-subtitle">Practical insights on career positioning, AI tools, and staying relevant when the rules are changing. No fluff — just what works.</p>
+</section>
+
+<section class="blog-grid">
+
+  <!-- ARTICLE 1 -->
+  <a href="how-to-stay-relevant-ai-era.html" class="blog-card">
+    <div class="blog-card-meta">
+      <span class="blog-card-tag">Career Strategy</span>
+      <span>5 min read</span>
+    </div>
+    <h2 class="blog-card-title">How to Stay Relevant in the AI Era (Without Learning to Code)</h2>
+    <p class="blog-card-excerpt">The professionals who thrive aren't the ones who learn every new tool. They're the ones who reposition from executor to orchestrator. Here's the exact framework.</p>
+    <span class="blog-card-read">Read article</span>
+  </a>
+
+  <!-- ARTICLE 2 -->
+  <a href="which-jobs-ai-will-replace-first.html" class="blog-card">
+    <div class="blog-card-meta">
+      <span class="blog-card-tag">AI & Jobs</span>
+      <span>7 min read</span>
+    </div>
+    <h2 class="blog-card-title">Which Jobs Will AI Replace First (And Which Ones Are Safe)</h2>
+    <p class="blog-card-excerpt">Based on analysis of 289 professions across 26 industries. The data shows a clear pattern — and it's not what most people expect.</p>
+    <span class="blog-card-read">Read article</span>
+  </a>
+
+  <!-- ARTICLE 3 -->
+  <a href="mid-career-pivot-ai-tools.html" class="blog-card">
+    <div class="blog-card-meta">
+      <span class="blog-card-tag">AI Tools</span>
+      <span>6 min read</span>
+    </div>
+    <h2 class="blog-card-title">The AI Tool Stack Every Mid-Career Professional Needs in 2025</h2>
+    <p class="blog-card-excerpt">You don't need 50 tools. You need 5 that actually multiply your output. Here's the stack I use daily — and how to set it up in an afternoon.</p>
+    <span class="blog-card-read">Read article</span>
+  </a>
+
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
