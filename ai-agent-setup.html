@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent Setup — Alessandro Capezza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#f8f6f1;
+  --black:#0d0c0a;
+  --green:#9fe870;
+  --green-deep:#163300;
+  --muted:#7a7670;
+  --border:rgba(13,12,10,0.1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+*{cursor:none!important;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;}
+.cursor.big{width:40px;height:40px;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 3.5rem;
+  mix-blend-mode:difference;
+}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;}
+.nav-back{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);display:flex;align-items:center;gap:0.5rem;transition:opacity 0.2s;}
+.nav-back:hover{opacity:0.6;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:var(--black);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:0 3.5rem 3.5rem;
+  position:relative;overflow:hidden;
+}
+.hero-badge{
+  position:absolute;top:0;left:0;right:0;
+  display:flex;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(248,246,241,0.2);overflow:hidden;z-index:1;
+}
+.hero-badge span{
+  flex:1;padding:1.5rem 3.5rem;
+  border-right:1px solid rgba(248,246,241,0.07);white-space:nowrap;
+}
+.hero-badge span.active{color:var(--green);}
+.hero-main{
+  display:grid;grid-template-columns:1fr auto;
+  gap:4rem;align-items:center;
+  flex:1;padding-top:8rem;position:relative;z-index:1;
+}
+.hero-left{}
+.hero-tag{
+  display:inline-block;
+  font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;
+  border:1px solid rgba(159,232,112,0.3);color:var(--green);
+  padding:0.3rem 0.9rem;margin-bottom:2rem;
+}
+.hero-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(3.5rem,8vw,9rem);
+  font-weight:900;line-height:0.9;letter-spacing:-0.04em;
+  color:var(--white);margin-bottom:2.5rem;
+}
+.hero-title em{font-style:italic;color:var(--green);}
+.hero-sub{
+  font-size:1rem;line-height:1.75;
+  color:rgba(248,246,241,0.5);max-width:420px;margin-bottom:3rem;
+}
+.hero-cta-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--green);color:var(--black);
+  padding:1rem 2rem;font-size:0.75rem;letter-spacing:0.1em;
+  text-transform:uppercase;font-weight:500;
+  border:none;text-decoration:none;white-space:nowrap;
+  transition:background 0.2s;
+}
+.btn-primary:hover{background:#7de050;}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:none;color:rgba(248,246,241,0.6);
+  padding:1rem 2rem;font-size:0.75rem;letter-spacing:0.1em;
+  text-transform:uppercase;font-weight:500;
+  border:1px solid rgba(248,246,241,0.2);text-decoration:none;
+  transition:all 0.2s;
+}
+.btn-secondary:hover{border-color:rgba(248,246,241,0.5);color:var(--white);}
+.hero-right{
+  display:flex;flex-direction:column;gap:1rem;
+  min-width:260px;
+}
+.hero-stat{
+  border:1px solid rgba(248,246,241,0.08);
+  padding:1.5rem;
+}
+.hero-stat-num{
+  font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;
+  letter-spacing:-0.04em;line-height:1;color:var(--green);margin-bottom:0.3rem;
+}
+.hero-stat-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(248,246,241,0.3);}
+.hero-scroll{
+  font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(248,246,241,0.25);display:flex;align-items:center;gap:0.8rem;
+  padding-top:3rem;position:relative;z-index:1;
+}
+.hero-scroll::before{content:'';display:block;width:1.5rem;height:1px;background:currentColor;}
+
+/* ── MARQUEE ── */
+.marquee-strip{background:var(--green);overflow:hidden;padding:0.85rem 0;}
+.marquee-track{display:flex;gap:3rem;white-space:nowrap;animation:marquee 18s linear infinite;width:max-content;}
+.marquee-track span{font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;font-style:italic;color:var(--black);letter-spacing:-0.01em;}
+.marquee-track .dot{color:var(--green-deep);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── SHARED SECTION ── */
+section{padding:6rem 3.5rem;border-top:1px solid var(--border);}
+.section-label{
+  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1rem;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.section-label::before{content:'';display:block;width:2rem;height:1px;background:currentColor;}
+.section-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem,4vw,4rem);
+  font-weight:900;line-height:0.95;letter-spacing:-0.04em;margin-bottom:1rem;
+}
+.section-title em{font-style:italic;color:var(--green);}
+.section-sub{font-size:0.95rem;line-height:1.75;color:var(--muted);max-width:500px;margin-bottom:3rem;}
+
+/* ── WHAT YOU GET — hover cards ── */
+.what-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);
+  border-left:1px solid var(--border);
+}
+.what-card{
+  padding:3rem 2.5rem;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  display:flex;flex-direction:column;gap:1rem;
+  transition:background 0.3s;
+  position:relative;
+}
+.what-card:hover{background:var(--green-deep);}
+.what-card:hover .what-num{color:rgba(159,232,112,0.15);}
+.what-card:hover .what-title{color:var(--green);}
+.what-card:hover .what-desc{color:rgba(159,232,112,0.6);}
+.what-card:hover .fw-line{background:var(--green);}
+.what-num{
+  font-family:'Fraunces',serif;font-size:3.5rem;font-weight:900;
+  letter-spacing:-0.05em;line-height:1;color:rgba(13,12,10,0.07);
+  transition:color 0.3s;
+}
+.what-title{
+  font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;
+  letter-spacing:-0.02em;line-height:1.2;transition:color 0.3s;
+}
+.what-desc{font-size:0.85rem;line-height:1.7;color:var(--muted);transition:color 0.3s;flex:1;}
+.fw-line{position:absolute;bottom:0;left:0;right:0;height:2px;background:transparent;transition:background 0.3s;}
+
+/* ── HOW IT WORKS — dark bg ── */
+.how-section{background:var(--black);border-top:1px solid #1a1917;}
+.how-section .section-label{color:rgba(248,246,241,0.25);}
+.how-section .section-title{color:var(--white);}
+.how-section .section-sub{color:rgba(248,246,241,0.4);}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);}
+.how-step{
+  padding:3rem 2.5rem;
+  border-right:1px solid rgba(248,246,241,0.07);
+  position:relative;transition:background 0.25s;
+}
+.how-step:last-child{border-right:none;}
+.how-step:hover{background:rgba(248,246,241,0.03);}
+.how-step:hover .fw-line{background:var(--green);}
+.how-step-num{
+  font-family:'Fraunces',serif;font-size:4rem;font-weight:900;
+  letter-spacing:-0.05em;line-height:1;color:rgba(248,246,241,0.07);
+  margin-bottom:2rem;
+}
+.how-step-time{
+  display:inline-block;font-size:0.58rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--green);
+  border:1px solid rgba(159,232,112,0.25);padding:0.2rem 0.6rem;
+  margin-bottom:1.2rem;
+}
+.how-step h3{
+  font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;
+  letter-spacing:-0.02em;color:var(--white);margin-bottom:0.7rem;line-height:1.2;
+}
+.how-step p{font-size:0.83rem;line-height:1.75;color:rgba(248,246,241,0.38);}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.price-col{
+  padding:3rem;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.price-col:last-child{border-right:none;}
+.price-col.featured{background:var(--black);color:var(--white);}
+.price-col.featured .p-type,
+.price-col.featured .p-period,
+.price-col.featured .p-desc,
+.price-col.featured .p-features li{color:rgba(248,246,241,0.45);}
+.price-col.featured hr{border-color:rgba(248,246,241,0.1);}
+.p-type{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;}
+.p-num{
+  font-family:'Fraunces',serif;font-size:4.5rem;font-weight:900;
+  line-height:1;letter-spacing:-0.05em;margin-bottom:0.2rem;
+}
+.p-num sup{font-size:1.8rem;vertical-align:super;}
+.p-period{font-size:0.7rem;color:var(--muted);margin-bottom:2rem;}
+hr.p-div{border:none;border-top:1px solid var(--border);margin:0 0 1.5rem;}
+.p-features{list-style:none;display:flex;flex-direction:column;gap:0.6rem;flex:1;}
+.p-features li{font-size:0.84rem;display:flex;align-items:flex-start;gap:0.6rem;}
+.p-features li::before{content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-top:0.45rem;flex-shrink:0;}
+.p-features.dark li{color:rgba(248,246,241,0.55);}
+.btn-price{
+  display:block;text-align:center;margin-top:2.5rem;
+  padding:0.9rem 1.2rem;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;font-weight:500;transition:all 0.2s;
+  border:1px solid var(--border);color:var(--black);background:none;width:100%;
+}
+.btn-price:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+.price-col.featured .btn-price{background:var(--green);color:var(--black);border-color:var(--green);}
+.price-col.featured .btn-price:hover{background:#7de050;border-color:#7de050;}
+.price-note{
+  margin-top:1rem;font-size:0.7rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--green);text-align:center;
+}
+
+/* ── FAQ ── */
+.faq-list{margin-top:2rem;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item:first-child{border-top:1px solid var(--border);}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;
+  font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;
+  letter-spacing:-0.01em;color:var(--black);
+  padding:1.5rem 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;transition:color 0.2s;
+}
+.faq-q:hover{color:var(--green-deep);}
+.faq-icon{
+  font-size:1.2rem;color:var(--muted);
+  transition:transform 0.25s;flex-shrink:0;
+  font-family:'Instrument Sans',sans-serif;font-weight:400;
+}
+.faq-a{
+  font-size:0.9rem;line-height:1.8;color:var(--muted);
+  padding-bottom:1.5rem;display:none;max-width:600px;
+}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-item.open .faq-q{color:var(--green-deep);}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  background:var(--green);
+  border-top:none;
+  padding:6rem 3.5rem;
+  display:grid;grid-template-columns:1fr auto;
+  gap:4rem;align-items:center;
+}
+.final-cta .section-label{color:rgba(22,51,0,0.5);}
+.final-cta .section-label::before{background:rgba(22,51,0,0.4);}
+.final-cta-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:900;line-height:0.95;letter-spacing:-0.04em;
+  color:var(--black);
+}
+.final-cta-title em{font-style:italic;}
+.final-cta-sub{font-size:0.95rem;line-height:1.7;color:rgba(13,12,10,0.55);margin-top:1rem;max-width:400px;}
+.btn-cta-dark{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:var(--green-deep);color:var(--green);
+  padding:1.2rem 2.5rem;font-size:0.78rem;letter-spacing:0.1em;
+  text-transform:uppercase;font-weight:500;
+  border:none;text-decoration:none;white-space:nowrap;
+  transition:opacity 0.2s;flex-shrink:0;
+}
+.btn-cta-dark:hover{opacity:0.85;}
+.btn-cta-note{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(13,12,10,0.4);margin-top:0.75rem;text-align:center;}
+
+/* ── FOOTER ── */
+footer{
+  padding:2rem 3.5rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.foot-links{display:flex;gap:2rem;list-style:none;}
+.foot-links a{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color 0.2s;}
+.foot-links a:hover{color:var(--green-deep);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-tag,.hero-title,.hero-sub,.hero-cta-row{animation:fadeUp 0.8s ease forwards;opacity:0;}
+.hero-tag{animation-delay:0.05s;}
+.hero-title{animation-delay:0.15s;}
+.hero-sub{animation-delay:0.25s;}
+.hero-cta-row{animation-delay:0.35s;}
+.hero-right{animation:fadeUp 0.8s ease 0.3s forwards;opacity:0;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:1.2rem 1.5rem;mix-blend-mode:normal;background:var(--black);}
+  .nav-logo,.nav-back{color:var(--white);}
+  .hero{padding:0 1.5rem 2.5rem;}
+  .hero-badge span{padding:1.2rem 1.5rem;}
+  .hero-main{grid-template-columns:1fr;padding-top:6rem;}
+  .hero-right{flex-direction:row;flex-wrap:wrap;}
+  .hero-stat{flex:1;min-width:120px;}
+  .what-grid{grid-template-columns:1fr 1fr;}
+  .how-steps{grid-template-columns:1fr;}
+  .how-step{border-right:none;border-bottom:1px solid rgba(248,246,241,0.07);}
+  .pricing-grid{grid-template-columns:1fr;}
+  .price-col{border-right:none;border-bottom:1px solid var(--border);}
+  .final-cta{grid-template-columns:1fr;gap:2rem;}
+  section{padding:4rem 1.5rem;}
+  .how-section{padding:4rem 1.5rem;}
+  .final-cta{padding:4rem 1.5rem;}
+  footer{flex-direction:column;gap:1.5rem;padding:2rem 1.5rem;text-align:center;}
+  *{cursor:auto!important;}
+  .cursor{display:none;}
+}
+@media(max-width:500px){
+  .what-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Alessandro Capezza</a>
+  <a href="index.html" class="nav-back">← Back to coaching</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border:none;padding:0 3.5rem 3.5rem;">
+  <div class="hero-badge">
+    <span>AI Career Coaching</span>
+    <span>Agent Setup</span>
+    <span class="active">New Service · Live Setup ↗</span>
+  </div>
+
+  <div class="hero-main">
+    <div class="hero-left">
+      <div class="hero-tag">New · Agent Setup Service</div>
+      <h1 class="hero-title">Your AI employee.<br><em>Already running.</em></h1>
+      <p class="hero-sub">I set up a personal AI agent that knows your business, works 24/7, and messages you on Telegram. You just talk to it.</p>
+      <div class="hero-cta-row">
+        <a href="mailto:hello@alessandrocapezza.com?subject=Agent Setup Call" class="btn-primary">Book Setup Call ↗</a>
+        <a href="#how" class="btn-secondary">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat reveal">
+        <div class="hero-stat-num">45min</div>
+        <div class="hero-stat-label">Setup call · live by end</div>
+      </div>
+      <div class="hero-stat reveal">
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-label">Always on · zero downtime</div>
+      </div>
+      <div class="hero-stat reveal">
+        <div class="hero-stat-num">€0</div>
+        <div class="hero-stat-label">Infra cost · on retainer</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Morning Briefing</span><span class="dot">·</span>
+    <span>Email Monitoring</span><span class="dot">·</span>
+    <span>Calendar Prep</span><span class="dot">·</span>
+    <span>CRM Updates</span><span class="dot">·</span>
+    <span>Web Research</span><span class="dot">·</span>
+    <span>Telegram Native</span><span class="dot">·</span>
+    <span>Always On</span><span class="dot">·</span>
+    <span>Your Model</span><span class="dot">·</span>
+    <span>Morning Briefing</span><span class="dot">·</span>
+    <span>Email Monitoring</span><span class="dot">·</span>
+    <span>Calendar Prep</span><span class="dot">·</span>
+    <span>CRM Updates</span><span class="dot">·</span>
+    <span>Web Research</span><span class="dot">·</span>
+    <span>Telegram Native</span><span class="dot">·</span>
+    <span>Always On</span><span class="dot">·</span>
+    <span>Your Model</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<section id="what">
+  <div class="section-label">What you get</div>
+  <h2 class="section-title reveal">An agent built around<br><em>your</em> business.</h2>
+  <p class="section-sub reveal">Not a generic chatbot. A system that knows your clients, your priorities, your calendar — and acts on them.</p>
+
+  <div class="what-grid">
+    <div class="what-card reveal">
+      <div class="what-num">01</div>
+      <div class="what-title">Morning Briefing</div>
+      <div class="what-desc">Every day before 9am — calendar, emails, and one clear priority. Delivered to your Telegram. No fluff.</div>
+      <div class="fw-line"></div>
+    </div>
+    <div class="what-card reveal">
+      <div class="what-num">02</div>
+      <div class="what-title">Always-On Memory</div>
+      <div class="what-desc">It remembers your clients, your projects, your decisions. Context that builds over time — unlike ChatGPT.</div>
+      <div class="fw-line"></div>
+    </div>
+    <div class="what-card reveal">
+      <div class="what-num">03</div>
+      <div class="what-title">Telegram Native</div>
+      <div class="what-desc">No new apps to learn. You talk to it like a colleague. It responds, acts, and follows up without being asked.</div>
+      <div class="fw-line"></div>
+    </div>
+    <div class="what-card reveal">
+      <div class="what-num">04</div>
+      <div class="what-title">Built for Your Role</div>
+      <div class="what-desc">We fill in your business context, communication style, and priorities together during the setup call. Custom, not templated.</div>
+      <div class="fw-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-label">The Setup Call</div>
+  <h2 class="section-title reveal">45 minutes.<br><em>Live and running.</em></h2>
+  <p class="section-sub reveal">By the end of our call, your agent is active and you've already had your first conversation with it.</p>
+
+  <div class="how-steps">
+    <div class="how-step reveal">
+      <div class="how-step-num">01</div>
+      <div class="how-step-time">10 min</div>
+      <h3>Discovery — we define your agent's job</h3>
+      <p>Your business, clients, priorities, and what you'd delegate if you could. I type while you talk.</p>
+      <div class="fw-line"></div>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-step-num">02</div>
+      <div class="how-step-time">20 min</div>
+      <h3>Build — I set up the agent live</h3>
+      <p>Your USER.md, SOUL.md, first automations — built in front of you, tailored to your exact situation.</p>
+      <div class="fw-line"></div>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-step-num">03</div>
+      <div class="how-step-time">15 min</div>
+      <h3>First message — the wow moment</h3>
+      <p>You message your bot. It responds using your name, knows your business, mentions your priorities. It's live.</p>
+      <div class="fw-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title reveal">Straightforward.<br><em>No retainers.</em></h2>
+  <p class="section-sub reveal">One setup fee. Your agent runs from day one. Optional hosting if you don't want to deal with infrastructure.</p>
+
+  <div class="pricing-grid">
+    <div class="price-col reveal">
+      <div class="p-type">Starter</div>
+      <div class="p-num"><sup>€</sup>299</div>
+      <div class="p-period">One-time setup</div>
+      <hr class="p-div">
+      <ul class="p-features">
+        <li>45-min live setup call</li>
+        <li>Full agent configuration</li>
+        <li>Morning briefing automation</li>
+        <li>Telegram connection</li>
+        <li>1 follow-up session</li>
+      </ul>
+      <button class="btn-price" onclick="window.location='mailto:hello@alessandrocapezza.com?subject=Starter Agent Setup'">Book Setup Call ↗</button>
+    </div>
+
+    <div class="price-col featured reveal">
+      <div class="p-type">Pro</div>
+      <div class="p-num"><sup>€</sup>499</div>
+      <div class="p-period">One-time setup</div>
+      <hr class="p-div">
+      <ul class="p-features dark">
+        <li>Everything in Starter</li>
+        <li>3 custom automations</li>
+        <li>Email + calendar integration</li>
+        <li>CRM memory setup</li>
+        <li>Monthly tune-up call (3 mo)</li>
+      </ul>
+      <button class="btn-price" onclick="window.location='mailto:hello@alessandrocapezza.com?subject=Pro Agent Setup'">Book Pro Setup ↗</button>
+      <div class="price-note">Most popular</div>
+    </div>
+
+    <div class="price-col reveal">
+      <div class="p-type">Retainer</div>
+      <div class="p-num"><sup>€</sup>99</div>
+      <div class="p-period">Per month · after setup</div>
+      <hr class="p-div">
+      <ul class="p-features">
+        <li>Agent hosting on my server</li>
+        <li>Zero infra cost for you</li>
+        <li>Monthly optimisation</li>
+        <li>Priority support</li>
+        <li>New automations on request</li>
+      </ul>
+      <button class="btn-price" onclick="window.location='mailto:hello@alessandrocapezza.com?subject=Agent Retainer'">Learn More ↗</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--white);">
+  <div class="section-label">Questions</div>
+  <h2 class="section-title reveal">The honest <em>answers.</em></h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Do I need any technical knowledge?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">None. You just need Telegram on your phone. I handle everything technical on the setup call. You show up and talk.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What does it actually cost to run?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">With the retainer, €99/month covers everything including hosting. Without retainer, you run it on your own machine — cost is near zero using free AI APIs.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is my data private?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Yes. Your agent runs on dedicated infrastructure. Your conversations, memory files, and business context are never shared or used to train any model.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What if I already work with you on coaching?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Existing coaching clients get €100 off the setup price. The agent becomes an extension of the coaching work — it holds your context between sessions.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How is this different from ChatGPT?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">ChatGPT forgets you after every conversation. Your agent remembers your business, acts proactively, connects to your tools, and messages you without being asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div>
+    <div class="section-label">Ready?</div>
+    <h2 class="final-cta-title reveal">Stop doing it<br><em>manually.</em></h2>
+    <p class="final-cta-sub reveal">45 minutes. Your agent live by the end of the call. From €299, no retainer required.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;">
+    <a href="mailto:hello@alessandrocapezza.com?subject=Agent Setup Call" class="btn-cta-dark reveal">Book Setup Call — from €299 ↗</a>
+    <div class="btn-cta-note">Coaching clients get €100 off</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Alessandro Capezza · AI Agent Setup</p>
+  <ul class="foot-links">
+    <li><a href="https://linkedin.com/in/alessandrocapezza" target="_blank">LinkedIn</a></li>
+    <li><a href="https://x.com/alexNomads" target="_blank">X / Twitter</a></li>
+    <li><a href="mailto:hello@alessandrocapezza.com">Email</a></li>
+  </ul>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
