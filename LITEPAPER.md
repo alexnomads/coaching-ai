@@ -26,7 +26,7 @@ The site is **not** a platform, not a SaaS product, and not a blog. It is a high
 **Contact / Profiles:**
 - LinkedIn: https://linkedin.com/in/alessandrocapezza
 - X/Twitter: https://x.com/alexNomads
-- Email: hello@alessandrocapezza.com (placeholder — update before launch)
+- Email: aicoachalex@gmail.com (placeholder — update before launch)
 
 **Core positioning statement:**
 > "I treat marketing like an engineering problem. I move quickly with small, testable builds. I use agents to multiply output, not replace judgment."
@@ -251,7 +251,7 @@ project/
 
 ## 12. Outstanding Items Before Launch
 
-- [ ] Replace `hello@alessandrocapezza.com` with real email or Calendly link throughout both HTML files
+- [ ] Replace `aicoachalex@gmail.com` with real email or Calendly link throughout both HTML files
 - [ ] Download hero video from Drive, compress, save as `assets/hero.mp4`
 - [ ] Add video to hero section (see Section 7 for implementation)
 - [ ] Set up domain and deploy to hosting

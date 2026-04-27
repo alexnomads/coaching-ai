@@ -90,14 +90,14 @@ Go through both HTML files and verify:
 ### `career-coach-landing.html` (becomes `index.html`)
 - [ ] Nav "Risk Quiz" link → `career-risk-assessment.html` ✓
 - [ ] Quiz strip "Take the Free Quiz" button → `career-risk-assessment.html` ✓
-- [ ] All "Book Diagnostic" buttons → currently `mailto:hello@alessandrocapezza.com?subject=...`
+- [ ] All "Book Diagnostic" buttons → currently `mailto:aicoachalex@gmail.com?subject=...`
   - **Note:** Replace with actual Calendly link when available. For now, mailto is fine.
 - [ ] Footer LinkedIn → `https://linkedin.com/in/alessandrocapezza` ✓
 - [ ] Footer X/Twitter → `https://x.com/alexNomads` ✓
 
 ### `career-risk-assessment.html`
 - [ ] Nav "← Back to Coaching" link → `career-coach-landing.html` (update to `index.html` if renaming)
-- [ ] "Book Diagnostic Call — 29€" result CTA → `mailto:hello@alessandrocapezza.com?subject=...`
+- [ ] "Book Diagnostic Call — 29€" result CTA → `mailto:aicoachalex@gmail.com?subject=...`
   - **Note:** Replace with Calendly when available
 
 ---
