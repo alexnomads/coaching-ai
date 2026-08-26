@@ -407,7 +407,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <div class="fw-step reveal">
       <div class="fw-step-num">01</div>
       <h3>The Diagnostic Call</h3>
-      <p>49€ · 30 minutes. Not a consultation — a structured audit. By the end, you know exactly where you stand and what to do, whether we continue or not.</p>
+      <p>49€ · 50 minutes. Not a consultation — a structured audit. By the end, you know exactly where you stand and what to do, whether we continue or not.</p>
       <div class="fw-line"></div>
     </div>
     <div class="fw-step reveal">
@@ -490,7 +490,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <div class="price-col reveal">
       <div class="p-type">Entry Point</div>
       <div class="p-num"><sup>€</sup>49</div>
-      <div class="p-period">One-time · 30 minutes</div>
+      <div class="p-period">One-time · 50 minutes</div>
       <hr class="p-div">
       <p class="p-desc">A diagnostic audit of your current position. Structured, not a sales call. Immediate clarity on where you stand.</p>
       <ul class="p-features">
@@ -566,7 +566,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <h2 class="cta-headline reveal">Book your<br>diagnostic.<br><em>Today.</em></h2>
     <div class="cta-row reveal">
       <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="btn-cta-main">Reserve Your Spot — 49€ →</a>
-      <div class="cta-aside">30 minutes · immediate clarity<br><strong>Not a sales pitch. A diagnostic audit.</strong></div>
+      <div class="cta-aside">50 minutes · immediate clarity<br><strong>Not a sales pitch. A diagnostic audit.</strong></div>
     </div>
   </div>
 </section>
