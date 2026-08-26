@@ -303,7 +303,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
       <li><a href="#proof">Work</a></li>
       <li><a href="#pricing">Pricing</a></li>
     </ul>
-    <a href="#pricing" class="nav-mobile-cta">Book Diagnostic — 29€</a>
+    <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="nav-mobile-cta">Book Diagnostic — 49€</a>
   </div>
 </nav>
 
@@ -317,7 +317,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <h1 class="hero-type">You got<br><em>comfort-<br>able.</em><br>It's not<br>too late.</h1>
     <div class="hero-aside">
       <p>Mid-career professionals with 5–15 years experience are the most underserved — too senior for cheap AI tools, too specific for generic coaches.</p>
-      <a href="#pricing" class="btn-hero">Book Diagnostic — 29€ ↗</a>
+      <a href="#pricing" class="btn-hero">Book Diagnostic — 49€ ↗</a>
     </div>
   </div>
   <div class="hero-mobile-headline">
@@ -349,8 +349,8 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 
 <div class="marquee-strip">
   <div class="marquee-track">
-    <span>Industrial Era</span><span class="dot">·</span><span>Digital Era</span><span class="dot">·</span><span>AI Era · Today</span><span class="dot">·</span><span>Orchestrate, Don't Compete</span><span class="dot">·</span><span>29€ Diagnostic Audit</span><span class="dot">·</span><span>Stay Relevant</span><span class="dot">·</span>
-    <span>Industrial Era</span><span class="dot">·</span><span>Digital Era</span><span class="dot">·</span><span>AI Era · Today</span><span class="dot">·</span><span>Orchestrate, Don't Compete</span><span class="dot">·</span><span>29€ Diagnostic Audit</span><span class="dot">·</span><span>Stay Relevant</span><span class="dot">·</span>
+    <span>Industrial Era</span><span class="dot">·</span><span>Digital Era</span><span class="dot">·</span><span>AI Era · Today</span><span class="dot">·</span><span>Orchestrate, Don't Compete</span><span class="dot">·</span><span>49€ Diagnostic Audit</span><span class="dot">·</span><span>Stay Relevant</span><span class="dot">·</span>
+    <span>Industrial Era</span><span class="dot">·</span><span>Digital Era</span><span class="dot">·</span><span>AI Era · Today</span><span class="dot">·</span><span>Orchestrate, Don't Compete</span><span class="dot">·</span><span>49€ Diagnostic Audit</span><span class="dot">·</span><span>Stay Relevant</span><span class="dot">·</span>
   </div>
 </div>
 
@@ -407,7 +407,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
     <div class="fw-step reveal">
       <div class="fw-step-num">01</div>
       <h3>The Diagnostic Call</h3>
-      <p>29€ · 30 minutes. Not a consultation — a structured audit. By the end, you know exactly where you stand and what to do, whether we continue or not.</p>
+      <p>49€ · 30 minutes. Not a consultation — a structured audit. By the end, you know exactly where you stand and what to do, whether we continue or not.</p>
       <div class="fw-line"></div>
     </div>
     <div class="fw-step reveal">
@@ -489,7 +489,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   <div class="pricing-grid">
     <div class="price-col reveal">
       <div class="p-type">Entry Point</div>
-      <div class="p-num"><sup>€</sup>29</div>
+      <div class="p-num"><sup>€</sup>49</div>
       <div class="p-period">One-time · 30 minutes</div>
       <hr class="p-div">
       <p class="p-desc">A diagnostic audit of your current position. Structured, not a sales call. Immediate clarity on where you stand.</p>
@@ -499,7 +499,7 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
         <li>Custom pivot direction</li>
         <li>Clear next steps regardless of continuing</li>
       </ul>
-      <a href="/cdn-cgi/l/email-protection#751d1019191a351419100606141b11071a161405100f0f145b161a184a0600171f10160148311c14121b1a06011c165536141919" class="btn-price">Book Diagnostic →</a>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="btn-price">Book Diagnostic →</a>
     </div>
     <div class="price-col featured reveal">
       <div class="p-type">Monthly Engagement</div>
@@ -560,12 +560,12 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 </section>
 
 <section class="final-cta">
-  <div class="cta-bg-text">29€</div>
+  <div class="cta-bg-text">49€</div>
   <div class="cta-inner">
     <div class="cta-label">Ready?</div>
     <h2 class="cta-headline reveal">Book your<br>diagnostic.<br><em>Today.</em></h2>
     <div class="cta-row reveal">
-      <a href="/cdn-cgi/l/email-protection#c7afa2ababa887a6aba2b4b4a6a9a3b5a8a4a6b7a2bdbda6e9a4a8aaf8b4b2a5ada2a4b3fa83aea6a0a9a8b4b3aea4e2f5f784a6ababe2f5f7eae2f5f7868ee2f5f782b5a6" class="btn-cta-main">Reserve Your Spot — 29€ →</a>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="btn-cta-main">Reserve Your Spot — 49€ →</a>
       <div class="cta-aside">30 minutes · immediate clarity<br><strong>Not a sales pitch. A diagnostic audit.</strong></div>
     </div>
   </div>
