@@ -49,11 +49,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;border:none;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
 .btn-primary:hover{background:#7de050;}
 .hero-right{display:flex;flex-direction:column;gap:0;}
-.hero-profile-peek{border-top:1px solid rgba(248,246,241,0.07);padding:1.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
-.hero-profile-peek:last-child{border-bottom:1px solid rgba(248,246,241,0.07);}
-.peek-num{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;letter-spacing:-0.04em;color:rgba(248,246,241,0.12);flex-shrink:0;}
-.peek-label{font-family:'Fraunces',serif;font-size:0.98rem;font-weight:700;letter-spacing:-0.01em;color:rgba(248,246,241,0.4);flex:1;}
-.peek-tag{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);border:1px solid rgba(159,232,112,0.2);padding:0.2rem 0.6rem;flex-shrink:0;}
+
+.persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.9rem;}
+.persona-card{display:block;text-decoration:none;color:inherit;background:rgba(248,246,241,0.02);border:1px solid rgba(248,246,241,0.08);padding:0.9rem;transition:border-color 0.2s,background 0.2s,transform 0.2s;}
+.persona-card:hover{border-color:rgba(159,232,112,0.4);background:rgba(248,246,241,0.04);transform:translateY(-2px);}
+.persona-card-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;margin-bottom:0.75rem;background:var(--black);}
+.persona-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.6rem;}
+.persona-card-num{font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:1.3rem;line-height:1;color:rgba(248,246,241,0.15);}
+.persona-card-badge{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(159,232,112,0.25);padding:0.2rem 0.5rem;white-space:nowrap;}
+.persona-card-cat{font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(248,246,241,0.3);margin-bottom:0.4rem;}
+.persona-card-title{font-family:'Fraunces',serif;font-weight:900;font-size:0.98rem;line-height:1.25;letter-spacing:-0.01em;color:var(--white);margin-bottom:0.65rem;}
+.persona-card-title em{font-style:italic;color:var(--green);}
+.persona-card-pills{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.75rem;}
+.persona-card-pill{font-size:0.58rem;letter-spacing:0.04em;color:rgba(248,246,241,0.4);border:1px solid rgba(248,246,241,0.1);padding:0.2rem 0.5rem;transition:border-color 0.2s,color 0.2s;}
+.persona-card:hover .persona-card-pill{border-color:rgba(159,232,112,0.25);color:rgba(248,246,241,0.7);}
+.persona-card-see{font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(248,246,241,0.3);display:flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s;}
+.persona-card:hover .persona-card-see{color:var(--green);gap:0.6rem;}
 .hero-scroll{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,246,241,0.25);display:flex;align-items:center;gap:0.8rem;padding-top:3rem;position:relative;z-index:1;}
 .hero-scroll::before{content:'';display:block;width:1.5rem;height:1px;background:currentColor;}
 
@@ -189,6 +200,9 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
 .reveal.in{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .persona-grid{grid-template-columns:repeat(2,1fr);}
+}
 @media(max-width:900px){
   nav{padding:1.2rem 1.5rem;mix-blend-mode:normal;background:var(--black);}
   .nav-logo,.nav-back{color:var(--white);}
@@ -198,11 +212,15 @@ footer p{font-size:0.63rem;letter-spacing:0.12em;text-transform:uppercase;color:
   .profile{padding:5rem 1.5rem;}
   .profile-inner,.profile-inner.reverse{grid-template-columns:1fr;gap:3rem;direction:ltr;}
   .profile-bg-num{display:none;}
+  .persona-grid{grid-template-columns:repeat(3,1fr);gap:0.75rem;}
   .notfor{padding:3rem 1.5rem;flex-direction:column;align-items:flex-start;gap:1.5rem;}
   .final-cta{grid-template-columns:1fr;gap:2.5rem;padding:5rem 1.5rem;}
   footer{flex-direction:column;gap:1.5rem;padding:2rem 1.5rem;}
   *{cursor:auto!important;}
   .cursor{display:none;}
+}
+@media(max-width:640px){
+  .persona-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -231,38 +249,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-tag">Who This Is For</div>
       <h1 class="hero-title">If you see<br>yourself <em>here,</em><br>we should talk.</h1>
       <p class="hero-sub">Six real coaching engagements. Six different situations. One common thread — AI is changing the game and you don't want to be caught without a plan.</p>
-      <a href="#profiles" class="btn-primary">See the profiles ↓</a>
+      <a href="#profile-01" class="btn-primary">See the profiles ↓</a>
     </div>
     <div class="hero-right">
-      <div class="hero-profile-peek">
-        <span class="peek-num">01</span>
-        <span class="peek-label">The Operations-Heavy Owner</span>
-        <span class="peek-tag">High urgency</span>
-      </div>
-      <div class="hero-profile-peek">
-        <span class="peek-num">02</span>
-        <span class="peek-label">The Regulated-Industry Specialist</span>
-        <span class="peek-tag">High-stakes systems</span>
-      </div>
-      <div class="hero-profile-peek">
-        <span class="peek-num">03</span>
-        <span class="peek-label">The In-House Marketing Lead</span>
-        <span class="peek-tag">Creative production</span>
-      </div>
-      <div class="hero-profile-peek">
-        <span class="peek-num">04</span>
-        <span class="peek-label">The Multi-Client Freelancer</span>
-        <span class="peek-tag">Scaling solo</span>
-      </div>
-      <div class="hero-profile-peek">
-        <span class="peek-num">05</span>
-        <span class="peek-label">The Sales Pro</span>
-        <span class="peek-tag">Fast ROI</span>
-      </div>
-      <div class="hero-profile-peek">
-        <span class="peek-num">06</span>
-        <span class="peek-label">The Career Changer</span>
-        <span class="peek-tag">Positioning focus</span>
+      <div class="persona-grid">
+        <a href="#profile-01" class="persona-card">
+          <img class="persona-card-img" src="assets/business-owner.png" alt="The Operations-Heavy Owner">
+          <div class="persona-card-top">
+            <span class="persona-card-num">01</span>
+            <span class="persona-card-badge">High urgency</span>
+          </div>
+          <div class="persona-card-cat">Event &amp; Live Production</div>
+          <div class="persona-card-title">The Operations-Heavy <em>Owner</em></div>
+          <div class="persona-card-pills">
+            <span class="persona-card-pill">Owner</span>
+            <span class="persona-card-pill">Ops Lead</span>
+            <span class="persona-card-pill">Team Coordinator</span>
+          </div>
+          <div class="persona-card-see">See this profile →</div>
+        </a>
+
+        <a href="#profile-02" class="persona-card">
+          <img class="persona-card-img" src="assets/engineer.png" alt="The Regulated-Industry Specialist">
+          <div class="persona-card-top">
+            <span class="persona-card-num">02</span>
+            <span class="persona-card-badge">High-stakes systems</span>
+          </div>
+          <div class="persona-card-cat">Infrastructure &amp; Engineering</div>
+          <div class="persona-card-title">The Regulated-Industry <em>Specialist</em></div>
+          <div class="persona-card-pills">
+            <span class="persona-card-pill">Compliance</span>
+            <span class="persona-card-pill">Technical Lead</span>
+            <span class="persona-card-pill">Auditor</span>
+          </div>
+          <div class="persona-card-see">See this profile →</div>
+        </a>
+
+        <a href="#profile-03" class="persona-card">
+          <img class="persona-card-img" src="assets/creative-director.png" alt="The In-House Marketing Lead">
+          <div class="persona-card-top">
+            <span class="persona-card-num">03</span>
+            <span class="persona-card-badge">Creative production</span>
+          </div>
+          <div class="persona-card-cat">Corporate Marketing</div>
+          <div class="persona-card-title">The In-House Marketing <em>Lead</em></div>
+          <div class="persona-card-pills">
+            <span class="persona-card-pill">Creative Director</span>
+            <span class="persona-card-pill">Content Lead</span>
+            <span class="persona-card-pill">Campaign Manager</span>
+          </div>
+          <div class="persona-card-see">See this profile →</div>
+        </a>
+
+        <a href="#profile-04" class="persona-card">
+          <img class="persona-card-img" src="assets/freelancer.png" alt="The Multi-Client Freelancer">
+          <div class="persona-card-top">
+            <span class="persona-card-num">04</span>
+            <span class="persona-card-badge">Scaling solo</span>
+          </div>
+          <div class="persona-card-cat">Digital Marketing Consulting</div>
+          <div class="persona-card-title">The Multi-Client <em>Freelancer</em></div>
+          <div class="persona-card-pills">
+            <span class="persona-card-pill">Consultant</span>
+            <span class="persona-card-pill">Freelance Marketer</span>
+            <span class="persona-card-pill">Virtual Assistant</span>
+          </div>
+          <div class="persona-card-see">See this profile →</div>
+        </a>
+
+        <a href="#profile-05" class="persona-card">
+          <img class="persona-card-img" src="assets/salesman.png" alt="The Sales Pro">
+          <div class="persona-card-top">
+            <span class="persona-card-num">05</span>
+            <span class="persona-card-badge">Fast ROI</span>
+          </div>
+          <div class="persona-card-cat">Sales · Business Development</div>
+          <div class="persona-card-title">The Sales Pro Wanting an <em>Edge</em></div>
+          <div class="persona-card-pills">
+            <span class="persona-card-pill">Account Exec</span>
+            <span class="persona-card-pill">BDR</span>
+            <span class="persona-card-pill">Consultant</span>
+          </div>
+          <div class="persona-card-see">See this profile →</div>
+        </a>
+
+        <a href="#profile-06" class="persona-card">
+          <img class="persona-card-img" src="assets/career-changer.png" alt="The Career Changer">
+          <div class="persona-card-top">
+            <span class="persona-card-num">06</span>
+            <span class="persona-card-badge">Positioning focus</span>
+          </div>
+          <div class="persona-card-cat">Cross-Industry Transition</div>
+          <div class="persona-card-title">The Career <em>Changer</em></div>
+          <div class="persona-card-pills">
+            <span class="persona-card-pill">Career Pivoter</span>
+            <span class="persona-card-pill">Cross-Industry</span>
+            <span class="persona-card-pill">Repositioning</span>
+          </div>
+          <div class="persona-card-see">See this profile →</div>
+        </a>
       </div>
     </div>
   </div>
@@ -293,7 +378,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- ── PROFILE 01 — white ── -->
-<section class="profile" id="profiles">
+<section class="profile" id="profile-01">
   <div class="profile-bg-num">01</div>
   <div class="profile-inner reveal">
     <div class="profile-left">
@@ -329,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ── PROFILE 02 — dark ── -->
-<section class="profile dark">
+<section class="profile dark" id="profile-02">
   <div class="profile-bg-num">02</div>
   <div class="profile-inner reverse reveal">
     <div class="profile-left">
@@ -365,7 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ── PROFILE 03 — white ── -->
-<section class="profile">
+<section class="profile" id="profile-03">
   <div class="profile-bg-num">03</div>
   <div class="profile-inner reveal">
     <div class="profile-left">
@@ -401,7 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ── PROFILE 04 — dark ── -->
-<section class="profile dark">
+<section class="profile dark" id="profile-04">
   <div class="profile-bg-num">04</div>
   <div class="profile-inner reverse reveal">
     <div class="profile-left">
@@ -437,7 +522,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ── PROFILE 05 — white ── -->
-<section class="profile">
+<section class="profile" id="profile-05">
   <div class="profile-bg-num">05</div>
   <div class="profile-inner reveal">
     <div class="profile-left">
@@ -472,7 +557,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ── PROFILE 06 — dark ── -->
-<section class="profile dark">
+<section class="profile dark" id="profile-06">
   <div class="profile-bg-num">06</div>
   <div class="profile-inner reverse reveal">
     <div class="profile-left">
