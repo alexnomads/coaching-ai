@@ -285,6 +285,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     color: #172D07;
     font-weight: 600;
   }
+  .aicoach-optional-label {
+    font-size: 12px;
+    color: #666;
+    margin: 14px 0 8px;
+    font-weight: 600;
+  }
+  #aicoach-name-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .aicoach-radio-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #3a3a38;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .aicoach-radio-row input[type="radio"] {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  #aicoach-situation-other-input {
+    width: calc(100% - 26px);
+    margin-left: 26px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    display: none;
+  }
 </style>
 
 <div id="aicoach-interstitial-overlay">
@@ -304,6 +345,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>Ci stai ancora pensando?</h3>
       <p>Prenditi il tuo tempo. Nel frattempo, ricevi AI Superpowers settimanale — consigli pratici di IA per la tua carriera, una volta a settimana, zero fronzoli.</p>
       <input type="email" id="aicoach-email-input" placeholder="tua@email.com" />
+      <input type="text" id="aicoach-name-input" placeholder="Il tuo nome (opzionale)" />
+      <div class="aicoach-optional-label">La tua situazione attuale (opzionale)</div>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="Lavoro per un'azienda"> Lavoro per un'azienda</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="Sono un imprenditore/imprenditrice"> Sono un imprenditore/imprenditrice</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="Sto studiando / cercando lavoro"> Sto studiando / cercando lavoro</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Altro:</label>
+      <input type="text" id="aicoach-situation-other-input" placeholder="Specifica" />
       <button id="aicoach-email-submit">Voglio i consigli</button>
     </div>
 
@@ -315,6 +363,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function() {
   var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
   var ENTRY_ID = '1582122762'; // Email field on the "AI SUPERPOWERS" form
+  var NAME_ENTRY_ID = '731407510';
+  var SITUATION_ENTRY_ID = '881740245';
 
   var CLICK_KEY = 'aicoach_clicked_book_at';
   var ANSWERED_KEY = 'aicoach_booking_answered';
@@ -366,6 +416,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     $('aicoach-email-panel').style.display = 'block';
   });
 
+  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      $('aicoach-situation-other-input').style.display =
+        (radio.value === '__other_option__' && radio.checked) ? 'block' : 'none';
+    });
+  });
+
   $('aicoach-email-submit').addEventListener('click', function() {
     var email = $('aicoach-email-input').value.trim();
     var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -375,7 +432,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
-    var body = 'entry.' + ENTRY_ID + '=' + encodeURIComponent(email);
+    var params = ['entry.' + ENTRY_ID + '=' + encodeURIComponent(email)];
+
+    var name = $('aicoach-name-input').value.trim();
+    if (name) {
+      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
+    }
+
+    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
+    if (situationRadio) {
+      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationRadio.value));
+      if (situationRadio.value === '__other_option__') {
+        var otherText = $('aicoach-situation-other-input').value.trim();
+        if (otherText) {
+          params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(otherText));
+        }
+      }
+    }
+
+    var body = params.join('&');
 
     fetch(formUrl, {
       method: 'POST',
