@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmed - AI Coach Alex</title>
+<meta name="robots" content="noindex">
+
+<!-- Google Tag Manager (same container as the rest of aicoachalex.com) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<style>
+  :root {
+    --cream: #F7F4EF;
+    --ink: #0F0F0D;
+    --lime: #99E46B;
+    --deep-green: #172D07;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 560px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--deep-green);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--lime);
+    background: var(--ink);
+    padding: 0 6px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #3a3a38;
+    margin-bottom: 12px;
+  }
+  .details {
+    margin-top: 28px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #555;
+    text-align: left;
+  }
+  .cta {
+    margin-top: 32px;
+    display: inline-block;
+    background: var(--ink);
+    color: var(--lime);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- GTM (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="card">
+  <div class="eyebrow">Booking confirmed</div>
+  <h1>You're <em>in.</em></h1>
+  <p>Your diagnostic call is booked. Check your inbox for the calendar invite and a few quick prep questions.</p>
+  <p>Come with one real problem you're facing at work — we'll use it as the case study.</p>
+
+  <div class="details" id="booking-details"></div>
+
+  <a class="cta" href="https://aicoachalex.com/">Back to the site →</a>
+</div>
+
+<script>
+  // Read booking details passed back by YouCanBookMe's redirect URL
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('name') || '';
+  const email = params.get('email') || '';
+  const bookingRef = params.get('ref') || ('booking_' + Date.now());
+  // If you set a different price per page in YCBM later, pass it as &value=XX and read it here.
+  const value = parseFloat(params.get('value')) || 49.00;
+
+  if (email) {
+    document.getElementById('booking-details').innerText =
+      'Confirmed for: ' + (name || email);
+  }
+
+  // Push a real GA4 ecommerce purchase event.
+  // This only fires on THIS page, which only loads after YouCanBookMe
+  // confirms a paid booking — so this is a genuine conversion signal,
+  // not just a click toward one.
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'purchase',
+    ecommerce: {
+      transaction_id: bookingRef,
+      value: value,
+      currency: 'EUR',
+      items: [{
+        item_name: 'Clarity Call - AI Diagnostic',
+        item_category: 'Coaching Session',
+        price: value,
+        quantity: 1
+      }]
+    },
+    user_email: email  // only use this in GTM if you enable Enhanced/Consent-based user data; otherwise ignore
+  });
+</script>
+
+</body>
+</html>
