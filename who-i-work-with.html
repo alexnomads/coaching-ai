@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
 *{cursor:none!important;}
-.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:1000000;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;}
 .cursor.big{width:40px;height:40px;}
 
 /* ── NAV ── */
@@ -791,7 +791,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       <button id="aicoach-email-submit">Send me the tips</button>
     </div>
 
-    <div id="aicoach-thankyou-msg">You're in! Watch your inbox 🎯</div>
+    <div id="aicoach-thankyou-msg">You're in! 🎯</div>
   </div>
 </div>
 

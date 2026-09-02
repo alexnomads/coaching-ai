@@ -65,7 +65,7 @@ gtag('config','G-KL6X6FVDWQ');
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
 *{cursor:none!important;}
-.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;mix-blend-mode:normal;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:1000000;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;mix-blend-mode:normal;}
 .cursor.big{width:40px;height:40px;}
 @media (hover:none) and (pointer:coarse){*{cursor:auto!important;}.cursor{display:none!important;}}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;mix-blend-mode:difference;}
@@ -1306,25 +1306,25 @@ updateProgress(1);
 
 <div id="aicoach-interstitial-overlay">
   <div id="aicoach-interstitial-card">
-    <button id="aicoach-interstitial-close" aria-label="Close">&times;</button>
+    <button id="aicoach-interstitial-close" aria-label="Chiudi">&times;</button>
 
     <div id="aicoach-question-panel">
-      <h3>Did you book your call?</h3>
-      <p>Just checking in — want to make sure you got taken care of.</p>
+      <h3>Hai prenotato la tua call?</h3>
+      <p>Volevo solo verificare — per essere sicuro che tu abbia sistemato tutto.</p>
       <div class="aicoach-btn-row">
-        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Yes, all booked</button>
-        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Not yet</button>
+        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Sì, prenotato</button>
+        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Non ancora</button>
       </div>
     </div>
 
     <div id="aicoach-email-panel">
-      <h3>Still thinking it over?</h3>
-      <p>Take your time. In the meantime, get weekly AI Superpowers — practical AI tips for your career, once a week, no fluff.</p>
-      <input type="email" id="aicoach-email-input" placeholder="you@email.com" />
-      <button id="aicoach-email-submit">Send me the tips</button>
+      <h3>Ci stai ancora pensando?</h3>
+      <p>Prenditi il tuo tempo. Nel frattempo, ricevi AI Superpowers settimanale — consigli pratici di IA per la tua carriera, una volta a settimana, zero fronzoli.</p>
+      <input type="email" id="aicoach-email-input" placeholder="tua@email.com" />
+      <button id="aicoach-email-submit">Voglio i consigli</button>
     </div>
 
-    <div id="aicoach-thankyou-msg">You're in! Watch your inbox 🎯</div>
+    <div id="aicoach-thankyou-msg">Fatto! 🎯</div>
   </div>
 </div>
 
