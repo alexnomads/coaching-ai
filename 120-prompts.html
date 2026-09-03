@@ -68,6 +68,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
     padding: 20px 32px;
     max-width: 1180px;
     margin: 0 auto;
@@ -76,6 +78,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 18px;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  @media (max-width: 640px) {
+    header { flex-direction: column; gap: 14px; padding: 16px 20px; }
+    .nav-links { justify-content: center; gap: 14px; }
   }
   .nav-cta {
     background: var(--ink);
@@ -326,8 +347,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
-  <div class="logo">Alessandro Capezza</div>
-  <a class="nav-cta" href="https://alessandrocapezza.youcanbook.me/">Book Diagnostic — 49€</a>
+  <a class="logo" href="/">Alessandro Capezza</a>
+  <nav class="nav-links">
+    <a href="/#method">Method</a>
+    <a href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/">Blog</a>
+    <a href="/ai-agent-setup.html">Agent Setup</a>
+    <a href="/who-i-work-with.html">Who I Work With</a>
+  </nav>
+  <a class="nav-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€</a>
 </header>
 
 <section class="hero">
