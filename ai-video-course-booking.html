@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Video Course — Alessandro Capezza</title>
+<style>
+  :root{
+    --bg: #0a0a0a;
+    --bg-card: #141414;
+    --bg-card-hover: #191919;
+    --line: #292929;
+    --accent: #b9e35c;
+    --accent-dim: rgba(185,227,92,0.10);
+    --text: #f2efe7;
+    --text-dim: #8f8c85;
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    --font-mono: ui-monospace, SFMono-Regular, 'IBM Plex Mono', Menlo, Consolas, monospace;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  nav{border-bottom:1px solid var(--line);padding:22px 0;}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-family:var(--font-display);font-weight:700;font-size:18px;}
+  .nav-links{display:flex;gap:28px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);}
+  .nav-links a{color:var(--text-dim);text-decoration:none;}
+  .nav-links a:hover{color:var(--accent);}
+  @media(max-width:640px){.nav-links{display:none;}}
+
+  /* hero */
+  .hero{padding:80px 0 60px;border-bottom:1px solid var(--line);}
+  .tag-box{
+    display:inline-block;
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);border:1px solid var(--accent);padding:6px 12px;border-radius:2px;margin-bottom:24px;
+  }
+  h1{font-family:var(--font-display);font-weight:400;font-size:54px;line-height:1.08;margin:0 0 22px;max-width:15ch;}
+  h1 em{color:var(--accent);font-style:italic;}
+  .hero-lede{font-size:16.5px;color:var(--text-dim);max-width:56ch;line-height:1.65;margin-bottom:36px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;
+    padding:14px 22px;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--accent);color:#0a0a0a;font-weight:600;}
+  .btn-secondary{border:1px solid var(--line);color:var(--text);}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+
+  /* section shared */
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  .sec-label{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .sec-label::after{content:'';flex:1;height:1px;background:var(--line);}
+  h2{font-family:var(--font-display);font-weight:400;font-size:32px;margin:0 0 12px;max-width:20ch;}
+  h2 em{color:var(--accent);font-style:italic;}
+  .sec-sub{color:var(--text-dim);font-size:15px;max-width:60ch;margin-bottom:40px;line-height:1.6;}
+
+  /* technique grid */
+  .grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;}
+  .card{background:var(--bg-card);border:1px solid var(--line);border-radius:4px;padding:24px;transition:border-color .18s,transform .18s;}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+  .card-num{font-family:var(--font-display);font-size:26px;font-style:italic;color:var(--line);}
+  .card-tag{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(185,227,92,.35);padding:3px 8px;border-radius:20px;}
+  .card-title{font-family:var(--font-display);font-size:19px;margin-bottom:10px;line-height:1.3;}
+  .card-desc{font-size:13px;color:var(--text-dim);line-height:1.55;margin-bottom:14px;}
+  .prompt-box{
+    background:#0a0a0a;border:1px solid var(--line);border-radius:3px;padding:10px 12px;
+    font-family:var(--font-mono);font-size:11px;color:var(--text-dim);line-height:1.5;
+  }
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr;}h1{font-size:36px;}}
+
+  /* tool compare */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tool-card{background:var(--bg-card);border:1px solid var(--line);border-radius:4px;padding:22px 24px;}
+  .tool-name{font-family:var(--font-display);font-size:20px;margin-bottom:8px;}
+  .tool-note{font-size:13.5px;color:var(--text-dim);line-height:1.55;}
+  @media(max-width:640px){.compare{grid-template-columns:1fr;}}
+
+  /* case study */
+  .case{background:var(--bg-card);border:1px solid var(--line);border-radius:6px;padding:32px;}
+  .case-tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+  .case-title{font-family:var(--font-display);font-size:24px;margin-bottom:16px;}
+  .case-body{font-size:14.5px;color:var(--text-dim);line-height:1.7;margin-bottom:20px;max-width:65ch;}
+  .case-stats{display:flex;gap:32px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--line);}
+  .stat-num{font-family:var(--font-display);font-size:26px;color:var(--accent);font-style:italic;}
+  .stat-label{font-family:var(--font-mono);font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+
+  /* curriculum */
+  .modules{display:flex;flex-direction:column;}
+  .module{display:grid;grid-template-columns:50px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .module:last-child{border-bottom:none;}
+  .mod-num{font-family:var(--font-display);font-size:22px;font-style:italic;color:var(--accent);}
+  .mod-title{font-size:15px;font-weight:600;margin-bottom:4px;}
+  .mod-desc{font-size:13px;color:var(--text-dim);}
+
+  /* final cta */
+  .final-cta{text-align:left;padding:70px 0;}
+  .final-cta h2{font-size:38px;max-width:18ch;}
+  .final-lede{color:var(--text-dim);font-size:15px;max-width:52ch;margin:16px 0 30px;}
+  .note{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);margin-top:14px;}
+
+  footer{padding:32px 0;font-family:var(--font-mono);font-size:11px;color:var(--text-dim);}
+
+  /* tabs */
+  .tab-bar{
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    position:sticky;top:0;z-index:10;
+  }
+  .tab-row{display:flex;gap:4px;}
+  .tab-btn{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--text-dim);background:none;border:none;padding:18px 6px;margin-right:28px;
+    cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
+  }
+  .tab-btn:hover{color:var(--text);}
+  .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  /* prompt builder */
+  .builder-layout{display:grid;grid-template-columns:340px 1fr;gap:32px;align-items:start;}
+  .field-group{margin-bottom:20px;}
+  .field-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;display:block;}
+  select, input[type=text]{
+    width:100%;background:var(--bg-card);border:1px solid var(--line);color:var(--text);
+    padding:11px 12px;border-radius:3px;font-family:var(--font-body);font-size:13.5px;
+  }
+  select:focus, input[type=text]:focus{outline:none;border-color:var(--accent);}
+  .movement-desc{
+    font-size:12.5px;color:var(--text-dim);margin-top:8px;padding:10px 12px;
+    background:var(--bg-card);border-left:2px solid var(--accent-dim);border-radius:0 3px 3px 0;
+    min-height:20px;
+  }
+  .output-box{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:4px;padding:24px;
+  }
+  .output-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px;}
+  .output-text{
+    font-family:var(--font-mono);font-size:13px;color:var(--text);line-height:1.7;
+    min-height:120px;white-space:pre-wrap;margin-bottom:16px;
+  }
+  .output-placeholder{color:var(--text-dim);font-style:italic;}
+  .copy-btn{
+    font-family:var(--font-mono);font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;
+    background:var(--accent);color:#0a0a0a;border:none;padding:11px 18px;border-radius:2px;
+    cursor:pointer;font-weight:600;
+  }
+  .copy-btn:active{opacity:.8;}
+  .copy-btn.copied{background:var(--text-dim);}
+  @media(max-width:860px){.builder-layout{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo">Alessandro Capezza</div>
+    <div class="nav-links">
+      <a href="/index.html#method">Method</a>
+      <a href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/">Blog</a>
+      <a href="/ai-agent-setup.html">Agent Setup</a>
+      <a href="/who-i-work-with.html">Who I Work With</a>
+    </div>
+    <a href="https://alessandrocapezza.youcanbook.me/" class="btn btn-primary" style="padding:10px 18px;font-size:11px;">Book Diagnostic — 49€</a>
+  </div>
+</nav>
+
+<div class="hero wrap">
+  <div class="tag-box">AI Video Course</div>
+  <h1>Direct your AI video like a filmmaker, not a <em>gambler.</em></h1>
+  <div class="hero-lede">Most people fight AI video tools one prompt at a time — characters drift, locations shift, nothing looks consistent enough to put a brand name on. This course teaches the actual production framework: lock consistency before you generate, direct camera and cinematography on purpose, and know which tool to reach for and when.</div>
+  <div class="cta-row">
+    <a href="#curriculum" class="btn btn-primary">See The Curriculum ↓</a>
+    <a href="https://alessandrocapezza.youcanbook.me/" class="btn btn-secondary">Book Lesson →</a>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="wrap tab-row">
+    <button class="tab-btn active" onclick="switchTab('overview', this)">Overview</button>
+    <button class="tab-btn" onclick="switchTab('builder', this)">Prompt Builder</button>
+  </div>
+</div>
+
+<div id="tab-overview" class="tab-panel active">
+
+<section>
+  <div class="wrap">
+    <div class="sec-label">The Framework</div>
+    <h2>Six techniques. <em>One</em> consistent pipeline.</h2>
+    <div class="sec-sub">Not a list of prompt tricks — the actual system used to take an AI video project from a rough idea to a deliverable a real client signed off on.</div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><span class="card-num">01</span><span class="card-tag">Consistency</span></div>
+        <div class="card-title">Character Reference Sheet</div>
+        <div class="card-desc">An 8-section continuity document that locks a character's identity before you generate a single shot — so they don't quietly turn into a different person by shot four.</div>
+        <div class="prompt-box">hair, face structure, build, wardrobe, age, distinguishing features, expression range, camera-facing angle...</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="card-num">02</span><span class="card-tag">Consistency</span></div>
+        <div class="card-title">Location &amp; Props Sheet</div>
+        <div class="card-desc">The companion technique — locks the setting and recurring objects the same way the character sheet locks a face, so your world doesn't shift between cuts either.</div>
+        <div class="prompt-box">time of day, weather, recurring objects, materials, color palette, camera height reference...</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="card-num">03</span><span class="card-tag">Coherence</span></div>
+        <div class="card-title">The Grid Technique</div>
+        <div class="card-desc">Overlaying a grid on a character's face for frame-to-frame facial coherence — a small trick that fixes one of the most common AI-video tells.</div>
+        <div class="prompt-box">grid overlay reference → facial landmark lock → frame-to-frame comparison</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="card-num">04</span><span class="card-tag">Efficiency</span></div>
+        <div class="card-title">Cherry-Pick, Don't Accept</div>
+        <div class="card-desc">Download every variant a generation gives you, keep only the best segments from each, and re-edit — instead of accepting one full generation as final.</div>
+        <div class="prompt-box">generate 4-6 variants → isolate best 2-3s segments → reassemble in edit</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="card-num">05</span><span class="card-tag">Efficiency</span></div>
+        <div class="card-title">Video-to-Video Iteration</div>
+        <div class="card-desc">When a generation is close but not right, iterate on the actual video instead of burning tokens on a full fresh text-to-video generation.</div>
+        <div class="prompt-box">source clip + targeted prompt delta → video-to-video pass → compare</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><span class="card-num">06</span><span class="card-tag">Direction</span></div>
+        <div class="card-title">Prompt Simplification</div>
+        <div class="card-desc">Replace proper nouns, brand names, and place names with plain visual descriptions the model can actually interpret — jargon it doesn't recognize is jargon it ignores.</div>
+        <div class="prompt-box">"Terra Solida paving" → "light beige permeable stone pathway"</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-label">Tool Selection</div>
+    <h2>Knowing <em>which</em> tool matters as much as the prompt.</h2>
+    <div class="sec-sub">Part of the course is a living comparison of the current best AI video tools — not theory, findings from real production work.</div>
+    <div class="compare">
+      <div class="tool-card">
+        <div class="tool-name">Seedance</div>
+        <div class="tool-note">Higher overall generation quality across most shot types — the default choice for the bulk of a sequence.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Kling</div>
+        <div class="tool-note">Stronger specifically at video openings — worth reaching for on the first few seconds of a sequence even when Seedance carries the rest.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="case-study">
+  <div class="wrap">
+    <div class="sec-label">Case Study</div>
+    <h2>Built for a real client, not a demo reel.</h2>
+    <div class="sec-sub">This framework isn't theoretical — it's the exact system behind a live deliverable.</div>
+
+    <div class="case">
+      <div class="case-tag">In-House Marketing Lead · Sustainable Building Materials</div>
+      <div class="case-title">A split-screen sponsor video for a named industry event</div>
+      <div class="case-body">
+        A marketing lead needed a compelling sponsor video for a major industry symposium, with no filmmaking background and no existing framework for directing AI video tools. Using the Character &amp; Location Sheets, a full cinematography spec, and a scripted split-screen concept comparing "without" and "with" scenarios, we built and tested across both Kling and Seedance.
+      </div>
+      <div class="case-stats">
+        <div>
+          <div class="stat-num">9s</div>
+          <div class="stat-label">Shown to client CEO — approved</div>
+        </div>
+        <div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">Tools tested head-to-head</div>
+        </div>
+        <div>
+          <div class="stat-num">1</div>
+          <div class="stat-label">Live industry event sponsorship</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum">
+  <div class="wrap">
+    <div class="sec-label">Curriculum</div>
+    <h2>What the course actually <em>covers.</em></h2>
+    <div class="sec-sub">Six sessions, same structure used in real client work — not a generic "AI video 101."</div>
+
+    <div class="modules">
+      <div class="module">
+        <div class="mod-num">01</div>
+        <div><div class="mod-title">Character Reference Sheets</div><div class="mod-desc">Building your first 8-section continuity document and testing it across multiple shots.</div></div>
+      </div>
+      <div class="module">
+        <div class="mod-num">02</div>
+        <div><div class="mod-title">Location &amp; Props Sheets</div><div class="mod-desc">Locking your setting and recurring objects with the same rigor as your characters.</div></div>
+      </div>
+      <div class="module">
+        <div class="mod-num">03</div>
+        <div><div class="mod-title">Cinematography Direction</div><div class="mod-desc">Writing a real camera/shot spec instead of one-off prompts — camera movement, framing, pacing.</div></div>
+      </div>
+      <div class="module">
+        <div class="mod-num">04</div>
+        <div><div class="mod-title">Tool Selection &amp; Prompting</div><div class="mod-desc">Kling vs. Seedance vs. others — what each is actually good at, and prompt simplification.</div></div>
+      </div>
+      <div class="module">
+        <div class="mod-num">05</div>
+        <div><div class="mod-title">Cherry-Picking &amp; Video-to-Video</div><div class="mod-desc">Getting a full sequence out of imperfect generations without burning your token budget.</div></div>
+      </div>
+      <div class="module">
+        <div class="mod-num">06</div>
+        <div><div class="mod-title">Assembly &amp; Delivery</div><div class="mod-desc">Editing the final cut together and delivering something a real client can approve.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap final-cta">
+  <h2>Learn the system, not just the <em>prompts.</em></h2>
+  <div class="final-lede">50 minutes, same calendar as the diagnostic call — book a slot and we'll go through the framework directly.</div>
+  <div class="cta-row">
+    <a href="https://alessandrocapezza.youcanbook.me/" class="btn btn-primary">Book Lesson →</a>
+  </div>
+  <div class="note">Booking currently runs through the same calendar as the diagnostic call — one €49 slot type. If the course ends up needing its own dedicated booking product/price, that's a quick follow-up change on youcanbook.me.</div>
+</div>
+
+</div><!-- /tab-overview -->
+
+<div id="tab-builder" class="tab-panel">
+  <section style="border-bottom:none;">
+    <div class="wrap">
+      <div class="sec-label">Free Tool</div>
+      <h2>Build a camera movement <em>prompt.</em></h2>
+      <div class="sec-sub">Pick a movement, add your scene details, copy the combined prompt into Kling, Seedance, or whichever tool you're using. Same underlying technique the course teaches, as a standalone reference.</div>
+
+      <div class="builder-layout">
+        <div>
+          <div class="field-group">
+            <label class="field-label">Camera Movement</label>
+            <select id="movementSelect" onchange="updateMovementDesc()"></select>
+            <div class="movement-desc" id="movementDesc">Select a movement to see its description.</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Subject</label>
+            <input type="text" id="fieldSubject" placeholder="e.g. a woman in a red coat">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Location</label>
+            <input type="text" id="fieldLocation" placeholder="e.g. a rain-slicked city street at night">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Scene Action</label>
+            <input type="text" id="fieldAction" placeholder="e.g. walking toward the camera">
+          </div>
+          <div class="field-group">
+            <label class="field-label">Mood / Style</label>
+            <input type="text" id="fieldMood" placeholder="e.g. cinematic, moody, high contrast">
+          </div>
+        </div>
+
+        <div class="output-box">
+          <div class="output-label">Generated Prompt</div>
+          <div class="output-text" id="outputText"><span class="output-placeholder">Fill in the fields on the left to generate a prompt.</span></div>
+          <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /tab-builder -->
+
+<footer>
+  <div class="wrap">aicoachalex.com — AI Video Course</div>
+</footer>
+
+<script>
+const movements = [
+  {cat:"Pan/Tilt", name:"Static shot", desc:"Camera stays completely locked in one position for the whole shot."},
+  {cat:"Pan/Tilt", name:"Pan right", desc:"Camera rotates horizontally in place, sweeping from left to right."},
+  {cat:"Pan/Tilt", name:"Pan left", desc:"Camera rotates horizontally in place, sweeping from right to left."},
+  {cat:"Pan/Tilt", name:"Whip pan right", desc:"A fast, blurred horizontal snap of the camera toward the right."},
+  {cat:"Pan/Tilt", name:"Whip pan left", desc:"A fast, blurred horizontal snap of the camera toward the left."},
+  {cat:"Pan/Tilt", name:"Tilt up", desc:"Camera rotates vertically in place, moving from a lower point to a higher one."},
+  {cat:"Pan/Tilt", name:"Tilt down", desc:"Camera rotates vertically in place, moving from a higher point to a lower one."},
+  {cat:"Zoom/Lens", name:"Slow zoom in", desc:"Lens gradually narrows its field of view, drawing the subject closer over time."},
+  {cat:"Zoom/Lens", name:"Slow zoom out", desc:"Lens gradually widens its field of view, revealing more surrounding space."},
+  {cat:"Zoom/Lens", name:"Fast zoom in", desc:"A quick, decisive narrowing of the lens toward the subject."},
+  {cat:"Zoom/Lens", name:"Fast zoom out", desc:"A quick, decisive widening of the lens away from the subject."},
+  {cat:"Zoom/Lens", name:"Crash zoom in", desc:"An abrupt, punchy snap-zoom toward the subject."},
+  {cat:"Zoom/Lens", name:"Crash zoom out", desc:"An abrupt, punchy snap-zoom away from the subject."},
+  {cat:"Dolly/Track", name:"Dolly in", desc:"Camera physically moves forward in a straight line toward the subject."},
+  {cat:"Dolly/Track", name:"Dolly out", desc:"Camera physically moves backward in a straight line away from the subject."},
+  {cat:"Dolly/Track", name:"Tracking shot", desc:"Camera moves alongside the subject, matching their pace through the scene."},
+  {cat:"Dolly/Track", name:"Follow shot / over-the-shoulder", desc:"Camera trails just behind the subject at shoulder height."},
+  {cat:"Dolly/Track", name:"Reverse tracking / walk-and-talk", desc:"Camera moves backward ahead of a walking subject, keeping their face in frame."},
+  {cat:"Dolly/Track", name:"Side tracking", desc:"Camera runs parallel beside the subject in profile as they move."},
+  {cat:"Dolly/Track", name:"Low tracking", desc:"Camera travels at ground level alongside the subject's motion."},
+  {cat:"Dolly/Track", name:"Vehicle tracking", desc:"Camera moves in step with a vehicle along its route."},
+  {cat:"Dolly/Track", name:"Chase shot", desc:"Camera moves quickly and reactively to keep pace with fast action."},
+  {cat:"Physical Moves", name:"Truck right", desc:"Camera moves sideways to the right along a level path."},
+  {cat:"Physical Moves", name:"Truck left", desc:"Camera moves sideways to the left along a level path."},
+  {cat:"Physical Moves", name:"Pedestal up", desc:"The whole camera rig rises straight upward."},
+  {cat:"Physical Moves", name:"Pedestal down", desc:"The whole camera rig lowers straight downward."},
+  {cat:"Physical Moves", name:"Slider right", desc:"A short, controlled lateral glide of the camera to the right."},
+  {cat:"Physical Moves", name:"Slider left", desc:"A short, controlled lateral glide of the camera to the left."},
+  {cat:"Physical Moves", name:"Push past / pass-by shot", desc:"Camera glides forward, passing close by a foreground object or edge."},
+  {cat:"Physical Moves", name:"Arc right", desc:"Camera curves along a shallow arc around the subject toward the right."},
+  {cat:"Physical Moves", name:"Arc left", desc:"Camera curves along a shallow arc around the subject toward the left."},
+  {cat:"Physical Moves", name:"Orbit clockwise", desc:"Camera circles fully around the subject in a clockwise direction."},
+  {cat:"Physical Moves", name:"Orbit counterclockwise", desc:"Camera circles fully around the subject in a counterclockwise direction."},
+  {cat:"Drone/Crane", name:"Crane up", desc:"Camera rises smoothly through open space on a boom or crane."},
+  {cat:"Drone/Crane", name:"Crane down", desc:"Camera descends smoothly through open space on a boom or crane."},
+  {cat:"Drone/Crane", name:"Drone push in", desc:"An aerial camera glides forward toward the subject or destination."},
+  {cat:"Drone/Crane", name:"Drone pull back", desc:"An aerial camera glides backward, away from the subject."},
+  {cat:"Drone/Crane", name:"Helicopter shot", desc:"A wide, steady aerial shot moving along a broad flight path."},
+  {cat:"Human Camera", name:"Handheld shot", desc:"Camera has natural human sway and micro-movement, as if hand-held."},
+  {cat:"Human Camera", name:"Body-mounted camera / Snorricam", desc:"Camera stays fixed relative to the subject's body while the background moves around them."},
+  {cat:"Specials", name:"First-person view", desc:"Camera adopts the subject's own point of view, moving as they would."},
+  {cat:"Specials", name:"Tilt-shift", desc:"A high angled view with a narrow band of sharp focus, giving a miniature-model look."},
+  {cat:"Specials", name:"Infinite zoom", desc:"A continuous accelerating zoom into a single central point."},
+  {cat:"Specials", name:"Earth zoom out", desc:"A rapid pull-back from ground level all the way out to a planetary view."},
+  {cat:"Specials", name:"Time-lapse", desc:"Camera stays fixed while time visibly speeds forward in the frame."},
+  {cat:"Specials", name:"Pass-through objects", desc:"Camera glides forward through a visible object, gap, or barrier into the space beyond."}
+];
+
+function switchTab(name, btn){
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function populateMovements(){
+  const sel = document.getElementById('movementSelect');
+  const cats = [...new Set(movements.map(m => m.cat))];
+  cats.forEach(cat => {
+    const group = document.createElement('optgroup');
+    group.label = cat;
+    movements.filter(m => m.cat === cat).forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m.name;
+      opt.textContent = m.name;
+      group.appendChild(opt);
+    });
+    sel.appendChild(group);
+  });
+  updateMovementDesc();
+}
+
+function updateMovementDesc(){
+  const sel = document.getElementById('movementSelect');
+  const m = movements.find(x => x.name === sel.value);
+  document.getElementById('movementDesc').textContent = m ? m.desc : '';
+  generatePrompt();
+}
+
+function generatePrompt(){
+  const sel = document.getElementById('movementSelect');
+  const m = movements.find(x => x.name === sel.value);
+  const subject = document.getElementById('fieldSubject').value.trim();
+  const location = document.getElementById('fieldLocation').value.trim();
+  const action = document.getElementById('fieldAction').value.trim();
+  const mood = document.getElementById('fieldMood').value.trim();
+
+  if(!m){
+    document.getElementById('outputText').innerHTML = '<span class="output-placeholder">Fill in the fields on the left to generate a prompt.</span>';
+    return;
+  }
+
+  let parts = [m.name + '. ' + m.desc];
+  if(subject) parts.push('Subject: ' + subject + '.');
+  if(location) parts.push('Setting: ' + location + '.');
+  if(action) parts.push('Action: ' + action + '.');
+  if(mood) parts.push('Mood: ' + mood + '.');
+
+  document.getElementById('outputText').textContent = parts.join(' ');
+}
+
+['fieldSubject','fieldLocation','fieldAction','fieldMood'].forEach(id => {
+  document.getElementById(id).addEventListener('input', generatePrompt);
+});
+
+function copyPrompt(){
+  const text = document.getElementById('outputText').textContent;
+  const btn = document.getElementById('copyBtn');
+  if(!text || text.includes('Fill in the fields')) return;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Prompt'; btn.classList.remove('copied'); }, 1800);
+  });
+}
+
+populateMovements();
+</script>
+
+</body>
+</html>
