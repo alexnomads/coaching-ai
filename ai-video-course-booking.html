@@ -178,6 +178,53 @@ fbq('track', 'PageView');
   .copy-btn:active{opacity:.8;}
   .copy-btn.copied{background:var(--text-dim);}
   @media(max-width:860px){.builder-layout{grid-template-columns:1fr;}}
+
+  /* ===== Popup (shared pattern with rest of site) ===== */
+  #aicoach-interstitial-overlay{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;
+    align-items:center;justify-content:center;padding:20px;
+  }
+  #aicoach-interstitial-card{
+    background:var(--bg-card);color:var(--text);max-width:420px;width:100%;
+    border:1px solid var(--line);border-radius:6px;padding:32px 28px;
+    font-family:var(--font-body);box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    position:relative;max-height:90vh;overflow-y:auto;
+  }
+  #aicoach-interstitial-close{
+    position:absolute;top:14px;right:16px;background:none;border:none;
+    font-size:20px;cursor:pointer;color:var(--text-dim);line-height:1;
+  }
+  #aicoach-interstitial-card h3{
+    font-family:var(--font-display);font-weight:400;font-size:22px;margin:0 0 14px 0;
+  }
+  #aicoach-interstitial-card p{font-size:14.5px;line-height:1.55;color:var(--text-dim);margin:0 0 18px 0;}
+  .aicoach-btn-row{display:flex;gap:10px;}
+  .aicoach-btn{
+    flex:1;padding:12px 16px;border-radius:3px;font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;border:none;
+  }
+  .aicoach-btn-yes{background:var(--accent);color:#0a0a0a;font-weight:600;}
+  .aicoach-btn-no{background:transparent;color:var(--text);border:1px solid var(--line);}
+  #aicoach-email-panel{display:none;margin-top:4px;}
+  .aicoach-field-label{
+    font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--text-dim);
+    margin:14px 0 6px;text-transform:uppercase;letter-spacing:.05em;
+  }
+  #aicoach-name-input, #aicoach-email-input, #aicoach-situation-other-input{
+    width:100%;padding:12px 14px;border-radius:3px;border:1px solid var(--line);
+    background:var(--bg);color:var(--text);font-size:14.5px;margin-bottom:4px;
+    box-sizing:border-box;font-family:var(--font-body);
+  }
+  #aicoach-name-input::placeholder, #aicoach-email-input::placeholder, #aicoach-situation-other-input::placeholder{color:var(--text-dim);}
+  #aicoach-name-input:focus, #aicoach-email-input:focus, #aicoach-situation-other-input:focus{outline:none;border-color:var(--accent);}
+  .aicoach-radio-row{display:flex;align-items:center;gap:8px;font-size:13.5px;padding:6px 0;color:var(--text);}
+  #aicoach-situation-other-input{margin-top:6px;display:none;}
+  #aicoach-email-submit{
+    width:100%;padding:12px 16px;border-radius:3px;font-family:var(--font-mono);
+    font-weight:600;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;
+    cursor:pointer;border:none;background:var(--accent);color:#0a0a0a;margin-top:16px;
+  }
+  #aicoach-thankyou-msg{display:none;font-size:14.5px;color:var(--accent);font-weight:600;}
 </style>
 </head>
 <body>
@@ -199,7 +246,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
       <a href="/ai-video-course-booking.html">AI VideoGen</a>
       <a href="/who-i-work-with.html">Who I Work With</a>
     </div>
-    <a href="https://alessandrocapezza.youcanbook.me/" class="btn btn-primary" style="padding:10px 18px;font-size:11px;">Book Diagnostic — 49€</a>
+    <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="btn btn-primary aicoach-book-link" style="padding:10px 18px;font-size:11px;">Book Diagnostic — 49€</a>
   </div>
 </nav>
 
@@ -209,7 +256,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   <div class="hero-lede">Most people fight AI video tools one prompt at a time — characters drift, locations shift, nothing looks consistent enough to put a brand name on. This course teaches the actual production framework: lock consistency before you generate, direct camera and cinematography on purpose, and know which tool to reach for and when.</div>
   <div class="cta-row">
     <a href="#curriculum" class="btn btn-primary">See The Curriculum ↓</a>
-    <a href="https://alessandrocapezza.youcanbook.me/" class="btn btn-secondary">Book Lesson →</a>
+    <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="btn btn-secondary aicoach-book-link">Book Lesson →</a>
   </div>
 </div>
 
@@ -363,7 +410,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   <h2>Learn the system, not just the <em>prompts.</em></h2>
   <div class="final-lede">50 minutes, same calendar as the diagnostic call — book a slot and we'll go through the framework directly.</div>
   <div class="cta-row">
-    <a href="https://alessandrocapezza.youcanbook.me/" class="btn btn-primary">Book Lesson →</a>
+    <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="btn btn-primary aicoach-book-link">Book Lesson →</a>
   </div>
   <div class="note">Booking currently runs through the same calendar as the diagnostic call — one €49 slot type. If the course ends up needing its own dedicated booking product/price, that's a quick follow-up change on youcanbook.me.</div>
 </div>
@@ -415,6 +462,44 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 <footer>
   <div class="wrap">aicoachalex.com — AI Video Course</div>
 </footer>
+
+<!-- ===== Popup ===== -->
+<div id="aicoach-interstitial-overlay">
+  <div id="aicoach-interstitial-card">
+    <button id="aicoach-interstitial-close" aria-label="Close">&times;</button>
+
+    <div id="aicoach-question-panel">
+      <h3>Did you book your call?</h3>
+      <p>We opened the calendar in a new tab — just checking in, want to make sure you got taken care of.</p>
+      <div class="aicoach-btn-row">
+        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Yes, all booked</button>
+        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Not yet</button>
+      </div>
+    </div>
+
+    <div id="aicoach-email-panel">
+      <h3>Still thinking it over?</h3>
+      <p>Take your time. In the meantime, get weekly AI Superpowers — practical AI tips for your career, once a week, no fluff.</p>
+
+      <div class="aicoach-field-label">Name (optional)</div>
+      <input type="text" id="aicoach-name-input" placeholder="Your name">
+
+      <div class="aicoach-field-label">Your current situation (optional)</div>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am working for a company"> I am working for a company</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am an entrepreneur"> I am an entrepreneur</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am studying / I am looking for employment"> I am studying / I am looking for employment</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Other:</label>
+      <input type="text" id="aicoach-situation-other-input" placeholder="Tell us more">
+
+      <div class="aicoach-field-label">Email</div>
+      <input type="email" id="aicoach-email-input" placeholder="you@email.com">
+
+      <button id="aicoach-email-submit">Send me the tips</button>
+    </div>
+
+    <div id="aicoach-thankyou-msg">You're in! Watch your inbox 🎯</div>
+  </div>
+</div>
 
 <script>
 const movements = [
@@ -535,6 +620,104 @@ function copyPrompt(){
 }
 
 populateMovements();
+</script>
+
+<script>
+/* ============================================================
+   POPUP TRIGGER + LOGIC (same Google Form as the rest of the site)
+   Any "Book" link opens the calendar in a new tab (target="_blank")
+   and, once per session, also surfaces this same-tab check-in popup.
+============================================================ */
+(function() {
+  var popupShownThisSession = sessionStorage.getItem('aicoach_videogen_popup_shown');
+
+  document.querySelectorAll('.aicoach-book-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (!popupShownThisSession) {
+        popupShownThisSession = true;
+        sessionStorage.setItem('aicoach_videogen_popup_shown', '1');
+        setTimeout(function() {
+          document.getElementById('aicoach-interstitial-overlay').style.display = 'flex';
+        }, 600); // small delay so it doesn't feel like it's blocking the click itself
+      }
+    });
+  });
+})();
+
+(function() {
+  var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
+  var EMAIL_ENTRY_ID = '1582122762';
+  var NAME_ENTRY_ID = '731407510';
+  var SITUATION_ENTRY_ID = '881740245';
+
+  function $(id) { return document.getElementById(id); }
+
+  function closeModal() {
+    $('aicoach-interstitial-overlay').style.display = 'none';
+  }
+
+  $('aicoach-interstitial-close').addEventListener('click', closeModal);
+
+  $('aicoach-btn-yes').addEventListener('click', function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'self_reported_booking_yes' });
+    closeModal();
+  });
+
+  $('aicoach-btn-no').addEventListener('click', function() {
+    $('aicoach-question-panel').style.display = 'none';
+    $('aicoach-email-panel').style.display = 'block';
+  });
+
+  // Reveal free-text field when "Other" is picked
+  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      $('aicoach-situation-other-input').style.display =
+        (this.value === '__other_option__') ? 'block' : 'none';
+    });
+  });
+
+  $('aicoach-email-submit').addEventListener('click', function() {
+    var email = $('aicoach-email-input').value.trim();
+    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValid) {
+      $('aicoach-email-input').style.borderColor = '#c0392b';
+      return;
+    }
+
+    var name = $('aicoach-name-input').value.trim();
+    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
+    var situationValue = situationRadio ? situationRadio.value : '';
+    var situationOther = $('aicoach-situation-other-input').value.trim();
+
+    var params = [];
+    params.push('entry.' + EMAIL_ENTRY_ID + '=' + encodeURIComponent(email));
+    if (name) {
+      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
+    }
+    if (situationValue) {
+      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationValue));
+      if (situationValue === '__other_option__' && situationOther) {
+        params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(situationOther));
+      }
+    }
+
+    var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
+    fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.join('&')
+    }).catch(function() { /* no-cors means we can't read the response anyway */ });
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'newsletter_signup' });
+
+    $('aicoach-email-panel').style.display = 'none';
+    $('aicoach-thankyou-msg').style.display = 'block';
+    setTimeout(closeModal, 2200);
+  });
+})();
 </script>
 
 </body>

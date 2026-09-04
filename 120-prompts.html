@@ -374,7 +374,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <a href="/ai-video-course-booking.html">AI VideoGen</a>
     <a href="/who-i-work-with.html">Who I Work With</a>
   </nav>
-  <a class="nav-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€</a>
+  <a class="nav-cta aicoach-book-link" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€</a>
 </header>
 
 <section class="hero">
@@ -397,7 +397,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   <div class="eyebrow">49€ · Ready for more?</div>
   <h2 style="font-family:'Fraunces',serif; font-weight:600; font-size:28px; margin:12px 0;">Prompts get you started. <em>A diagnostic gets you a plan.</em></h2>
   <p style="color:var(--muted); margin-bottom:6px;">50 minutes, one-time, no fluff — where you actually stand and what to do next.</p>
-  <a class="big-btn" href="https://alessandrocapezza.youcanbook.me/">Book Diagnostic — 49€ →</a>
+  <a class="big-btn aicoach-book-link" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€ →</a>
 </div>
 
 <footer>
@@ -636,22 +636,30 @@ var PROMPT_DATA = [
   });
   grid.innerHTML = html;
 
-  // Accordion toggle + popup trigger
+  // Accordion toggle + popup trigger (shared with the Book buttons below)
   var popupShownThisSession = sessionStorage.getItem('aicoach_prompts_popup_shown');
+
+  function maybeShowPopup() {
+    if (popupShownThisSession) return;
+    popupShownThisSession = true;
+    sessionStorage.setItem('aicoach_prompts_popup_shown', '1');
+    setTimeout(function() {
+      document.getElementById('aicoach-interstitial-overlay').style.display = 'flex';
+    }, 600); // small delay so it doesn't feel like it's blocking the click itself
+  }
 
   document.querySelectorAll('.cat-header').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var card = btn.closest('.cat-card');
       card.classList.toggle('open');
-
-      if (!popupShownThisSession) {
-        popupShownThisSession = true;
-        sessionStorage.setItem('aicoach_prompts_popup_shown', '1');
-        setTimeout(function() {
-          document.getElementById('aicoach-interstitial-overlay').style.display = 'flex';
-        }, 600); // small delay so it doesn't feel like it's blocking the click itself
-      }
+      maybeShowPopup();
     });
+  });
+
+  // Book Diagnostic buttons open the calendar in a new tab (target="_blank")
+  // and, once per session, also surface this same-tab check-in popup.
+  document.querySelectorAll('.aicoach-book-link').forEach(function(link) {
+    link.addEventListener('click', maybeShowPopup);
   });
 })();
 
