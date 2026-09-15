@@ -109,7 +109,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .site-logo img{width:100%;height:100%;display:block;}
 .site-logo.scrolled{top:19px;left:56px;width:42px;height:42px;transform:translateX(0);}
 @media(max-width:767px){
-  .site-logo,.site-logo.scrolled{top:15px;left:24px;width:40px;height:40px;transform:translateX(0);}
+  .site-logo{top:14px;left:50%;width:46px;height:46px;transform:translateX(-50%);}
+  .site-logo.scrolled{top:15px;left:24px;width:40px;height:40px;transform:translateX(0);}
 }
 .nav-links{display:none;gap:2rem;list-style:none;}
 @media (min-width:768px){.nav-links{display:flex;}}
@@ -126,6 +127,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-era-track span:last-child{border-right:none;}
 .hero-era-track span.current{color:var(--green);}
 .hero-content{display:flex;flex-direction:column;justify-content:center;gap:1.5rem;z-index:3;padding:2rem 1.5rem;text-align:center;flex-grow:1;}
+@media(max-width:767px){
+  /* Extra top clearance so the centered intro logo (fixed, floating
+     above this content) never overlaps the headline -- there's no
+     hero-era-track element on this page to create a natural gap like
+     there normally would be, and unlike desktop's grid layout, the
+     mobile heading is full-width centered with nowhere to hide beside it. */
+  .hero-content{padding-top:5rem;}
+}
 @media (min-width:768px){.hero-content{grid-column:1/2;grid-row:2;justify-content:space-between;gap:2.5rem;padding:0 3rem 0 3.5rem;text-align:left;}}
 .hero-type{font-family:'Fraunces',serif;font-size:clamp(2.2rem,9vw,9rem);font-weight:900;line-height:0.95;letter-spacing:-0.04em;color:var(--white);}
 @media (min-width:768px){.hero-type{line-height:0.9;}}
