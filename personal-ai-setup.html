@@ -53,6 +53,29 @@ fbq('track', 'PageView');
   .nav-links a:hover{color:var(--ink);}
   @media(max-width:860px){.nav-links{display:none;}}
 
+  .nav-dropdown{position:relative;display:inline-flex;align-items:center;}
+  .nav-dropdown-toggle{cursor:pointer;}
+  .nav-dropdown-toggle::after{content:' \25BE';font-size:0.9em;}
+  .nav-dropdown-menu{
+    position:absolute;top:100%;left:0;margin-top:16px;background:var(--cream);
+    border:1px solid var(--rule);border-radius:2px;min-width:190px;padding:6px 0;display:flex;flex-direction:column;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .15s,transform .15s,visibility .15s;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .nav-dropdown-menu a{padding:10px 16px;white-space:nowrap;color:var(--muted);}
+  .nav-dropdown-menu a:hover{color:var(--ink);}
+
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px;}
+  .nav-hamburger span{display:block;width:22px;height:2px;background:var(--ink);}
+  @media(max-width:860px){.nav-hamburger{display:flex;}}
+  .nav-mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:200;flex-direction:column;padding:80px 28px 28px;overflow-y:auto;}
+  .nav-mobile-menu.open{display:flex;}
+  .nav-mobile-menu a{display:block;padding:16px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+  .nav-mobile-sublabel{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:20px;}
+  .nav-mobile-close{position:fixed;top:22px;right:22px;background:none;border:none;color:var(--ink);font-size:26px;line-height:1;cursor:pointer;z-index:201;padding:10px;}
+
   .btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:14px;padding:12px 20px;text-decoration:none;border-radius:2px;border:1px solid transparent;cursor:pointer;}
   .btn-lime{background:var(--lime);color:var(--ink);}
   .btn-lime:hover{background:#8AD95C;}
@@ -220,11 +243,37 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
       <a href="#skills">The skills</a>
       <a href="#assessment">Self-assessment</a>
       <a href="#pricing">Pricing</a>
+      <span class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">Courses</a>
+        <span class="nav-dropdown-menu">
+          <a href="/ai-video-course-booking.html">AI VideoGen</a>
+          <a href="/voice-ai-agents.html">Voice AI Agents</a>
+          <a href="/personal-ai-setup.html">Personal AI Setup</a>
+          <a href="/120-prompts.html">120 Prompts</a>
+        </span>
+      </span>
       <a href="/who-i-work-with.html">Who I work with</a>
     </div>
     <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime btn-sm" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <button class="nav-mobile-close" id="navMobileClose" aria-label="Close menu">&times;</button>
+  <a href="#skills">The skills</a>
+  <a href="#assessment">Self-assessment</a>
+  <a href="#pricing">Pricing</a>
+  <div class="nav-mobile-sublabel">Courses</div>
+  <a href="/ai-video-course-booking.html">AI VideoGen</a>
+  <a href="/voice-ai-agents.html">Voice AI Agents</a>
+  <a href="/personal-ai-setup.html">Personal AI Setup</a>
+  <a href="/120-prompts.html">120 Prompts</a>
+  <a href="/who-i-work-with.html">Who I work with</a>
+  <a target="_blank" rel="noopener" class="aicoach-book-link" style="color:#5FA83A;" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
+</div>
 
 <header class="hero wrap">
   <div class="eyebrow">Personal AI Setup</div>
@@ -474,7 +523,11 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   <div>
     <a href="https://www.instagram.com/alexislimitless/">Instagram</a> ·
     <a href="https://www.youtube.com/@alexislimitless">YouTube</a> ·
-    <a href="mailto:aicoachalex@gmail.com">Email</a>
+    <a href="mailto:aicoachalex@gmail.com">Email</a> ·
+    <a href="/ai-video-course-booking.html">AI VideoGen</a> ·
+    <a href="/voice-ai-agents.html">Voice AI Agents</a> ·
+    <a href="/personal-ai-setup.html">Personal AI Setup</a> ·
+    <a href="/120-prompts.html">120 Prompts</a>
   </div>
 </footer>
 
@@ -531,6 +584,40 @@ function tog(el){
   else msg = 'Genuinely rare. Worth talking anyway \u2014 people at this level often want to build for their <em>team,</em> not themselves.';
   v.innerHTML = msg;
 }
+</script>
+
+<script>
+/* Nav: "Courses" dropdown (hover on desktop, click-toggle for touch) + mobile hamburger */
+(function() {
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    var toggle = dd.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var wasOpen = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(o) { o.classList.remove('open'); });
+      if (!wasOpen) dd.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(o) { o.classList.remove('open'); });
+    }
+  });
+
+  var hamburger = document.getElementById('navHamburger');
+  var mobileMenu = document.getElementById('navMobileMenu');
+  var mobileClose = document.getElementById('navMobileClose');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() { mobileMenu.classList.add('open'); });
+    if (mobileClose) {
+      mobileClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+    }
+    mobileMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+    });
+  }
+})();
 </script>
 
 <script>

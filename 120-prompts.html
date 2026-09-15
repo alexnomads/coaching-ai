@@ -113,6 +113,24 @@ fbq('track', 'PageView');
     header { flex-direction: column; gap: 14px; padding: 16px 20px; }
     .nav-links { justify-content: center; gap: 14px; }
   }
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-toggle { cursor: pointer; }
+  .nav-dropdown-toggle::after { content: ' \25BE'; font-size: 0.9em; }
+  .nav-dropdown-menu {
+    position: absolute; top: 100%; left: 0; margin-top: 14px;
+    background: var(--cream); border: 1px solid #ddd8cf; border-radius: 8px;
+    min-width: 180px; padding: 6px 0; list-style: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity .15s, transform .15s, visibility .15s;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .nav-dropdown-menu a { display: block; padding: 10px 16px; white-space: nowrap; }
+  @media (max-width: 640px) {
+    .nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: none; display: flex; flex-direction: column; align-items: center; margin-top: 4px; padding: 0; }
+  }
   .nav-cta {
     background: var(--ink);
     color: var(--lime);
@@ -371,9 +389,16 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <a href="/career-risk-assessment.html">Risk Quiz</a>
     <a href="/blog/">Blog</a>
     <a href="/ai-agent-setup.html">Agent Setup</a>
-    <a href="/ai-video-course-booking.html">AI VideoGen</a>
+    <span class="nav-dropdown">
+      <a href="#" class="nav-dropdown-toggle">Courses</a>
+      <span class="nav-dropdown-menu">
+        <a href="/ai-video-course-booking.html">AI VideoGen</a>
+        <a href="/voice-ai-agents.html">Voice AI Agents</a>
+        <a href="/personal-ai-setup.html">Personal AI Setup</a>
+        <a href="/120-prompts.html">120 Prompts</a>
+      </span>
+    </span>
     <a href="/who-i-work-with.html">Who I Work With</a>
-    <a href="/120-prompts.html">120 Prompts</a>
   </nav>
   <a class="nav-cta aicoach-book-link" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€</a>
 </header>
@@ -406,7 +431,11 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   <a href="https://aicoachalex.com/">aicoachalex.com</a> ·
   <a href="https://www.instagram.com/alexislimitless/">Instagram</a> ·
   <a href="https://www.linkedin.com/in/alessandrocapezza/">LinkedIn</a> ·
-  <a href="mailto:aicoachalex@gmail.com">aicoachalex@gmail.com</a>
+  <a href="mailto:aicoachalex@gmail.com">aicoachalex@gmail.com</a><br><br>
+  <a href="/ai-video-course-booking.html">AI VideoGen</a> ·
+  <a href="/voice-ai-agents.html">Voice AI Agents</a> ·
+  <a href="/personal-ai-setup.html">Personal AI Setup</a> ·
+  <a href="/120-prompts.html">120 Prompts</a>
 </footer>
 
 <!-- ===== Popup ===== -->
@@ -446,6 +475,27 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <div id="aicoach-thankyou-msg">You're in! Watch your inbox 🎯</div>
   </div>
 </div>
+
+<script>
+/* Nav "Courses" dropdown: click-toggle (for touch/tablet; desktop also gets hover via CSS) */
+(function() {
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    var toggle = dd.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var wasOpen = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(o) { o.classList.remove('open'); });
+      if (!wasOpen) dd.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(o) { o.classList.remove('open'); });
+    }
+  });
+})();
+</script>
 
 <script>
 /* ============================================================
