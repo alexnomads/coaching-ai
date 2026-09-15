@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice AI Agents — Alessandro Capezza</title>
+<meta name="description" content="Learn to design, evaluate and ship voice AI agents that hold up past the demo — turn-taking, quality measurement, and the right build approach for your team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F4EF;--ink:#0F0F0D;--lime:#99E46B;--green:#172D07;
+    --muted:#6F6B65;--muted-dark:#9A9994;--rule:#E0DBD2;--rule-dark:#2A2A26;
+    --serif:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--lime);outline-offset:3px;}
+
+  nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--cream);z-index:20;}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px;}
+  .brand{font-family:var(--serif);font-weight:600;font-size:17px;text-decoration:none;letter-spacing:-.01em;}
+  .nav-links{display:flex;gap:24px;font-size:13.5px;}
+  .nav-links a{color:var(--muted);text-decoration:none;}
+  .nav-links a:hover{color:var(--ink);}
+  @media(max-width:860px){.nav-links{display:none;}}
+
+  .btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:14px;padding:12px 20px;text-decoration:none;border-radius:2px;border:1px solid transparent;}
+  .btn-lime{background:var(--lime);color:var(--ink);}
+  .btn-lime:hover{background:#8AD95C;}
+  .btn-out{border-color:var(--ink);color:var(--ink);}
+  .btn-out:hover{background:var(--ink);color:var(--cream);}
+  .btn-out-light{border-color:var(--muted-dark);color:var(--cream);}
+  .btn-out-light:hover{background:var(--cream);color:var(--ink);}
+  .btn-sm{padding:9px 15px;font-size:13px;}
+
+  .hero{padding:76px 0 56px;}
+  .eyebrow{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--rule);display:inline-block;padding:6px 12px;border-radius:2px;margin-bottom:26px;}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(36px,6vw,60px);line-height:1.05;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch;}
+  h1 em{font-style:italic;font-weight:500;color:#5FA83A;}
+  .hero p{font-size:18px;color:var(--muted);max-width:56ch;margin:0 0 32px;}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .hero-note{font-size:13.5px;color:var(--muted);margin-top:20px;}
+
+  .ticker{background:var(--lime);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden;padding:11px 0;}
+  .ticker-track{display:flex;gap:34px;white-space:nowrap;width:max-content;animation:slide 44s linear infinite;}
+  @keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media(prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+  .ticker span{font-family:var(--serif);font-weight:600;font-style:italic;font-size:15px;}
+
+  section{padding:72px 0;border-top:1px solid var(--rule);}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,36px);line-height:1.14;letter-spacing:-.02em;margin:0 0 18px;max-width:20ch;}
+  h2 em{font-style:italic;font-weight:500;color:#5FA83A;}
+  .lead{font-size:17px;color:var(--muted);max-width:62ch;margin:0 0 44px;}
+
+  /* demo vs production */
+  .demo-prod{background:var(--ink);color:var(--cream);border-top:none;}
+  .demo-prod h2{color:var(--cream);}
+  .demo-prod .lead{color:var(--muted-dark);}
+  .contrast{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule-dark);}
+  .contrast>div{padding:30px 28px;}
+  .contrast>div:first-child{border-right:1px solid var(--rule-dark);}
+  .c-head{font-family:var(--mono);font-size:12px;color:var(--muted-dark);margin-bottom:18px;}
+  .contrast ul{margin:0;padding-left:18px;color:var(--muted-dark);font-size:15px;}
+  .contrast li{margin-bottom:11px;}
+  .contrast .win li{color:var(--cream);}
+  .contrast .win .c-head{color:var(--lime);}
+  @media(max-width:700px){.contrast{grid-template-columns:1fr;}.contrast>div:first-child{border-right:none;border-bottom:1px solid var(--rule-dark);}}
+
+  /* VAQI */
+  .vaqi{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .vaqi-card{border:1px solid var(--rule);padding:26px 22px;}
+  .vaqi-letter{font-family:var(--serif);font-style:italic;font-weight:600;font-size:38px;color:var(--lime);-webkit-text-stroke:1px var(--ink);line-height:1;margin-bottom:14px;}
+  .vaqi-name{font-family:var(--serif);font-weight:600;font-size:18px;margin-bottom:8px;}
+  .vaqi-body{color:var(--muted);font-size:14.5px;}
+  @media(max-width:820px){.vaqi{grid-template-columns:1fr;}}
+
+  /* build approaches */
+  .approach{display:grid;grid-template-columns:150px 1fr 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--rule);align-items:start;}
+  .approach.head{font-family:var(--mono);font-size:11px;text-transform:none;color:var(--muted);border-top:none;padding-bottom:10px;}
+  .approach-name{font-family:var(--serif);font-weight:600;font-size:16.5px;}
+  .approach-ex{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:4px;}
+  .approach-desc{color:var(--muted);font-size:14.5px;}
+  .approach-fit{color:var(--muted);font-size:14.5px;}
+  @media(max-width:760px){
+    .approach{grid-template-columns:1fr;gap:6px;}
+    .approach.head{display:none;}
+    .approach-desc::before{content:'What it is: ';font-family:var(--mono);font-size:11px;color:var(--muted-dark);}
+    .approach-fit::before{content:'Good fit if: ';font-family:var(--mono);font-size:11px;color:var(--muted-dark);}
+  }
+
+  /* phases */
+  .phase{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--rule);}
+  .phase:first-of-type{border-top:none;}
+  .p-num{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--lime);line-height:1;}
+  .p-title{font-family:var(--serif);font-weight:600;font-size:20px;margin-bottom:7px;}
+  .p-body{color:var(--muted);font-size:15.5px;max-width:60ch;}
+  @media(max-width:640px){.phase{grid-template-columns:44px 1fr;gap:16px;}.p-num{font-size:26px;}}
+
+  /* honesty section */
+  .honest{background:var(--green);color:var(--cream);border-top:none;}
+  .honest h2{color:var(--cream);}
+  .honest .lead{color:#B9C7AC;}
+  .honest-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #2E4A18;}
+  .honest-grid>div{padding:28px 26px;}
+  .honest-grid>div:first-child{border-right:1px solid #2E4A18;}
+  .h-head{font-family:var(--mono);font-size:12px;margin-bottom:16px;}
+  .h-head.yes{color:var(--lime);}
+  .h-head.no{color:#B9C7AC;}
+  .honest-grid ul{margin:0;padding-left:17px;font-size:14.5px;color:#DCE5D5;}
+  .honest-grid li{margin-bottom:10px;}
+  @media(max-width:700px){.honest-grid{grid-template-columns:1fr;}.honest-grid>div:first-child{border-right:none;border-bottom:1px solid #2E4A18;}}
+
+  /* who this is for */
+  .personas{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .persona{border:1px solid var(--rule);padding:24px 22px;}
+  .p-tag{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:10px;}
+  .p-name{font-family:var(--serif);font-weight:600;font-size:18px;margin-bottom:8px;}
+  .p-desc{color:var(--muted);font-size:14.5px;}
+  @media(max-width:700px){.personas{grid-template-columns:1fr;}}
+
+  /* pricing */
+  .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .price{border:1px solid var(--rule);padding:26px 24px;display:flex;flex-direction:column;}
+  .price.feature{border-color:var(--ink);border-width:2px;}
+  .pr-name{font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:6px;}
+  .pr-cost{font-family:var(--mono);font-size:14px;color:var(--muted);margin-bottom:18px;}
+  .price ul{margin:0 0 22px;padding-left:17px;color:var(--muted);font-size:14.5px;flex:1;}
+  .price li{margin-bottom:9px;}
+  @media(max-width:820px){.prices{grid-template-columns:1fr;}}
+
+  details{border-top:1px solid var(--rule);padding:18px 0;}
+  details:last-of-type{border-bottom:1px solid var(--rule);}
+  summary{font-family:var(--serif);font-weight:600;font-size:17.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+';font-family:var(--mono);color:var(--muted);flex-shrink:0;}
+  details[open] summary::after{content:'–';}
+  details p{color:var(--muted);font-size:15.5px;margin:13px 0 0;max-width:66ch;}
+
+  .final{background:var(--ink);color:var(--cream);border-top:none;text-align:left;}
+  .final h2{color:var(--cream);font-size:clamp(30px,4.6vw,46px);max-width:16ch;}
+  .final p{color:var(--muted-dark);font-size:17px;max-width:50ch;margin:0 0 30px;}
+
+  footer{padding:30px 0;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  footer a{color:var(--muted);text-decoration:none;}
+  footer a:hover{color:var(--ink);}
+
+  /* ===== Popup (shared pattern with rest of site) ===== */
+  #aicoach-interstitial-overlay{
+    display:none;position:fixed;inset:0;background:rgba(15,15,13,0.55);z-index:9999;
+    align-items:center;justify-content:center;padding:20px;
+  }
+  #aicoach-interstitial-card{
+    background:var(--cream);color:var(--ink);max-width:420px;width:100%;
+    border-radius:2px;padding:32px 28px;font-family:var(--sans);
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;max-height:90vh;overflow-y:auto;
+  }
+  #aicoach-interstitial-close{
+    position:absolute;top:14px;right:16px;background:none;border:none;
+    font-size:20px;cursor:pointer;color:var(--muted);line-height:1;
+  }
+  #aicoach-interstitial-card h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 14px 0;}
+  #aicoach-interstitial-card p{font-size:15px;line-height:1.5;color:var(--muted);margin:0 0 18px 0;}
+  .aicoach-btn-row{display:flex;gap:10px;}
+  .aicoach-btn{flex:1;padding:12px 16px;border-radius:2px;font-weight:600;font-size:15px;cursor:pointer;border:none;}
+  .aicoach-btn-yes{background:var(--ink);color:var(--lime);}
+  .aicoach-btn-no{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  #aicoach-email-panel{display:none;margin-top:4px;}
+  .aicoach-field-label{
+    font-size:12.5px;font-weight:600;color:var(--muted);
+    margin:14px 0 6px;text-transform:uppercase;letter-spacing:0.03em;
+  }
+  #aicoach-name-input, #aicoach-email-input, #aicoach-situation-other-input{
+    width:100%;padding:12px 14px;border-radius:2px;border:1px solid var(--rule);
+    font-size:15px;margin-bottom:4px;box-sizing:border-box;font-family:inherit;
+  }
+  .aicoach-radio-row{display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0;}
+  #aicoach-situation-other-input{margin-top:6px;display:none;}
+  #aicoach-email-submit{
+    width:100%;padding:12px 16px;border-radius:2px;font-weight:600;font-size:15px;
+    cursor:pointer;border:none;background:var(--green);color:var(--lime);margin-top:16px;
+  }
+  #aicoach-thankyou-msg{display:none;font-size:15px;color:var(--green);font-weight:600;}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/index.html">Alessandro Capezza</a>
+    <div class="nav-links">
+      <a href="#framework">Framework</a>
+      <a href="#build-approach">Build approach</a>
+      <a href="#honest">Scope</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="/who-i-work-with.html">Who I work with</a>
+    </div>
+    <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime btn-sm" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="eyebrow">Voice AI Agents</div>
+  <h1>Anyone can demo a voice agent. Few can make one hold up in <em>production.</em></h1>
+  <p>Voice agents fail in ways text agents don't — they talk over people, go silent at the wrong moment, or can't recover from being interrupted. This track teaches the design and evaluation layer that separates a working demo from something you'd actually ship: turn-taking, quality measurement, and choosing the right way to build.</p>
+  <div class="hero-cta">
+    <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
+    <a class="btn btn-out" href="#framework">See the framework</a>
+  </div>
+  <p class="hero-note">50 minutes, 1:1, online. Same calendar as the rest of my coaching.</p>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Industrial Era</span><span>Digital Era</span><span>AI Era, today</span><span>Orchestrate, don't compete</span><span>39% of skills change by 2030 (WEF)</span><span>Sub-second response is the production benchmark</span>
+    <span>Industrial Era</span><span>Digital Era</span><span>AI Era, today</span><span>Orchestrate, don't compete</span><span>39% of skills change by 2030 (WEF)</span><span>Sub-second response is the production benchmark</span>
+  </div>
+</div>
+
+<section class="demo-prod">
+  <div class="wrap">
+    <h2>A voice agent that works <em>once</em> is not the same as one that works.</h2>
+    <p class="lead">Voice agents don't fail like normal software. They fail as bad conversation — cutting people off, going quiet, repeating themselves. Most tutorials stop at "it worked when I tried it." That's not the bar.</p>
+    <div class="contrast">
+      <div>
+        <div class="c-head">The demo bar</div>
+        <ul>
+          <li>Works when I speak clearly and don't interrupt it</li>
+          <li>"Feels fast enough" is the only latency check</li>
+          <li>No plan for what happens when it mishears you</li>
+          <li>One happy-path conversation, never stress-tested</li>
+          <li>Picked a tool because a tutorial used it</li>
+        </ul>
+      </div>
+      <div class="win">
+        <div class="c-head">The production bar</div>
+        <ul>
+          <li>Measured against real interruption and noise conditions</li>
+          <li>Latency tracked as a number, not a feeling</li>
+          <li>A defined repair pattern for low-confidence moments</li>
+          <li>Tested across many runs, not one lucky take</li>
+          <li>Tool chosen for the use case, with reasons you can defend</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="framework">
+  <div class="wrap">
+    <h2>Voice agents run on one loop. Getting it right is the whole <em>job.</em></h2>
+    <p class="lead">Every voice agent — however it's built — runs the same cycle, over and over, fast enough to feel like a conversation instead of a form.</p>
+
+    <div class="phase">
+      <div class="p-num">1</div>
+      <div>
+        <div class="p-title">Listen</div>
+        <div class="p-body">Capture the user's audio in real time, continuously — not in one big chunk after they stop talking.</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p-num">2</div>
+      <div>
+        <div class="p-title">Understand</div>
+        <div class="p-body">Turn speech into meaning, and work out when the person has actually finished their turn — the single hardest problem in voice UX, and the one that makes agents feel robotic when it's wrong.</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p-num">3</div>
+      <div>
+        <div class="p-title">Reason</div>
+        <div class="p-body">Decide what to say or do. Often this starts before the user has even finished speaking — a well-built agent begins preparing a response early, and discards it cleanly if the person changes direction mid-sentence.</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p-num">4</div>
+      <div>
+        <div class="p-title">Respond &amp; speak</div>
+        <div class="p-body">Generate the reply and stream it back as speech — and stop instantly, mid-sentence if needed, the moment the person starts talking again. An agent that can't interrupt itself will never feel conversational.</div>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:38px;margin-bottom:0;">These four stages don't run one after another — they overlap. That overlap is what makes a voice agent feel human instead of mechanical, and it's the first thing we'll take apart together.</p>
+  </div>
+</section>
+
+<section id="build-approach">
+  <div class="wrap">
+    <h2>Four ways to build one. Only one is usually right for <em>you.</em></h2>
+    <p class="lead">Most people either overbuild (hand-rolling infrastructure they don't need) or underbuild (a no-code tool that can't do what they actually want). The fix is knowing where you sit on this spectrum before you start.</p>
+
+    <div class="approach head">
+      <div>Approach</div><div>What it is</div><div>Good fit if</div>
+    </div>
+    <div class="approach">
+      <div><div class="approach-name">DIY framework</div><div class="approach-ex">e.g. LiveKit, Pipecat</div></div>
+      <div class="approach-desc">You assemble your own speech, reasoning and synthesis components and write the orchestration yourself.</div>
+      <div class="approach-fit">You need full control, proprietary models, or self-hosting — and have real engineering resources behind you.</div>
+    </div>
+    <div class="approach">
+      <div><div class="approach-name">Unified API</div><div class="approach-ex">e.g. an end-to-end runtime</div></div>
+      <div class="approach-desc">One real-time API handles speech and orchestration together, while you keep control over logic and model choice.</div>
+      <div class="approach-fit">You want production performance without building streaming orchestration from scratch.</div>
+    </div>
+    <div class="approach">
+      <div><div class="approach-name">Managed platform</div><div class="approach-ex">e.g. Vapi, Retell</div></div>
+      <div class="approach-desc">A hosted platform with visual builders and pre-configured telephony for common use cases.</div>
+      <div class="approach-fit">Speed to launch and minimal engineering matter most. <strong>This is where most of my students belong.</strong></div>
+    </div>
+    <div class="approach">
+      <div><div class="approach-name">Enterprise suite</div><div class="approach-ex">e.g. large CX platforms</div></div>
+      <div class="approach-desc">Voice is one channel inside a broader, multi-channel customer experience system.</div>
+      <div class="approach-fit">You're procuring for an organisation already committed to one vendor ecosystem.</div>
+    </div>
+
+    <p class="lead" style="margin-top:34px;margin-bottom:0;">On the diagnostic call, we work out where you actually sit — not where a tutorial assumes you sit.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How to know if it's actually <em>good.</em></h2>
+    <p class="lead">"It feels fast" isn't a metric. The Voice Agent Quality Index gives you three concrete numbers instead — you'll learn to track all three on anything you build.</p>
+    <div class="vaqi">
+      <div class="vaqi-card">
+        <div class="vaqi-letter">I</div>
+        <div class="vaqi-name">Interruptions</div>
+        <div class="vaqi-body">How often the agent starts talking before the user has actually finished. High interruption rate is the fastest way to make an agent feel rude.</div>
+      </div>
+      <div class="vaqi-card">
+        <div class="vaqi-letter">M</div>
+        <div class="vaqi-name">Missed responses</div>
+        <div class="vaqi-body">How often the agent fails to reply at all within a reasonable window. Silence reads as broken, not thoughtful.</div>
+      </div>
+      <div class="vaqi-card">
+        <div class="vaqi-letter">L</div>
+        <div class="vaqi-name">Latency</div>
+        <div class="vaqi-body">Time from the user finishing their turn to the agent starting its reply. Sub-second is the bar production systems are held to.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="honest" id="honest">
+  <div class="wrap">
+    <h2>What this track actually <em>covers</em> — and what it doesn't.</h2>
+    <p class="lead">Most AI courses quietly oversell. I'd rather you know exactly what you're getting before you book.</p>
+    <div class="honest-grid">
+      <div>
+        <div class="h-head yes">You'll learn this</div>
+        <ul>
+          <li>How to design the conversation itself — turn-taking, interruption handling, tone</li>
+          <li>How to pick the right build approach for your situation, and defend that choice</li>
+          <li>How to measure quality objectively instead of by feel</li>
+          <li>How to scope a first use case narrow enough to actually finish</li>
+          <li>Where consent, disclosure and EU data rules apply to what you're building</li>
+        </ul>
+      </div>
+      <div>
+        <div class="h-head no">This needs an engineer</div>
+        <ul>
+          <li>Telephony infrastructure — bridging phone networks, call routing</li>
+          <li>Low-level audio engineering — codecs, frame sizing, jitter buffers</li>
+          <li>Custom real-time orchestration written from scratch</li>
+          <li>Self-hosted or edge deployments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum">
+  <div class="wrap">
+    <h2>Who's already <em>asking</em> about this.</h2>
+    <p class="lead">Two live examples of the kind of need this track exists for — described generally, without names.</p>
+    <div class="personas">
+      <div class="persona">
+        <div class="p-tag">Technical professional · career transition</div>
+        <div class="p-name">Choosing Voice AI as a specialisation</div>
+        <div class="p-desc">A senior software engineer leaving a large employer, positioning Voice AI Agents as her differentiation lane going into a startup or consulting role — needs the vocabulary, evaluation framework and portfolio structure to prove it, not the engineering itself.</div>
+      </div>
+      <div class="persona">
+        <div class="p-tag">Business owner · outreach &amp; sales</div>
+        <div class="p-name">Evaluating a voice agent already in use</div>
+        <div class="p-desc">A business owner running a voice agent through a no-code platform, wanting an outside, structured quality analysis — is it actually good, or does it just feel fine to the person who built it?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Start with one call. Decide the rest <em>after.</em></h2>
+    <p class="lead">Same structure as the rest of my coaching — a paid diagnostic call first, no obligation to continue.</p>
+    <div class="prices">
+      <div class="price feature">
+        <div class="pr-name">Diagnostic call</div>
+        <div class="pr-cost">49€ · one-off · 50 minutes</div>
+        <ul>
+          <li>Map what you're actually trying to build or evaluate</li>
+          <li>Place you correctly on the build-approach spectrum</li>
+          <li>Leave with a concrete, scoped first step</li>
+          <li>No obligation to continue</li>
+        </ul>
+        <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime" href="https://alessandrocapezza.youcanbook.me/">Book the call</a>
+      </div>
+      <div class="price">
+        <div class="pr-name">Monthly partnership</div>
+        <div class="pr-cost">From 300€ · per month</div>
+        <ul>
+          <li>Regular 1:1 sessions building your first agent or evaluation framework</li>
+          <li>Written recap after every session</li>
+          <li>Adjusts as your scope becomes clearer</li>
+        </ul>
+        <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-out" href="https://alessandrocapezza.youcanbook.me/">Discuss on the call</a>
+      </div>
+      <div class="price">
+        <div class="pr-name">Voice agent audit</div>
+        <div class="pr-cost">Defined in your diagnostic</div>
+        <ul>
+          <li>An outside quality review of a voice agent already in production</li>
+          <li>Assessed against interruption, latency and missed-response benchmarks</li>
+          <li>For teams and owners, not a DIY checklist</li>
+        </ul>
+        <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-out" href="https://alessandrocapezza.youcanbook.me/">Discuss on the call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions people ask <em>first.</em></h2>
+    <details>
+      <summary>Do I need to know how to code?</summary>
+      <p>No. I don't write code myself either — I direct AI to handle the technical layer, and that's exactly the orchestration skill this track teaches. If you're an engineer, this track sharpens your design and evaluation thinking; if you're not, it teaches you to direct someone who is.</p>
+    </details>
+    <details>
+      <summary>Will I build a real voice agent in these sessions?</summary>
+      <p>Where your use case fits a managed platform, yes, live in session. Where it needs custom telephony or infrastructure engineering, we scope it clearly and I help you brief the right engineer — see the "what this doesn't cover" section above.</p>
+    </details>
+    <details>
+      <summary>I already have a voice agent — can you just review it?</summary>
+      <p>Yes — that's the Voice Agent Audit option above. We assess it against concrete quality benchmarks instead of "does it feel okay."</p>
+    </details>
+    <details>
+      <summary>What happens after the diagnostic call?</summary>
+      <p>You get a written recap either way, including where you sit on the build-approach spectrum and a scoped first step — whether or not we continue working together.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>One call tells you exactly where you <em>stand.</em></h2>
+    <p>50 minutes, 49€, and a clear next step — whether that's a session with me or a brief for an engineer.</p>
+    <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
+    <a class="btn btn-out-light" href="/who-i-work-with.html" style="margin-left:10px;">See who I work with</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>aicoachalex.com — Voice AI Agents</div>
+  <div>
+    <a href="https://www.instagram.com/alexislimitless/">Instagram</a> ·
+    <a href="https://www.youtube.com/@alexislimitless">YouTube</a> ·
+    <a href="mailto:aicoachalex@gmail.com">Email</a>
+  </div>
+</footer>
+
+<!-- ===== Popup ===== -->
+<div id="aicoach-interstitial-overlay">
+  <div id="aicoach-interstitial-card">
+    <button id="aicoach-interstitial-close" aria-label="Close">&times;</button>
+
+    <div id="aicoach-question-panel">
+      <h3>Did you book your call?</h3>
+      <p>We opened the calendar in a new tab — just checking in, want to make sure you got taken care of.</p>
+      <div class="aicoach-btn-row">
+        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Yes, all booked</button>
+        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Not yet</button>
+      </div>
+    </div>
+
+    <div id="aicoach-email-panel">
+      <h3>Still thinking it over?</h3>
+      <p>Take your time. In the meantime, get weekly AI Superpowers — practical AI tips for your career, once a week, no fluff.</p>
+
+      <div class="aicoach-field-label">Name (optional)</div>
+      <input type="text" id="aicoach-name-input" placeholder="Your name">
+
+      <div class="aicoach-field-label">Your current situation (optional)</div>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am working for a company"> I am working for a company</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am an entrepreneur"> I am an entrepreneur</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am studying / I am looking for employment"> I am studying / I am looking for employment</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Other:</label>
+      <input type="text" id="aicoach-situation-other-input" placeholder="Tell us more">
+
+      <div class="aicoach-field-label">Email</div>
+      <input type="email" id="aicoach-email-input" placeholder="you@email.com">
+
+      <button id="aicoach-email-submit">Send me the tips</button>
+    </div>
+
+    <div id="aicoach-thankyou-msg">You're in! Watch your inbox 🎯</div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   POPUP TRIGGER + LOGIC (same Google Form as the rest of the site)
+   Any "Book" link opens the calendar in a new tab (target="_blank")
+   and, once per session, also surfaces this same-tab check-in popup.
+============================================================ */
+(function() {
+  var popupShownThisSession = sessionStorage.getItem('aicoach_voiceai_popup_shown');
+
+  document.querySelectorAll('.aicoach-book-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (!popupShownThisSession) {
+        popupShownThisSession = true;
+        sessionStorage.setItem('aicoach_voiceai_popup_shown', '1');
+        setTimeout(function() {
+          document.getElementById('aicoach-interstitial-overlay').style.display = 'flex';
+        }, 600); // small delay so it doesn't feel like it's blocking the click itself
+      }
+    });
+  });
+})();
+
+(function() {
+  var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
+  var EMAIL_ENTRY_ID = '1582122762';
+  var NAME_ENTRY_ID = '731407510';
+  var SITUATION_ENTRY_ID = '881740245';
+
+  function $(id) { return document.getElementById(id); }
+
+  function closeModal() {
+    $('aicoach-interstitial-overlay').style.display = 'none';
+  }
+
+  $('aicoach-interstitial-close').addEventListener('click', closeModal);
+
+  $('aicoach-btn-yes').addEventListener('click', function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'self_reported_booking_yes' });
+    closeModal();
+  });
+
+  $('aicoach-btn-no').addEventListener('click', function() {
+    $('aicoach-question-panel').style.display = 'none';
+    $('aicoach-email-panel').style.display = 'block';
+  });
+
+  // Reveal free-text field when "Other" is picked
+  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      $('aicoach-situation-other-input').style.display =
+        (this.value === '__other_option__') ? 'block' : 'none';
+    });
+  });
+
+  $('aicoach-email-submit').addEventListener('click', function() {
+    var email = $('aicoach-email-input').value.trim();
+    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValid) {
+      $('aicoach-email-input').style.borderColor = '#c0392b';
+      return;
+    }
+
+    var name = $('aicoach-name-input').value.trim();
+    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
+    var situationValue = situationRadio ? situationRadio.value : '';
+    var situationOther = $('aicoach-situation-other-input').value.trim();
+
+    var params = [];
+    params.push('entry.' + EMAIL_ENTRY_ID + '=' + encodeURIComponent(email));
+    if (name) {
+      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
+    }
+    if (situationValue) {
+      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationValue));
+      if (situationValue === '__other_option__' && situationOther) {
+        params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(situationOther));
+      }
+    }
+
+    var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
+    fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.join('&')
+    }).catch(function() { /* no-cors means we can't read the response anyway */ });
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'newsletter_signup' });
+
+    $('aicoach-email-panel').style.display = 'none';
+    $('aicoach-thankyou-msg').style.display = 'block';
+    setTimeout(closeModal, 2200);
+  });
+})();
+</script>
+
+</body>
+</html>
