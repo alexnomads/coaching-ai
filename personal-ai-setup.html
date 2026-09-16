@@ -93,8 +93,15 @@ fbq('track', 'PageView');
   .hero p{font-size:18px;color:var(--muted);max-width:58ch;margin:0 0 32px;}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
   .hero-note{font-size:13.5px;color:var(--muted);margin-top:20px;}
-  .hero-video-embed{position:relative;width:100%;max-width:640px;aspect-ratio:16/9;margin-top:32px;border-radius:4px;overflow:hidden;border:1px solid var(--rule);}
-  .hero-video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .hero-video-embed{position:relative;width:100%;max-width:640px;aspect-ratio:16/9;margin-top:32px;border-radius:4px;overflow:hidden;border:1px solid var(--rule);background:var(--ink);}
+  .hero-video-embed video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .video-audio-toggle{
+    position:absolute;bottom:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;
+    border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    background:var(--lime);color:var(--ink);transition:transform .15s,background .15s;
+  }
+  .video-audio-toggle:hover{transform:scale(1.08);background:#8AD95C;}
+  .video-audio-toggle svg{width:20px;height:20px;}
 
   .ticker{background:var(--lime);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden;padding:11px 0;}
   .ticker-track{display:flex;gap:34px;white-space:nowrap;width:max-content;animation:slide 44s linear infinite;}
@@ -288,7 +295,13 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   </div>
   <p class="hero-note">50 minutes, 1:1, online. Same booking as the rest of my coaching.</p>
   <div class="hero-video-embed">
-    <iframe src="https://www.youtube.com/embed/cTsA45LYa-c?si=iOfovksOYChogid_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <video autoplay muted loop playsinline id="heroSetupVideo">
+      <source src="/assets/aicoachalex-personal-ai-green-subs.mp4" type="video/mp4">
+    </video>
+    <button class="video-audio-toggle" id="setupAudioToggle" title="Toggle audio" aria-label="Toggle audio">
+      <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+      <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    </button>
   </div>
 </header>
 
@@ -590,6 +603,25 @@ function tog(el){
   else msg = 'Genuinely rare. Worth talking anyway \u2014 people at this level often want to build for their <em>team,</em> not themselves.';
   v.innerHTML = msg;
 }
+</script>
+
+<script>
+/* Hero video: starts muted/autoplay/loop -- this button is the only way to turn sound on */
+(function() {
+  var video = document.getElementById('heroSetupVideo');
+  var toggle = document.getElementById('setupAudioToggle');
+  if (!video || !toggle) return;
+  function updateIcon() {
+    var mutedIcon = toggle.querySelector('.icon-muted');
+    var unmutedIcon = toggle.querySelector('.icon-unmuted');
+    if (video.muted) { mutedIcon.style.display = ''; unmutedIcon.style.display = 'none'; }
+    else { mutedIcon.style.display = 'none'; unmutedIcon.style.display = ''; }
+  }
+  toggle.addEventListener('click', function() {
+    video.muted = !video.muted;
+    updateIcon();
+  });
+})();
 </script>
 
 <script>
