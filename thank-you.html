@@ -156,6 +156,13 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     },
     user_email: email  // only use this in GTM if you enable Enhanced/Consent-based user data; otherwise ignore
   });
+
+  // Mirror the same conversion to Meta Pixel, so ad campaigns optimize
+  // toward actual paid bookings instead of just this page's PageView.
+  fbq('track', 'Purchase', {
+    value: value,
+    currency: 'EUR'
+  });
 </script>
 
 </body>
