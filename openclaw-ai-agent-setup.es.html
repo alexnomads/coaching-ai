@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tu propio agente de IA 24/7 — Configuración de VPS + OpenClaw · AI Coach Alex</title>
+<meta name="description" content="Guía paso a paso de OpenClaw: ten tu propio agente de IA 24/7 en un VPS de Hostinger con Docker, conecta Venice.ai como cerebro y chatea con él en Telegram o Discord. Para principiantes, cada comando listo para copiar.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="canonical" href="https://aicoachalex.com/openclaw-ai-agent-setup.es.html">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/openclaw-ai-agent-setup.html">
+<link rel="alternate" hreflang="es" href="https://aicoachalex.com/openclaw-ai-agent-setup.es.html">
+<link rel="alternate" hreflang="it" href="https://aicoachalex.com/openclaw-ai-agent-setup.it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/openclaw-ai-agent-setup.html">
+<meta property="og:title" content="Tu propio agente de IA 24/7 — Configuración de VPS + OpenClaw · AI Coach Alex">
+<meta property="og:description" content="Ten tu propio agente de IA siempre activo con OpenClaw en un VPS. Chatea con él en Telegram o Discord. Guía para principiantes, cada comando listo para copiar.">
+<meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<meta property="og:url" content="https://aicoachalex.com/openclaw-ai-agent-setup.es.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4EFE3;--paper:#FBF8F1;--ink:#16150F;--muted:#5E5A4E;--soft:#8A8577;
+  --lime:#C9F23D;--lime-soft:#EEF9C8;--green:#0F3B2B;--green-2:#1C5A43;
+  --line:rgba(22,21,15,.12);--amber:#B7791F;--amber-soft:#FBF0DA;--red:#B42318;--red-soft:#FBE7E4;--blue-soft:#E6EEF5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream)}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;color:var(--ink);line-height:1.65;font-size:15px}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+button{font-family:inherit;cursor:pointer}
+code{font-family:'IBM Plex Mono',monospace;font-size:.86em;background:rgba(15,59,43,.08);color:var(--green);padding:1px 6px;border-radius:5px}
+b,strong{font-weight:600}
+a{color:var(--green)}
+
+/* header */
+.hd{position:sticky;top:0;z-index:50;background:rgba(244,239,227,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd-top{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px;gap:12px}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:19px;letter-spacing:-.01em}
+.brand em{font-style:italic;color:var(--green)}
+a.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+a.brand img{width:34px;height:34px;display:block}
+.hd-right{display:flex;align-items:center;gap:16px}
+.lang{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.lang a{color:var(--soft);text-decoration:none;padding:2px 3px}
+.lang a.on{color:var(--ink);font-weight:600}
+.lang a:hover{color:var(--ink)}
+.lang .sep{color:var(--line)}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid var(--line);background:var(--paper);color:var(--muted);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
+.tab.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.tab .n{font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:.7;margin-right:6px}
+.tab.book{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.tab.book.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.prog{height:3px;background:var(--line)}
+.prog i{display:block;height:100%;background:var(--green);transition:width .3s}
+
+/* sections */
+.sec{display:none;padding:34px 0 40px}.sec.vis{display:block}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-2);margin-bottom:8px}
+h2{font-family:'Fraunces',serif;font-weight:700;font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:10px}
+h2 em{font-style:italic;color:var(--green-2)}
+.lead{font-size:17px;color:var(--muted);max-width:680px;margin-bottom:28px}
+
+.hero{background:var(--green);color:var(--cream);border-radius:22px;padding:34px 30px;margin-bottom:26px}
+.hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 12px}
+.hero h1 em{font-style:italic;color:var(--lime)}
+.hero p{font-size:17px;color:rgba(244,239,227,.82);max-width:640px}
+.hero .lbl{color:var(--lime)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid rgba(201,242,61,.4);color:var(--lime);padding:4px 11px;border-radius:999px}
+
+/* step cards */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 22px;margin-bottom:16px}
+.ch{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px}
+.num{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--lime);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+.ct{flex:1 1 auto;min-width:0}
+.ct h3{font-size:18px;font-weight:700;line-height:1.35}
+.ct .lbl{margin-top:3px}
+.card p{margin-bottom:10px}
+.card ul,.card ol{margin:6px 0 10px 20px}
+.card li{margin-bottom:5px}
+
+/* callouts */
+.co{border-radius:14px;padding:14px 16px;margin:14px 0;font-size:14px}
+.co .t{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:5px}
+.co.plain{background:var(--lime-soft);border:1px solid rgba(15,59,43,.18)}.co.plain .t{color:var(--green)}
+.co.warn{background:var(--amber-soft);border:1px solid rgba(183,121,31,.3)}.co.warn .t{color:var(--amber)}
+.co.info{background:var(--blue-soft);border:1px solid rgba(40,80,120,.2)}.co.info .t{color:#285078}
+.co.stop{background:var(--red-soft);border:1px solid rgba(180,35,24,.25)}.co.stop .t{color:var(--red)}
+.done{display:flex;gap:10px;align-items:flex-start;background:var(--ink);color:var(--cream);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:14px}
+.done .ck{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--lime);color:var(--ink);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.done b{color:var(--lime)}
+.done code{background:rgba(201,242,61,.16);color:var(--lime)}
+
+/* code */
+.code{margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--ink)}
+.code-h{display:flex;align-items:center;justify-content:space-between;background:var(--ink);padding:8px 12px 8px 14px}
+.code-h span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--lime)}
+.cp{background:var(--lime);color:var(--ink);border:none;border-radius:7px;font-size:12px;font-weight:700;padding:5px 11px}
+.code pre{margin:0;background:#1F1E17;color:#EDE8DA;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;padding:14px 16px;white-space:pre-wrap;word-break:break-word}
+.code pre .c{color:#9A9585}
+
+/* grids */
+.g{display:grid;gap:12px;margin:14px 0}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.opt.pick{border:2px solid var(--green);background:var(--lime-soft)}
+.opt h4{font-size:15px;font-weight:700;margin-bottom:2px}
+.opt .lbl{margin-bottom:8px;display:block}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:5px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:none}
+.row span:first-child{color:var(--muted)}
+.row span:last-child{font-weight:600;text-align:right}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--ink);color:var(--lime);margin-bottom:6px}
+.tag.grey{background:var(--line);color:var(--muted)}
+
+/* pricing (book tab) */
+.price-card{display:flex;flex-direction:column;padding:18px}
+.price-card h4{font-family:'Fraunces',serif;font-size:21px;margin:2px 0 2px}
+.price-card ul{margin:10px 0 18px 18px;font-size:14px;flex:1}
+.price-card li{margin-bottom:6px}
+.price-card .btn-ref,.price-card .btn-sec,.price-card .tag{align-self:flex-start}
+.btn-sec{display:inline-block;border:1px solid var(--ink);color:var(--ink)!important;text-decoration:none;font-weight:700;font-size:14px;padding:9px 17px;border-radius:999px;white-space:nowrap}
+.btn-sec:hover{background:var(--ink);color:var(--cream)!important}
+.btn-ghost{display:inline-block;border:1px solid rgba(244,239,227,.45);color:var(--cream)!important;text-decoration:none;font-weight:700;font-size:14px;padding:9px 17px;border-radius:999px;white-space:nowrap}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)!important}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+
+/* diagram */
+.flow{display:flex;align-items:stretch;justify-content:center;gap:10px;margin:18px 0;flex-wrap:wrap}
+.node{flex:1 1 170px;max-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.node .ic{font-size:26px}
+.node h4{font-size:15px;margin:4px 0 2px}
+.node p{font-size:12.5px;color:var(--muted);margin:0}
+.node.core{background:var(--green);color:var(--cream);border-color:var(--green)}
+.node.core p{color:rgba(244,239,227,.75)}
+.arrow{align-self:center;font-size:22px;color:var(--soft)}
+
+/* glossary */
+.gl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.gi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
+.gi b{display:block;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--green);margin-bottom:2px}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.nb{border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600}
+.nb.pri{background:var(--ink);color:var(--cream)}
+.nb[disabled]{visibility:hidden}
+.deal{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--ink);color:var(--cream);border-radius:14px;padding:14px 16px;margin:14px 0}
+.deal .dt{flex:1 1 260px;font-size:14px;line-height:1.55}
+.deal .dt b{color:var(--lime)}
+.deal .dt .lbl{color:var(--lime);display:block;margin-bottom:2px}
+.btn-ref{display:inline-block;background:var(--lime);color:var(--ink)!important;text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;white-space:nowrap}
+.btn-ref:hover{filter:brightness(.95)}
+.disc{font-size:11.5px;color:var(--soft);margin-top:8px}
+.foot a{color:var(--muted)}
+.foot{text-align:center;padding:26px 0 34px;color:var(--soft);font-size:12px}
+
+/* sitewide footer */
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  h2{font-size:27px}.hero h1{font-size:30px}.hero{padding:26px 20px}
+  .g2,.g3,.g4,.gl{grid-template-columns:minmax(0,1fr)}
+  .arrow{transform:rotate(90deg);width:100%;text-align:center}
+  .node{max-width:none}
+  .card{padding:18px 16px}
+}
+@media(max-width:560px){#stepLbl{display:none}a.brand span{display:none}}
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!--BODY-START-->
+<div class="hd"><div class="w">
+  <div class="hd-top">
+    <a class="brand" href="/index.es.html"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex"><span>AI Coach <em>Alex</em></span></a>
+    <div class="hd-right">
+      <div class="lbl" id="stepLbl">Empieza aquí</div>
+      <div class="lang"><a href="/openclaw-ai-agent-setup.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/openclaw-ai-agent-setup.es.html" class="on" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/openclaw-ai-agent-setup.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    </div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+</div><div class="prog"><i id="progBar"></i></div></div>
+
+<div class="w">
+
+<!-- ================= TAB 0: START ================= -->
+<section class="sec" id="s0">
+  <div class="hero">
+    <div class="lbl">Guía práctica · Para principiantes</div>
+    <h1>Tu propio asistente de IA, <em>despierto 24/7</em></h1>
+    <p>En esta guía vas a configurar un agente de IA personal que vive en un pequeño servidor alquilado y te responde en Telegram o Discord — a cualquier hora, desde tu móvil. No necesitas saber programar: cada comando está listo para copiar y pegar.</p>
+    <div class="pills"><span class="pill">~60–90 min</span><span class="pill">Desde ~$6/mes</span><span class="pill">Mac · Windows · Linux</span></div>
+  </div>
+
+  <div class="eyebrow">La visión general</div>
+  <h2>Cómo <em>encajan</em> las piezas</h2>
+  <p class="lead">Tres piezas, cada una con una sola función. Las configurarás en orden — una pestaña cada una.</p>
+
+  <div class="card">
+    <div class="flow">
+      <div class="node"><div class="ic">📱</div><h4>Telegram / Discord</h4><p>Donde chateas con tu agente — en el móvil o el ordenador</p></div>
+      <div class="arrow">→</div>
+      <div class="node core"><div class="ic">⚙️</div><h4>OpenClaw en un VPS</h4><p>La "centralita" — un programa gratuito en un servidor alquilado que está siempre encendido</p></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="ic">🧠</div><h4>Venice.ai</h4><p>El "cerebro" — da acceso a modelos de IA como Claude y DeepSeek</p></div>
+    </div>
+    <p><b>Qué pasa cuando envías un mensaje:</b> escribes "Resume mi semana" en Telegram → el mensaje llega a OpenClaw en tu servidor → OpenClaw se lo pregunta al modelo de IA a través de Venice.ai → la respuesta vuelve a tu chat. Todo en unos segundos.</p>
+    <div class="co plain"><div class="t">En pocas palabras</div>Piénsalo como contratar a un asistente. El <b>VPS</b> es su escritorio (siempre ahí), <b>OpenClaw</b> es su forma de trabajar, <b>Venice.ai</b> es su cerebro y <b>Telegram/Discord</b> es la línea de teléfono con la que lo llamas.</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">?</div><div class="ct"><h3>¿Por qué este sistema (y no simplemente ChatGPT en el navegador)?</h3></div></div>
+    <ul>
+      <li><b>Siempre encendido</b> — el servidor nunca duerme, así que tu agente está disponible 24/7, incluso con tu portátil apagado.</li>
+      <li><b>Bajo coste</b> — desde unos $6/mes por el servidor, más unos pocos dólares de uso de IA.</li>
+      <li><b>Sin hardware que comprar</b> — no necesitas un ordenador potente en casa.</li>
+      <li><b>Tú tienes el control</b> — eliges el modelo de IA y puedes cambiarlo cuando quieras.</li>
+      <li><b>Espacio para crecer</b> — empieza con un asistente sencillo y añade más agentes después.</li>
+    </ul>
+    <div class="co info"><div class="t">Presupuesto mensual aproximado</div>
+      <b>Camino más fácil (Managed OpenClaw):</b> ~$6/mes, créditos de IA incluidos.<br>
+      <b>Camino con control total (tu propio VPS):</b> ~$9–25/mes por el servidor + ~$5–20/mes de uso de IA para un uso diario moderado.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">%</div><div class="ct"><h3>Ahorra dinero antes de empezar</h3><div class="lbl">Dos descuentos para las dos cosas que vas a pagar</div></div></div>
+    <div class="deal"><div class="dt"><span class="lbl">Servidor · Hostinger</span><b>20% de descuento</b> en tu plan de Hostinger si te registras con mi enlace. El enlace de KVM 2 abre el plan recomendado directamente en tu carrito.</div><a class="btn-ref" href="https://www.hostinger.com/cart?product=vps%3Avps_kvm_2&amp;period=12&amp;referral_type=cart_link&amp;REFERRALCODE=6XXCOLIVIGCZ&amp;referral_id=01a0d33d-6c54-72d3-949b-9facfe7f38c7" target="_blank" rel="noopener sponsored">KVM 2 con 20% de descuento →</a></div>
+    <div class="deal"><div class="dt"><span class="lbl">Cerebro de IA · Venice.ai</span>Regístrate con mi enlace y consigue <b>$10 en créditos gratis</b> al pasarte a Pro. Suficiente para explorar la IA sin restricciones y hacer funcionar tu agente durante semanas.</div><a class="btn-ref" href="https://venice.ai/chat?ref=05rQoP" target="_blank" rel="noopener sponsored">Consigue $10 en Venice →</a></div>
+    <p class="disc">Son mis enlaces de referido: tú obtienes el descuento o el bono, y yo puedo recibir una pequeña recompensa sin coste extra para ti. Me ayuda a seguir creando guías gratuitas como esta.</p>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">Aa</div><div class="ct"><h3>Mini glosario — las 10 palabras que vas a encontrar</h3><div class="lbl">Vuelve aquí cuando una palabra no te suene</div></div></div>
+    <div class="gl">
+      <div class="gi"><b>VPS</b>Un ordenador que alquilas en un centro de datos. Está siempre encendido y lo controlas a distancia.</div>
+      <div class="gi"><b>Dirección IP</b>La "dirección postal" de tu servidor, por ejemplo <code>185.199.110.153</code>.</div>
+      <div class="gi"><b>Terminal</b>Una ventana donde escribes comandos de texto en lugar de hacer clic en botones.</div>
+      <div class="gi"><b>SSH</b>Una forma segura de abrir un terminal de tu servidor remoto desde tu propio ordenador.</div>
+      <div class="gi"><b>Docker</b>Una herramienta que ejecuta programas dentro de "cajas" listas para usar, con todo lo que necesitan.</div>
+      <div class="gi"><b>Contenedor</b>Una de esas cajas. OpenClaw funcionará dentro de una.</div>
+      <div class="gi"><b>API</b>Una forma de que dos programas hablen entre sí. OpenClaw usa la API de Venice para llegar a la IA.</div>
+      <div class="gi"><b>API key</b>Una contraseña secreta que permite a OpenClaw usar tu cuenta de Venice. Nunca la compartas.</div>
+      <div class="gi"><b>Bot token</b>La contraseña secreta de tu bot de Telegram o Discord.</div>
+      <div class="gi"><b>Puerto</b>Una "puerta" numerada de tu servidor. El panel de OpenClaw usa la puerta <code>18789</code>.</div>
+    </div>
+  </div>
+  <div class="nav"><button class="nb" disabled>←</button><button class="nb pri" onclick="go(1)">Paso 1 · Consigue un servidor →</button></div>
+</section>
+
+<!-- ================= TAB 1: SERVER ================= -->
+<section class="sec" id="s1">
+  <div class="eyebrow">Paso 1 de 4</div>
+  <h2>Consigue tu <em>servidor</em> en Hostinger</h2>
+  <p class="lead">Tienes dos opciones. Si solo quieres que funcione, elige la Opción A. Si quieres control total y flexibilidad, elige la Opción B.</p>
+
+  <div class="card">
+    <div class="ch"><div class="num">A</div><div class="ct"><h3>Opción A — Managed OpenClaw (la más fácil)</h3><div class="lbl">Sin terminal · ~2 minutos</div></div></div>
+    <p>Hostinger vende un producto listo para usar llamado <b>Managed OpenClaw</b> (hostinger.com/managed-openclaw). OpenClaw viene preinstalado — pagas, se enciende y conectas tu app de chat desde un panel visual.</p>
+    <div class="opt pick" style="max-width:520px">
+      <span class="tag">La más fácil</span>
+      <h4>Managed OpenClaw</h4>
+      <div class="row"><span>Precio</span><span>$5.99/mes (promo) → $11.99/mes al renovar</span></div>
+      <div class="row"><span>Configuración</span><span>1 clic, sin terminal</span></div>
+      <div class="row"><span>Créditos de IA</span><span>Incluidos — no necesitas otra API key</span></div>
+      <div class="row"><span>Apps de chat</span><span>Telegram, WhatsApp, Slack, Discord</span></div>
+      <div class="row"><span>Actualizaciones</span><span>Automáticas, cero mantenimiento</span></div>
+      <div class="row"><span>A cambio</span><span>Menos control sobre los ajustes avanzados</span></div>
+    </div>
+    <div class="deal"><div class="dt"><span class="lbl">Descuento de referido</span>Regístrate con mi enlace para obtener un <b>20% de descuento</b> en Managed OpenClaw o en cualquier otro plan de Hostinger.</div><a class="btn-ref" href="https://www.hostinger.com?REFERRALCODE=6XXCOLIVIGCZ" target="_blank" rel="noopener sponsored">Abrir Hostinger con 20% de descuento →</a></div>
+    <div class="co plain"><div class="t">¿Elegiste la Opción A?</div>Puedes saltarte los Pasos 2 y 3 de esta guía — tu servidor, OpenClaw y los créditos de IA ya están listos. Ve directamente al <b>Paso 4 · Chatea con él</b> para conectar Telegram o Discord.</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">B</div><div class="ct"><h3>Opción B — Tu propio VPS (control total)</h3><div class="lbl">hostinger.com → VPS Hosting</div></div></div>
+    <p>Elige el tamaño del plan. Para uno a tres agentes de IA, <b>KVM 2</b> es el punto ideal.</p>
+    <div class="g g4">
+      <div class="opt"><span class="tag grey">Muy pequeño</span><h4>KVM 1</h4>
+        <div class="row"><span>CPU</span><span>1 vCPU</span></div><div class="row"><span>RAM</span><span>4 GB</span></div><div class="row"><span>Disco</span><span>50 GB</span></div>
+        <div class="row"><span>Promo</span><span>$6.49/mes</span></div><div class="row"><span>Renovación</span><span>$11.99/mes</span></div><div class="row"><span>Mensual</span><span>$19.49/mes</span></div></div>
+      <div class="opt pick"><span class="tag">Recomendado</span><h4>KVM 2</h4>
+        <div class="row"><span>CPU</span><span>2 vCPU</span></div><div class="row"><span>RAM</span><span>8 GB</span></div><div class="row"><span>Disco</span><span>100 GB</span></div>
+        <div class="row"><span>Promo</span><span>$8.99/mes</span></div><div class="row"><span>Renovación</span><span>$14.99/mes</span></div><div class="row"><span>Mensual</span><span>$24.49/mes</span></div></div>
+      <div class="opt"><span class="tag grey">Para crecer</span><h4>KVM 4</h4>
+        <div class="row"><span>CPU</span><span>4 vCPU</span></div><div class="row"><span>RAM</span><span>16 GB</span></div><div class="row"><span>Disco</span><span>200 GB</span></div>
+        <div class="row"><span>Promo</span><span>$12.99/mes</span></div><div class="row"><span>Renovación</span><span>$28.99/mes</span></div><div class="row"><span>Mensual</span><span>$42.99/mes</span></div></div>
+      <div class="opt"><span class="tag grey">Equipos</span><h4>KVM 8</h4>
+        <div class="row"><span>CPU</span><span>8 vCPU</span></div><div class="row"><span>RAM</span><span>32 GB</span></div><div class="row"><span>Disco</span><span>400 GB</span></div>
+        <div class="row"><span>Promo</span><span>$25.99/mes</span></div><div class="row"><span>Renovación</span><span>$49.99/mes</span></div><div class="row"><span>Mensual</span><span>$73.99/mes</span></div></div>
+    </div>
+    <div class="deal"><div class="dt"><span class="lbl">Plan recomendado · 20% de descuento</span>Este enlace pone <b>KVM 2 (12 meses)</b> directamente en tu carrito con mi <b>20% de descuento de referido</b> aplicado. Puedes cambiar el periodo al pagar.</div><a class="btn-ref" href="https://www.hostinger.com/cart?product=vps%3Avps_kvm_2&amp;period=12&amp;referral_type=cart_link&amp;REFERRALCODE=6XXCOLIVIGCZ&amp;referral_id=01a0d33d-6c54-72d3-949b-9facfe7f38c7" target="_blank" rel="noopener sponsored">KVM 2 con 20% de descuento →</a></div>
+    <div class="co warn"><div class="t">Lee la letra pequeña</div>Los precios promocionales suelen exigir pagar hasta 24 meses por adelantado. ¿Solo quieres probar uno o dos meses? Se aplica el precio <b>mensual</b> (KVM 2: $24.49/mes). Precios comprobados en septiembre de 2026 — confírmalos siempre en la web de Hostinger.</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">1</div><div class="ct"><h3>Elige el sistema operativo: Ubuntu</h3><div class="lbl">Hostinger te lo pregunta al pagar</div></div></div>
+    <p>Tu servidor necesita un sistema operativo, igual que tu portátil. Hostinger te ofrecerá varios. Elige <b>Ubuntu 24.04 LTS</b> (o 22.04 LTS).</p>
+    <ul>
+      <li><b>Ubuntu</b> ✅ — la opción más popular para servidores, con más tutoriales y ayuda en internet.</li>
+      <li><b>Debian</b> — también sirve, muy parecido a Ubuntu.</li>
+      <li><b>Windows</b> ❌ — disponible, pero no recomendado: cuesta más, usa más memoria y todas las instrucciones de OpenClaw están escritas para Linux.</li>
+    </ul>
+    <div class="co plain"><div class="t">Tranquilo</div>No necesitas "saber Linux". Solo escribirás unos pocos comandos, y todos están en esta guía, listos para copiar. Funciona igual tanto si <i>tu</i> ordenador es un Mac como un PC con Windows.</div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> la compra está completada y Hostinger muestra la <b>dirección IP</b> y la <b>contraseña root</b> de tu servidor en hPanel (su panel de control).</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">2</div><div class="ct"><h3>Conéctate a tu servidor (SSH)</h3><div class="lbl">Elige la forma que corresponde a tu ordenador</div></div></div>
+    <p><b>SSH</b> es como una llamada telefónica segura a tu servidor: escribes comandos en tu ordenador y se ejecutan en el servidor. Elige una de estas tres formas:</p>
+    <div class="g g3">
+      <div class="opt pick"><span class="tag">La más fácil</span><h4>🌐 En el navegador</h4><p style="font-size:13px;margin-top:6px">Cualquier ordenador. En el hPanel de Hostinger, abre tu VPS y haz clic en <b>Browser terminal</b>. Nada que instalar.</p></div>
+      <div class="opt"><span class="tag grey">Integrado</span><h4>🍎 Mac o Linux</h4><p style="font-size:13px;margin-top:6px">Abre la app <b>Terminal</b> (Mac: Aplicaciones → Utilidades → Terminal) y escribe el comando de abajo.</p></div>
+      <div class="opt"><span class="tag grey">Integrado</span><h4>🪟 Windows</h4><p style="font-size:13px;margin-top:6px">Abre <b>Windows Terminal</b> o <b>PowerShell</b> (pulsa Inicio y escribe "terminal") y escribe el comando de abajo. PuTTY también funciona.</p></div>
+    </div>
+    <div class="code"><div class="code-h"><span>Conectar (Mac · Linux · Windows Terminal)</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>ssh root@YOUR_SERVER_IP
+<span class="c"># Ejemplo: ssh root@185.199.110.153
+# Te pedirá la contraseña → pega la de Hostinger.
+# NO verás los caracteres mientras la escribes. ¡Es normal!
+# Solo la primera vez: escribe "yes" si te pide confiar en el servidor.</span></pre></div>
+    <div class="co info"><div class="t">Idea clave</div>Una vez conectado, todo lo que escribes se ejecuta <b>en el servidor</b>, no en tu ordenador. Verás que el prompt cambia a algo como <code>root@srv123:~#</code> — así sabes que estás "dentro".</div>
+    <div class="code"><div class="code-h"><span>Comprobación rápida — ¿estás dentro?</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>whoami      <span class="c"># debería mostrar: root</span>
+free -h     <span class="c"># cuánta memoria tiene el servidor</span>
+df -h       <span class="c"># cuánto espacio en disco queda libre</span></pre></div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> <code>whoami</code> muestra <code>root</code>.</div></div>
+  </div>
+  <div class="nav"><button class="nb" onclick="go(0)">← Empieza aquí</button><button class="nb pri" onclick="go(2)">Paso 2 · Instala OpenClaw →</button></div>
+</section>
+
+<!-- ================= TAB 2: INSTALL ================= -->
+<section class="sec" id="s2">
+  <div class="eyebrow">Paso 2 de 4</div>
+  <h2>Instala <em>OpenClaw</em></h2>
+  <p class="lead">OpenClaw es un software gratuito y de código abierto que convierte tu servidor en un agente de IA al que puedes escribir. Lo instalaremos con Docker — la forma más segura y sencilla.</p>
+
+  <div class="co stop"><div class="t">¿Dónde escribo estos comandos?</div>En el terminal que está <b>conectado a tu servidor</b> (Paso 1). No en un terminal nuevo de tu ordenador. Si usas el Browser terminal de Hostinger, ya estás en el sitio correcto.</div>
+
+  <div class="card">
+    <div class="ch"><div class="num">1</div><div class="ct"><h3>¿Qué es Docker y por qué usarlo?</h3></div></div>
+    <p><b>Docker</b> empaqueta un programa junto con todo lo que necesita en una caja sellada llamada <b>contenedor</b>.</p>
+    <ul>
+      <li><b>Sin Docker:</b> instalas a mano muchas piezas por separado y esperas que funcionen juntas.</li>
+      <li><b>Con Docker:</b> un solo comando y OpenClaw arranca con todo incluido.</li>
+      <li><b>Actualizar</b> es solo descargar la caja más nueva.</li>
+      <li><b>Si algo se rompe,</b> tiras la caja y empiezas una nueva — el resto del servidor queda intacto.</li>
+    </ul>
+    <div class="co plain"><div class="t">En pocas palabras</div>Docker funciona como una app del móvil: la instalas con un toque, trae todo lo que necesita y, si da problemas, la borras y la reinstalas — sin afectar a nada más.</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">2</div><div class="ct"><h3>Método 1 — Instalar con clics (Hostinger Docker Manager)</h3><div class="lbl">Prueba esto primero · sin comandos</div></div></div>
+    <ol>
+      <li>En <b>hPanel</b>, abre tu VPS y haz clic en <b>Docker Manager</b> en el menú lateral.</li>
+      <li>Abre el <b>Catálogo</b> y busca <b>OpenClaw</b>.</li>
+      <li>Haz clic en <b>Deploy</b> — los ajustes vienen rellenados.</li>
+      <li>Espera 1–2 minutos.</li>
+    </ol>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> OpenClaw aparece como <b>running</b>. Puedes saltarte el Método 2 e ir a "Abre el panel".</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">3</div><div class="ct"><h3>Método 2 — Instalar con comandos</h3><div class="lbl">Si OpenClaw no está en el catálogo, o prefieres el terminal</div></div></div>
+    <p><b>2a. Instala Docker</b> (una sola vez):</p>
+    <div class="code"><div class="code-h"><span>Instalar Docker</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>curl -fsSL https://get.docker.com | sh
+docker --version   <span class="c"># debería mostrar algo como: Docker version 27.x</span></pre></div>
+    <p><b>2b. Arranca OpenClaw:</b></p>
+    <div class="code"><div class="code-h"><span>Ejecutar OpenClaw</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>docker run -d \
+  --name openclaw \
+  --restart unless-stopped \
+  -p 18789:18789 \
+  -v openclaw-data:/root/.openclaw \
+  openclaw/openclaw:latest</pre></div>
+    <div class="co info"><div class="t">Qué significa cada parte</div>
+      <code>docker run</code> arranca un contenedor ·
+      <code>-d</code> se ejecuta en segundo plano ·
+      <code>--name openclaw</code> le da un nombre fácil ·
+      <code>--restart unless-stopped</code> se reinicia solo tras un fallo o reinicio ·
+      <code>-p 18789:18789</code> abre la puerta 18789 para el panel ·
+      <code>-v openclaw-data:…</code> guarda tus ajustes a salvo en el disco ·
+      <code>openclaw/openclaw:latest</code> la versión más reciente de OpenClaw
+    </div>
+    <p><b>2c. Comprueba que está funcionando:</b></p>
+    <div class="code"><div class="code-h"><span>Comprobar</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>docker ps
+<span class="c"># Busca "openclaw" con STATUS "Up ..." → todo bien.
+# Si dice "Exited", mira qué ha fallado con:</span>
+docker logs openclaw</pre></div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> <code>docker ps</code> muestra <code>openclaw</code> con estado <b>Up</b>.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">4</div><div class="ct"><h3>Abre el panel (Control UI)</h3><div class="lbl">Puerto por defecto 18789 — según la documentación oficial de OpenClaw</div></div></div>
+    <p>OpenClaw tiene un panel web. En <b>tu propio ordenador</b>, abre cualquier navegador y ve a:</p>
+    <div class="code"><div class="code-h"><span>Barra de direcciones</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>http://YOUR_SERVER_IP:18789</pre></div>
+    <p>Te pedirá un <b>gateway token</b> (una contraseña para el panel). Búscalo en el servidor:</p>
+    <div class="code"><div class="code-h"><span>Encontrar el gateway token</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>docker logs openclaw 2>&1 | grep -i token</pre></div>
+    <div class="co warn"><div class="t">¿La página no carga?</div>Puede que el firewall tenga cerrada la puerta 18789. Ábrela en <b>hPanel → VPS → Firewall → Add rule</b> (TCP, puerto 18789, Accept) — o en el servidor ejecuta <code>ufw allow 18789/tcp</code>. Para más seguridad, permite solo tu propia dirección IP.</div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> ves el panel de OpenClaw en tu navegador.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">5</div><div class="ct"><h3>Conoce el archivo de ajustes: openclaw.json</h3><div class="lbl">~/.openclaw/openclaw.json</div></div></div>
+    <p>Todos los ajustes de OpenClaw están en <b>un solo archivo</b>. Lo irás completando en los dos próximos pasos. Esto es lo que hace cada parte:</p>
+    <div class="code"><div class="code-h"><span>openclaw.json — explicado</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>{
+  <span class="c">// 1) EL CEREBRO — qué servicio de IA usar (Paso 3)</span>
+  "providers": {
+    "venice": {
+      "apiKey": "vnc-...",                        <span class="c">// tu clave secreta de Venice</span>
+      "defaultModel": "venice/deepseek-v4-flash"  <span class="c">// el modelo de IA a usar</span>
+    }
+  },
+
+  <span class="c">// 2) LAS LÍNEAS DE TELÉFONO — cómo hablas con él (Paso 4)</span>
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "123456:ABC-...",               <span class="c">// de BotFather</span>
+      "accounts": {
+        "+15551234567": { "role": "admin", "name": "Alex" }  <span class="c">// quién puede usarlo</span>
+      }
+    },
+    "discord": {
+      "enabled": true,
+      "token": "MTIz...",                         <span class="c">// del Discord Developer Portal</span>
+      "applicationId": "123456789...",
+      "guilds": { "YOUR_SERVER_ID": { "channels": { "CHANNEL_ID": {} } } }
+    }
+  },
+
+  <span class="c">// 3) MODALES — cuándo debe responder</span>
+  "messages": {
+    "directMessage": { "autoApprove": true },     <span class="c">// responde siempre en chats privados</span>
+    "groupChat": { "requireMention": true }       <span class="c">// en grupos, solo cuando lo @mencionan</span>
+  }
+}</pre></div>
+    <div class="co plain"><div class="t">Regla de oro</div>Después de cualquier cambio en este archivo, reinicia OpenClaw para que lea los nuevos ajustes: <code>docker restart openclaw</code></div>
+  </div>
+  <div class="nav"><button class="nb" onclick="go(1)">← Paso 1</button><button class="nb pri" onclick="go(3)">Paso 3 · Conecta la IA →</button></div>
+</section>
+
+<!-- ================= TAB 3: VENICE ================= -->
+<section class="sec" id="s3">
+  <div class="eyebrow">Paso 3 de 4</div>
+  <h2>Dale un <em>cerebro</em> con Venice.ai</h2>
+  <p class="lead">OpenClaw necesita un modelo de IA con el que pensar. Venice.ai te da muchos modelos — Claude, DeepSeek, Kimi y más — con una sola cuenta y una sola clave.</p>
+
+  <div class="card">
+    <div class="ch"><div class="num">1</div><div class="ct"><h3>¿Qué es Venice.ai?</h3></div></div>
+    <ul>
+      <li><b>Una cuenta, muchos modelos</b> — no tienes que registrarte en cada empresa de IA por separado.</li>
+      <li><b>Privado por diseño</b> — Venice afirma que no guarda ni registra tus prompts en sus modelos privados.</li>
+      <li><b>Cambia cuando quieras</b> — modifica una línea en <code>openclaw.json</code> para usar otro modelo.</li>
+      <li><b>Pagas por uso</b> — compras créditos (100 créditos = $1) y solo pagas lo que usas.</li>
+    </ul>
+    <div class="g g2">
+      <div class="opt"><span class="tag grey">Para probar</span><h4>Venice Free</h4>
+        <div class="row"><span>Precio</span><span>$0/mes</span></div><div class="row"><span>Límite de chat</span><span>10 prompts de texto/día</span></div><div class="row"><span>API</span><span>Créditos de pago por uso</span></div></div>
+      <div class="opt pick"><span class="tag">Recomendado</span><h4>Venice Pro</h4>
+        <div class="row"><span>Precio</span><span>$18/mes</span></div><div class="row"><span>Límite de chat</span><span>Ilimitado</span></div><div class="row"><span>Bono</span><span>100 créditos/mes</span></div></div>
+    </div>
+  </div>
+
+  <div class="deal" style="margin-top:-2px;margin-bottom:16px"><div class="dt"><span class="lbl">Créditos extra</span>Regístrate con mi enlace y consigue <b>$10 en créditos gratis</b> al pasarte a Pro. Es una forma gratuita de probar los modelos premium antes de gastar nada.</div><a class="btn-ref" href="https://venice.ai/chat?ref=05rQoP" target="_blank" rel="noopener sponsored">Consigue $10 en Venice →</a></div>
+
+  <div class="card">
+    <div class="ch"><div class="num">2</div><div class="ct"><h3>¿Qué modelo debo usar?</h3><div class="lbl">Lista completa: venice.ai/settings/api/models</div></div></div>
+    <div class="g g3">
+      <div class="opt pick"><span class="tag">Empieza aquí</span><h4>💰 DeepSeek V4 Flash</h4><p style="font-size:13px;margin:6px 0">Rápido y muy barato. Perfecto para preguntas y resúmenes del día a día.</p>
+        <div class="row"><span>Coste</span><span>$0.14 entrada / $0.28 salida por 1M tokens</span></div><div class="row"><span>ID</span><span><code>venice/deepseek-v4-flash</code></span></div></div>
+      <div class="opt"><span class="tag grey">Razonamiento</span><h4>⚖️ Kimi K2.5</h4><p style="font-size:13px;margin:6px 0">Precio medio. Mejor en análisis y razonamiento en varios pasos.</p>
+        <div class="row"><span>Coste</span><span>Gama media</span></div><div class="row"><span>ID</span><span><code>venice/kimi-k2-5</code></span></div></div>
+      <div class="opt"><span class="tag grey">Premium</span><h4>🚀 Claude Opus 4.6</h4><p style="font-size:13px;margin:6px 0">Máxima calidad para tareas difíciles. Úsalo cuando de verdad importe.</p>
+        <div class="row"><span>Coste</span><span>$37.50 entrada / $225 salida por 1M tokens</span></div><div class="row"><span>ID</span><span><code>venice/claude-opus-4-6</code></span></div></div>
+    </div>
+    <div class="co plain"><div class="t">¿Qué es un "token"?</div>El uso de la IA se mide en tokens — más o menos ¾ de una palabra. Un millón de tokens son unas 750.000 palabras, así que unos pocos dólares de DeepSeek Flash cubren semanas de uso normal.</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">3</div><div class="ct"><h3>Consigue tu API key</h3><div class="lbl">~3 minutos</div></div></div>
+    <ol>
+      <li>Crea tu cuenta de Venice <a href="https://venice.ai/chat?ref=05rQoP" target="_blank" rel="noopener sponsored"><b>con este enlace</b></a> (email o Google) para que el bono de $10 de Pro se añada a tu cuenta.</li>
+      <li>Abre <b>venice.ai/settings/api</b>.</li>
+      <li>Haz clic en <b>Create API Key</b> y ponle un nombre, por ejemplo "Servidor OpenClaw".</li>
+      <li><b>Copia la clave inmediatamente</b> — empieza por <code>vnc-</code> y se muestra <b>una sola vez</b>.</li>
+      <li>Guárdala en un gestor de contraseñas.</li>
+      <li>Añade algo de crédito — $5 es más que suficiente para empezar con DeepSeek Flash.</li>
+    </ol>
+    <div class="co stop"><div class="t">Mantenla en secreto</div>Tu API key funciona como una tarjeta de crédito: cualquiera que la tenga puede gastar tus créditos. Nunca la pegues en chats públicos, capturas de pantalla ni vídeos.</div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> tienes una clave que empieza por <code>vnc-</code> guardada en un lugar seguro y tu cuenta tiene créditos.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">4</div><div class="ct"><h3>Conecta la clave a OpenClaw</h3><div class="lbl">Elige una de las dos formas</div></div></div>
+    <p><b>Forma 1 — el asistente de configuración (la más fácil):</b></p>
+    <div class="code"><div class="code-h"><span>Ejecutar el asistente</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>docker exec -it openclaw openclaw onboard
+<span class="c"># En el asistente:
+# 1. Elige "Venice AI" en la lista de proveedores
+# 2. Pega tu clave (vnc-...)
+# 3. Elige el modelo por defecto (empieza con deepseek-v4-flash)
+# 4. Confirma</span></pre></div>
+    <p><b>Forma 2 — editar el archivo de ajustes a mano:</b></p>
+    <div class="code"><div class="code-h"><span>Editar openclaw.json</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>nano /root/.openclaw/openclaw.json
+<span class="c"># Busca "providers" y pon:</span>
+"providers": {
+  "venice": {
+    "apiKey": "vnc-YOUR-KEY-HERE",
+    "defaultModel": "venice/deepseek-v4-flash"
+  }
+}
+<span class="c"># Guardar: Ctrl+O y luego Enter · Salir: Ctrl+X</span>
+docker restart openclaw</pre></div>
+    <div class="co info"><div class="t">Sobre el editor nano</div><code>nano</code> es un editor de texto sencillo dentro del terminal. Usa las flechas para moverte (el ratón no funciona), escribe normalmente y luego <b>Ctrl+O</b> + <b>Enter</b> para guardar y <b>Ctrl+X</b> para salir. En Mac también es Ctrl, no Cmd.</div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> Venice aparece como tu proveedor en el panel de OpenClaw.</div></div>
+  </div>
+  <div class="nav"><button class="nb" onclick="go(2)">← Paso 2</button><button class="nb pri" onclick="go(4)">Paso 4 · Chatea con él →</button></div>
+</section>
+
+<!-- ================= TAB 4: CHAT ================= -->
+<section class="sec" id="s4">
+  <div class="eyebrow">Paso 4 de 4</div>
+  <h2>Chatea con él en <em>Telegram o Discord</em></h2>
+  <p class="lead">Último paso: dale a tu agente una "línea de teléfono". Puedes usar una app o las dos a la vez.</p>
+
+  <div class="g g2">
+    <div class="opt"><span class="tag">La más rápida</span><h4>📱 Telegram</h4>
+      <div class="row"><span>Se siente como</span><span>Un chat tipo WhatsApp con tu agente</span></div>
+      <div class="row"><span>Tiempo de configuración</span><span>~3 minutos</span></div>
+      <div class="row"><span>Ideal para</span><span>Mensajes rápidos desde el móvil</span></div>
+      <div class="row"><span>Límite</span><span>Todo está en un solo chat</span></div></div>
+    <div class="opt"><span class="tag">La más organizada</span><h4>🎮 Discord</h4>
+      <div class="row"><span>Se siente como</span><span>Un espacio de trabajo con canales separados</span></div>
+      <div class="row"><span>Tiempo de configuración</span><span>~8 minutos</span></div>
+      <div class="row"><span>Ideal para</span><span>Separar temas: #reports, #deadlines, #email</span></div>
+      <div class="row"><span>Extra</span><span>Cada canal puede tener su propio contexto</span></div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">1</div><div class="ct"><h3>Crea un bot de Telegram</h3><div class="lbl">En el móvil · ~3 minutos</div></div></div>
+    <ol>
+      <li>En Telegram, busca <b>@BotFather</b> (el bot oficial con la marca azul) y ábrelo.</li>
+      <li>Envía <code>/newbot</code>.</li>
+      <li>Elige un nombre visible, por ejemplo <b>Asistente de Alex</b>.</li>
+      <li>Elige un nombre de usuario que termine en "bot", por ejemplo <code>alex_assistant_bot</code>.</li>
+      <li>BotFather responde con tu <b>bot token</b> → cópialo.</li>
+      <li>Opcional, para chats de grupo: envía <code>/setprivacy</code>, elige tu bot y luego <b>Disable</b>.</li>
+    </ol>
+    <div class="code"><div class="code-h"><span>Añádelo a openclaw.json</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>"telegram": {
+  "enabled": true,
+  "botToken": "PASTE-THE-BOTFATHER-TOKEN",
+  "accounts": {
+    "+15551234567": { "role": "admin", "name": "Alex" }
+  }
+}
+<span class="c">// "accounts" es tu lista de invitados: solo estos números pueden usar el bot.
+// Usa tu propio número con prefijo de país. Después: docker restart openclaw</span></pre></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">2</div><div class="ct"><h3>Crea un bot de Discord</h3><div class="lbl">En un ordenador · ~8 minutos</div></div></div>
+    <ol>
+      <li>Ve a <b>discord.com/developers/applications</b> y haz clic en <b>New Application</b> (llámala "Asistente de Alex").</li>
+      <li>En el menú de la izquierda, abre <b>Bot</b> → haz clic en <b>Reset Token</b> → <b>copia el token</b>.</li>
+      <li>En la misma página, en <b>Privileged Gateway Intents</b>, activa <b>Message Content Intent</b> y <b>Server Members Intent</b>.</li>
+      <li>Abre <b>OAuth2 → URL Generator</b>. Marca <b>bot</b> y luego los permisos <b>Send Messages</b>, <b>Read Message History</b>, <b>Embed Links</b>.</li>
+      <li>Copia el enlace generado, ábrelo en el navegador e <b>invita al bot a tu servidor de Discord</b>.</li>
+    </ol>
+    <div class="co plain"><div class="t">Por qué Discord brilla</div>Crea un canal por tema — <b>#general</b> para preguntas rápidas, <b>#reports</b> para resúmenes, <b>#deadlines</b> para seguir fechas límite, <b>#email</b> para redactar mensajes. Tu agente mantiene cada conversación por separado.</div>
+    <div class="code"><div class="code-h"><span>Añádelo a openclaw.json</span><button class="cp" onclick="cp(this)">Copiar</button></div><pre>"discord": {
+  "enabled": true,
+  "token": "PASTE-THE-DEVELOPER-PORTAL-TOKEN",
+  "applicationId": "YOUR-APPLICATION-ID",
+  "guilds": {
+    "YOUR_SERVER_ID": {
+      "channels": { "GENERAL_CHANNEL_ID": {}, "REPORTS_CHANNEL_ID": {} }
+    }
+  }
+}
+<span class="c">// El bot solo responde en los canales listados aquí.
+// Para copiar IDs: Ajustes de Discord → Avanzado → activa el Modo desarrollador,
+// luego clic derecho en un servidor o canal → Copiar ID. Después: docker restart openclaw</span></pre></div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="num">3</div><div class="ct"><h3>Envía tu primer mensaje</h3><div class="lbl">El momento de la verdad</div></div></div>
+    <ul>
+      <li><b>Telegram:</b> abre tu bot → pulsa <b>Start</b> → escribe "¡Hola! Preséntate."</li>
+      <li><b>Discord:</b> ve a uno de tus canales listados → escribe "¡Hola! Preséntate."</li>
+    </ul>
+    <p>La respuesta debería llegar en unos segundos.</p>
+    <div class="co warn"><div class="t">¿No responde? Revisa esto en orden</div>
+      1. ¿Está funcionando OpenClaw? → <code>docker ps</code> debería decir <b>Up</b>.<br>
+      2. ¿Reiniciaste después de editar los ajustes? → <code>docker restart openclaw</code><br>
+      3. ¿Los tokens están pegados exactamente, sin espacios de más?<br>
+      4. ¿Tu cuenta de Venice tiene créditos?<br>
+      5. Lee los últimos errores → <code>docker logs openclaw --tail 50</code>
+    </div>
+    <div class="done"><div class="ck">✓</div><div><b>Listo cuando:</b> tu agente responde. 🎉 Ya tienes un asistente de IA personal funcionando 24/7 en tu propio servidor, accesible desde tu móvil.</div></div>
+  </div>
+
+  <div class="hero" style="margin-top:6px">
+    <div class="lbl">Lo has conseguido</div>
+    <h1 style="font-size:30px">Tu checklist, <em>todo en verde</em></h1>
+    <p>✓ Servidor funcionando en Hostinger &nbsp;·&nbsp; ✓ OpenClaw instalado con Docker &nbsp;·&nbsp; ✓ Venice.ai conectado como cerebro &nbsp;·&nbsp; ✓ Bot de Telegram o Discord respondiendo</p>
+  </div>
+  <div class="nav"><button class="nb" onclick="go(3)">← Paso 3</button><button class="nb pri" onclick="go(5)">¿Prefieres que lo configure yo? →</button></div>
+</section>
+
+<!-- ================= TAB 5: BOOK ================= -->
+<section class="sec" id="s5">
+  <div class="eyebrow">Hecho para ti · Reserva una llamada de configuración</div>
+  <h2>Configúralo una vez, o delega el <em>mantenimiento.</em></h2>
+  <p class="lead">El mismo punto de partida que el resto de mi coaching — reserva la llamada, míralo construirse y decide el plan después.</p>
+
+  <div class="g g3">
+    <div class="opt pick price-card">
+      <span class="tag">Empieza aquí</span>
+      <h4>Starter</h4>
+      <span class="lbl">Pago único · precio en la llamada</span>
+      <ul>
+        <li>Llamada de configuración en directo de 45 minutos</li>
+        <li>Configuración completa del agente según tu negocio</li>
+        <li>Automatización del resumen matutino</li>
+        <li>Una app de mensajería conectada</li>
+        <li>1 sesión de seguimiento</li>
+      </ul>
+      <a class="btn-ref" href="https://alessandrocapezza.youcanbook.me/">Reservar llamada →</a>
+    </div>
+    <div class="opt price-card">
+      <span class="tag grey">Más automatización</span>
+      <h4>Pro</h4>
+      <span class="lbl">Pago único · precio en la llamada</span>
+      <ul>
+        <li>Todo lo de Starter</li>
+        <li>3 automatizaciones a medida</li>
+        <li>Integración de email + calendario</li>
+        <li>Configuración de memoria tipo CRM</li>
+        <li>Llamada mensual de ajuste, durante 3 meses</li>
+      </ul>
+      <a class="btn-sec" href="https://alessandrocapezza.youcanbook.me/">Reservar llamada →</a>
+    </div>
+    <div class="opt price-card">
+      <span class="tag grey">Sin preocupaciones</span>
+      <h4>Retainer</h4>
+      <span class="lbl">Mensual · precio en la llamada</span>
+      <ul>
+        <li>Agente alojado en mi propio servidor</li>
+        <li>Cero coste de infraestructura para ti</li>
+        <li>Optimización mensual</li>
+        <li>Soporte prioritario</li>
+        <li>Nuevas automatizaciones bajo petición</li>
+      </ul>
+      <a class="btn-sec" href="https://alessandrocapezza.youcanbook.me/">Reservar llamada →</a>
+    </div>
+  </div>
+
+  <div class="hero" style="margin-top:18px">
+    <div class="lbl">45 minutos · 49€</div>
+    <h1 style="font-size:30px">Una llamada, y ya está <em>funcionando.</em></h1>
+    <p>45 minutos, 49€ y un agente funcionando en tu propia app de chat antes de colgar.</p>
+    <div class="cta-row"><a class="btn-ref" href="https://alessandrocapezza.youcanbook.me/">Reservar llamada — 49€</a><a class="btn-ghost" href="/who-i-work-with.es.html">Con quién trabajo</a></div>
+  </div>
+  <div class="nav"><button class="nb" onclick="go(4)">← Paso 4</button><button class="nb pri" onclick="go(0)">Volver al inicio ↺</button></div>
+</section>
+
+<div class="foot">Herramientas de esta guía: <a href="https://www.hostinger.com?REFERRALCODE=6XXCOLIVIGCZ" target="_blank" rel="noopener sponsored">Hostinger (20% de descuento)</a> · <a href="https://venice.ai/chat?ref=05rQoP" target="_blank" rel="noopener sponsored">Venice.ai (bono de $10)</a> · enlaces de referido</div>
+</div>
+<!--BODY-END-->
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">Coach de Carrera de la Era de la IA</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with.es.html" class="footer-link">Who I Work With</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-business-owners.es.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.es.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/*LABELS-START*/
+var T=[
+  {l:"Empieza aquí",n:"0"},
+  {l:"Consigue un servidor",n:"1"},
+  {l:"Instala OpenClaw",n:"2"},
+  {l:"Conecta la IA",n:"3"},
+  {l:"Chatea con él",n:"4"},
+  {l:"Reservar llamada",n:"★"}
+];
+var STEP_LBL=function(i){return i===0?"Empieza aquí":(i===5?"Hecho para ti":"Paso "+i+" de 4");};
+var COPIED="Copiado ✓";
+/*LABELS-END*/
+var IDS=["start","server","install","ai","chat","book"];
+var ALIAS={price:5,pricing:5};
+var cur=0;
+function render(){
+  document.getElementById("tabs").innerHTML=T.map(function(t,i){
+    return '<button class="tab'+(i===5?' book':'')+(i===cur?' on':'')+'" onclick="go('+i+')"><span class="n">'+t.n+'</span>'+t.l+'</button>';
+  }).join("");
+  for(var i=0;i<T.length;i++){document.getElementById("s"+i).classList.toggle("vis",i===cur)}
+  document.getElementById("progBar").style.width=((cur+1)/T.length*100)+"%";
+  document.getElementById("stepLbl").textContent=STEP_LBL(cur);
+  var tb=document.getElementById("tabs"),on=tb.querySelector(".tab.on");
+  if(on){var r=on.getBoundingClientRect(),q=tb.getBoundingClientRect();tb.scrollLeft+=(r.left-q.left)-(tb.clientWidth-r.width)/2;}
+}
+function go(i){
+  cur=i;render();
+  try{history.replaceState(null,"",i===0?location.pathname:"#"+IDS[i])}catch(e){}
+  window.scrollTo(0,0);
+}
+function fromHash(){
+  var h=(location.hash||"").replace("#","").toLowerCase();
+  if(!h)return 0;
+  if(ALIAS.hasOwnProperty(h))return ALIAS[h];
+  var i=IDS.indexOf(h);
+  return i<0?0:i;
+}
+function cp(btn){
+  var pre=btn.parentNode.nextElementSibling;
+  var txt=pre.innerText;
+  var done=function(){var o=btn.textContent;btn.textContent=COPIED;setTimeout(function(){btn.textContent=o},1600)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback(txt);done()})}else{fallback(txt);done()}
+}
+function fallback(t){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}document.body.removeChild(a)}
+cur=fromHash();render();
+window.addEventListener("hashchange",function(){cur=fromHash();render();});
+</script>
+</body>
+</html>
