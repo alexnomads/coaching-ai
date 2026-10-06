@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html">
+<title>What Is Jev? The AI Decision Model Explained (2026) — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="Jev is TypeSafe's AI decision model: it returns a choice, score or yes/no with a confidence number instead of text. What it costs, how it differs from ChatGPT and Claude, and how to start without coding.">
+<link rel="canonical" href="https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<meta property="og:title" content="What Is Jev? The AI That Decides Instead of Writing">
+<meta property="og:description" content="A plain-English guide to Jev: what it is, what it costs, where it beats a chatbot, and how to use it without coding.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html">
+<meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<meta property="article:published_time" content="2026-10-06">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is Jev? The AI That Decides Instead of Writing">
+<meta name="twitter:description" content="A plain-English guide to Jev: what it is, what it costs, where it beats a chatbot, and how to use it without coding.">
+<meta name="twitter:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "@id": "https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html#article",
+   "headline": "What Is Jev? The AI That Decides Instead of Writing",
+   "description": "Jev is TypeSafe's AI decision model: it returns a choice, score or yes/no with a confidence number instead of text. What it costs, how it differs from ChatGPT and Claude, and how to start without coding.",
+   "image": "https://aicoachalex.com/ALEXAICOACH-SHAREv2.png",
+   "datePublished": "2026-10-06",
+   "dateModified": "2026-10-06",
+   "inLanguage": "en",
+   "keywords": "Jev, Jev AI, TypeSafe Jev, AI decision model, Jev vs ChatGPT, OpenRouter Jev, AI classification for business, AI lead scoring, AI email triage",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "What Is Jev? The AI That Decides Instead of Writing",
+     "item": "https://aicoachalex.com/blog/what-is-jev-ai-decision-model.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What does Jev stand for?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nothing. It isn't an acronym; it's the name of TypeSafe's decision model."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who makes Jev?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "TypeSafe, an AI lab founded by Diogo Almeida, Erik Gafni and Sasha Sheng. It launched in early access on 15 September 2026 and is available via OpenRouter."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Jev a replacement for ChatGPT or Claude?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Jev makes structured decisions; chatbots write and reason. The strongest setups use Jev to sort and check, and a chatbot to write."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does Jev cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "About $0.04 per million input tokens on OpenRouter, with free output, as of late September 2026. Check OpenRouter for current pricing."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can Jev read images or PDFs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Jev only accepts text. Convert documents to text first, or use a multimodal model for that step."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need to be a developer to use Jev?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You need an API, but not coding skills: a coding agent like Claude Code can build and test the integration from a plain-English prompt like the one above."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "HowTo",
+   "name": "How to start using Jev without coding",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "Pick one decision",
+     "text": "Choose one sorting decision you make every day, such as whether an email is from a potential client."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "Brief the options",
+     "text": "Describe each option in two or three plain sentences, like briefing a new hire."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "Collect 50 examples",
+     "text": "Gather 50 real examples you have already sorted by hand as a test set."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "Let a coding agent test it",
+     "text": "Ask a coding agent such as Claude Code to run the examples through Jev on OpenRouter and compare its answers and confidence with yours."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "Connect it carefully",
+     "text": "Connect it to your inbox or CRM, starting with flag-for-review rather than automatic action."
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a></div></div>
+      <a href="/who-i-work-with.html">Who I Work With</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/what-is-jev-ai-decision-model.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a>
+    <a href="/who-i-work-with.html">Who I Work With</a>
+    <div class="sn-lang"><a href="/blog/what-is-jev-ai-decision-model.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI Tools</span>
+      <span>8 min read</span>
+      <span>Updated 6 Oct 2026</span>
+    </div>
+    <h1 class="article-title">What Is Jev? The AI That Decides <em>Instead of Writing</em></h1>
+    <p class="article-dek">A plain-English guide for professionals and business owners: what Jev is, what it costs, where it beats ChatGPT or Claude, and how to use it without becoming a developer.</p>
+  </header>
+
+  <div class="article-body">
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>Jev is a "decision model" from the AI lab TypeSafe.</strong> You give it a piece of text and a question with fixed answers (pick one option, give a score, or yes/no). It returns the answer plus a probability for how sure it is. It never writes free text, so it can't ramble or invent an answer outside your options, and it costs a tiny fraction of a normal chatbot.</p>
+    </div>
+
+    <p>Most people use AI the same way for everything: open a chat, paste something in, get a paragraph back. That works for writing. It's a waste for the hundreds of small decisions that make up a working day.</p>
+
+    <p><em>Is this email urgent? Is this lead a real buyer? Which team should handle this request? Is this customer asking for a refund?</em> Those aren't writing tasks. They're sorting tasks. And until recently we've been paying a writer to do a sorter's job.</p>
+
+    <p>That's the gap Jev fills.</p>
+
+    <h2>What is Jev, exactly?</h2>
+
+    <p>Jev is an AI model built by <strong>TypeSafe</strong>, a lab founded by Diogo Almeida, Erik Gafni and Sasha Sheng. It went into early access on <strong>15 September 2026</strong> and is available through OpenRouter. The name isn't an acronym.</p>
+
+    <p>A normal language model (ChatGPT, Claude, Gemini) predicts words. Jev doesn't produce words at all. You describe a decision, and it hands back a structured answer in one of three shapes:</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>Question type</th><th>What you ask</th><th>What you get back</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Choice</strong></td><td>"Which of these options fits?" (e.g. billing, technical, account)</td><td>The chosen option, plus a probability for every option</td></tr>
+        <tr><td><strong>Score</strong></td><td>"Where does this sit on a scale?" (e.g. urgency 1–5)</td><td>A weighted score and how confident it is</td></tr>
+        <tr><td><strong>Yes/No</strong></td><td>"Is this true?" (e.g. "Is the customer asking for money back?")</td><td>A probability between 0 and 1</td></tr>
+      </tbody>
+    </table>
+
+    <p>You explain each option in plain language, the way you'd brief a new hire. Jev reads those descriptions, reads your text, and decides. The quality of its answer depends on how clearly you describe the options. That's the same lesson as with any AI: <strong>vague instructions get the most probable answer, not the one you meant.</strong></p>
+
+    <h2>Jev vs ChatGPT or Claude: what's the difference?</h2>
+
+    <p>They're not competitors. They do different jobs.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th></th><th>Chatbot (LLM)</th><th>Jev</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Output</strong></td><td>Paragraphs, code, drafts</td><td>One of your predefined answers + probabilities</td></tr>
+        <tr><td><strong>How sure is it?</strong></td><td>Hidden in the wording ("it seems likely…")</td><td>An explicit number you can set rules on</td></tr>
+        <tr><td><strong>Can it make things up?</strong></td><td>Yes, the content itself can be wrong</td><td>It can pick the wrong option, but never one you didn't define</td></tr>
+        <tr><td><strong>Input</strong></td><td>Text, images, audio, video</td><td>Text only</td></tr>
+        <tr><td><strong>Best for</strong></td><td>Writing, reasoning, explaining</td><td>Sorting, scoring, routing, checking</td></tr>
+      </tbody>
+    </table>
+
+    <blockquote>Think of it as hiring two people. The chatbot is your writer. Jev is your sorter: fast, cheap, and it only ever ticks one of the boxes you gave it.</blockquote>
+
+    <h2>How much does Jev cost?</h2>
+
+    <p>This is the part that changes what's worth automating. On OpenRouter, Jev costs about <strong>$0.04 per million input tokens, and output is free</strong>. OpenRouter's own example works out to roughly <strong>$19 for a million support tickets</strong>.</p>
+
+    <p>In a <a href="https://www.lennysnewsletter.com/p/jev-for-beginners-how-to-use-it-and" target="_blank" rel="noopener">How I AI episode on Lenny's Newsletter</a>, Claire Vo (founder of ChatPRD) used it to categorise <strong>1,700 pull requests for about 9 cents</strong>, and to turn 4,500 YouTube comments into an audience-insights dashboard.</p>
+
+    <p>At those prices, jobs you'd never pay a chatbot to do one by one become reasonable: scoring every email that hits your inbox, tagging every lead in your CRM, reading every review a competitor ever received.</p>
+
+    <h2>What can a business actually use Jev for?</h2>
+
+    <p>Here's how it maps to the kind of work my coaching clients bring me:</p>
+
+    <ul>
+      <li><strong>Inbox triage.</strong> Score every incoming email for urgency and route it: "client issue", "new lead", "supplier", "ignore". A chatbot then drafts replies only for the ones that matter.</li>
+      <li><strong>Lead qualification.</strong> Is this enquiry a real buyer, a tyre-kicker or a supplier pitching you? Act automatically on the clear ones, look yourself at the unsure ones.</li>
+      <li><strong>Support ticket routing.</strong> Billing, technical or account? Is the customer asking for a refund? Is it urgent?</li>
+      <li><strong>Feedback at scale.</strong> Tag hundreds of reviews, survey answers or social comments by theme and sentiment, then let a chatbot write the summary.</li>
+      <li><strong>Checking an AI agent before it acts.</strong> Before an agent sends an email or deletes a file, ask Jev: "Does this follow our policy?" Low confidence means a human looks first.</li>
+    </ul>
+
+    <div class="article-cta inline">
+      <h3>Not sure which of your tasks are "sorting" tasks?</h3>
+      <p>In a 50-minute diagnostic we map your week, find the decisions you're making by hand, and decide which ones a cheap model like Jev, a chatbot, or neither should take over.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="jev-mid-book">Book Diagnostic — 49€ →</a>
+    </div>
+
+    <h2>Why the confidence number matters</h2>
+
+    <p>Jev doesn't just answer. It tells you how sure it is, and TypeSafe calibrated those numbers so that, across many decisions, "80% sure" really means right about 80% of the time. (Any single answer can still be wrong.)</p>
+
+    <p>That lets you set three simple bands instead of trusting everything or nothing:</p>
+
+    <ol>
+      <li><strong>High confidence:</strong> act automatically.</li>
+      <li><strong>Middle:</strong> flag it for review.</li>
+      <li><strong>Low confidence:</strong> send it to a human.</li>
+    </ol>
+
+    <p>Where to draw those lines depends on your business. Test it on 50–100 real examples you've already sorted by hand, and see where it starts making mistakes.</p>
+
+    <h2>The catch: use it with a chatbot, not instead of one</h2>
+
+    <p>Jev has clear limits:</p>
+
+    <ul>
+      <li><strong>Text only.</strong> No images, PDFs as scans, audio or video.</li>
+      <li><strong>No explanations.</strong> You get a number, not the reasoning behind it.</li>
+      <li><strong>Not for maths or rules.</strong> Dates, totals and thresholds belong in a spreadsheet or a simple script, not in any AI model.</li>
+      <li><strong>Hosted and proprietary.</strong> You depend on TypeSafe's service, and answers can shift slightly between calls.</li>
+    </ul>
+
+    <p>Claire Vo said she stopped using Jev on its own. The pattern that works is a pair: <strong>Jev decides, a chatbot writes.</strong> Jev scores and routes the emails; Claude drafts replies for the five that matter.</p>
+
+    <p>If that sounds like a workflow with separate jobs and a checker, it is. It's exactly the idea behind <a href="/graph-engineering.html">graph engineering</a>: split the work into jobs, give each job the right tool, and keep a human where mistakes get expensive. Jev is a natural fit for the "sorter" and "checker" jobs in that graph.</p>
+
+    <h2>How to start with Jev if you don't code</h2>
+
+    <p>Jev is used through an API (OpenRouter or TypeSafe's own SDKs), so there's no chat window to type into. That sounds like a developer-only tool. In 2026 it isn't, because you can ask a coding agent such as Claude Code to wire it up for you.</p>
+
+    <h3>Step 1: Pick one sorting decision you make every day</h3>
+    <p>One, not five. "Is this email from a potential client?" is a great first one.</p>
+
+    <h3>Step 2: Write the options like a brief for a new hire</h3>
+    <p>For each option, two or three sentences on what counts and what doesn't. This is 80% of the result.</p>
+
+    <h3>Step 3: Collect 50 real examples you've already sorted</h3>
+    <p>This is your test set. Without it you can't tell whether the model is good or just confident.</p>
+
+    <h3>Step 4: Ask a coding agent to build the test</h3>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Prompt to paste into Claude Code</span>
+      <button class="copy-btn" type="button" data-copy="jevPrompt">Copy</button>
+<pre id="jevPrompt">I want to test the Jev decision model (model "typesafe/jev-1.13" on OpenRouter) on one decision in my business.
+
+The decision: [e.g. "Is this incoming email from a potential client?"]
+The options and what each means: [paste your brief]
+My test set: [attach a CSV with the text and the answer I chose by hand]
+
+Build a small script that sends each example to Jev, saves its answer and confidence next to mine, and shows me:
+1. How often Jev agreed with me
+2. Accuracy above and below different confidence levels, so I can pick my "act / review / escalate" thresholds
+3. The 10 examples where it was most confidently wrong
+
+Ask me for my OpenRouter API key at runtime. Never write it into a file.</pre>
+    </div>
+
+    <h3>Step 5: Only then connect it to your inbox or CRM</h3>
+    <p>Once the numbers hold up on your own examples, automate it. Start with "flag for review", not "act automatically".</p>
+
+    <h2>Is Jev worth it for you?</h2>
+
+    <p>If most of your AI use is writing, Jev changes nothing. Keep using your chatbot.</p>
+
+    <p>If your day is full of small, repeated judgments (sorting leads, triaging messages, tagging feedback, checking work before it goes out), Jev is the first tool that makes automating them almost free. The skill that matters isn't the API. It's being able to <strong>describe a decision clearly enough that a machine can make it</strong>. That's a skill worth building whatever the next model is called.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What does Jev stand for?</summary><p>Nothing. It isn't an acronym; it's the name of TypeSafe's decision model.</p></details>
+      <details><summary>Who makes Jev?</summary><p>TypeSafe, an AI lab founded by Diogo Almeida, Erik Gafni and Sasha Sheng. It launched in early access on 15 September 2026 and is available via OpenRouter.</p></details>
+      <details><summary>Is Jev a replacement for ChatGPT or Claude?</summary><p>No. Jev makes structured decisions; chatbots write and reason. The strongest setups use Jev to sort and check, and a chatbot to write.</p></details>
+      <details><summary>How much does Jev cost?</summary><p>About $0.04 per million input tokens on OpenRouter, with free output, as of late September 2026. Check OpenRouter for current pricing.</p></details>
+      <details><summary>Can Jev read images or PDFs?</summary><p>No. Jev only accepts text. Convert documents to text first, or use a multimodal model for that step.</p></details>
+      <details><summary>Do I need to be a developer to use Jev?</summary><p>You need an API, but not coding skills: a coding agent like Claude Code can build and test the integration from a plain-English prompt like the one above.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Want your first "sorter + writer" workflow built on your real work?</h3>
+      <p>We pick one decision you make every day, test it on your own examples, and connect it to the tools you already use. Start with a 49€ diagnostic, or see how I work with business owners.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="jev-end-book">Book Diagnostic — 49€ →</a>
+      <a href="/ai-for-business-owners.html" class="cta-secondary">AI for Business Owners</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://openrouter.ai/blog/insights/what-is-jev/" target="_blank" rel="noopener">OpenRouter: What is Jev</a> (pricing, question types, calibration, limits) · <a href="https://www.lennysnewsletter.com/p/jev-for-beginners-how-to-use-it-and" target="_blank" rel="noopener">Lenny's Newsletter / How I AI: Jev for beginners</a> with Claire Vo (use cases and costs). Prices and model version as of October 2026.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/graph-engineering.html">Graph engineering: design the work, not just the prompt →</a>
+      <a href="/blog/how-to-make-ai-videos-beginners.html">How to make AI videos: a beginner's guide →</a>
+      <a href="/blog/how-to-stay-relevant-ai-era.html">How to stay relevant in the AI era →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with.html" class="footer-link">Who I Work With</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
