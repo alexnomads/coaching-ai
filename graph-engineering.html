@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<title>Graph Engineering Explained: Design AI Workflows That Work | AI Coach Alex</title>
+<meta name="description" content="Graph engineering is the layer above prompt and context engineering. Learn the 6-condition test, the Diamond pattern, copyable AI workflow templates and how to build your first graph in 2026.">
+<link rel="canonical" href="https://aicoachalex.com/graph-engineering.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/graph-engineering.html">
+<meta property="og:title" content="Graph Engineering Explained: Design AI Workflows That Work">
+<meta property="og:description" content="Prompt engineering fixes the wording. Context engineering fixes the inputs. Graph engineering designs the work. A practical guide with templates and a free checker.">
+<meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graph Engineering Explained: Design AI Workflows That Work">
+<meta name="twitter:description" content="The layer above prompting. The 6-condition test, the Diamond pattern, and copyable AI workflow templates.">
+<meta name="twitter:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://aicoachalex.com/graph-engineering.html#article",
+      "headline": "Graph Engineering Explained: Design AI Workflows That Work",
+      "description": "Graph engineering is the layer above prompt and context engineering: designing the jobs, handoffs, checks and human approvals around an AI model.",
+      "image": "https://aicoachalex.com/ALEXAICOACH-SHAREv2.png",
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "inLanguage": "en",
+      "author": {"@type": "Person", "name": "Alessandro Capezza", "url": "https://www.linkedin.com/in/alessandrocapezza/"},
+      "publisher": {"@type": "Organization", "name": "AI Coach Alex", "url": "https://aicoachalex.com/", "logo": {"@type": "ImageObject", "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"}},
+      "mainEntityOfPage": "https://aicoachalex.com/graph-engineering.html",
+      "keywords": "graph engineering, AI workflow design, agent graph, multi-agent workflow, prompt engineering vs context engineering, AI agents for business, diamond pattern"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "AI Coach Alex", "item": "https://aicoachalex.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Graph Engineering", "item": "https://aicoachalex.com/graph-engineering.html"}
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to build your first AI workflow graph",
+      "totalTime": "PT2H",
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Pick one workflow you already run", "text": "Choose a real, recurring task such as a weekly report, a quote or a client brief. Not a new idea."},
+        {"@type": "HowToStep", "position": 2, "name": "Draw the graph", "text": "Write every job, the arrows between them, where the checks happen and where a human approves."},
+        {"@type": "HowToStep", "position": 3, "name": "Run it by hand once", "text": "Run each job as its own step inside one AI project, saving each output as a file. You are the state."},
+        {"@type": "HowToStep", "position": 4, "name": "Automate one lane", "text": "Only once the structure works, automate the lane that costs you the most time."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is graph engineering in AI?", "acceptedAnswer": {"@type": "Answer", "text": "Graph engineering is designing the work around an AI model: splitting a task into jobs, connecting them with arrows (what must happen before what), and keeping a shared state. It sits above prompt engineering (the wording) and context engineering (the inputs)."}},
+        {"@type": "Question", "name": "What is the difference between prompt engineering, context engineering and graph engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt engineering improves how you ask. Context engineering improves what information the model gets. Graph engineering improves how the work is structured: who does which step, in what order, who checks it and where a human signs off."}},
+        {"@type": "Question", "name": "When do I need an AI workflow graph instead of a better prompt?", "acceptedAnswer": {"@type": "Answer", "text": "Use a graph when the task has multiple steps, multiple sources, parallel paths, checks, real risk, or a required human approval. If none of these apply, a better prompt is enough."}},
+        {"@type": "Question", "name": "Do I need to code to use graph engineering?", "acceptedAnswer": {"@type": "Answer", "text": "No. Level 1 runs entirely by hand inside one AI project, with each step as its own chat or document. Code and orchestration tools only come in once the structure has proven itself."}},
+        {"@type": "Question", "name": "Is a knowledge graph the same as an agent graph?", "acceptedAnswer": {"@type": "Answer", "text": "No. A knowledge graph maps how information connects (customers, products, teams). An agent graph maps how work moves (planner, researchers, checker, human approval). This guide is about agent graphs."}},
+        {"@type": "Question", "name": "Do more AI agents give better results?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. More agents mean more noise and more coordination cost. Add a job only when it removes waiting, separates the worker from the checker, or protects an expensive decision."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2696345404134131');fbq('track','PageView');
+</script>
+
+<style>
+:root{
+  --cream:#F7F4EF;--paper:#FFFDF9;--ink:#0F0F0D;--ink2:#1C1C19;
+  --lime:#99E46B;--lime-deep:#73AD4D;--green-deep:#163300;
+  --dim:#6F6B65;--border:#DEDAD2;--border-dark:rgba(247,244,239,0.14);
+  --max:1120px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+.serif{font-family:'Fraunces',serif;font-variation-settings:"WONK" 1,"SOFT" 0;font-optical-sizing:auto;}
+.mono{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-weight:500;}
+h1,h2,h3{font-family:'Fraunces',serif;font-variation-settings:"WONK" 1,"SOFT" 0;font-weight:600;letter-spacing:-0.02em;line-height:1.08;}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--lime-deep);font-weight:500;}
+.on-ink h2 em,.on-ink h1 em,.on-ink h3 em{color:var(--lime);}
+.skip{position:absolute;left:-999px;}
+.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--cream);padding:8px 12px;z-index:200;}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(247,244,239,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
+.logo img{width:30px;height:30px;}
+nav.main{display:flex;gap:22px;align-items:center;font-size:14px;}
+nav.main a{text-decoration:none;color:var(--ink);opacity:0.75;}
+nav.main a:hover{opacity:1;}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:999px;transition:transform .15s;}
+.btn:hover{transform:translateY(-1px);}
+.btn-ink{background:var(--ink);color:var(--cream);}
+.btn-lime{background:var(--lime);color:var(--ink);}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);}
+.on-ink .btn-line{border-color:var(--cream);color:var(--cream);}
+.hdr .btn{padding:9px 16px;font-size:14px;}
+
+/* breadcrumb */
+.crumbs{font-size:13px;color:var(--dim);padding-top:28px;}
+.crumbs a{text-decoration:none;}
+.crumbs a:hover{text-decoration:underline;}
+
+/* hero */
+.hero{padding:40px 0 64px;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);margin-bottom:18px;display:block;}
+.on-ink .eyebrow{color:var(--lime);}
+.hero h1{font-size:clamp(44px,7vw,84px);max-width:900px;}
+.lede{font-size:clamp(18px,2vw,21px);color:#3a3833;max-width:680px;margin-top:22px;}
+.meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;font-size:13px;color:var(--dim);}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+
+/* stack */
+.stack{margin-top:56px;display:grid;gap:0;max-width:760px;border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;}
+.layer{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;padding:22px 24px;border-bottom:1.5px solid var(--ink);background:var(--paper);}
+.layer:last-child{border-bottom:none;background:var(--green-deep);color:var(--cream);}
+.layer .n{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--dim);}
+.layer:last-child .n{color:var(--lime);}
+.layer h3{font-size:22px;}
+.layer p{font-size:15px;color:var(--dim);margin-top:2px;}
+.layer:last-child p{color:rgba(247,244,239,0.7);}
+.layer .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;padding:6px 10px;border-radius:999px;border:1px solid var(--border);white-space:nowrap;}
+.layer:last-child .tag{background:var(--lime);color:var(--ink);border-color:var(--lime);}
+
+/* ticker */
+.ticker{background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:14px 0;border-top:1px solid var(--ink);}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;}
+.ticker-track span{margin:0 22px;}
+.ticker-track b{color:var(--lime);font-weight:500;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+
+/* sections */
+section.block{padding:96px 0;}
+section.block.on-ink{background:var(--ink);color:var(--cream);}
+section.block.on-green{background:var(--green-deep);color:var(--cream);}
+.sec-head{max-width:760px;margin-bottom:44px;}
+.sec-head h2{font-size:clamp(34px,4.6vw,56px);}
+.sec-head p{margin-top:16px;font-size:18px;color:#3a3833;}
+.on-ink .sec-head p,.on-green .sec-head p{color:rgba(247,244,239,0.75);}
+.prose{max-width:720px;}
+.prose p{margin-bottom:16px;}
+.prose strong{font-weight:600;}
+
+/* cards */
+.grid{display:grid;gap:16px;}
+.g2{grid-template-columns:repeat(2,1fr);}
+.g3{grid-template-columns:repeat(3,1fr);}
+.g4{grid-template-columns:repeat(4,1fr);}
+.card{background:var(--paper);border:1.5px solid var(--ink);border-radius:16px;padding:26px;}
+.on-ink .card{background:var(--ink2);border-color:var(--border-dark);}
+.card .num{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--dim);display:block;margin-bottom:12px;}
+.on-ink .card .num{color:var(--lime);}
+.card h3{font-size:24px;margin-bottom:8px;}
+.card p{font-size:15px;color:var(--dim);}
+.on-ink .card p{color:rgba(247,244,239,0.68);}
+
+/* graph flow */
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 28px;}
+.node{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:12px 18px;border:1.5px solid var(--ink);border-radius:10px;background:var(--paper);}
+.arrow{font-size:20px;color:var(--dim);}
+.state{width:100%;text-align:center;padding:12px;border:1.5px dashed var(--lime-deep);border-radius:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-deep);background:rgba(153,228,107,0.14);}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ba .card ol{margin-top:12px;padding-left:20px;font-size:15px;}
+.ba .card li{margin-bottom:6px;}
+.ba .card.after{background:var(--lime);border-color:var(--ink);}
+.ba .card.after p,.ba .card.after li{color:var(--ink);}
+.callout{margin-top:28px;font-family:'Fraunces',serif;font-variation-settings:"WONK" 1;font-style:italic;font-size:clamp(22px,2.6vw,30px);max-width:780px;}
+
+/* checker */
+.checker{background:var(--paper);border:1.5px solid var(--ink);border-radius:20px;padding:32px;}
+.on-ink .checker{background:var(--ink2);border-color:var(--border-dark);}
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 24px;}
+.check{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1.5px solid var(--border-dark);border-radius:12px;cursor:pointer;transition:border-color .15s,background .15s;}
+.check:hover{border-color:var(--lime);}
+.check input{appearance:none;width:22px;height:22px;flex-shrink:0;border:1.5px solid var(--cream);border-radius:6px;margin-top:2px;cursor:pointer;display:grid;place-content:center;}
+.check input:checked{background:var(--lime);border-color:var(--lime);}
+.check input:checked::after{content:"✓";color:var(--ink);font-size:14px;font-weight:700;}
+.check input:focus-visible{outline:2px solid var(--lime);outline-offset:2px;}
+.check.on{border-color:var(--lime);background:rgba(153,228,107,0.08);}
+.check strong{display:block;font-size:16px;color:var(--cream);}
+.check span{font-size:14px;color:rgba(247,244,239,0.65);}
+.verdict{border-radius:14px;padding:22px 24px;background:rgba(247,244,239,0.06);border:1.5px solid var(--border-dark);}
+.verdict .v-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--lime);}
+.verdict .v-title{font-family:'Fraunces',serif;font-variation-settings:"WONK" 1;font-size:28px;margin:6px 0;color:var(--cream);}
+.verdict .v-text{font-size:15px;color:rgba(247,244,239,0.75);}
+.meter{height:8px;border-radius:99px;background:rgba(247,244,239,0.12);margin-top:14px;overflow:hidden;}
+.meter i{display:block;height:100%;width:0;background:var(--lime);transition:width .3s;}
+
+/* diamond */
+.diamond{display:grid;gap:14px;justify-items:center;max-width:820px;margin:0 auto;}
+.d-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;}
+.d-node{text-align:center;padding:18px;border:1.5px solid var(--ink);border-radius:14px;background:var(--paper);width:100%;}
+.d-node b{display:block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;}
+.d-node span{font-size:14px;color:var(--dim);}
+.d-node.solo{max-width:360px;border-radius:999px;}
+.d-node.skeptic{background:#F2D6D6;border-color:#8a2f2f;max-width:420px;border-radius:999px;}
+.d-node.merge{background:var(--green-deep);color:var(--cream);max-width:520px;}
+.d-node.merge span{color:rgba(247,244,239,0.75);}
+.d-arrow{color:var(--dim);font-size:22px;line-height:1;}
+
+/* pipelines */
+.pipe{border:1.5px solid var(--ink);border-radius:16px;padding:22px 24px;background:var(--paper);margin-bottom:16px;}
+.pipe-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.pipe-head h3{font-size:24px;}
+.pipe-head .mono{font-size:11px;color:var(--dim);}
+.steps{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.st{font-size:14px;padding:8px 12px;border-radius:8px;background:var(--cream);border:1px solid var(--border);}
+.st.chk{background:#FBE7B8;border-color:#C9962B;}
+.st.hum{background:var(--lime);border-color:var(--lime-deep);font-weight:600;}
+.st-ar{color:var(--dim);font-size:14px;}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--dim);margin-bottom:22px;}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;}
+
+/* ladder */
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--border-dark);border-radius:18px;overflow:hidden;}
+.rung{padding:26px 22px;border-right:1.5px solid var(--border-dark);position:relative;}
+.rung:last-child{border-right:none;background:var(--lime);color:var(--ink);}
+.rung .num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--lime);letter-spacing:0.1em;}
+.rung:last-child .num{color:var(--green-deep);}
+.rung h3{font-size:24px;margin:10px 0 8px;}
+.rung p{font-size:14px;color:rgba(247,244,239,0.7);}
+.rung:last-child p{color:var(--ink);}
+
+/* levels */
+.levels{display:grid;gap:14px;}
+.level{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;padding:26px;border:1.5px solid var(--ink);border-radius:16px;background:var(--paper);}
+.level .big{font-family:'Fraunces',serif;font-size:64px;line-height:0.9;font-weight:700;color:var(--lime-deep);}
+.level h3{font-size:26px;}
+.level .mono{font-size:11px;color:var(--dim);display:block;margin:4px 0 10px;}
+.level ul{padding-left:18px;font-size:15px;color:#3a3833;}
+.level li{margin-bottom:4px;}
+.level .now{margin-top:12px;font-size:14px;padding:10px 14px;background:rgba(153,228,107,0.18);border-left:3px solid var(--lime-deep);border-radius:4px;}
+
+/* principles */
+.trap{margin-top:16px;padding:24px 26px;border-radius:16px;background:#FBE7B8;border:1.5px solid #C9962B;color:var(--ink);}
+.trap .mono{font-size:12px;color:#7a5410;}
+.trap p{font-family:'Fraunces',serif;font-variation-settings:"WONK" 1;font-size:24px;margin-top:6px;}
+
+/* examples */
+.ex{background:var(--ink2);border:1.5px solid var(--border-dark);border-radius:16px;padding:26px;}
+.ex .mono{font-size:11px;color:var(--lime);}
+.ex h3{font-size:22px;margin:8px 0 10px;color:var(--cream);}
+.ex p{font-size:15px;color:rgba(247,244,239,0.7);margin-bottom:12px;}
+.ex .steps .st{background:rgba(247,244,239,0.06);border-color:var(--border-dark);color:var(--cream);font-size:13px;}
+.ex .steps .st.chk{background:rgba(251,231,184,0.15);border-color:#C9962B;color:#F5D58A;}
+.ex .steps .st.hum{background:var(--lime);color:var(--ink);border-color:var(--lime);}
+.ex .pattern{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 10px;border-radius:99px;border:1px solid var(--border-dark);color:rgba(247,244,239,0.7);}
+
+/* first rep */
+.rep{counter-reset:rep;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.rep li{list-style:none;border:1.5px solid var(--ink);border-radius:16px;padding:24px;background:var(--paper);}
+.rep li::before{counter-increment:rep;content:"0" counter(rep);font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--lime-deep);display:block;line-height:1;margin-bottom:12px;}
+.rep h3{font-size:20px;margin-bottom:6px;}
+.rep p{font-size:14px;color:var(--dim);}
+.prompt{margin-top:28px;background:var(--ink);color:var(--cream);border-radius:16px;padding:24px;position:relative;}
+.prompt .mono{font-size:11px;color:var(--lime);}
+.prompt pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.6;margin-top:10px;text-transform:none;letter-spacing:0;}
+.copy{position:absolute;top:18px;right:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;background:var(--lime);color:var(--ink);border:none;border-radius:99px;padding:7px 12px;cursor:pointer;}
+
+/* kg vs ag */
+table.cmp{width:100%;border-collapse:collapse;font-size:15px;background:var(--paper);border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;}
+table.cmp th,table.cmp td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;}
+table.cmp thead th{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream);}
+table.cmp thead th:last-child{background:var(--lime);}
+table.cmp tbody th{font-weight:600;width:22%;color:var(--dim);font-size:14px;}
+table.cmp tr:last-child td,table.cmp tr:last-child th{border-bottom:none;}
+
+/* faq */
+.faq details{border-bottom:1.5px solid var(--ink);padding:22px 0;}
+.faq details:first-child{border-top:1.5px solid var(--ink);}
+.faq summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-variation-settings:"WONK" 1;font-size:22px;font-weight:600;display:flex;justify-content:space-between;gap:16px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--lime-deep);}
+.faq details[open] summary::after{content:"–";}
+.faq details p{margin-top:12px;max-width:760px;color:#3a3833;}
+
+/* cta */
+.cta-band{text-align:center;}
+.cta-band h2{font-size:clamp(36px,5vw,64px);max-width:860px;margin:0 auto;}
+.cta-band p{max-width:620px;margin:18px auto 0;color:rgba(247,244,239,0.75);}
+.cta-band .hero-cta{justify-content:center;}
+.related{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:56px;text-align:left;}
+.related a{display:block;text-decoration:none;padding:18px;border:1.5px solid var(--border-dark);border-radius:14px;transition:border-color .15s;}
+.related a:hover{border-color:var(--lime);}
+.related .mono{font-size:11px;color:var(--lime);}
+.related b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-top:6px;}
+
+.sources{font-size:13px;color:var(--dim);margin-top:40px;max-width:760px;}
+
+/* footer */
+footer.site{background:var(--ink);color:var(--cream);padding:56px 0 40px;border-top:1px solid var(--border-dark);}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.foot h4{font-family:'Fraunces',serif;font-size:22px;font-weight:600;}
+.foot p{font-size:14px;color:rgba(247,244,239,0.6);margin-top:4px;}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;max-width:620px;}
+.foot-links a{text-decoration:none;color:rgba(247,244,239,0.75);}
+.foot-links a:hover{color:var(--lime);}
+
+/* responsive */
+@media (max-width:960px){
+  nav.main{display:none;}
+  .g3,.g4,.checks,.ladder,.rep,.related{grid-template-columns:1fr 1fr;}
+  .rung{border-right:none;border-bottom:1.5px solid var(--border-dark);}
+}
+@media (max-width:640px){
+  body{font-size:16px;}
+  section.block{padding:64px 0;}
+  .g2,.g3,.g4,.checks,.ladder,.rep,.related,.ba,.d-row{grid-template-columns:1fr;}
+  .layer{grid-template-columns:40px 1fr;}
+  .layer .tag{grid-column:2;justify-self:start;}
+  .level{grid-template-columns:1fr;gap:6px;}
+  .level .big{font-size:44px;}
+  .checker{padding:20px;}
+  table.cmp{font-size:14px;}
+  table.cmp th,table.cmp td{padding:12px;}
+  .hdr .btn{display:none;}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1" alt=""></noscript>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap hdr">
+    <a class="logo" href="https://aicoachalex.com/"><img src="https://aicoachalex.com/assets/aicoachalex-mark.png" alt="AI Coach Alex logo" width="30" height="30">AI Coach Alex</a>
+    <nav class="main" aria-label="Main">
+      <a href="https://aicoachalex.com/#method">Method</a>
+      <a href="https://aicoachalex.com/career-risk-assessment.html">Risk Quiz</a>
+      <a href="https://aicoachalex.com/blog/">Blog</a>
+      <a href="https://aicoachalex.com/personal-ai-setup.html">Personal AI Setup</a>
+      <a href="https://aicoachalex.com/who-i-work-with.html">Who I Work With</a>
+    </nav>
+    <a class="btn btn-ink" href="https://alessandrocapezza.youcanbook.me/" data-cta="header-book">Book Diagnostic — 49€</a>
+  </div>
+</header>
+
+<main id="main">
+<article>
+
+<!-- HERO -->
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="https://aicoachalex.com/">AI Coach Alex</a> / Graph Engineering</nav>
+  <div class="hero">
+    <span class="eyebrow">The layer above prompting · 2026 guide</span>
+    <h1>Graph engineering: stop chatting, start <em>designing</em> the work.</h1>
+    <p class="lede">Most people try to get better AI results with better prompts. The bigger gains come from designing the work around the model: which jobs run, in what order, who checks them, and where a human signs off. That is graph engineering.</p>
+    <div class="meta-row">
+      <span>By Alessandro Capezza, AI Coach</span>
+      <span>Updated 6 October 2026</span>
+      <span>12 min read</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-ink" href="#checker">Take the 30-second test</a>
+      <a class="btn btn-line" href="#templates">See the templates</a>
+    </div>
+
+    <div class="stack" role="list" aria-label="Three ways to get work out of AI">
+      <div class="layer" role="listitem">
+        <span class="n">01</span>
+        <div><h3>Prompt engineering</h3><p>How you ask a better question.</p></div>
+        <span class="tag">The wording</span>
+      </div>
+      <div class="layer" role="listitem">
+        <span class="n">02</span>
+        <div><h3>Context engineering</h3><p>How you give the model better information.</p></div>
+        <span class="tag">The inputs</span>
+      </div>
+      <div class="layer" role="listitem">
+        <span class="n">03</span>
+        <div><h3>Graph engineering</h3><p>How you design the work around the AI.</p></div>
+        <span class="tag">The workflow</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Jobs</span><span><b>→</b></span><span>Arrows</span><span><b>→</b></span><span>State</span><span>•</span><span>The checker is never the writer</span><span>•</span><span>Draw it before you automate it</span><span>•</span><span>Human gate where mistakes get expensive</span><span>•</span><span>More agents ≠ better results</span><span>•</span>
+    <span>Jobs</span><span><b>→</b></span><span>Arrows</span><span><b>→</b></span><span>State</span><span>•</span><span>The checker is never the writer</span><span>•</span><span>Draw it before you automate it</span><span>•</span><span>Human gate where mistakes get expensive</span><span>•</span><span>More agents ≠ better results</span><span>•</span>
+  </div>
+</div>
+
+<!-- WHAT IS IT -->
+<section class="block" id="what-is-graph-engineering">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Definition</span>
+      <h2>What is graph engineering in <em>AI?</em></h2>
+    </div>
+    <div class="prose">
+      <p><strong>Graph engineering is the practice of splitting an AI task into separate jobs, connecting them in the right order, and keeping a shared record of what the system knows.</strong> Instead of one long chat that tries to do everything, you get a managed workflow where each step has one owner and one output.</p>
+      <p>The model does not change. What changes is the structure around it. The same question, run as a graph, comes back researched from several angles, attacked by a checker, merged into a recommendation, and approved by you.</p>
+    </div>
+
+    <h3 style="font-size:28px;margin:48px 0 18px;">Three words: jobs, arrows, <em>state</em></h3>
+    <div class="flow" aria-label="Example graph: three jobs sharing one state">
+      <span class="node">Job A</span><span class="arrow" aria-hidden="true">→</span>
+      <span class="node">Job B</span><span class="arrow" aria-hidden="true">→</span>
+      <span class="node">Job C</span>
+      <span class="state">State · the shared record every job reads and writes</span>
+    </div>
+    <div class="grid g3">
+      <div class="card"><span class="num">01</span><h3>Jobs</h3><p>One step, one owner, one output. A job does one thing and finishes.</p></div>
+      <div class="card"><span class="num">02</span><h3>Arrows</h3><p>What has to happen before what. If a step doesn't need the previous one, it shouldn't wait for it.</p></div>
+      <div class="card"><span class="num">03</span><h3>State</h3><p>The shared record of what the system knows so far: notes, sources, drafts, decisions.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:16px;">
+      <div class="card"><span class="num">Sequential</span><h3>One after the other</h3><p>Classify the request, then look up the customer account. The second step needs the first.</p></div>
+      <div class="card"><span class="num">Parallel</span><h3>At the same time</h3><p>Research customer pain, competitors and distribution together. None of them depends on the others.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="block" style="padding-top:0;" id="before-after">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The shift</span>
+      <h2>Same question. Very different <em>work</em> behind the answer.</h2>
+    </div>
+    <div class="ba">
+      <div class="card">
+        <span class="num">Old way · one chat</span>
+        <h3>"Should I build this?"</h3>
+        <ol>
+          <li>Ask the AI the question.</li>
+          <li>Get a confident essay back.</li>
+          <li>No sources, no challenge, no trail.</li>
+        </ol>
+      </div>
+      <div class="card after">
+        <span class="num" style="color:var(--green-deep)">Graph way · managed workflow</span>
+        <h3>"Should I build this?"</h3>
+        <ol>
+          <li>A planner splits the question into lanes.</li>
+          <li>Researchers run the lanes in parallel.</li>
+          <li>A skeptic attacks the findings.</li>
+          <li>A merger writes a one-page recommendation.</li>
+          <li>You decide the next move.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="callout">The output is still a report. The difference is that the work was designed.</p>
+  </div>
+</section>
+
+<!-- CHECKER -->
+<section class="block on-ink" id="checker">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The qualifying test</span>
+      <h2>Do you need a graph, or just a better <em>prompt?</em></h2>
+      <p>A graph earns its place only when the work has at least one of these six traits. Tick the ones that apply to a task you do every week.</p>
+    </div>
+    <div class="checker">
+      <div class="checks" id="checks">
+        <label class="check"><input type="checkbox" data-w="steps"><div><strong>Multiple steps</strong><span>The work doesn't finish in one pass.</span></div></label>
+        <label class="check"><input type="checkbox" data-w="sources"><div><strong>Multiple sources</strong><span>Evidence comes from more than one place: email, CRM, files, the web.</span></div></label>
+        <label class="check"><input type="checkbox" data-w="parallel"><div><strong>Parallel paths</strong><span>Some steps don't need to wait on each other.</span></div></label>
+        <label class="check"><input type="checkbox" data-w="checks"><div><strong>Checks</strong><span>Something has to grade the output before it's used.</span></div></label>
+        <label class="check"><input type="checkbox" data-w="risk"><div><strong>Risk</strong><span>A wrong answer costs money or trust.</span></div></label>
+        <label class="check"><input type="checkbox" data-w="approvals"><div><strong>Approvals</strong><span>A human has to sign off before it goes out.</span></div></label>
+      </div>
+      <div class="verdict" id="verdict" aria-live="polite">
+        <span class="v-label">Your result</span>
+        <div class="v-title" id="v-title">None ticked: write a better prompt.</div>
+        <div class="v-text" id="v-text">If none of the six apply, a graph is overhead. Spend the time on a sharper prompt and better context instead.</div>
+        <div class="meter"><i id="meter"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAMOND -->
+<section class="block" id="diamond-pattern">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The first pattern to learn</span>
+      <h2>The <em>Diamond</em> pattern</h2>
+      <p>Split, attack, merge, then let a human decide. It works for any decision that needs evidence from several angles: a new product, a new market, a hire, a supplier.</p>
+    </div>
+    <div class="diamond" aria-label="Diamond pattern diagram">
+      <div class="d-node solo"><b>01 · Planner</b><span>Turns the question into research lanes</span></div>
+      <div class="d-arrow" aria-hidden="true">↓</div>
+      <div class="d-row">
+        <div class="d-node"><b>02 · Customer</b><span>How people handle the problem today</span></div>
+        <div class="d-node"><b>02 · Competitors</b><span>Who already sells this, and at what price</span></div>
+        <div class="d-node"><b>02 · Distribution</b><span>How you would actually reach buyers</span></div>
+      </div>
+      <div class="d-arrow" aria-hidden="true">↓</div>
+      <div class="d-node skeptic"><b>03 · Skeptic</b><span>Attacks the evidence. Weak claims don't survive.</span></div>
+      <div class="d-arrow" aria-hidden="true">↓</div>
+      <div class="d-node merge"><b>04 · Merge + human yes</b><span>Survivors become a one-page recommendation. You pick the next move: interviews, a teardown, a small prototype, or pass.</span></div>
+    </div>
+    <p class="callout" style="margin-left:auto;margin-right:auto;text-align:center;">The human decides the next move, not the model.</p>
+  </div>
+</section>
+
+<!-- TEMPLATES -->
+<section class="block" style="padding-top:0;" id="templates">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ready-made pipelines</span>
+      <h2>Five AI workflow templates you can <em>copy</em></h2>
+      <p>Three classics plus two built for small businesses. Every one has a checker that isn't the writer, and a human gate where a mistake would be expensive.</p>
+    </div>
+    <div class="legend"><span><i style="background:var(--cream);border:1px solid var(--border)"></i>Job</span><span><i style="background:#FBE7B8;border:1px solid #C9962B"></i>Checker</span><span><i style="background:var(--lime)"></i>Human gate</span></div>
+
+    <div class="pipe">
+      <div class="pipe-head"><h3>Customer support</h3><span class="mono">Sequential · 6 jobs</span></div>
+      <div class="steps"><span class="st">Classify</span><span class="st-ar">→</span><span class="st">Account context</span><span class="st-ar">→</span><span class="st">Docs + policy</span><span class="st-ar">→</span><span class="st">Draft reply</span><span class="st-ar">→</span><span class="st chk">Check accuracy, tone, risk</span><span class="st-ar">→</span><span class="st hum">Human: refunds + angry customers</span></div>
+    </div>
+    <div class="pipe">
+      <div class="pipe-head"><h3>Content</h3><span class="mono">Sequential · 7 jobs</span></div>
+      <div class="steps"><span class="st">Research</span><span class="st-ar">→</span><span class="st">Thesis</span><span class="st-ar">→</span><span class="st">Examples</span><span class="st-ar">→</span><span class="st">Hook</span><span class="st-ar">→</span><span class="st">Script</span><span class="st-ar">→</span><span class="st chk">Check specificity + pacing</span><span class="st-ar">→</span><span class="st hum">Human: titles, thumbnails, captions</span></div>
+    </div>
+    <div class="pipe">
+      <div class="pipe-head"><h3>Code</h3><span class="mono">Sequential · 7 jobs</span></div>
+      <div class="steps"><span class="st">Plan</span><span class="st-ar">→</span><span class="st">Edit</span><span class="st-ar">→</span><span class="st">Review the diff</span><span class="st-ar">→</span><span class="st">Run tests</span><span class="st-ar">→</span><span class="st">Check the UI</span><span class="st-ar">→</span><span class="st chk">Hunt edge cases</span><span class="st-ar">→</span><span class="st hum">Human approves the release</span></div>
+    </div>
+    <div class="pipe">
+      <div class="pipe-head"><h3>Quote or proposal</h3><span class="mono">Parallel outputs · services businesses</span></div>
+      <div class="steps"><span class="st">Site-visit notes or call transcript</span><span class="st-ar">→</span><span class="st">Price list + discount rules</span><span class="st-ar">→</span><span class="st">Ops brief ∥ Technical brief ∥ Client quote</span><span class="st-ar">→</span><span class="st chk">Check totals + format vs past quotes</span><span class="st-ar">→</span><span class="st hum">Owner signs off</span></div>
+    </div>
+    <div class="pipe">
+      <div class="pipe-head"><h3>Weekly owner report</h3><span class="mono">Parallel sources · operations</span></div>
+      <div class="steps"><span class="st">Jobs app ∥ Accounting ∥ Inbox ∥ Calls</span><span class="st-ar">→</span><span class="st">Merge into one report</span><span class="st-ar">→</span><span class="st chk">Flag gaps: overdue, unworked leads, missing notes</span><span class="st-ar">→</span><span class="st hum">Owner picks this week's 3 actions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LADDER -->
+<section class="block on-ink" id="prompt-agent-graph">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it fits together</span>
+      <h2>Prompt, agent, graph, AI <em>employee.</em></h2>
+      <p>These are not competing ideas. They are the same idea at four zoom levels. Each one contains the previous one.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung"><span class="num">01 · Prompt</span><h3>One request</h3><p>You ask, the model answers. Fine for one-pass work.</p></div>
+      <div class="rung"><span class="num">02 · Agent</span><h3>One job, looping</h3><p>Input → model → tool → result → back to the model, until the job is done. Build one small, narrow agent first.</p></div>
+      <div class="rung"><span class="num">03 · Graph</span><h3>Jobs connected</h3><p>Several jobs linked by arrows, with shared state, a separate checker and a human gate.</p></div>
+      <div class="rung"><span class="num">04 · AI employee</span><h3>A graph that runs</h3><p>The graph plus memory, a schedule and clear permissions: what it does alone, what it asks about, what stays yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section class="block" id="implementation-levels">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The on-ramp · updated for 2026</span>
+      <h2>Three levels of <em>implementation</em></h2>
+      <p>Start by hand. Add tooling only once the structure has proven itself. Current models such as Claude Opus 5.5 make every level easier, which makes skipping level 1 more tempting and more expensive.</p>
+    </div>
+    <div class="levels">
+      <div class="level">
+        <div class="big">1</div>
+        <div>
+          <h3>Manual lanes</h3><span class="mono">No code</span>
+          <ul>
+            <li>Draw the graph on paper or a whiteboard first.</li>
+            <li>Run each lane as its own chat or document.</li>
+            <li>You are the state: you carry the outputs from step to step.</li>
+          </ul>
+          <p class="now">In 2026: run it inside one AI project. Save each lane's output as a project file, and the files become the shared state.</p>
+        </div>
+      </div>
+      <div class="level">
+        <div class="big">2</div>
+        <div>
+          <h3>File trails</h3><span class="mono">Light code</span>
+          <ul>
+            <li>Use a code workspace such as Claude Code or a repository.</li>
+            <li>Every step writes its own file, giving you a trail you can compare and reuse.</li>
+          </ul>
+          <p class="now">In 2026: parallel lanes can run as subagents, and the skeptic can be a separate subagent that never saw the draft being written. That makes "the checker isn't the writer" real.</p>
+        </div>
+      </div>
+      <div class="level">
+        <div class="big">3</div>
+        <div>
+          <h3>Orchestrated</h3><span class="mono">Real tooling</span>
+          <ul>
+            <li>LangGraph for state checkpoints and human-in-the-loop.</li>
+            <li>n8n or Make for Slack, email, Airtable and CRM triggers.</li>
+          </ul>
+          <p class="now">In 2026: try connectors to your real tools (accounting, CRM, inbox) plus scheduled tasks before you build a full orchestration stack.</p>
+        </div>
+      </div>
+    </div>
+    <p class="callout">The first rep is to draw the graph before you automate it.</p>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="block on-green" id="good-graph">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What good looks like</span>
+      <h2>Four traits of a good graph, and one <em>trap.</em></h2>
+    </div>
+    <div class="grid g4 on-ink">
+      <div class="card"><span class="num">01</span><h3>No fake waiting</h3><p>Steps run in parallel unless one truly needs the other.</p></div>
+      <div class="card"><span class="num">02</span><h3>Worker ≠ checker</h3><p>The step that writes is never the step that reviews.</p></div>
+      <div class="card"><span class="num">03</span><h3>Human gate where it's expensive</h3><p>Approvals sit where a mistake costs money or trust, not on every step.</p></div>
+      <div class="card"><span class="num">04</span><h3>It leaves a trail</h3><p>Notes, sources, drafts and decisions stay behind, so the next run starts smarter.</p></div>
+    </div>
+    <div class="trap">
+      <span class="mono">The trap</span>
+      <p>More agents means more noise and more coordination cost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES -->
+<section class="block on-ink" id="examples">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">From real coaching work</span>
+      <h2>What graphs look like in real <em>businesses</em></h2>
+      <p>Anonymised examples from the people I coach. None of them started with a graph. Each started with one workflow they already ran by hand.</p>
+    </div>
+    <div class="grid g3">
+      <div class="ex">
+        <span class="mono">Trades business · 12 people</span>
+        <h3>The Monday owner report</h3>
+        <p>Four tools fed into one weekly view of jobs, cash and leads. The checker flags jobs with no notes and leads nobody called back.</p>
+        <div class="steps"><span class="st">Jobs app ∥ Accounting ∥ Inbox</span><span class="st chk">Gap check</span><span class="st hum">Owner + GM</span></div>
+        <span class="pattern">Parallel sources</span>
+      </div>
+      <div class="ex">
+        <span class="mono">Event production · 400+ events/yr</span>
+        <h3>From site visit to three documents</h3>
+        <p>One recorded site visit becomes a logistics brief, a technical brief and a client quote, checked against real past examples before the owner signs.</p>
+        <div class="steps"><span class="st">Transcript</span><span class="st">3 docs ∥</span><span class="st chk">Format + totals</span><span class="st hum">Owner</span></div>
+        <span class="pattern">Fan-out + checker</span>
+      </div>
+      <div class="ex">
+        <span class="mono">Real estate · CEO</span>
+        <h3>The daily sales brief</h3>
+        <p>Per-agent performance, product mix and a competitor watch are researched separately, challenged, then merged into one page for the CEO.</p>
+        <div class="steps"><span class="st">Sales ∥ Mix ∥ Market</span><span class="st chk">Skeptic</span><span class="st hum">CEO</span></div>
+        <span class="pattern">Diamond</span>
+      </div>
+      <div class="ex">
+        <span class="mono">Accounting firm</span>
+        <h3>Audit checks</h3>
+        <p>Audit is a checker by nature. Each control runs as its own lane, and a human reviews only the exceptions.</p>
+        <div class="steps"><span class="st">Control A ∥ B ∥ C</span><span class="st chk">Exceptions</span><span class="st hum">Accountant</span></div>
+        <span class="pattern">Parallel checks</span>
+      </div>
+      <div class="ex">
+        <span class="mono">Hospitality SaaS</span>
+        <h3>Monthly venue reporting</h3>
+        <p>Point-of-sale and spreadsheet data become a monthly report per venue, with a privacy gate before revenue figures leave the system.</p>
+        <div class="steps"><span class="st">POS ∥ Sheets</span><span class="st">Report</span><span class="st chk">Privacy check</span><span class="st hum">Owner</span></div>
+        <span class="pattern">Sequential + gate</span>
+      </div>
+      <div class="ex">
+        <span class="mono">Voice AI engineer</span>
+        <h3>Voice identity verification</h3>
+        <p>Speech-to-text, spoofing detection and verification run as separate jobs. A person reviews only the uncertain calls.</p>
+        <div class="steps"><span class="st">Transcribe</span><span class="st">Anti-spoof</span><span class="st chk">Verify</span><span class="st hum">Review edge cases</span></div>
+        <span class="pattern">Code pipeline</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST REP -->
+<section class="block" id="first-graph">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Your first rep</span>
+      <h2>Build your first graph in four <em>steps</em></h2>
+      <p>Two hours, no code. Use a task you already do every week, not a new idea.</p>
+    </div>
+    <ol class="rep">
+      <li><h3>Pick one workflow</h3><p>A weekly report, a quote, a client brief. Something you already run by hand.</p></li>
+      <li><h3>Draw it</h3><p>Write the jobs, the arrows, the checks, the handoffs and where you approve.</p></li>
+      <li><h3>Run it by hand once</h3><p>One AI project, one lane at a time, each output saved as a file.</p></li>
+      <li><h3>Then automate</h3><p>Automate only the lane that costs you the most time.</p></li>
+    </ol>
+    <div class="prompt">
+      <span class="mono">Copy this prompt to draw your first graph</span>
+      <button class="copy" type="button" data-copy="p1">Copy</button>
+<pre id="p1">I want to turn one of my recurring tasks into an AI workflow graph.
+
+The task: [describe it in 2–3 sentences, including the tools and documents it uses].
+
+Before proposing anything:
+1. List every step as a separate job (one step, one owner, one output).
+2. Mark which jobs must wait for another and which can run in parallel.
+3. Add one checker job that reviews the output and is not the job that wrote it.
+4. Put a human approval only where a mistake would cost money or trust.
+5. Tell me honestly whether this needs a graph at all, or just a better prompt.
+
+Return the graph as a numbered list, then the single lane I should automate first and why.</pre>
+    </div>
+  </div>
+</section>
+
+<!-- KG vs AG -->
+<section class="block" style="padding-top:0;" id="knowledge-graph-vs-agent-graph">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Don't mix them up</span>
+      <h2>Knowledge graph vs agent <em>graph</em></h2>
+      <p>One maps how information connects. The other maps how work moves. This guide is about agent graphs, the one you can use this week.</p>
+    </div>
+    <table class="cmp">
+      <thead><tr><th scope="col"></th><th scope="col">Knowledge graph</th><th scope="col">Agent graph</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Question it answers</th><td>How does information connect?</td><td>How should work move?</td></tr>
+        <tr><th scope="row">What it maps</th><td>Customers, companies, products, teams</td><td>Planner, researchers, skeptic, merger, human</td></tr>
+        <tr><th scope="row">Reach for it when</th><td>Search keeps returning the nearest-looking paragraph instead of the right answer</td><td>The task has steps, checks and handoffs</td></tr>
+        <tr><th scope="row">Looks like</th><td>Relationships you can reason across</td><td>Research → skeptic → merge → human approves</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" style="padding-top:0;" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Graph engineering, <em>answered</em></h2>
+    </div>
+    <div class="faq">
+      <details open><summary>What is graph engineering in AI?</summary><p>Graph engineering is designing the work around an AI model: splitting a task into jobs, connecting them with arrows (what must happen before what), and keeping a shared state. It sits above prompt engineering (the wording) and context engineering (the inputs).</p></details>
+      <details><summary>How is it different from prompt and context engineering?</summary><p>Prompt engineering improves how you ask. Context engineering improves what information the model gets. Graph engineering improves how the work is structured: who does which step, in what order, who checks it, and where a human signs off.</p></details>
+      <details><summary>When do I need a graph instead of a better prompt?</summary><p>When the task has multiple steps, multiple sources, parallel paths, checks, real risk or a required human approval. If none of these apply, a better prompt is enough. Use the <a href="#checker">30-second test</a> above.</p></details>
+      <details><summary>Do I need to code?</summary><p>No. Level 1 runs entirely by hand inside one AI project, with each step as its own chat or document. Code and orchestration tools come in only once the structure has proven itself.</p></details>
+      <details><summary>Is a knowledge graph the same as an agent graph?</summary><p>No. A knowledge graph maps how information connects. An agent graph maps how work moves. This guide covers agent graphs.</p></details>
+      <details><summary>Do more AI agents give better results?</summary><p>Usually not. More agents mean more noise and more coordination cost. Add a job only when it removes waiting, separates the worker from the checker, or protects an expensive decision.</p></details>
+    </div>
+  </div>
+</section>
+
+</article>
+
+<!-- CTA -->
+<section class="block on-ink cta-band" id="book">
+  <div class="wrap">
+    <span class="eyebrow">Work with me</span>
+    <h2>Want your first graph built around <em>your</em> work?</h2>
+    <p>In a 50-minute diagnostic we pick one workflow you already run, draw its graph together, and decide whether it needs a graph or just a better prompt.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lime" href="https://alessandrocapezza.youcanbook.me/" data-cta="footer-book">Book Diagnostic — 49€ ↗</a>
+      <a class="btn btn-line" href="https://t.me/alexnomads">Message on Telegram</a>
+    </div>
+    <div class="related">
+      <a href="https://aicoachalex.com/personal-ai-setup.html"><span class="mono">Course</span><b>Personal AI Setup</b></a>
+      <a href="https://aicoachalex.com/ai-for-business-owners.html"><span class="mono">For owners</span><b>AI for Business Owners</b></a>
+      <a href="https://aicoachalex.com/voice-ai-agents.html"><span class="mono">Course</span><b>Voice AI Agents</b></a>
+      <a href="https://aicoachalex.com/120-prompts.html"><span class="mono">Free</span><b>120 AI Prompts</b></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <h4>Alessandro Capezza</h4>
+      <p>AI Era Career Coach · <a href="mailto:aicoachalex@gmail.com" style="color:var(--lime)">aicoachalex@gmail.com</a></p>
+    </div>
+    <div class="foot-links">
+      <a href="https://aicoachalex.com/">Home</a>
+      <a href="https://aicoachalex.com/who-i-work-with.html">Who I Work With</a>
+      <a href="https://aicoachalex.com/ai-video-course-booking.html">AI VideoGen</a>
+      <a href="https://aicoachalex.com/voice-ai-agents.html">Voice AI Agents</a>
+      <a href="https://aicoachalex.com/personal-ai-setup.html">Personal AI Setup</a>
+      <a href="https://aicoachalex.com/120-prompts.html">120 Prompts</a>
+      <a href="https://aicoachalex.com/ai-for-business-owners.html">AI for Business Owners</a>
+      <a href="https://aicoachalex.com/openclaw-ai-agent-setup.html">OpenClaw Agent Setup</a>
+      <a href="https://aicoachalex.com/blog/">Blog</a>
+      <a href="https://www.linkedin.com/in/alessandrocapezza/">LinkedIn</a>
+      <a href="https://www.instagram.com/alexislimitless/">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Graph-or-prompt checker
+  var boxes = document.querySelectorAll('#checks input');
+  var title = document.getElementById('v-title');
+  var text = document.getElementById('v-text');
+  var meter = document.getElementById('meter');
+  var fired = false;
+  function update(){
+    var on = {}, n = 0;
+    boxes.forEach(function(b){
+      b.closest('.check').classList.toggle('on', b.checked);
+      if(b.checked){ on[b.dataset.w] = true; n++; }
+    });
+    meter.style.width = (n/6*100) + '%';
+    var t, d;
+    if(n === 0){
+      t = 'None ticked: write a better prompt.';
+      d = 'If none of the six apply, a graph is overhead. Spend the time on a sharper prompt and better context instead.';
+    } else if(n === 1 && !on.risk && !on.approvals){
+      t = 'Borderline: try a better prompt first.';
+      d = 'One trait is not enough to justify a graph. Write a structured prompt with clear steps. If it still breaks, split it into two jobs.';
+    } else if(on.parallel || (on.sources && n >= 3)){
+      t = 'Graph: start with the Diamond.';
+      d = 'Several independent lanes feeding one decision. Plan the lanes, research them in parallel, add a skeptic, merge, then approve it yourself.';
+    } else if(on.risk || on.approvals){
+      t = 'Graph: pipeline with a human gate.';
+      d = 'Run the steps in order, add a checker that is not the writer, and put your approval exactly where a mistake gets expensive.';
+    } else {
+      t = 'Graph: simple sequential pipeline.';
+      d = 'Break the task into ordered jobs, each with one output, and add a checker at the end. Run it by hand once before automating.';
+    }
+    title.textContent = t;
+    text.textContent = d;
+    if(!fired && n > 0 && window.dataLayer){ window.dataLayer.push({event:'graph_checker_used'}); fired = true; }
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', update); });
+
+  // Copy buttons
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.copy);
+      var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); };
+      if(navigator.clipboard){ navigator.clipboard.writeText(el.textContent).then(done); }
+      else { var r = document.createRange(); r.selectNode(el); getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand('copy'); done(); }
+      if(window.dataLayer){ window.dataLayer.push({event:'graph_prompt_copied'}); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
