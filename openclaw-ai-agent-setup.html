@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Your Own 24/7 AI Agent — VPS + OpenClaw Setup · AI Coach Alex</title>
+<title>OpenClaw AI Agent Setup Guide — AI Coach Alex</title>
 <meta name="description" content="Step-by-step OpenClaw setup guide: run your own 24/7 AI agent on a Hostinger VPS with Docker, connect Venice.ai as the brain, and chat with it on Telegram or Discord. Beginner friendly, every command ready to copy.">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="canonical" href="https://aicoachalex.com/openclaw-ai-agent-setup.html">
@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
 <meta property="og:url" content="https://aicoachalex.com/openclaw-ai-agent-setup.html">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Coach Alex">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Google Tag Manager -->
@@ -277,6 +278,10 @@ h2 em{font-style:italic;color:var(--green-2)}
 .sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
 .sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
 .sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+/* courses hub link */
+.sn-dd:focus-within .sn-dd-m{display:flex}
+.sn .sn-mob a.sn-mob-sub{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px;border-bottom:0}
+.sn-dark .sn-mob a.sn-mob-sub{color:rgba(248,246,241,.55)!important}
 </style>
 </head>
 <body>
@@ -299,7 +304,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
       <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
       <a href="/blog/">Blog</a>
       <a href="/openclaw-ai-agent-setup.html" class="sn-cur">Configure OpenClaw Agent</a>
-      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a></div></div>
+      <div class="sn-dd"><a class="sn-dd-t" href="/courses.html" aria-haspopup="true" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></a><div class="sn-dd-m"><a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a></div></div>
       <a href="/who-i-work-with.html">Who I Work With</a>
     </div>
     <div class="sn-right">
@@ -314,8 +319,8 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
     <a href="/blog/">Blog</a>
     <a href="/openclaw-ai-agent-setup.html" class="sn-cur">Configure OpenClaw Agent</a>
-    <div class="sn-mob-sub">Courses</div>
-    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a>
+    <a class="sn-mob-sub" href="/courses.html">Courses →</a>
+    <a class="sn-mob-course" href="/personal-ai-agent.html">Your Own AI</a><a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a>
     <a href="/who-i-work-with.html">Who I Work With</a>
     <div class="sn-lang"><a href="/openclaw-ai-agent-setup.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/openclaw-ai-agent-setup.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/openclaw-ai-agent-setup.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
     <a class="sn-cta-m sn-cta" href="#book">Book Setup Call</a>
@@ -836,6 +841,7 @@ docker restart openclaw</pre></div>
         aicoachalex@gmail.com
       </a>
       <a href="/who-i-work-with.html" class="footer-link">Who I Work With</a>
+      <a href="/personal-ai-agent.html" class="footer-link">Your Own AI</a>
       <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
       <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
       <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
@@ -899,7 +905,7 @@ window.addEventListener("hashchange",function(){cur=fromHash();render();});
 var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
 function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
 if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
-if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){if(window.matchMedia('(hover:hover)').matches||dd.classList.contains('open'))return;e.preventDefault();e.stopPropagation();dd.classList.add('open');t.setAttribute('aria-expanded','true');});
 document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
 var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});

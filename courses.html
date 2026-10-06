@@ -26,8 +26,19 @@ fbq('track', 'PageView');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<title>Voice AI Agents — AI Coach Alex</title>
-<meta name="description" content="Learn to design, evaluate and ship voice AI agents that hold up past the demo — turn-taking, quality measurement, and the right build approach for your team.">
+<title>AI Courses — AI Coach Alex</title>
+<meta name="description" content="Every course and free resource from AI Coach Alex in one place: a personal AI assistant, AI agents, AI video, voice AI, AI for business owners and 120 free prompts.">
+<link rel="canonical" href="https://aicoachalex.com/courses.html">
+<meta property="og:site_name" content="AI Coach Alex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Courses — Pick the track that fits how you work">
+<meta property="og:description" content="Every course and free resource from AI Coach Alex in one place: a personal AI assistant, AI agents, AI video, voice AI, AI for business owners and 120 free prompts.">
+<meta property="og:url" content="https://aicoachalex.com/courses.html">
+<meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Courses — Pick the track that fits how you work">
+<meta name="twitter:description" content="Every course and free resource from AI Coach Alex in one place: a personal AI assistant, AI agents, AI video, voice AI, AI for business owners and 120 free prompts.">
+<meta name="twitter:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -314,7 +325,13 @@ fbq('track', 'PageView');
 .sn .sn-mob a.sn-mob-sub{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px;border-bottom:0}
 .sn-dark .sn-mob a.sn-mob-sub{color:rgba(248,246,241,.55)!important}
 </style>
-<meta property="og:site_name" content="AI Coach Alex">
+<style id="page-courses">
+  .course{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s;}
+  .course:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .course .p-desc{flex:1;}
+  .c-link{font-family:var(--mono);font-size:12px;color:var(--ink);margin-top:18px;}
+  .course:last-child{background:#EEF7E6;}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -323,6 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 /></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="sn" id="siteNav" role="navigation" aria-label="Menu">
   <div class="sn-in">
@@ -338,7 +356,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <div class="sn-right">
       
       <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
-      <a class="sn-cta aicoach-book-link" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Lesson — 49€</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€</a>
       <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -351,268 +369,73 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <a class="sn-mob-course" href="/personal-ai-agent.html">Your Own AI</a><a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a>
     <a href="/who-i-work-with.html">Who I Work With</a>
     
-    <a class="sn-cta-m sn-cta aicoach-book-link" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Lesson — 49€</a>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic — 49€</a>
   </div>
 </div>
 
 
 <header class="hero wrap">
-  <div class="eyebrow">Voice AI Agents</div>
-  <h1>Anyone can demo a voice agent. Few can make one hold up in <em>production.</em></h1>
-  <p>Voice agents fail in ways text agents don't — they talk over people, go silent at the wrong moment, or can't recover from being interrupted. This track teaches the design and evaluation layer that separates a working demo from something you'd actually ship: turn-taking, quality measurement, and choosing the right way to build.</p>
-  <div class="hero-cta">
-    <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
-    <a class="btn btn-out" href="#framework">See the framework</a>
-  </div>
-  <p class="hero-note">50 minutes, 1:1, online. Same calendar as the rest of my coaching.</p>
+  <div class="eyebrow">Courses &amp; free resources</div>
+  <h1>Pick the track that fits how you <em>work.</em></h1>
+  <p>One-to-one courses built around your real work, from a personal AI assistant set up for you to agents, video and voice. Plus free resources to start today.</p>
 </header>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>Industrial Era</span><span>Digital Era</span><span>AI Era, today</span><span>Orchestrate, don't compete</span><span>39% of skills change by 2030 (WEF)</span><span>Sub-second response is the production benchmark</span>
-    <span>Industrial Era</span><span>Digital Era</span><span>AI Era, today</span><span>Orchestrate, don't compete</span><span>39% of skills change by 2030 (WEF)</span><span>Sub-second response is the production benchmark</span>
-  </div>
-</div>
-
-<section class="demo-prod">
+<section id="all-courses">
   <div class="wrap">
-    <h2>A voice agent that works <em>once</em> is not the same as one that works.</h2>
-    <p class="lead">Voice agents don't fail like normal software. They fail as bad conversation — cutting people off, going quiet, repeating themselves. Most tutorials stop at "it worked when I tried it." That's not the bar.</p>
-    <div class="contrast">
-      <div>
-        <div class="c-head">The demo bar</div>
-        <ul>
-          <li>Works when I speak clearly and don't interrupt it</li>
-          <li>"Feels fast enough" is the only latency check</li>
-          <li>No plan for what happens when it mishears you</li>
-          <li>One happy-path conversation, never stress-tested</li>
-          <li>Picked a tool because a tutorial used it</li>
-        </ul>
-      </div>
-      <div class="win">
-        <div class="c-head">The production bar</div>
-        <ul>
-          <li>Measured against real interruption and noise conditions</li>
-          <li>Latency tracked as a number, not a feeling</li>
-          <li>A defined repair pattern for low-confidence moments</li>
-          <li>Tested across many runs, not one lucky take</li>
-          <li>Tool chosen for the use case, with reasons you can defend</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="framework">
-  <div class="wrap">
-    <h2>Voice agents run on one loop. Getting it right is the whole <em>job.</em></h2>
-    <p class="lead">Every voice agent — however it's built — runs the same cycle, over and over, fast enough to feel like a conversation instead of a form.</p>
-
-    <div class="phase">
-      <div class="p-num">1</div>
-      <div>
-        <div class="p-title">Listen</div>
-        <div class="p-body">Capture the user's audio in real time, continuously — not in one big chunk after they stop talking.</div>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="p-num">2</div>
-      <div>
-        <div class="p-title">Understand</div>
-        <div class="p-body">Turn speech into meaning, and work out when the person has actually finished their turn — the single hardest problem in voice UX, and the one that makes agents feel robotic when it's wrong.</div>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="p-num">3</div>
-      <div>
-        <div class="p-title">Reason</div>
-        <div class="p-body">Decide what to say or do. Often this starts before the user has even finished speaking — a well-built agent begins preparing a response early, and discards it cleanly if the person changes direction mid-sentence.</div>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="p-num">4</div>
-      <div>
-        <div class="p-title">Respond &amp; speak</div>
-        <div class="p-body">Generate the reply and stream it back as speech — and stop instantly, mid-sentence if needed, the moment the person starts talking again. An agent that can't interrupt itself will never feel conversational.</div>
-      </div>
-    </div>
-
-    <p class="lead" style="margin-top:38px;margin-bottom:0;">These four stages don't run one after another — they overlap. That overlap is what makes a voice agent feel human instead of mechanical, and it's the first thing we'll take apart together.</p>
-  </div>
-</section>
-
-<section id="build-approach">
-  <div class="wrap">
-    <h2>Four ways to build one. Only one is usually right for <em>you.</em></h2>
-    <p class="lead">Most people either overbuild (hand-rolling infrastructure they don't need) or underbuild (a no-code tool that can't do what they actually want). The fix is knowing where you sit on this spectrum before you start.</p>
-
-    <div class="approach head">
-      <div>Approach</div><div>What it is</div><div>Good fit if</div>
-    </div>
-    <div class="approach">
-      <div><div class="approach-name">DIY framework</div><div class="approach-ex">e.g. LiveKit, Pipecat</div></div>
-      <div class="approach-desc">You assemble your own speech, reasoning and synthesis components and write the orchestration yourself.</div>
-      <div class="approach-fit">You need full control, proprietary models, or self-hosting — and have real engineering resources behind you.</div>
-    </div>
-    <div class="approach">
-      <div><div class="approach-name">Unified API</div><div class="approach-ex">e.g. an end-to-end runtime</div></div>
-      <div class="approach-desc">One real-time API handles speech and orchestration together, while you keep control over logic and model choice.</div>
-      <div class="approach-fit">You want production performance without building streaming orchestration from scratch.</div>
-    </div>
-    <div class="approach">
-      <div><div class="approach-name">Managed platform</div><div class="approach-ex">e.g. Vapi, Retell</div></div>
-      <div class="approach-desc">A hosted platform with visual builders and pre-configured telephony for common use cases.</div>
-      <div class="approach-fit">Speed to launch and minimal engineering matter most. <strong>This is where most of my students belong.</strong></div>
-    </div>
-    <div class="approach">
-      <div><div class="approach-name">Enterprise suite</div><div class="approach-ex">e.g. large CX platforms</div></div>
-      <div class="approach-desc">Voice is one channel inside a broader, multi-channel customer experience system.</div>
-      <div class="approach-fit">You're procuring for an organisation already committed to one vendor ecosystem.</div>
-    </div>
-
-    <p class="lead" style="margin-top:34px;margin-bottom:0;">On the diagnostic call, we work out where you actually sit — not where a tutorial assumes you sit.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>How to know if it's actually <em>good.</em></h2>
-    <p class="lead">"It feels fast" isn't a metric. The Voice Agent Quality Index gives you three concrete numbers instead — you'll learn to track all three on anything you build.</p>
-    <div class="vaqi">
-      <div class="vaqi-card">
-        <div class="vaqi-letter">I</div>
-        <div class="vaqi-name">Interruptions</div>
-        <div class="vaqi-body">How often the agent starts talking before the user has actually finished. High interruption rate is the fastest way to make an agent feel rude.</div>
-      </div>
-      <div class="vaqi-card">
-        <div class="vaqi-letter">M</div>
-        <div class="vaqi-name">Missed responses</div>
-        <div class="vaqi-body">How often the agent fails to reply at all within a reasonable window. Silence reads as broken, not thoughtful.</div>
-      </div>
-      <div class="vaqi-card">
-        <div class="vaqi-letter">L</div>
-        <div class="vaqi-name">Latency</div>
-        <div class="vaqi-body">Time from the user finishing their turn to the agent starting its reply. Sub-second is the bar production systems are held to.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="honest" id="honest">
-  <div class="wrap">
-    <h2>What this track actually <em>covers</em> — and what it doesn't.</h2>
-    <p class="lead">Most AI courses quietly oversell. I'd rather you know exactly what you're getting before you book.</p>
-    <div class="honest-grid">
-      <div>
-        <div class="h-head yes">You'll learn this</div>
-        <ul>
-          <li>How to design the conversation itself — turn-taking, interruption handling, tone</li>
-          <li>How to pick the right build approach for your situation, and defend that choice</li>
-          <li>How to measure quality objectively instead of by feel</li>
-          <li>How to scope a first use case narrow enough to actually finish</li>
-          <li>Where consent, disclosure and EU data rules apply to what you're building</li>
-        </ul>
-      </div>
-      <div>
-        <div class="h-head no">This needs an engineer</div>
-        <ul>
-          <li>Telephony infrastructure — bridging phone networks, call routing</li>
-          <li>Low-level audio engineering — codecs, frame sizing, jitter buffers</li>
-          <li>Custom real-time orchestration written from scratch</li>
-          <li>Self-hosted or edge deployments</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="curriculum">
-  <div class="wrap">
-    <h2>Who's already <em>asking</em> about this.</h2>
-    <p class="lead">Two live examples of the kind of need this track exists for — described generally, without names.</p>
+    <h2>Every course, in one <em>place.</em></h2>
+    <p class="lead">Each one starts from where you are now and ends with something you actually use. Pick by the line that sounds like you.</p>
     <div class="personas">
-      <div class="persona">
-        <div class="p-tag">Technical professional · career transition</div>
-        <div class="p-name">Choosing Voice AI as a specialisation</div>
-        <div class="p-desc">A senior software engineer leaving a large employer, positioning Voice AI Agents as her differentiation lane going into a startup or consulting role — needs the vocabulary, evaluation framework and portfolio structure to prove it, not the engineering itself.</div>
-      </div>
-      <div class="persona">
-        <div class="p-tag">Business owner · outreach &amp; sales</div>
-        <div class="p-name">Evaluating a voice agent already in use</div>
-        <div class="p-desc">A business owner running a voice agent through a no-code platform, wanting an outside, structured quality analysis — is it actually good, or does it just feel fine to the person who built it?</div>
-      </div>
+      <a class="persona course" href="/personal-ai-agent.html">
+        <div class="p-tag">Done for you</div>
+        <div class="p-name">Your Own AI</div>
+        <div class="p-desc">For non-technical people who want a personal AI assistant set up for them, ready to use.</div>
+        <span class="c-link">See the course →</span>
+      </a>
+      <a class="persona course" href="/openclaw-ai-agent-setup.html">
+        <div class="p-tag">Technical</div>
+        <div class="p-name">AI Agent Builder (OpenClaw)</div>
+        <div class="p-desc">For technical people who want to build and deploy their own 24/7 AI agents.</div>
+        <span class="c-link">See the course →</span>
+      </a>
+      <a class="persona course" href="/personal-ai-setup.html">
+        <div class="p-tag">Everyday AI</div>
+        <div class="p-name">Personal AI Setup</div>
+        <div class="p-desc">For professionals who want real, day-to-day value from AI assistants, not just a smarter search box.</div>
+        <span class="c-link">See the course →</span>
+      </a>
+      <a class="persona course" href="/ai-video-course-booking.html">
+        <div class="p-tag">AI video</div>
+        <div class="p-name">AI VideoGen</div>
+        <div class="p-desc">For anyone who wants to direct AI video consistently: the same characters, products and look in every shot.</div>
+        <span class="c-link">See the course →</span>
+      </a>
+      <a class="persona course" href="/voice-ai-agents.html">
+        <div class="p-tag">Voice AI</div>
+        <div class="p-name">Voice AI Agents</div>
+        <div class="p-desc">For teams designing and evaluating voice agents that hold up past the demo.</div>
+        <span class="c-link">See the course →</span>
+      </a>
+      <a class="persona course" href="/ai-for-business-owners.html">
+        <div class="p-tag">For business owners</div>
+        <div class="p-name">AI for Business Owners</div>
+        <div class="p-desc">For small and mid-size business owners who want an honest assessment of which AI tools to use.</div>
+        <span class="c-link">See the offer →</span>
+      </a>
+      <a class="persona course" href="/120-prompts.html">
+        <div class="p-tag">Free</div>
+        <div class="p-name">120 Prompts</div>
+        <div class="p-desc">A free library of ready-to-use AI prompts for every career, sorted by role.</div>
+        <span class="c-link">Get the prompts →</span>
+      </a>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Start with one call. Decide the rest <em>after.</em></h2>
-    <p class="lead">Same structure as the rest of my coaching — a paid diagnostic call first, no obligation to continue.</p>
-    <div class="prices">
-      <div class="price feature">
-        <div class="pr-name">Diagnostic call</div>
-        <div class="pr-cost">49€ · one-off · 50 minutes</div>
-        <ul>
-          <li>Map what you're actually trying to build or evaluate</li>
-          <li>Place you correctly on the build-approach spectrum</li>
-          <li>Leave with a concrete, scoped first step</li>
-          <li>No obligation to continue</li>
-        </ul>
-        <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime" href="https://alessandrocapezza.youcanbook.me/">Book the call</a>
-      </div>
-      <div class="price">
-        <div class="pr-name">Monthly partnership</div>
-        <div class="pr-cost">From 300€ · per month</div>
-        <ul>
-          <li>Regular 1:1 sessions building your first agent or evaluation framework</li>
-          <li>Written recap after every session</li>
-          <li>Adjusts as your scope becomes clearer</li>
-        </ul>
-        <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-out" href="https://alessandrocapezza.youcanbook.me/">Discuss on the call</a>
-      </div>
-      <div class="price">
-        <div class="pr-name">Voice agent audit</div>
-        <div class="pr-cost">Defined in your diagnostic</div>
-        <ul>
-          <li>An outside quality review of a voice agent already in production</li>
-          <li>Assessed against interruption, latency and missed-response benchmarks</li>
-          <li>For teams and owners, not a DIY checklist</li>
-        </ul>
-        <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-out" href="https://alessandrocapezza.youcanbook.me/">Discuss on the call</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Questions people ask <em>first.</em></h2>
-    <details>
-      <summary>Do I need to know how to code?</summary>
-      <p>No. I don't write code myself either — I direct AI to handle the technical layer, and that's exactly the orchestration skill this track teaches. If you're an engineer, this track sharpens your design and evaluation thinking; if you're not, it teaches you to direct someone who is.</p>
-    </details>
-    <details>
-      <summary>Will I build a real voice agent in these sessions?</summary>
-      <p>Where your use case fits a managed platform, yes, live in session. Where it needs custom telephony or infrastructure engineering, we scope it clearly and I help you brief the right engineer — see the "what this doesn't cover" section above.</p>
-    </details>
-    <details>
-      <summary>I already have a voice agent — can you just review it?</summary>
-      <p>Yes — that's the Voice Agent Audit option above. We assess it against concrete quality benchmarks instead of "does it feel okay."</p>
-    </details>
-    <details>
-      <summary>What happens after the diagnostic call?</summary>
-      <p>You get a written recap either way, including where you sit on the build-approach spectrum and a scoped first step — whether or not we continue working together.</p>
-    </details>
   </div>
 </section>
 
 <section class="final">
   <div class="wrap">
-    <h2>One call tells you exactly where you <em>stand.</em></h2>
-    <p>50 minutes, 49€, and a clear next step — whether that's a session with me or a brief for an engineer.</p>
-    <a target="_blank" rel="noopener" class="aicoach-book-link btn btn-lime" href="https://alessandrocapezza.youcanbook.me/">Book Lesson — 49€</a>
-    <a class="btn btn-out-light" href="/who-i-work-with.html" style="margin-left:10px;">See who I work with</a>
+    <h2>Not sure which track <em>fits?</em></h2>
+    <p>In a 50-minute diagnostic we look at your work, find where AI saves you the most time, and pick the right track. If none of them fits, I'll tell you.</p>
+    <a class="btn btn-lime" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="courses-book">Book Diagnostic — 49€</a>
   </div>
 </section>
 
@@ -620,7 +443,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Alessandro Capezza</div>
-      <div class="footer-tagline">Voice AI Agents</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
     </div>
 
     <div class="footer-links">
@@ -654,176 +477,6 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     </div>
   </div>
 </footer>
-
-<!-- ===== Popup ===== -->
-<div id="aicoach-interstitial-overlay">
-  <div id="aicoach-interstitial-card">
-    <button id="aicoach-interstitial-close" aria-label="Close">&times;</button>
-
-    <div id="aicoach-question-panel">
-      <h3>Did you book your call?</h3>
-      <p>We opened the calendar in a new tab — just checking in, want to make sure you got taken care of.</p>
-      <div class="aicoach-btn-row">
-        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Yes, all booked</button>
-        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Not yet</button>
-      </div>
-    </div>
-
-    <div id="aicoach-email-panel">
-      <h3>Still thinking it over?</h3>
-      <p>Take your time. In the meantime, get weekly AI Superpowers — practical AI tips for your career, once a week, no fluff.</p>
-
-      <div class="aicoach-field-label">Name (optional)</div>
-      <input type="text" id="aicoach-name-input" placeholder="Your name">
-
-      <div class="aicoach-field-label">Your current situation (optional)</div>
-      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am working for a company"> I am working for a company</label>
-      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am an entrepreneur"> I am an entrepreneur</label>
-      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am studying / I am looking for employment"> I am studying / I am looking for employment</label>
-      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Other:</label>
-      <input type="text" id="aicoach-situation-other-input" placeholder="Tell us more">
-
-      <div class="aicoach-field-label">Email</div>
-      <input type="email" id="aicoach-email-input" placeholder="you@email.com">
-
-      <button id="aicoach-email-submit">Send me the tips</button>
-    </div>
-
-    <div id="aicoach-thankyou-msg">You're in! Watch your inbox 🎯</div>
-  </div>
-</div>
-
-<script>
-/* Nav: "Courses" dropdown (hover on desktop, click-toggle for touch) + mobile hamburger */
-(function() {
-  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-    var toggle = dd.querySelector('.nav-dropdown-toggle');
-    if (!toggle) return;
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      var wasOpen = dd.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(o) { o.classList.remove('open'); });
-      if (!wasOpen) dd.classList.add('open');
-    });
-  });
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(o) { o.classList.remove('open'); });
-    }
-  });
-
-  var hamburger = document.getElementById('navHamburger');
-  var mobileMenu = document.getElementById('navMobileMenu');
-  var mobileClose = document.getElementById('navMobileClose');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() { mobileMenu.classList.add('open'); });
-    if (mobileClose) {
-      mobileClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    }
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-})();
-</script>
-
-<script>
-/* ============================================================
-   POPUP TRIGGER + LOGIC (same Google Form as the rest of the site)
-   Any "Book" link opens the calendar in a new tab (target="_blank")
-   and, once per session, also surfaces this same-tab check-in popup.
-============================================================ */
-(function() {
-  var popupShownThisSession = sessionStorage.getItem('aicoach_voiceai_popup_shown');
-
-  document.querySelectorAll('.aicoach-book-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (!popupShownThisSession) {
-        popupShownThisSession = true;
-        sessionStorage.setItem('aicoach_voiceai_popup_shown', '1');
-        setTimeout(function() {
-          document.getElementById('aicoach-interstitial-overlay').style.display = 'flex';
-        }, 600); // small delay so it doesn't feel like it's blocking the click itself
-      }
-    });
-  });
-})();
-
-(function() {
-  var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
-  var EMAIL_ENTRY_ID = '1582122762';
-  var NAME_ENTRY_ID = '731407510';
-  var SITUATION_ENTRY_ID = '881740245';
-
-  function $(id) { return document.getElementById(id); }
-
-  function closeModal() {
-    $('aicoach-interstitial-overlay').style.display = 'none';
-  }
-
-  $('aicoach-interstitial-close').addEventListener('click', closeModal);
-
-  $('aicoach-btn-yes').addEventListener('click', function() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'self_reported_booking_yes' });
-    closeModal();
-  });
-
-  $('aicoach-btn-no').addEventListener('click', function() {
-    $('aicoach-question-panel').style.display = 'none';
-    $('aicoach-email-panel').style.display = 'block';
-  });
-
-  // Reveal free-text field when "Other" is picked
-  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
-    radio.addEventListener('change', function() {
-      $('aicoach-situation-other-input').style.display =
-        (this.value === '__other_option__') ? 'block' : 'none';
-    });
-  });
-
-  $('aicoach-email-submit').addEventListener('click', function() {
-    var email = $('aicoach-email-input').value.trim();
-    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!isValid) {
-      $('aicoach-email-input').style.borderColor = '#c0392b';
-      return;
-    }
-
-    var name = $('aicoach-name-input').value.trim();
-    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
-    var situationValue = situationRadio ? situationRadio.value : '';
-    var situationOther = $('aicoach-situation-other-input').value.trim();
-
-    var params = [];
-    params.push('entry.' + EMAIL_ENTRY_ID + '=' + encodeURIComponent(email));
-    if (name) {
-      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
-    }
-    if (situationValue) {
-      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationValue));
-      if (situationValue === '__other_option__' && situationOther) {
-        params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(situationOther));
-      }
-    }
-
-    var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
-    fetch(formUrl, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.join('&')
-    }).catch(function() { /* no-cors means we can't read the response anyway */ });
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'newsletter_signup' });
-
-    $('aicoach-email-panel').style.display = 'none';
-    $('aicoach-thankyou-msg').style.display = 'block';
-    setTimeout(closeModal, 2200);
-  });
-})();
-</script>
 
 <script id="site-nav-js">
 (function(){var n=document.getElementById('siteNav');if(!n)return;
