@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/what-is-an-agent-harness.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/what-is-an-agent-harness.html">
+<title>What Is an Agent Harness? The 9 Parts Explained (2026) — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="An agent harness is the software around an AI model that turns it into an agent. The 9 parts explained in plain English, harness vs framework, the latest launches from OpenAI, DeepSeek, Cohere and Yext, and a 9-point readiness check.">
+<link rel="canonical" href="https://aicoachalex.com/blog/what-is-an-agent-harness.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<meta property="og:title" content="What Is an Agent Harness? The 9 Parts Around the Model">
+<meta property="og:description" content="Why the same AI model works brilliantly in one tool and fails in another: the agent harness, its 9 parts, and the harness launches of October 2026.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/what-is-an-agent-harness.html">
+<meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is an Agent Harness? The 9 Parts Around the Model">
+<meta name="twitter:description" content="Why the same AI model works brilliantly in one tool and fails in another: the agent harness, its 9 parts, and the harness launches of October 2026.">
+<meta name="twitter:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "@id": "https://aicoachalex.com/blog/what-is-an-agent-harness.html#article",
+   "headline": "What Is an Agent Harness? The 9 Parts Around the Model",
+   "description": "An agent harness is the software around an AI model that turns it into an agent. The 9 parts explained in plain English, harness vs framework, the latest launches from OpenAI, DeepSeek, Cohere and Yext, and a 9-point readiness check.",
+   "image": "https://aicoachalex.com/ALEXAICOACH-SHAREv2.png",
+   "datePublished": "2026-10-09",
+   "dateModified": "2026-10-09",
+   "inLanguage": "en",
+   "keywords": "agent harness, what is an agent harness, AI agent harness, harness engineering, agent harness architecture, Claude Code harness, Codex harness, OpenAI Agents API, DeepSeek Harness, Cohere North 2, agent harness vs framework, AI agent permissions",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/what-is-an-agent-harness.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "What Is an Agent Harness? The 9 Parts Around the Model",
+     "item": "https://aicoachalex.com/blog/what-is-an-agent-harness.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is an agent harness?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An agent harness is the software around an AI model that turns it into an agent. It runs the work loop, manages context and memory, connects tools and skills, coordinates helper agents, saves progress, assembles instructions, runs automatic checks and enforces permissions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Claude Code an agent harness?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Claude Code is Anthropic's agent harness: it wraps Claude models with a work loop, tools, skills, subagents, hooks, project instructions and permission modes. OpenAI's Codex, OpenClaw and DeepSeek Harness are other examples."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the difference between an agent harness and an agent framework?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A framework such as LangChain or LangGraph gives you parts to assemble an agent yourself. A harness comes assembled and is designed to handle a wide range of tasks out of the box, with the agent deciding the steps inside the harness's rules."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is harness engineering?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Harness engineering is improving the environment around a model (tools, context, checks, permissions, verification) so the agent performs reliably. It follows prompt engineering and context engineering, and often improves results more than switching models."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need to build my own harness?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually not. Most professionals and small businesses should use an existing harness such as Claude Code, Codex or OpenClaw and customise it with a context file, skills, connections and permissions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which agent harnesses launched recently?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OpenAI's Agents API (September 2026) offers the Codex harness as a managed service. Yext launched a multiplayer agent harness for marketing, DeepSeek released DeepSeek Harness v0.2, and Cohere launched North 2 with a redesigned harness, all in early October 2026."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "HowTo",
+   "name": "How to start using an agent harness without coding",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "Pick one harness",
+     "text": "Choose one harness such as Claude Code, Codex or OpenClaw."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "Write your context file",
+     "text": "Write one page on who you are, what the business does, your rules and your tone."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "Turn one process into a skill",
+     "text": "Write instructions for one repeated process, such as the weekly report."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "Connect one tool",
+     "text": "Connect one tool, usually email or your files."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "Set permissions and a budget",
+     "text": "Choose what the agent may do alone, what needs approval, and set a spending cap before it runs unattended."
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="harness-extra">
+.stat-row{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:0 0 2.5rem;}
+@media (min-width:640px){.stat-row{grid-template-columns:repeat(3,1fr);}}
+.stat{background:var(--black);color:var(--white);border-radius:8px;padding:1.25rem;}
+.stat-num{display:block;font-family:'Instrument Sans',Inter,sans-serif;font-weight:700;font-size:2rem;line-height:1.05;color:var(--green);letter-spacing:-0.02em;}
+.stat-label{display:block;margin-top:0.5rem;font-size:0.8rem;line-height:1.4;color:rgba(248,246,241,0.75);}
+.harness-map{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;border:1px solid var(--black);border-radius:8px;background:#fff;padding:1.5rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.harness-map{grid-template-columns:1.1fr 1fr;}}
+.harness-ring svg{width:100%;max-width:340px;height:auto;display:block;margin:0 auto;}
+.harness-legend{list-style:none;margin:0;padding:0;}
+.article-body .harness-legend li{display:flex;gap:0.75rem;align-items:baseline;padding:0.4rem 0;border-bottom:1px solid var(--border);font-weight:600;font-size:0.95rem;margin:0;}
+.harness-legend li span{font-size:0.7rem;letter-spacing:0.1em;color:var(--green-deep);font-weight:700;min-width:1.5rem;}
+.parts{display:flex;flex-direction:column;gap:0;margin:0 0 2.5rem;border-top:1px solid var(--black);}
+.part{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--border);}
+.part-n{font-family:'Instrument Sans',Inter,sans-serif;font-weight:700;font-size:1.4rem;color:var(--green-deep);line-height:1.3;}
+.article-body .part h3{margin:0 0 0.4rem;font-size:1.2rem;}
+.article-body .part p{margin:0 0 0.4rem;font-size:0.98rem;line-height:1.6;}
+.checker{border:1px solid var(--black);border-radius:8px;overflow:hidden;margin:1.5rem 0 2.5rem;background:#fff;}
+.checker label{display:flex;gap:0.75rem;align-items:flex-start;padding:0.8rem 1.25rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.98rem;line-height:1.5;color:var(--black);}
+.checker input{margin-top:0.3rem;accent-color:#163300;width:18px;height:18px;flex-shrink:0;}
+.checker-out{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;}
+.checker-out span{display:block;font-family:'Instrument Sans',Inter,sans-serif;font-weight:700;font-size:1.8rem;color:var(--green);}
+.checker-out p{margin:0.25rem 0 0;color:var(--white);font-size:1rem;}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a></div></div>
+      <a href="/who-i-work-with.html">Who I Work With</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/what-is-an-agent-harness.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a>
+    <a href="/who-i-work-with.html">Who I Work With</a>
+    <div class="sn-lang"><a href="/blog/what-is-an-agent-harness.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI Agents</span>
+      <span>11 min read</span>
+      <span>Updated 9 Oct 2026</span>
+    </div>
+    <h1 class="article-title">What Is an Agent Harness? The 9 Parts <em>Around the Model</em></h1>
+    <p class="article-dek">The model gets the headlines. The harness is why the same model works brilliantly in one tool and falls apart in another. Here's what it is, what's in it, and why every big AI company shipped one this month.</p>
+  </header>
+
+  <div class="article-body">
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>An agent harness is the software around an AI model that turns it into an agent: the loop that keeps it working, the tools it can use, the memory it keeps, and the rules that stop it doing damage.</strong> The model does the thinking; the harness lets it act. Claude Code, OpenAI's Codex and OpenClaw are all harnesses. A complete one has nine parts: an iteration loop, context management, tools and skills, subagents, built-in skills, session persistence, system prompt assembly, lifecycle hooks and permissions.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><span class="stat-num">9</span><span class="stat-label">Parts in a complete agent harness</span></div>
+      <div class="stat"><span class="stat-num">30th → 5th</span><span class="stat-label">Benchmark jump from changing only the harness (reported)</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Major harness launches in 4 weeks</span></div>
+    </div>
+
+    <p>Most of my students start in the same place. They try an AI tool for real work, it's impressive in the demo, and then it breaks on the third step of an actual task. Their conclusion is usually "the model isn't good enough yet".</p>
+
+    <p>Most of the time, the model is fine. What's missing is everything around it.</p>
+
+    <h2>What is an agent harness, in plain English?</h2>
+
+    <p>Think of the model as an engine. On its own, an engine doesn't take you anywhere. You need a car around it: steering, brakes, a fuel gauge, a dashboard. The harness is the car.</p>
+
+    <p>A chatbot answers once and stops. An agent works in a loop: it decides what to do, uses a tool (search the web, open a file, send an email), looks at the result and decides the next step, until the job is done. Everything that makes that loop work reliably is the harness.</p>
+
+    <blockquote>Agent = model + harness. Change the model and you change how smart it is. Change the harness and you change what it can actually get done.</blockquote>
+
+    <p>This isn't theory. In one widely cited case, a LangChain coding agent moved from 30th to 5th place on the Terminal Bench 2.0 coding benchmark without changing the model at all. Only the harness changed.</p>
+
+    <h2>Why is everyone talking about harnesses right now?</h2>
+
+    <p>Because in the last month the biggest AI companies stopped selling just models and started selling the harness too:</p>
+
+    <ul>
+      <li><strong>OpenAI (10 Sep 2026)</strong> launched the Agents API in public beta: the harness behind Codex, hosted and maintained by OpenAI. It handles long-running sessions, automatic context compaction, subagents and sandboxes, so developers don't have to build them.</li>
+      <li><strong>Yext (2 Oct)</strong> launched a "multiplayer agent harness" for marketing teams, where head office, local marketers, franchisees and agencies work with the same agents and the same brand memory.</li>
+      <li><strong>DeepSeek (3 Oct)</strong> released DeepSeek Harness v0.2, its open-source harness (MIT licence, 240,000+ GitHub stars), now with desktop apps for Mac and Windows, a plugin manager and scheduled automations.</li>
+      <li><strong>Cohere (5 Oct)</strong> launched North 2 with a redesigned orchestration harness, memory that carries across sessions, and per-agent guardrails and cost controls for enterprises.</li>
+    </ul>
+
+    <p>The message from all four is the same: the model is becoming a component. The product is the harness.</p>
+
+    <h2>The 9 parts of an agent harness</h2>
+
+    <p>The clearest map I've seen comes from Aparna Dhinakaran at Arize AI, who broke a modern harness into nine parts. Here they are, with what each one means if you're using agents for work rather than building them.</p>
+
+    <div class="harness-map">
+      <div class="harness-ring"><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M204.0,10.0 A190,190 0 0 1 319.1,51.9 L267.7,115.8 A108,108 0 0 0 202.3,92.0Z" fill="#0d0c0a"/><text x="251.0" y="69.0" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#9fe870">01</text><path d="M325.2,57.0 A190,190 0 0 1 386.4,163.1 L305.9,179.0 A108,108 0 0 0 271.1,118.7Z" fill="#9fe870"/><text x="329.0" y="134.5" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#0d0c0a">02</text><path d="M387.8,170.9 A190,190 0 0 1 366.5,291.5 L294.6,252.0 A108,108 0 0 0 306.7,183.5Z" fill="#163300"/><text x="346.7" y="234.9" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#9fe870">03</text><path d="M362.5,298.4 A190,190 0 0 1 268.7,377.1 L239.1,300.7 A108,108 0 0 0 292.4,255.9Z" fill="#0d0c0a"/><text x="295.8" y="323.1" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#9fe870">04</text><path d="M261.2,379.9 A190,190 0 0 1 138.8,379.9 L165.2,302.2 A108,108 0 0 0 234.8,302.2Z" fill="#9fe870"/><text x="200.0" y="358.0" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#0d0c0a">05</text><path d="M131.3,377.1 A190,190 0 0 1 37.5,298.4 L107.6,255.9 A108,108 0 0 0 160.9,300.7Z" fill="#163300"/><text x="104.2" y="323.1" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#9fe870">06</text><path d="M33.5,291.5 A190,190 0 0 1 12.2,170.9 L93.3,183.5 A108,108 0 0 0 105.4,252.0Z" fill="#0d0c0a"/><text x="53.3" y="234.9" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#9fe870">07</text><path d="M13.6,163.1 A190,190 0 0 1 74.8,57.0 L128.9,118.7 A108,108 0 0 0 94.1,179.0Z" fill="#9fe870"/><text x="71.0" y="134.5" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#0d0c0a">08</text><path d="M80.9,51.9 A190,190 0 0 1 196.0,10.0 L197.7,92.0 A108,108 0 0 0 132.3,115.8Z" fill="#163300"/><text x="149.0" y="69.0" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-weight="700" font-size="26" fill="#9fe870">09</text><circle cx="200" cy="200" r="96" fill="#fff" stroke="#0d0c0a" stroke-width="2"/><text x="200" y="190" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="34" fill="#0d0c0a">Harness</text><text x="200" y="222" text-anchor="middle" font-family="Instrument Sans,Inter,sans-serif" font-size="12" letter-spacing="1.5" fill="#7a7670">AROUND THE MODEL</text></svg></div>
+      <ol class="harness-legend">
+        <li><span>01</span>Iteration loop</li>
+        <li><span>02</span>Context management</li>
+        <li><span>03</span>Tools &amp; skills</li>
+        <li><span>04</span>Subagent management</li>
+        <li><span>05</span>Built-in skills</li>
+        <li><span>06</span>Session persistence</li>
+        <li><span>07</span>System prompt assembly</li>
+        <li><span>08</span>Lifecycle hooks</li>
+        <li><span>09</span>Permissions &amp; safety</li>
+      </ol>
+    </div>
+
+    <div class="parts">
+      <div class="part"><span class="part-n">01</span><div><h3>Iteration loop</h3><p><strong>What it is:</strong> the cycle of think → act → check → repeat until the task is done.</p><p><strong>Why it matters to you:</strong> it's the difference between "write me a report" (one answer) and "research these 20 competitors and write me a report" (an agent that keeps going).</p></div></div>
+      <div class="part"><span class="part-n">02</span><div><h3>Context management</h3><p><strong>What it is:</strong> deciding what the model sees, and summarising ("compacting") older history when the conversation gets long.</p><p><strong>Why it matters to you:</strong> it's why long sessions get worse and more expensive. A good harness keeps the agent focused, and the bill down.</p></div></div>
+      <div class="part"><span class="part-n">03</span><div><h3>Tools &amp; skills</h3><p><strong>What it is:</strong> the list of things the agent can do (search, read files, use your CRM) plus "skills": instruction files for how your team does specific jobs.</p><p><strong>Why it matters to you:</strong> skills are where your know-how lives. Write the process once; the agent follows it every time.</p></div></div>
+      <div class="part"><span class="part-n">04</span><div><h3>Subagent management</h3><p><strong>What it is:</strong> the main agent hands pieces of work to helper agents, each with its own clean context and limited tools, then collects their results.</p><p><strong>Why it matters to you:</strong> this is how you run a big job on a cheap model. The main agent plans; small models do the volume work (more on that in my <a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">Haiku vs Opus breakdown</a>).</p></div></div>
+      <div class="part"><span class="part-n">05</span><div><h3>Built-in skills</h3><p><strong>What it is:</strong> the basics that ship ready to use: working with files, running commands, searching, testing.</p><p><strong>Why it matters to you:</strong> you shouldn't have to teach an agent how to open a spreadsheet. A good harness does the basics out of the box.</p></div></div>
+      <div class="part"><span class="part-n">06</span><div><h3>Session persistence</h3><p><strong>What it is:</strong> saving progress as the agent works, so it can pick up where it left off after a crash or the next day.</p><p><strong>Why it matters to you:</strong> without it, a three-hour job that fails at minute 170 starts from zero.</p></div></div>
+      <div class="part"><span class="part-n">07</span><div><h3>System prompt assembly</h3><p><strong>What it is:</strong> building the agent's standing instructions automatically from your project files, rules and current situation.</p><p><strong>Why it matters to you:</strong> this is why a file like CLAUDE.md or a project brief works: write your context once and every session starts briefed.</p></div></div>
+      <div class="part"><span class="part-n">08</span><div><h3>Lifecycle hooks</h3><p><strong>What it is:</strong> custom checks that run automatically before or after the agent acts, like "before sending any email, check it's not going to a client".</p><p><strong>Why it matters to you:</strong> hooks turn your business rules into hard rules, not polite requests the model might forget.</p></div></div>
+      <div class="part"><span class="part-n">09</span><div><h3>Permissions &amp; safety</h3><p><strong>What it is:</strong> deciding what the agent may do on its own, what needs your approval, and what it can never do.</p><p><strong>Why it matters to you:</strong> read-only, ask-first or full access. This is the setting that decides whether you can trust an agent with real accounts.</p></div></div>
+    </div>
+
+    <h2>Harness vs framework: what's the difference?</h2>
+
+    <p>A framework (LangChain, LangGraph, n8n) is a box of parts: a person designs the agent and wires the pieces together. A harness comes assembled and is built to handle a wide range of tasks out of the box. As Arize puts it bluntly: "LangChain is not a harness. LangGraph is not a harness."</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th></th><th>Framework</th><th>Harness</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Who designs the flow</strong></td><td>You, step by step</td><td>The agent, inside the harness's rules</td></tr>
+        <tr><td><strong>Best for</strong></td><td>Fixed, repeatable processes</td><td>Open-ended work that changes each time</td></tr>
+        <tr><td><strong>Examples</strong></td><td>LangGraph, n8n, Make</td><td>Claude Code, Codex, OpenClaw, DeepSeek Harness</td></tr>
+        <tr><td><strong>Main risk</strong></td><td>Breaks when reality doesn't match the diagram</td><td>Does too much if permissions are loose</td></tr>
+      </tbody>
+    </table>
+
+    <p>In practice, the strongest setups use both. You design the process as a map of jobs and handoffs (what I teach as <a href="/graph-engineering.html">graph engineering</a>), and a harness runs each job.</p>
+
+    <h2>Is your agent setup ready for real work? 9-point check</h2>
+
+    <p>Tick what your current setup has, whether that's Claude Code, ChatGPT agents, OpenClaw or something your team built.</p>
+
+    <div class="checker" id="harnessCheck">
+      <label><input type="checkbox"> It keeps working on a task until it's done, not just one reply</label>
+      <label><input type="checkbox"> Long sessions get summarised instead of slowing down or forgetting</label>
+      <label><input type="checkbox"> It's connected to the tools I actually use (email, CRM, files)</label>
+      <label><input type="checkbox"> It can split big jobs across helper agents or cheaper models</label>
+      <label><input type="checkbox"> It handles files, search and commands without me explaining how</label>
+      <label><input type="checkbox"> It can resume after a crash or the next day</label>
+      <label><input type="checkbox"> It starts every session already knowing my business context</label>
+      <label><input type="checkbox"> My key rules run as automatic checks, not just instructions</label>
+      <label><input type="checkbox"> I've decided what it can do alone and what needs my approval</label>
+      <div class="checker-out" aria-live="polite"><span id="hcScore">0 / 9</span><p id="hcMsg">Tick what applies to see where you stand.</p></div>
+    </div>
+
+    <h2>The guardrail nobody sets: a budget cap</h2>
+
+    <p>Agents that run for hours can also spend for hours. Simon Willison, one of the most-read independent voices on AI engineering, argued this month that autonomous agents need hard spending caps by default, not just warnings. I agree. Before you let any agent run unattended, set three limits:</p>
+
+    <ol>
+      <li><strong>A money cap</strong> on the API account or the tool, at an amount you'd be fine losing.</li>
+      <li><strong>A permission level:</strong> start in read-only or ask-before-acting mode, and open up one tool at a time.</li>
+      <li><strong>A no-go list:</strong> things it never does alone, such as paying, deleting, or messaging clients.</li>
+    </ol>
+
+    <h2>How to start using a harness (without being a developer)</h2>
+
+    <ol>
+      <li><strong>Pick one harness.</strong> If you're on Claude, start with Claude Code or the agent features in the Claude app. If you want it self-hosted and on WhatsApp or Telegram, <a href="/openclaw-ai-agent-setup.html">OpenClaw</a>.</li>
+      <li><strong>Write your context file.</strong> One page: who you are, what the business does, your rules, your tone. That feeds part 07.</li>
+      <li><strong>Turn one repeated process into a skill.</strong> The weekly report, the proposal, the lead check. That's part 03.</li>
+      <li><strong>Connect one tool.</strong> Usually email or your files first.</li>
+      <li><strong>Set permissions and a budget</strong> before anything runs unattended (part 09).</li>
+    </ol>
+
+    <h2>Copy this prompt: audit your own agent setup</h2>
+
+    <p>Paste this into Claude or ChatGPT and describe how you currently use AI agents. You'll get a gap list against the nine parts.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Harness audit prompt</span>
+      <button class="copy-btn" data-copy="harnessPrompt" type="button">Copy</button>
+<pre id="harnessPrompt">You are an AI agent architect. Audit my current AI agent setup against the 9 parts of an agent harness:
+
+1. Iteration loop (keeps working until the task is done)
+2. Context management (summarises long sessions, controls what the model sees)
+3. Tools & skills (connected tools + written instructions for my processes)
+4. Subagent management (splits work across helper agents / cheaper models)
+5. Built-in skills (files, search, commands out of the box)
+6. Session persistence (resumes after a crash or the next day)
+7. System prompt assembly (starts every session with my business context)
+8. Lifecycle hooks (automatic checks before/after actions)
+9. Permissions & safety (what it can do alone vs with my approval, budget caps)
+
+For each part: rate it Missing / Partial / Solid based on my description, explain the risk in one line, and give one concrete fix I can do this week without writing code.
+
+Finish with: the 3 fixes that would make the biggest difference, in order.
+
+My current setup:
+[describe the tools you use, what you use them for, and what goes wrong]</pre>
+    </div>
+
+    <div class="article-cta inline">
+      <h3>Want a harness set up for your work, properly?</h3>
+      <p>In Personal AI Setup we build yours together: context file, your first skills, the right connections and safe permissions, on your real tasks. Start with a 49€ diagnostic.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="harness-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What is an agent harness?</summary><p>An agent harness is the software around an AI model that turns it into an agent. It runs the work loop, manages context and memory, connects tools and skills, coordinates helper agents, saves progress, assembles instructions, runs automatic checks and enforces permissions.</p></details>
+      <details><summary>Is Claude Code an agent harness?</summary><p>Yes. Claude Code is Anthropic's agent harness: it wraps Claude models with a work loop, tools, skills, subagents, hooks, project instructions and permission modes. OpenAI's Codex, OpenClaw and DeepSeek Harness are other examples.</p></details>
+      <details><summary>What is the difference between an agent harness and an agent framework?</summary><p>A framework such as LangChain or LangGraph gives you parts to assemble an agent yourself. A harness comes assembled and is designed to handle a wide range of tasks out of the box, with the agent deciding the steps inside the harness's rules.</p></details>
+      <details><summary>What is harness engineering?</summary><p>Harness engineering is improving the environment around a model (tools, context, checks, permissions, verification) so the agent performs reliably. It follows prompt engineering and context engineering, and often improves results more than switching models.</p></details>
+      <details><summary>Do I need to build my own harness?</summary><p>Usually not. Most professionals and small businesses should use an existing harness such as Claude Code, Codex or OpenClaw and customise it with a context file, skills, connections and permissions.</p></details>
+      <details><summary>Which agent harnesses launched recently?</summary><p>OpenAI's Agents API (September 2026) offers the Codex harness as a managed service. Yext launched a multiplayer agent harness for marketing, DeepSeek released DeepSeek Harness v0.2, and Cohere launched North 2 with a redesigned harness, all in early October 2026.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>The model is a commodity. Your setup isn't.</h3>
+      <p>One-to-one coaching for professionals and business owners: we turn the AI you already pay for into an agent that knows your business and works safely on your real tasks.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="harness-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="harness-end-setup">See Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://arize.com/blog/what-is-an-agent-harness/" target="_blank" rel="noopener">Arize AI: What is an agent harness?</a> (Aparna Dhinakaran, the 9-part architecture and harness vs framework); <a href="https://openai.com/index/introducing-the-agents-api/" target="_blank" rel="noopener">OpenAI: Introducing the Agents API</a> (10 Sep 2026); <a href="https://ffnews.com/news/yext-nyse-yext-launches-a-multiplayer-agent-harness-for-marketing-956816d5" target="_blank" rel="noopener">FF News: Yext launches a multiplayer agent harness</a> (2 Oct 2026); <a href="https://marktechpost.com/2026/10/03/deepseek-harness-v0-2-brings-official-desktop-apps-to-its-open-source-agent-harness" target="_blank" rel="noopener">MarkTechPost: DeepSeek Harness v0.2</a> (3 Oct 2026); <a href="https://www.unite.ai/cohere-launches-north-2-with-redesigned-agent-harness-and-memory/" target="_blank" rel="noopener">Unite.AI: Cohere launches North 2</a> (5 Oct 2026); <a href="https://www.faros.ai/blog/harness-engineering" target="_blank" rel="noopener">Faros: Harness engineering</a> (Terminal Bench result, reported secondhand); <a href="https://dev.to/felipe0liveira/the-agent-harness-goes-platform-native-and-the-guardrails-scramble-to-keep-up-j13" target="_blank" rel="noopener">DEV: The agent harness goes platform-native</a> (budget-cap debate). Diagram redrawn from Arize's architecture. As of 9 October 2026.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/graph-engineering.html">Graph engineering: design the work, not just the prompt →</a>
+      <a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">Claude Haiku 5.5 vs Sonnet vs Opus: 40× cheaper isn't 40× worse →</a>
+      <a href="/openclaw-ai-agent-setup.html">OpenClaw: set up your own self-hosted AI agent →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with.html" class="footer-link">Who I Work With</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+<script id="harness-check-js">
+(function(){var b=document.getElementById('harnessCheck');if(!b)return;var bx=b.querySelectorAll('input'),sent=false;
+function u(){var n=0;bx.forEach(function(x){if(x.checked)n++});document.getElementById('hcScore').textContent=n+' / 9';
+var m=n<=3?'Early stage: you have a chatbot, not an agent yet. Start with a context file and one skill.':n<=6?'Halfway there. Your gaps are probably permissions, hooks or resuming work: that\'s where agents break on real tasks.':n<=8?'Solid setup. Close the last gap before you let it run unattended.':'Production-ready. Now the gains come from better skills and cheaper model routing.';
+document.getElementById('hcMsg').textContent=m;if(!sent&&window.dataLayer){dataLayer.push({event:'harness_check_used'});sent=true}}
+bx.forEach(function(x){x.addEventListener('change',u)});})();
+</script>
+</body>
+</html>
