@@ -1,0 +1,299 @@
+<!-- ============================================================
+  BOOKING INTERSTITIAL — paste this whole block right before </body>
+  in index.html (and any other page that has a "Book Diagnostic" link).
+
+  What it does:
+  1. Watches every link that goes to youcanbook.me
+  2. When someone clicks one, remembers it (this tab only)
+  3. When they come back to this tab later, asks "Did you book?"
+     - Yes -> just closes, no nagging again this session
+     - No  -> offers the newsletter, captures email into your Google Sheet
+  4. Doesn't show if they never left, or already answered
+
+  SETUP: replace YOUR_FORM_ID and YOUR_ENTRY_ID below with the values
+  from your Google Form's pre-filled link.
+============================================================ -->
+<style>
+  #aicoach-interstitial-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 13, 0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  #aicoach-interstitial-card {
+    background: #F7F4EF;
+    color: #0F0F0D;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 14px;
+    padding: 32px 28px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  #aicoach-interstitial-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+  }
+  #aicoach-interstitial-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 14px 0;
+  }
+  #aicoach-interstitial-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #3a3a38;
+    margin: 0 0 20px 0;
+  }
+  .aicoach-btn-row {
+    display: flex;
+    gap: 10px;
+  }
+  .aicoach-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+  }
+  .aicoach-btn-yes {
+    background: #0F0F0D;
+    color: #99E46B;
+  }
+  .aicoach-btn-no {
+    background: transparent;
+    color: #0F0F0D;
+    border: 1px solid #0F0F0D;
+  }
+  #aicoach-email-panel {
+    display: none;
+    margin-top: 18px;
+  }
+  #aicoach-email-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  #aicoach-email-submit {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    background: #172D07;
+    color: #99E46B;
+  }
+  #aicoach-thankyou-msg {
+    display: none;
+    font-size: 15px;
+    color: #172D07;
+    font-weight: 600;
+  }
+  .aicoach-optional-label {
+    font-size: 12px;
+    color: #666;
+    margin: 14px 0 8px;
+    font-weight: 600;
+  }
+  #aicoach-name-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .aicoach-radio-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #3a3a38;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .aicoach-radio-row input[type="radio"] {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  #aicoach-situation-other-input {
+    width: calc(100% - 26px);
+    margin-left: 26px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    display: none;
+  }
+</style>
+
+<div id="aicoach-interstitial-overlay">
+  <div id="aicoach-interstitial-card">
+    <button id="aicoach-interstitial-close" aria-label="Cerrar">&times;</button>
+
+    <div id="aicoach-question-panel">
+      <h3>¿Reservaste tu llamada?</h3>
+      <p>Solo quería confirmar — para asegurarme de que quedó todo listo.</p>
+      <div class="aicoach-btn-row">
+        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Sí, ya reservado</button>
+        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Todavía no</button>
+      </div>
+    </div>
+
+    <div id="aicoach-email-panel">
+      <h3>¿Aún lo estás pensando?</h3>
+      <p>Tómate tu tiempo. Mientras tanto, recibe AI Superpowers semanal — tips prácticos de IA para tu carrera, una vez por semana, sin relleno.</p>
+      <input type="email" id="aicoach-email-input" placeholder="tu@email.com" />
+      <input type="text" id="aicoach-name-input" placeholder="Tu nombre (opcional)" />
+      <div class="aicoach-optional-label">Tu situación actual (opcional)</div>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="Trabajo en una empresa"> Trabajo en una empresa</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="Soy emprendedor/a"> Soy emprendedor/a</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="Estoy estudiando / buscando empleo"> Estoy estudiando / buscando empleo</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Otro:</label>
+      <input type="text" id="aicoach-situation-other-input" placeholder="Especifica" />
+      <button id="aicoach-email-submit">Quiero los tips</button>
+    </div>
+
+    <div id="aicoach-thankyou-msg">¡Listo! 🎯</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
+  var ENTRY_ID = '1582122762'; // Email field on the "AI SUPERPOWERS" form
+  var NAME_ENTRY_ID = '731407510';
+  var SITUATION_ENTRY_ID = '881740245';
+
+  var CLICK_KEY = 'aicoach_clicked_book_at';
+  var ANSWERED_KEY = 'aicoach_booking_answered';
+  var MIN_AWAY_MS = 4000; // ignore accidental instant-return clicks
+
+  function $(id) { return document.getElementById(id); }
+
+  // 1. Watch every link to youcanbook.me
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="youcanbook.me"]');
+    if (link) {
+      sessionStorage.setItem(CLICK_KEY, Date.now().toString());
+      sessionStorage.removeItem(ANSWERED_KEY);
+    }
+  });
+
+  // 2. When the tab becomes visible again, decide whether to ask
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState !== 'visible') return;
+
+    var clickedAt = sessionStorage.getItem(CLICK_KEY);
+    var alreadyAnswered = sessionStorage.getItem(ANSWERED_KEY);
+    if (!clickedAt || alreadyAnswered) return;
+
+    var elapsed = Date.now() - parseInt(clickedAt, 10);
+    if (elapsed < MIN_AWAY_MS) return;
+
+    $('aicoach-interstitial-overlay').style.display = 'flex';
+  });
+
+  function closeModal() {
+    $('aicoach-interstitial-overlay').style.display = 'none';
+  }
+
+  $('aicoach-interstitial-close').addEventListener('click', function() {
+    closeModal();
+  });
+
+  $('aicoach-btn-yes').addEventListener('click', function() {
+    sessionStorage.setItem(ANSWERED_KEY, 'yes');
+    // Optional: fire a non-PII GA4 signal that a booking was self-reported
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'self_reported_booking_yes' });
+    closeModal();
+  });
+
+  $('aicoach-btn-no').addEventListener('click', function() {
+    $('aicoach-question-panel').style.display = 'none';
+    $('aicoach-email-panel').style.display = 'block';
+  });
+
+  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      $('aicoach-situation-other-input').style.display =
+        (radio.value === '__other_option__' && radio.checked) ? 'block' : 'none';
+    });
+  });
+
+  $('aicoach-email-submit').addEventListener('click', function() {
+    var email = $('aicoach-email-input').value.trim();
+    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValid) {
+      $('aicoach-email-input').style.borderColor = '#c0392b';
+      return;
+    }
+
+    var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
+    var params = ['entry.' + ENTRY_ID + '=' + encodeURIComponent(email)];
+
+    var name = $('aicoach-name-input').value.trim();
+    if (name) {
+      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
+    }
+
+    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
+    if (situationRadio) {
+      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationRadio.value));
+      if (situationRadio.value === '__other_option__') {
+        var otherText = $('aicoach-situation-other-input').value.trim();
+        if (otherText) {
+          params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(otherText));
+        }
+      }
+    }
+
+    var body = params.join('&');
+
+    fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors', // Google Forms doesn't return CORS headers; this is expected and fine
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    }).catch(function() { /* no-cors means we can't read the response anyway */ });
+
+    // Non-PII GA4 signal — do NOT push the raw email into dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'newsletter_signup' });
+
+    sessionStorage.setItem(ANSWERED_KEY, 'no_email_captured');
+    $('aicoach-email-panel').style.display = 'none';
+    $('aicoach-thankyou-msg').style.display = 'block';
+    setTimeout(closeModal, 2200);
+  });
+})();
+</script>
+

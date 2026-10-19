@@ -122,12 +122,17 @@ a{color:inherit}
 .hub-ctas{display:flex;flex-wrap:wrap;gap:10px}
 .city{position:relative}
 .city svg{display:block;width:100%;height:auto}
-.city .ground{fill:var(--paper)}
+.city .ground{transition:fill .3s}
+.city .moon{display:none}
+.city.night .sun{display:none}
+.city.night .moon{display:inline}
+.city.night .ground{fill:#e4ded0}
+.city.still .birds,.city.still .people .walker[opacity]{display:none}
 .bld use{transition:transform .2s ease}
 .bld:hover use,.bld:focus-visible use{transform:translateY(-6px)}
-.bld .lbl{opacity:0;transition:opacity .15s;pointer-events:none}
-.bld:hover .lbl,.bld:focus-visible .lbl{opacity:1}
-.lbl rect{fill:var(--ink)}
+.lbl{opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;pointer-events:none}
+.lbl.on{opacity:1;transform:none}
+.lbl rect,.lbl path{fill:var(--ink)}
 .lbl text{fill:var(--cream);font-family:var(--f-body);font-size:13px;font-weight:600}
 .lbl .n{fill:var(--lime);font-family:var(--f-mono);font-size:11px}
 .dsign rect{fill:var(--cream);stroke:var(--ink);stroke-width:1.2}
@@ -151,14 +156,13 @@ a{color:inherit}
 .shops.n1{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .shop{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px 16px;text-decoration:none;transition:border-color .15s,transform .15s}
 .shop:hover{border-color:var(--ink);transform:translateY(-3px)}
-.shop .art{background:var(--paper);border-radius:10px;display:flex;justify-content:center;margin-bottom:12px}
-.shop .art svg{width:150px;height:188px}
-.shop .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
-.shop .num{font-family:var(--f-display);font-style:italic;font-weight:900;font-size:20px;color:var(--stone)}
+.shop .art{background:var(--paper);border-radius:10px;display:flex;justify-content:center;align-items:center;height:190px;margin-bottom:12px;padding:12px}
+.shop .art svg{width:100%;height:100%}
+.shop .num{font-family:var(--f-display);font-style:italic;font-weight:900;font-size:18px;color:var(--stone);margin:12px 0 2px}
 .shop h3{font-family:var(--f-display);font-weight:700;font-size:21px;line-height:1.15;margin:0 0 4px;letter-spacing:-.01em}
 .shop h3 em{font-style:italic;color:var(--moss)}
 .shop .sec{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);margin:0 0 10px}
-.shop .one{font-size:14.5px;color:#3b3833;margin:0 0 14px;flex:1}
+.shop .sec{flex:1}
 .shop .see{font-weight:600;font-size:14px}
 .shop:hover .see{text-decoration:underline}
 .station-note{background:var(--paper);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;justify-content:center}
@@ -214,7 +218,8 @@ a{color:inherit}
 .story p{margin:0 0 16px;max-width:64ch}
 .story strong{font-weight:600}
 .outcome{background:var(--deep);color:var(--cream);border-radius:16px;padding:22px}
-.outcome .chip{margin-bottom:12px}
+.outcome .eyebrow{color:var(--lime)}
+.outcome .big{display:block;font-family:var(--f-display);font-weight:900;font-size:30px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 14px}
 .outcome p{margin:0;font-size:16px;line-height:1.55}
 .outcome .country{display:block;margin-top:14px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,246,241,.6)}
 
@@ -237,7 +242,7 @@ a{color:inherit}
 .book .btn{margin-top:12px}
 
 .next{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.next .shop .art svg{width:110px;height:138px}
+.next .shop .art{height:150px}
 .next .back{display:flex;flex-direction:column;justify-content:center;gap:10px;background:var(--paper);border-radius:14px;padding:18px;text-decoration:none}
 .next .back strong{font-family:var(--f-display);font-size:22px}
 .next .back:hover strong{text-decoration:underline}
@@ -271,3 +276,10 @@ a{color:inherit}
   .final{padding:28px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* first-win badge */
+.win{display:flex;flex-direction:column;gap:2px;background:var(--lime);color:var(--ink);border-radius:10px;padding:8px 12px;font-weight:600;font-size:15px;line-height:1.25}
+.win small{font-family:var(--f-mono);font-size:10.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--deep)}
+.ws-meta .win{flex-direction:row;align-items:baseline;gap:8px;border-radius:999px;padding:5px 14px;font-size:14px}
+.featured svg{width:80px;height:80px}
+.ws-art svg{width:min(100%,400px);height:auto;max-height:440px}
