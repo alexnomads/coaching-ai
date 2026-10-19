@@ -19,6 +19,11 @@
 - [AI for real estate agents](https://aicoachalex.com/who-i-work-with/real-estate-agents/): The Real Estate Agent, residential real estate, United Arab Emirates. Real estate agents get the most from AI when their leads and listings are clean first. With a working spreadsheet-based CRM connected to an AI workspace, the next step is marketing to existing contacts: a brand book, a landing page and messaging campaigns.
 - [AI career coaching for career changers](https://aicoachalex.com/who-i-work-with/career-changers/): The Career Changer, cross-industry transition, Spain. A career changer can use AI to research what target roles really pay and need, shortlist companies, and rewrite a varied background into one clear story. The value is the evidence, not a nicer CV.
 
+## Other languages
+
+- [Con quién trabajo (español)](https://aicoachalex.com/es/con-quien-trabajo/)
+- [Con chi lavoro (italiano)](https://aicoachalex.com/it/con-chi-lavoro/)
+
 ## Courses and services
 
 - [AI for business owners](https://aicoachalex.com/ai-for-business-owners.html)
