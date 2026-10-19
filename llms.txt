@@ -1,0 +1,32 @@
+# AI Coach Alex
+
+> Alessandro Capezza (AI Coach Alex) is a Barcelona-based AI coach. He teaches business owners, leaders and professionals to use AI as a working tool through 1:1, 50-minute lessons built on their own files and tools. Start with a 50-minute diagnostic (49€).
+
+## Who I work with
+
+- [Who I work with](https://aicoachalex.com/who-i-work-with/): a map of real, anonymised coaching engagements, each with a day-in-the-life page.
+- [AI for event and live production companies](https://aicoachalex.com/who-i-work-with/events-production-companies/): The Operations-Heavy Owner, events & live production, Italy. An event production company can use AI to turn one site-visit transcript into three documents at once: a logistics brief, a technical brief and a client quote. The trick is a written price list and discount rules the AI can read, not a longer prompt.
+- [AI for electricians and trades business owners](https://aicoachalex.com/who-i-work-with/electricians-and-trades/): The Trades Business Owner, electrical contracting, Australia. A trades business can connect AI to its job management and accounting software to spot unpaid completed jobs, leads nobody followed up and jobs missing notes. The value is in finding leaks, not counting jobs.
+- [AI for construction operations and health & safety reporting](https://aicoachalex.com/who-i-work-with/construction-companies/): The Construction Operations Director, facade & cladding contracting, United Kingdom. Construction teams can use AI to turn site voice notes and health & safety records into written reports, action lists and board summaries. It works when the AI has your company's rules and templates, set up once in a shared workspace.
+- [AI for hospitality operators building their own software](https://aicoachalex.com/who-i-work-with/hospitality-software/): The Hospitality Operator Building a SaaS, hospitality operations software, Spain. Hospitality operators can build their own operations software with AI, but no-code platforms get expensive as usage grows. The usual path is to rebuild one module at a time on your own stack, then package it for other venues.
+- [An AI assistant for CEOs](https://aicoachalex.com/who-i-work-with/ceo-assistant/): The CEO, executive leadership, Africa. A CEO gets most from AI as a personal chief-of-staff: one workspace that knows the company, turns rough sketches into slide outlines, summarises sales performance and watches competitors. The CEO still makes every decision.
+- [AI for engineering and infrastructure compliance work](https://aicoachalex.com/who-i-work-with/engineering-infrastructure/): The Regulated-Industry Specialist, permits & compliance on infrastructure projects, International projects. In regulated engineering work, AI is useful when it is built as small, checkable agents with defined inputs and rules, not as one chat window. Each agent does one job, and a human can verify every hand-off.
+- [AI for dental practice owners](https://aicoachalex.com/who-i-work-with/dental-clinics/): The Clinic Owner, dental practice, United States. Dental practices can use AI for meeting summaries, SOPs and training manuals right away. Writing into the practice management system, for insurance payments or adjustments, needs a safe setup first: a business agreement covering patient data and testing on fake patients.
+- [AI for accountants building their own audit tools](https://aicoachalex.com/who-i-work-with/accountants/): The Accountant, accounting & audit, Europe. Accountants can use AI to build their own tools, such as audit checklists and anomaly checks, without being programmers. The step that matters is moving from copy-pasting prompts between chats to a structured project with a clear MVP.
+- [AI video production for in-house marketing teams](https://aicoachalex.com/who-i-work-with/in-house-marketing-teams/): The In-House Marketing Lead, corporate marketing & creative production, Italy. AI video looks professional when you lock characters and locations before generating anything, then follow a written cinematography plan. Consistency sheets and a shot spec matter more than which video tool you pick.
+- [AI for freelancers who serve several clients](https://aicoachalex.com/who-i-work-with/freelance-consultants/): The Multi-Client Freelancer, freelance services, Switzerland & beyond. A freelancer with several clients gets the most from AI by building one reusable system around the work they repeat every month, such as client reports, invoices and client lists, connected to real data instead of copy-paste.
+- [AI for sales professionals and business developers](https://aicoachalex.com/who-i-work-with/sales-professionals/): The Sales Pro Wanting an Edge, sales & business development, Europe. Salespeople get the most from AI in research and preparation: account research, call prep and first drafts of outreach. The human part stays the relationship and the judgement about what to say.
+- [AI for real estate agents](https://aicoachalex.com/who-i-work-with/real-estate-agents/): The Real Estate Agent, residential real estate, United Arab Emirates. Real estate agents get the most from AI when their leads and listings are clean first. With a working spreadsheet-based CRM connected to an AI workspace, the next step is marketing to existing contacts: a brand book, a landing page and messaging campaigns.
+- [AI career coaching for career changers](https://aicoachalex.com/who-i-work-with/career-changers/): The Career Changer, cross-industry transition, Spain. A career changer can use AI to research what target roles really pay and need, shortlist companies, and rewrite a varied background into one clear story. The value is the evidence, not a nicer CV.
+
+## Courses and services
+
+- [AI for business owners](https://aicoachalex.com/ai-for-business-owners.html)
+- [Courses](https://aicoachalex.com/courses.html)
+- [OpenClaw AI agent setup](https://aicoachalex.com/openclaw-ai-agent-setup.html)
+- [Blog](https://aicoachalex.com/blog/)
+
+## Contact
+
+- Book a diagnostic: https://alessandrocapezza.youcanbook.me/
+- Email: aicoachalex@gmail.com
