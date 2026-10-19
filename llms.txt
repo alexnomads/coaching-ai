@@ -21,14 +21,14 @@
 
 ## AI lessons for kids (10–17)
 
-- [AI lessons for kids and teenagers](https://aicoachalex.com/ai-lessons-for-kids/): online 1:1 and small-group lessons for ages 10–17, with parental consent and a recap for parents after every lesson. 65€ per 50-minute lesson.
+- [AI lessons for kids and teenagers](https://aicoachalex.com/ai-lessons-for-kids/): online 1:1 and small-group lessons for ages 10–17, with parental consent, parents welcome to join, and a recap after every lesson. 65€ per 50-minute lesson, 60€ per lesson in a pack of 8.
 - [How AI works: the first lesson for kids and teens](https://aicoachalex.com/ai-lessons-for-kids/how-ai-works/): Kids learn that a chatbot predicts the next word instead of looking things up. Once they see that, they understand why it can be wrong, why it forgets long chats and why they should check its answers.
 - [AI for teen entrepreneurs: run a small business with AI](https://aicoachalex.com/ai-lessons-for-kids/teen-entrepreneurs/): Teen makers use AI to work out a fair price, describe their ideal customer and write posts that sound like them. AI checks the maths and drafts ideas; they decide.
 - [AI, debate and law for teenagers](https://aicoachalex.com/ai-lessons-for-kids/debate-and-law/): Teens use AI as a sparring partner: it argues the other side, they defend theirs. They also learn to check every source, because AI can invent cases and quotes that sound real.
 - [AI for creative kids: design, fashion and art](https://aicoachalex.com/ai-lessons-for-kids/design-and-fashion/): Creative kids use AI to explore ideas quickly: mood boards, outfits, colour palettes. They also learn that AI's taste comes from what it has seen, so their own eye matters more.
 - [AI for school: study smarter without cheating](https://aicoachalex.com/ai-lessons-for-kids/school-subjects/): Students use AI as a tutor, not a ghost-writer: to explain topics in different ways, quiz them before tests and plan revision. Their essays and homework stay their own.
 - [AI safety for kids: privacy, fake images and good judgement](https://aicoachalex.com/ai-lessons-for-kids/online-safety/): Kids learn three habits: never share personal details with AI, check images and messages before believing them, and ask an adult when something feels off. It runs through every track and also as its own short course.
-- [The Word Machine](https://aicoachalex.com/ai-lessons-for-kids/word-machine/): interactive model of how a chatbot writes its answer.
+- The kids page includes the Word Machine, an interactive model of how a chatbot writes its answer.
 - Spanish: https://aicoachalex.com/es/clases-de-ia-para-ninos/ · Italian: https://aicoachalex.com/it/corsi-ai-per-ragazzi/
 
 ## Other languages
