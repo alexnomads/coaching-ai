@@ -1,0 +1,11 @@
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){if(window.matchMedia('(hover:hover)').matches||dd.classList.contains('open'))return;e.preventDefault();e.stopPropagation();dd.classList.add('open');t.setAttribute('aria-expanded','true');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
