@@ -20,7 +20,7 @@ ICON_SIZE = {"lab": (240, 216), "time": (128, 264), "market": (248, 224), "court
 DOORS = {"lab": (88, 80), "time": (192, 62), "market": (300, 80), "court": (88, 186), "studio": (300, 186), "light": (346, 128), "hq": (44, 128)}
 BOX = {"lab": (-30, -48, 60, 54), "time": (-16, -62, 32, 66), "market": (-30, -52, 62, 56), "court": (-30, -38, 60, 44),
        "studio": (-30, -46, 72, 52), "light": (-12, -58, 26, 62), "hq": (-22, -38, 46, 42)}
-KIDS_FONTS = '<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">'
+KIDS_FONTS = ''
 
 
 def money(s):
@@ -130,8 +130,8 @@ def word_machine():
     s = open(os.path.join(ROOT, "_tools", "word-machine.src.html"), encoding="utf-8").read()
     css = s[s.index("<style>") + 7:s.index("</style>")]
     css = prefix_css(css)
-    css = css.replace('"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif', "'Pixelify Sans',system-ui,sans-serif")
-    css = css.replace('"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif', "'Nunito',system-ui,sans-serif")
+    css = css.replace('"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif', "'Fraunces',Georgia,serif")
+    css = css.replace('"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif', "'Instrument Sans',system-ui,sans-serif")
     css = css.replace('"JetBrains Mono", ui-monospace', "'IBM Plex Mono', ui-monospace")
     fig = s[s.index('<div class="figure">'):s.index("  <section>")]
     lesson = s[s.index("  <section>"):s.index("    <div class=\"habits\">")] + "  </section>"
