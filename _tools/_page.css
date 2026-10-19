@@ -213,3 +213,47 @@ a{color:inherit}
 .ws-meta .win{flex-direction:row;align-items:baseline;gap:8px;border-radius:999px;padding:5px 14px;font-size:14px}
 .featured svg{width:80px;height:80px}
 .ws-art svg{width:min(100%,400px);height:auto;max-height:440px}
+
+/* ---------- AI lessons for kids ---------- */
+.kids-hero .hub-intro h1{font-size:clamp(36px,3.9vw,52px)}
+.price-line{display:inline-block;margin-bottom:6px!important;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.04em;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 14px;margin:0;width:fit-content}
+.island .ground{fill:#dfe9c9}
+.city.night .island-dummy{display:none}
+.promises{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.promise{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.promise .pn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--lime);font-family:var(--f-display);font-weight:900}
+.promise h3,.rule h3,.project h3,.plan h3{font-family:var(--f-display);font-weight:700;font-size:21px;line-height:1.2;margin:12px 0 6px}
+.promise p,.rule p,.project p{margin:0;color:#3b3833;font-size:15.5px}
+.shops.tracks{grid-template-columns:repeat(3,minmax(0,1fr))}
+.shops.tracks h3{margin-top:12px}
+.shops.tracks .sec{font-size:13px;letter-spacing:0;font-family:var(--f-body);color:#3b3833}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.steps li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.steps time{font-family:var(--f-display);font-weight:900;font-size:20px;color:var(--moss)}
+.steps b{display:block;font-size:16px}
+.steps p{margin:2px 0 0;color:#3b3833;font-size:15px}
+.recap{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.recap li{padding-left:22px;position:relative;font-size:16px}
+.recap li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:700}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.project{background:var(--paper);border-radius:16px;padding:24px}
+.wm{border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;background:#fff;margin:8px 0 16px}
+.wm iframe{display:block;width:100%;height:820px;border:0}
+.rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.rules.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rule{border-top:3px solid var(--ink);padding-top:6px}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.plan{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:22px}
+.plan:first-child{border-color:var(--ink)}
+.plan .pp{font-family:var(--f-display);font-weight:900;font-size:40px;line-height:1}
+.plan .ps{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin:6px 0 12px}
+.plan ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.plan li::before{content:"✓ ";color:var(--moss);font-weight:700}
+.lead.small{font-size:13px}
+.kids-art{padding-top:24px}
+.outcome .btn{margin-top:16px}
+.outcome .recap li{color:var(--cream)}
+@keyframes beam{0%,100%{opacity:.15}50%{opacity:.55}}
+.beam{animation:beam 4s ease-in-out infinite}
+@media (max-width:1000px){.promises,.plans,.projects,.shops.tracks,.rules{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.promises,.plans,.projects,.shops.tracks,.rules,.rules.two{grid-template-columns:1fr}.wm iframe{height:700px}}
