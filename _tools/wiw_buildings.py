@@ -356,10 +356,83 @@ def b_hq(logo_href):
     return o
 
 
+def pyramid(x0, y0, z, dx, dy, h, col):
+    x1, y1 = x0 + dx, y0 + dy
+    ap = (x0 + dx / 2, y0 + dy / 2, z + h)
+    return poly([(x0, y1, z), (x1, y1, z), ap], col) + poly([(x1, y0, z), (x1, y1, z), ap], dark(col, .22))
+
+
+def b_lab():
+    o = plot()
+    o += box(1.2, 1.4, .35, 4.6, 4.0, 3.2, CREAM, top=STONE)
+    o += box(1.1, 1.3, 3.55, 4.8, 4.2, .3, DEEP)
+    o += winY(1.6, 5.4, 1.1, 2, w=1.3, h=1.2, gap=.6, glow=GLASS)
+    o += poly([(4.7, 5.4, .35), (5.5, 5.4, .35), (5.5, 5.4, 2.1), (4.7, 5.4, 2.1)], INK)
+    o += onY(4.0, 5.4, 3.2, f'<rect class="k" width="26" height="12" rx="2" fill="{INK}"/><text x="13" y="8.6" font-size="7" text-anchor="middle" fill="{LIME}" class="sg">LAB</text>')
+    # flask on the roof
+    o += box(3.0, 2.9, 3.85, .5, .5, 1.0, GLASS)
+    bx, by = P(3.25, 3.15, 4.85)
+    o += f'<circle class="k" cx="{bx:.1f}" cy="{by+8:.1f}" r="13" fill="{LIME}"/><circle cx="{bx-4:.1f}" cy="{by+4:.1f}" r="3" fill="#ffffff" opacity=".7"/>'
+    o += winX(5.8, 2.0, 1.1, 2, w=1.1, h=1.2, gap=.6, glow=GLASS)
+    o += tree(6.4, 6.3, r=.6)
+    return o
+
+
+def b_market():
+    o = plot()
+    o += box(1.3, 2.4, .35, 4.6, 2.4, 1.3, SAND)
+    o += box(1.2, 2.3, 1.65, 4.8, 2.6, .15, light(SAND, .3))
+    for x in (1.4, 5.6):
+        o += box(x, 4.5, .35, .15, .15, 3.0, INK)
+        o += box(x, 2.5, 1.8, .15, .15, 1.55, INK)
+    for i in range(6):
+        x = 1.2 + i * .82; col = LIME if i % 2 == 0 else CREAM
+        o += poly([(x, 2.2, 3.4), (x + .82, 2.2, 3.4), (x + .82, 5.1, 3.0), (x, 5.1, 3.0)], col)
+    o += box(1.6, 2.6, 1.8, .9, .7, .6, WARM) + box(2.8, 2.6, 1.8, .9, .7, .6, MOSS) + box(4.0, 2.6, 1.8, .9, .7, .6, "#e88b8b")
+    o += onY(2.2, 4.8, 1.25, f'<rect class="k" width="44" height="11" rx="2" fill="{INK}"/><text x="22" y="8" font-size="6.4" text-anchor="middle" fill="{LIME}" class="sg">MARKET</text>')
+    o += box(5.6, 5.6, .35, .7, .7, .55, SAND) + box(5.7, 5.7, .9, .5, .5, .4, LIME)
+    return o
+
+
+def b_court():
+    o = b_bank()
+    o = o.replace(">AUDIT<", ">COURT<")
+    return o
+
+
+def b_clocktower():
+    o = plot()
+    o += box(2.3, 2.3, .35, 2.6, 2.6, 6.8, STONE)
+    for z in (1.4, 3.2):
+        o += winY(2.8, 4.9, z, 1, w=.8, h=1.1, glow=GLASS) + winX(4.9, 2.8, z, 1, w=.8, h=1.1, glow=GLASS)
+    o += icon_y(2.95, 4.9, 6.75, "clock", 1.15) + icon_x(4.9, 4.1, 6.75, "clock", 1.15)
+    o += box(2.15, 2.15, 7.15, 2.9, 2.9, .3, DEEP)
+    o += pyramid(2.15, 2.15, 7.45, 2.9, 2.9, 2.2, DEEP)
+    o += poly([(2.8, 4.9, .35), (3.6, 4.9, .35), (3.6, 4.9, 1.0), (2.8, 4.9, 1.0)], INK)
+    o += tree(1.0, 6.2, r=.6) + tree(6.2, 1.3, r=.55)
+    return o
+
+
+def b_lighthouse():
+    o = plot()
+    o += box(1.0, 4.4, .35, 2.4, 2.2, 1.6, CREAM, top=STONE) + gable(.9, 4.3, 1.95, 2.6, 2.4, .9, MOSS)
+    segs = [(2.7, 2.3, 2.0, 1.6, CREAM), (2.85, 2.45, 1.7, 1.6, INK), (3.0, 2.6, 1.4, 1.6, CREAM), (3.1, 2.7, 1.2, 1.5, INK)]
+    z = .35
+    for x, y, w, h, c in segs:
+        o += box(x, y, .35 if False else z, w, w, h, c) if False else box(x, y, z, w, w, h, c)
+        z += h
+    o += box(3.0, 2.6, z, 1.4, 1.4, .15, INK)
+    o += box(3.15, 2.75, z + .15, 1.1, 1.1, 1.0, LIME, top=light(LIME, .4))
+    o += pyramid(3.0, 2.6, z + 1.15, 1.4, 1.4, .9, INK)
+    o += f'<g class="beam"><polygon points="{pts([(3.7, 3.3, z + .65), (8.5, 1.0, z + 1.2), (8.5, 2.6, z + .2)])}" fill="{WARM}" opacity=".35"/></g>'
+    return o
+
+
 BUILDERS = {
     "stage": b_stage, "trades": b_trades, "facade": b_facade, "bar": b_bar, "tower": b_tower,
     "crane": b_crane, "clinic": b_clinic, "bank": b_bank, "studio": b_studio, "cottage": b_cottage,
     "kiosk": b_kiosk, "agency": b_agency, "station": b_station,
+    "lab": b_lab, "market": b_market, "court": b_court, "clocktower": b_clocktower, "lighthouse": b_lighthouse,
 }
 
 

@@ -22,7 +22,7 @@ SITE = "https://aicoachalex.com"
 BOOK = "https://alessandrocapezza.youcanbook.me/"
 SHARE = SITE + "/ALEXAICOACH-SHAREv2.png"
 TODAY = "2026-10-19"
-CSS_V = "2"
+CSS_V = "3"
 LANGS = ["en", "es", "it"]
 ORDER = EN.ORDER
 BBOX = json.load(open(os.path.join(TOOLS, "bboxes.json")))
@@ -108,6 +108,7 @@ PERSON = {"@type": "Person", "@id": SITE + "/#alessandro", "name": "Alessandro C
 BOOKING = {"en": read("_booking_block.html"), "es": read("_booking_block_es.html"), "it": read("_booking_block_it.html")}
 NAVJS = read("_navjs_block.html")
 NAV_TPL = {"es": read("_nav_es.html"), "it": read("_nav_it.html")}
+KIDS_LINK = {"en": ("/ai-lessons-for-kids/", "AI for Kids"), "es": ("/es/clases-de-ia-para-ninos/", "IA para Niños"), "it": ("/it/corsi-ai-per-ragazzi/", "AI per Ragazzi")}
 
 
 def lang_switch(lang, alts):
@@ -135,6 +136,7 @@ def nav(lang, alts):
       <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
       <div class="sn-dd"><a class="sn-dd-t" href="/courses.html" aria-haspopup="true" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></a><div class="sn-dd-m">{courses}</div></div>
       <a href="{UI['en']['base']}" class="sn-cur">Who I Work With</a>
+      <a href="/ai-lessons-for-kids/">AI for Kids</a>
     </div>
     <div class="sn-right">
       {sw}
@@ -151,19 +153,21 @@ def nav(lang, alts):
     <a class="sn-mob-sub" href="/courses.html">Courses →</a>
     {mob}
     <a href="{UI['en']['base']}" class="sn-cur">Who I Work With</a>
+    <a href="/ai-lessons-for-kids/">AI for Kids</a>
     {sw}
     <a class="sn-cta-m sn-cta" href="{BOOK}" target="_blank" rel="noopener">Book Diagnostic</a>
   </div>
 </div>"""
     t = NAV_TPL[lang].replace('class="sn sn-dark"', 'class="sn"').replace("/assets/aicoachalex-mark.png", "/assets/aicoachalex-mark-96.webp")
     t = t.replace(f'href="{UI[lang]["old_page"]}" class="sn-cur"', f'href="{UI[lang]["base"]}" class="sn-cur"')
+    t = re.sub(r'(<a href="%s" class="sn-cur">[^<]+</a>)' % re.escape(UI[lang]["base"]), lambda m: m.group(1) + f'\n      <a href="{KIDS_LINK[lang][0]}">{KIDS_LINK[lang][1]}</a>', t)
     t = re.sub(r'<div class="sn-lang">.*?</div>', lambda m: sw, t, flags=re.S)
     return t
 
 
 def footer(lang):
     u = UI[lang]
-    links = [(u["base"], u["hub_name"])] + FOOTER_LINKS[lang] + [
+    links = [(u["base"], u["hub_name"]), KIDS_LINK[lang]] + FOOTER_LINKS[lang] + [
         ("https://www.linkedin.com/in/alessandrocapezza/", "LinkedIn"), ("https://www.instagram.com/alexislimitless/", "Instagram"), ("https://x.com/alexNomads", "X")]
     a = "".join(f'<a href="{h}"' + (' target="_blank" rel="noopener"' if h.startswith("http") else "") + f'>{esc(t)}</a>' for h, t in links)
     return f"""<footer class="foot"><div class="wrap foot-in">
