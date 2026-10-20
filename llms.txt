@@ -40,6 +40,7 @@
 
 - [AI for business owners](https://aicoachalex.com/ai-for-business-owners.html)
 - [Courses](https://aicoachalex.com/courses.html)
+- [AI for Your Finances: Build Your AI Research System](https://aicoachalex.com/ai-for-your-finances.html): a 10-lesson course ($49, one-time, on Skool) on using AI for investment research. Give AI the real documents instead of asking it what to buy, sort the news into signal and noise, compare earnings-call wording between quarters, and make AI quote the line behind every number. Educational content, not financial advice; the investor makes every decision.
 - [OpenClaw AI agent setup](https://aicoachalex.com/openclaw-ai-agent-setup.html)
 - [Blog](https://aicoachalex.com/blog/)
 
