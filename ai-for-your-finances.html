@@ -247,6 +247,16 @@ fbq('track', 'PageView');
   .offer-side p{color:var(--muted);font-size:15px;margin:0 0 20px;}
   @media(max-width:820px){.offer{grid-template-columns:1fr;}}
   .hero p.hero-note{font-size:13.5px;margin:18px 0 0;}
+  .taste-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:start;}
+  .prompt-card{border:1px solid var(--rule);background:#fff;}
+  .pc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .copy-btn{font-family:var(--mono);font-size:12px;background:var(--ink);color:var(--lime);border:0;border-radius:2px;padding:7px 12px;cursor:pointer;white-space:nowrap;}
+  .prompt-card pre{margin:0;padding:20px 18px;font-family:var(--mono);font-size:14px;line-height:1.6;white-space:pre-wrap;color:var(--ink);border-left:3px solid var(--lime);}
+  .pc-note{font-size:14px;color:var(--muted);margin:0;padding:14px 18px 18px;border-top:1px solid var(--rule);}
+  .sheet{margin:0;}
+  .sheet img{width:100%;height:auto;display:block;border:1px solid var(--rule);}
+  .sheet figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:10px;}
+  @media(max-width:860px){.taste-grid{grid-template-columns:1fr;}}
   .final .disclaimer{font-size:13px;color:var(--muted-dark);margin:28px 0 0;max-width:60ch;}
 
 /* ===== Popup (shared pattern with rest of site) ===== */
@@ -457,6 +467,31 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   </div>
 </section>
 
+<section class="taste" id="try-a-prompt">
+  <div class="wrap">
+    <h2>Try one prompt from Lesson 1, <em>right now.</em></h2>
+    <p class="lead">Every lesson comes with copy-paste prompts, a one-page cheat sheet and one action to take straight after watching. Here's the first prompt from Lesson 1. Paste it into ChatGPT or Claude with a money question you've been meaning to ask.</p>
+    <div class="taste-grid">
+      <div class="prompt-card">
+        <div class="pc-head"><span>Lesson 01 · Turn a guess into research</span><button class="copy-btn" type="button" data-copy="pc1">Copy prompt</button></div>
+<pre id="pc1">Here is a question I was going to ask you:
+"[YOUR QUESTION, e.g. Should I buy X?]"
+
+Don't answer it. Instead, rewrite it as 3 research
+questions I could answer with real documents
+(earnings transcripts, filings, central bank
+statements). For each one, tell me which document
+I'd need to give you.</pre>
+        <p class="pc-note">The other nine lessons include 16 more prompts like this one: for your research workspace, a daily news briefing, earnings calls, a portfolio tracker, catching AI's wrong numbers and a weekly review.</p>
+      </div>
+      <figure class="sheet">
+        <img src="/assets/ai-finances/cheatsheet-01.webp" alt="Lesson 1 cheat sheet: the 3-layer research system" width="1600" height="900" loading="lazy">
+        <figcaption>The Lesson 1 cheat sheet. Every lesson has one.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section id="curriculum">
   <div class="wrap">
     <h2>Ten short lessons. One working <em>system.</em></h2>
@@ -521,9 +556,10 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
         <div class="pr-cost">$49 · one-time payment · lifetime access</div>
         <ul>
           <li>10 video lessons, filmed screen by screen</li>
-          <li>The dashboards, prompts and templates shown in every lesson</li>
+          <li>17 copy-paste prompts and the templates shown in the lessons</li>
+          <li>A one-page cheat sheet for every lesson</li>
+          <li>One "do this now" action after each lesson, so you build as you go</li>
           <li>Access to the AI for Your Finances community on Skool</li>
-          <li>New sources and prompts added as the tools change</li>
         </ul>
         <a class="btn btn-lime skool-link" href="https://www.skool.com/ai-for-your-finances-5998/about?utm_source=aicoachalex&amp;utm_medium=landing&amp;utm_campaign=ai-for-your-finances" target="_blank" rel="noopener" data-cta="pricing-join">Join on Skool — $49</a>
       </div>
@@ -662,6 +698,13 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+w.dataset.id+'?autoplay=1&rel=0';
   f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title='Lesson 1: AI isn\u2019t your oracle';
   w.innerHTML='';w.appendChild(f);window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lesson1_play'});});})();
+/* Copy-prompt button */
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){
+  var t=document.getElementById(b.dataset.copy).innerText;
+  function done(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy prompt';},1800);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){});}
+  else{var r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));var sel=getSelection();sel.removeAllRanges();sel.addRange(r);try{document.execCommand('copy');done();}catch(e){}}
+  window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'prompt_copy',prompt:b.dataset.copy});});});
 /* Skool CTA tracking */
 document.querySelectorAll('.skool-link').forEach(function(a){a.addEventListener('click',function(){
   window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'skool_join_click',cta:a.dataset.cta});
