@@ -230,6 +230,8 @@ fbq('track', 'PageView');
   .yt-play:hover .yt-btn{transform:translate(-50%,-50%) scale(1.06);}
   .yt-btn svg{width:34px;height:34px;fill:var(--ink);margin-left:4px;}
   .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .yt-hero{margin:28px 0 24px;}
+  .yt-hero .yt-play img{opacity:.8;}
   .lessons{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
   .lessons li{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--rule);}
   .ln{font-family:var(--mono);font-size:13px;color:#5FA83A;padding-top:3px;min-width:22px;}
@@ -412,6 +414,12 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 <header class="hero wrap">
   <div class="eyebrow">Course · Skool community · 10 lessons</div>
   <h1>Use AI to research your money. Make the call <em>yourself.</em></h1>
+  <div class="yt yt-hero" data-id="3Qyapr5euV0" data-title="AI for Your Finances: course intro">
+    <button class="yt-play" type="button" aria-label="Play the course video">
+      <img src="https://i.ytimg.com/vi/3Qyapr5euV0/hqdefault.jpg" alt="AI for Your Finances: play the course video" width="480" height="360">
+      <span class="yt-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </button>
+  </div>
   <p>Most people ask AI "what should I buy?" and get a confident, unsourced guess. This course teaches the other way: build your own AI research system that reads the documents, sorts the news and flags what changed, so you decide with better information.</p>
   <div class="hero-cta">
     <a class="btn btn-lime skool-link" href="https://www.skool.com/ai-for-your-finances-5998/about?utm_source=aicoachalex&amp;utm_medium=landing&amp;utm_campaign=ai-for-your-finances" target="_blank" rel="noopener" data-cta="hero-join">Join on Skool — $49</a>
@@ -694,10 +702,10 @@ I'd need to give you.</pre>
 
 <script>
 /* Lesson 1: load the YouTube player only when clicked (faster page, no tracking until play) */
-(function(){var w=document.getElementById('yt');if(!w)return;w.querySelector('.yt-play').addEventListener('click',function(){
+document.querySelectorAll('.yt').forEach(function(w){var b=w.querySelector('.yt-play');if(!b)return;b.addEventListener('click',function(){
   var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+w.dataset.id+'?autoplay=1&rel=0';
-  f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title='Lesson 1: AI isn\u2019t your oracle';
-  w.innerHTML='';w.appendChild(f);window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lesson1_play'});});})();
+  f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;f.title=w.dataset.title||'Lesson 1: AI isn\u2019t your oracle';
+  w.innerHTML='';w.appendChild(f);window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:w.id==='yt'?'lesson1_play':'video_play',video_id:w.dataset.id});});});
 /* Copy-prompt button */
 document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){
   var t=document.getElementById(b.dataset.copy).innerText;
