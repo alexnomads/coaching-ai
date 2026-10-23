@@ -31,9 +31,34 @@ EXTRA_CSS = """
 </style>"""
 
 
+# Outbound links get UTM tags so the sites we cite see aicoachalex.com in their analytics.
+# Own properties (site, booking page, author profiles) are left untouched.
+NO_UTM = ("aicoachalex.com", "youcanbook.me", "linkedin.com/in/alessandrocapezza",
+          "instagram.com/alexislimitless", "youtube.com/@alexislimitless", "x.com/alexnomads")
+
+
+def add_utm(article, slug):
+    from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+
+    def tag(match):
+        url = html.unescape(match.group(2))
+        if any(d in url.lower() for d in NO_UTM):
+            return match.group(0)
+        p = urlsplit(url)
+        q = [kv for kv in parse_qsl(p.query, keep_blank_values=True) if not kv[0].startswith("utm_")]
+        q += [("utm_source", "aicoachalex.com"), ("utm_medium", "referral"),
+              ("utm_campaign", "blog"), ("utm_content", slug)]
+        new = urlunsplit((p.scheme, p.netloc, p.path, urlencode(q), p.fragment))
+        return f'{match.group(1)}{html.escape(new, quote=True)}"'
+
+    out = re.sub(r'(<a\b[^>]*?\bhref=")(https?://[^"]+)"', tag, article)
+    # keep the Referer header: never strip it with noreferrer on outbound links
+    return out.replace('rel="noopener noreferrer"', 'rel="noopener"')
+
+
 def main(meta_path, article_path):
     m = json.loads(pathlib.Path(meta_path).read_text())
-    article = pathlib.Path(article_path).read_text()
+    article = add_utm(pathlib.Path(article_path).read_text(), m["slug"])
     t = TEMPLATE.read_text()
     url = f"https://aicoachalex.com/blog/{m['slug']}.html"
     img = f"https://aicoachalex.com{m['image']}"
