@@ -67,6 +67,7 @@
 .sn-dd:focus-within .sn-dd-m{display:flex}
 .sn .sn-mob a.sn-mob-sub{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px;border-bottom:0}
 .sn-dark .sn-mob a.sn-mob-sub{color:rgba(248,246,241,.55)!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
 
 /* Who I Work With: the client city. Brand: cream, ink, lime, deep green. */
 :root{

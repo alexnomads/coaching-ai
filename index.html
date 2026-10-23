@@ -531,6 +531,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
 .sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
 .sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
 </style>
 <script type="application/ld+json">
 {
@@ -573,6 +574,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   ]
 }
 </script>
+<style id="idx-mobile-menu">
+/* mobile menu: scrollable, left-aligned list (the old centred layout pushed the top items off-screen) */
+.nav-mobile-menu{align-items:stretch;justify-content:flex-start;gap:0;padding:76px 24px 40px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.nav-mobile-close{position:fixed;top:14px;right:14px;z-index:201;background:rgba(13,12,10,.92);border-radius:50%}
+.nav-mobile-links{gap:0;text-align:left;width:100%;max-width:520px;margin:0 auto}
+.nav-mobile-links>li{border-bottom:1px solid rgba(248,246,241,.12)}
+.nav-mobile-links a{font-size:1.5rem;line-height:1.2;padding:15px 2px;letter-spacing:-.01em}
+.nav-mobile-links a.nav-quiz{display:inline-flex;font-family:'Instrument Sans',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0;padding:9px 20px;margin:14px 0}
+.nav-mobile-links>li.nav-mobile-sublabel{margin-top:0;padding:22px 2px 4px;border-bottom:none}
+.nav-mobile-links .nav-mobile-sublabel a{color:var(--green);font-size:.72rem;letter-spacing:.14em}
+.nav-mobile-links>li.nav-mobile-course{border-bottom-color:rgba(248,246,241,.06)}
+.nav-mobile-links li.nav-mobile-course a{font-family:'Instrument Sans',sans-serif;font-size:1.05rem;font-weight:500;letter-spacing:0;padding:11px 2px 11px 16px;color:rgba(248,246,241,.82)}
+.nav-mobile-links li.nav-mobile-course a:hover,.nav-mobile-links a:hover{color:var(--green)}
+.nav-mobile-cta{align-self:center;width:100%;max-width:520px;margin-top:28px;font-size:.8rem;padding:1.1rem 1.5rem}
+.nav-mobile-lang{justify-content:center;margin-top:18px}
+/* tablet: the full row no longer fits below 1100px, use the menu button */
+@media (min-width:768px) and (max-width:1099px){nav .nav-links{display:none!important}.nav-hamburger{display:flex!important}}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -600,6 +619,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     </li>
     <li><a href="https://aicoachalex.com/who-i-work-with/">Who I Work With</a></li>
     <li><a href="https://aicoachalex.com/ai-lessons-for-kids/">AI for Kids</a></li>
+    <li><a href="/about.html">About</a></li>
     <li class="nav-lang"><a href="/" class="active" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></li>
         <li><a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="nav-cta">Book Diagnostic</a></li>
   </ul>
@@ -649,14 +669,15 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <li><a href="blog/">Blog</a></li>
         <li><a href="openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a></li>
     <li class="nav-mobile-sublabel"><a href="/courses.html">Courses →</a></li>
-    <li><a href="/personal-ai-agent.html">Your Own AI</a></li>
-    <li><a href="/ai-video-course-booking.html">AI VideoGen</a></li>
-    <li><a href="/voice-ai-agents.html">Voice AI Agents</a></li>
-    <li><a href="/personal-ai-setup.html">Personal AI Setup</a></li>
-    <li><a href="/120-prompts.html">120 Prompts</a></li><li><a href="/ai-for-your-finances.html">AI for Your Finances</a></li>
-    <li><a href="/graph-engineering.html">Graph Engineering</a></li>
+    <li class="nav-mobile-course"><a href="/personal-ai-agent.html">Your Own AI</a></li>
+    <li class="nav-mobile-course"><a href="/ai-video-course-booking.html">AI VideoGen</a></li>
+    <li class="nav-mobile-course"><a href="/voice-ai-agents.html">Voice AI Agents</a></li>
+    <li class="nav-mobile-course"><a href="/personal-ai-setup.html">Personal AI Setup</a></li>
+    <li class="nav-mobile-course"><a href="/120-prompts.html">120 Prompts</a></li><li class="nav-mobile-course"><a href="/ai-for-your-finances.html">AI for Your Finances</a></li>
+    <li class="nav-mobile-course"><a href="/graph-engineering.html">Graph Engineering</a></li>
     <li><a href="https://aicoachalex.com/who-i-work-with/">Who I Work With</a></li>
     <li><a href="https://aicoachalex.com/ai-lessons-for-kids/">AI for Kids</a></li>
+    <li><a href="/about.html">About</a></li>
     <li><a href="#pricing">Pricing</a></li>
   </ul>
   <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="nav-mobile-cta">Book Diagnostic — 49€</a>

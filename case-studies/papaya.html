@@ -1,0 +1,2655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<link rel="canonical" href="https://aicoachalex.com/case-studies/papaya.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta charset="UTF-8">
+<title>GTM Agent Console — Fintech Workforce Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0B; --surface:#141416; --surface-2:#1C1C1F;
+    --ink:#F5F3EF; --ink-dim:#9B9BA3; --border:#2A2A2F;
+    --ai:#5B8DEF; --ai-dim:#2A3A5C;
+    --human:#E8A33D; --human-dim:#4A3A20;
+    --danger:#E2574C; --danger-dim:#4A2A28;
+    --success:#4FBE8B; --success-dim:#1B3B2E;
+    --papaya:#F04E37; --papaya-deep:#7A1F13; --papaya-soft:#FF6B54;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif; padding:28px 20px 60px;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; margin:0;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  /* ===== Cover / header ===== */
+  .cover{
+    position:relative; background:
+      radial-gradient(120% 140% at 100% 0%, rgba(240,78,55,.10), transparent 55%),
+      linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+    border:1px solid var(--border); border-radius:16px; padding:30px 34px;
+    margin-bottom:24px; overflow:hidden;
+  }
+  .cover::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+    background:linear-gradient(180deg, var(--papaya), var(--ai));
+  }
+  .cover .badge-line{display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
+  .cover .kbadge{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--papaya); border:1px solid rgba(240,78,55,.3); background:rgba(240,78,55,.07);
+    padding:4px 10px; border-radius:20px;
+  }
+  .cover .kbadge.alt{color:var(--ink-dim); border-color:var(--border); background:var(--surface-2);}
+  .cover h1{font-size:34px; font-weight:700; letter-spacing:-.02em; line-height:1.1;}
+  .cover h1 .accent{color:var(--papaya);}
+  .cover .sub{color:var(--ink); font-size:15px; margin:12px 0 0; max-width:720px; line-height:1.55; font-weight:400;}
+  .cover .sub .dim{color:var(--ink-dim);}
+  .cover .byline{
+    margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim);
+    display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+  }
+  .cover .byline b{color:var(--ink); font-weight:500;}
+  .cover .byline .dot{color:var(--border);}
+
+  .present-toggle{
+    position:absolute; top:22px; right:24px; display:flex; gap:0; border:1px solid var(--border);
+    border-radius:8px; overflow:hidden; background:var(--bg); z-index:5;
+  }
+  .present-toggle button{
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:12px; padding:7px 14px;
+    border:none; background:none; color:var(--ink-dim); cursor:pointer; transition:.15s;
+  }
+  .present-toggle button.on{background:var(--papaya); color:#FFFFFF;}
+
+  /* ===== Tabs (chip style) ===== */
+  .tabs{display:flex; gap:8px; margin:0 0 22px; flex-wrap:wrap;}
+  .tab{
+    display:flex; align-items:center; gap:8px;
+    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:13.5px;
+    padding:9px 15px 9px 10px; cursor:pointer; color:var(--ink-dim); background:var(--surface);
+    border:1px solid var(--border); border-radius:10px; transition:.15s;
+  }
+  .tab .pnum{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:500;
+    background:var(--surface-2); color:var(--ink-dim); border-radius:6px; padding:3px 7px;
+    transition:.15s; white-space:nowrap;
+  }
+  .tab:hover{color:var(--ink); border-color:var(--ink-dim);}
+  .tab.active{color:#FFFFFF; background:var(--papaya); border-color:var(--papaya); font-weight:600;}
+  .tab.active .pnum{background:rgba(11,18,32,.18); color:#FFFFFF;}
+  .tab.bonus.active{background:var(--ai); border-color:var(--ai); color:#FFFFFF;}
+  .tab.bonus.active .pnum{background:rgba(11,18,32,.18); color:#FFFFFF;}
+
+  .panel{display:none;}
+  .panel.active{display:grid; grid-template-columns:260px 1fr; gap:22px;}
+  @media (max-width:820px){.panel.active{grid-template-columns:1fr;}}
+
+  .pipeline{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:20px 16px; height:fit-content;
+  }
+  .pipeline h3{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-dim); margin-bottom:16px;}
+  .step{display:flex; gap:12px; position:relative; padding-bottom:26px;}
+  .step:last-child{padding-bottom:0;}
+  .step::before{
+    content:''; position:absolute; left:13px; top:26px; bottom:0; width:2px;
+    background:var(--border);
+  }
+  .step:last-child::before{display:none;}
+  .node{
+    width:27px; height:27px; border-radius:50%; border:2px solid var(--border);
+    background:var(--surface-2); flex-shrink:0; display:flex; align-items:center;
+    justify-content:center; font-size:12px; font-family:'IBM Plex Mono',monospace;
+    color:var(--ink-dim); transition:.25s; z-index:1;
+  }
+  .node.human{border-radius:6px; transform:rotate(45deg);}
+  .node.human span{transform:rotate(-45deg); display:block;}
+  .node.active{border-color:var(--ai); background:var(--ai-dim); color:var(--ai); box-shadow:0 0 0 3px rgba(91,141,239,.15);}
+  .node.human.active{border-color:var(--human); background:var(--human-dim); color:var(--human); box-shadow:0 0 0 3px rgba(232,163,61,.15);}
+  .step-label{padding-top:3px;}
+  .step-label .name{font-size:13px; font-weight:500;}
+  .step-label .desc{font-size:11.5px; color:var(--ink-dim); margin-top:2px; line-height:1.4;}
+
+  .main-col{display:flex; flex-direction:column; gap:16px;}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;}
+  .card h3{font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); margin-bottom:14px;}
+  select{
+    width:100%; background:var(--surface-2); color:var(--ink); border:1px solid var(--border);
+    border-radius:6px; padding:10px 12px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px;
+  }
+  .run-btn{
+    margin-top:14px; background:var(--ai); color:#FFFFFF; border:none; border-radius:6px;
+    padding:11px 20px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px;
+    cursor:pointer; transition:.15s;
+  }
+  .run-btn:hover{filter:brightness(1.08);}
+  .run-btn:disabled{opacity:.5; cursor:default;}
+
+  .output{display:none;}
+  .output.show{display:block;}
+  .draft-box{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:8px;
+    padding:16px 18px; font-size:13.5px; line-height:1.6;
+    font-family:'IBM Plex Sans',sans-serif;
+  }
+  .draft-box .draft-text{white-space:pre-wrap;}
+  .draft-box .scenario-note{
+    font-size:12px; line-height:1.5; color:var(--ink-dim); font-style:italic;
+    border-left:2px solid var(--papaya); padding:2px 0 2px 12px; margin-bottom:14px;
+  }
+  .badge-row{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0;}
+  .badge{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:5px 10px;
+    border-radius:20px; border:1px solid var(--border); color:var(--ink-dim);
+  }
+  .badge.conf-high{color:var(--success); border-color:var(--success-dim); background:rgba(111,207,151,.08);}
+  .badge.conf-mid{color:var(--human); border-color:var(--human-dim); background:rgba(232,163,61,.08);}
+  .badge.conf-low{color:var(--danger); border-color:var(--danger-dim); background:rgba(226,87,76,.08);}
+  .badge.flag-none{color:var(--success);}
+  .badge.flag-mid{color:var(--human); border-color:var(--human-dim); background:rgba(232,163,61,.08);}
+  .badge.flag-bad{color:var(--danger); border-color:var(--danger-dim); background:rgba(226,87,76,.08);}
+
+  .routing-box{
+    display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:8px;
+    font-size:13.5px; font-weight:500; margin-top:4px;
+  }
+  .routing-box.fast{background:rgba(111,207,151,.08); border:1px solid var(--success-dim); color:var(--success);}
+  .routing-box.standard{background:rgba(232,163,61,.08); border:1px solid var(--human-dim); color:var(--human);}
+  .routing-box.human{background:rgba(226,87,76,.08); border:1px solid var(--danger-dim); color:var(--danger);}
+
+  .sources{margin-top:14px;}
+  .source-item{
+    font-size:12.5px; color:var(--ink-dim); padding:6px 0; border-bottom:1px solid var(--border);
+    display:flex; gap:8px;
+  }
+  .source-item:last-child{border-bottom:none;}
+  .source-item .id{
+    font-family:'IBM Plex Mono',monospace; color:var(--ai); flex-shrink:0; font-size:11.5px;
+  }
+
+  .log{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-dim);
+    background:#0B0D11; border:1px solid var(--border); border-radius:8px; padding:12px 14px;
+    margin-top:4px; word-break:break-all;
+  }
+  .empty{color:var(--ink-dim); font-size:13px; font-style:italic;}
+  footer{margin-top:34px; font-size:11.5px; color:var(--ink-dim); text-align:center;}
+
+  /* ===== Mapping tab ===== */
+  #panel-mapping.active{display:block;}
+  .stage-track{
+    display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative;
+    margin-bottom:4px;
+  }
+  .stage-node{
+    background:var(--surface); border:1px solid var(--border); border-radius:8px;
+    padding:14px 10px; text-align:center; cursor:pointer; transition:.15s;
+    position:relative; margin-right:10px;
+  }
+  .stage-node:last-child{margin-right:0;}
+  .stage-node::after{
+    content:'→'; position:absolute; right:-16px; top:50%; transform:translateY(-50%);
+    color:var(--ink-dim); font-size:14px;
+  }
+  .stage-node:last-child::after{display:none;}
+  .stage-node:hover{border-color:var(--ai);}
+  .stage-node.selected{
+    border-color:var(--papaya); background:linear-gradient(180deg, rgba(240,78,55,.12), rgba(240,78,55,.04));
+    box-shadow:0 0 0 3px rgba(240,78,55,.18), 0 4px 18px rgba(0,0,0,.35);
+    transform:translateY(-2px);
+  }
+  .stage-node.selected .stage-title{color:var(--papaya);}
+  .stage-node.selected .stage-num{color:var(--papaya);}
+  .stage-node .stage-num{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--ink-dim);}
+  .stage-node .stage-title{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; margin-top:4px; transition:.15s;}
+  .model-badge{
+    display:inline-block; margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    padding:3px 8px; border-radius:12px; border:1px solid var(--border); color:var(--ink-dim);
+  }
+  .model-badge.flash{color:var(--success); border-color:var(--success-dim);}
+  .model-badge.sonnet{color:var(--ai); border-color:var(--ai-dim);}
+  .model-badge.none{color:var(--human); border-color:var(--human-dim);}
+
+  .substrate{
+    margin-top:18px; border:1px dashed var(--border); border-radius:8px; padding:10px 16px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); text-align:center;
+  }
+  .substrate.context{margin-top:10px;}
+  .substrate.sf{margin-top:8px;}
+
+  .mapping-detail{margin-top:26px;}
+  .mapping-detail .agent-head{display:flex; align-items:center; gap:14px; margin-bottom:8px; flex-wrap:wrap;}
+  .mapping-detail .agent-head h2{font-size:27px; letter-spacing:-.01em;}
+  .mapping-detail .bignum{
+    font-family:'IBM Plex Mono',monospace; font-size:15px; font-weight:500; color:#FFFFFF;
+    background:var(--papaya); border-radius:8px; padding:6px 11px; line-height:1;
+  }
+  .mapping-detail .stage-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
+    border:1px solid var(--border); padding:3px 9px; border-radius:12px;
+  }
+  .roadmap-node{
+    border:1px dashed var(--ai-dim); background:rgba(91,141,239,.04); border-radius:8px;
+    margin-top:8px; padding:11px 16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  }
+  .roadmap-node .rnum{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ai);
+    border:1px dashed var(--ai-dim); border-radius:6px; padding:3px 8px;
+  }
+  .roadmap-node .rname{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; color:var(--ai);}
+  .roadmap-node .rdesc{font-size:12px; color:var(--ink-dim);}
+  .roadmap-node .rlink{
+    margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ai);
+    cursor:pointer; text-decoration:underline; text-underline-offset:3px;
+  }
+  .next-stage-card{
+    margin-top:16px; border:1px dashed var(--ai-dim); background:rgba(91,141,239,.05); border-radius:10px;
+    padding:16px 20px;
+  }
+  .next-stage-card .nlabel{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--ai); display:block; margin-bottom:6px;
+  }
+  .next-stage-card h4{font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:6px;}
+  .next-stage-card p{font-size:13px; line-height:1.55; color:var(--ink-dim); margin:0;}
+  .mapping-detail .lede{color:var(--ink-dim); font-size:14px; line-height:1.6; max-width:800px; margin-bottom:18px;}
+  .detail-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  @media (max-width:820px){.detail-grid{grid-template-columns:1fr;}}
+  .detail-card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .detail-card h4{font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); margin-bottom:10px;}
+  .detail-card p{font-size:13.5px; line-height:1.6; margin:0;}
+  .detail-card ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7; color:var(--ink-dim);}
+  .design-line{font-family:'IBM Plex Mono',monospace; font-size:12px; line-height:1.9; color:var(--ink-dim);}
+  .design-line b{color:var(--ink); font-weight:500;}
+
+  .fail-table{width:100%; border-collapse:collapse; font-size:12.5px;}
+  .fail-table th{
+    text-align:left; font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-dim); border-bottom:1px solid var(--border); padding:8px 10px 8px 0;
+  }
+  .fail-table td{padding:10px 10px 10px 0; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.5;}
+  .fail-table td:first-child{color:var(--ink); font-weight:500; width:22%;}
+  .fail-table td:nth-child(2){color:var(--ink-dim); width:24%;}
+
+  .degrade-box{
+    background:rgba(232,163,61,.06); border:1px solid var(--human-dim); border-radius:8px;
+    padding:16px 20px; font-size:13.5px; line-height:1.6; margin-top:16px;
+  }
+  .degrade-box .label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--human); text-transform:uppercase;
+    letter-spacing:.06em; margin-bottom:6px; display:block;
+  }
+
+  /* ===== Context Layer tab (Part 2) ===== */
+  #panel-context.active{display:block;}
+  .subnav{display:flex; gap:4px; margin-bottom:20px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:4px; width:fit-content;}
+  .subnav button{
+    font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:500; padding:7px 14px;
+    border-radius:6px; border:none; background:none; color:var(--ink-dim); cursor:pointer; transition:.15s;
+  }
+  .subnav button.active{background:var(--ai-dim); color:var(--ai);}
+  .subsection{display:none;}
+  .subsection.active{display:block;}
+
+  .usecase-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:820px){.usecase-grid{grid-template-columns:1fr;}}
+  .usecase-card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .usecase-card .rank{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ai);
+    border:1px solid var(--ai-dim); background:var(--ai-dim); padding:2px 8px; border-radius:10px; margin-bottom:8px;
+  }
+  .usecase-card h4{font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:600; margin-bottom:8px;}
+  .usecase-card .field-label{font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-dim); margin:12px 0 4px;}
+  .usecase-card p{font-size:13px; line-height:1.55; margin:0; color:var(--ink);}
+  .usecase-card ul{margin:0; padding-left:16px; font-size:12.5px; line-height:1.6; color:var(--danger);}
+
+  .domain-row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:6px;}
+  @media (max-width:820px){.domain-row{grid-template-columns:1fr;}}
+  .domain-box{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px;}
+  .domain-box h4{font-family:'Space Grotesk',sans-serif; font-size:14px; margin-bottom:4px;}
+  .domain-box .owner{font-size:11px; color:var(--ai); font-family:'IBM Plex Mono',monospace; margin-bottom:10px;}
+  .domain-box ul{margin:0; padding-left:16px; font-size:12.5px; line-height:1.65; color:var(--ink-dim);}
+  .flow-arrow{text-align:center; color:var(--ink-dim); font-size:16px; margin:2px 0;}
+  .flow-box{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:12px 18px;
+    font-size:12.5px; color:var(--ink-dim); text-align:center; font-family:'IBM Plex Mono',monospace;
+    margin-bottom:2px;
+  }
+
+  .pipeline-row{display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:14px 0;}
+  .pipeline-chip{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:6px 12px; border-radius:20px;
+    border:1px solid var(--border); background:var(--surface-2); color:var(--ink-dim);
+  }
+  .pipeline-chip.check{color:var(--ai); border-color:var(--ai-dim);}
+  .pipeline-sep{color:var(--ink-dim); font-size:13px;}
+
+  .access-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;}
+  @media (max-width:820px){.access-grid{grid-template-columns:1fr;}}
+  .access-col h4{font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; margin-bottom:10px;}
+  .access-col.write h4{color:var(--human);}
+  .access-col.read h4{color:var(--ai);}
+  .access-col.admin h4{color:var(--danger);}
+  .access-col ul{margin:0; padding-left:16px; font-size:12.5px; line-height:1.7; color:var(--ink-dim);}
+
+  .link-chip{
+    display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:11.5px;
+    color:var(--ai); border:1px solid var(--ai-dim); background:var(--ai-dim); padding:6px 12px;
+    border-radius:20px; cursor:pointer; margin-top:10px;
+  }
+  .link-chip:hover{filter:brightness(1.15);}
+
+  /* ===== Part 4 / Part 5 shared components ===== */
+  #panel-cost.active, #panel-vision.active, #panel-content.active{display:block;}
+  .tag-cost{color:var(--danger); border-color:var(--danger-dim); background:rgba(226,87,76,.08);}
+  .tag-quality{color:var(--ai); border-color:var(--ai-dim); background:rgba(91,141,239,.08);}
+  .tag-both{color:var(--human); border-color:var(--human-dim); background:rgba(232,163,61,.08);}
+
+  .insight-box{
+    background:rgba(111,207,151,.06); border:1px solid var(--success-dim); border-radius:8px;
+    padding:16px 20px; font-size:13.5px; line-height:1.6; margin-top:16px;
+  }
+  .insight-box .label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--success); text-transform:uppercase;
+    letter-spacing:.06em; margin-bottom:6px; display:block;
+  }
+
+  .exists-row{
+    display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--border);
+  }
+  .exists-row:last-child{border-bottom:none;}
+  .exists-row .num{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); width:20px; flex-shrink:0;}
+  .exists-row .name{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13.5px; min-width:200px;}
+  .exists-row .desc{font-size:12.5px; color:var(--ink-dim); line-height:1.5;}
+
+  .challenge-card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:12px;}
+  .challenge-card h4{font-family:'Space Grotesk',sans-serif; font-size:14px; margin-bottom:8px;}
+  .challenge-card .field-label{font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-dim); margin:10px 0 3px;}
+  .challenge-card p{font-size:13px; line-height:1.55; margin:0;}
+  .challenge-card .quote{font-style:italic; color:var(--ink-dim); font-size:12.5px; margin-top:8px; border-left:2px solid var(--ai-dim); padding-left:10px;}
+
+  .changed-list{margin:0; padding-left:18px; font-size:13px; line-height:1.9; color:var(--ink);}
+
+  /* ===== SDR before/after split-screen (Direction 2) ===== */
+  #panel-sdr.active{display:block;}
+  .ba-controls{
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin-bottom:16px;
+  }
+  .ba-controls .ba-label{font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-dim); font-family:'IBM Plex Mono',monospace;}
+  .ba-controls select{flex:1; min-width:240px; max-width:460px;}
+  .ba-run{
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px;
+    background:var(--papaya); color:#fff; border:none; border-radius:8px; padding:12px 26px; cursor:pointer;
+    transition:.15s; white-space:nowrap;
+  }
+  .ba-run:hover{filter:brightness(1.06);}
+  .ba-run:disabled{opacity:.55; cursor:default;}
+
+  .ba-split{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:820px){.ba-split{grid-template-columns:1fr;}}
+  .ba-side{
+    border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--surface);
+    display:flex; flex-direction:column; min-height:440px;
+  }
+  .ba-side .ba-head{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:14px 18px; border-bottom:1px solid var(--border);
+  }
+  .ba-side .ba-head .ba-title{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px;}
+  .ba-side .ba-head .ba-tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 10px; border-radius:20px;}
+  .ba-manual .ba-head{background:rgba(226,87,76,.05);}
+  .ba-manual .ba-title{color:var(--danger);}
+  .ba-manual .ba-tag{color:var(--danger); border:1px solid var(--danger-dim); background:rgba(226,87,76,.08);}
+  .ba-agent .ba-head{background:rgba(240,78,55,.05);}
+  .ba-agent .ba-title{color:var(--papaya);}
+  .ba-agent .ba-tag{color:var(--papaya); border:1px solid rgba(240,78,55,.3); background:rgba(240,78,55,.08);}
+
+  .ba-body{padding:18px; flex:1; display:flex; flex-direction:column; gap:12px;}
+
+  .tab-swarm{display:flex; flex-wrap:wrap; gap:6px;}
+  .tab-swarm .mtab{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
+    border:1px solid var(--border); background:var(--surface-2); border-radius:6px; padding:4px 8px;
+    opacity:.4; transition:.2s;
+  }
+  .tab-swarm .mtab.lit{opacity:1; border-color:var(--danger-dim); color:var(--danger);}
+  .manual-note{font-size:12.5px; color:var(--ink-dim); line-height:1.5;}
+  .manual-draft{
+    background:var(--surface-2); border:1px dashed var(--border); border-radius:8px; padding:14px;
+    font-size:12.5px; color:var(--ink-dim); line-height:1.55; font-style:italic; flex:1;
+  }
+
+  .mail{background:var(--surface-2); border:1px solid var(--border); border-radius:10px; overflow:hidden; flex:1; display:flex; flex-direction:column;}
+  .mail-row{display:flex; gap:8px; padding:9px 14px; border-bottom:1px solid var(--border); font-size:12.5px; align-items:baseline;}
+  .mail-row .mk{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim); width:42px; flex-shrink:0; text-transform:uppercase;}
+  .mail-row .mv{color:var(--ink); line-height:1.4;}
+  .mail-body{padding:14px; font-size:13px; line-height:1.6; color:var(--ink); white-space:pre-wrap; flex:1; min-height:120px;}
+  .mail-body .cite{color:var(--papaya); font-family:'IBM Plex Mono',monospace; font-size:11px; background:rgba(240,78,55,.08); border-radius:4px; padding:1px 5px;}
+  .mail-foot{display:flex; align-items:center; gap:10px; padding:12px 14px; border-top:1px solid var(--border);}
+  .mail-send{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:12.5px; color:#fff; background:var(--papaya); border:none; border-radius:7px; padding:8px 18px; cursor:default;}
+  .mail-verify{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--success);}
+
+  .ba-meter{display:flex; gap:16px; align-items:baseline; padding:10px 18px; border-top:1px solid var(--border); font-family:'IBM Plex Mono',monospace;}
+  .ba-meter .m{display:flex; flex-direction:column; gap:2px;}
+  .ba-meter .m .mlab{font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-dim);}
+  .ba-meter .m .mval{font-size:16px; font-weight:500;}
+  .ba-manual .ba-meter .mval{color:var(--danger);}
+  .ba-agent .ba-meter .mval{color:var(--success);}
+
+  .ba-empty{color:var(--ink-dim); font-size:12.5px; font-style:italic; margin:auto; text-align:center; padding:30px 0;}
+
+  .numbers-band{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px; opacity:0; transform:translateY(8px); transition:.4s;}
+  .numbers-band.show{opacity:1; transform:none;}
+  @media (max-width:820px){.numbers-band{grid-template-columns:1fr 1fr;}}
+  .num-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px; position:relative; overflow:hidden;}
+  .num-card::before{content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--papaya);}
+  .num-card .big{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:30px; color:var(--papaya); line-height:1; letter-spacing:-.02em;}
+  .num-card .lab{font-size:12px; color:var(--ink-dim); line-height:1.45; margin-top:8px;}
+
+  .routing-strip{margin-top:16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:14px 18px; border-radius:12px; font-size:13.5px; font-weight:500; opacity:0; transition:.3s;}
+  .routing-strip.show{opacity:1;}
+  .routing-strip.fast{background:rgba(79,190,139,.08); border:1px solid var(--success-dim); color:var(--success);}
+  .routing-strip.standard{background:rgba(232,163,61,.08); border:1px solid var(--human-dim); color:var(--human);}
+  .routing-strip.human{background:rgba(226,87,76,.08); border:1px solid var(--danger-dim); color:var(--danger);}
+  .routing-strip .rlog{margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); font-weight:400;}
+  body.present .num-card .big{font-size:34px;}
+
+  /* ===== Observability run log ===== */
+  .obs{
+    margin-top:16px; background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden;
+  }
+  .obs-head{
+    display:flex; align-items:center; gap:12px; padding:13px 18px; border-bottom:1px solid var(--border); flex-wrap:wrap;
+  }
+  .obs-head h3{font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-dim); margin:0;}
+  .obs-live{
+    display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:10.5px;
+    color:var(--success); border:1px solid var(--success-dim); background:rgba(79,190,139,.07);
+    padding:3px 9px; border-radius:20px;
+  }
+  .obs-live .dot{width:6px; height:6px; border-radius:50%; background:var(--success); animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  .obs-stats{margin-left:auto; display:flex; gap:16px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); flex-wrap:wrap;}
+  .obs-stats b{color:var(--ink); font-weight:500;}
+  .obs-clear{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim); background:none;
+    border:1px solid var(--border); border-radius:6px; padding:4px 10px; cursor:pointer;
+  }
+  .obs-clear:hover{color:var(--ink); border-color:var(--ink-dim);}
+
+  .obs-scroll{max-height:220px; overflow-y:auto;}
+  .obs-table{width:100%; border-collapse:collapse; font-family:'IBM Plex Mono',monospace; font-size:11.5px;}
+  .obs-table th{
+    position:sticky; top:0; background:var(--surface-2); text-align:left; font-size:9.5px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-dim); padding:8px 12px; font-weight:500; border-bottom:1px solid var(--border);
+    white-space:nowrap;
+  }
+  .obs-table td{padding:9px 12px; border-bottom:1px solid var(--border); color:var(--ink-dim); white-space:nowrap;}
+  .obs-table tr:last-child td{border-bottom:none;}
+  .obs-table tr.bad td{background:rgba(226,87,76,.05);}
+  .obs-table tr.warn td{background:rgba(232,163,61,.04);}
+  .obs-table tr.fresh{animation:rowIn .5s ease;}
+  @keyframes rowIn{from{background:rgba(240,78,55,.16);}to{background:transparent;}}
+  .obs-table .c-ok{color:var(--success);}
+  .obs-table .c-warn{color:var(--human);}
+  .obs-table .c-bad{color:var(--danger);}
+  .obs-table .c-model{color:var(--ai);}
+  .obs-table .c-ts{color:var(--ink-dim); opacity:.75;}
+  .obs-table .c-agent{color:var(--ink);}
+  .obs-empty{padding:26px 18px; text-align:center; color:var(--ink-dim); font-size:12.5px; font-style:italic;}
+
+  body.present .obs-scroll{max-height:170px;}
+
+  /* ===== SDR morning queue ===== */
+  .queue{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:16px;}
+  .queue-head{display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid var(--border); flex-wrap:wrap;}
+  .queue-head .qtitle{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px;}
+  .queue-head .qsub{font-size:12px; color:var(--ink-dim);}
+  .queue-summary{margin-left:auto; display:flex; gap:8px; flex-wrap:wrap;}
+  .qpill{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 10px; border-radius:20px;
+    border:1px solid var(--border); color:var(--ink-dim);
+  }
+  .qpill.ok{color:var(--success); border-color:var(--success-dim); background:rgba(79,190,139,.08);}
+  .qpill.warn{color:var(--human); border-color:var(--human-dim); background:rgba(232,163,61,.08);}
+  .qpill.bad{color:var(--danger); border-color:var(--danger-dim); background:rgba(226,87,76,.08);}
+
+  .queue-scroll{max-height:330px; overflow-y:auto;}
+  .qtable{width:100%; border-collapse:collapse; font-size:12.5px;}
+  .qtable th{
+    position:sticky; top:0; background:var(--surface-2); text-align:left; font-family:'IBM Plex Mono',monospace;
+    font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-dim);
+    padding:9px 14px; font-weight:500; border-bottom:1px solid var(--border); white-space:nowrap;
+  }
+  .qtable td{padding:11px 14px; border-bottom:1px solid var(--border); vertical-align:middle;}
+  .qtable tr:last-child td{border-bottom:none;}
+  .qtable tbody tr{cursor:pointer; transition:.12s;}
+  .qtable tbody tr:hover td{background:rgba(240,78,55,.05);}
+  .qtable tbody tr.selected td{background:rgba(240,78,55,.09);}
+  .qtable tbody tr.selected td:first-child{box-shadow:inset 3px 0 0 var(--papaya);}
+  .q-acct{font-weight:500; color:var(--ink);}
+  .q-meta{font-size:11px; color:var(--ink-dim); margin-top:2px;}
+  .q-signal{color:var(--ink-dim); line-height:1.4; max-width:290px;}
+  .q-need{
+    font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--papaya);
+    border:1px solid rgba(240,78,55,.25); background:rgba(240,78,55,.06); padding:2px 7px; border-radius:10px;
+    white-space:nowrap;
+  }
+  .q-ev{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ai); white-space:nowrap;}
+  .q-score{font-family:'IBM Plex Mono',monospace; font-size:12px;}
+  .q-status{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 9px; border-radius:20px; white-space:nowrap;
+  }
+  .q-status.ok{color:var(--success); border:1px solid var(--success-dim); background:rgba(79,190,139,.08);}
+  .q-status.warn{color:var(--human); border:1px solid var(--human-dim); background:rgba(232,163,61,.08);}
+  .q-status.bad{color:var(--danger); border:1px solid var(--danger-dim); background:rgba(226,87,76,.08);}
+  .q-open{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);}
+  .qtable tbody tr:hover .q-open{color:var(--papaya);}
+
+  .queue-foot{
+    display:flex; align-items:center; gap:14px; padding:13px 20px; border-top:1px solid var(--border);
+    background:var(--surface-2); font-size:12.5px; color:var(--ink-dim); flex-wrap:wrap;
+  }
+  .queue-foot b{color:var(--ink); font-weight:500;}
+  .queue-foot .vs{color:var(--danger); text-decoration:line-through; opacity:.8;}
+  .queue-foot .now{color:var(--success); font-weight:500;}
+
+  /* ===== Guided tour ===== */
+  .tour-btn{
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:12px; padding:7px 14px;
+    border:1px solid var(--border); background:var(--bg); color:var(--ink-dim); cursor:pointer;
+    border-radius:8px; transition:.15s; white-space:nowrap;
+  }
+  .tour-btn:hover{color:var(--ink); border-color:var(--papaya);}
+  .tour-btn.on{background:var(--papaya); color:#fff; border-color:var(--papaya);}
+
+  #tour{
+    position:fixed; top:0; right:0; bottom:0; width:340px; z-index:60;
+    background:#0C0C0E; border-left:1px solid var(--border);
+    transform:translateX(100%); transition:transform .32s cubic-bezier(.4,0,.2,1);
+    display:flex; flex-direction:column;
+  }
+  #tour.open{transform:none;}
+  body.tour-open{padding-right:340px;}
+  @media (max-width:1100px){ body.tour-open{padding-right:0;} #tour{width:min(340px,86vw);} }
+
+  .tour-progress{height:3px; background:var(--surface-2); flex-shrink:0;}
+  .tour-progress .bar{height:100%; width:0%; background:var(--papaya); transition:width .35s;}
+
+  .tour-head{padding:18px 20px 14px; border-bottom:1px solid var(--border); flex-shrink:0;}
+  .tour-head .th-top{display:flex; align-items:center; gap:10px; margin-bottom:8px;}
+  .tour-head h3{font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:600; margin:0;}
+  .tour-head .th-count{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
+    border:1px solid var(--border); border-radius:20px; padding:3px 9px;
+  }
+  .tour-head .th-close{
+    margin-left:auto; background:none; border:none; color:var(--ink-dim); cursor:pointer;
+    font-size:17px; line-height:1; padding:2px 4px;
+  }
+  .tour-head .th-close:hover{color:var(--ink);}
+  .tour-head p{font-size:12px; color:var(--ink-dim); line-height:1.5; margin:0 0 12px;}
+
+  .tour-controls{display:flex; gap:7px; flex-wrap:wrap;}
+  .tour-controls button{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; padding:6px 12px; border-radius:7px;
+    border:1px solid var(--border); background:var(--surface); color:var(--ink-dim); cursor:pointer; transition:.15s;
+  }
+  .tour-controls button:hover{color:var(--ink); border-color:var(--ink-dim);}
+  .tour-controls .play{background:var(--papaya); color:#fff; border-color:var(--papaya); font-weight:500;}
+  .tour-controls .play:hover{filter:brightness(1.08); color:#fff;}
+
+  .tour-list{flex:1; overflow-y:auto; padding:12px 0 24px;}
+  .tour-stop{
+    display:flex; gap:12px; padding:13px 20px; cursor:pointer; border-left:2px solid transparent; transition:.15s;
+  }
+  .tour-stop:hover{background:rgba(240,78,55,.04);}
+  .tour-stop.active{background:rgba(240,78,55,.07); border-left-color:var(--papaya);}
+  .tour-stop .ts-num{
+    width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
+    border:1px solid var(--border); background:var(--surface-2); transition:.15s;
+  }
+  .tour-stop.active .ts-num{background:var(--papaya); color:#fff; border-color:var(--papaya);}
+  .tour-stop.done .ts-num{background:var(--success-dim); color:var(--success); border-color:var(--success-dim);}
+  .tour-stop .ts-title{font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:600; color:var(--ink); line-height:1.3;}
+  .tour-stop.active .ts-title{color:var(--papaya);}
+  .tour-stop .ts-where{font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--ink-dim); margin-top:3px; text-transform:uppercase; letter-spacing:.05em;}
+  .tour-stop .ts-desc{font-size:11.5px; color:var(--ink-dim); line-height:1.5; margin-top:6px;}
+  .tour-stop .ts-auto{
+    display:inline-block; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9.5px;
+    color:var(--papaya); border:1px solid rgba(240,78,55,.28); background:rgba(240,78,55,.07);
+    padding:2px 7px; border-radius:10px;
+  }
+
+  /* focus ring on the tour target — never dims, never blocks */
+  .tour-focus{
+    animation:tourPulse 2.2s ease-out 1;
+    border-radius:14px;
+  }
+  @keyframes tourPulse{
+    0%{box-shadow:0 0 0 0 rgba(240,78,55,.55), 0 0 0 1px rgba(240,78,55,.9);}
+    70%{box-shadow:0 0 0 16px rgba(240,78,55,0), 0 0 0 1px rgba(240,78,55,.5);}
+    100%{box-shadow:0 0 0 0 rgba(240,78,55,0), 0 0 0 0 rgba(240,78,55,0);}
+  }
+  body.present #tour{width:300px;}
+
+  /* ===== Part 3 build tab ===== */
+  .run-layout{display:grid; grid-template-columns:260px 1fr; gap:22px;}
+  @media (max-width:820px){.run-layout{grid-template-columns:1fr;}}
+
+  .why-card{
+    background:
+      radial-gradient(120% 160% at 0% 0%, rgba(226,87,76,.08), transparent 55%),
+      var(--surface);
+    border:1px solid var(--border); border-radius:12px; padding:26px 30px; margin-bottom:16px;
+  }
+  .why-card .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--danger); margin-bottom:12px; display:block;
+  }
+  .why-card h2{font-size:22px; font-weight:600; margin-bottom:12px; letter-spacing:-.01em;}
+  .why-card p{font-size:15px; line-height:1.65; color:var(--ink); margin:0 0 12px; max-width:760px;}
+  .why-card p:last-child{margin-bottom:0;}
+  .why-card .highlight{color:var(--danger); font-weight:500;}
+  .why-card .agent-name{color:var(--papaya); font-weight:600;}
+
+  .decision-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:820px){.decision-grid{grid-template-columns:1fr;}}
+  .decision-card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .decision-card .dnum{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ai);
+    border:1px solid var(--ai-dim); background:var(--ai-dim); padding:2px 8px; border-radius:10px;
+    display:inline-block; margin-bottom:10px;
+  }
+  .decision-card h4{font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:600; margin-bottom:8px; line-height:1.3;}
+  .decision-card .reason{font-size:13px; line-height:1.55; color:var(--ink-dim); margin:0 0 12px;}
+  .decision-card .reason b{color:var(--ink); font-weight:500;}
+  .decision-card .tradeoff{
+    background:rgba(232,163,61,.07); border-left:2px solid var(--human); border-radius:0 6px 6px 0;
+    padding:9px 12px; font-size:12.5px; line-height:1.5; color:var(--ink);
+  }
+  .decision-card .tradeoff .lbl{
+    font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--human); display:block; margin-bottom:3px;
+  }
+
+  .issue-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:820px){.issue-grid{grid-template-columns:1fr;}}
+  .issue-card{
+    background:var(--surface); border:1px solid var(--danger-dim); border-radius:10px; padding:18px 20px;
+    position:relative;
+  }
+  .issue-card::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:10px 0 0 10px;
+    background:var(--danger);
+  }
+  .issue-card h4{font-family:'Space Grotesk',sans-serif; font-size:14.5px; font-weight:600; margin-bottom:8px; color:var(--danger);}
+  .issue-card .what{font-size:13px; line-height:1.55; color:var(--ink); margin:0 0 10px;}
+  .issue-card .fix{font-size:12.5px; line-height:1.55; color:var(--ink-dim);}
+  .issue-card .fix .lbl{
+    font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--success); display:block; margin-bottom:3px;
+  }
+  .prod-note{
+    margin-top:16px; background:rgba(111,207,151,.05); border:1px solid var(--success-dim); border-radius:8px;
+    padding:14px 18px; font-size:13px; line-height:1.6; color:var(--ink-dim);
+  }
+  .prod-note b{color:var(--success); font-weight:500;}
+
+  /* ===== Part 4 stat strip (hero numbers) ===== */
+  .stat-strip{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px;}
+  @media (max-width:820px){.stat-strip{grid-template-columns:1fr;}}
+  .stat-card{
+    position:relative; background:
+      radial-gradient(130% 130% at 100% 0%, rgba(111,207,151,.10), transparent 60%),
+      var(--surface);
+    border:1px solid var(--border); border-radius:14px; padding:20px 22px; overflow:hidden;
+  }
+  .stat-card::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+    background:linear-gradient(180deg, var(--danger), var(--success));
+  }
+  .stat-card .stat-label{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--ink-dim); margin-bottom:14px;
+  }
+  .stat-card .stat-flow{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .stat-card .stat-before{
+    font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:500; color:var(--danger);
+    text-decoration:line-through; text-decoration-thickness:1px; opacity:.75;
+  }
+  .stat-card .stat-arrow{color:var(--ink-dim); font-size:16px;}
+  .stat-card .stat-after{
+    font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--success);
+    letter-spacing:-.02em; line-height:1;
+  }
+  .stat-card .stat-delta{
+    display:inline-block; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:12px;
+    color:var(--success); background:rgba(111,207,151,.09); border:1px solid var(--success-dim);
+    padding:4px 10px; border-radius:20px;
+  }
+  .stat-card.quality .stat-after{color:var(--papaya);}
+  .stat-card.quality::before{background:linear-gradient(180deg, var(--human), var(--papaya));}
+  .stat-card.quality .stat-delta{color:var(--papaya); background:rgba(240,78,55,.09); border-color:rgba(240,78,55,.25);}
+  body.present .stat-card .stat-after{font-size:38px;}
+
+  /* ===== Intro hero (GTM Orchestrator) ===== */
+  #panel-intro.active{display:block;}
+  .hero{
+    display:grid; grid-template-columns:1.05fr .95fr; gap:0; border-radius:16px; overflow:hidden;
+    border:1px solid var(--border); background:#0A0A0A;
+  }
+  @media (max-width:820px){.hero{grid-template-columns:1fr;}}
+  .hero-left{background:#0A0A0A; padding:44px 40px 40px; overflow:hidden; position:relative; z-index:1;}
+  .hero-left .title-serif{
+    font-family:'Fraunces',serif; font-weight:600; color:var(--ink);
+    font-size:clamp(48px, 6.2vw, 88px); line-height:.92; letter-spacing:-.01em;
+    margin:0;
+  }
+  .hero-left .title-serif .accent{
+    display:block; font-style:italic; color:var(--papaya); font-weight:500;
+    margin-top:.06em;
+  }
+  .hero-left .intro{
+    margin-top:30px; font-family:'IBM Plex Sans',sans-serif; color:var(--ink-dim);
+    font-size:19px; line-height:1.5; max-width:560px; font-weight:400;
+  }
+  .hero-left .intro b{color:var(--ink); font-weight:500;}
+  .hero-left .intro .grn{color:var(--papaya); font-weight:500;}
+  .hero-right{
+    position:relative; background:#C8CDD2 url('data:image/jpeg;base64,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') center top / cover no-repeat;
+    min-height:520px;
+  }
+  @media (max-width:820px){.hero-right{min-height:420px; background-position:center 20%;}}
+
+  .hero-meta{margin-top:34px; display:flex; flex-direction:column; gap:12px;}
+  .hero-meta .prow{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .hero-meta .plabel{
+    font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-dim); min-width:44px;
+  }
+  .hero-meta .plabel.walk{color:var(--papaya);}
+  .hero-meta .mchip{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-dim);
+    border:1px solid var(--border); background:var(--surface); border-radius:20px; padding:6px 13px;
+  }
+  .hero-meta .mchip b{color:var(--papaya); font-weight:500;}
+  .hero-meta a.mchip{
+    color:var(--ink); text-decoration:none; border-color:rgba(240,78,55,.28);
+    background:rgba(240,78,55,.06); display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+    transition:.15s;
+  }
+  .hero-meta a.mchip:hover{border-color:var(--papaya); background:rgba(240,78,55,.11);}
+  .hero-meta a.mchip .gh{
+    font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--papaya);
+    background:rgba(240,78,55,.13); border-radius:6px; padding:2px 6px;
+  }
+  .hero-meta a.mchip .arr{color:var(--ink-dim); font-size:11px; margin-left:1px;}
+  .hero-meta a.mchip:hover .arr{color:var(--papaya); transform:translateX(2px);}
+  .hero-meta .ptag{font-size:11px; color:var(--ink-dim);}
+
+  .proof-strip{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px;
+  }
+  @media (max-width:820px){.proof-strip{grid-template-columns:1fr 1fr;}}
+  .proof-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px;
+  }
+  .proof-card .pnum2{
+    font-family:'Fraunces',serif; font-weight:600; font-size:26px; color:var(--papaya); line-height:1;
+    letter-spacing:-.01em;
+  }
+  .proof-card .plabel{font-size:12px; color:var(--ink-dim); line-height:1.45; margin-top:8px;}
+
+  .intro-cta{
+    margin-top:16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 20px;
+  }
+  .intro-cta .txt{font-size:14px; color:var(--ink); line-height:1.5;}
+  .intro-cta .txt b{color:var(--papaya); font-weight:600;}
+  .intro-cta button{
+    margin-left:auto; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px;
+    background:var(--papaya); color:#FFFFFF; border:none; border-radius:8px; padding:11px 20px; cursor:pointer;
+    transition:.15s; white-space:nowrap;
+  }
+  .intro-cta button:hover{filter:brightness(1.08);}
+
+  /* ===== Closing conclusion slide (Part 5) ===== */
+  .conclusion{
+    position:relative; background:
+      radial-gradient(140% 120% at 0% 0%, rgba(240,78,55,.08), transparent 55%),
+      radial-gradient(120% 120% at 100% 100%, rgba(91,141,239,.08), transparent 55%),
+      #0C0E12;
+    border:1px solid var(--border); border-radius:16px; padding:40px 44px;
+  }
+  .conclusion .ctitle{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(26px,3.4vw,40px); line-height:1.08;
+    letter-spacing:-.01em; margin:0 0 30px; max-width:820px;
+  }
+  .conclusion .ctitle .accent{font-style:italic; color:var(--papaya);}
+  .thesis{
+    border-left:3px solid var(--papaya); padding:4px 0 4px 22px; margin-bottom:26px; max-width:820px;
+  }
+  .thesis:last-of-type{margin-bottom:0;}
+  .thesis.blue{border-left-color:var(--ai);}
+  .thesis h4{
+    font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:0 0 8px; color:var(--ink);
+  }
+  .thesis p{font-size:15px; line-height:1.65; color:var(--ink-dim); margin:0;}
+  .thesis p b{color:var(--ink); font-weight:500;}
+  .conclusion .signoff{
+    margin-top:36px; padding-top:24px; border-top:1px solid var(--border);
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  }
+  .conclusion .signoff .name{font-family:'Fraunces',serif; font-weight:600; font-size:22px; color:var(--ink);}
+  .conclusion .signoff .role{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-dim);}
+  .conclusion .signoff .dot{color:var(--border);}
+  body.present .conclusion .ctitle{font-size:clamp(30px,3.6vw,44px);}
+  body.present .thesis p{font-size:16px;}
+
+  /* ===== Presentation mode (video-optimized) ===== */
+  body.present{padding-top:20px;}
+  body.present footer{display:none;}
+  body.present .cover .sub{display:none;}
+  body.present .cover{padding:22px 30px; margin-bottom:18px;}
+  body.present .cover h1{font-size:30px;}
+  body.present .tab{font-size:14.5px; padding:11px 17px 11px 11px;}
+  body.present .tab.active{box-shadow:0 0 0 3px rgba(240,78,55,.2);}
+  body.present .tab.bonus.active{box-shadow:0 0 0 3px rgba(91,141,239,.2);}
+  body.present .card, body.present .detail-card, body.present .usecase-card{font-size:14px;}
+  body.present .card h3{font-size:14px;}
+  body.present .stage-node .stage-title{font-size:14px;}
+  body.present .design-line{font-size:13px;}
+  @media print{.present-toggle{display:none;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a href="/about.html" style="position:fixed;top:22px;left:20px;z-index:20;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-dim);text-decoration:none;letter-spacing:.02em;">← Back to About</a>
+<div class="wrap">
+  <div class="cover">
+    <div class="present-toggle">
+      <button id="btn-edit" class="on">Edit</button>
+      <button id="btn-present">Present</button>
+    </div>
+    <button class="tour-btn" id="btn-tour" style="position:absolute; top:22px; right:158px;">▶ Tour</button>
+    <div class="badge-line">
+      <span class="kbadge">Fintech · Workforce Platform</span>
+      <span class="kbadge alt">AI GTM Engineer · Home Assignment</span>
+    </div>
+    <h1>GTM Agent <span class="accent">Console</span></h1>
+    <p class="sub">The full assignment as one working system — <span class="dim">six agents grounded in a shared context layer, two of them running live in mock mode.</span> Every tab maps to a required part. The guardrails you'll see firing are real code, not scripted text.</p>
+    <div class="byline">
+      <b>Alessandro Capezza</b><span class="dot">·</span>AI GTM Engineer<span class="dot">·</span>Claude Sonnet 5 + DeepSeek V4 Flash
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab intro-tab active" data-tab="intro"><span class="pnum">Intro</span>GTM Orchestrator</button>
+    <button class="tab" data-tab="mapping"><span class="pnum">Part 1</span>Outbound GTM Mapping</button>
+    <button class="tab" data-tab="context"><span class="pnum">Part 2</span>Context Layer &amp; Marketing AI</button>
+    <button class="tab" data-tab="content"><span class="pnum">Part 3</span>Marketing Agent Build</button>
+    <button class="tab" data-tab="cost"><span class="pnum">Part 4</span>Token &amp; Cost Optimization</button>
+    <button class="tab" data-tab="vision"><span class="pnum">Part 5</span>Strategic Vision</button>
+    <button class="tab bonus" data-tab="sdr"><span class="pnum">Bonus</span>SDR Outreach Agent</button>
+  </div>
+
+  <!-- CONTENT AGENT PANEL (Part 3) -->
+  <div class="panel" id="panel-content">
+    <div class="subnav" id="content-subnav">
+      <button class="active" data-sub="why">A · Why This Agent</button>
+      <button data-sub="decisions">B · Design Decisions</button>
+      <button data-sub="issues">C · What Didn't Work</button>
+      <button data-sub="runit">D · Run It ▶</button>
+    </div>
+
+    <!-- A: Why this agent -->
+    <div class="subsection active" id="sub-why">
+      <div class="why-card">
+        <span class="tag">The choice</span>
+        <h2>Content Context Validator &amp; Draft Generator</h2>
+        <p>Of every agent in the marketing stack, I built this one because it addresses the <span class="highlight">highest-risk failure mode in marketing AI: hallucinated or outdated content reaching publication.</span></p>
+        <p>The <span class="agent-name">Content Context Validator</span> is the bridge between the context layer (Part 2) and content production. It guarantees every piece of content is grounded in current, accurate context <b>before</b> it ever reaches a human reviewer — no free-floating generation, every claim traced to a source chunk, stale context flagged on sight.</p>
+      </div>
+      <div class="card">
+        <h3>Design spec at a glance</h3>
+        <div class="design-line">
+          <b>Trigger:</b> content team submits a request (topic, format, audience, goal) — entry gate requires the context layer to return ≥1 relevant chunk<br>
+          <b>LLM:</b> Claude Sonnet 5 for generation (reasoning + 1M context, cached system prompt) · DeepSeek V4 Flash for validation (cheap classification pass)<br>
+          <b>Guardrails:</b> no generation on zero context · mandatory source citation · stale-context flag &gt;60 days · brand-voice keyword check<br>
+          <b>Human-in-the-loop:</b> request submission gate → draft/source/flag review gate → publish feedback loop<br>
+          <b>Observability:</b> every run logs chunks used, confidence, flags, latency, cache hit/miss for weekly review
+        </div>
+        <button class="link-chip" onclick="document.querySelector('[data-tab=context]').click()">Full context layer this reads from → Part 2 tab</button>
+        <button class="link-chip" onclick="document.querySelector('#content-subnav [data-sub=runit]').click()" style="margin-left:8px;">Skip to the live demo → D · Run It</button>
+      </div>
+    </div>
+
+    <!-- B: Design decisions -->
+    <div class="subsection" id="sub-decisions">
+      <div class="decision-grid">
+        <div class="decision-card">
+          <span class="dnum">Decision 1</span>
+          <h4>Sonnet 5 for generation, DeepSeek V4 Flash for validation</h4>
+          <p class="reason"><b>Sonnet 5</b> brings stronger reasoning, structured-prompt adherence, 1M context, and caching. <b>Flash</b> handles validation — source-citation, recency, and brand-voice checks are classification, not generation, at $0.14/M vs $3.00/M input.</p>
+          <div class="tradeoff"><span class="lbl">Trade-off</span>Sonnet 5 costs more per run, but quality matters for content that reaches publication. Validation on Sonnet would cost ~$0.003/run vs ~$0.0001 on Flash — 30x saved on the validation layer alone.</div>
+        </div>
+        <div class="decision-card">
+          <span class="dnum">Decision 2</span>
+          <h4>Prompt caching for system prompt + context</h4>
+          <p class="reason">The static ~1,500-token block (system prompt, product context, brand voice) is cached: <b>$0.30/M cache read vs $3.00/M regular input</b> — 90% off reused tokens. Cache write is $3.75/M, amortized across all reads in the TTL.</p>
+          <div class="tradeoff"><span class="lbl">Trade-off</span>Cache expires after 5 min of inactivity — low request volume means more misses. Break-even is fast: one write ($0.0056) pays for itself after two reads.</div>
+        </div>
+        <div class="decision-card">
+          <span class="dnum">Decision 3</span>
+          <h4>JSON output with a mandatory sources field</h4>
+          <p class="reason">Forcing structured output makes the model <b>cite sources explicitly</b> and makes validation programmatically checkable — no source, no claim survives the gate.</p>
+          <div class="tradeoff"><span class="lbl">Trade-off</span>The model sometimes fails to produce valid JSON — handled with regex extraction and a fallback parse rather than a hard failure.</div>
+        </div>
+        <div class="decision-card">
+          <span class="dnum">Decision 4</span>
+          <h4>INSUFFICIENT_CONTEXT fallback</h4>
+          <p class="reason">If no relevant chunks are found, the agent <b>refuses to generate</b> rather than filling the gap from training data.</p>
+          <div class="tradeoff"><span class="lbl">Trade-off</span>It may refuse when it could have produced something reasonable — but for a grounded agent that's correct behavior. Better to refuse than hallucinate.</div>
+        </div>
+        <div class="decision-card">
+          <span class="dnum">Decision 5</span>
+          <h4>Keyword match now, vector search in production</h4>
+          <p class="reason">For the assignment I used keyword matching for simplicity and transparency. Production swaps in <b>Supabase pgvector or Pinecone</b> for semantic retrieval.</p>
+          <div class="tradeoff"><span class="lbl">Trade-off</span>Keyword match misses chunks that are semantically relevant but lexically different — vector search is more robust, at the cost of infra setup.</div>
+        </div>
+        <div class="decision-card">
+          <span class="dnum">Decision 6</span>
+          <h4>Confidence = model self-report + validation adjust</h4>
+          <p class="reason">The model reports its own confidence, then the <b>validation layer independently verifies claims</b> and adjusts the score up or down.</p>
+          <div class="tradeoff"><span class="lbl">Trade-off</span>Model confidence isn't always calibrated — the second, independent check is what makes the score trustworthy enough to route on.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C: What didn't work -->
+    <div class="subsection" id="sub-issues">
+      <p class="sub" style="color:var(--ink-dim); font-size:14px; margin:0 0 16px; max-width:760px; line-height:1.6;">
+        The parts that only surface once you actually build it. Each of these came up during the build — and each has a fix already in place or specced for production.
+      </p>
+      <div class="issue-grid">
+        <div class="issue-card">
+          <h4>JSON parsing failures</h4>
+          <p class="what">Claude sometimes wraps JSON in markdown code fences or adds a preamble line before the object.</p>
+          <p class="fix"><span class="lbl">Fix</span>Regex-extract the JSON block before parsing, with a fallback to raw text if the parse still fails — so a formatting quirk never crashes the run.</p>
+        </div>
+        <div class="issue-card">
+          <h4>Source citation completeness</h4>
+          <p class="what">The model occasionally makes a claim without citing a source, or cites one that doesn't fully support the claim.</p>
+          <p class="fix"><span class="lbl">Fix</span>The validation layer flags missing citations; in production a second Flash pass verifies each claim against its cited source before it clears review.</p>
+        </div>
+        <div class="issue-card">
+          <h4>Brand voice validation is simplistic</h4>
+          <p class="what">A keyword check catches obvious violations ("cheap", "simple") but misses subtler tone drift.</p>
+          <p class="fix"><span class="lbl">Fix</span>Production replaces the keyword pass with a fine-tuned classifier or an LLM-based brand-voice check scored against a rubric.</p>
+        </div>
+        <div class="issue-card">
+          <h4>Cache TTL vs request frequency</h4>
+          <p class="what">With the 5-min TTL, infrequent requests (&gt;5 min apart) fall out of cache and cost more.</p>
+          <p class="fix"><span class="lbl">Fix</span>For low-frequency agents, accept non-cached cost or extend the TTL; for high-frequency ones (SDR outreach at 300 runs/day) caching is highly effective as-is.</p>
+        </div>
+      </div>
+      <div class="prod-note">
+        <b>Why this section exists →</b> these are the details you only hit once you've shipped something. Listing them is the difference between a design doc and a build — and every one already has a remediation path.
+      </div>
+    </div>
+
+    <!-- D: Run it -->
+    <div class="subsection" id="sub-runit">
+      <div class="ba-controls">
+        <span class="ba-label">Request</span>
+        <select id="content-scenario">
+          <option value="0">LinkedIn post — AI-first compliance in payroll</option>
+          <option value="1">Nurture email — EOR case study (Within3)</option>
+          <option value="2">⚠ Blog draft — off-topic request (thin context)</option>
+        </select>
+        <button class="ba-run" id="run-content">Generate ▶</button>
+      </div>
+
+      <div class="ba-split">
+        <!-- MANUAL SIDE -->
+        <div class="ba-side ba-manual">
+          <div class="ba-head">
+            <span class="ba-title">Written from memory</span>
+            <span class="ba-tag">marketer, unaided</span>
+          </div>
+          <div class="ba-body">
+            <div class="manual-note">Draft fast from what you remember about the product:</div>
+            <div class="manual-draft" id="cmanual-draft">
+              Waiting to start — the marketer writes confident copy from memory. It reads well… until someone checks the facts.
+            </div>
+          </div>
+          <div class="ba-meter">
+            <div class="m"><span class="mlab">Sourced claims</span><span class="mval" id="cmanual-src">—</span></div>
+            <div class="m"><span class="mlab">Risk</span><span class="mval" id="cmanual-risk">—</span></div>
+          </div>
+        </div>
+
+        <!-- AGENT SIDE -->
+        <div class="ba-side ba-agent">
+          <div class="ba-head">
+            <span class="ba-title">Grounded in the context layer</span>
+            <span class="ba-tag">Claude Sonnet 5 · cited</span>
+          </div>
+          <div class="ba-body">
+            <div class="mail" id="cagent-doc">
+              <div class="ba-empty" id="cagent-empty">Hit “Generate” to watch the agent retrieve → generate → validate → route.</div>
+              <div id="cdoc-inner" style="display:none; flex:1; flex-direction:column;">
+                <div class="mail-row"><span class="mk">Type</span><span class="mv" id="cdoc-type"></span></div>
+                <div class="mail-row"><span class="mk">For</span><span class="mv" id="cdoc-aud"></span></div>
+                <div class="mail-body" id="cdoc-body"></div>
+                <div class="mail-foot">
+                  <button class="mail-send" id="cdoc-action">Publish</button>
+                  <span class="mail-verify" id="cdoc-verify"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-meter">
+            <div class="m"><span class="mlab">Time to draft</span><span class="mval" id="cagent-time">—</span></div>
+            <div class="m"><span class="mlab">Cost / run</span><span class="mval" id="cagent-cost">—</span></div>
+            <div class="m"><span class="mlab">Sourced claims</span><span class="mval" id="cagent-src">—</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="routing-strip" id="routing-content"></div>
+
+      <div class="numbers-band" id="cnumbers-band">
+        <div class="num-card"><div class="big" id="cnb-grounded">—</div><div class="lab">of claims traced to a context-layer source</div></div>
+        <div class="num-card"><div class="big" id="cnb-halluc">—</div><div class="lab">hallucinated or stale claims shipped</div></div>
+        <div class="num-card"><div class="big" id="cnb-cost">—</div><div class="lab">cost per content draft</div></div>
+        <div class="num-card"><div class="big" id="cnb-speed">3–5×</div><div class="lab">output per writer, editing not writing</div></div>
+      </div>
+
+      <div class="obs">
+        <div class="obs-head">
+          <h3>Observability — agent run log</h3>
+          <span class="obs-live"><span class="dot"></span>live</span>
+          <div class="obs-stats" id="obs-stats-content"></div>
+          <button class="obs-clear" onclick="clearRunLog()">clear</button>
+        </div>
+        <div class="obs-scroll">
+          <table class="obs-table">
+            <thead><tr><th>Time</th><th>Agent</th><th>Model</th><th>Conf.</th><th>Flags</th><th>Routing</th><th>Latency</th><th>Cost</th></tr></thead>
+            <tbody id="obs-body-content"><tr><td colspan="8"><div class="obs-empty">No runs yet — every agent run appends a row here: latency, cost, quality score, error rate.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SDR AGENT PANEL -->
+  <div class="panel" id="panel-sdr">
+    <div class="queue">
+      <div class="queue-head">
+        <div>
+          <div class="qtitle">This morning's queue</div>
+          <div class="qsub">Scored, drafted, and pre-validated overnight. The SDR reviews — they don't write.</div>
+        </div>
+        <div class="queue-summary" id="queue-summary"></div>
+      </div>
+      <div class="queue-scroll">
+        <table class="qtable">
+          <thead>
+            <tr><th>Account</th><th>Signal</th><th>Business need</th><th>Evidence</th><th>Score</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody id="queue-body"></tbody>
+        </table>
+      </div>
+      <div class="queue-foot" id="queue-foot"></div>
+    </div>
+
+    <div class="ba-controls">
+      <span class="ba-label">Prospect</span>
+      <select id="sdr-scenario"></select>
+      <button class="ba-run" id="run-sdr">Run outreach ▶</button>
+    </div>
+
+    <div class="ba-split">
+      <!-- MANUAL SIDE -->
+      <div class="ba-side ba-manual">
+        <div class="ba-head">
+          <span class="ba-title">The manual way</span>
+          <span class="ba-tag" id="manual-tag">SDR, unaided</span>
+        </div>
+        <div class="ba-body">
+          <div class="manual-note">Research the account across every source by hand:</div>
+          <div class="tab-swarm" id="tab-swarm"></div>
+          <div class="manual-draft" id="manual-draft">
+            Waiting to start — the SDR opens 14 tabs, copies a generic template, and hopes it lands.
+          </div>
+        </div>
+        <div class="ba-meter">
+          <div class="m"><span class="mlab">Time to send</span><span class="mval" id="manual-time">—</span></div>
+          <div class="m"><span class="mlab">Personalization</span><span class="mval" id="manual-pers">—</span></div>
+          <div class="m"><span class="mlab">Sourced claims</span><span class="mval" id="manual-src">—</span></div>
+        </div>
+      </div>
+
+      <!-- AGENT SIDE -->
+      <div class="ba-side ba-agent">
+        <div class="ba-head">
+          <span class="ba-title">The agent way</span>
+          <span class="ba-tag" id="agent-tag">Claude Sonnet 5 · grounded</span>
+        </div>
+        <div class="ba-body">
+          <div class="mail" id="agent-mail">
+            <div class="ba-empty" id="agent-empty">Hit “Run outreach” to watch the agent retrieve → generate → validate → route.</div>
+            <div id="mail-inner" style="display:none; flex:1; flex-direction:column;">
+              <div class="mail-row"><span class="mk">To</span><span class="mv" id="mail-to"></span></div>
+              <div class="mail-row"><span class="mk">Subj</span><span class="mv" id="mail-subj"></span></div>
+              <div class="mail-body" id="mail-body"></div>
+              <div class="mail-foot">
+                <button class="mail-send">Send</button>
+                <span class="mail-verify" id="mail-verify"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-meter">
+          <div class="m"><span class="mlab">Time to draft</span><span class="mval" id="agent-time">—</span></div>
+          <div class="m"><span class="mlab">Cost / run</span><span class="mval" id="agent-cost">—</span></div>
+          <div class="m"><span class="mlab">Sourced claims</span><span class="mval" id="agent-src">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="routing-strip" id="routing-sdr"></div>
+
+    <div class="numbers-band" id="numbers-band">
+      <div class="num-card"><div class="big" id="nb-speed">—</div><div class="lab">faster to a personalized first-touch</div></div>
+      <div class="num-card"><div class="big" id="nb-manual">—</div><div class="lab">less manual research per prospect</div></div>
+      <div class="num-card"><div class="big" id="nb-cost">—</div><div class="lab">cost per outreach draft</div></div>
+      <div class="num-card"><div class="big" id="nb-grounded">100%</div><div class="lab">of claims traced to a real client case study</div></div>
+    </div>
+
+    <div class="obs">
+      <div class="obs-head">
+        <h3>Observability — agent run log</h3>
+        <span class="obs-live"><span class="dot"></span>live</span>
+        <div class="obs-stats" id="obs-stats-sdr"></div>
+        <button class="obs-clear" onclick="clearRunLog()">clear</button>
+      </div>
+      <div class="obs-scroll">
+        <table class="obs-table">
+          <thead><tr><th>Time</th><th>Agent</th><th>Model</th><th>Conf.</th><th>Flags</th><th>Routing</th><th>Latency</th><th>Cost</th></tr></thead>
+          <tbody id="obs-body-sdr"><tr><td colspan="8"><div class="obs-empty">No runs yet — every agent run appends a row here: latency, cost, quality score, error rate.</div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO PANEL (GTM Orchestrator) -->
+  <div class="panel active" id="panel-intro">
+    <div class="hero">
+      <div class="hero-left">
+        <h1 class="title-serif">GTM <span class="accent">Orchestrator</span></h1>
+        <p class="intro">I treat marketing like an <b>engineering problem.</b> For 7+ years I've built products and GTM systems at the edge of where tech was going next — <b>AI agents, Web3, high-growth startups</b> — before most companies had a strategy for them. This console is that instinct applied to a fintech workforce platform: the full assignment built as <span class="grn">one working system,</span> not a slide deck.</p>
+        <div class="hero-meta">
+          <div class="prow">
+            <span class="plabel">Talk</span>
+            <span class="mchip"><b>$450M</b> exit · LandVault</span>
+            <span class="mchip">GenLayer · <b>550k+</b> views</span>
+            <span class="mchip">Bocconi · MSc Marketing</span>
+          </div>
+          <div class="prow">
+            <span class="plabel walk">Walk</span>
+            <a class="mchip" href="https://github.com/alexnomads/oasis-harmony-zone" target="_blank" rel="noopener">
+              <span class="gh">repo</span>Rose of Jericho · N8N agent workflows · Polygon grant<span class="arr">↗</span>
+            </a>
+            <a class="mchip" href="https://github.com/alexnomads/oracle-arena" target="_blank" rel="noopener">
+              <span class="gh">repo</span>Oracle Arena · AI prediction debates · Venice AI hackathon<span class="arr">↗</span>
+            </a>
+            <a class="mchip" href="https://github.com/alexnomads" target="_blank" rel="noopener">
+              <span class="gh">github</span>@alexnomads<span class="arr">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right"></div>
+    </div>
+
+    <div class="proof-strip">
+      <div class="proof-card"><div class="pnum2">6</div><div class="plabel">agents mapped across the outbound motion — Part 1</div></div>
+      <div class="proof-card"><div class="pnum2">2</div><div class="plabel">running live in mock mode — grounded generation + guardrails</div></div>
+      <div class="proof-card"><div class="pnum2">~98%</div><div class="plabel">token cost cut while quality improves — Part 4</div></div>
+      <div class="proof-card"><div class="pnum2">1</div><div class="plabel">shared context layer serving marketing and SDR both</div></div>
+    </div>
+
+    <div class="intro-cta">
+      <span class="txt">Every tab maps to a required part of the assignment. <b>Start with Part 1</b> for the agent architecture, or jump straight to a live agent.</span>
+      <button onclick="document.querySelector('[data-tab=mapping]').click()">Start the walkthrough →</button>
+    </div>
+  </div>
+
+  <!-- MAPPING PANEL -->
+  <div class="panel" id="panel-mapping">
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Outbound motion → agent stack</h3>
+      <p style="font-size:13px; color:var(--ink-dim); margin:0 0 16px; line-height:1.6;">
+        Six stages, six agents, one shared substrate. Click a stage to see what the agent does,
+        what it needs, how it fails, and where it should go silent instead of guessing.
+      </p>
+      <div class="stage-track" id="stage-track"></div>
+      <div class="substrate context">Context Layer — ICP · positioning · value props · case studies · brand voice · battle cards · buying-committee roles</div>
+      <div class="substrate sf">Salesforce — accounts · contacts · signals · scores · sequences · outcomes · audit log</div>
+      <div class="roadmap-node">
+        <span class="rnum">07 · roadmap</span>
+        <span class="rname">Pre-Call Intelligence Agent</span>
+        <span class="rdesc">briefs SDRs/AEs before calls — account history, committee roles, talking points, objection handlers</span>
+        <span class="rlink" onclick="document.querySelector('[data-tab=vision]').click()">in the 12-month vision → Part 5</span>
+      </div>
+    </div>
+
+    <div class="mapping-detail" id="mapping-detail"></div>
+  </div>
+
+  <!-- CONTEXT LAYER PANEL (Part 2) -->
+  <div class="panel" id="panel-context">
+    <div class="subnav" id="context-subnav">
+      <button class="active" data-sub="usecases">A · Marketing AI Use Cases</button>
+      <button data-sub="architecture">B · Context Layer</button>
+      <button data-sub="governance">C · Access &amp; Governance</button>
+    </div>
+
+    <!-- A: Use cases -->
+    <div class="subsection active" id="sub-usecases">
+      <div class="usecase-grid">
+        <div class="usecase-card">
+          <span class="rank">Highest impact</span>
+          <h4>Content Production Agent</h4>
+          <p>Generates blog posts, LinkedIn posts, nurture emails, and ad copy — grounded in current positioning, case studies, battle cards, and brand voice, not just "write me a post about payroll."</p>
+          <div class="field-label">What it changes</div>
+          <p>Content team shifts from writing to editing. Output per writer up 3–5x, quality holds because generation comes from the context layer, not training data.</p>
+          <div class="field-label">Risks if built wrong</div>
+          <ul><li>Hallucinated features publish as fact</li><li>Outdated pricing goes live</li><li>Off-brand voice erodes consistency</li><li>Contradictory messaging across channels</li><li>No human review → factually wrong content ships</li></ul>
+          <button class="link-chip" onclick="document.querySelector('[data-tab=content]').click()">See this one built → Part 3 tab</button>
+        </div>
+        <div class="usecase-card">
+          <span class="rank">02</span>
+          <h4>Campaign Brief Agent</h4>
+          <p>Takes a goal ("500 SQLs from enterprise fintech in Q3") and generates a full brief: audience, messaging pillars, channel mix, assets, sequence design, metrics, budget allocation.</p>
+          <div class="field-label">What it changes</div>
+          <p>Campaign planning compresses from days to hours. Cross-functional alignment improves — the brief pulls from the same context layer content and SDR teams use.</p>
+          <div class="field-label">Risks if built wrong</div>
+          <ul><li>Recommends channels that don't fit the audience</li><li>Budget allocation on stale historical data</li><li>Messaging pillars contradict current positioning</li></ul>
+        </div>
+        <div class="usecase-card">
+          <span class="rank">03</span>
+          <h4>Social Listening &amp; Response Agent</h4>
+          <p>Monitors mentions of the brand, competitors, and relevant industry conversation. Drafts responses for review; flags high-priority conversations for immediate human attention.</p>
+          <div class="field-label">What it changes</div>
+          <p>Social moves from reactive monitoring to proactive engagement. Response time on flagged conversations drops from hours to minutes; coverage goes from manual to 24/7.</p>
+          <div class="field-label">Risks if built wrong</div>
+          <ul><li>Auto-responds to complaints or legal issues with no human review</li><li>Misreads tone — casual reply to a serious complaint</li><li>Engages bot or troll accounts</li></ul>
+        </div>
+        <div class="usecase-card">
+          <span class="rank">04</span>
+          <h4>Task Orchestration Agent</h4>
+          <p>Monitors the marketing PM system (Asana/Linear), spots bottlenecks and missed dependencies, reassigns tasks by capacity, alerts before deadlines slip.</p>
+          <div class="field-label">What it changes</div>
+          <p>Marketing ops shifts from manual project tracking to exception-based management — the team works, instead of producing status updates.</p>
+          <div class="field-label">Risks if built wrong</div>
+          <ul><li>Reassigns tasks needing specific domain knowledge</li><li>Floods the team with alerts → alert fatigue</li><li>Misreads bottlenecks from incomplete project data</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- B: Context layer architecture -->
+    <div class="subsection" id="sub-architecture">
+      <div class="card" style="margin-bottom:18px;">
+        <h3>Three domains, one retrieval layer</h3>
+        <div class="domain-row">
+          <div class="domain-box">
+            <h4>Product Context</h4>
+            <div class="owner">owner: Product Marketing · reviewed monthly + on release</div>
+            <ul><li>Features, pricing, roadmap (internal-only)</li><li>Integration catalog</li><li>Security &amp; compliance certs</li><li>Use-case library</li></ul>
+          </div>
+          <div class="domain-box">
+            <h4>Market Context</h4>
+            <div class="owner">owner: Competitive Intelligence · reviewed quarterly + on announcements</div>
+            <ul><li>ICP + buyer personas</li><li>Competitor battle cards</li><li>Industry trends</li><li>Analyst reports</li></ul>
+          </div>
+          <div class="domain-box">
+            <h4>Company Context</h4>
+            <div class="owner">owner: Brand / Content Lead · reviewed monthly + on brand updates</div>
+            <ul><li>Brand voice &amp; tone guide</li><li>Messaging framework</li><li>Case studies + testimonials</li><li>Press &amp; events</li></ul>
+          </div>
+        </div>
+        <div class="flow-arrow">↓ ↓ ↓</div>
+        <div class="flow-box">Vector store — chunked docs, embeddings, metadata (type / date / version), similarity scoring</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Version control &amp; provenance — owner, version, change log, one-click rollback</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Retrieval API — query(topic, type, recency_filter) → chunks + provenance + confidence</div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <h3>Validation pipeline — how hallucination and stale content get caught</h3>
+        <div class="pipeline-row">
+          <span class="pipeline-chip">Agent generates output</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip check">Source citation check</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip check">Recency check</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip check">Brand voice check</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip check">Contradiction check</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip">pass → human review</span>
+          <span class="pipeline-sep">·</span>
+          <span class="pipeline-chip" style="color:var(--danger); border-color:var(--danger-dim);">fail twice → human co-drafting</span>
+        </div>
+        <button class="link-chip" onclick="document.querySelector('[data-tab=content]').click()">Watch this pipeline run → Part 3 tab</button>
+      </div>
+
+      <div class="degrade-box">
+        <span class="label">Failure mode — product changes, context layer doesn't</span>
+        The most dangerous failure: content generates against stale product info and publishes claims that are no longer true. Detection is a version check — if product context is >60 days old, every output is flagged "stale product context — verify before publication," and a product-release webhook marks the context layer "pending update" until Product Marketing confirms. The agent never auto-publishes on a product claim; human review is mandatory until the flag clears.
+      </div>
+      <div class="degrade-box" style="margin-top:12px;">
+        <span class="label">Failure mode — sources contradict each other</span>
+        Example: a case study claims an 80% reduction in payroll processing time, the product doc says up to 25% efficiency gain. The retrieval API returns both chunks rather than picking one — the agent must surface the contradiction in its output and route to human review to decide which framing fits the context, instead of silently choosing.
+      </div>
+      <div class="degrade-box" style="margin-top:12px;">
+        <span class="label">Failure mode — human becomes the bottleneck</span>
+        If every piece needs full review, the agent shifts work instead of creating leverage. Fix: tiered review (low-risk content auto-publishes with spot-check audit; high-risk content — blog, press, customer email — stays mandatory), batch review with highlighted sources (20 min → 5 min per piece), and a fast-track queue for confidence &gt; 0.95 with all checks passed.
+      </div>
+    </div>
+
+    <!-- C: Governance -->
+    <div class="subsection" id="sub-governance">
+      <div class="card" style="margin-bottom:18px;">
+        <h3>Who can write, read, and administer</h3>
+        <div class="access-grid">
+          <div class="access-col write">
+            <h4>Write access</h4>
+            <ul><li>Product Marketing → Product Context</li><li>Competitive Intelligence → Market Context</li><li>Brand/Content Lead → Company Context</li><li>Marketing Ops → structure, metadata, versioning</li></ul>
+          </div>
+          <div class="access-col read">
+            <h4>Read access</h4>
+            <ul><li>All AI agents, via the Retrieval API</li><li>All marketing team members, via UI or API</li><li>Sales/SDR team — read-only, agent-mediated</li></ul>
+          </div>
+          <div class="access-col admin">
+            <h4>Admin access</h4>
+            <ul><li>Marketing Ops Lead — governance, audit, rollback</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-card">
+          <h4>How agents access it</h4>
+          <p>One standardized call for every agent — <code>query_context(topic, type, recency_filter, limit)</code>. Frequently used context (brand voice, ICP) is cached per agent and invalidates on version change. Every query is logged: which agent, what query, which chunks came back, when — so a bad output is traceable to the exact context it ran on.</p>
+        </div>
+        <div class="detail-card">
+          <h4>How people interact with it</h4>
+          <p>A Retool-style UI for search, edit-with-versioning, pending-approval review, and audit trail. Plus a Slack path: updates notify the owning channel (<code>#product-marketing</code>, <code>#competitive-intel</code>), and anyone can run <code>/context query "..."</code> straight from Slack.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <h3>Approval workflow</h3>
+        <div class="pipeline-row">
+          <span class="pipeline-chip">Owner edits → draft version</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip check">Marketing Ops Lead reviews</span>
+          <span class="pipeline-sep">→</span>
+          <span class="pipeline-chip">approved → live, all agents get it next query</span>
+          <span class="pipeline-sep">·</span>
+          <span class="pipeline-chip" style="color:var(--danger); border-color:var(--danger-dim);">rejected → owner revises</span>
+        </div>
+        <p style="font-size:12.5px; color:var(--ink-dim); margin-top:10px;">Every change logs who / what / when / why. If a context update tanks agent quality (caught by monitoring), Marketing Ops rolls back to the previous version in one click — every agent gets the rollback on its next query.</p>
+      </div>
+
+      <div class="degrade-box">
+        <span class="label">Guardrails against stale or conflicting context</span>
+        Every retrieved chunk carries <code>last_updated</code> — past the threshold, the output is flagged "stale context." If two chunks with similarity &gt; 0.8 disagree, the agent gets a <code>conflict_flag</code> and must acknowledge the conflict rather than pick a side. And structurally: no agent generates from zero chunks, every factual claim needs a citation, and context version ships in the output metadata for audit.
+      </div>
+    </div>
+  </div>
+
+  <!-- COST OPTIMIZATION PANEL (Part 4) -->
+  <div class="panel" id="panel-cost">
+    <div class="subnav" id="cost-subnav">
+      <button class="active" data-sub="diagnosis">Diagnosis</button>
+      <button data-sub="remediation">Remediation Plan</button>
+      <button data-sub="impact">Quantified Impact</button>
+    </div>
+
+    <!-- Diagnosis -->
+    <div class="subsection active" id="sub-diagnosis">
+      <div class="card" style="margin-bottom:18px;">
+        <h3>The scenario</h3>
+        <p style="font-size:13.5px; color:var(--ink-dim); line-height:1.6; margin:0;">
+          An outbound intelligence agent runs ~300 times/day across the SDR team, pulling context from Salesforce, Gong, ZoomInfo, and Sumble on every run. After two weeks: costs are 3x estimate, 70% of outputs are good, 20% acceptable, 10% confidently wrong — two SDRs already sent factually incorrect outreach.
+        </p>
+      </div>
+      <div class="usecase-grid">
+        <div class="usecase-card"><span class="rank">Root cause 1</span><h4>Over-fetching context</h4><p>Pulling large payloads from all four sources on every run — likely 50K tokens when 5K is relevant.</p><div class="field-label">Evidence</div><p>300 runs × 50K tokens × $3.00/M = $45/day on input alone; at 5K tokens that's $4.50/day — 10x waste.</p></div>
+        <div class="usecase-card"><span class="rank">Root cause 2</span><h4>Sonnet 5 for every task</h4><p>Signal classification, role matching, and scoring don't need Sonnet-level reasoning — DeepSeek V4 Flash is 21x cheaper on input, 53x on output.</p><div class="field-label">Evidence</div><p>If 60% of runs could move to Flash, that's ~20x cost reduction on those runs alone.</p></div>
+        <div class="usecase-card"><span class="rank">Root cause 3</span><h4>No prompt caching</h4><p>System prompt + product context (~2,000 tokens) re-sent at full price every run instead of using Sonnet 5's cache-read pricing.</p><div class="field-label">Evidence</div><p>Uncached: $1.80/day on system prompt alone. Cached: $0.18/day. 90% savings on that slice.</p></div>
+        <div class="usecase-card"><span class="rank">Root cause 4</span><h4>No retrieval filtering</h4><p>All available context passes through unfiltered — wasting tokens, distracting the model with noise, and letting contradictory chunks confuse generation.</p><div class="field-label">Evidence</div><p>The 10% confidently-wrong outputs likely trace to the model latching onto irrelevant or contradictory chunks.</p></div>
+        <div class="usecase-card"><span class="rank">Root cause 5</span><h4>No confidence scoring or validation</h4><p>Every output is treated equally — there's no gate between generation and SDR delivery.</p><div class="field-label">Evidence</div><p>"Two SDRs already sent factually incorrect outreach" — outputs are reaching SDRs with zero review layer.</p></div>
+        <div class="usecase-card"><span class="rank">Root cause 6</span><h4>No prompt optimization</h4><p>Prompts are likely verbose and unstructured, with redundant instructions burning input tokens on every single run.</p><div class="field-label">Evidence</div><p>A 3x cost overrun against estimate is consistent with prompt + context token count running well above plan.</p></div>
+      </div>
+    </div>
+
+    <!-- Remediation -->
+    <div class="subsection" id="sub-remediation">
+      <div class="usecase-grid">
+        <div class="usecase-card"><span class="rank">Lever 1</span><h4>Prompt architecture rewrite</h4><p>Cut the system prompt from a sprawling ~2,000-token brief to ~200 tokens: role, retrieved context slots, a capped output schema, and one grounding rule — no evidence, no claim.</p><div class="field-label">Impact</div><p>System prompt -90%, context -96% (50K → 2K), output capped -60%. ~85% total token reduction per run.</p></div>
+        <div class="usecase-card"><span class="rank">Lever 2</span><h4>Context retrieval strategy</h4><p>Semantic retrieval with relevance scoring: embed the query, pull top 5 chunks, filter by relevance &gt;0.75 and recency, cap at 2K tokens. Summarize Gong transcripts and Salesforce history instead of passing full logs.</p><div class="field-label">Impact</div><p>Input tokens 50K → 2K (96% reduction) and a quality gain — the model works from signal, not noise.</p></div>
+        <div class="usecase-card"><span class="rank">Lever 3</span><h4>Model selection &amp; routing</h4><p>Route by task type and complexity: classification/scoring/validation → DeepSeek V4 Flash; high-complexity enterprise outreach → Claude Sonnet 5; standard personalization → Flash.</p><div class="field-label">Impact</div><p>~60% of runs move to Flash at ~30x lower cost — roughly 10x blended cost reduction on its own.</p></div>
+        <div class="usecase-card"><span class="rank">Lever 4</span><h4>Prompt caching (Sonnet 5)</h4><p>Cache the static ~2,000-token block (system prompt, product context, brand voice, ICP) at 5-min TTL; only the ~500-token dynamic block is fresh per run.</p><div class="field-label">Impact</div><p>90% savings on cached tokens; break-even at 2 cache reads. At 300 runs/day: ~$1.40/day in cache savings alone.</p></div>
+        <div class="usecase-card"><span class="rank">Lever 5</span><h4>Two-layer output validation</h4><p>Layer 1 (free): schema, length, and brand-voice checks. Layer 2 (DeepSeek V4 Flash, ~$0.0001/validation): claim verification, hallucination check, independent confidence score.</p><div class="field-label">Impact</div><p>Confidently-wrong outputs drop from 10% toward &lt;1% — caught before they reach an SDR, not after.</p></div>
+        <div class="usecase-card"><span class="rank">Lever 6</span><h4>Confidence-based routing</h4><p>&gt;0.85 + validation pass → fast-track. 0.6–0.85 → standard review. &lt;0.6 or validation fail → regenerate stricter; fail twice → human co-drafting. Every claim needs cited evidence or it's stripped from the draft.</p><div class="field-label">Impact</div><p>SDR-facing failures drop ~90% (10% → &lt;1%) while fast-track keeps throughput high for the 90%+ good outputs.</p></div>
+      </div>
+    </div>
+
+    <!-- Impact -->
+    <div class="subsection" id="sub-impact">
+      <div class="stat-strip">
+        <div class="stat-card">
+          <div class="stat-label">Daily cost · 300 runs</div>
+          <div class="stat-flow">
+            <span class="stat-before">$54</span>
+            <span class="stat-arrow">→</span>
+            <span class="stat-after">$1.26</span>
+          </div>
+          <span class="stat-delta">−98%</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Monthly cost · 22 days</div>
+          <div class="stat-flow">
+            <span class="stat-before">$1,188</span>
+            <span class="stat-arrow">→</span>
+            <span class="stat-after">$27.72</span>
+          </div>
+          <span class="stat-delta">−98%</span>
+        </div>
+        <div class="stat-card quality">
+          <div class="stat-label">Confidently-wrong outputs</div>
+          <div class="stat-flow">
+            <span class="stat-before">10%</span>
+            <span class="stat-arrow">→</span>
+            <span class="stat-after">&lt;1%</span>
+          </div>
+          <span class="stat-delta">−9pp · quality up</span>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:18px;">
+        <h3>Before vs. after</h3>
+        <table class="fail-table">
+          <tr><th>Metric</th><th>Before</th><th>After</th><th>Change</th></tr>
+          <tr><td>Input tokens / run</td><td>~50,000</td><td>~2,500 (2K cached + 500 fresh)</td><td>-95%</td></tr>
+          <tr><td>Output tokens / run</td><td>~2,000</td><td>~500 (capped)</td><td>-75%</td></tr>
+          <tr><td>Model mix</td><td>Sonnet 5, all runs</td><td>Sonnet 5 (40%) + Flash (60%)</td><td>—</td></tr>
+          <tr><td>Cost per run (blended)</td><td>$0.18</td><td>$0.0042</td><td>-98%</td></tr>
+          <tr><td>Daily cost (300 runs)</td><td>$54</td><td>$1.26</td><td>-98%</td></tr>
+          <tr><td>Monthly cost (22 days)</td><td>$1,188</td><td>$27.72</td><td>-98%</td></tr>
+          <tr><td>Output quality (good)</td><td>70%</td><td>90%+</td><td>+20pp</td></tr>
+          <tr><td>Confidently wrong</td><td>10%</td><td>&lt;1%</td><td>-9pp</td></tr>
+          <tr><td>SDR-facing failures</td><td>10% (~30/day)</td><td>&lt;1% (&lt;3/day)</td><td>-90%</td></tr>
+        </table>
+      </div>
+      <div class="card" style="margin-bottom:18px;">
+        <h3>Cost levers, ranked by effort</h3>
+        <table class="fail-table">
+          <tr><th>Lever</th><th>Cost reduction</th><th>Implementation effort</th></tr>
+          <tr><td>Context filtering (50K → 2K)</td><td>96% on input</td><td>Medium — vector store + retrieval</td></tr>
+          <tr><td>Model routing (Sonnet → Flash, 60%)</td><td>~20x on those runs</td><td>Low — routing logic</td></tr>
+          <tr><td>Prompt caching (Sonnet 5)</td><td>90% on cached tokens</td><td>Low — API parameter</td></tr>
+          <tr><td>Prompt optimization (2K → 200 sys prompt)</td><td>90% on system prompt</td><td>Low — prompt rewrite</td></tr>
+          <tr><td>Output capping (2K → 500)</td><td>75% on output</td><td>Low — max_tokens</td></tr>
+        </table>
+      </div>
+      <div class="degrade-box" style="border-color:var(--success-dim); background:rgba(111,207,151,.05);">
+        <span class="label" style="color:var(--success);">Key insight — cost is an architectural decision, not a compromise</span>
+        <span style="font-size:15px; line-height:1.65; display:block;">The ~98% cost reduction comes from context filtering, model routing, and caching — <b style="color:var(--ink);">not from cutting corners.</b> Quality actually <b style="color:var(--success);">improves</b> alongside cost: the model focuses on relevant context instead of noise, validation catches hallucinations before SDRs see them, and confidence-based routing keeps low-quality output out of the send queue entirely.</span>
+      </div>
+      <button class="link-chip" onclick="document.querySelector('[data-tab=sdr]').click()">See the guardrail that catches the 10% → Part 3 SDR tab</button>
+    </div>
+  </div>
+
+  <!-- STRATEGIC VISION PANEL (Part 5) -->
+  <div class="panel" id="panel-vision">
+    <div class="subnav" id="vision-subnav">
+      <button class="active" data-sub="domain1">Domain 1 — Marketing</button>
+      <button data-sub="domain2">Domain 2 — GTM / SDR</button>
+      <button data-sub="closing">Closing Thesis</button>
+    </div>
+
+    <!-- Domain 1 -->
+    <div class="subsection active" id="sub-domain1">
+      <div class="card" style="margin-bottom:18px;">
+        <h3>12 months out — what exists</h3>
+        <div class="pipeline-row">
+          <span class="pipeline-chip check">Content Production Agent</span>
+          <span class="pipeline-chip check">Campaign Brief Agent</span>
+          <span class="pipeline-chip check">Social Listening &amp; Response</span>
+          <span class="pipeline-chip check">Task Orchestration</span>
+          <span class="pipeline-chip check">Context Layer</span>
+          <span class="pipeline-chip check">Observability Layer</span>
+        </div>
+        <p style="font-size:13px; color:var(--ink-dim); line-height:1.6; margin:14px 0 0;">
+          All six operational: content generates from the context layer with human review on high-risk pieces and auto-publish on low-risk; campaign briefs compress planning from days to hours; social moves from reactive to proactive with 24/7 coverage; marketing ops runs on exception-based management instead of manual tracking. Every agent run is tracked for latency, cost, quality, and cache hit rate, reviewed weekly with the Marketing Ops Lead.
+        </p>
+      </div>
+      <div class="detail-card" style="margin-bottom:18px;">
+        <h4>What it has changed</h4>
+        <ul style="color:var(--ink-dim);">
+          <li>Content team shifts from writing to editing — 3–5x output per writer</li>
+          <li>Campaign planning: days → hours</li>
+          <li>Social: reactive monitoring → proactive engagement</li>
+          <li>Marketing ops: manual tracking → exception-based management</li>
+          <li>Every piece of content is grounded — no hallucination reaching publication</li>
+          <li>Marketing and sales share one context layer — messaging stays aligned</li>
+          <li>Cost per content piece down 90%+ via caching and model routing</li>
+        </ul>
+      </div>
+      <h3 style="font-size:14px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px;">Main challenges</h3>
+      <div class="usecase-grid">
+        <div class="usecase-card"><span class="rank">Technical + org</span><h4>Context layer maintenance</h4><p>Product changes, the context layer doesn't — agents produce outdated content.</p><div class="field-label">Solution</div><p>Staleness alerts on version control, a release webhook that triggers the update workflow, and clear single-owner assignment per domain (Product Marketing / Competitive Intel / Brand Lead). No ownership, no update.</p></div>
+        <div class="usecase-card"><span class="rank">Organizational</span><h4>Team adoption</h4><p>The team either over-edits (defeating the purpose) or under-reviews (letting bad content through) because they don't trust AI output yet.</p><div class="field-label">Solution</div><p>Start on low-risk use cases to build trust, train the team to work with their agent rather than against it, and let SDR/team feedback shape prompt iteration.</p></div>
+        <div class="usecase-card"><span class="rank">Technical</span><h4>Brand voice consistency</h4><p>Output drifts from brand voice over time, especially as prompts get iterated on.</p><div class="field-label">Solution</div><p>Brand voice lives in the context layer, not buried in the prompt. A validation layer checks every output against it; weekly audits sample 10 outputs per agent against the rubric.</p></div>
+        <div class="usecase-card"><span class="rank">Data-related</span><h4>Measuring ROI</h4><p>"How much pipeline did the agent generate?" is hard to answer when agents support humans rather than replace them.</p><div class="field-label">Solution</div><p>Measure time saved, output increased, quality maintained (edit/rejection rate), and cost per output. Correlate with pipeline metrics without claiming direct attribution — the ROI is leverage, not replacement.</p></div>
+        <div class="usecase-card"><span class="rank">Technical</span><h4>Cost management at scale</h4><p>As content production scales, token costs can grow in ways that are easy to miss until the invoice arrives.</p><div class="field-label">Solution</div><p>Caching, model routing, output capping, and weekly cost review (cost per piece, cache hit rate, model mix) — investigate anything that moves &gt;10% week over week.</p></div>
+      </div>
+    </div>
+
+    <!-- Domain 2 -->
+    <div class="subsection" id="sub-domain2">
+      <div class="card" style="margin-bottom:18px;">
+        <h3>12 months out — what exists</h3>
+        <div class="pipeline-row">
+          <span class="pipeline-chip check">Signal Agent</span>
+          <span class="pipeline-chip check">Source Agent</span>
+          <span class="pipeline-chip check">Enrichment Agent</span>
+          <span class="pipeline-chip check">Score Agent</span>
+          <span class="pipeline-chip check">Outreach Agent</span>
+          <span class="pipeline-chip check">Coach Agent</span>
+          <span class="pipeline-chip check">Pre-Call Intelligence Agent</span>
+        </div>
+        <p style="font-size:13px; color:var(--ink-dim); line-height:1.6; margin:14px 0 0;">
+          The full Part 1 stack in production, plus a Pre-Call Intelligence Agent that briefs SDRs/AEs before calls — account history, contact roles, recent signals, talking points, objection handlers — pulled from the context layer, Salesforce, and Gong with prompt caching on product context.
+        </p>
+        <button class="link-chip" onclick="document.querySelector('[data-tab=mapping]').click()">See the six-agent build → Part 1 tab</button>
+      </div>
+      <div class="detail-card" style="margin-bottom:18px;">
+        <h4>What it has changed</h4>
+        <ul style="color:var(--ink-dim);">
+          <li>SDRs spend 80% of time on conversations, not research</li>
+          <li>Personalization quality rises while time-per-email drops</li>
+          <li>Account prioritization is transparent and data-driven, not gut-feel</li>
+          <li>Coaching is continuous, not quarterly</li>
+          <li>Marketing and sales share the same context layer — messaging alignment</li>
+          <li>Pipeline velocity rises — SDRs work higher-quality accounts with better personalization</li>
+          <li>Cost per SDR run down 98% via model routing, context filtering, and caching</li>
+        </ul>
+      </div>
+      <h3 style="font-size:14px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px;">Main challenges</h3>
+      <div class="usecase-grid">
+        <div class="usecase-card"><span class="rank">Organizational</span><h4>SDR trust</h4><p>SDRs have seen obviously-AI outreach before and don't want to send it.</p><div class="field-label">Solution</div><p>Start with the Coach Agent, not Outreach — show SDRs what's working before asking them to trust AI-generated content. Outreach Agent then arrives as a drafting tool, never an auto-sender. Trust is earned through quality, not mandated.</p></div>
+        <div class="usecase-card"><span class="rank">Technical + data</span><h4>Data quality across systems</h4><p>Salesforce, Gong, ZoomInfo, and Sumble each have different models, freshness, and quality — agents inherit the weakest link.</p><div class="field-label">Solution</div><p>Every agent has defined degradation behavior (Part 1): confidence adjusts and outputs flag when a source is stale or down. A Marketing Ops dashboard shows source health in real time.</p></div>
+        <div class="usecase-card"><span class="rank">Technical</span><h4>Cost management at scale</h4><p>300 SDR runs/day is the start — costs can spiral as agents extend to AEs and CS.</p><div class="field-label">Solution</div><p>Model routing, context filtering, token caps, and cost-anomaly alerts. The Part 4 remediation plan is the template, applied proactively rather than reactively.</p></div>
+        <div class="usecase-card"><span class="rank">Organizational</span><h4>Sales-marketing alignment</h4><p>Marketing builds the agents SDRs use, but SDRs report to Sales — who owns what, and who prioritizes improvements?</p><div class="field-label">Solution</div><p>Marketing owns the infrastructure, Sales owns the outcomes. Shared metrics (pipeline contribution, meetings booked, reply rate) and joint sign-off on changes to SDR-facing agents.</p></div>
+        <div class="usecase-card"><span class="rank">Technical</span><h4>Hallucination in customer-facing content</h4><p>An SDR sends outreach with a wrong claim — the prospect loses trust, the SDR loses credibility.</p><div class="field-label">Solution</div><p>Evidence-based personalization: every claim cites a source, no source means no claim. Low-confidence output never reaches SDRs without human co-drafting. AI drafts, humans approve — non-negotiable.</p></div>
+        <div class="usecase-card"><span class="rank">Technical</span><h4>Cache management across territories</h4><p>Prompt caching has a 5-minute TTL — SDRs across time zones running agents at different times increases cache misses.</p><div class="field-label">Solution</div><p>Territory-based cache warming at the start of each territory's business hours; monitor hit rate by territory and adjust the warming schedule if it drops below 80%.</p></div>
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="subsection" id="sub-closing">
+      <div class="conclusion">
+        <h2 class="ctitle">One role, two domains, <span class="accent">one shared substrate.</span></h2>
+
+        <div class="thesis blue">
+          <h4>Not two workstreams — one infrastructure</h4>
+          <p>This isn't "build AI for marketing" and "build AI for sales" as separate tracks. It's building AI infrastructure that serves both, grounded in <b>one shared context layer.</b> Marketing content and SDR outreach draw from the same positioning, the same case studies, the same battle cards. When product changes, both domains update together — because they share the substrate.</p>
+        </div>
+
+        <div class="thesis">
+          <h4>Agents on the data layer, humans on the relationship layer</h4>
+          <p>The 12-month vision isn't "lots of agents" — it's a coherent system where <b>agents handle the data layer, humans handle the relationship layer,</b> and the context layer keeps everything grounded and current. AI does the research; humans do the conversation. That's how genuine relationships scale to enterprise size.</p>
+        </div>
+
+        <div class="thesis">
+          <h4>Cost is an architectural decision, not an afterthought</h4>
+          <p>Model routing, prompt caching, context filtering, and output capping are designed in from day one — the Part 4 remediation applied proactively. Result: <b>~98% cost reduction while quality improves,</b> because the model focuses on relevant context, validation catches errors, and confidence-based routing keeps bad output away from humans.</p>
+        </div>
+
+        <div class="signoff">
+          <span class="name">Alessandro Capezza</span>
+          <span class="dot">·</span>
+          <span class="role">AI GTM Engineer — Fintech Workforce Platform</span>
+          <span class="dot">·</span>
+          <span class="role">Claude Sonnet 5 + DeepSeek V4 Flash</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Mock-mode MVP · pairs with content_context_validator_agent.py and sdr_outreach_agent.py</footer>
+</div>
+
+<!-- GUIDED TOUR SIDEBAR -->
+<aside id="tour">
+  <div class="tour-progress"><div class="bar" id="tour-bar"></div></div>
+  <div class="tour-head">
+    <div class="th-top">
+      <h3>Guided tour</h3>
+      <span class="th-count" id="tour-count">0 / 8</span>
+      <button class="th-close" id="tour-close" title="Close tour">✕</button>
+    </div>
+    <p>Eight stops through the assignment. Click any stop to jump — nothing is blocked, explore freely at any point.</p>
+    <div class="tour-controls">
+      <button class="play" id="tour-play">▶ Play all</button>
+      <button id="tour-prev">← Back</button>
+      <button id="tour-next">Next →</button>
+      <button id="tour-reset">Reset</button>
+    </div>
+  </div>
+  <div class="tour-list" id="tour-list"></div>
+</aside>
+
+<script>
+/* ============ OBSERVABILITY — shared agent run log ============
+   Every agent run appends a telemetry row here: latency, cost, confidence,
+   flags, routing. This is the monitoring layer from Part 1 ("track every
+   agent run for latency, cost, quality score, and error rate") made real —
+   an in-memory ring buffer rendered into both agent tabs.                */
+const RUN_LOG = [];
+const RUN_LOG_MAX = 50;
+
+const FLAG_SHORT = {
+  'generic_fallback (weak signal not used)': 'generic_fallback',
+  'personalized_on_low_confidence_signal': 'low_conf_signal',
+};
+
+function logRun(entry){
+  const now = new Date();
+  const ts = now.toTimeString().slice(0,8);
+  entry = {...entry, flags: entry.flags.map(f => FLAG_SHORT[f] || f)};
+  RUN_LOG.unshift({ts, ...entry});
+  if(RUN_LOG.length > RUN_LOG_MAX) RUN_LOG.pop();
+  renderRunLog(true);
+}
+
+function severityOf(e){
+  if(e.flags.some(f => f === 'unverified_claim' || f === 'insufficient_context' || f === 'no_grounded_claims')) return 'bad';
+  if(e.flags[0] !== 'none') return 'warn';
+  return 'ok';
+}
+
+function renderRunLog(markFresh){
+  const rows = RUN_LOG.map((e,i) => {
+    const sev = severityOf(e);
+    const rowCls = (sev === 'bad' ? 'bad' : sev === 'warn' ? 'warn' : '') + (markFresh && i === 0 ? ' fresh' : '');
+    const confCls = e.confidence >= 0.85 ? 'c-ok' : e.confidence >= 0.6 ? 'c-warn' : 'c-bad';
+    const flagCls = sev === 'bad' ? 'c-bad' : sev === 'warn' ? 'c-warn' : 'c-ok';
+    const routeShort = e.routing.split('—')[0].trim();
+    const routeCls = routeShort.startsWith('FAST') ? 'c-ok' : routeShort.startsWith('STANDARD') ? 'c-warn' : 'c-bad';
+    return `<tr class="${rowCls}">
+      <td class="c-ts">${e.ts}</td>
+      <td class="c-agent">${e.agent}</td>
+      <td class="c-model">${e.model}</td>
+      <td class="${confCls}">${e.confidence.toFixed(2)}</td>
+      <td class="${flagCls}">${e.flags.join(', ')}</td>
+      <td class="${routeCls}">${routeShort}</td>
+      <td>${e.latency}</td>
+      <td>$${e.cost.toFixed(4)}</td>
+    </tr>`;
+  }).join('');
+
+  const empty = `<tr><td colspan="8"><div class="obs-empty">No runs yet — every agent run appends a row here: latency, cost, quality score, error rate.</div></td></tr>`;
+  ['obs-body-content','obs-body-sdr'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.innerHTML = RUN_LOG.length ? rows : empty;
+  });
+
+  // aggregate stats
+  const n = RUN_LOG.length;
+  const errs = RUN_LOG.filter(e => severityOf(e) === 'bad').length;
+  const avgConf = n ? (RUN_LOG.reduce((s,e)=>s+e.confidence,0)/n) : 0;
+  const avgLat = n ? (RUN_LOG.reduce((s,e)=>s+parseFloat(e.latency),0)/n) : 0;
+  const totCost = RUN_LOG.reduce((s,e)=>s+e.cost,0);
+  const errRate = n ? (errs/n*100) : 0;
+  const stats = n
+    ? `<span>runs <b>${n}</b></span><span>avg conf <b>${avgConf.toFixed(2)}</b></span>`+
+      `<span>avg latency <b>${avgLat.toFixed(1)}s</b></span><span>error rate <b>${errRate.toFixed(0)}%</b></span>`+
+      `<span>total cost <b>$${totCost.toFixed(4)}</b></span>`
+    : `<span>awaiting first run</span>`;
+  ['obs-stats-content','obs-stats-sdr'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.innerHTML = stats;
+  });
+}
+
+function clearRunLog(){
+  RUN_LOG.length = 0;
+  renderRunLog(false);
+}
+
+/* ============ tabs ============ */
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(`panel-${tab.dataset.tab}`).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+/* ============ presentation mode ============ */
+const btnPresent = document.getElementById('btn-present');
+const btnEdit = document.getElementById('btn-edit');
+btnPresent.addEventListener('click', () => {
+  document.body.classList.add('present');
+  btnPresent.classList.add('on'); btnEdit.classList.remove('on');
+});
+btnEdit.addEventListener('click', () => {
+  document.body.classList.remove('present');
+  btnEdit.classList.add('on'); btnPresent.classList.remove('on');
+});
+
+/* ============ CONTENT CONTEXT VALIDATOR (mirrors content_context_validator_agent.py) ============ */
+const CONTEXT_LAYER = [
+  {id:'PROD-014', content:"The platform runs payroll, EOR, and contractor payments across 160+ countries from a single unified platform, with in-country compliance built into every payout.", source:'Positioning Doc v6', ageDays:12, tags:['positioning','eor','compliance']},
+  {id:'PROD-021', content:"As of Q2 2026, the platform's AI-first payroll engine flags compliance risks before a payout is issued, rather than surfacing them after the fact.", source:'Release Notes Q2 2026', ageDays:8, tags:['ai','compliance','product-update']},
+  {id:'CS-WITHIN3', content:"Within3 (life sciences) consolidated 4 regional PEOs onto the platform and scaled from 60 workers in 6 locations to 250 in 20 — cutting HR admin time ~50%.", source:'Case Study Library', ageDays:40, tags:['case-study','enterprise','eor']},
+  {id:'BRAND-002', content:"Brand voice: confident, borderless, precise. We say 'global workforce', not 'international employees'. We never call payroll 'simple'.", source:'Voice & Tone Guide v3', ageDays:95, tags:['brand-voice']},
+];
+const BRAND_KEYWORDS = ['borderless','ai-first','global workforce','compliance','unified'];
+const BRAND_AVOID = ['cheap','easy','simple','just','basically'];
+const STALE_DAYS = 60;
+
+const CONTENT_SCENARIOS = [
+  {topic:'AI-first compliance in payroll', format:'LinkedIn post', audience:'HR leaders at scaling tech companies', tags:['ai','compliance'],
+   manualDraft:`"We make global payroll simple — pay anyone in 200+ countries with our flat 1.5% fee and instant same-day payouts everywhere. Our AI never makes mistakes."`,
+   manualErrors:['"200+ countries" — it\'s 160+','"flat 1.5% fee" — invented','"same-day everywhere" — overstated (95%)','"AI never makes mistakes" — off-brand + false','"simple" — banned brand word']},
+  {topic:'EOR case study', format:'nurture email', audience:'Enterprise finance buyers evaluating EOR vendors', tags:['case-study','eor'],
+   manualDraft:`"One of our clients saved $2M and cut payroll time by 80% overnight. We are the cheapest EOR on the market."`,
+   manualErrors:['"$2M / 80% overnight" — no such case','"cheapest on the market" — unverifiable claim','no source cited']},
+  {topic:'Quarterly astrology roundup', format:'blog post', audience:'General audience', tags:['unrelated'],
+   manualDraft:`"Mercury retrograde is the perfect time to reconsider your payroll provider…"`,
+   manualErrors:['off-topic — nothing in the context layer supports this']},
+];
+
+function retrieveContext(scn){
+  let hits = CONTEXT_LAYER.filter(c => scn.tags.some(t => c.tags.includes(t)));
+  if(hits.length === 0) hits = [CONTEXT_LAYER[0]];
+  return hits;
+}
+
+function generateContentDraft(scn, chunks){
+  const lead = chunks[0];
+  const sources = chunks.map(c => ({id:c.id, claim:c.content.slice(0,90)+'...'}));
+  let draft = `${scn.format} — ${scn.topic}\n\nThe platform gives ${scn.audience.toLowerCase()} one unified way to run payroll, EOR, and compliance across a borderless, global workforce. ${lead.content} (source: ${lead.id})`;
+  if(chunks.length > 1) draft += ` ${chunks[1].content} (source: ${chunks[1].id})`;
+  if(scn.tags.includes('unrelated')){
+    draft = `INSUFFICIENT_CONTEXT — no context chunk matches "${scn.topic}". Agent declines to generate rather than fill the gap from general knowledge.`;
+  }
+  return {draft, sources: scn.tags.includes('unrelated') ? [] : sources};
+}
+
+function validateContent(draftObj, chunks, scn){
+  const flags = [];
+  if(draftObj.sources.length === 0) flags.push('insufficient_context');
+  const stale = chunks.filter(c => c.ageDays > STALE_DAYS);
+  if(stale.length) flags.push('stale_context');
+  const lowered = draftObj.draft.toLowerCase();
+  const voiceHits = BRAND_KEYWORDS.filter(k => lowered.includes(k)).length;
+  const violations = BRAND_AVOID.filter(k => lowered.includes(k));
+  if(violations.length) flags.push('brand_voice_violation');
+  let confidence = flags.length === 0 ? Math.min(0.99, 0.9 + 0.01*voiceHits) : Math.max(0.3, 0.9 - 0.15*flags.length);
+  return {flags: flags.length ? flags : ['none'], confidence: Math.round(confidence*100)/100};
+}
+
+function routeContent(validation){
+  const needsHuman = validation.confidence < 0.7 || validation.flags[0] !== 'none';
+  const label = needsHuman ? 'REVIEW CAREFULLY — routed to human' : 'FAST-TRACK — light human approval';
+  const cls = needsHuman ? 'human' : 'fast';
+  return {label, cls, needsHuman};
+}
+
+function highlightSources(text){
+  return text.replace(/</g,'&lt;').replace(/\(source: ([A-Z0-9-]+)\)/g, '<span class="cite">src: $1</span>');
+}
+
+document.getElementById('run-content').addEventListener('click', async () => {
+  const btn = document.getElementById('run-content');
+  btn.disabled = true;
+
+  const idx = document.getElementById('content-scenario').value;
+  const scn = CONTENT_SCENARIOS[idx];
+  const chunks = retrieveContext(scn);
+  const draftObj = generateContentDraft(scn, chunks);
+  const validation = validateContent(draftObj, chunks, scn);
+  const routing = routeContent(validation);
+  const isRefusal = scn.tags.includes('unrelated');
+  const groundedCount = draftObj.sources.length;
+
+  // reset
+  document.getElementById('cmanual-draft').innerHTML = 'Waiting to start — the marketer writes confident copy from memory. It reads well… until someone checks the facts.';
+  document.getElementById('cmanual-src').textContent = '—';
+  document.getElementById('cmanual-risk').textContent = '—';
+  document.getElementById('cagent-empty').style.display = 'none';
+  document.getElementById('cdoc-inner').style.display = 'none';
+  document.getElementById('cagent-time').textContent = '—';
+  document.getElementById('cagent-cost').textContent = '—';
+  document.getElementById('cagent-src').textContent = '—';
+  document.getElementById('cnumbers-band').classList.remove('show');
+  document.getElementById('routing-content').classList.remove('show');
+
+  // ---- MANUAL SIDE: confident but wrong ----
+  await sleep(500);
+  const errList = scn.manualErrors.map(e => `<div style="margin-top:4px;">✕ ${e}</div>`).join('');
+  document.getElementById('cmanual-draft').innerHTML =
+    `<div style="color:var(--ink); font-style:normal;">${scn.manualDraft}</div>`+
+    `<div style="margin-top:12px; color:var(--danger); font-size:11.5px; font-style:normal;">`+
+    `<b>What a fact-check catches:</b>${errList}</div>`;
+  document.getElementById('cmanual-src').textContent = '0';
+  document.getElementById('cmanual-risk').textContent = isRefusal ? 'Off-topic' : 'Hallucination';
+
+  await sleep(300);
+
+  // ---- AGENT SIDE ----
+  const doc = document.getElementById('cdoc-inner');
+  doc.style.display = 'flex';
+  document.getElementById('cdoc-type').textContent = scn.format;
+  document.getElementById('cdoc-aud').textContent = scn.audience;
+
+  const bodyEl = document.getElementById('cdoc-body');
+  const actionBtn = document.getElementById('cdoc-action');
+  const verify = document.getElementById('cdoc-verify');
+
+  if(isRefusal){
+    bodyEl.innerHTML = `<span style="color:var(--human);">INSUFFICIENT_CONTEXT</span>\n\nNo context chunk matches “${scn.topic}”. The agent declines to generate rather than fill the gap from training data.\n\nBetter to refuse than hallucinate.`;
+    actionBtn.textContent = 'Blocked';
+    actionBtn.style.background = 'var(--danger)';
+    verify.style.color = 'var(--danger)';
+    verify.textContent = '✕ no grounded source — refused';
+  } else {
+    bodyEl.innerHTML = highlightSources(draftObj.draft);
+    actionBtn.textContent = routing.needsHuman ? 'Review' : 'Publish';
+    actionBtn.style.background = routing.needsHuman ? 'var(--human)' : 'var(--papaya)';
+    verify.style.color = 'var(--success)';
+    verify.textContent = `✓ ${groundedCount} claims sourced`;
+  }
+
+  // meters tick
+  let t=0, cost=0; const tt = 2.2 + Math.random()*0.6, tc = 0.0061; const steps=20;
+  for(let s=0;s<=steps;s++){
+    document.getElementById('cagent-time').textContent = (tt*s/steps).toFixed(1)+'s';
+    document.getElementById('cagent-cost').textContent = '$'+(tc*s/steps).toFixed(4);
+    await sleep(30);
+  }
+  document.getElementById('cagent-src').textContent = String(groundedCount);
+
+  // routing strip
+  const rs = document.getElementById('routing-content');
+  rs.className = `routing-strip ${routing.cls} show`;
+  rs.innerHTML = `<span>${routing.label}</span>`+
+    `<span class="rlog">${JSON.stringify({confidence:validation.confidence, flags:validation.flags, chunks:chunks.map(c=>c.id)})}</span>`;
+
+  // numbers band
+  document.getElementById('cnb-grounded').textContent = isRefusal ? 'N/A' : '100%';
+  document.getElementById('cnb-halluc').textContent = '0';
+  document.getElementById('cnb-cost').textContent = '$'+tc.toFixed(4);
+  document.getElementById('cnumbers-band').classList.add('show');
+
+  logRun({
+    agent: 'content_validator',
+    model: 'Sonnet 5 + Flash',
+    confidence: validation.confidence,
+    flags: validation.flags,
+    routing: routing.label,
+    latency: tt.toFixed(1)+'s',
+    cost: tc,
+  });
+
+  btn.disabled = false;
+});
+
+/* ============ SDR OUTREACH AGENT (mirrors sdr_outreach_agent.py) ============ */
+// Evidence layer — real client case studies
+const EVIDENCE_LAYER = [
+  {id:'CS-WITHIN3', company:'Within3', content:"Within3 (life sciences, 250+) consolidated 4 regional PEOs onto the platform and scaled from 60 workers in 6 locations to 250 in 20 locations — cutting HR team admin time ~50% and 5–6 hrs/month on approvals.", tags:['saas','life_sciences','scaling','hiring','vendor_consolidation','peo']},
+  {id:'CS-DATADOG', company:'Datadog', content:"Datadog (NASDAQ: DDOG, ~1,000 employees) moved 15 EoR relationships onto the platform for full payroll-data transparency, then converted EoR locations in the Netherlands and Spain into owned entities — with a dedicated CSM and same-day answers.", tags:['saas','tech','scaling','eor','hiring','transparency','entity_conversion']},
+  {id:'CS-CYBERARK', company:'CyberArk', content:"CyberArk (NASDAQ: CYBR, cybersecurity) unified and consolidated fragmented global payroll streams onto a single unified platform, standardizing process and visibility across every country it operates in.", tags:['saas','cybersecurity','tech','vendor_consolidation','compliance','multi_entity']},
+  {id:'PROD-OS', company:null, content:"The platform runs payroll, EoR, and contractor payments across 160+ countries from one unified system (Workforce OS), with in-country compliance built into every payout and payments via its licensed arm across Tier-1 jurisdictions.", tags:['compliance','eor','payments','multi_entity','ai']},
+];
+
+const SDR_SCENARIOS = [
+  {
+    account:'Meridian Bio', contact:'Dana Cole', title:'VP People Operations',
+    industry:'life_sciences', signalType:'hiring', signalDetail:'posted 9 roles across 4 new countries after a $120M raise',
+    signalConfidence:0.84, fabricated:false, fit:0.92, employees:260, need:'Rapid global expansion',
+    note:'Life-sciences scale-up juggling multiple regional PEOs → matches Within3 almost exactly.',
+  },
+  {
+    account:'Loomis Data', contact:'Aschta Ferreira', title:'People Manager, EMEA',
+    industry:'tech', signalType:'eor', signalDetail:'runs 12+ EoR relationships with no unified payroll-data visibility',
+    signalConfidence:0.80, fabricated:false, fit:0.89, employees:1000, need:'Vendor consolidation',
+    note:'Hypergrowth software co. frustrated by opaque EoR data → matches Datadog.',
+  },
+  {
+    account:'Northbeam Health', contact:'Priya Raman', title:'Director, Global HR',
+    industry:'life_sciences', signalType:'hiring', signalDetail:'opened first APAC entity, hiring across 3 markets',
+    signalConfidence:0.79, fabricated:false, fit:0.86, employees:420, need:'Rapid global expansion',
+    note:'First entity abroad — classic PEO-consolidation moment.',
+  },
+  {
+    account:'Vantage Cloud', contact:'Tom Bergqvist', title:'VP Finance',
+    industry:'tech', signalType:'vendor_consolidation', signalDetail:'CFO publicly flagged payroll vendor sprawl on an earnings call',
+    signalConfidence:0.88, fabricated:false, fit:0.85, employees:1400, need:'Vendor consolidation',
+    note:'Explicit, high-confidence buying signal straight from the buyer.',
+  },
+  {
+    account:'Sentinel Security', contact:'Marcus Lee', title:'Head of People',
+    industry:'cybersecurity', signalType:'tech_stack', signalDetail:'may be evaluating a new HRIS (low-confidence LinkedIn signal)',
+    signalConfidence:0.41, fabricated:false, fit:0.71, employees:700, need:'Compliance & risk',
+    note:'Low-confidence signal on purpose — agent must fall back to a generic-but-relevant angle, not personalize on a guess.',
+  },
+  {
+    account:'Kestrel Labs', contact:'Ana Duarte', title:'Chief People Officer',
+    industry:'cybersecurity', signalType:'compliance', signalDetail:'expanding into 3 EU markets with new data-residency obligations',
+    signalConfidence:0.74, fabricated:false, fit:0.80, employees:600, need:'Compliance & risk',
+    note:'Compliance-led entry — CyberArk is the natural proof point.',
+  },
+  {
+    account:'Orbit Freight', contact:'Sam Okoye', title:'Head of Operations',
+    industry:'logistics', signalType:'funding', signalDetail:'Series C raise, no payroll-specific signal detected',
+    signalConfidence:0.52, fabricated:false, fit:0.63, employees:900, need:'Cost optimization',
+    note:'Weak signal + industry outside core evidence — agent falls back to platform positioning.',
+  },
+  {
+    account:'Pallas Gaming', contact:'Ines Moreau', title:'People Ops Lead',
+    industry:'tech', signalType:'scaling', signalDetail:'doubled headcount in 14 months across 9 countries',
+    signalConfidence:0.81, fabricated:false, fit:0.83, employees:520, need:'Rapid global expansion',
+    note:'Hypergrowth profile — Datadog case study maps cleanly.',
+  },
+  {
+    account:'Halcyon Robotics', contact:'Prospect', title:'—',
+    industry:'robotics', signalType:'funding', signalDetail:'raised a $40M Series B',
+    signalConfidence:0.77, fabricated:true, fit:0.68, employees:600, need:'Cost optimization',
+    note:'Guardrail test — the draft cites a customer + metric that do not exist in the evidence layer.',
+  },
+];
+
+function retrieveEvidence(scn){
+  // Score each chunk: an industry match is a stronger fit than a signal match.
+  // Falls back to platform positioning (PROD-OS) when nothing scores.
+  const scored = EVIDENCE_LAYER
+    .map(c => {
+      let score = 0;
+      if(c.tags.includes(scn.industry)) score += 2;
+      if(c.tags.includes(scn.signalType)) score += 1;
+      return {c, score};
+    })
+    .filter(x => x.score > 0)
+    .sort((a,b) => b.score - a.score);
+  return scored.length ? scored.map(x => x.c) : [EVIDENCE_LAYER[EVIDENCE_LAYER.length-1]];
+}
+
+function generateSdrDraft(scn, evidence){
+  if(scn.fabricated){
+    return {
+      email: `Hi there, congrats on the Series B — like our client Acme Corp, who saved $2M switching to us, you'll see the same results.`,
+      claims: [{id:'CS-ACME', claim:'Acme Corp saved $2M switching to us'}],
+    };
+  }
+  const lead = evidence[0];
+  const usesSignal = scn.signalConfidence >= 0.6;
+  const proof = lead.company ? `${lead.company} faced the same thing: ${lead.content}` : lead.content;
+  const opener = usesSignal
+    ? `Saw that ${scn.account} ${scn.signalDetail.toLowerCase()} —`
+    : `Noticed ${scn.account} is scaling its global team —`;
+  const claims = usesSignal
+    ? [{id:scn.signalType, claim:scn.signalDetail}, {id:lead.id, claim:lead.content}]
+    : [{id:lead.id, claim:lead.content}];
+  const email =
+`Subject: ${lead.company ? `How ${lead.company} solved this` : 'Payroll built for how you scale'}
+
+Hi ${scn.contact},
+
+${opener} teams growing that fast usually hit the same wall: payroll and compliance fragmenting across every new market.
+
+${proof} (ref: ${lead.id})
+
+Worth 15 minutes to see how that maps to ${scn.account}?
+
+— The GTM Team`;
+  return {email, claims};
+}
+
+function validateSdr(draftObj, scn, evidence){
+  const flags = [];
+  const validIds = new Set([scn.signalType, ...evidence.map(e=>e.id)]);
+  const unverified = draftObj.claims.filter(c => !validIds.has(c.id));
+  if(unverified.length) flags.push('unverified_claim');
+  const lowConfUsed = draftObj.claims.some(c => c.id === scn.signalType && scn.signalConfidence < 0.6);
+  if(lowConfUsed) flags.push('personalized_on_low_confidence_signal');
+  // Informational: agent correctly declined to personalize on a weak signal and used a generic-but-relevant angle
+  const usedFallback = scn.signalConfidence < 0.6 && !scn.fabricated && !lowConfUsed;
+  if(draftObj.claims.length === 0) flags.push('no_grounded_claims');
+  let confidence = (flags.length === 0 || (usedFallback && flags.length === 0)) ? 0.9 : Math.max(0.35, 0.9 - 0.2*flags.length);
+  const outFlags = flags.length ? flags : (usedFallback ? ['generic_fallback (weak signal not used)'] : ['none']);
+  return {flags: outFlags, confidence: Math.round(confidence*100)/100, benign: usedFallback};
+}
+
+function routeSdr(validation){
+  const realFlag = validation.flags[0] !== 'none' && !validation.benign;
+  if(realFlag) return {label:'HUMAN CO-DRAFTING — unverified claim, SDR must rewrite before send', cls:'human', needsHuman:true};
+  if(validation.benign) return {label:'FAST-TRACK — generic angle (weak signal correctly skipped), SDR reviews + send', cls:'fast', needsHuman:false};
+  if(validation.confidence >= 0.85) return {label:'FAST-TRACK — SDR reviews + one-click send', cls:'fast', needsHuman:false};
+  if(validation.confidence >= 0.6) return {label:'STANDARD REVIEW — SDR edits before send', cls:'standard', needsHuman:true};
+  return {label:'HUMAN CO-DRAFTING — low confidence, agent as assist only', cls:'human', needsHuman:true};
+}
+
+const MANUAL_TABS = ['LinkedIn','ZoomInfo','Crunchbase','Salesforce','Gong','company site','G2','news','Glassdoor','Twitter/X','careers page','SEC filings','Sales Nav','notes.txt'];
+
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+function splitEmail(raw){
+  const lines = raw.split('\n');
+  let subj = '', to = '', bodyStart = 0;
+  for(let i=0;i<lines.length;i++){
+    if(lines[i].startsWith('Subject:')){ subj = lines[i].replace('Subject:','').trim(); }
+    if(lines[i].startsWith('Hi ')){ to = lines[i].replace('Hi ','').replace(',','').trim(); bodyStart = i; break; }
+  }
+  const body = lines.slice(bodyStart).join('\n').trim();
+  return {subj, to, body};
+}
+
+function highlightCites(text){
+  return text.replace(/&lt;/g,'&lt;').replace(/\(ref: ([A-Z0-9-]+)\)/g, '<span class="cite">ref: $1</span>');
+}
+
+document.getElementById('run-sdr').addEventListener('click', async () => {
+  const btn = document.getElementById('run-sdr');
+  btn.disabled = true;
+
+  const idx = document.getElementById('sdr-scenario').value;
+  const scn = SDR_SCENARIOS[idx];
+  const evidence = retrieveEvidence(scn);
+  const draftObj = generateSdrDraft(scn, evidence);
+  const validation = validateSdr(draftObj, scn, evidence);
+  const routing = routeSdr(validation);
+  const groundedCount = draftObj.claims.filter(c => c.id.startsWith('CS-') || c.id === 'PROD-OS' || c.id === scn.signalType).length;
+  const realCites = draftObj.claims.filter(c => c.id.startsWith('CS-') && !c.id.includes('ACME')).length;
+
+  // reset UI
+  const swarm = document.getElementById('tab-swarm');
+  swarm.innerHTML = MANUAL_TABS.map(t => `<span class="mtab">${t}</span>`).join('');
+  document.getElementById('manual-draft').innerHTML = 'Waiting to start — the SDR opens 14 tabs, copies a generic template, and hopes it lands.';
+  document.getElementById('manual-time').textContent = '—';
+  document.getElementById('manual-pers').textContent = '—';
+  document.getElementById('manual-src').textContent = '—';
+  document.getElementById('agent-empty').style.display = 'none';
+  document.getElementById('mail-inner').style.display = 'none';
+  document.getElementById('agent-time').textContent = '—';
+  document.getElementById('agent-cost').textContent = '—';
+  document.getElementById('agent-src').textContent = '—';
+  document.getElementById('numbers-band').classList.remove('show');
+  document.getElementById('routing-sdr').classList.remove('show');
+
+  // ---- MANUAL SIDE: slow, tab by tab, minutes climbing ----
+  const mtabs = swarm.querySelectorAll('.mtab');
+  let manualMin = 0;
+  for(let i=0;i<mtabs.length;i++){
+    mtabs[i].classList.add('lit');
+    manualMin += Math.random()*1.1 + 0.6;
+    document.getElementById('manual-time').textContent = `${Math.round(manualMin)} min`;
+    await sleep(90);
+  }
+  document.getElementById('manual-draft').innerHTML =
+    `“Hi ${scn.contact || 'there'}, I wanted to reach out about how we can help with your global payroll. `+
+    `We work with lots of companies like yours. Do you have 15 minutes this week?”<br><br>`+
+    `<span style="color:var(--danger);">Generic. No signal used, no proof, no source. This is what gets ignored.</span>`;
+  document.getElementById('manual-pers').textContent = 'Generic';
+  document.getElementById('manual-src').textContent = '0';
+
+  await sleep(250);
+
+  // ---- AGENT SIDE: fast, grounded, cost ticking ----
+  const mail = document.getElementById('mail-inner');
+  mail.style.display = 'flex';
+  const parts = splitEmail(draftObj.email);
+  document.getElementById('mail-to').textContent = parts.to || scn.contact || 'Prospect';
+  document.getElementById('mail-subj').textContent = parts.subj || '(no subject)';
+  document.getElementById('mail-body').innerHTML = '';
+  document.getElementById('mail-verify').textContent = '';
+
+  // type body quickly
+  const bodyEl = document.getElementById('mail-body');
+  const full = highlightCites(parts.body.replace(/</g,'&lt;'));
+  bodyEl.innerHTML = full;
+
+  // agent meters tick fast
+  let t = 0, cost = 0;
+  const target_t = 2.4 + Math.random()*0.6;
+  const target_cost = 0.0042;
+  const steps = 22;
+  for(let s=0;s<=steps;s++){
+    t = (target_t * s/steps);
+    cost = (target_cost * s/steps);
+    document.getElementById('agent-time').textContent = t.toFixed(1)+'s';
+    document.getElementById('agent-cost').textContent = '$'+cost.toFixed(4);
+    await sleep(28);
+  }
+  document.getElementById('agent-src').textContent = String(groundedCount);
+  document.getElementById('mail-verify').textContent = validation.benign
+    ? '✓ generic angle — weak signal skipped'
+    : (validation.flags[0] === 'none' ? `✓ ${groundedCount} claims verified` : '✕ unverified claim blocked');
+
+  // ---- ROUTING STRIP ----
+  const rs = document.getElementById('routing-sdr');
+  rs.className = `routing-strip ${routing.cls} show`;
+  rs.innerHTML = `<span>${routing.label}</span>`+
+    `<span class="rlog">${JSON.stringify({confidence:validation.confidence, flags:validation.flags, evidence:evidence.map(e=>e.id)})}</span>`;
+
+  // ---- NUMBERS BAND ----
+  const speedX = Math.max(1, Math.round(manualMin*60 / target_t));
+  document.getElementById('nb-speed').textContent = speedX+'×';
+  document.getElementById('nb-manual').textContent = '~95%';
+  document.getElementById('nb-cost').textContent = '$'+target_cost.toFixed(4);
+  document.getElementById('nb-grounded').textContent = (scn.fabricated ? '0%' : '100%');
+  document.getElementById('numbers-band').classList.add('show');
+
+  logRun({
+    agent: 'sdr_outreach',
+    model: 'Sonnet 5 + Flash',
+    confidence: validation.confidence,
+    flags: validation.flags,
+    routing: routing.label,
+    latency: target_t.toFixed(1)+'s',
+    cost: target_cost,
+  });
+
+  btn.disabled = false;
+});
+
+/* ============ SDR MORNING QUEUE ============
+   Every account the Score Agent prioritized overnight, already drafted and
+   pre-validated. The SDR's job shifts from writing 3 emails in 3 hours to
+   reviewing 9 drafts in ~20 minutes. Clicking a row loads it below.       */
+
+// Precompute the queue once: same retrieve → generate → validate → route
+// pipeline, run headlessly for every account.
+const QUEUE = SDR_SCENARIOS.map((scn, idx) => {
+  const evidence = retrieveEvidence(scn);
+  const draftObj = generateSdrDraft(scn, evidence);
+  const validation = validateSdr(draftObj, scn, evidence);
+  const routing = routeSdr(validation);
+  const lead = evidence[0];
+  let status, cls;
+  if(routing.cls === 'human'){ status = validation.flags.includes('unverified_claim') ? 'BLOCKED' : 'CO-DRAFT'; cls = 'bad'; }
+  else if(routing.cls === 'standard'){ status = 'REVIEW'; cls = 'warn'; }
+  else { status = 'FAST-TRACK'; cls = 'ok'; }
+  return {idx, scn, evidence, validation, routing, lead, status, cls};
+}).sort((a,b) => b.scn.fit - a.scn.fit);
+
+function renderQueue(){
+  const body = document.getElementById('queue-body');
+  body.innerHTML = QUEUE.map(q => {
+    const s = q.scn;
+    const confCls = s.signalConfidence >= 0.75 ? 'c-ok' : s.signalConfidence >= 0.6 ? 'c-warn' : 'c-bad';
+    const evLabel = q.lead.company ? q.lead.id : 'PROD-OS';
+    return `<tr data-idx="${q.idx}">
+      <td>
+        <div class="q-acct">${s.account}</div>
+        <div class="q-meta">${s.contact} · ${s.employees.toLocaleString()} emp</div>
+      </td>
+      <td><div class="q-signal">${s.signalDetail}</div>
+          <div class="q-meta">signal conf <span class="${confCls}">${s.signalConfidence.toFixed(2)}</span></div></td>
+      <td><span class="q-need">${s.need}</span></td>
+      <td><span class="q-ev">${evLabel}</span></td>
+      <td class="q-score">${s.fit.toFixed(2)}</td>
+      <td><span class="q-status ${q.cls}">${q.status}</span></td>
+      <td><span class="q-open">open →</span></td>
+    </tr>`;
+  }).join('');
+
+  body.querySelectorAll('tr').forEach(tr => {
+    tr.addEventListener('click', () => {
+      const idx = tr.dataset.idx;
+      body.querySelectorAll('tr').forEach(r => r.classList.remove('selected'));
+      tr.classList.add('selected');
+      document.getElementById('sdr-scenario').value = idx;
+      document.querySelector('#panel-sdr .ba-controls').scrollIntoView({behavior:'smooth', block:'start'});
+      setTimeout(() => document.getElementById('run-sdr').click(), 380);
+    });
+  });
+
+  // summary pills
+  const ok = QUEUE.filter(q => q.cls === 'ok').length;
+  const warn = QUEUE.filter(q => q.cls === 'warn').length;
+  const bad = QUEUE.filter(q => q.cls === 'bad').length;
+  document.getElementById('queue-summary').innerHTML =
+    `<span class="qpill">${QUEUE.length} drafts ready</span>`+
+    `<span class="qpill ok">${ok} fast-track</span>`+
+    (warn ? `<span class="qpill warn">${warn} review</span>` : '')+
+    `<span class="qpill bad">${bad} held for human</span>`;
+
+  // foot: the leverage claim
+  const manualHrs = (QUEUE.length * 15 / 60).toFixed(1);
+  document.getElementById('queue-foot').innerHTML =
+    `<span>Writing these by hand: <span class="vs">~${manualHrs} hrs</span></span>`+
+    `<span>Reviewing agent drafts: <span class="now">~20 min</span></span>`+
+    `<span style="margin-left:auto;">Every draft cites a real case study · <b>${bad}</b> blocked before reaching the SDR</span>`;
+}
+
+function populateSdrDropdown(){
+  const sel = document.getElementById('sdr-scenario');
+  sel.innerHTML = QUEUE.map(q => {
+    const warnMark = q.scn.fabricated ? '⚠ ' : '';
+    const ev = q.lead.company ? ` (→ ${q.lead.company})` : '';
+    return `<option value="${q.idx}">${warnMark}${q.scn.account} — ${q.scn.need}${ev}</option>`;
+  }).join('');
+}
+
+populateSdrDropdown();
+renderQueue();
+
+/* ============ PART 1: OUTBOUND GTM MAPPING (static reference, no run step — this maps the motion, it doesn't execute it) ============ */
+const STAGE_DATA = [
+  {
+    key:'signal', stage:'Stage 1 — Signal Detection', agent:'Signal Agent', model:'DeepSeek V4 Flash', modelClass:'flash',
+    lede:'Monitors intent signals across Sumble, Gong, ZoomInfo, and LinkedIn/Crunchbase, then classifies them into hiring, tech-stack, leadership, and conversation signals. Removes the manual account research that eats 30–40% of SDR time.',
+    data:['Sumble API — intent data stream','ZoomInfo API — firmographic changes','Gong API — conversation themes, recurring pain points','LinkedIn via Apify — leadership changes, posts','Crunchbase API — funding events','Salesforce — existing accounts, to filter noise'],
+    design:{trigger:'Polling every 4h + real-time webhook (Sumble/Gong)', llm:'DeepSeek V4 Flash — classification, not generation', input:'Raw signal payload per source', output:'{account_id, signal_type, confidence, source, timestamp, raw_evidence}', routing:'High-confidence → Score Agent · Low-confidence → quarantine for human review'},
+    failures:[
+      ['Sumble API unavailable','HTTP timeout / 5xx','Continues on ZoomInfo + Gong + LinkedIn; confidence score reduced 20%'],
+      ['ZoomInfo data stale (>30d)','Timestamp check','Flags "stale firmographics"; deferred to Enrichment Agent, does not block'],
+      ['LinkedIn scraping rate-limited','Apify error','Skips LinkedIn this cycle; logs missed source, does not fail the run'],
+      ['Signal noise (false positive)','Confidence < 0.6','Routed to quarantine; weekly Marketing Ops review'],
+      ['LLM classification error','Schema validation failure','Retries simplified prompt; second failure → review queue'],
+    ],
+    degrade:'When signal sources are >50% unavailable, the agent stops producing recommendations and alerts Marketing Ops. Low-confidence signals reaching SDRs erodes trust faster than no signal at all — the default is to go silent, not go noisy.',
+  },
+  {
+    key:'source', stage:'Stage 2 — Account Sourcing', agent:'Source Agent', model:'DeepSeek V4 Flash', modelClass:'flash',
+    lede:'Takes validated signals and sources net-new accounts matching ICP criteria (size, industry, geography, growth signals), filtering out anything already in Salesforce.',
+    data:['ZoomInfo API — account search','Salesforce — closed-won/lost + existing accounts for exclusion','ICP definition doc (versioned in the context layer)','Signal Agent output (upstream)'],
+    design:{trigger:'New high-confidence signal from Signal Agent', llm:'DeepSeek V4 Flash — ICP matching, classification not generation', input:'Signal object + ICP criteria', output:'{zoominfo_id, company_name, domain, employee_count, industry, geography, icp_fit_score, matching_signals}', routing:'icp_fit_score > 0.7 → Enrichment Agent · 0.4–0.7 → review queue · <0.4 → discard'},
+    failures:[
+      ['ZoomInfo rate limit','429 response','Backoff mode; queues sourcing; resumes on reset, does not drop accounts'],
+      ['ICP definition outdated','Context-layer version check','Flags Marketing Ops; continues on last-known-good ICP'],
+      ['Duplicate account in Salesforce','Domain match','Skips account; logs duplicate, no conflict created'],
+      ['ZoomInfo incomplete data','Missing fields','Flags "incomplete firmographics"; Enrichment Agent fills gaps'],
+    ],
+    degrade:'When the ICP definition is ambiguous ("enterprise" with no employee range), the agent over- or under-sources. The fix isn\'t algorithmic — it\'s governance: the ICP must be a versioned document with explicit ownership in the context layer.',
+  },
+  {
+    key:'enrich', stage:'Stage 3 — Contact Enrichment', agent:'Enrichment Agent', model:'Claude Sonnet 5', modelClass:'sonnet',
+    lede:'Enriches sourced accounts with role-level contact data and classifies each contact into a buying-committee role — Economic Buyer, Technical Buyer, Champion, Influencer, Detractor. Cuts 15–20 minutes of manual contact research per account to seconds.',
+    data:['ZoomInfo Contact API — email, phone, title','Apify LinkedIn Scraper — posts, activity, job changes','Amplemarket — email verification','Salesforce — existing contacts, avoid duplicates','Context layer — buying-committee role definitions, ICP personas'],
+    design:{trigger:'New account from Source Agent with icp_fit_score > 0.7', llm:'Claude Sonnet 5 — role classification needs reasoning, not just classification', input:'Account object + ZoomInfo contacts + LinkedIn data', output:'[{name, title, email, phone, linkedin_url, buying_committee_role, recent_activity_summary, confidence_score}]', routing:'All enriched contacts → Score Agent · low-confidence role assignments → human review'},
+    failures:[
+      ['LinkedIn scraping blocked','Apify error / CAPTCHA','Falls back to ZoomInfo + Amplemarket; flags "limited enrichment"'],
+      ['Email verification fails','Amplemarket returns invalid','Marks invalid; SDR sees flag, no auto-send to outreach'],
+      ['Buying-committee role ambiguous','Confidence < 0.6','Assigns "Unknown"; flags for manual review, does not guess'],
+      ['Contact data stale (>90d)','Last_updated check','Attempts LinkedIn re-enrichment; else flags "verify before outreach"'],
+      ['Contact appears to have left','LinkedIn role ≠ ZoomInfo title','Trusts LinkedIn (more current); flags "possibly departed"; excluded from outreach'],
+    ],
+    degrade:'When sources conflict (ZoomInfo says VP, LinkedIn says Director), the agent must not silently pick one — it surfaces both. Wrong titles in outreach are the #1 credibility killer. Rule: when in doubt, surface the doubt.',
+  },
+  {
+    key:'score', stage:'Stage 4 — Scoring & Prioritization', agent:'Score Agent', model:'Deterministic — no LLM', modelClass:'none',
+    lede:'Combines signal strength, ICP fit, contact quality, and buying-committee coverage into a composite, explainable score. Replaces manual prioritization (and SDR cherry-picking) with a transparent weighted model.',
+    data:['Signal Agent output — signal strength','Source Agent output — ICP fit','Enrichment Agent output — contact quality, committee coverage','Salesforce — SDR territory, capacity, ownership rules','Gong — historical conversion by account profile'],
+    design:{trigger:'Daily batch, 6:00 AM local — before the SDR day starts', llm:'None — deterministic weighted formula, not an LLM task', input:'All account objects with signals, ICP fit, contacts', output:'[{account_id, composite_score, signal_summary, top_contacts, recommended_outreach_angle}]', routing:'Top N per SDR → Salesforce priority list, visible in SDR dashboard'},
+    failures:[
+      ['SDR capacity data stale','Salesforce status check','Defaults to territory-based assignment; alerts Marketing Ops'],
+      ['All signals low-confidence','Avg confidence < 0.5','Does not rank; flags "low signal quality" batch, SDRs work prior queue'],
+      ['Historical conversion data missing','No Gong data for profile','Excludes that factor; renormalizes weights, logs degradation'],
+      ['Scoring ties','Identical composite scores','Uses recency of last signal as tiebreaker, never random'],
+    ],
+    degrade:'A score SDRs don\'t understand gets ignored. The fix is explainability: every score ships with a signal_summary — "Ranked #1 because: 3 intent signals in 7 days, ICP fit 0.92, complete buying committee mapped." composite_score = icp_fit·0.30 + signal_strength·0.25 + contact_quality·0.20 + committee_coverage·0.15 + conversion_fit·0.10',
+  },
+  {
+    key:'outreach', stage:'Stage 5 — Outreach Execution', agent:'Outreach Agent', model:'Claude Sonnet 5', modelClass:'sonnet',
+    lede:'The highest-leverage agent in the stack. Drafts personalized email + LinkedIn outreach grounded in signal, account, and context-layer data — cutting 10–15 minutes of manual personalization per email to seconds, with the SDR editing and approving every send.',
+    data:['Score Agent output — priority, recommended angle','Enrichment Agent output — contact data, committee role, activity','Context layer — positioning, value props, case studies, battle cards, brand voice','Salesforce — email tracking, sequence state','Gong — historical response rates by message type'],
+    design:{trigger:'SDR requests draft on-demand, or batch generation for top accounts', llm:'Claude Sonnet 5 — generation + reasoning, with prompt caching on system prompt + product context', input:'Account + Contact + context-layer query results', output:'{email_subject, email_body, linkedin_connection_note, linkedin_message, personalization_evidence, confidence_score}', routing:'>0.8 → SDR review queue · 0.5–0.8 → "review carefully" flag · <0.5 → human co-drafting'},
+    failures:[
+      ['Context layer returns stale product info','Version check','Flags "stale context — verify product claims"; does not auto-send'],
+      ['LLM hallucinates a fact','personalization_evidence empty/unavailable','Auto-rejects, regenerates stricter prompt; 2nd failure → human co-drafting'],
+      ['Email too long / off-brand','Brand voice validation','Auto-truncates + re-checks; still failing → human review'],
+      ['Contact data incomplete','Missing email or LinkedIn','Generates only the complete channel; flags the missing one'],
+      ['SDR overwrites agent output','Salesforce audit log','Logs the edit; weekly review feeds prompt iteration'],
+      ['Cache miss (TTL expired)','Cache hit/miss header','Writes new cache; cost spike is minimal ($0.0075/write)'],
+    ],
+    degrade:'Confident-sounding but wrong personalization destroys SDR credibility — this is exactly the 10% failure mode in Part 4. The fix is grounding enforcement: every personalization claim cites a source. No source, no claim. Rule: better generic than wrong.',
+  },
+  {
+    key:'coach', stage:'Stage 6 — SDR Efficiency', agent:'Coach Agent', model:'Claude Sonnet 5', modelClass:'sonnet',
+    lede:'Analyzes Gong calls, email response rates, and sequence outcomes to surface per-SDR coaching — which angles drive replies, which value props land with which buying-committee roles — and feeds it back into the Outreach Agent as a prompt-iteration loop.',
+    data:['Gong API — recordings, transcripts, email responses','Salesforce — sequence outcomes, meetings booked, pipeline','Outreach Agent logs — which drafts sent vs. edited'],
+    design:{trigger:'Weekly batch, Monday morning — SDR coaching session', llm:'Claude Sonnet 5 — conversation analysis + pattern recognition', input:'Prior-week Gong transcripts + email response data + sequence outcomes', output:'{top_performing_angles, underperforming_angles, objection_patterns, recommended_prompt_updates}', routing:'SDR manager + Marketing Ops (for prompt updates)'},
+    failures:[
+      ['Gong transcript unavailable','API error / empty response','Skips call analysis, relies on email data; flags incomplete analysis'],
+      ['Insufficient data (<10 calls/emails per SDR)','Count check','Does not generate coaching for that SDR; reports "insufficient data"'],
+      ['Pattern overfits to small sample','Statistical significance check','Flags "preliminary"; no prompt recommendations until N > 30'],
+      ['Recommended update conflicts with brand voice','Brand voice validation','Does not recommend; flags conflict for Marketing Ops review'],
+    ],
+    degrade:'Recommending prompt changes off one SDR\'s outlier week can lead the whole team astray. The fix is statistical discipline: no recommendations without sufficient sample size, and no changes without Marketing Ops sign-off.',
+  },
+];
+
+function renderStageTrack(){
+  const track = document.getElementById('stage-track');
+  track.innerHTML = STAGE_DATA.map((s,i) => `
+    <div class="stage-node" data-key="${s.key}" id="stagenode-${s.key}">
+      <div class="stage-num">0${i+1}</div>
+      <div class="stage-title">${s.agent}</div>
+      <div class="model-badge ${s.modelClass}">${s.model}</div>
+    </div>`).join('');
+  track.querySelectorAll('.stage-node').forEach(node => {
+    node.addEventListener('click', () => selectStage(node.dataset.key));
+  });
+}
+
+function selectStage(key){
+  document.querySelectorAll('.stage-node').forEach(n => n.classList.toggle('selected', n.dataset.key === key));
+  const s = STAGE_DATA.find(x => x.key === key);
+  const idx = STAGE_DATA.indexOf(s) + 1;
+  const detail = document.getElementById('mapping-detail');
+  const nextStageCard = key === 'coach' ? `
+    <div class="next-stage-card">
+      <span class="nlabel">Roadmap — Stage 7</span>
+      <h4>Pre-Call Intelligence Agent</h4>
+      <p>The Coach Agent closes the loop on outreach; the next agent in the 12-month vision closes it on calls — generating pre-call briefings (account history, contact roles, recent signals, talking points, objection handlers) from the context layer, Salesforce, and Gong, with prompt caching on product context. Full spec in <span style="color:var(--ai); cursor:pointer; text-decoration:underline; text-underline-offset:3px;" onclick="document.querySelector('[data-tab=vision]').click()">Part 5 → Domain 2</span>.</p>
+    </div>` : '';
+  detail.innerHTML = `
+    <div class="agent-head">
+      <span class="bignum">0${idx}</span>
+      <h2>${s.agent}</h2>
+      <span class="stage-tag">${s.stage}</span>
+      <span class="model-badge ${s.modelClass}">${s.model}</span>
+    </div>
+    <p class="lede">${s.lede}</p>
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h4>Data &amp; integrations</h4>
+        <ul>${s.data.map(d => `<li>${d}</li>`).join('')}</ul>
+      </div>
+      <div class="detail-card">
+        <h4>Agent design</h4>
+        <div class="design-line">
+          <b>Trigger:</b> ${s.design.trigger}<br>
+          <b>LLM:</b> ${s.design.llm}<br>
+          <b>Input:</b> ${s.design.input}<br>
+          <b>Output:</b> ${s.design.output}<br>
+          <b>Routing:</b> ${s.design.routing}
+        </div>
+      </div>
+    </div>
+    <div class="detail-card">
+      <h4>Failure modes &amp; degradation behavior</h4>
+      <table class="fail-table">
+        <tr><th>Failure mode</th><th>Detection</th><th>System behavior</th></tr>
+        ${s.failures.map(f => `<tr><td>${f[0]}</td><td>${f[1]}</td><td>${f[2]}</td></tr>`).join('')}
+      </table>
+    </div>
+    <div class="degrade-box">
+      <span class="label">When AI degrades the outcome</span>
+      ${s.degrade}
+    </div>
+    ${nextStageCard}
+  `;
+}
+
+renderStageTrack();
+selectStage('signal');
+
+/* ============ Context Layer (Part 2) sub-nav ============ */
+/* ============ Sub-nav switching (Part 2 / Part 4 / Part 5 — generic) ============ */
+document.querySelectorAll('.subnav').forEach(nav => {
+  const panel = nav.closest('.panel');
+  nav.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      nav.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      panel.querySelectorAll(':scope > .subsection').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      panel.querySelector(`#sub-${btn.dataset.sub}`).classList.add('active');
+    });
+  });
+});
+
+/* ============ GUIDED TOUR ============
+   Eight stops. Non-blocking: nothing dims, nothing traps. Two stops auto-run
+   the agents so the guardrail and cost meters fire on their own. "Play all"
+   walks the stops on a timer, turning the sidebar into a self-playing demo. */
+
+const FAB_IDX = SDR_SCENARIOS.findIndex(s => s.fabricated);
+
+function selectTab(name){
+  const t = document.querySelector(`[data-tab="${name}"]`);
+  if(t) t.click();
+}
+function selectSub(panelId, sub){
+  const b = document.querySelector(`#${panelId} .subnav [data-sub="${sub}"]`);
+  if(b) b.click();
+}
+function focusEl(sel){
+  const el = document.querySelector(sel);
+  if(!el) return;
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+  el.classList.remove('tour-focus');
+  void el.offsetWidth;
+  el.classList.add('tour-focus');
+  setTimeout(() => el.classList.remove('tour-focus'), 2400);
+}
+
+const TOUR_STOPS = [
+  {
+    title:'One system, not a slide deck', where:'Intro',
+    desc:'Six agents on one shared context layer. Two of them run live, right here in the browser.',
+    go: async () => { selectTab('intro'); await sleep(260); focusEl('.hero'); },
+    dwell: 4200,
+  },
+  {
+    title:'Every stage fails safely', where:'Part 1 · Coach Agent',
+    desc:'Each of the six agents has explicit failure modes and degradation behavior — including when to go silent instead of guessing.',
+    go: async () => {
+      selectTab('mapping'); await sleep(280);
+      const n = document.getElementById('stagenode-coach'); if(n) n.click();
+      await sleep(280); focusEl('.next-stage-card');
+    },
+    dwell: 5200,
+  },
+  {
+    title:'One retrieval API feeds every agent', where:'Part 2 · Context Layer',
+    desc:'Product, Market, and Company context — each owned, versioned, reviewed. This is why marketing and SDR cite the same evidence.',
+    go: async () => {
+      selectTab('context'); await sleep(240);
+      selectSub('panel-context','architecture'); await sleep(260);
+      focusEl('#sub-architecture .domain-row');
+    },
+    dwell: 5200,
+  },
+  {
+    title:"The parts that only surface once you build it", where:"Part 3 · What Didn't Work",
+    desc:'JSON parsing, citation completeness, brand-voice checks, cache TTL. Four real build issues, each with a fix.',
+    go: async () => {
+      selectTab('content'); await sleep(240);
+      selectSub('panel-content','issues'); await sleep(260);
+      focusEl('#sub-issues .issue-grid');
+    },
+    dwell: 5600,
+  },
+  {
+    title:'Grounded generation vs. writing from memory', where:'Part 3 · Run It',
+    desc:'Left: a marketer writes confident copy that fails a fact-check. Right: every claim carries a source. Watch it run.',
+    auto:true,
+    go: async () => {
+      selectTab('content'); await sleep(240);
+      selectSub('panel-content','runit'); await sleep(280);
+      focusEl('.ba-split');
+      const sel = document.getElementById('content-scenario');
+      if(sel) sel.value = '0';
+      await sleep(500);
+      const rb = document.getElementById('run-content');
+      if(rb && !rb.disabled) rb.click();
+    },
+    dwell: 7000,
+  },
+  {
+    title:'Leverage at volume', where:'Bonus · The morning queue',
+    desc:'Nine accounts scored and drafted overnight, each citing a real case study. The SDR reviews in ~20 min instead of writing for ~2.3 hrs.',
+    go: async () => { selectTab('sdr'); await sleep(300); focusEl('.queue'); },
+    dwell: 6000,
+  },
+  {
+    title:'The guardrail catches a fabricated claim', where:'Bonus · Halcyon Robotics',
+    desc:"The agent drafts an email citing a customer and a metric that do not exist. Validation blocks it before it reaches the SDR's send queue.",
+    auto:true,
+    go: async () => {
+      selectTab('sdr'); await sleep(280);
+      const row = document.querySelector(`#queue-body tr[data-idx="${FAB_IDX}"]`);
+      if(row){ row.scrollIntoView({behavior:'smooth', block:'center'}); await sleep(440); row.click(); }
+      await sleep(950); focusEl('.ba-agent');
+    },
+    dwell: 7600,
+  },
+  {
+    title:'Agents on the data layer, humans on the relationship layer', where:'Part 5 · Closing thesis',
+    desc:'Not two workstreams — one infrastructure. And cost is an architectural decision, not a compromise.',
+    go: async () => {
+      selectTab('vision'); await sleep(240);
+      selectSub('panel-vision','closing'); await sleep(280);
+      focusEl('.conclusion');
+    },
+    dwell: 6000,
+  },
+];
+
+let tourIdx = -1;
+const tourDone = new Set();
+let tourPlaying = false;
+let tourAbort = false;
+
+function renderTour(){
+  document.getElementById('tour-list').innerHTML = TOUR_STOPS.map((s,i) => `
+    <div class="tour-stop ${i===tourIdx?'active':''} ${tourDone.has(i)?'done':''}" data-i="${i}">
+      <div class="ts-num">${tourDone.has(i) && i!==tourIdx ? '✓' : i+1}</div>
+      <div>
+        <div class="ts-title">${s.title}</div>
+        <div class="ts-where">${s.where}</div>
+        <div class="ts-desc">${s.desc}</div>
+        ${s.auto ? '<span class="ts-auto">runs automatically</span>' : ''}
+      </div>
+    </div>`).join('');
+
+  document.getElementById('tour-list').querySelectorAll('.tour-stop').forEach(el => {
+    el.addEventListener('click', () => { stopPlay(); goStop(+el.dataset.i); });
+  });
+
+  document.getElementById('tour-count').textContent = `${tourDone.size} / ${TOUR_STOPS.length}`;
+  document.getElementById('tour-bar').style.width = (tourDone.size / TOUR_STOPS.length * 100) + '%';
+}
+
+async function goStop(i){
+  if(i < 0 || i >= TOUR_STOPS.length) return;
+  tourIdx = i;
+  tourDone.add(i);
+  renderTour();
+  const active = document.querySelector('.tour-stop.active');
+  if(active) active.scrollIntoView({block:'nearest'});
+  await TOUR_STOPS[i].go();
+}
+
+function setPlayLabel(){
+  document.getElementById('tour-play').textContent = tourPlaying ? '⏸ Pause' : '▶ Play all';
+}
+function stopPlay(){ tourAbort = true; tourPlaying = false; setPlayLabel(); }
+
+async function playAll(){
+  tourPlaying = true; tourAbort = false; setPlayLabel();
+  const start = (tourIdx >= TOUR_STOPS.length - 1 || tourIdx < 0) ? 0 : tourIdx + 1;
+  for(let i = start; i < TOUR_STOPS.length; i++){
+    if(tourAbort || !tourPlaying) break;
+    await goStop(i);
+    const dwell = TOUR_STOPS[i].dwell || 4500;
+    const t0 = Date.now();
+    while(Date.now() - t0 < dwell){
+      if(tourAbort || !tourPlaying) break;
+      await sleep(100);
+    }
+  }
+  tourPlaying = false; setPlayLabel();
+}
+
+function openTour(){
+  document.getElementById('tour').classList.add('open');
+  document.body.classList.add('tour-open');
+  document.getElementById('btn-tour').classList.add('on');
+  if(tourIdx === -1) goStop(0);
+}
+function closeTour(){
+  stopPlay();
+  document.getElementById('tour').classList.remove('open');
+  document.body.classList.remove('tour-open');
+  document.getElementById('btn-tour').classList.remove('on');
+}
+
+document.getElementById('btn-tour').addEventListener('click', () => {
+  document.getElementById('tour').classList.contains('open') ? closeTour() : openTour();
+});
+document.getElementById('tour-close').addEventListener('click', closeTour);
+document.getElementById('tour-play').addEventListener('click', () => {
+  if(tourPlaying) stopPlay(); else playAll();
+});
+document.getElementById('tour-next').addEventListener('click', () => { stopPlay(); goStop(Math.min(tourIdx+1, TOUR_STOPS.length-1)); });
+document.getElementById('tour-prev').addEventListener('click', () => { stopPlay(); goStop(Math.max(tourIdx-1, 0)); });
+document.getElementById('tour-reset').addEventListener('click', () => { stopPlay(); tourIdx = -1; tourDone.clear(); renderTour(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeTour(); });
+
+renderTour();
+
+</script>
+</body>
+</html>
