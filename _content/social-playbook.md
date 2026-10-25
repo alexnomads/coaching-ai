@@ -137,7 +137,35 @@ deep green #163300; Fraunces display with one italic lime/green phrase, Instrume
 no other companies' logos, no people). Slide 1 hook, last slide CTA ("Link in bio" / "Comment SETUP"). Caption: same story,
 shorter, ends with a question; 8–12 hashtags.
 
-**Weekly blog, "From the Coaching Room" (Tuesdays):** 1,200–1,800 words. One angle from section 5, built on one story from section 4,
+**Weekly blog, "From the Coaching Room" (Tuesdays):** 1,400–2,000 words. One angle from section 5, built on one story from section 4,
 optionally opened with an AI/tech news item from the previous 24 hours as the hook. Practical: a framework, steps, a template or a
 copy-paste prompt the reader can use today. Mid-article and end booking CTAs. FAQ. Built with `_tools/build_blog_post.py`
-(tag "From the Coaching Room"); images with `_tools/render_blog_images.py`.
+(tag "From the Coaching Room").
+
+Images for the weekly post must be **shareable and mobile-first**, built with `_tools/render_shareable_images.py`
+(reference: the 25 Oct 2026 post `blog/ai-agents-next-customers-small-business.html`):
+- Every key graphic in two versions: horizontal 1600×900 (`name-h.webp`) and vertical 4:5 1080×1350 (`name-v.webp`).
+- In the article use `<picture>` with `<source media="(max-width: 640px)" srcset="...-v.webp">` and the `-h` image as `<img>`,
+  so phones get the vertical version. Vertical-only graphics get `class="tall"` on the img.
+- Each graphic must stand alone when screenshotted or shared: a label, a headline with one italic accent phrase, the framework/stat,
+  the AI Coach Alex · aicoachalex.com brand line, and a credit line when the idea comes from someone else.
+- Make 4–6 graphics: hero, the core framework, a stat/proof card, a checklist/steps card, plus vertical-only extras
+  (e.g. a comparison or "who does what" card) and a CTA slide ("Link in bio →").
+- The vertical set, in order (hero → proof → framework → checklist → CTA), doubles as the Instagram carousel for the week.
+- og.png at 1200×675. Check every image for overflow and empty dead space before publishing.
+
+## 8. Strategy sources for the weekly post
+
+Use these to find the week's big idea, then reframe it for AI Coach Alex's audience (business owners, professionals,
+freelancers/consultants). Never summarise a source as the post; take one idea, credit it with a link, and build Alessandro's
+own angle, client story and practical steps around it.
+- **Greg Isenberg, The Startup Ideas Podcast** (primary). Strategy for AI consultants, agencies and AI-era businesses.
+  Episode list: https://podcasts.apple.com/us/podcast/the-startup-ideas-podcast/id1593424985 (also on Spotify and on
+  YouTube under the "Greg Isenberg" channel; search "Startup Ideas Podcast" + the episode title to find each version).
+  Check the episodes published in the last 7 days (YouTube channel, Spotify, or Apple Podcasts listing). Prefer solo/framework
+  episodes and anything about AI agents, AI services, selling AI to businesses, distribution.
+  Example done well: 25 Oct 2026 "Your next customer won't look at your website. It will read it." (from "The 9 Stages of AI
+  Agent Adoption"): his framework (ladder of trust) + his examples, then Alessandro's events-company and Sydney-electrician
+  stories, a third-party proof point, 5 moves for small businesses, 2 prompts, and a service idea for consultants.
+- If YouTube or Spotify blocks a transcript, use the episode description, chapters, show-notes pages and write-ups that quote it.
+  Only state what a source you read actually says; mark your own recommendations as yours.

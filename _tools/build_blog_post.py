@@ -28,6 +28,9 @@ EXTRA_CSS = """
 .post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
 .post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
 .hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
 </style>"""
 
 
