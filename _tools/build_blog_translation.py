@@ -12,8 +12,13 @@ metadata, nav and footer (taken from an existing ES/IT post), then:
 Usage:
   python3 _tools/build_blog_translation.py meta.<lang>.json article.<lang>.html
 
-meta keys: slug (the English slug), lang (es|it), title, og_title, description, date,
-tag, read_min, excerpt, keywords, image, faq [[q,a],...]
+meta keys: slug (the English slug), lang (es|it), local_slug (the translated slug in the
+target language, e.g. "terminos-meta-ia-errores"; required for new posts), title, og_title,
+description, date, tag, read_min, excerpt, keywords, image, faq [[q,a],...]
+
+Output is blog/<local_slug>.<lang>.html. The EN slug -> localised slug map is kept in
+_tools/blog_slugs.json so every version can find the others. Posts translated before
+localised slugs existed have no entry and keep blog/<slug>.<lang>.html.
 """
 import json, re, sys, html, pathlib, datetime
 
@@ -28,32 +33,49 @@ L10N = {
            "months": "gen feb mar apr mag giu lug ago set ott nov dic"},
 }
 BASE = "https://aicoachalex.com/blog/"
+SLUG_MAP = ROOT / "_tools/blog_slugs.json"
+
+
+def slug_map():
+    return json.loads(SLUG_MAP.read_text()) if SLUG_MAP.exists() else {}
+
+
+def local_slug(slug, lang):
+    return slug_map().get(slug, {}).get(lang, slug)
+
+
+def page_path(slug, lang):
+    return f"/blog/{slug}.html" if lang == "en" else f"/blog/{local_slug(slug, lang)}.{lang}.html"
 
 
 def page_url(slug, lang):
-    return f"{BASE}{slug}.html" if lang == "en" else f"{BASE}{slug}.{lang}.html"
+    return "https://aicoachalex.com" + page_path(slug, lang)
 
 
 def link_versions(slug):
     """Give every existing language version of <slug> the full hreflang set and a working switcher."""
-    langs = ["en"] + [l for l in ("es", "it") if (ROOT / f"blog/{slug}.{l}.html").exists()]
+    langs = ["en"] + [l for l in ("es", "it") if (ROOT / page_path(slug, l).lstrip("/")).exists()]
     alts = "".join(f'<link rel="alternate" hreflang="{l}" href="{page_url(slug, l)}">\n' for l in langs)
     alts += f'<link rel="alternate" hreflang="x-default" href="{page_url(slug, "en")}">\n'
     for l in langs:
-        p = ROOT / (f"blog/{slug}.html" if l == "en" else f"blog/{slug}.{l}.html")
+        p = ROOT / page_path(slug, l).lstrip("/")
         s = p.read_text()
         s = re.sub(r'(<link rel="alternate" hreflang="[^"]+" href="[^"]*">\n)+', alts, s, count=1)
         # language switcher: point each code at that version of this post
         for code in langs:
-            target = f"/blog/{slug}.html" if code == "en" else f"/blog/{slug}.{code}.html"
-            s = re.sub(rf'<a href="[^"]*"((?: class="on")?) onclick="try{{localStorage.setItem\(\'preferred-lang\',\'{code}\'\)',
-                       rf'<a href="{target}"\1 onclick="try{{localStorage.setItem(\'preferred-lang\',\'{code}\')', s)
+            target = page_path(slug, code)
+            s = re.sub(r'<a href="[^"]*"((?: class="on")?) onclick="try\{localStorage\.setItem\(\\?\'preferred-lang\\?\',\\?\'' + code + r'\\?\'\)',
+                       lambda mm: f'<a href="{target}"' + mm.group(0)[mm.group(0).index('"', 9) + 1:], s)
         p.write_text(s)
 
 
 def main(meta_path, article_path):
     m = json.loads(pathlib.Path(meta_path).read_text())
     slug, lang = m["slug"], m["lang"]
+    if m.get("local_slug"):
+        sm_ = slug_map()
+        sm_.setdefault(slug, {})[lang] = m["local_slug"]
+        SLUG_MAP.write_text(json.dumps(sm_, indent=1, ensure_ascii=False) + "\n")
     L = L10N[lang]
     esc = lambda s: html.escape(s, quote=True)
     en_url, url = page_url(slug, "en"), page_url(slug, lang)
@@ -102,14 +124,14 @@ def main(meta_path, article_path):
         return '<script type="application/ld+json">\n' + json.dumps(ld, indent=1, ensure_ascii=False) + "\n</script>"
     s = re.sub(r'<script type="application/ld\+json">\n(.*?)\n</script>', fix_ld, s, count=1, flags=re.S)
 
-    out = ROOT / f"blog/{slug}.{lang}.html"
+    out = ROOT / page_path(slug, lang).lstrip("/")
     out.write_text(s)
     link_versions(slug)
 
     # blog index card
     idx = ROOT / f"blog/index.{lang}.html"
     t = idx.read_text()
-    href = f"/blog/{slug}.{lang}.html"
+    href = page_path(slug, lang)
     if href not in t:
         d = datetime.date.fromisoformat(m["date"])
         mon = L["months"].split()[d.month - 1]
