@@ -9,3 +9,5 @@ One line per published piece. Newest at the bottom. Format:
 2026-10-26 | blog-daily | 3 Industry take | S2 (mention) | Meta Commercial Terms: AI liability from 30 Oct | Meta's new terms make you pay for its AI's mistakes
 2026-10-26 | linkedin | 8 Buyer mistakes | S4 | Meta Commercial Terms: AI liability from 30 Oct | We had about 5,000 contacts ready for an AI campaign. We paused.
 2026-10-26 | instagram | 8 Buyer mistakes | S4 | Meta Commercial Terms: AI liability from 30 Oct | 5,000 contacts. One AI campaign. We hit pause.
+2026-10-27 | blog-daily | 3 Industry take | — | GPT-6.1 Terra (computer use) + Anthropic S-1 agent incidents | OpenAI's new model can do your clicking. Give it a leash.
+2026-10-27 | linkedin | 39 Start-over advice | S12 | GPT-6.1 Terra (computer use) | If I had to learn AI from zero this year, I'd skip prompts.
