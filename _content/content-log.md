@@ -12,3 +12,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-10-27 | blog-daily | 3 Industry take | — | GPT-6.1 Terra (computer use) + Anthropic S-1 agent incidents | OpenAI's new model can do your clicking. Give it a leash.
 2026-10-27 | linkedin | 39 Start-over advice | S12 | GPT-6.1 Terra (computer use) | If I had to learn AI from zero this year, I'd skip prompts.
 2026-10-27 | blog-weekly | 22 Hidden costs + 8 Buyer mistakes | S11, S5 | Greg Isenberg ep. How to Sell AI to Main Street (Full Playbook) w/ James Dickerson, 26 Oct | Stop selling AI. Fix the leak.
+2026-10-28 | blog-daily | 3 Industry take | S2, S3, S4 (mentions) | Oracle + OpenAI: ChatGPT in NetSuite/Fusion, AI SMB Bundle | ChatGPT is moving into your back office. Is your business ready?
+2026-10-28 | linkedin | 23 Decision framework | S6 | Oracle + OpenAI AI SMB Bundle | Oracle just offered small businesses $12,000 a year to buy in.
+2026-10-28 | instagram | 23 Decision framework | S6 | Oracle + OpenAI AI SMB Bundle | Buy the AI tool, or build your own?
