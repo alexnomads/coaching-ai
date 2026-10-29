@@ -15,3 +15,5 @@ One line per published piece. Newest at the bottom. Format:
 2026-10-28 | blog-daily | 3 Industry take | S2, S3, S4 (mentions) | Oracle + OpenAI: ChatGPT in NetSuite/Fusion, AI SMB Bundle | ChatGPT is moving into your back office. Is your business ready?
 2026-10-28 | linkedin | 23 Decision framework | S6 | Oracle + OpenAI AI SMB Bundle | Oracle just offered small businesses $12,000 a year to buy in.
 2026-10-28 | instagram | 23 Decision framework | S6 | Oracle + OpenAI AI SMB Bundle | Buy the AI tool, or build your own?
+2026-10-29 | blog-daily | 3 Industry take | — | Anthropic study: analysts followed AI's coin-flip lean 86% | Your AI is quietly making your decisions. Here's how to take them back.
+2026-10-29 | linkedin | 35 Surprising data | S8 | Anthropic study: analysts followed AI's coin-flip lean 86% | A hidden coin flip steered 86% of these experts' calls.
