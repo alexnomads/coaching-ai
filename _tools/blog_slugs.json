@@ -2,5 +2,9 @@
  "oracle-openai-chatgpt-netsuite-small-business": {
   "es": "chatgpt-oracle-netsuite-pymes",
   "it": "chatgpt-oracle-netsuite-piccole-imprese"
+ },
+ "ai-agents-steer-expert-decisions-anthropic-study": {
+  "es": "ia-decide-por-ti-estudio-anthropic",
+  "it": "ia-decide-per-te-studio-anthropic"
  }
 }
