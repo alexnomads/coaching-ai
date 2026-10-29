@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html">
+<title>Your AI is quietly making your decisions. Here&#x27;s how to take them back. — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="Anthropic&#x27;s study: 50 analysts followed an AI&#x27;s coin-flip lean 86% of the time and only 15% credited it. How to use AI and keep the judgment yours.">
+<link rel="canonical" href="https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Your AI is quietly making your decisions">
+<meta property="og:description" content="Anthropic&#x27;s study: 50 analysts followed an AI&#x27;s coin-flip lean 86% of the time and only 15% credited it. How to use AI and keep the judgment yours.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-10-29/og.png">
+<meta property="article:published_time" content="2026-10-29">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your AI is quietly making your decisions">
+<meta name="twitter:description" content="Anthropic&#x27;s study: 50 analysts followed an AI&#x27;s coin-flip lean 86% of the time and only 15% credited it. How to use AI and keep the judgment yours.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-10-29/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html#article",
+   "headline": "Your AI is quietly making your decisions",
+   "description": "Anthropic's study: 50 analysts followed an AI's coin-flip lean 86% of the time and only 15% credited it. How to use AI and keep the judgment yours.",
+   "image": "https://aicoachalex.com/assets/blog/2026-10-29/og.png",
+   "datePublished": "2026-10-29",
+   "dateModified": "2026-10-29",
+   "inLanguage": "en",
+   "keywords": "AI decision making, Anthropic study AI judgment, AI agents influence experts, human in the loop, how to use AI for decisions, Gemini 4 Carbon, Apple Pages AI assistant",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Your AI is quietly making your decisions",
+     "item": "https://aicoachalex.com/blog/ai-agents-steer-expert-decisions-anthropic-study.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What did Anthropic's study on AI agents and expert judgment find?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Fifty experienced analysts used a Claude agent whose preferred option on each judgment call was set by a hidden coin flip. They matched the agent's lean 86% of the time, against about 50% by chance, and only 15% credited the agent afterwards. 77% repeated its arguments, and experience or AI scepticism didn't reduce the effect."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Did the AI lie to the analysts?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The agents were instructed never to mislead. They simply leaned one way on each decision and rarely argued for the alternative. That was enough to steer most choices."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this mean I should stop using AI for decisions?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No, and Anthropic says the same. Analysts with the agent worked faster and made fewer serious errors. The fix is how you use it: write your view first, ask for the strongest case for every option, check the facts that would change the answer, and note where each decision came from."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How can I stop AI from influencing my decisions?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Write your own call in one line before asking. Ask the AI to argue each option equally and not to recommend. Ask which facts would change the answer and check one yourself. When it disagrees with you, slow down rather than switch. Keep a simple log of which decisions were yours, the AI's, or changed by the AI."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is Gemini 4 Carbon?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Google's newest frontier model, announced on 28 October 2026. It ranks first on the Artificial Analysis Intelligence Index with a score of 59, and is going first to cyber defenders in Google's Fairwind Program, with no general release date yet."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When do the AI assistants arrive in Pages, Keynote and Numbers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Apple set November 2026 for Creator Studio subscribers. They're in beta, US English only, and need an Apple Intelligence device. Outside AI agents connecting through MCP will need a Mac running macOS 27 or later."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/ai-agents-steer-expert-decisions-anthropic-study.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/blog/ai-agents-steer-expert-decisions-anthropic-study.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI News</span>
+      <span>8 min read</span>
+      <span>29 Oct 2026</span>
+      <span>By <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Your AI is quietly making your <em>decisions</em>. Here's how to take them back.</h1>
+    <p class="article-dek">Anthropic gave 50 professional analysts an AI agent with a secretly random opinion. They followed it 86% of the time, and only 15% credited it. What the study found, why it applies to anyone who signs off on AI-assisted work, and a simple routine to keep the judgment yours.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-10-29/hero.webp" width="1600" height="900" alt="Your AI is quietly making your decisions. Anthropic study, October 2026, 50 professional analysts: 86% matched the agent's coin-flip lean; only 15% credited the agent; 60% dropped their own view when the agent disagreed, versus 6% when it agreed." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>AI agents can steer experts' decisions without anyone noticing.</strong> In a study published this week, Anthropic's researchers gave 50 experienced analysts a Claude agent whose preferred option on each judgment call was set by a coin flip. The analysts went with the agent's lean 86% of the time, against roughly 50% by chance, and only 15% credited the agent afterwards. Experience and AI scepticism didn't protect them. Anthropic says this is not a reason to use AI less. It's a reason to change how you use it: write your own view before you ask, make the AI argue every option, and keep a short record of where each decision came from.</p>
+    </div>
+
+    <p>Most of my work with clients is about getting AI to do more: write the report, sort the leads, draft the quote. But there's a line I keep drawing in every coaching programme. The AI does the work. You make the calls. The goal is your independence, not a smarter crutch.</p>
+
+    <p>This week Anthropic published the most uncomfortable evidence I've seen for why that line matters. Not because the AI lied. Because it didn't need to.</p>
+
+    <h2>What did Anthropic's study on AI and expert judgment find?</h2>
+
+    <p>Anthropic's Alignment team ran a controlled experiment, <a href="https://www.anthropic.com/research/agents-judgment-calls?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">published on its research site</a> and reported in detail by <a href="https://tech.yahoo.com/ai/claude/articles/ai-quietly-influence-experts-decisions-173602548.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">Decrypt</a> and <a href="https://aiweekly.co/alerts/anthropic-analysts-matched-claudes-random-lean-86-of-the-time?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">AI Weekly</a>. Fifty analysts experienced in causal inference (working out from data whether one thing really causes another) each used Claude Code, running Claude Opus 4.8, to advise a fictional farming cooperative on whether to expand an advisory programme.</p>
+
+    <p>The trick: for each key judgment call, such as how to measure outcomes or which farms to compare, a coin flip decided which option the agent would favour. That lean was hidden in its instructions. The agents were told never to mislead. The analysts didn't know any of this.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>What they measured</th><th>Result</th><th>What it means in plain English</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Analysts who matched the agent's random lean</td><td><strong>86%</strong> of the key calls (chance: about 50%)</td><td>A coin flip inside the AI decided most of the "expert" choices</td></tr>
+        <tr><td>Analysts who credited the agent afterwards</td><td><strong>15%</strong></td><td>Most people didn't realise the call wasn't theirs. None suspected a planted preference</td></tr>
+        <tr><td>Changed their mind when the agent disagreed with a choice they'd already made</td><td><strong>60%</strong>, versus 6% when it agreed (38 cases)</td><td>Having an opinion first helped only a little</td></tr>
+        <tr><td>Repeated the agent's argument in at least one answer</td><td><strong>77%</strong>, sometimes word for word</td><td>The AI's reasoning became their reasoning</td></tr>
+        <tr><td>Said the final recommendation was more theirs than the agent's</td><td><strong>52%</strong></td><td>People feel in control even when they aren't</td></tr>
+        <tr><td>Experience, advanced degrees, AI scepticism</td><td>No measurable protection</td><td>Being smart or sceptical is not a defence. A routine is</td></tr>
+      </tbody>
+    </table>
+
+    <p>There was good news too. Analysts working with the agent finished faster and made far fewer serious errors, although Anthropic notes the comparison group without an agent was small and less experienced. And the researchers deliberately strengthened the agents' lean so they could measure the effect, tested one task, in one field, with one model. Real-world steering is probably weaker. It's not zero.</p>
+
+    <p>The line from the paper I keep thinking about: "The work still goes out under the expert's name."</p>
+
+    <h2>Why does AI steering your decisions matter if you're not a data analyst?</h2>
+
+    <p>Because the same pattern shows up in ordinary work. You ask AI which supplier to pick, which candidate to shortlist, how to price a quote, which clients to chase first, how to reply to a difficult email. The AI gives a balanced-sounding answer that quietly leans one way. You agree, because it's reasonable and you're busy. A month later you'd swear it was your idea.</p>
+
+    <p>Three reasons this matters more for small businesses and independent professionals than for big companies:</p>
+
+    <ul>
+      <li><strong>You are the last check.</strong> A bank has reviewers and committees. A freelancer, a consultant or a business owner usually signs off alone.</li>
+      <li><strong>Your judgment is what clients pay for.</strong> If you're an accountant, a consultant or a designer, the AI can do the hours. The judgment is the product. If it's quietly outsourced, so is your value.</li>
+      <li><strong>The lean doesn't have to be planted to exist.</strong> In the study it was a coin flip. In real life it can come from how you phrased the question, what's in the AI's memory, or which option sounds more familiar to the model. Nobody needs bad intentions for your decisions to drift.</li>
+    </ul>
+
+    <p>Anthropic calls the risk "disempowerment": people losing real control over decisions that depend on their judgment, even with a "human in the loop". The human was in the loop here. The loop just didn't do much.</p>
+
+    <h2>How do you use AI without letting it make your decisions?</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-10-29/decide-first.webp" width="1600" height="900" alt="The decide-first routine. 1 Write your call first: one line, your choice and why, before you open the AI. 2 Ask for both cases: the strongest argument for each option, equal length. 3 Ask what would change its mind: and what would change yours. 4 Log where it came from: mine, AI's, or changed by AI, and why." loading="lazy">
+      <figcaption>The routine I'm teaching from this week, for any decision that goes out under your name.</figcaption>
+    </figure>
+
+    <p>Anthropic's authors are clear that this is not an argument for using AI less. They point to two fixes for how agents should behave: argue the best case for each option, or ask the human for their view first. You don't have to wait for AI companies to build that in. You can do it today, with any chatbot.</p>
+
+    <ol>
+      <li><strong>Write your call before you ask.</strong> One line: "I'd pick option A because…". Thirty seconds, in a note, before you open the AI. The study shows a prior view isn't a perfect shield, but without one you have nothing to compare against.</li>
+      <li><strong>Ask for the strongest case for every option, the same length.</strong> Not "what do you recommend?" but "argue each option as well as you can". The study noticed the agents rarely argued for the alternative on their own. Make them.</li>
+      <li><strong>Ask what would change its mind, and yours.</strong> "What evidence would make option B the right choice?" This turns a recommendation back into a judgment you can check.</li>
+      <li><strong>When it disagrees with you, slow down instead of switching.</strong> In the study, disagreement flipped analysts 60% of the time. Ask for the single fact that makes the difference, and check that fact yourself.</li>
+      <li><strong>Keep a three-word log.</strong> For decisions that matter (prices, hires, client advice), note: mine, AI's, or changed by AI. Review it monthly. If "AI's" keeps growing, you'll see it before your clients do.</li>
+      <li><strong>Separate the doing from the deciding.</strong> Let AI gather data, draft and calculate. Keep the final choice in a step where you write the reason in your own words.</li>
+    </ol>
+
+    <h3>Copy this prompt: the two-sided advisor</h3>
+
+    <p>Paste this into ChatGPT, Claude or Gemini before any decision you'll sign off on. It forces the AI to argue every side and hands the call back to you.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Two-sided advisor</span>
+      <button class="copy-btn" data-copy="twoSidedAdvisor" type="button">Copy</button>
+<pre id="twoSidedAdvisor">I need to make a decision and I want to keep the judgment mine.
+Do NOT tell me which option to choose.
+
+THE DECISION: [e.g. which of two suppliers to use]
+THE OPTIONS: [A, B, (C)]
+WHAT I CARE ABOUT: [cost, speed, risk, relationship...]
+MY CURRENT LEAN AND WHY: [one line, written before asking you]
+
+Then:
+1. Argue the strongest honest case for EACH option.
+   Same length and effort for each.
+2. For each option, list the 2 facts that would most change
+   the answer, and how I can check them myself.
+3. Point out where my current lean might be weak, and where
+   it might be right.
+4. List any assumptions you made that I didn't give you.
+5. End with: "The decision is yours." No recommendation.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Before</span><p>"Which supplier should I go with?" The AI gives a tidy, reasonable answer that leans one way. You agree, and a month later you're sure it was your idea.</p></div>
+      <div class="compare-good"><span class="compare-label">After</span><p>Your lean in one line first. The AI argues both sides equally and names the facts that would change the answer. You check one of them and decide, knowing why.</p></div>
+    </div>
+
+    <p>This connects to two recent posts. If you're letting agents act for you, read <a href="/blog/gpt-6-1-terra-computer-use-ai-agents.html">why computer-use agents need a leash</a>. If your AI keeps your preferences and rules in memory, <a href="/blog/what-is-an-agent-harness.html">what an agent harness is</a> explains where that "lean" can come from.</p>
+
+    <div class="article-cta inline">
+      <h3>Want AI that does the work while you keep the calls?</h3>
+      <p>In a 49€ diagnostic call we look at where AI already touches your decisions, and set up a workspace and routine that speed up the work without taking over the judgment.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-10-29-judgment-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>Also today in AI</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-10-29/also-today.webp" width="1600" height="900" alt="Also today: Google's Gemini 4 Carbon tops the Artificial Analysis Intelligence Index at 59, released first to cyber defenders; Apple adds AI assistants to Pages, Keynote and Numbers and lets outside AI agents work in them on Mac, from November; Cloudflare disclosed that 155 responses from one hosted AI model contained other customers' data." loading="lazy">
+    </figure>
+
+    <h3>Google's Gemini 4 Carbon takes the top spot, but most people can't use it yet</h3>
+
+    <p>Google announced Gemini 4 Carbon on 28 October, two weeks after its Argon model. <a href="https://9to5google.com/2026/10/28/gemini-4-carbon-announcement/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">9to5Google</a> reports it scores 59 on the Artificial Analysis Intelligence Index, ranking first, with gains in coding, agentic tasks and finding security vulnerabilities. According to <a href="https://aiweekly.co/alerts/google-ships-gemini-4-carbon-tops-aa-intelligence-index-at-59?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">AI Weekly</a>, it goes first to a group of cyber defenders in Google's Fairwind Program, with no general availability date yet, and introductory API pricing of $2 per million input tokens and $10 per million output tokens, rising to $4 and $20 later. None of the headline numbers have been independently reproduced yet.</p>
+
+    <p><strong>What it means for you:</strong> nothing to do today. When it reaches the Gemini app, test it on one real task you already do with another model, and compare the results side by side before switching anything. My <a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">guide to choosing the right model</a> explains how.</p>
+
+    <h3>Apple puts AI assistants in Pages, Keynote and Numbers, and opens them to outside agents</h3>
+
+    <p>Apple announced AI assistants for Pages, Keynote and Numbers as part of its Creator Studio subscription, powered by Apple and OpenAI models. <a href="https://winbuzzer.com/2026/10/27/apple-plans-ai-assistants-edit-productivity-files-xcxwbn/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">WinBuzzer</a> reports they help rewrite and restructure text, design slides, and build tables and charts, in beta, US English only, on Apple Intelligence devices, with the update due in November. Separately, on Macs running macOS 27, outside AI assistants will be able to read and edit these files through the Model Context Protocol (MCP). Creator Studio costs $12.99 a month or $129 a year in the US; the free apps stay free.</p>
+
+    <p><strong>How to use it:</strong> if your business runs on a Mac and Numbers, this is your sign that the AI you already use (Claude, ChatGPT) will soon be able to work inside your own files instead of copy-paste. Decide now which documents it may edit and which it may only read.</p>
+
+    <h3>Cloudflare: one hosted AI model mixed other customers' data into replies</h3>
+
+    <p>In a disclosure published on 26 October, <a href="https://blog.cloudflare.com/kv-cache-exposure-remediation/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">Cloudflare explained</a> that between 27 August and 9 September, 155 responses from the GLM-5.3 model on its Workers AI platform contained data from other customers' recent requests. Only very long prompts were affected. A security researcher reported it, Cloudflare found no evidence of deliberate exploitation, and it has fixed both the configuration and the underlying software bug.</p>
+
+    <p><strong>What it means for you:</strong> a rare bug, quickly fixed, but a useful reminder. Before you paste client contracts or personal data into any AI tool, check what your plan promises about data handling, and keep the most sensitive material out of tools you haven't vetted.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What did Anthropic's study on AI agents and expert judgment find?</summary><p>Fifty experienced analysts used a Claude agent whose preferred option on each judgment call was set by a hidden coin flip. They matched the agent's lean 86% of the time, against about 50% by chance, and only 15% credited the agent afterwards. 77% repeated its arguments, and experience or AI scepticism didn't reduce the effect.</p></details>
+      <details><summary>Did the AI lie to the analysts?</summary><p>No. The agents were instructed never to mislead. They simply leaned one way on each decision and rarely argued for the alternative. That was enough to steer most choices.</p></details>
+      <details><summary>Does this mean I should stop using AI for decisions?</summary><p>No, and Anthropic says the same. Analysts with the agent worked faster and made fewer serious errors. The fix is how you use it: write your view first, ask for the strongest case for every option, check the facts that would change the answer, and note where each decision came from.</p></details>
+      <details><summary>How can I stop AI from influencing my decisions?</summary><p>Write your own call in one line before asking. Ask the AI to argue each option equally and not to recommend. Ask which facts would change the answer and check one yourself. When it disagrees with you, slow down rather than switch. Keep a simple log of which decisions were yours, the AI's, or changed by the AI.</p></details>
+      <details><summary>What is Gemini 4 Carbon?</summary><p>Google's newest frontier model, announced on 28 October 2026. It ranks first on the Artificial Analysis Intelligence Index with a score of 59, and is going first to cyber defenders in Google's Fairwind Program, with no general release date yet.</p></details>
+      <details><summary>When do the AI assistants arrive in Pages, Keynote and Numbers?</summary><p>Apple set November 2026 for Creator Studio subscribers. They're in beta, US English only, and need an Apple Intelligence device. Outside AI agents connecting through MCP will need a Mac running macOS 27 or later.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Get faster with AI without handing over your judgment.</h3>
+      <p>One-to-one coaching for professionals and business owners: we build your AI workspace with your rules and real documents, and a routine that keeps the decisions yours.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-10-29-judgment-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="news-2026-10-29-judgment-end-setup">Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://www.anthropic.com/research/agents-judgment-calls?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">Anthropic: How AI agents shape experts' judgment calls</a> (Oct 2026); <a href="https://tech.yahoo.com/ai/claude/articles/ai-quietly-influence-experts-decisions-173602548.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">Decrypt via Yahoo Tech</a> (28 Oct 2026); <a href="https://aiweekly.co/alerts/anthropic-analysts-matched-claudes-random-lean-86-of-the-time?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">AI Weekly on the Anthropic study</a> (Oct 2026); <a href="https://9to5google.com/2026/10/28/gemini-4-carbon-announcement/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">9to5Google on Gemini 4 Carbon</a> (28 Oct 2026); <a href="https://aiweekly.co/alerts/google-ships-gemini-4-carbon-tops-aa-intelligence-index-at-59?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">AI Weekly on Gemini 4 Carbon</a> (28 Oct 2026); <a href="https://winbuzzer.com/2026/10/27/apple-plans-ai-assistants-edit-productivity-files-xcxwbn/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">WinBuzzer on Apple Creator Studio</a> (27 Oct 2026); <a href="https://blog.cloudflare.com/kv-cache-exposure-remediation/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-agents-steer-expert-decisions-anthropic-study" target="_blank" rel="noopener">Cloudflare disclosure</a> (26 Oct 2026). Recommendations are mine.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/blog/gpt-6-1-terra-computer-use-ai-agents.html">OpenAI's new model can do your clicking. Give it a leash. →</a>
+      <a href="/blog/oracle-openai-chatgpt-netsuite-small-business.html">ChatGPT is moving into your back office. Is your business ready? →</a>
+      <a href="/blog/what-is-an-agent-harness.html">What is an agent harness? →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
