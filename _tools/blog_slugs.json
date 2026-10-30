@@ -6,5 +6,9 @@
  "ai-agents-steer-expert-decisions-anthropic-study": {
   "es": "ia-decide-por-ti-estudio-anthropic",
   "it": "ia-decide-per-te-studio-anthropic"
+ },
+ "ai-agent-cyberattack-old-passwords-small-business": {
+  "es": "ciberataque-agentes-ia-contrasenas-viejas",
+  "it": "attacco-informatico-agenti-ia-vecchie-password"
  }
 }
