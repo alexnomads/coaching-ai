@@ -17,3 +17,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-10-28 | instagram | 23 Decision framework | S6 | Oracle + OpenAI AI SMB Bundle | Buy the AI tool, or build your own?
 2026-10-29 | blog-daily | 3 Industry take | — | Anthropic study: analysts followed AI's coin-flip lean 86% | Your AI is quietly making your decisions. Here's how to take them back.
 2026-10-29 | linkedin | 35 Surprising data | S8 | Anthropic study: analysts followed AI's coin-flip lean 86% | A hidden coin flip steered 86% of these experts' calls.
+2026-10-30 | blog-daily | 3 Industry take | S3 (mention) | AP: companies rehiring after AI-led layoffs (Ford, Klarna, Robert Half) | Companies are rehiring the people AI replaced. Here's what they missed.
+2026-10-30 | linkedin | 16 Hiring approach | S9 | AP: companies rehiring after AI-led layoffs | After an AI push, Ford hired or promoted 350 veteran engineers.
+2026-10-30 | instagram | 16 Hiring approach | S9 | AP: companies rehiring after AI-led layoffs | They replaced people with AI. Now they're hiring them back.
