@@ -1,0 +1,14 @@
+# GitHub Pages (Jekyll) build settings.
+# Keep internal notes off the public site.
+exclude:
+  - AGENT_BRIEF.md
+  - LITEPAPER.md
+  - SETUP_README.md
+  - README.md
+  - index.html.gh
+  - temp.txt
+  - requirements.txt
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

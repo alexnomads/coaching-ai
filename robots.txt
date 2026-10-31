@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Shared AI-training preference (IETF draft-kelley-aipref-training-preference-signal).
+# Search, crawling and AI answers are unaffected. Everything public stays open
+# to AI training except internal notes and the post-booking page.
+User-Agent: __usage_ai-training
+Disallow: /AGENT_BRIEF.md
+Disallow: /LITEPAPER.md
+Disallow: /SETUP_README.md
+Disallow: /README.md
+Disallow: /thank-you.html
+Allow: /
+
 Sitemap: https://aicoachalex.com/sitemap.xml

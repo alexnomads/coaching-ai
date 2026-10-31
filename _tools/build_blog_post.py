@@ -140,6 +140,17 @@ def main(meta_path, article_path):
     if url not in x:
         x = x.replace("</urlset>", f"  <url><loc>{url}</loc><lastmod>{m['date']}</lastmod></url>\n</urlset>")
         sm.write_text(x)
+
+    # --- llms.txt (newest post first, under the Blog section, for AI answer engines) ---
+    llms = ROOT / "llms.txt"
+    if llms.exists():
+        t = llms.read_text()
+        head = "## Blog: AI news and guides for professionals and small businesses\n\n"
+        if url not in t and head in t:
+            i = t.index(head) + len(head)
+            j = t.index("\n", i) + 1  # keep the blog-index line first
+            t = t[:j] + f"- [{m['title']}]({url}): {m['description']}\n" + t[j:]
+            llms.write_text(t)
     print("built", out)
 
 
