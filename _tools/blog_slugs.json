@@ -10,5 +10,9 @@
  "ai-agent-cyberattack-old-passwords-small-business": {
   "es": "ciberataque-agentes-ia-contrasenas-viejas",
   "it": "attacco-informatico-agenti-ia-vecchie-password"
+ },
+ "ai-training-opt-out-robots-txt-small-business": {
+  "es": "excluir-web-entrenamiento-ia-robots-txt",
+  "it": "escludere-sito-addestramento-ia-robots-txt"
  }
 }

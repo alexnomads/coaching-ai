@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/ai-training-opt-out-robots-txt-small-business.html">
+<link rel="alternate" hreflang="es" href="https://aicoachalex.com/blog/excluir-web-entrenamiento-ia-robots-txt.es.html">
+<link rel="alternate" hreflang="it" href="https://aicoachalex.com/blog/escludere-sito-addestramento-ia-robots-txt.it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/ai-training-opt-out-robots-txt-small-business.html">
+<title>OpenAI, Google, Microsoft e Anthropic rispetteranno un unico opt-out dall&#x27;addestramento IA. Conviene usarlo sul tuo sito? — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="OpenAI, Google, Microsoft e Anthropic sostengono un token robots.txt per escludere il sito dall&#x27;addestramento IA. Cosa copre, cosa no, cosa fare.">
+<link rel="canonical" href="https://aicoachalex.com/blog/escludere-sito-addestramento-ia-robots-txt.it.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="OpenAI, Google, Microsoft e Anthropic rispetteranno un unico opt-out dall&#x27;addestramento IA. Conviene usarlo sul tuo sito?">
+<meta property="og:description" content="OpenAI, Google, Microsoft e Anthropic sostengono un token robots.txt per escludere il sito dall&#x27;addestramento IA. Cosa copre, cosa no, cosa fare.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/escludere-sito-addestramento-ia-robots-txt.it.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-10-31/og.png">
+<meta property="article:published_time" content="2026-10-31">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenAI, Google, Microsoft e Anthropic rispetteranno un unico opt-out dall&#x27;addestramento IA. Conviene usarlo sul tuo sito?">
+<meta name="twitter:description" content="OpenAI, Google, Microsoft e Anthropic sostengono un token robots.txt per escludere il sito dall&#x27;addestramento IA. Cosa copre, cosa no, cosa fare.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-10-31/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/escludere-sito-addestramento-ia-robots-txt.it.html#article",
+   "headline": "OpenAI, Google, Microsoft e Anthropic rispetteranno un unico opt-out dall'addestramento IA. Conviene usarlo sul tuo sito?",
+   "description": "OpenAI, Google, Microsoft e Anthropic sostengono un token robots.txt per escludere il sito dall'addestramento IA. Cosa copre, cosa no, cosa fare.",
+   "image": "https://aicoachalex.com/assets/blog/2026-10-31/og.png",
+   "datePublished": "2026-10-31",
+   "dateModified": "2026-10-31",
+   "inLanguage": "it",
+   "keywords": "escludere sito addestramento IA, robots.txt IA, __usage_ai-training, bloccare crawler IA, GPTBot, Google-Extended, visibilità IA piccole imprese, GEO",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/escludere-sito-addestramento-ia-robots-txt.it.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/index.it.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "OpenAI, Google, Microsoft e Anthropic rispetteranno un unico opt-out dall'addestramento IA. Conviene usarlo sul tuo sito?",
+     "item": "https://aicoachalex.com/blog/escludere-sito-addestramento-ia-robots-txt.it.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Cos'è __usage_ai-training nel robots.txt?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "È un token comune di robots.txt che chiede alle aziende di IA di non usare le tue pagine per addestrare i loro modelli. Si aggiunge come gruppo a sé, \"User-Agent: __usage_ai-training\" seguito da \"Disallow: /\" o da cartelle specifiche. Nasce da una bozza IETF scritta da Kevin Kelley di Anthropic a ottobre 2026."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quali aziende di IA rispettano il nuovo token di opt-out?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OpenAI, Google, Microsoft e Anthropic. Anthropic ha iniziato ad applicarlo, OpenAI dice nei prossimi mesi, Microsoft dal 1° febbraio 2027 e Google nel 2027. Meta ha accolto bene l'idea, ma non si è impegnata a rispettarlo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bloccare l'addestramento dell'IA danneggia il posizionamento su Google?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Il token copre solo l'addestramento dell'IA. Google dice che Google-Extended non influisce sulla Ricerca Google, e Microsoft dice che le sue impostazioni di addestramento non cambiano la presenza su Bing. Non aggiungere però un \"Disallow: /\" generale sotto \"User-agent: *\", che blocca anche i motori di ricerca."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L'opt-out impedisce a ChatGPT o Copilot di citare il mio sito?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Da solo no. Copre l'addestramento, non la consultazione in tempo reale per rispondere alle domande. Microsoft ha una preferenza di grounding separata, impostata con un meta tag o un'intestazione HTTP, per le sue risposte IA, e avverte che escludersi riduce molto la visibilità su Bing e Copilot."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L'opt-out cancella i contenuti su cui l'IA si è già addestrata?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Vale solo da ora in poi. I contenuti già raccolti in dataset o modelli addestrati non vengono rimossi quando modifichi il robots.txt."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Una piccola impresa dovrebbe bloccare l'addestramento dell'IA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dipende da cosa vendi. Se vendi un servizio e vuoi essere consigliato, lasciare aperte le pagine commerciali pubbliche di solito aiuta. Se il prodotto sono i contenuti, come corsi, foto o articoli a pagamento, ha senso bloccare l'addestramento su quelle sezioni. Decidi pagina per pagina."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/index.it.html" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/index.it.html#method">Metodo</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Quiz sul Rischio</a>
+      <a href="/blog/index.it.html" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.it.html">Configura Agente OpenClaw</a>
+      <div class="sn-dd"><a class="sn-dd-t" href="/courses.html" aria-haspopup="true" aria-expanded="false">Corsi <span aria-hidden="true">&#9662;</span></a><div class="sn-dd-m"><a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/it/con-chi-lavoro/">Con Chi Lavoro</a><a href="/it/corsi-ai-per-ragazzi/">AI per Ragazzi</a>
+      <a href="/about.html">Chi sono</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/ai-training-opt-out-robots-txt-small-business.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/excluir-web-entrenamiento-ia-robots-txt.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/escludere-sito-addestramento-ia-robots-txt.it.html" class="on" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Quiz sul Rischio</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Prenota Diagnosi</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/index.it.html#method">Metodo</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Quiz sul Rischio</a>
+    <a href="/blog/index.it.html" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.it.html">Configura Agente OpenClaw</a>
+    <a class="sn-mob-sub" href="/courses.html">Corsi →</a>
+    <a class="sn-mob-course" href="/personal-ai-agent.html">Your Own AI</a><a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/it/con-chi-lavoro/">Con Chi Lavoro</a><a href="/it/corsi-ai-per-ragazzi/">AI per Ragazzi</a>
+    <a href="/about.html">Chi sono</a>
+    <div class="sn-lang"><a href="/blog/ai-training-opt-out-robots-txt-small-business.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/excluir-web-entrenamiento-ia-robots-txt.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/escludere-sito-addestramento-ia-robots-txt.it.html" class="on" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Prenota Diagnosi</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="/blog/index.it.html" class="article-back">← Torna al Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Notizie IA</span>
+      <span>7 min di lettura</span>
+      <span>31 ott 2026</span>
+      <span>Di <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">OpenAI, Google, Microsoft e Anthropic rispetteranno un unico opt-out dall'addestramento IA. Conviene <em>usarlo</em> sul tuo sito?</h1>
+    <p class="article-dek">I quattro grandi laboratori di IA sostengono una sola riga da aggiungere al robots.txt del tuo sito per dire "non addestrare la tua IA sui miei contenuti". Cosa fa, cosa non fa e come dovrebbe decidere una piccola impresa, perché bloccare la cosa sbagliata può renderti più difficile da trovare nelle risposte dell'IA.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-10-31/optout-hero.webp" width="1600" height="900" alt="Una riga in robots.txt, quattro laboratori di IA in ascolto: User-Agent: __usage_ai-training, Disallow: /. Anthropic ha iniziato ad applicarla, OpenAI dice nei prossimi mesi, Microsoft dal 1° febbraio 2027, Google nel 2027." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">In breve</span>
+      <p><strong>Ora esiste un modo condiviso per chiedere ai grandi laboratori di IA di non addestrarsi sul tuo sito.</strong> Il 30 ottobre OpenAI, Google, Microsoft e Anthropic hanno dichiarato che rispetteranno un nuovo token di robots.txt, <code>__usage_ai-training</code>, proposto in una bozza IETF da Kevin Kelley di Anthropic. Anthropic ha iniziato ad applicarlo, OpenAI dice nei prossimi mesi, Microsoft dal 1° febbraio 2027 e Google nel 2027. Copre solo l'<strong>addestramento</strong>: non impedisce ai bot di visitare il sito, non cancella ciò che è già stato raccolto e non tocca il posizionamento su Google o Bing. Per la maggior parte delle piccole imprese che vogliono essere trovate, la mossa giusta è decidere consapevolmente, non bloccare tutto.</p>
+    </div>
+
+    <p>Ogni poche settimane un cliente mi chiede una variante di "l'IA mi sta rubando il sito?". La risposta onesta finora era un groviglio: ogni azienda di IA aveva il suo crawler, le sue regole e le sue clausole in piccolo. Bloccarli voleva dire tenere una lista, senza mai sapere se te ne mancava qualcuno.</p>
+
+    <p>Ieri è diventato più semplice. Non risolto, ma più semplice. E costringe a farsi una domanda che pochi imprenditori si sono posti: vuoi davvero che l'IA smetta di imparare da te?</p>
+
+    <h2>Cos'è il nuovo token per escludere il sito dall'addestramento dell'IA?</h2>
+
+    <p>Come riporta <a href="https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">AI Weekly riassumendo l'articolo di The Verge</a>, le quattro aziende sostengono un unico segnale per chi pubblica online. Nasce da una bozza Internet intitolata "Machine-Readable Training Preference Signal", scritta da Kevin Kelley, responsabile degli standard di Anthropic, e datata 30 ottobre. È una bozza individuale, quindi non ha ancora valore formale all'IETF, ma i quattro grandi laboratori hanno detto che la seguiranno.</p>
+
+    <p>In pratica sono due righe nel file robots.txt che si trova già nella radice del tuo sito:</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>Domanda</th><th>La risposta</th><th>In parole semplici</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Cosa aggiungo?</strong></td><td><code>User-Agent: __usage_ai-training</code> e poi <code>Disallow: /</code></td><td>"Non usare nessuna delle mie pagine per addestrare l'IA"</td></tr>
+        <tr><td><strong>Posso consentire alcune pagine?</strong></td><td>Sì, con righe <code>Allow:</code>, come qualsiasi regola di robots.txt</td><td>Blocca il blog e lascia aperta la pagina servizi, o viceversa</td></tr>
+        <tr><td><strong><code>User-agent: *</code> lo copre?</strong></td><td>No. La bozza esclude di proposito il carattere jolly</td><td>Devi aggiungere la riga con il suo nome</td></tr>
+        <tr><td><strong>Chi lo rispetterà?</strong></td><td>Anthropic (già iniziato), OpenAI (prossimi mesi), Microsoft (1° feb 2027), Google (2027)</td><td>Non tutti insieme, e non ancora ovunque</td></tr>
+        <tr><td><strong>E le vecchie regole?</strong></td><td>Le regole per singolo bot, come Google-Extended, continuano a funzionare. Google tratterà il nuovo token come un blocco Google-Extended se non hai una regola separata</td><td>Niente di ciò che avevi impostato si rompe</td></tr>
+        <tr><td><strong>Chi manca?</strong></td><td>Meta ha definito un segnale comune "un passo importante", ma non si è impegnata a rispettarlo</td><td>Non tutte le aziende di IA ci sono</td></tr>
+      </tbody>
+    </table>
+
+    <p>Secondo AI Weekly, alla bozza hanno contribuito organizzazioni come Cloudflare, News Corp, il Financial Times, la BBC, la EFF, Creative Commons e Common Crawl. <a href="https://dev.to/delimitter/openai-google-microsoft-and-anthropic-to-support-a-unified-ai-training-opt-out-token-in-robotstxt-4204?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">Un riassunto su DEV della copertura di SiliconANGLE</a> conferma lo stesso token e le stesse tempistiche.</p>
+
+    <h2>Bloccare l'addestramento dell'IA toglie il mio sito da ChatGPT o da Google?</h2>
+
+    <p>No, ed è qui che molti sbaglieranno. Il token riguarda l'<strong>addestramento</strong>: ciò che entra nel prossimo modello. Non riguarda la <strong>consultazione</strong>: l'IA che visita la tua pagina oggi per rispondere alla domanda di qualcuno.</p>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-10-31/optout-covers.webp" width="1600" height="900" alt="Cosa fa e cosa non fa la nuova riga. Fa: chiede a OpenAI, Google, Microsoft e Anthropic di non addestrare i modelli futuri sulle tue pagine e permette di consentire o bloccare pagina per pagina. Non fa: impedire ai bot di visitare il sito, cancellare dati già raccolti, cambiare il posizionamento su Google o Bing, controllare il grounding di Microsoft nelle risposte di Bing e Copilot, né obbligare gli scraper che ignorano robots.txt." loading="lazy">
+      <figcaption>Addestramento, consultazione e ricerca sono tre cose diverse. Il nuovo token tocca solo la prima.</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>La ricerca non cambia.</strong> Secondo <a href="https://www.martincid.com/technology-sv/google-openai-anthropic-microsoft-robots-txt-ai-training-opt-out/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">l'analisi di Martin Cid Magazine</a>, Google dice che Google-Extended non influisce sulla Ricerca Google, e Microsoft dice che le sue impostazioni non cambiano la tua presenza su Bing.</li>
+      <li><strong>Le risposte dell'IA sono un interruttore a parte.</strong> Microsoft ha una preferenza separata di "grounding", impostata pagina per pagina con un meta tag o un'intestazione HTTP, per i contenuti che la sua IA usa per rispondere su Bing, Copilot e Microsoft 365. Microsoft avverte che dire di no lì riduce molto la tua visibilità in quelle risposte.</li>
+      <li><strong>Il passato resta dentro.</strong> Modificare il robots.txt non rimuove i contenuti già raccolti in dataset o modelli addestrati. Vale solo per il futuro.</li>
+      <li><strong>È una richiesta, non un lucchetto.</strong> OpenAI descrive il token come "un meccanismo di coordinamento, non un controllo di sicurezza". I crawler corretti lo rispettano. Quelli scorretti no.</li>
+    </ul>
+
+    <h2>Perché ti riguarda?</h2>
+
+    <p>Per una piccola impresa la vera domanda non è "posso fermare l'IA?". È "cosa voglio che l'IA sappia di me?".</p>
+
+    <p>Se qualcuno chiede a ChatGPT, Claude o Gemini "un buon commercialista a Bologna?" o "miglior coach di IA per piccole imprese", i modelli rispondono con ciò che hanno imparato in addestramento e con le pagine che consultano in tempo reale. Un'attività che oggi blocca l'addestramento rischia, col tempo, di essere conosciuta meno dalla prossima generazione di modelli. È un compromesso reale, e ne ho parlato in generale in <a href="/blog/ai-agents-next-customers-small-business.html">il tuo prossimo cliente non guarderà il tuo sito, lo leggerà</a> (in inglese).</p>
+
+    <p>Dall'altra parte, se il tuo prodotto <em>è</em> il contenuto (corsi, fotografia, newsletter a pagamento, ricette, template), che ci si addestri sopra gratis è un altro discorso. Per te questo token è il primo opt-out che funziona con tutti e quattro i grandi laboratori con una sola riga.</p>
+
+    <p>La mia regola pratica:</p>
+
+    <ul>
+      <li><strong>Vendi un servizio e vuoi che i clienti ti trovino:</strong> lascia aperto l'addestramento sulle pagine commerciali pubbliche. Essere conosciuti dall'IA è marketing gratuito.</li>
+      <li><strong>Vendi contenuti:</strong> blocca l'addestramento sulle parti a pagamento o premium e lascia aperte le pagine di vendita e il "chi sono".</li>
+      <li><strong>In entrambi i casi:</strong> non bloccare per sbaglio i crawler di ricerca o le risposte dell'IA mentre cerchi di bloccare l'addestramento.</li>
+    </ul>
+
+    <h2>Come impostare nel robots.txt se l'IA può addestrarsi sul tuo sito</h2>
+
+    <ol>
+      <li><strong>Guarda cosa hai adesso.</strong> Scrivi <code>tuodominio.it/robots.txt</code> nel browser. Annota le righe che citano GPTBot, ClaudeBot, Google-Extended o <code>User-agent: *</code> con <code>Disallow: /</code>. Alcuni costruttori di siti e plugin di sicurezza hanno aggiunto blocchi per l'IA senza dirtelo.</li>
+      <li><strong>Decidi pagina per pagina, non per tutto il sito.</strong> Fai due liste: pagine che vuoi far conoscere all'IA (home, servizi, chi sono, prezzi, domande frequenti, blog) e pagine che preferisci tenere fuori dall'addestramento (contenuti a pagamento, aree clienti, download).</li>
+      <li><strong>Aggiungi il nuovo gruppo solo se la seconda lista non è vuota.</strong> Usa <code>User-Agent: __usage_ai-training</code>, poi una riga <code>Disallow:</code> per ogni cartella da escludere, oppure <code>Disallow: /</code> per tutto. Ricorda che il gruppo jolly non conta.</li>
+      <li><strong>Mantieni le vecchie regole.</strong> Non cancellare le righe per singolo bot durante la transizione. Google e Microsoft non seguiranno il nuovo token fino al 2027.</li>
+      <li><strong>Verifica che niente blocchi la ricerca.</strong> Assicurati che non ci sia un <code>Disallow: /</code> generale sotto <code>User-agent: *</code>, a meno che tu non voglia davvero sparire dai motori di ricerca.</li>
+      <li><strong>Imposta due promemoria.</strong> Il 1° febbraio 2027 (Microsoft inizia a rispettare il token) e inizio 2027 per controllare i progressi di Google. Se usi Wix, Squarespace, Shopify o WordPress e non puoi modificare il robots.txt direttamente, chiedi a chi gestisce il tuo sito.</li>
+    </ol>
+
+    <h3>Copia questo prompt: la tua policy sull'addestramento IA in 10 minuti</h3>
+
+    <p>Incollalo in ChatGPT, Claude o Gemini insieme al tuo robots.txt attuale. Ti aiuta a decidere e scrive le righe al posto tuo. Controlla il risultato prima di pubblicarlo: una riga <code>Disallow</code> sbagliata può nascondere il sito ai motori di ricerca.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Policy sull'addestramento IA per il mio sito</span>
+      <button class="copy-btn" data-copy="aiTrainingPolicyIt" type="button">Copia</button>
+<pre id="aiTrainingPolicyIt">Sei un consulente web prudente per una piccola impresa.
+Aiutami a decidere quali parti del mio sito le aziende di IA
+possono usare per addestrare i loro modelli e scrivi le
+righe del robots.txt.
+
+LA MIA ATTIVITÀ: [es. studio di fisioterapia, creatrice di corsi online]
+COME MI TROVANO I CLIENTI: [es. Google, Instagram, passaparola, ChatGPT]
+COSA VENDO: [servizio / contenuti / prodotti]
+SEZIONI DEL MIO SITO: [es. /servizi, /blog, /corsi, /area-soci]
+IL MIO ROBOTS.TXT ATTUALE:
+[incollalo qui]
+
+Contesto: OpenAI, Google, Microsoft e Anthropic rispetteranno
+un gruppo comune di robots.txt "User-Agent: __usage_ai-training"
+che copre solo l'addestramento dell'IA. Non influisce sulla
+ricerca, non blocca la scansione e "User-agent: *" non lo copre.
+
+Poi:
+1. Fammi fino a 5 domande se qualcosa non è chiaro.
+2. Consigliami quali sezioni lasciare aperte all'addestramento
+   e quali bloccare, con una frase di motivazione per ciascuna.
+3. Segnala qualsiasi riga attuale che potrebbe nascondere per
+   errore il mio sito ai motori di ricerca o alle risposte IA.
+4. Scrivi il robots.txt aggiornato completo, mantenendo le
+   mie vecchie regole.
+5. Elenca, in parole semplici, cosa tutto questo NON protegge.
+
+Segna come ipotesi tutto ciò di cui non sei sicuro.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Prima</span><p>Un robots.txt che nessuno legge dal lancio del sito. Un plugin di sicurezza che blocca in silenzio alcuni bot di IA e ne lascia passare altri. Nessuna idea se gli strumenti di IA vedano la tua pagina servizi.</p></div>
+      <div class="compare-good"><span class="compare-label">Dopo</span><p>Una policy consapevole: pagine commerciali aperte perché l'IA possa consigliarti, contenuti a pagamento fuori dall'addestramento con una sola riga comune, ricerca intatta e un promemoria per ricontrollare nel 2027.</p></div>
+    </div>
+
+    <div class="article-cta inline">
+      <h3>Vuoi che l'IA consigli la tua attività invece di ignorarla?</h3>
+      <p>In una call di diagnosi da 49 € vediamo come ti vedono oggi ChatGPT, Claude e Gemini, controlliamo cosa lascia leggere il tuo sito e scegliamo le prime correzioni per farti trovare.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-10-31-ai-training-optout-it-mid-book">Prenota la diagnosi da 49 € →</a>
+    </div>
+
+    <h2>Anche oggi nell'IA</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-10-31/optout-also-today.webp" width="1600" height="900" alt="Anche oggi: 912 posti di lavoro Comcast negli avvisi WARN mentre agenti IA assumono il lavoro dei call center; 4 TPU sul primo satellite data center di Google, ora operativo in orbita; 20 novembre, la data in cui dovevano entrare in vigore i termini di Meta per gli editori britannici, ora sospesi dopo l'indagine della CMA." loading="lazy">
+    </figure>
+
+    <h3>Comcast taglia posti nei call center mentre arrivano gli agenti IA</h3>
+
+    <p>Comcast ha presentato avvisi WARN per 912 posti di lavoro (634 a Filadelfia, 119 nel New Jersey e 159 nello stato di Washington), con effetto dal 31 dicembre, mentre pianifica oltre 1.100 nuove assunzioni, secondo <a href="https://aiweekly.co/ai-news-today?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">AI Weekly</a>. <a href="https://www.gadgetreview.com/comcast-lost-144000-internet-customers-now-its-replacing-human-workers-with-ai?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">GadgetReview</a> riporta che Comcast, che ha perso 144.000 clienti della banda larga nell'ultimo trimestre, lavora con le aziende di assistenza clienti basata sull'IA Cresta e Sierra, e che gli agenti IA hanno eliminato più di 30 milioni di interazioni di assistenza quest'anno, riducendo i contatti di circa il 20%.</p>
+
+    <p><strong>Cosa significa per te:</strong> se un colosso può spostare un quinto dei contatti con i clienti sull'IA, una piccola impresa può partire dalle sue dieci domande più frequenti. Scrivi le risposte una volta, mettile sul sito e in un assistente, e lascia una persona per i casi complicati. Il mio articolo sulle <a href="/blog/ai-layoffs-reversed-companies-rehiring.html">aziende che riassumono le persone sostituite dall'IA</a> (in inglese) spiega cosa va storto quando tagli prima le persone.</p>
+
+    <h3>Il primo satellite data center di Google è operativo</h3>
+
+    <p>Google dice che il prototipo di Project Suncatcher, lanciato su un Falcon 9 di SpaceX il 1° ottobre, è ora operativo, e che il suo primo test è stato Gemma 4 che scriveva un haiku dall'orbita, secondo <a href="https://aiweekly.co/ai-news-today?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">AI Weekly</a>. Il satellite ha a bordo quattro TPU, ma può alimentarne solo una alla volta, per circa 20 minuti con un budget di 1 kW. <a href="https://www.newsbytesapp.com/news/science/google-launches-project-suncatcher-satellite-with-tpus-running-gemma-ai/tldr?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">NewsBytes</a> spiega che sta verificando se i chip resistono a radiazioni e temperature estreme. Altri due satelliti con chip più recenti sono previsti per il 2027.</p>
+
+    <p><strong>Cosa significa per te:</strong> niente da fare oggi. È un segnale di quanto le aziende di IA stiano cercando energia e potenza di calcolo, ed è per questo che prezzi e limiti d'uso dell'IA continuano a cambiare. Non costruire la tua attività sul prezzo attuale di un solo strumento.</p>
+
+    <h3>L'autorità britannica indaga sui termini di Meta per gli editori</h3>
+
+    <p>La Competition and Markets Authority del Regno Unito ha aperto il 30 ottobre un'indagine formale per capire se i nuovi termini commerciali di Meta, che le permetterebbero di usare i contenuti web degli editori britannici per i propri prodotti e funzioni di IA senza lasciare scelta, costituiscano un abuso di posizione dominante, secondo <a href="https://aiweekly.co/ai-news-today?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">AI Weekly</a>. Le modifiche di Meta, previste per il 20 novembre, sono state sospese.</p>
+
+    <p><strong>Cosa significa per te:</strong> se fai pubblicità o hai una pagina aziendale su Facebook o Instagram, leggi i termini che accetti. Ho spiegato cosa comportano gli ultimi termini di Meta per le aziende in <a href="/blog/meta-ai-terms-business-liability.it.html">I nuovi termini di Meta ti fanno pagare gli errori della sua IA</a>.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>Cos'è __usage_ai-training nel robots.txt?</summary><p>È un token comune di robots.txt che chiede alle aziende di IA di non usare le tue pagine per addestrare i loro modelli. Si aggiunge come gruppo a sé, "User-Agent: __usage_ai-training" seguito da "Disallow: /" o da cartelle specifiche. Nasce da una bozza IETF scritta da Kevin Kelley di Anthropic a ottobre 2026.</p></details>
+      <details><summary>Quali aziende di IA rispettano il nuovo token di opt-out?</summary><p>OpenAI, Google, Microsoft e Anthropic. Anthropic ha iniziato ad applicarlo, OpenAI dice nei prossimi mesi, Microsoft dal 1° febbraio 2027 e Google nel 2027. Meta ha accolto bene l'idea, ma non si è impegnata a rispettarlo.</p></details>
+      <details><summary>Bloccare l'addestramento dell'IA danneggia il posizionamento su Google?</summary><p>No. Il token copre solo l'addestramento dell'IA. Google dice che Google-Extended non influisce sulla Ricerca Google, e Microsoft dice che le sue impostazioni di addestramento non cambiano la presenza su Bing. Non aggiungere però un "Disallow: /" generale sotto "User-agent: *", che blocca anche i motori di ricerca.</p></details>
+      <details><summary>L'opt-out impedisce a ChatGPT o Copilot di citare il mio sito?</summary><p>Da solo no. Copre l'addestramento, non la consultazione in tempo reale per rispondere alle domande. Microsoft ha una preferenza di grounding separata, impostata con un meta tag o un'intestazione HTTP, per le sue risposte IA, e avverte che escludersi riduce molto la visibilità su Bing e Copilot.</p></details>
+      <details><summary>L'opt-out cancella i contenuti su cui l'IA si è già addestrata?</summary><p>No. Vale solo da ora in poi. I contenuti già raccolti in dataset o modelli addestrati non vengono rimossi quando modifichi il robots.txt.</p></details>
+      <details><summary>Una piccola impresa dovrebbe bloccare l'addestramento dell'IA?</summary><p>Dipende da cosa vendi. Se vendi un servizio e vuoi essere consigliato, lasciare aperte le pagine commerciali pubbliche di solito aiuta. Se il prodotto sono i contenuti, come corsi, foto o articoli a pagamento, ha senso bloccare l'addestramento su quelle sezioni. Decidi pagina per pagina.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Fatti trovare dall'IA, alle tue condizioni.</h3>
+      <p>Coaching individuale per imprenditori: decidiamo cosa deve sapere l'IA della tua attività, sistemiamo sito e schede, e configuriamo strumenti di IA che ti portano clienti.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-10-31-ai-training-optout-it-end-book">Prenota la diagnosi da 49 € →</a>
+      <a href="/ai-for-business-owners.it.html" class="cta-secondary" data-cta="news-2026-10-31-ai-training-optout-it-end-business">IA per imprenditori</a>
+    </div>
+
+    <p class="sources"><strong>Fonti:</strong> <a href="https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">AI Weekly: OpenAI, Google, Microsoft, Anthropic back one AI opt-out token</a> (30 ott 2026, riassunto di The Verge); <a href="https://www.martincid.com/technology-sv/google-openai-anthropic-microsoft-robots-txt-ai-training-opt-out/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">Martin Cid Magazine: One robots.txt line will opt your site out of AI training</a> (31 ott 2026); <a href="https://dev.to/delimitter/openai-google-microsoft-and-anthropic-to-support-a-unified-ai-training-opt-out-token-in-robotstxt-4204?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">DEV Community, da SiliconANGLE</a> (31 ott 2026); <a href="https://aiweekly.co/ai-news-today?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">AI Weekly: AI news today</a> (Comcast, Google Suncatcher, CMA e Meta, 30 ott 2026); <a href="https://www.gadgetreview.com/comcast-lost-144000-internet-customers-now-its-replacing-human-workers-with-ai?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">GadgetReview</a> (Comcast, 26 ott 2026); <a href="https://www.newsbytesapp.com/news/science/google-launches-project-suncatcher-satellite-with-tpus-running-gemma-ai/tldr?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-training-opt-out-robots-txt-small-business-it" target="_blank" rel="noopener">NewsBytes</a> (Suncatcher). La regola pratica e i passaggi sono consigli miei.</p>
+
+    <div class="related">
+      <span class="related-label">Continua a leggere</span>
+      <a href="/blog/ai-agents-next-customers-small-business.html">Il tuo prossimo cliente non guarderà il tuo sito. Lo leggerà (in inglese) →</a>
+      <a href="/blog/meta-ai-terms-business-liability.it.html">I nuovi termini di Meta ti fanno pagare gli errori della sua IA →</a>
+      <a href="/blog/ai-layoffs-reversed-companies-rehiring.html">Le aziende riassumono le persone sostituite dall'IA (in inglese) →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">Coach di Carriera per l'Era dell'IA</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/it/con-chi-lavoro/" class="footer-link">Who I Work With</a><a href="/it/corsi-ai-per-ragazzi/" class="footer-link">AI per Ragazzi</a>
+      <a href="/personal-ai-agent.html" class="footer-link">Your Own AI</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.it.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.it.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copiato';setTimeout(function(){b.textContent='Copia'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
