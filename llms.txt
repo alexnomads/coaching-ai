@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [Gemini now edits your documents, sheets and PDFs right in the chat](https://aicoachalex.com/blog/gemini-edit-files-in-chat.html): Gemini can now create and edit Docs, Sheets, slides and PDFs inside the chat. What changed on 29 Oct 2026, who gets it, and how to use it.
 - [OpenAI, Google, Microsoft and Anthropic will honour one AI training opt-out. Should your website use it?](https://aicoachalex.com/blog/ai-training-opt-out-robots-txt-small-business.html): OpenAI, Google, Microsoft and Anthropic back one robots.txt token to opt out of AI training. What it covers, what it doesn't, and what to do.
 - [Hackers Sent AI Agents After 200 Organisations. Old Passwords Let Them In.](https://aicoachalex.com/blog/ai-agent-cyberattack-old-passwords-small-business.html): CrowdStrike: a China-linked group used AI agents to target 200+ organisations in 11 days. The way in was old keys and passwords. A one-week fix for small teams.
 - [Companies are rehiring the people AI replaced. Here's what they missed.](https://aicoachalex.com/blog/ai-layoffs-reversed-companies-rehiring.html): Ford, Klarna and others are rehiring after AI-led cuts. Why AI layoffs boomerang, what it means for you, and a one-hour invisible work audit.
