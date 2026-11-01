@@ -14,5 +14,9 @@
  "ai-training-opt-out-robots-txt-small-business": {
   "es": "excluir-web-entrenamiento-ia-robots-txt",
   "it": "escludere-sito-addestramento-ia-robots-txt"
+ },
+ "gemini-edit-files-in-chat": {
+  "es": "gemini-editar-archivos-chat",
+  "it": "gemini-modificare-file-chat"
  }
 }
