@@ -18,5 +18,9 @@
  "gemini-edit-files-in-chat": {
   "es": "gemini-editar-archivos-chat",
   "it": "gemini-modificare-file-chat"
+ },
+ "ai-roi-company-earnings-measure-small-business": {
+  "es": "medir-retorno-ia-pymes-resultados-empresas",
+  "it": "misurare-roi-ia-piccole-imprese-trimestrali"
  }
 }
