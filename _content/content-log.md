@@ -20,3 +20,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-10-30 | blog-daily | 3 Industry take | S3 (mention) | AP: companies rehiring after AI-led layoffs (Ford, Klarna, Robert Half) | Companies are rehiring the people AI replaced. Here's what they missed.
 2026-10-30 | linkedin | 16 Hiring approach | S9 | AP: companies rehiring after AI-led layoffs | After an AI push, Ford hired or promoted 350 veteran engineers.
 2026-10-30 | instagram | 16 Hiring approach | S9 | AP: companies rehiring after AI-led layoffs | They replaced people with AI. Now they're hiring them back.
+2026-11-02 | blog-daily | 3 Industry take | S2 (mention) | CNBC: AI payoff in Q3 earnings (Santander €194M, Novartis, Carlsberg) | Big companies just put a number on AI. Here's how to measure yours.
+2026-11-02 | linkedin | 15 Before & after | S1 | Santander €194M AI value vs Carlsberg "not at scale" (CNBC) | 200 prompts. 11 hours. One safety form still wasn't right.
+2026-11-02 | instagram | 15 Before & after | S1 | Santander €194M AI value vs Carlsberg "not at scale" (CNBC) | 200 prompts. 11 hours. One form.
