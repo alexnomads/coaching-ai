@@ -25,3 +25,4 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-02 | instagram | 15 Before & after | S1 | Santander €194M AI value vs Carlsberg "not at scale" (CNBC) | 200 prompts. 11 hours. One form.
 2026-11-03 | blog-daily | 3 Industry take | S3 (mention) | SemiAnalysis GDPx benchmark: best model 12%, finance/legal ~0 | The best AI passed 12% of real expert work. Give it steps, not jobs.
 2026-11-03 | linkedin | 14 Customer lesson | S3 | SemiAnalysis GDPx benchmark: best model 12% | My client's AI couldn't apply a discount. The AI wasn't the problem.
+2026-11-03 | blog-weekly | 38 Product tradeoff + 23 Decision framework | S11, S7 | Greg Isenberg ep. SaaS is dead? (solo, 31 Oct 2026) | The software is getting free. The work isn't.
