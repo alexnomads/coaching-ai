@@ -26,3 +26,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-03 | blog-daily | 3 Industry take | S3 (mention) | SemiAnalysis GDPx benchmark: best model 12%, finance/legal ~0 | The best AI passed 12% of real expert work. Give it steps, not jobs.
 2026-11-03 | linkedin | 14 Customer lesson | S3 | SemiAnalysis GDPx benchmark: best model 12% | My client's AI couldn't apply a discount. The AI wasn't the problem.
 2026-11-03 | blog-weekly | 38 Product tradeoff + 23 Decision framework | S11, S7 | Greg Isenberg ep. SaaS is dead? (solo, 31 Oct 2026) | The software is getting free. The work isn't.
+2026-11-04 | blog-daily | 3 Industry take | — | OpenAI (Adam Fry, Big Technology): ChatGPT search ~1/5 of Google | OpenAI says ChatGPT now does a fifth of Google's searches. Can it find you?
+2026-11-04 | linkedin | 20 Use case demo | S5 | — | The CEO watched 9 seconds of our video. That was enough.
+2026-11-04 | instagram | 20 Use case demo | S5 | — | The CEO watched 9 seconds. That was enough.
