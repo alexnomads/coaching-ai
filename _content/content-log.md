@@ -29,3 +29,5 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-04 | blog-daily | 3 Industry take | — | OpenAI (Adam Fry, Big Technology): ChatGPT search ~1/5 of Google | OpenAI says ChatGPT now does a fifth of Google's searches. Can it find you?
 2026-11-04 | linkedin | 20 Use case demo | S5 | — | The CEO watched 9 seconds of our video. That was enough.
 2026-11-04 | instagram | 20 Use case demo | S5 | — | The CEO watched 9 seconds. That was enough.
+2026-11-05 | blog-daily | 3 Industry take | — | OpenAI ChatGPT Images 2.6 (GIFs, reference images) | ChatGPT now makes GIFs and reuses your images. Put it to work.
+2026-11-05 | linkedin | 28 Bad workarounds | S4 | — | Three spreadsheets. One dashboard. None of them agreed.
