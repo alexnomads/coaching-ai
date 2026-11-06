@@ -31,3 +31,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-04 | instagram | 20 Use case demo | S5 | — | The CEO watched 9 seconds. That was enough.
 2026-11-05 | blog-daily | 3 Industry take | — | OpenAI ChatGPT Images 2.6 (GIFs, reference images) | ChatGPT now makes GIFs and reuses your images. Put it to work.
 2026-11-05 | linkedin | 28 Bad workarounds | S4 | — | Three spreadsheets. One dashboard. None of them agreed.
+2026-11-06 | blog-daily | 3 Industry take | — | Perplexity Teammates (persistent AI agents, Max plan) + OpenAI 948 Linux LPEs + Meta terms paused | AI agents are becoming teammates. Here's how to hire your first one.
+2026-11-06 | linkedin | 33 Stealable template | S6 | Perplexity Teammates | He didn't want to buy another AI tool. He wanted to build one.
+2026-11-06 | instagram | 33 Stealable template | S6 | Perplexity Teammates | He didn't want to buy an AI tool. He wanted to build one.
