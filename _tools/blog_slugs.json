@@ -38,5 +38,9 @@
  "perplexity-teammates-ai-agents-hire-first-one": {
   "es": "agentes-ia-companeros-perplexity-teammates",
   "it": "agenti-ia-colleghi-perplexity-teammates"
+ },
+ "ai-not-firing-not-hiring-bank-of-england": {
+  "es": "ia-no-despide-no-contrata-banco-de-inglaterra",
+  "it": "ia-non-licenzia-non-assume-banca-d-inghilterra"
  }
 }
