@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html">
+<title>Meta Muse Spaces: describe the app you need, the AI builds it — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="Meta&#x27;s Muse now builds custom trackers and planners from a chat description. What Spaces do, what&#x27;s unknown, and a prompt to spec your own AI tool.">
+<link rel="canonical" href="https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Describe the app you need. Meta&#x27;s AI now builds it.">
+<meta property="og:description" content="Meta&#x27;s Muse now builds custom trackers and planners from a chat description. What Spaces do, what&#x27;s unknown, and a prompt to spec your own AI tool.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-11-08/og.png">
+<meta property="article:published_time" content="2026-11-08">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Describe the app you need. Meta&#x27;s AI now builds it.">
+<meta name="twitter:description" content="Meta&#x27;s Muse now builds custom trackers and planners from a chat description. What Spaces do, what&#x27;s unknown, and a prompt to spec your own AI tool.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-11-08/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html#article",
+   "headline": "Describe the app you need. Meta's AI now builds it.",
+   "description": "Meta's Muse now builds custom trackers and planners from a chat description. What Spaces do, what's unknown, and a prompt to spec your own AI tool.",
+   "image": "https://aicoachalex.com/assets/blog/2026-11-08/og.png",
+   "datePublished": "2026-11-08",
+   "dateModified": "2026-11-08",
+   "inLanguage": "en",
+   "keywords": "Meta Muse Spaces, Meta AI agent, build an app with AI, AI tracker no code, AI planner small business, describe app AI builds it, AI tools for freelancers",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Describe the app you need. Meta's AI now builds it.",
+     "item": "https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What are Spaces in Meta Muse?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Spaces are custom tools inside Muse, Meta's personal AI agent. You describe what you want in chat, such as a gift tracker, wedding planner or school dashboard, and Muse builds it. You can refine it in the same chat, pin it to the sidebar or main tab, and connect apps so it updates in the background. Meta added them on 6 November 2026."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Meta Muse available in Europe?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Meta says Spaces are available wherever Muse is available. Muse's reported user numbers so far cover the US and Canada, and early coverage found Spaces in the US App Store notes on 6 November. Check the Muse app in your country. If it isn't there yet, you can build a similar tracker in ChatGPT, Claude or Gemini."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much do Muse Spaces cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Meta hasn't published a price for Spaces, and the coverage I read doesn't mention one. Treat it as unknown until Meta says otherwise."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it safe to connect my email and calendar to an AI agent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It can be, if you limit it. Connect only the apps a tool needs for one job, check what it can read, and disconnect anything you no longer use. Zuckerberg has said Muse users choose which apps it can access and can disconnect them at any time. Keep client and payment data you can't afford to lose in a system you control."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What should a small business build first with an AI app builder?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "One tracker for a job you already do by hand every week: client follow-ups, orders to ship, quotes waiting for an answer, or a content calendar. Start with no connected apps and five real examples, use it for a week, and keep it only if you opened it every day."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I build the same kind of tool in ChatGPT, Claude or Gemini?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For simple trackers and planners, yes. The key is a clear description: what the tool must answer at a glance, the fields, the statuses and how it's sorted. The prompt in this article writes that description for you, and works in any of them."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/meta-muse-spaces-describe-app-ai-builds-it.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/blog/meta-muse-spaces-describe-app-ai-builds-it.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI News</span>
+      <span>7 min read</span>
+      <span>8 Nov 2026</span>
+      <span>By <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Describe the app you need. Meta's AI now <em>builds</em> it.</h1>
+    <p class="article-dek">Meta has added Spaces to Muse, its personal AI agent. You describe a tracker, planner or dashboard in chat, Muse builds it, and connected apps keep it up to date. Here's what it does, what we don't know yet, and how to write a request that gets you a tool you'll actually use, in Muse or any other AI.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-11-08/hero.webp" width="1600" height="900" alt="Describe the app you need. The AI builds it. Meta Muse Spaces, 8 November 2026. Four steps: describe it in plain words, Muse builds a tracker, planner or board, connect apps so it updates itself, pin it to the sidebar or main tab." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>On 6 November Meta added Spaces to Muse, the personal AI agent it launched in September.</strong> A Space is a small custom tool you create by describing it in chat: a gift tracker, a wedding planner, a school dashboard, a client hub. You refine it in the same conversation, pin it to the sidebar or main tab, and connect apps so it updates in the background. Meta says Spaces are available wherever Muse is; Muse passed 10 million users in the US and Canada in under two months. Pricing and the full list of connectable apps aren't public yet. The skill that matters is the same in every AI tool: describe the tool clearly, start with the least access, and test it for a week before you rely on it.</p>
+    </div>
+
+    <p>A lot of my clients run their business from a mix of WhatsApp threads, a notes app and a spreadsheet they're slightly afraid of. When I ask what they really want, it's rarely "an AI". It's a simple screen that shows what's due, who owes what and what to do next.</p>
+
+    <p>Until recently, getting that meant learning a no-code tool or paying someone to build it. This week Meta put a version of it inside a chat app used by millions of non-technical people. That's why I'm writing about it, even if you never open Muse.</p>
+
+    <h2>What are Meta Muse Spaces?</h2>
+
+    <p>Muse is Meta's personal AI agent, launched on 8 September 2026. Meta describes it as an agent that works with the apps you already use and tracks progress toward your goals, as <a href="https://www.thenationalnews.com/future/technology/2026/09/08/meta-muse-ai-agent/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">The National</a> reported at launch. On 6 November Meta added Spaces. I read the coverage in <a href="https://www.marketscale.com/industries/software-and-technology/meta-muse-spaces-ai-agent-trackers-planners.md?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">MarketScale</a> and <a href="https://labmemo.com/meta-muse-spaces-custom-experience-2026-11/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">LabMemo</a>, which summarises <a href="https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Meta's announcement</a>. In plain English:</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>Question</th><th>What we know</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>What a Space is</strong></td><td>A custom tool inside Muse, such as a tracker, planner or project board, built from your description</td></tr>
+        <tr><td><strong>How you make one</strong></td><td>Describe it in chat ("I want a holiday gift tracker"). Then refine it in the same chat: add elements, change the look, change how it behaves</td></tr>
+        <tr><td><strong>Examples Meta and early coverage give</strong></td><td>Shopping hub, school dashboard, wedding planner (RSVPs, vendor payments, to-dos), travel planner, music tracker, recipe collection, DIY project board, small-shop order tracker, freelancer client hub</td></tr>
+        <tr><td><strong>Staying current</strong></td><td>Connected apps update a Space in the background, for example new concert dates, price changes or savings progress</td></tr>
+        <tr><td><strong>Where it lives</strong></td><td>Pin it to the sidebar or main tab, or hide it. You can schedule it, for example a weekday planner and a Saturday weekend view</td></tr>
+        <tr><td><strong>Availability</strong></td><td>Meta says wherever Muse is available. The US App Store notes for version 14.3 (6 Nov) list Spaces. Muse reached 10 million users in the US and Canada in under two months, Mark Zuckerberg said on Meta's October earnings call</td></tr>
+        <tr><td><strong>Not yet clear</strong></td><td>Price, limits, the full list of apps you can connect, and how sharing a Space with other people will work</td></tr>
+      </tbody>
+    </table>
+
+    <p>Meta's own pitch, quoted by MarketScale: "Connect the apps you use, and your spaces keep themselves up to date." Zuckerberg said on X that he had used Spaces to build a BBQ game, an event tracker and a home control dashboard.</p>
+
+    <blockquote>The new skill isn't building apps. It's describing exactly what you want a tool to do.</blockquote>
+
+    <h2>Can AI build an app for me without coding?</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-08/how-spaces-work.webp" width="1600" height="900" alt="How Meta Muse Spaces work: from one sentence to a tool you open every day. Examples from Meta and early coverage: shopping hub with gift ideas, wishlist and Marketplace messages; school dashboard that puts school-email events into your calendar; wedding planner with RSVPs, vendor payments and to-dos; client hub and order tracker for freelancers and small shops. Three steps: describe it in chat, refine it in the same chat, connect apps so it updates in the background." loading="lazy">
+      <figcaption>Based on coverage of Meta's 6 November 2026 announcement by MarketScale and LabMemo.</figcaption>
+    </figure>
+
+    <p>For simple personal and small-business tools, yes, and Spaces is one more sign of it. The pattern is the same one I wrote about with <a href="/blog/gemini-edit-files-in-chat.html">Gemini editing files right in the chat</a> and <a href="/blog/perplexity-teammates-ai-agents-hire-first-one.html">AI teammates that keep a standing job</a>: the chat window is turning into the place where your tools are made, not just where you ask questions.</p>
+
+    <p>The limit is your description. "Help me with my clients" gets you something generic. "A list of my active clients with the project, the next step, the date I promised it, and whether the invoice is paid, sorted by what's due this week" gets you something you'll open every morning.</p>
+
+    <h2>Why it matters to you</h2>
+
+    <ul>
+      <li><strong>The small tool you never got round to building is now a sentence away.</strong> An order tracker, a client list, a content calendar. If it lives in your head or in scattered messages, it's a candidate.</li>
+      <li><strong>Meta is putting this where your customers already are.</strong> Meta's apps are where many small businesses talk to customers. Expect people to get used to AI tools that build themselves, and to expect the same speed from you.</li>
+      <li><strong>Connected apps are the power and the risk.</strong> A Space that reads your email and calendar can keep itself current. It can also see a lot. Zuckerberg has said users choose which apps Muse can access and can disconnect them at any time. Use that.</li>
+      <li><strong>Don't put your business on one app you can't export from.</strong> We don't yet know how you get your data out of a Space. Keep the master copy of anything important, like client or order data, somewhere you control.</li>
+      <li><strong>If Muse isn't in your country, the skill still transfers.</strong> ChatGPT, Claude and Gemini can all build a simple tracker or table from a good description. The request below works in any of them.</li>
+    </ul>
+
+    <h2>How do I build my own AI tracker or planner?</h2>
+
+    <ol>
+      <li><strong>Pick one job you track by hand every week.</strong> Orders to ship, clients to follow up, posts to publish, quotes waiting for an answer. One job, not your whole business.</li>
+      <li><strong>Write down what you check each time.</strong> The columns, the statuses and the one question the tool must answer at a glance, like "what do I need to do today?".</li>
+      <li><strong>Turn it into a spec with the prompt below.</strong> It makes the AI ask you the right questions first, then write a clear request you can paste into Muse, ChatGPT, Claude or Gemini.</li>
+      <li><strong>Build it with no connected apps first.</strong> Type in five real examples by hand. If the layout doesn't help with real data, connecting your email won't fix it.</li>
+      <li><strong>Connect the smallest set of apps it needs.</strong> One calendar or one inbox, not everything. Check what it can read before you say yes.</li>
+      <li><strong>Use it for a week, then decide.</strong> If you opened it every day, keep it and refine it. If you didn't, delete it. My guide to <a href="/blog/ai-roi-company-earnings-measure-small-business.html">measuring AI's value</a> shows how to put a number on the time saved.</li>
+    </ol>
+
+    <h3>Copy this prompt: spec your own AI tool</h3>
+
+    <p>Paste this into ChatGPT, Claude, Gemini or Muse. It gives you a clear request to build from, whichever tool you use.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">AI tool spec prompt</span>
+      <button class="copy-btn" data-copy="toolSpec" type="button">Copy</button>
+<pre id="toolSpec">Act as a practical product designer for a small business. Help me turn a job I do by hand into a simple tool (a tracker, planner or dashboard) that an AI assistant can build for me.
+
+The job: [e.g. following up with clients, tracking orders, planning content]
+How I do it now: [notebook, WhatsApp, a spreadsheet, my memory]
+How often I check it: [daily, weekly]
+
+1. Ask me up to 5 questions to understand the job. Wait for my answers.
+2. Propose the tool:
+   - The one question it must answer at a glance
+   - The columns or fields, with an example value for each
+   - The statuses an item can have
+   - How it should be sorted, and what should be highlighted
+   - Any reminder or weekly summary it should give me
+3. List which apps it would need to connect to stay up to date, and what each one would let it read. Mark which are optional.
+4. Write the final build request in under 150 words, ready to paste into an AI tool.
+5. Give me 3 things to check in the first week to decide whether to keep it.
+
+Rules: keep it simple enough to use in under 2 minutes a day. Don't invent facts about my business; if you don't know, ask. Never ask for passwords or payment details.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Before</span><p>Client follow-ups live in WhatsApp, your notes app and your head. Every Monday you scroll back through messages to work out who's waiting on you.</p></div>
+      <div class="compare-good"><span class="compare-label">After</span><p>You describe a client tracker once. It shows each client, the next step and the date you promised, sorted by what's due this week.</p></div>
+    </div>
+
+    <div class="article-cta inline">
+      <h3>Want your first AI-built tool set up with you?</h3>
+      <p>In a 49€ diagnostic call we pick the one job worth turning into a tool, write the spec together and build it in the AI you already use, with the right permissions.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-08-muse-spaces-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>Also today in AI</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-08/also-today.webp" width="1600" height="900" alt="Also today, two signals worth knowing. 15 seconds: maximum clip length in Gemini Omni 1.2 Flash, now also in Google Vids, up from 10 seconds, with the API price for 720p cut 30 percent. 20 dollars a month: Kiro Pro, AWS's coding tool, which now has bots with their own memory; 1,000 credits, the free plan has 50. Your move: give every AI helper one job, its own notes and the smallest permissions, then check its work weekly." loading="lazy">
+    </figure>
+
+    <h3>Google's Gemini Omni 1.2 Flash makes 15-second clips, now in Google Vids</h3>
+
+    <p>Google released Gemini Omni 1.2 Flash on 5 November. It generates video clips of up to 15 seconds, up from 10, and the API price for 720p is $0.07 per second, 30% less than Omni 1.1, according to the <a href="https://www.aiimpacthub.com/ai-news/2026-11-07?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">AI Impact Hub daily briefing</a>, which summarises <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Google's post</a>. It is generally available in the Gemini API and Google Cloud, and Google's Workspace recap of 6 November lists it in Google Vids, according to <a href="https://releasebot.io/updates/google?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Releasebot</a>.</p>
+
+    <p><strong>How to use it:</strong> 15 seconds is the length of a short social clip or a product teaser. If your company already uses Google Workspace, try one short clip for your next post in Vids before paying for a separate video tool. My <a href="/blog/chatgpt-images-2-6-gifs-small-business.html">guide to on-brand AI visuals</a> covers how to brief it.</p>
+
+    <h3>AWS gives its Kiro coding tool bots with their own memory</h3>
+
+    <p>On 5 November AWS made bots generally available in Kiro Crew, its agent workspace for software development, as <a href="https://venturebeat.com/technology/aws-launches-agentic-ai-kiro-bots-with-memory-and-support-for-recurring-development-jobs?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">VentureBeat</a> and <a href="https://www.infoworld.com/article/4245120/aws-launches-kiro-bots-to-help-devs-coordinate-ai-coding-agents.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">InfoWorld</a> reported. Each bot has a name, its own notes and workspace, and can run worker sessions, check their output and run on a schedule you describe in plain words. Permissions differ per bot: a review bot can comment but not approve or merge. <a href="https://kiro.dev/pricing/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Kiro's pricing page</a> lists a free plan with 50 credits and Pro at $20 a month with 1,000. VentureBeat's caveat is fair: "A credit is not a completed task."</p>
+
+    <p><strong>What it means for you:</strong> this is for developers, but the design is worth copying for any AI helper. Give it one job, its own notes you can read and edit, and the smallest permissions that let it do that job. Then check what it actually finished, not how busy it looked.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What are Spaces in Meta Muse?</summary><p>Spaces are custom tools inside Muse, Meta's personal AI agent. You describe what you want in chat, such as a gift tracker, wedding planner or school dashboard, and Muse builds it. You can refine it in the same chat, pin it to the sidebar or main tab, and connect apps so it updates in the background. Meta added them on 6 November 2026.</p></details>
+      <details><summary>Is Meta Muse available in Europe?</summary><p>Meta says Spaces are available wherever Muse is available. Muse's reported user numbers so far cover the US and Canada, and early coverage found Spaces in the US App Store notes on 6 November. Check the Muse app in your country. If it isn't there yet, you can build a similar tracker in ChatGPT, Claude or Gemini.</p></details>
+      <details><summary>How much do Muse Spaces cost?</summary><p>Meta hasn't published a price for Spaces, and the coverage I read doesn't mention one. Treat it as unknown until Meta says otherwise.</p></details>
+      <details><summary>Is it safe to connect my email and calendar to an AI agent?</summary><p>It can be, if you limit it. Connect only the apps a tool needs for one job, check what it can read, and disconnect anything you no longer use. Zuckerberg has said Muse users choose which apps it can access and can disconnect them at any time. Keep client and payment data you can't afford to lose in a system you control.</p></details>
+      <details><summary>What should a small business build first with an AI app builder?</summary><p>One tracker for a job you already do by hand every week: client follow-ups, orders to ship, quotes waiting for an answer, or a content calendar. Start with no connected apps and five real examples, use it for a week, and keep it only if you opened it every day.</p></details>
+      <details><summary>Can I build the same kind of tool in ChatGPT, Claude or Gemini?</summary><p>For simple trackers and planners, yes. The key is a clear description: what the tool must answer at a glance, the fields, the statuses and how it's sorted. The prompt in this article writes that description for you, and works in any of them.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Turn your to-do chaos into one AI-built tool.</h3>
+      <p>One-to-one coaching: we choose the job worth automating, spec it, build it in the AI you already use and set safe permissions, so it saves you time every week.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-08-muse-spaces-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="news-2026-11-08-muse-spaces-end-setup">Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://www.marketscale.com/industries/software-and-technology/meta-muse-spaces-ai-agent-trackers-planners.md?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">MarketScale, Meta adds Spaces to Muse</a> (6 Nov 2026); <a href="https://labmemo.com/meta-muse-spaces-custom-experience-2026-11/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">LabMemo, Meta Muse Spaces</a> (7 Nov 2026, in Japanese); <a href="https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Meta, Introducing Spaces</a> (6 Nov 2026); <a href="https://www.thenationalnews.com/future/technology/2026/09/08/meta-muse-ai-agent/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">The National, Meta's Muse AI agent</a> (8 Sep 2026); <a href="https://www.aiimpacthub.com/ai-news/2026-11-07?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">AI Impact Hub, The Daily AI Briefing</a> (7 Nov 2026); <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Google, Introducing Gemini Omni 1.2 Flash</a> (5 Nov 2026); <a href="https://releasebot.io/updates/google?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Releasebot, Google updates</a> (6 Nov 2026); <a href="https://venturebeat.com/technology/aws-launches-agentic-ai-kiro-bots-with-memory-and-support-for-recurring-development-jobs?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">VentureBeat, AWS launches Kiro bots</a> (5 Nov 2026); <a href="https://www.infoworld.com/article/4245120/aws-launches-kiro-bots-to-help-devs-coordinate-ai-coding-agents.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">InfoWorld, AWS launches Kiro bots</a> (5 Nov 2026); <a href="https://kiro.dev/pricing/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=meta-muse-spaces-describe-app-ai-builds-it" target="_blank" rel="noopener">Kiro pricing</a>. Recommendations and the tool-spec method are from my own coaching work.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/blog/perplexity-teammates-ai-agents-hire-first-one.html">AI agents are becoming teammates. Here's how to hire your first one →</a>
+      <a href="/blog/gemini-edit-files-in-chat.html">Gemini now edits your documents, sheets and PDFs right in the chat →</a>
+      <a href="/blog/meta-ai-terms-business-liability.html">Meta's new terms make you pay for its AI's mistakes →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>

@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [Meta Muse Spaces: describe the app you need, the AI builds it](https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html): Meta's Muse now builds custom trackers and planners from a chat description. What Spaces do, what's unknown, and a prompt to spec your own AI tool.
 - [AI isn't firing people. It's quietly not hiring them.](https://aicoachalex.com/blog/ai-not-firing-not-hiring-bank-of-england.html): The Bank of England finds AI isn't causing layoffs, but firms hire less and don't replace leavers. What it means for your job and how to adapt.
 - [Perplexity Teammates: AI agents become teammates. How to hire your first](https://aicoachalex.com/blog/perplexity-teammates-ai-agents-hire-first-one.html): Perplexity Teammates are AI agents that keep a job, remember your work and ask in Slack. What they do, the 00 cost, and a free way to start.
 - [ChatGPT Images 2.6 makes GIFs: how to use them in your business](https://aicoachalex.com/blog/chatgpt-images-2-6-gifs-small-business.html): ChatGPT Images 2.6 adds animated GIFs, reusable reference images and faster generation. What changed and how a small business can make its first GIF.
