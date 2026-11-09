@@ -34,3 +34,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-06 | blog-daily | 3 Industry take | — | Perplexity Teammates (persistent AI agents, Max plan) + OpenAI 948 Linux LPEs + Meta terms paused | AI agents are becoming teammates. Here's how to hire your first one.
 2026-11-06 | linkedin | 33 Stealable template | S6 | Perplexity Teammates | He didn't want to buy another AI tool. He wanted to build one.
 2026-11-06 | instagram | 33 Stealable template | S6 | Perplexity Teammates | He didn't want to buy an AI tool. He wanted to build one.
+2026-11-09 | blog-daily | 3 Industry take | S1 (mention) | Arden University study: ~7h/week fixing colleagues' AI work (The Express, 8 Nov) + Visa AI shopping benchmark + DeepSeek Harness 1.54M DAU | Fixing other people's AI work now costs almost a day a week
+2026-11-09 | linkedin | 6 Customer win | S2 | Arden University study: ~7h/week fixing colleagues' AI work | Test one of his new AI found a payment nobody had chased.
+2026-11-09 | instagram | 6 Customer win | S2 | Arden University study: ~7h/week fixing colleagues' AI work | Test one of his new AI found money nobody had chased.
