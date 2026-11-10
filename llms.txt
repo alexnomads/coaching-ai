@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [Is your business AI-proof? Check it against 8 moats](https://aicoachalex.com/blog/ai-proof-business-8-moats.html): Greg Isenberg mapped 8 kinds of AI-proof business. Here's how to score your own on them, plus 5 moves and 2 copy-paste prompts for this week.
 - [Claude Fable 5.2 costs twice as much per word. It may be cheaper per job.](https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html): Anthropic's Claude Fable 5.2 costs /0 per million tokens, yet may cost less per task. Who gets it, and how to pick the cheapest AI for your work.
 - [Fixing other people's AI work now costs almost a day a week](https://aicoachalex.com/blog/ai-workslop-fixing-colleagues-ai-work-day-a-week.html): A 2,000-worker study says fixing colleagues' AI output takes almost 7 hours a week. Why AI slop happens and 5 rules that stop it in a small team.
 - [Meta Muse Spaces: describe the app you need, the AI builds it](https://aicoachalex.com/blog/meta-muse-spaces-describe-app-ai-builds-it.html): Meta's Muse now builds custom trackers and planners from a chat description. What Spaces do, what's unknown, and a prompt to spec your own AI tool.
