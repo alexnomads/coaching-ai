@@ -37,3 +37,5 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-09 | blog-daily | 3 Industry take | S1 (mention) | Arden University study: ~7h/week fixing colleagues' AI work (The Express, 8 Nov) + Visa AI shopping benchmark + DeepSeek Harness 1.54M DAU | Fixing other people's AI work now costs almost a day a week
 2026-11-09 | linkedin | 6 Customer win | S2 | Arden University study: ~7h/week fixing colleagues' AI work | Test one of his new AI found a payment nobody had chased.
 2026-11-09 | instagram | 6 Customer win | S2 | Arden University study: ~7h/week fixing colleagues' AI work | Test one of his new AI found money nobody had chased.
+2026-11-10 | blog-daily | 3 Industry take | — | Anthropic Claude Fable 5.2 / Mythos 5.2 ($8/$40, ~½ cost per task vs Opus 5.5) + Meta Muse Ember + Apple Intelligence packs + Qantas/Accenture | Claude Fable 5.2 costs twice as much per word. It may be cheaper per job.
+2026-11-10 | linkedin | 34 Buying criteria | S9 | Anthropic Claude Fable 5.2 (2x per token, ~½ per task) | "Which AI should I pay for?" is the wrong first question.
