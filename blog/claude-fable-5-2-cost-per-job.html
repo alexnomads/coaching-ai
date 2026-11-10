@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html">
+<title>Claude Fable 5.2 costs twice as much per word. It may be cheaper per job. — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="Anthropic&#x27;s Claude Fable 5.2 costs /0 per million tokens, yet may cost less per task. Who gets it, and how to pick the cheapest AI for your work.">
+<link rel="canonical" href="https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Claude Fable 5.2: twice the price per word, half the cost per job?">
+<meta property="og:description" content="Anthropic&#x27;s Claude Fable 5.2 costs /0 per million tokens, yet may cost less per task. Who gets it, and how to pick the cheapest AI for your work.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-11-10/og.png">
+<meta property="article:published_time" content="2026-11-10">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Fable 5.2: twice the price per word, half the cost per job?">
+<meta name="twitter:description" content="Anthropic&#x27;s Claude Fable 5.2 costs /0 per million tokens, yet may cost less per task. Who gets it, and how to pick the cheapest AI for your work.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-11-10/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html#article",
+   "headline": "Claude Fable 5.2: twice the price per word, half the cost per job?",
+   "description": "Anthropic's Claude Fable 5.2 costs /0 per million tokens, yet may cost less per task. Who gets it, and how to pick the cheapest AI for your work.",
+   "image": "https://aicoachalex.com/assets/blog/2026-11-10/og.png",
+   "datePublished": "2026-11-10",
+   "dateModified": "2026-11-10",
+   "inLanguage": "en",
+   "keywords": "Claude Fable 5.2, Mythos 5.2, Anthropic, Claude pricing, Fable 5.2 vs Opus 5.5, AI model cost per task, which AI model to use, Claude Pro, Muse Ember, AI news",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Claude Fable 5.2: twice the price per word, half the cost per job?",
+     "item": "https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is Claude Fable 5.2?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's Anthropic's newest top-tier Claude model, released on 9 November 2026 and aimed at ambitious, open-ended technical work. It costs $8 per million input tokens and $40 per million output on the API, 20% less than Fable 5.1, and handles up to 1 million tokens of input."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Claude Fable 5.2 free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not on the Free plan. Pro and standard Team users can use it during the launch week until 16 November 2026, up to 50% of their weekly limits plus one limit reset. After that, Pro users access it with usage credits. Max and Ultra plans include it up to half the weekly limit."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Claude Fable 5.2 better than Opus 5.5?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On Anthropic's own coding benchmark it matched Opus 5.5's score at about half the cost per task, even though its per-token price is double. Those are Anthropic's figures and haven't been independently checked. For your work, the honest answer is to test both on one real task and time your fixes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is Mythos 5.2?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Mythos 5.2 is the same model as Fable 5.2 with reduced safeguards, available only to organisations enrolled in Anthropic's Cyber Verification Program for security work such as finding software vulnerabilities. Most people and businesses will use Fable 5.2."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I choose which AI model to use for a task?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Measure cost per finished job, not price per word. Run the same real task with the same files on two models, count the tries, time how long you spend fixing each output and check the usage it consumed. Then write a one-line rule per task into your AI instructions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the most expensive AI model always the best choice?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Top models earn their price on long, messy, high-stakes work where fewer retries save real time. For routine tasks like sorting emails or summarising notes, a cheaper model that does the job reliably is the better buy."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/claude-fable-5-2-cost-per-job.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/blog/claude-fable-5-2-cost-per-job.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI News</span>
+      <span>7 min read</span>
+      <span>10 Nov 2026</span>
+      <span>By <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Claude Fable 5.2 costs twice as much per word. It may be <em>cheaper</em> per job.</h1>
+    <p class="article-dek">Anthropic released Claude Fable 5.2 and Mythos 5.2 on 9 November. Fable 5.2 is 20% cheaper than the model it replaces but still costs twice as much per token as Opus 5.5, and Anthropic says it finishes coding tasks for about half the cost. Here's what changed, who gets it this week, and a simple way to work out which model is actually cheapest for your work.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-11-10/hero.webp" width="1600" height="900" alt="AI News, 10 November 2026, Claude Fable 5.2. Twice the price per word. Half the cost per job? Fable 5.2 costs 8 dollars input and 40 dollars output per million tokens. Opus 5.5 costs 4 dollars and 20 dollars. Anthropic says Fable 5.2's cost per coding task is about half of Opus 5.5's. The Pro launch week ends 16 November, with up to 50 percent of weekly limits." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>Anthropic launched Claude Fable 5.2 on 9 November at $8 per million input tokens and $40 per million output, 20% less than Fable 5.1 and double Opus 5.5's $4 and $20.</strong> Anthropic says that on its own coding benchmark Fable 5.2 matched Opus 5.5's score at roughly half the cost per task, because it gets there with less work. Pro users can try it free until 16 November (up to half their weekly limits); Max and Ultra plans include it. The lesson for everyone else: stop comparing AI on price per word and start measuring cost per finished job, including your own time fixing the output.</p>
+    </div>
+
+    <p>Every week a client asks me some version of the same question: "Which AI should I pay for?" Most of them have already compared price tables. Almost none of them have timed how long they spend fixing what the AI gives back.</p>
+
+    <p>That's why yesterday's launch is more interesting than another "new model, new benchmark" story. Anthropic released a model that is more expensive on paper and, by its own numbers, cheaper in practice. If that holds for your work, the price table you've been using to choose tools is the wrong table.</p>
+
+    <h2>What did Anthropic release on 9 November?</h2>
+
+    <p>Two models built on the same base. <strong>Claude Fable 5.2</strong> is the general release, which Anthropic describes as "best for the most ambitious, open-ended technical work", as reported by <a href="https://aiweekly.co/alerts/anthropics-1000-fable-52-agents-formalize-fermat-in-30-hours?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly</a>. <strong>Mythos 5.2</strong> is the same model with fewer safeguards, offered only to organisations in Anthropic's Cyber Verification Program for security work. Pricing and plan details come from write-ups by <a href="https://www.datastudios.org/post/anthropic-claude-fable-5-2-mythos-5-2-launch-pricing-plans?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">Data Studios</a> and <a href="https://www.eesel.ai/blog/claude-fable-5-2-pricing?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">eesel</a>, which agree on the numbers below.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>What</th><th>In plain English</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Price (API)</strong></td><td>$8 per million input tokens, $40 per million output. A token is roughly three-quarters of a word.</td></tr>
+        <tr><td><strong>Versus Fable 5.1</strong></td><td>20% cheaper on every line ($10 and $50 before)</td></tr>
+        <tr><td><strong>Versus Opus 5.5</strong></td><td>Twice the per-token price (Opus 5.5 is $4 and $20)</td></tr>
+        <tr><td><strong>Cost per task</strong></td><td>Anthropic says that on its coding benchmark, Fable 5.2 matched Opus 5.5's score at about half the cost per task</td></tr>
+        <tr><td><strong>Memory for documents</strong></td><td>1 million tokens of input, so very long files and whole folders fit in one go</td></tr>
+        <tr><td><strong>Who gets it</strong></td><td>Not on Free. Pro and standard Team seats: launch week until 16 November, up to 50% of weekly limits plus one limit reset; after that, via usage credits. Max and Ultra: included, up to half the weekly limit. Also on the API</td></tr>
+        <tr><td><strong>Showcase claims</strong></td><td>A team of 1,000 Fable 5.2 agents formalised Fermat's Last Theorem in 30 hours, and two open physics problems were solved during testing (Anthropic's claims)</td></tr>
+      </tbody>
+    </table>
+
+    <p>All benchmark figures are Anthropic's own and haven't been independently reproduced yet. The two write-ups also describe Anthropic's coding comparison slightly differently, so take "about half the cost" as a direction, not a guarantee.</p>
+
+    <h2>Why can a more expensive AI model be cheaper?</h2>
+
+    <p>Because you don't pay per word of answer. You pay for every token the model reads and writes along the way, including the steps it takes, the files it rereads and the attempts it throws away. A model that thinks more efficiently can use far fewer tokens to reach the same result, so a higher price per token can still mean a lower bill per task.</p>
+
+    <p>And the bill is only part of the cost. The bigger number, in my experience, is the human one: the retries, the copy-pasting between chats and the 20 minutes you spend correcting a draft that looked finished. I wrote about this yesterday with <a href="/blog/ai-workslop-fixing-colleagues-ai-work-day-a-week.html">the study that found people losing almost a day a week fixing colleagues' AI work</a>. A model that gets it right in one go is cheaper even if its tokens cost more.</p>
+
+    <blockquote>The cheapest AI is the one you don't have to redo.</blockquote>
+
+    <h2>Why it matters to you</h2>
+
+    <ul>
+      <li><strong>Your "AI budget" is probably measured wrong.</strong> Monthly subscription price says almost nothing about value. Hours saved minus hours fixing is the number that matters.</li>
+      <li><strong>One model for everything is the expensive habit.</strong> The top model on routine emails is waste. A cheap model on a messy, high-stakes task is false economy. I compared the tiers in <a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">Haiku vs Sonnet vs Opus</a>; the same logic applies here.</li>
+      <li><strong>Long, open-ended work is where the top tier earns its price.</strong> Reviewing a 200-page tender, rebuilding a messy spreadsheet model, working through a full folder of contracts: that's where fewer retries pay off.</li>
+      <li><strong>Pro users have a free trial window this week.</strong> Until 16 November you can test Fable 5.2 on your real work without paying extra. That's the cheapest experiment you'll get.</li>
+    </ul>
+
+    <h2>How do I work out which AI model is cheapest for my work?</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-10/cost-per-job.webp" width="1600" height="900" alt="How to compare AI prices. Stop comparing price per word. Compare cost per finished job. Real cost equals price times words used, plus retries, plus your time fixing it. Step 1: pick one real job, a task you do every week with your real files. Step 2: run it on two models, same prompt, same files, note how many tries it took. Step 3: time your fixes, minutes spent correcting the output. Step 4: pick per job, not per brand, cheap model for routine, top model for the hard, messy work." loading="lazy">
+    </figure>
+
+    <ol>
+      <li><strong>Pick one real job you do every week.</strong> Not a test question. A real one: the weekly client report, the quote from a site visit, the tender summary. Use your actual files.</li>
+      <li><strong>Run it on two models with the same prompt and files.</strong> If you're on Claude Pro, try Fable 5.2 this week and your usual model next to it. On ChatGPT or Gemini, compare their top and mid tiers the same way.</li>
+      <li><strong>Count tries and time your fixes.</strong> Note how many attempts each needed and how many minutes you spent correcting the result. Write it down; your memory will flatter the faster-looking one.</li>
+      <li><strong>Check the usage meter, not just the answer.</strong> On a subscription, see how much of your weekly limit each run used. On the API, check the cost of each run in the console.</li>
+      <li><strong>Decide per job, then write it down.</strong> Make a one-line rule for each recurring task: "Weekly report: mid model. Tender review: top model." Put it in your Project instructions so you stop re-deciding.</li>
+    </ol>
+
+    <h3>Copy this prompt: the cost-per-job scorecard</h3>
+
+    <p>Run your task on two models, then paste both outputs into a fresh chat with this prompt. It turns a gut feeling into a comparison you can repeat.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Cost-per-job scorecard</span>
+      <button class="copy-btn" data-copy="costJob" type="button">Copy</button>
+<pre id="costJob">I'm comparing two AI models on the same real task so I can decide which one to use for it from now on.
+
+The task: [describe the job, e.g. "turn my site-visit notes into a client quote"]
+What "done" means: [e.g. "I can send it to the client with no edits to numbers or scope"]
+
+Output A (from [model name], took [N] tries, I spent [N] minutes fixing it):
+[paste]
+
+Output B (from [model name], took [N] tries, I spent [N] minutes fixing it):
+[paste]
+
+1. Score each output 1-5 on: accuracy against my notes, completeness, fit for my reader, and how much editing it still needs. Explain each score in one line.
+2. List every factual error or invented detail you can find in each, quoting the line.
+3. Using my tries and fixing time, tell me which output had the lower real cost, counting my time at [my hourly rate].
+4. Write a one-line rule I can paste into my AI instructions: "For [this task], use [model] because [reason]."
+
+Be blunt. If neither output is good enough to send, say so and tell me what context I should add first.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Before</span><p>You pick the AI with the lowest monthly price, use it for everything, and quietly spend Friday afternoon fixing its drafts.</p></div>
+      <div class="compare-good"><span class="compare-label">After</span><p>You know, task by task, which model gets it right first time, you've written that rule into your workspace, and you only pay for the top model where it saves you time.</p></div>
+    </div>
+
+    <div class="article-cta inline">
+      <h3>Not sure which AI to pay for?</h3>
+      <p>In a 49€ diagnostic call we map the jobs you want AI to do, test the right model on one of them with your real files and set up a simple rule for which model does what.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-10-fable-5-2-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>Also today in AI</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-10/also-today.webp" width="1600" height="900" alt="Also today, 9 to 10 November 2026, three numbers worth knowing. 10 cents: Meta's new Muse Ember model per million input tokens, 50 cents output, built for high-volume routine work. 49.99 dollars: Apple's first paid Apple Intelligence top-up, starting in Logic Pro, credits expire 12 months after purchase. About 850: Qantas roles to go in a seven-year Accenture outsourcing deal, finance, procurement, HR and marketing first." loading="lazy">
+    </figure>
+
+    <h3>Meta's Muse Ember aims at cheap, high-volume work</h3>
+
+    <p>Meta Superintelligence Labs released Muse Ember on 9 November as the low-cost tier of its Muse family: $0.10 per million input tokens and $0.50 per million output, a 1-million-token context and text, image, audio, document and video input, according to <a href="https://aiweekly.co/ai-news-today?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly's summary</a> of Meta's announcement. Meta claims it beats Claude Haiku 5.5 and OpenAI's GPT-6 Luna on its agent and coding benchmarks. Those are Meta's own numbers.</p>
+
+    <p><strong>What it means for you:</strong> it's the other half of today's lesson. For simple, repetitive jobs like sorting emails, tagging leads or summarising call notes, the cheapest model that does the job reliably wins. Test it on the boring work, not the hard work.</p>
+
+    <h3>Apple starts charging for extra Apple Intelligence</h3>
+
+    <p>Apple launched one-time $49.99 Intelligence Usage Packs, its first paid Apple Intelligence tier, starting inside Logic Pro, with Final Cut Pro, Pixelmator Pro and iWork expected later this month, as <a href="https://aiweekly.co/alerts/apple-launches-4999-intelligence-usage-packs-first-paid-ai-tier?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly reported</a> from 9to5Mac. Unused usage rolls over monthly and expires 12 months after purchase, there's no Family Sharing, and it's in eight countries at launch. Apple hasn't said how much extra usage a pack buys.</p>
+
+    <p><strong>How to use it:</strong> don't buy a pack until you've hit your monthly limit at least once. And since Apple hasn't said what $49.99 gets you, compare it with what the same money buys in a Claude, ChatGPT or Gemini plan.</p>
+
+    <h3>Qantas cuts about 850 roles in an outsourcing deal it ties to AI</h3>
+
+    <p>Qantas will cut around 850 corporate roles, about 3% of its 28,000 Australian staff, in a seven-year deal moving most of the work to Accenture teams, mainly in India, according to <a href="https://aiweekly.co/alerts/qantas-cuts-850-jobs-in-seven-year-accenture-outsourcing-deal?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly's summary</a> of Bloomberg and ABC reporting. Finance, procurement, HR and marketing go first, by mid-2027. CEO Vanessa Hudson linked it to AI and the pace of technology change. Qantas says it will consult staff and try to redeploy people.</p>
+
+    <p><strong>What it means for you:</strong> back-office roles are where companies are acting first. If your job is in finance, HR or procurement, the safest move is to become the person who runs the AI-assisted version of that work. My free <a href="/career-risk-assessment.html">career risk quiz</a> is a quick place to start.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What is Claude Fable 5.2?</summary><p>It's Anthropic's newest top-tier Claude model, released on 9 November 2026 and aimed at ambitious, open-ended technical work. It costs $8 per million input tokens and $40 per million output on the API, 20% less than Fable 5.1, and handles up to 1 million tokens of input.</p></details>
+      <details><summary>Is Claude Fable 5.2 free?</summary><p>Not on the Free plan. Pro and standard Team users can use it during the launch week until 16 November 2026, up to 50% of their weekly limits plus one limit reset. After that, Pro users access it with usage credits. Max and Ultra plans include it up to half the weekly limit.</p></details>
+      <details><summary>Is Claude Fable 5.2 better than Opus 5.5?</summary><p>On Anthropic's own coding benchmark it matched Opus 5.5's score at about half the cost per task, even though its per-token price is double. Those are Anthropic's figures and haven't been independently checked. For your work, the honest answer is to test both on one real task and time your fixes.</p></details>
+      <details><summary>What is Mythos 5.2?</summary><p>Mythos 5.2 is the same model as Fable 5.2 with reduced safeguards, available only to organisations enrolled in Anthropic's Cyber Verification Program for security work such as finding software vulnerabilities. Most people and businesses will use Fable 5.2.</p></details>
+      <details><summary>How do I choose which AI model to use for a task?</summary><p>Measure cost per finished job, not price per word. Run the same real task with the same files on two models, count the tries, time how long you spend fixing each output and check the usage it consumed. Then write a one-line rule per task into your AI instructions.</p></details>
+      <details><summary>Is the most expensive AI model always the best choice?</summary><p>No. Top models earn their price on long, messy, high-stakes work where fewer retries save real time. For routine tasks like sorting emails or summarising notes, a cheaper model that does the job reliably is the better buy.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Pay for the AI that gets it right, not the one with the lowest sticker price.</h3>
+      <p>One-to-one coaching: we set up your AI workspace with your real files and rules, test the right model for each of your recurring jobs and measure the hours you get back.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-10-fable-5-2-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="news-2026-11-10-fable-5-2-end-setup">Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://www.datastudios.org/post/anthropic-claude-fable-5-2-mythos-5-2-launch-pricing-plans?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">Data Studios, Claude Fable 5.2 and Mythos 5.2 launch, pricing and plans</a> (9 Nov 2026); <a href="https://www.eesel.ai/blog/claude-fable-5-2-pricing?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">eesel, Claude Fable 5.2 pricing</a> (10 Nov 2026); <a href="https://aivy.com.au/news/claude-fable-5-2/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">Aivy, Claude Fable 5.2 lands</a> (10 Nov 2026, launch-offer dates); <a href="https://aiweekly.co/alerts/anthropics-1000-fable-52-agents-formalize-fermat-in-30-hours?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly, Anthropic's 1,000 Fable 5.2 agents formalize Fermat</a> (9 Nov 2026, citing Anthropic); <a href="https://aiweekly.co/ai-news-today?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly, AI news today</a> (10 Nov 2026, Muse Ember); <a href="https://aiweekly.co/alerts/apple-launches-4999-intelligence-usage-packs-first-paid-ai-tier?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly, Apple launches $49.99 Intelligence Usage Packs</a> (10 Nov 2026, citing 9to5Mac); <a href="https://aiweekly.co/alerts/qantas-cuts-850-jobs-in-seven-year-accenture-outsourcing-deal?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-fable-5-2-cost-per-job" target="_blank" rel="noopener">AI Weekly, Qantas cuts 850 jobs in Accenture deal</a> (10 Nov 2026, citing Bloomberg and ABC). The five steps and the scorecard prompt are from my own coaching work.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5: 40× cheaper isn't 40× worse →</a>
+      <a href="/blog/ai-workslop-fixing-colleagues-ai-work-day-a-week.html">Fixing other people's AI work now costs almost a day a week →</a>
+      <a href="/blog/ai-roi-company-earnings-measure-small-business.html">Santander counted €194M of AI value. Here's how to measure yours →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
