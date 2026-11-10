@@ -50,5 +50,9 @@
  "ai-workslop-fixing-colleagues-ai-work-day-a-week": {
   "es": "ai-slop-corregir-trabajo-ia-companeros-dia-semana",
   "it": "ai-slop-correggere-lavoro-ia-colleghi-giorno-settimana"
+ },
+ "claude-fable-5-2-cost-per-job": {
+  "es": "claude-fable-5-2-precio-coste-por-trabajo",
+  "it": "claude-fable-5-2-prezzo-costo-per-lavoro"
  }
 }
