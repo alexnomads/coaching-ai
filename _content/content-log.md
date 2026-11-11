@@ -40,3 +40,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-10 | blog-daily | 3 Industry take | — | Anthropic Claude Fable 5.2 / Mythos 5.2 ($8/$40, ~½ cost per task vs Opus 5.5) + Meta Muse Ember + Apple Intelligence packs + Qantas/Accenture | Claude Fable 5.2 costs twice as much per word. It may be cheaper per job.
 2026-11-10 | linkedin | 34 Buying criteria | S9 | Anthropic Claude Fable 5.2 (2x per token, ~½ per task) | "Which AI should I pay for?" is the wrong first question.
 2026-11-10 | blog-weekly | 32 Industry prediction + 33 Stealable template | S3, S8, S11 | Greg Isenberg ep. 8 AI-Proof Businesses I'd build in 2027 (solo, 4 Nov 2026) | Is your business AI-proof? Check it against 8 moats.
+2026-11-11 | blog-daily | 3 Industry take | — | OpenAI ChatGPT Business Hub (business profiles, 10 Nov) + Claude Meetings + Anthropic IPO Q3 $17B + Mercor $750M | ChatGPT now lets you claim your business. Here's how to do it right.
+2026-11-11 | linkedin | 1 Origin story | S12 | Mercor $750M Series D (5M+ experts, 800+ occupations untested) | Someone is now paid to teach AI how to do your job.
+2026-11-11 | instagram | 1 Origin story | S12 | Mercor $750M Series D | Someone is now paid to teach AI your job.
