@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [United Banned AI Agents From Booking. What's Your Policy? | AI Coach Alex](https://aicoachalex.com/blog/united-airlines-bans-ai-agents-booking-policy.html): United Airlines now bans AI agents from booking or paying for tickets. What it means if you use agents or sell to customers who do, plus a policy prompt.
 - [ChatGPT now lets you claim your business. Here's how to do it right.](https://aicoachalex.com/blog/chatgpt-business-hub-claim-business-profile.html): OpenAI's new Business Hub lets you claim and verify a business profile in ChatGPT. What it does, who can use it, and a 30-minute checklist to claim yours.
 - [Is your business AI-proof? Check it against 8 moats](https://aicoachalex.com/blog/ai-proof-business-8-moats.html): Greg Isenberg mapped 8 kinds of AI-proof business. Here's how to score your own on them, plus 5 moves and 2 copy-paste prompts for this week.
 - [Claude Fable 5.2 costs twice as much per word. It may be cheaper per job.](https://aicoachalex.com/blog/claude-fable-5-2-cost-per-job.html): Anthropic's Claude Fable 5.2 costs /0 per million tokens, yet may cost less per task. Who gets it, and how to pick the cheapest AI for your work.
