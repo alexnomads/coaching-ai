@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/claude-sheets-whiteboards-data-small-business.html">
+<link rel="alternate" hreflang="es" href="https://aicoachalex.com/blog/claude-sheets-hojas-calculo-pymes.es.html">
+<link rel="alternate" hreflang="it" href="https://aicoachalex.com/blog/claude-sheets-fogli-calcolo-piccole-imprese.it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/claude-sheets-whiteboards-data-small-business.html">
+<title>Claude Sheets: ¿deberías dejar Excel? Qué hace y qué no — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="Claude Sheets, Whiteboards y Data llegan a los planes de pago. Qué hace Sheets, qué no puede hacer aún y cómo probarlo sin arriesgar tu archivo maestro.">
+<link rel="canonical" href="https://aicoachalex.com/blog/claude-sheets-hojas-calculo-pymes.es.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Claude ya crea tus hojas de cálculo. ¿Deberías dejar Excel?">
+<meta property="og:description" content="Claude Sheets, Whiteboards y Data llegan a los planes de pago. Qué hace Sheets, qué no puede hacer aún y cómo probarlo sin arriesgar tu archivo maestro.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/claude-sheets-hojas-calculo-pymes.es.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-11-13/og.png">
+<meta property="article:published_time" content="2026-11-13">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude ya crea tus hojas de cálculo. ¿Deberías dejar Excel?">
+<meta name="twitter:description" content="Claude Sheets, Whiteboards y Data llegan a los planes de pago. Qué hace Sheets, qué no puede hacer aún y cómo probarlo sin arriesgar tu archivo maestro.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-11-13/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/claude-sheets-hojas-calculo-pymes.es.html#article",
+   "headline": "Claude ya crea tus hojas de cálculo. ¿Deberías dejar Excel?",
+   "description": "Claude Sheets, Whiteboards y Data llegan a los planes de pago. Qué hace Sheets, qué no puede hacer aún y cómo probarlo sin arriesgar tu archivo maestro.",
+   "image": "https://aicoachalex.com/assets/blog/2026-11-13/og.png",
+   "datePublished": "2026-11-13",
+   "dateModified": "2026-11-13",
+   "inLanguage": "es",
+   "keywords": "Claude Sheets, Claude Whiteboards, Claude Data, Anthropic, hoja de cálculo con IA, Excel con IA, IA para pymes, Claude en español",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/claude-sheets-hojas-calculo-pymes.es.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/index.es.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Claude ya crea tus hojas de cálculo. ¿Deberías dejar Excel?",
+     "item": "https://aicoachalex.com/blog/claude-sheets-hojas-calculo-pymes.es.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué es Claude Sheets?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Claude Sheets es una hoja de cálculo que Claude crea y edita por ti a partir de una descripción en el chat. Puede crear pestañas, fórmulas, formato, gráficos y menús desplegables, resalta las celdas que cambia, te permite compartir la hoja para editarla y exporta a .xlsx o CSV. Anthropic empezó a desplegarlo en beta el 10 de noviembre de 2026."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Quién puede usar Claude Sheets, Whiteboards y Data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Quienes tienen un plan de pago de Claude, con un despliegue gradual. En los planes Team las herramientas vienen activadas por defecto. En Enterprise, Sheets y Whiteboards empiezan desactivados hasta que el administrador los active, y Claude Data se activa por defecto a partir del 19 de noviembre de 2026, según IT-Connect y PBX Science."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Puede Claude Sheets sustituir a Excel o Google Sheets?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Todavía no. Según la documentación de Anthropic citada por Tom's Guide y PBX Science, no admite tablas dinámicas, rangos protegidos, vistas de filtro ni macros de Excel, tiene un límite de 100.000 celdas y no puede traer datos en directo de apps conectadas. Úsalo para crear y probar una hoja, y luego expórtala y mantén el archivo maestro en Excel o Google Sheets."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Para qué sirve Claude Whiteboards?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Para dirigir reuniones y talleres. Los miembros del equipo añaden notas a una pizarra compartida, Claude las agrupa por temas y redacta acciones con responsables y fechas, y puedes pedirle que desarrolle una parte de la pizarra o la convierta en un documento o una presentación. Las pizarras se pueden pasar a Miro o Lucid."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué es Claude Data y lo necesito?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Claude Data te permite hacer preguntas sobre los datos de tu negocio en lenguaje natural y recibir gráficos, paneles, resúmenes escritos o vídeos narrados. Necesita un conector de datos como BigQuery, Snowflake, Redshift o Salesforce. Si tus números viven en unas cuantas hojas de cálculo y una app de contabilidad, empieza por limpiar esos datos y por Claude Sheets."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Es seguro meter datos de mi negocio en Claude Sheets?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Trátalo como cualquier otra herramienta en la nube en beta: empieza con una hoja sin datos personales sensibles, revisa la configuración de datos de tu plan y guarda la copia maestra y las copias de seguridad en el sistema en el que ya confía tu negocio. Comparte las hojas solo con quien las necesite."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menú">
+  <div class="sn-in">
+    <a class="sn-logo" href="/index.es.html" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/index.es.html#method">Método</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Test de Riesgo</a>
+      <a href="/blog/index.es.html" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.es.html">Configurar Agente OpenClaw</a>
+      <div class="sn-dd"><a class="sn-dd-t" href="/courses.html" aria-haspopup="true" aria-expanded="false">Cursos <span aria-hidden="true">&#9662;</span></a><div class="sn-dd-m"><a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/es/con-quien-trabajo/">Con Quién Trabajo</a><a href="/es/clases-de-ia-para-ninos/">IA para Niños</a>
+      <a href="/about.html">Sobre mí</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/claude-sheets-whiteboards-data-small-business.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/claude-sheets-hojas-calculo-pymes.es.html" class="on" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/claude-sheets-fogli-calcolo-piccole-imprese.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Test de Riesgo</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Reservar Diagnóstico</a>
+      <button class="sn-burger" type="button" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/index.es.html#method">Método</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Test de Riesgo</a>
+    <a href="/blog/index.es.html" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.es.html">Configurar Agente OpenClaw</a>
+    <a class="sn-mob-sub" href="/courses.html">Cursos →</a>
+    <a class="sn-mob-course" href="/personal-ai-agent.html">Your Own AI</a><a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/es/con-quien-trabajo/">Con Quién Trabajo</a><a href="/es/clases-de-ia-para-ninos/">IA para Niños</a>
+    <a href="/about.html">Sobre mí</a>
+    <div class="sn-lang"><a href="/blog/claude-sheets-whiteboards-data-small-business.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/claude-sheets-hojas-calculo-pymes.es.html" class="on" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/claude-sheets-fogli-calcolo-piccole-imprese.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Reservar Diagnóstico</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="/blog/index.es.html" class="article-back">← Volver al Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Noticias IA</span>
+      <span>8 min de lectura</span>
+      <span>13 nov 2026</span>
+      <span>Por <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Claude ya crea tus hojas de cálculo. ¿Deberías dejar <em>Excel</em>?</h1>
+    <p class="article-dek">Anthropic está lanzando Claude Sheets, Claude Whiteboards y Claude Data en los planes de pago. Te cuento qué hace cada uno, qué no puede hacer todavía Sheets y cómo probarlo esta semana sin jugarte tu archivo maestro en una beta.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-11-13/hero.webp" width="1600" height="900" alt="Noticias IA, 13 de noviembre de 2026. Claude ya crea tus hojas de cálculo. Mantén Excel cerca. Sheets crea la hoja de cálculo a partir de un prompt. Whiteboards ordena las notas adhesivas en acciones. Data responde preguntas con gráficos. Quién lo tiene: planes de pago, en despliegue ahora." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Respuesta corta</span>
+      <p><strong>Anthropic empezó a desplegar tres nuevas herramientas de Claude el 10 de noviembre de 2026: Sheets (una hoja de cálculo que Claude crea y edita por ti), Whiteboards (una pizarra compartida donde Claude convierte notas en acciones) y Data (preguntas en lenguaje natural sobre los datos de tu negocio, respondidas con gráficos y paneles).</strong> Son para planes de pago, vienen activadas por defecto en Team, y Sheets y Whiteboards están en beta. Sheets es bueno creando un primer borrador funcional a partir de una descripción, con fórmulas, gráficos y desplegables, y exporta a .xlsx o CSV. Todavía no hace tablas dinámicas ni macros, se queda en 100.000 celdas y no puede traer datos en directo de tus apps. No dejes Excel. Usa Claude Sheets para crear el borrador, probarlo y entenderlo, y mantén tu archivo maestro donde está.</p>
+    </div>
+
+    <p>La mayoría de los dueños de negocio con los que trabajo no tienen un problema de software. Tienen un problema de hojas de cálculo. Una calculadora de presupuestos que solo entiende una persona, un control de trabajos con tres versiones en tres portátiles, una previsión de tesorería que nadie se atreve a tocar.</p>
+
+    <p>Hasta ahora mi consejo era siempre el mismo: describe la hoja a la IA, deja que escriba las fórmulas y pégalas tú en Excel. Esta semana ese paso de copiar y pegar empezó a desaparecer. Claude ya puede crear la hoja de cálculo él mismo, dentro del chat. Es útil, y es justo el momento de frenar diez minutos y leer la letra pequeña.</p>
+
+    <h2>¿Qué ha lanzado Anthropic con Claude Sheets, Whiteboards y Data?</h2>
+
+    <p>El martes 10 de noviembre la cuenta de Claude de Anthropic anunció en X que las tres herramientas empezaban a desplegarse ese día, según <a href="https://www.it-connect.tech/claude-whiteboards-sheets-and-data-anthropic-adds-a-spreadsheet-and-whiteboard-to-claude/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">IT-Connect</a>. Esta es la versión en lenguaje claro, a partir de IT-Connect, <a href="https://www.tomsguide.com/ai/claude/claude-just-got-3-powerful-new-tools-and-they-could-replace-some-of-your-favorite-apps?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">Tom's Guide</a>, <a href="https://finance.yahoo.com/technology/article/anthropic-launches-meetings-whiteboards-sheets-data-ahead-of-ipo-190548601.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">Yahoo Finance</a> y <a href="https://pbxscience.com/anthropic-adds-sheets-whiteboards-and-data-to-claude-and-microsoft-shares-slip/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">PBX Science</a>.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>Herramienta</th><th>En lenguaje claro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Claude Sheets</strong> (beta)</td><td>Describes la hoja de cálculo y Claude la crea: pestañas, fórmulas, formato, gráficos y menús desplegables. Sigues editándola chateando, Claude resalta las celdas que ha cambiado y puedes compartirla para que otros también la editen. Exporta a .xlsx o CSV</td></tr>
+        <tr><td><strong>Claude Whiteboards</strong> (beta)</td><td>Una pizarra compartida para reuniones. La gente añade notas, Claude las agrupa por temas y redacta acciones con responsables y fechas. Dibuja un recuadro alrededor de una parte de la pizarra y pide a Claude que la desarrolle, o convierte la pizarra en un documento o una presentación. Las pizarras se pueden pasar a Miro o Lucid</td></tr>
+        <tr><td><strong>Claude Data</strong></td><td>Haz preguntas sobre los datos de tu negocio en lenguaje natural y recibe gráficos, paneles, resúmenes escritos o vídeos narrados, que revisas antes de compartir. Necesita un conector de datos (por ejemplo BigQuery, Snowflake, Redshift o Salesforce). En su beta de octubre se llamaba Claude Dashboards</td></tr>
+        <tr><td><strong>Quién lo tiene</strong></td><td>Planes de pago. Activado por defecto en los planes Team. En Enterprise, Sheets y Whiteboards empiezan desactivados y Data se activa por defecto a partir del 19 de noviembre, según IT-Connect y PBX Science. Despliegue gradual, así que puede que aún no lo veas</td></tr>
+        <tr><td><strong>Cuánto cuesta</strong></td><td>No se ha publicado un precio aparte. Durante la beta va incluido en tu plan de pago de Claude</td></tr>
+      </tbody>
+    </table>
+
+    <p>Anthropic no esconde las carencias. En una frase que recoge IT-Connect, dice que las hojas ofrecen "basic spreadsheet functionality, but we're working to add more" (funciones básicas, y trabajan en añadir más). Los inversores se dieron cuenta igualmente: Yahoo Finance cuenta que la acción de Microsoft cayó más de un 2% ese día, aunque PBX Science recuerda que ese mismo día el dato de inflación, peor de lo esperado, golpeó al mercado.</p>
+
+    <p>Anthropic también anunció Claude Meetings, del que hablé el miércoles en <a href="/blog/chatgpt-business-hub-reclamar-perfil-negocio.es.html">el artículo sobre ChatGPT Business Hub</a>. Las fuentes no coinciden en si ya está disponible para todos.</p>
+
+    <h2>¿Qué no puede hacer todavía Claude Sheets?</h2>
+
+    <p>Esta es la parte que decide si toca tus números reales. Tom's Guide y PBX Science enumeran los mismos límites, citando la documentación de Anthropic.</p>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-13/sheets-can-cant.webp" width="1600" height="900" alt="Claude Sheets beta, según lo publicado del 10 al 13 de noviembre de 2026. Ideal para un primer borrador, todavía no para tu archivo maestro. Lo que puede hacer: crea una hoja desde un prompt con pestañas, fórmulas, formato, gráficos y desplegables; resalta las celdas que cambia; comparte la hoja para que tu equipo la edite; exporta a .xlsx o CSV. Lo que aún no puede hacer: tablas dinámicas, rangos protegidos y vistas de filtro, macros de Excel, más de 100.000 celdas, datos en directo de tus apps conectadas." loading="lazy">
+    </figure>
+
+    <ul>
+      <li><strong>Sin tablas dinámicas.</strong> Si tu informe mensual se basa en tablas dinámicas, se queda en Excel o Google Sheets.</li>
+      <li><strong>Sin rangos protegidos ni vistas de filtro.</strong> No puedes bloquear las celdas con fórmulas para que un compañero no las sobrescriba. En una hoja compartida, eso importa.</li>
+      <li><strong>Sin macros de Excel.</strong> Nada automatizado con VBA va a funcionar.</li>
+      <li><strong>Un techo de 100.000 celdas.</strong> Parece mucho hasta que tienes 2.000 filas por 50 columnas. Un registro de trabajos o un año entero de facturas puede alcanzarlo.</li>
+      <li><strong>Sin datos en directo de tus apps conectadas.</strong> La hoja no se actualiza desde tu software de contabilidad o de gestión de trabajos. Para números en directo está Claude Data, y necesita un conector de datos de verdad.</li>
+    </ul>
+
+    <h2>¿Por qué te importa si tienes un negocio o trabajas por tu cuenta?</h2>
+
+    <ul>
+      <li><strong>Se acaba de cerrar la distancia entre "la IA me lo explicó" y "el archivo existe".</strong> La mayoría de la gente a la que acompaño se atasca al pegar en Excel. Ahora una calculadora de presupuestos, un control de proyectos o una previsión sencilla pueden existir en lo que tardas en describirlos.</li>
+      <li><strong>Los cambios resaltados son la verdadera novedad.</strong> El peligro de la IA con hojas de cálculo nunca fue la fórmula, sino no saber qué había cambiado. Ver exactamente qué celdas tocó Claude hace que una persona no técnica pueda revisar su trabajo.</li>
+      <li><strong>Ser concreto sigue ganando.</strong> "Hazme un presupuesto" te da un presupuesto medio. Tus columnas, tus reglas y una fila real de ejemplo te dan tu presupuesto. La misma lección que con cualquier otra herramienta de IA.</li>
+      <li><strong>Tu archivo maestro es un activo del negocio.</strong> Las herramientas en beta cambian. Guarda la versión con la que funciona tu negocio en un sitio que controles, con copia de seguridad, y trata Claude Sheets como el taller, no como el almacén.</li>
+    </ul>
+
+    <blockquote>Deja que la IA cree el primer borrador de la hoja de cálculo. Guarda la copia maestra donde puedas bloquearla, hacer copia de seguridad y encontrarla el año que viene.</blockquote>
+
+    <h2>¿Cómo puede probar Claude Sheets una pyme?</h2>
+
+    <p>Esta es la prueba de 30 minutos que haría esta semana con un cliente.</p>
+
+    <ol>
+      <li><strong>Comprueba que lo tienes.</strong> Busca Sheets en Claude con un plan de pago. En Team debería venir activado por defecto. En Enterprise, pregunta a tu administrador, porque Sheets empieza desactivado. Si aún no aparece, el despliegue no te ha llegado.</li>
+      <li><strong>Elige una hoja que no te importe tirar.</strong> Una calculadora de presupuestos, un control semanal de trabajos, una previsión de tesorería sencilla a 12 meses. Ni nóminas ni la lista maestra de clientes.</li>
+      <li><strong>Descríbela como si se la explicaras a un asistente nuevo.</strong> Las columnas, las reglas ("IVA al 21%", "descuento a partir de 10 horas"), las opciones de los desplegables y una fila real de ejemplo. Usa el prompt de abajo.</li>
+      <li><strong>Revisa cada celda resaltada.</strong> Pide a Claude que explique cada fórmula en una frase sencilla y que añada una fila de prueba cuya respuesta correcta ya conoces. Si la fila de prueba sale mal, la hoja está mal.</li>
+      <li><strong>Exporta y decide dónde vive.</strong> Descarga el .xlsx, ábrelo en Excel o Google Sheets, bloquea allí las celdas con fórmulas y guárdalo con el resto de archivos de tu negocio.</li>
+      <li><strong>Prueba Whiteboards en tu próxima reunión de equipo.</strong> Deja que Claude agrupe las notas y redacte las acciones, y luego confirma en voz alta cada responsable y fecha antes de que nadie se vaya. La IA redacta la lista de tareas; las personas se hacen cargo de ella.</li>
+      <li><strong>Deja Claude Data para más adelante, salvo que ya tengas un almacén de datos o un CRM con conector.</strong> La mayoría de las pequeñas empresas con las que trabajo sacarán más partido limpiando primero sus categorías de trabajos y sus listas de clientes. Los paneles de IA construidos sobre datos desordenados solo hacen que el desorden parezca profesional.</li>
+    </ol>
+
+    <h3>Copia este prompt: crea tu primera hoja con Claude Sheets</h3>
+
+    <p>Pégalo en Claude con Sheets activado, rellena los corchetes y ejecútalo. También funciona en ChatGPT o Gemini, como instrucciones para una hoja que montas tú.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Briefing para tu primera hoja de cálculo</span>
+      <button class="copy-btn" data-copy="sheetBriefEs" type="button">Copiar</button>
+<pre id="sheetBriefEs">Créame una hoja de cálculo que pueda usar en mi negocio.
+
+Para qué sirve: [p. ej. hacer presupuestos / controlar los trabajos de la semana / previsión de tesorería a 12 meses]
+Quién la usa: [yo / mi responsable de oficina / 3 técnicos desde el móvil]
+Columnas que necesito: [enuméralas, en orden]
+Reglas: [p. ej. IVA 21%; 10% de descuento a partir de 10 horas; el estado solo puede ser Presupuestado, Reservado, Hecho, Cobrado]
+Esta es una fila real de ejemplo: [pégala]
+
+1. Crea la hoja con encabezados claros, desplegables en cualquier columna con opciones fijas y fórmulas en cada columna calculada.
+2. Añade una pestaña "Comprobación" con 3 filas de prueba donde vea el resultado esperado junto al calculado.
+3. Añade una pestaña "Cómo funciona" que explique cada fórmula en una frase sencilla.
+4. Enumera todo lo que hayas supuesto sin que yo te lo dijera, para que pueda confirmarlo.
+Mantenla por debajo de 2.000 filas y no uses tablas dinámicas ni macros, para que pueda exportarla a Excel.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Antes</span><p>Pides las fórmulas a la IA, las pegas en Excel una a una, una falla y no sabes cuál. La hoja vuelve al cajón.</p></div>
+      <div class="compare-good"><span class="compare-label">Después</span><p>Claude crea la hoja, resalta lo que ha cambiado y una pestaña de prueba demuestra que los números cuadran. La exportas, bloqueas las fórmulas y mantienes a salvo el archivo maestro.</p></div>
+    </div>
+
+    <div class="article-cta inline">
+      <h3>¿Qué hoja de cálculo deberías pasarle primero a la IA?</h3>
+      <p>En una llamada de diagnóstico de 49 € revisamos las hojas y el papeleo que se comen tu semana, elegimos la primera que debe crear la IA y configuramos tu espacio de trabajo para que use tus reglas y archivos reales.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-13-claude-sheets-es-mid-book">Reservar diagnóstico de 49 € →</a>
+    </div>
+
+    <h2>¿Qué más ha pasado hoy en IA?</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-13/also-today.webp" width="1600" height="900" alt="También hoy, 12 y 13 de noviembre de 2026, tres cosas que conviene saber. CEO interina: la directora financiera de Nvidia, Colette Kress, toma el relevo tras la dimisión de Jensen Huang, TechCrunch, 12 de noviembre. Cualquier región: la caída de Outlook de Microsoft se extendió más allá de América, TechCrunch, 12 de noviembre. 1.000: preguntas de sí o no o de opción múltiple por petición en la Decisions API de Gemini, desde 10 céntimos por millón de tokens de entrada." loading="lazy">
+    </figure>
+
+    <h3>Jensen Huang dimite como CEO de Nvidia</h3>
+
+    <p>Nvidia confirmó el jueves 12 de noviembre que Jensen Huang ha dimitido como presidente y CEO, y que el consejo aceptó su dimisión el día anterior, según <a href="https://techcrunch.com/2026/11/12/nvidias-jensen-huang-resigns-chipmaker-names-cfo-colette-kress-as-interim-ceo/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">TechCrunch</a>. La directora financiera, Colette Kress, es CEO interina sin dejar su puesto de CFO, y Harvey Jones, consejero desde hace años, pasa a presidir el consejo. Llega tras una investigación del consejo, anunciada el 8 de noviembre en un <a href="https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/default.aspx?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">comunicado del consejo de Nvidia</a>, sobre informaciones de que Huang había sido objetivo de una operación de inteligencia extranjera. TechCrunch cuenta que las acciones cayeron más de un 11% antes de la apertura del jueves.</p>
+
+    <p><strong>Qué significa para ti:</strong> esta semana no cambia nada en las herramientas que usas. Nvidia fabrica los chips sobre los que funciona casi toda la IA, así que espera titulares ruidosos sobre las acciones de IA. No cambies de proveedor de IA ni canceles planes por una noticia de bolsa; elige las herramientas por lo que hacen en tu trabajo.</p>
+
+    <h3>Outlook se cayó en todo el mundo</h3>
+
+    <p>El correo Outlook de Microsoft sufrió el 12 de noviembre una caída que impidió a los usuarios entrar en su bandeja de entrada, primero en América y después en "any region" (cualquier región), según <a href="https://techcrunch.com/2026/11/12/microsofts-outlook-email-hit-by-new-outage/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">TechCrunch</a>. Microsoft lo atribuyó a una carga elevada en parte de su infraestructura. TechCrunch recuerda que el último gran incidente fue una caída de Microsoft 365 de varios días en septiembre.</p>
+
+    <p><strong>Qué significa para ti:</strong> si tu asistente de IA lee tu correo para redactar respuestas o preparar informes, se para cuando se para el correo. Ten una segunda vía para que los clientes te contacten (WhatsApp, un teléfono en tu web) y una exportación reciente de todo lo crítico que solo vive en el correo.</p>
+
+    <h3>Google lanza una API "Decisions" para respuestas de sí o no en bloque</h3>
+
+    <p>La nueva Gemini Decisions API de Google evalúa hasta 1.000 preguntas de sí o no o de opción múltiple en una sola petición, desde 0,10 $ por millón de tokens de entrada, según <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-12-2026/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">The Neuron</a>. En lugar de redactar una respuesta, elige entre las opciones que le das.</p>
+
+    <p><strong>Cómo usarlo:</strong> es una herramienta para desarrolladores, pero la idea sirve a cualquiera que tenga a alguien que le lleve las automatizaciones: clasificar cientos de consultas en "presupuesto / soporte / spam", o etiquetar trabajos antiguos por categoría, sale mucho más barato cuando la IA solo tiene que elegir, no escribir.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>¿Qué es Claude Sheets?</summary><p>Claude Sheets es una hoja de cálculo que Claude crea y edita por ti a partir de una descripción en el chat. Puede crear pestañas, fórmulas, formato, gráficos y menús desplegables, resalta las celdas que cambia, te permite compartir la hoja para editarla y exporta a .xlsx o CSV. Anthropic empezó a desplegarlo en beta el 10 de noviembre de 2026.</p></details>
+      <details><summary>¿Quién puede usar Claude Sheets, Whiteboards y Data?</summary><p>Quienes tienen un plan de pago de Claude, con un despliegue gradual. En los planes Team las herramientas vienen activadas por defecto. En Enterprise, Sheets y Whiteboards empiezan desactivados hasta que el administrador los active, y Claude Data se activa por defecto a partir del 19 de noviembre de 2026, según IT-Connect y PBX Science.</p></details>
+      <details><summary>¿Puede Claude Sheets sustituir a Excel o Google Sheets?</summary><p>Todavía no. Según la documentación de Anthropic citada por Tom's Guide y PBX Science, no admite tablas dinámicas, rangos protegidos, vistas de filtro ni macros de Excel, tiene un límite de 100.000 celdas y no puede traer datos en directo de apps conectadas. Úsalo para crear y probar una hoja, y luego expórtala y mantén el archivo maestro en Excel o Google Sheets.</p></details>
+      <details><summary>¿Para qué sirve Claude Whiteboards?</summary><p>Para dirigir reuniones y talleres. Los miembros del equipo añaden notas a una pizarra compartida, Claude las agrupa por temas y redacta acciones con responsables y fechas, y puedes pedirle que desarrolle una parte de la pizarra o la convierta en un documento o una presentación. Las pizarras se pueden pasar a Miro o Lucid.</p></details>
+      <details><summary>¿Qué es Claude Data y lo necesito?</summary><p>Claude Data te permite hacer preguntas sobre los datos de tu negocio en lenguaje natural y recibir gráficos, paneles, resúmenes escritos o vídeos narrados. Necesita un conector de datos como BigQuery, Snowflake, Redshift o Salesforce. Si tus números viven en unas cuantas hojas de cálculo y una app de contabilidad, empieza por limpiar esos datos y por Claude Sheets.</p></details>
+      <details><summary>¿Es seguro meter datos de mi negocio en Claude Sheets?</summary><p>Trátalo como cualquier otra herramienta en la nube en beta: empieza con una hoja sin datos personales sensibles, revisa la configuración de datos de tu plan y guarda la copia maestra y las copias de seguridad en el sistema en el que ya confía tu negocio. Comparte las hojas solo con quien las necesite.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Convierte tu hoja de cálculo más caótica en tu primera victoria con IA.</h3>
+      <p>Coaching individual para dueños de negocio: mapeamos cómo funciona de verdad tu negocio, configuramos tu espacio de IA con tus archivos y reglas reales, y creamos la primera hoja, informe o agente que te devuelve horas.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-13-claude-sheets-es-end-book">Reservar diagnóstico de 49 € →</a>
+      <a href="/ai-for-business-owners.es.html" class="cta-secondary" data-cta="news-2026-11-13-claude-sheets-es-end-owners">IA para dueños de negocio</a>
+    </div>
+
+    <p class="sources"><strong>Fuentes:</strong> <a href="https://www.it-connect.tech/claude-whiteboards-sheets-and-data-anthropic-adds-a-spreadsheet-and-whiteboard-to-claude/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">IT-Connect, Claude Whiteboards, Sheets and Data</a> (12 nov 2026); <a href="https://www.tomsguide.com/ai/claude/claude-just-got-3-powerful-new-tools-and-they-could-replace-some-of-your-favorite-apps?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">Tom's Guide, Claude just got 3 powerful new tools</a> (11 nov 2026); <a href="https://finance.yahoo.com/technology/article/anthropic-launches-meetings-whiteboards-sheets-data-ahead-of-ipo-190548601.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">Yahoo Finance, Anthropic launches Meetings, Whiteboards, Sheets, Data ahead of IPO</a> (10 nov 2026); <a href="https://pbxscience.com/anthropic-adds-sheets-whiteboards-and-data-to-claude-and-microsoft-shares-slip/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">PBX Science, Anthropic adds Sheets, Whiteboards and Data to Claude</a> (12 nov 2026); <a href="https://techcrunch.com/2026/11/12/nvidias-jensen-huang-resigns-chipmaker-names-cfo-colette-kress-as-interim-ceo/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">TechCrunch, Nvidia's Jensen Huang resigns</a> (12 nov 2026); <a href="https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/default.aspx?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">Nvidia, Statement from the Board of Directors</a> (8 nov 2026); <a href="https://techcrunch.com/2026/11/12/microsofts-outlook-email-hit-by-new-outage/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">TechCrunch, Microsoft's Outlook email hit by new outage</a> (12 nov 2026); <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-12-2026/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-sheets-whiteboards-data-small-business-es" target="_blank" rel="noopener">The Neuron, Everything that happened in AI today, 12 November</a> (12 nov 2026). Los pasos de la prueba y el prompt salen de mi propio trabajo como coach.</p>
+
+    <div class="related">
+      <span class="related-label">Sigue leyendo</span>
+      <a href="/blog/gemini-editar-archivos-chat.es.html">Gemini ya edita tus documentos, hojas y PDF directamente en el chat →</a>
+      <a href="/blog/ai-slop-corregir-trabajo-ia-companeros-dia-semana.es.html">Corregir el trabajo con IA de tus compañeros ya cuesta casi un día a la semana →</a>
+      <a href="/blog/claude-fable-5-2-precio-coste-por-trabajo.es.html">Claude Fable 5.2: el doble de precio por palabra, ¿la mitad de coste por trabajo? →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">Coach de Carrera de la Era de la IA</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/es/con-quien-trabajo/" class="footer-link">Who I Work With</a><a href="/es/clases-de-ia-para-ninos/" class="footer-link">IA para Niños</a>
+      <a href="/personal-ai-agent.html" class="footer-link">Your Own AI</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.es.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.es.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>

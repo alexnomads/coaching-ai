@@ -62,5 +62,9 @@
  "united-airlines-bans-ai-agents-booking-policy": {
   "es": "united-airlines-prohibe-agentes-ia-reservas-politica",
   "it": "united-airlines-vieta-agenti-ia-prenotazioni-policy"
+ },
+ "claude-sheets-whiteboards-data-small-business": {
+  "es": "claude-sheets-hojas-calculo-pymes",
+  "it": "claude-sheets-fogli-calcolo-piccole-imprese"
  }
 }
