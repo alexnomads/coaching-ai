@@ -45,3 +45,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-11 | instagram | 1 Origin story | S12 | Mercor $750M Series D | Someone is now paid to teach AI your job.
 2026-11-12 | blog-daily | 3 Industry take | — | United Airlines bans AI agents from booking (contract of carriage, 11 Nov) + Grok Build 35,578 open apps (Claroc) + ChatGPT voice modes retire 11 Dec + NY RAISE portal | United just banned AI agents from booking flights. What's your policy?
 2026-11-12 | linkedin | 19 Viral take reaction | S11 | United Airlines bans AI agents ("another middleman") | United doesn't want another middleman. Neither should you.
+2026-11-13 | blog-daily | 3 Industry take | — | Anthropic Claude Sheets / Whiteboards / Data (rolling out from 10 Nov) + Nvidia Huang resigns, Kress interim CEO + Outlook outage + Gemini Decisions API | Claude now builds your spreadsheets. Should you leave Excel?
+2026-11-13 | linkedin | 25 Authority teardown | S5 | Claude Sheets beta (limits per Tom's Guide) | Claude can build spreadsheets now. I read the small print first.
+2026-11-13 | instagram | 25 Authority teardown | S5 | Claude Sheets beta | Claude builds spreadsheets now. I read the small print first.
