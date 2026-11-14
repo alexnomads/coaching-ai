@@ -66,5 +66,9 @@
  "claude-sheets-whiteboards-data-small-business": {
   "es": "claude-sheets-hojas-calculo-pymes",
   "it": "claude-sheets-fogli-calcolo-piccole-imprese"
+ },
+ "notion-ai-chats-leaked-fireworks-ai-vendor-check": {
+  "es": "notion-chats-ia-filtrados-fireworks-proveedor",
+  "it": "chat-ia-notion-esposte-fireworks-fornitore"
  }
 }
