@@ -48,3 +48,4 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-13 | blog-daily | 3 Industry take | — | Anthropic Claude Sheets / Whiteboards / Data (rolling out from 10 Nov) + Nvidia Huang resigns, Kress interim CEO + Outlook outage + Gemini Decisions API | Claude now builds your spreadsheets. Should you leave Excel?
 2026-11-13 | linkedin | 25 Authority teardown | S5 | Claude Sheets beta (limits per Tom's Guide) | Claude can build spreadsheets now. I read the small print first.
 2026-11-13 | instagram | 25 Authority teardown | S5 | Claude Sheets beta | Claude builds spreadsheets now. I read the small print first.
+2026-11-15 | blog-weekly | 12 Tech stack + 29 Behind the scenes + 33 Stealable template | S11 | Andrew @s4yonnara on X, '6 Grok Bots Do the Work, You Just Say Yes' (Nov 2026) | Build an AI social media team that never posts without your yes

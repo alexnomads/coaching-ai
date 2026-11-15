@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [How to Build an AI Social Media Team (6 Agents, One Approval Rule)](https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html): Six AI agents for social media: Manager, Scout, Writer, Designer, Scheduler, Analyst. How to set it up for a small business, safely, with 3 copy-paste prompts.
 - [Notion's AI chats leaked through a vendor you never heard of. Is your data next? (AI news 14 Nov 2026)](https://aicoachalex.com/blog/notion-ai-chats-leaked-fireworks-ai-vendor-check.html): A breach at Fireworks AI exposed Notion AI chats from under 1% of workspaces. What happened, and a 10-minute check for your own AI tools.
 - [Claude now builds your spreadsheets. Should you leave Excel?](https://aicoachalex.com/blog/claude-sheets-whiteboards-data-small-business.html): Claude Sheets, Whiteboards and Data are rolling out to paid plans. What each does, what Sheets can't do yet, and a safe 30-minute test for your business.
 - [United Banned AI Agents From Booking. What's Your Policy? | AI Coach Alex](https://aicoachalex.com/blog/united-airlines-bans-ai-agents-booking-policy.html): United Airlines now bans AI agents from booking or paying for tickets. What it means if you use agents or sell to customers who do, plus a policy prompt.

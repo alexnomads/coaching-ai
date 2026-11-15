@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html">
+<title>How to Build an AI Social Media Team (6 Agents, One Approval Rule) — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="Six AI agents for social media: Manager, Scout, Writer, Designer, Scheduler, Analyst. How to set it up for a small business, safely, with 3 copy-paste prompts.">
+<link rel="canonical" href="https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Build an AI Social Media Team That Never Posts Without Your Yes">
+<meta property="og:description" content="Six AI agents for social media: Manager, Scout, Writer, Designer, Scheduler, Analyst. How to set it up for a small business, safely, with 3 copy-paste prompts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-11-15-coaching/og.png">
+<meta property="article:published_time" content="2026-11-15">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build an AI Social Media Team That Never Posts Without Your Yes">
+<meta name="twitter:description" content="Six AI agents for social media: Manager, Scout, Writer, Designer, Scheduler, Analyst. How to set it up for a small business, safely, with 3 copy-paste prompts.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-11-15-coaching/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html#article",
+   "headline": "Build an AI Social Media Team That Never Posts Without Your Yes",
+   "description": "Six AI agents for social media: Manager, Scout, Writer, Designer, Scheduler, Analyst. How to set it up for a small business, safely, with 3 copy-paste prompts.",
+   "image": "https://aicoachalex.com/assets/blog/2026-11-15-coaching/og.png",
+   "datePublished": "2026-11-15",
+   "dateModified": "2026-11-15",
+   "inLanguage": "en",
+   "keywords": "AI social media team, AI agents for social media, Grok Bot social media, AI social media manager small business, automate LinkedIn posts with AI, X automation rules AI replies, AI voice file, AI content workflow approval",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Build an AI Social Media Team That Never Posts Without Your Yes",
+     "item": "https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is an AI social media team?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A set of AI agents that each handle one part of social media: finding ideas, writing drafts in your voice, making visuals, scheduling approved posts and reporting on results, coordinated by one manager agent you talk to."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does Grok Bot cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Grok Bot is not sold on its own. Since October 2026 it is included in The X Subscription from the Premium tier at $30 a month, with a weekly usage allowance. A posting tool is a separate cost."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can Grok Bot post to X by itself?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "According to the guide this article builds on, the official X connector can read, search and check mentions but has no publishing tool, so you connect a separate posting tool such as Postiz. Keep an approval rule on publishing either way."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it allowed to automate posts on X?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Scheduling your own original posts and using AI to help write them is allowed. Automated replies triggered by keyword searches are not, and AI reply bots need prior approval from X. Rule-breaking automation can get posts filtered or accounts suspended."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I make AI posts sound like me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Give the AI your real posts, not adjectives. Have it extract your hook patterns, length, phrases and what your best posts do differently, add a list of words you never use, and add a new rule each time you correct a draft."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need all six agents to start?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Start with the Manager and the Scout, run the process by hand for about a week, then add the Writer, Designer, Scheduler and Analyst one at a time."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/ai-social-media-team-six-agents-approval.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/blog/ai-social-media-team-six-agents-approval.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">From the Coaching Room</span>
+      <span>9 min read</span>
+      <span>15 Nov 2026</span>
+      <span>By <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Build an AI social media team that never posts without your <em>yes</em></h1>
+    <p class="article-dek">Six agents, one job each: find ideas, write in your voice, design, schedule, report, and one manager to run them. Here's how to set it up for a small business, the rules that keep your account safe, and the one decision you should never hand over.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/assets/blog/2026-11-15-coaching/hero-v.webp" width="1080" height="1350">
+        <img src="/assets/blog/2026-11-15-coaching/hero-h.webp" width="1600" height="900" alt="Six AI agents do the work. You just say yes. Manager, Scout, Writer, Designer, Scheduler and Analyst." fetchpriority="high">
+      </picture>
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>You can split social media into six AI agents, each with one job: a Manager you talk to, a Scout that finds ideas, a Writer that drafts in your voice, a Designer, a Scheduler that queues posts in a posting tool, and an Analyst that reports weekly.</strong> Tools like xAI's Grok Bot (included in the $30 X Premium tier) or Claude's scheduled tasks can run them. The setup only works if three things are true: the agents learn your voice from your real posts, nothing is published until you approve it, and you never let them reply to strangers for you. Start with the Manager and the Scout, run it by hand for a week, then automate.</p>
+    </div>
+
+    <p>Every weekday morning, a LinkedIn draft lands on my phone. An AI agent has already read the morning's news, picked an angle I haven't used in three weeks, matched it to a client story I haven't told in seven days, and written the post in my voice. It even drafts the first comment with the link.</p>
+
+    <p>I read it. Sometimes I post it almost as it is. Sometimes I rewrite the hook. Sometimes I bin it. But the agent never posts it for me. That's not a technical limit. It's the most important design decision in the whole system.</p>
+
+    <p>This week Andrew, who writes AI guides on X as <a href="https://x.com/s4yonnara/status/2119777956423700863?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">@s4yonnara</a>, published a step-by-step build of a six-agent social media team on xAI's Grok Bot. It's the clearest version I've seen of something I've been running in a rougher form for the past three weeks. So I'm going to walk through his design, rebuild it for the people I coach (business owners and professionals who post on LinkedIn and Instagram, not X power users), and be honest about which part I still haven't built.</p>
+
+    <h2>What is an AI social media team?</h2>
+
+    <p>Doing social media well is five jobs at once: keep up with your field, find something worth saying, write it so it sounds like you, make a visual, publish at the right time, then learn from what worked. Hire for that and you have a payroll. Do it yourself and it eats the hours you meant for your actual work.</p>
+
+    <p>Andrew's answer is to give each job to a separate AI agent, plus one manager on top:</p>
+
+    <figure class="post-figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/assets/blog/2026-11-15-coaching/team-v.webp" width="1080" height="1350">
+        <img src="/assets/blog/2026-11-15-coaching/team-h.webp" width="1600" height="900" alt="The team: You talk to the Manager. The Manager runs Scout, Writer and Designer. Their work stops at Your yes. Only then do the Scheduler and Analyst act." loading="lazy">
+      </picture>
+      <figcaption>Team design adapted from Andrew (@s4yonnara). The green box is the part you never automate.</figcaption>
+    </figure>
+
+    <table class="risk-table">
+      <thead><tr><th>Agent</th><th>Its one job</th><th>What it must never do</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Manager</strong></td><td>The only agent you talk to. Hands work to the right specialist and brings back one clean result.</td><td>Let anything go out without your approval.</td></tr>
+        <tr><td><strong>Scout</strong></td><td>Each morning, finds 5 ideas: rising topics, repeated questions, claims worth challenging, each with a source link.</td><td>Invent a quote or a number.</td></tr>
+        <tr><td><strong>Writer</strong></td><td>Turns the idea you pick into 3 drafts with different hooks, in your voice.</td><td>Publish, or state a fact without a source.</td></tr>
+        <tr><td><strong>Designer</strong></td><td>One visual per post, in your brand colours and fonts.</td><td>Use logos, people or screenshots you didn't provide.</td></tr>
+        <tr><td><strong>Scheduler</strong></td><td>Queues the approved post in your posting tool and saves the link.</td><td>Write or edit copy.</td></tr>
+        <tr><td><strong>Analyst</strong></td><td>Every Monday: top 3 and bottom 3 posts, what they share, one thing to do more of and one to stop.</td><td>Draw conclusions from a sample too small to mean anything.</td></tr>
+      </tbody>
+    </table>
+
+    <p>One job per agent sounds bureaucratic. It's the opposite. When drafts are weak, you know it's the Writer's instructions. When ideas are stale, you fix the Scout. You're never debugging "the AI".</p>
+
+    <h2>Why can't the agents just post for you?</h2>
+
+    <p>Two reasons: one technical, one that matters more.</p>
+
+    <p>The technical one: on Grok Bot, <a href="https://twitterapi.io/blog/grok-bot?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">included on the $30 Premium tier of The X Subscription</a>, the official X connector can read and search posts and check your mentions, but Andrew points out it has no tool for publishing. You connect a separate posting tool (he uses Postiz) to do that. His summary of the split is the best line in the guide: the connector reads, "the posting tool is the hands, and you are the brain."</p>
+
+    <p>The more important one: "only the Scheduler may post" is a rule written in a job description, not a lock. On Grok Bot, every Bot on your account shares one cloud computer, and <a href="https://www.llmmatchmaker.com/blog/grok-bot-x-subscription?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">xAI's docs warn not to treat separate Bots as a security boundary</a>. So the real gate has to sit at account level. Andrew uses Grok Bot's "Ask first" rules for any scheduling, publishing, DM, or change to a scheduled post. Whatever tool you use, find its equivalent and switch it on before you build anything else.</p>
+
+    <blockquote>The agents can find the conversation. You join it. That's the whole difference between an account that posts often and one that still sounds like a person.</blockquote>
+
+    <h2>What does a normal day look like?</h2>
+
+    <figure class="post-figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/assets/blog/2026-11-15-coaching/day-v.webp" width="1080" height="1350">
+        <img src="/assets/blog/2026-11-15-coaching/day-h.webp" width="1600" height="900" alt="A normal day: 08:00 Scout sends 5 ideas, you pick one. Writer and Designer deliver, you edit and approve. Scheduler shows the final post, you say yes. 18:00 Scout lists mentions worth answering, you write the replies. Monday the Analyst reports, you update the voice file." loading="lazy">
+      </picture>
+    </figure>
+
+    <p>Your part shrinks to a handful of decisions: pick an idea, approve a draft, confirm the post, write your own replies, and once a week decide what to change. One practical warning from the guide: approval requests raised by background routines expire if you don't answer them (about 30 minutes on Grok Bot), and then nothing goes out. Batch your approvals into a time you actually check.</p>
+
+    <h2>How I run my version (and the piece I haven't built)</h2>
+
+    <p>My setup isn't on Grok Bot, and it isn't as tidy as six named agents. It's a few scheduled tasks in Claude that share a playbook and a log. But it maps onto Andrew's design almost one to one:</p>
+
+    <ul>
+      <li><strong>The voice file</strong> is a playbook: who I am, the five groups of people I help, my offers, a bank of real client stories (anonymised, sector and country only), 40 post angles, and a list of words I never use.</li>
+      <li><strong>The Scout and Writer</strong> are a weekday task that reads the news, picks an angle and a story, and sends me a LinkedIn draft plus, three days a week, an Instagram carousel.</li>
+      <li><strong>The memory</strong> is a content log. Every post adds a line, so the system knows not to repeat an angle for three weeks or a story for seven days.</li>
+      <li><strong>The gate</strong> is me. Drafts come to my phone. I post them myself.</li>
+    </ul>
+
+    <p>Here's the honest part: I don't have an Analyst yet. My agents know what I've posted, but not what performed. That's the gap Andrew's design closes and mine doesn't, and it's the next thing I'm building. If you copy one idea from his guide before anything else, copy the Monday report. A team that never learns just publishes faster.</p>
+
+    <p>One more distinction I'd draw: my <em>blog</em> posts do publish on their own, because aicoachalex.com is my site and the only person whose rules apply is me. Social platforms are rented land with automation rules. That's where the yes stays human.</p>
+
+    <div class="article-cta inline">
+      <h3>Want your first two agents set up with you?</h3>
+      <p>In a 49€ diagnostic we build your voice file from your real posts and set up the Manager and Scout, so you see your first morning brief before you pay for anything else.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="coaching-room-2026-11-15-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>How do you build it? 8 steps for a small business</h2>
+
+    <figure class="post-figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/assets/blog/2026-11-15-coaching/rules-v.webp" width="1080" height="1350">
+        <img src="/assets/blog/2026-11-15-coaching/rules-h.webp" width="1600" height="900" alt="5 rules that keep it sounding like you: train the voice on real posts, one job per agent, run it by hand for a week, never automate replies or DMs, cap the spend." loading="lazy">
+      </picture>
+      <figcaption>Save this one before you switch anything on.</figcaption>
+    </figure>
+
+    <ol>
+      <li><strong>Pick your platform and your posting tool.</strong> For most business owners that's LinkedIn first, then Instagram. Choose one posting tool that supports approval before publishing. Check its price separately: it's not included in your AI plan.</li>
+      <li><strong>Switch on the gate first.</strong> Before any agent exists, set an account-level rule: ask me before publishing, scheduling, changing a scheduled post or sending any message.</li>
+      <li><strong>Write the voice file from real posts, not adjectives.</strong> "Direct and witty" means nothing to a model. Your 20 best posts and 10 worst do. Use the second prompt below, then add a banned-words list by hand.</li>
+      <li><strong>Create only the Manager and the Scout.</strong> Live with the morning brief for a few days. If the ideas are wrong, fix the Scout's instructions, not the chat.</li>
+      <li><strong>Add the Writer, then run one full cycle by hand.</strong> Idea, three drafts, your pick, your edit, your yes. When something breaks, correct the agent's job description so the fix sticks.</li>
+      <li><strong>Automate one routine.</strong> Only the morning brief, only on weekdays. Keep routines rare: a schedule that fires every few minutes burns your usage for nothing.</li>
+      <li><strong>Adapt, don't copy, across platforms.</strong> The same text on LinkedIn and Instagram looks automated. Have the Writer rebuild each approved post for each platform, with no new claims. Add one platform at a time.</li>
+      <li><strong>Add the Analyst, and cap the spend.</strong> A weekly report, plus a hard usage limit. On shared usage plans, six agents chatting in one group conversation drain your allowance on messages that weren't meant for them. Talk only to the Manager.</li>
+    </ol>
+
+    <h3>Prompt 1: the Manager</h3>
+    <div class="prompt-box">
+      <span class="prompt-label">Paste as the Manager's instructions</span>
+      <button class="copy-btn" data-copy="managerPrompt" type="button">Copy</button>
+<pre id="managerPrompt">You manage my social media team for [business name], which helps [who] with [what].
+I only talk to you. You give each task to the right agent and bring me one clean result.
+
+Team: Scout (ideas), Writer (drafts), Designer (visuals), Scheduler (posting tool), Analyst (weekly report).
+
+Rules:
+1. Nothing is scheduled, published, edited after scheduling, or sent as a message until I say yes in this chat.
+2. Only the Scheduler uses the posting tool.
+3. Never reply to comments, mentions or messages for me. List the ones worth answering; I reply myself.
+4. One agent at a time unless a task truly needs two.
+5. Every fact needs a source link. No source, no fact.
+6. Keep your updates to me under 5 lines.</pre>
+    </div>
+
+    <h3>Prompt 2: build your voice file</h3>
+    <div class="prompt-box">
+      <span class="prompt-label">Paste with your last 30 posts</span>
+      <button class="copy-btn" data-copy="voicePrompt" type="button">Copy</button>
+<pre id="voicePrompt">Below are my last 30 posts from [LinkedIn / Instagram], each with its likes and comments.
+
+Create a file called voice.md with:
+1. My 8 most common hook patterns, each with a real example from my posts
+2. My typical post length and sentence length
+3. Words and phrases I use often
+4. Topics that get engagement and topics that flop
+5. What my 5 best posts do that my 5 worst don't
+
+Quote only my real posts. Don't describe me with adjectives.
+End with an empty section called NEVER USE for me to fill in.
+
+[paste posts here]</pre>
+    </div>
+
+    <h3>Prompt 3: the morning brief for a local business</h3>
+    <div class="prompt-box">
+      <span class="prompt-label">Scout routine, weekdays</span>
+      <button class="copy-btn" data-copy="scoutPrompt" type="button">Copy</button>
+<pre id="scoutPrompt">Every weekday at 8:00, find 5 post ideas for [business] in [city / sector].
+My customers are [who]. They care about [problems].
+
+Look at the last 48 hours only: news in my sector, questions customers ask online, and claims I could disagree with using evidence.
+For each idea give: one line, why it matters this week, and the source link.
+Skip anything you can't link to. Skip engagement bait.
+Send me a numbered list, then stop and wait for my pick.</pre>
+    </div>
+
+    <h2>What are you allowed to automate on social media?</h2>
+
+    <figure class="post-figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/assets/blog/2026-11-15-coaching/allowed-v.webp" width="1080" height="1350">
+        <img src="/assets/blog/2026-11-15-coaching/allowed-v.webp" width="1080" height="1350" alt="What X's automation rules allow: scheduling your own posts, AI helping you write drafts and agents finding conversations are allowed. Auto-replies to anyone using a keyword and AI reply bots without X's written approval are not." loading="lazy" class="tall">
+      </picture>
+    </figure>
+
+    <p>Scheduling your own posts is fine, and so is using AI to help write them. The line is replies. X's rules say <a href="https://help.x.com/articles/20174732?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">automated replies based on keyword searches alone are not permitted</a>, and its developer guidelines require <a href="https://docs.x.com/developer-guidelines?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">prior approval from X before an AI-powered app generates and posts replies</a>. Break those rules and X <a href="https://help.x.com/rules-and-policies/x-automation?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">may filter your posts from search or suspend your account</a>.</p>
+
+    <p>If you live on LinkedIn or Instagram rather than X, don't assume you're freer. A <a href="https://www.blotato.com/research/social-media-automation-rulebook?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">review of ten platforms' rules by Blotato</a> found none that clearly lets an AI agent reply to or message someone without the platform's approval or the other person going first, as of October 2026. The safe rule is the same everywhere: agents read and draft, you reply.</p>
+
+    <h2>Is this a service AI consultants can sell?</h2>
+
+    <p>Yes, and it's an easy one to explain. Most small businesses don't need a social media manager five days a week. They need a voice file, a morning brief and an approval habit. Setting that up, training the voice on the owner's real posts, and reviewing the Monday report with them for the first month is a concrete, visible piece of work. The before-and-after is on their own feed. If you're building that kind of offer, it's what we work on in <a href="/ai-for-business-owners.html">AI for business owners</a>.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What is an AI social media team?</summary><p>A set of AI agents that each handle one part of social media: finding ideas, writing drafts in your voice, making visuals, scheduling approved posts and reporting on results, coordinated by one manager agent you talk to.</p></details>
+      <details><summary>How much does Grok Bot cost?</summary><p>Grok Bot is not sold on its own. Since October 2026 it is included in The X Subscription from the Premium tier at $30 a month, with a weekly usage allowance. A posting tool is a separate cost.</p></details>
+      <details><summary>Can Grok Bot post to X by itself?</summary><p>According to the guide this article builds on, the official X connector can read, search and check mentions but has no publishing tool, so you connect a separate posting tool such as Postiz. Keep an approval rule on publishing either way.</p></details>
+      <details><summary>Is it allowed to automate posts on X?</summary><p>Scheduling your own original posts and using AI to help write them is allowed. Automated replies triggered by keyword searches are not, and AI reply bots need prior approval from X. Rule-breaking automation can get posts filtered or accounts suspended.</p></details>
+      <details><summary>How do I make AI posts sound like me?</summary><p>Give the AI your real posts, not adjectives. Have it extract your hook patterns, length, phrases and what your best posts do differently, add a list of words you never use, and add a new rule each time you correct a draft.</p></details>
+      <details><summary>Do I need all six agents to start?</summary><p>No. Start with the Manager and the Scout, run the process by hand for about a week, then add the Writer, Designer, Scheduler and Analyst one at a time.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Hire the team. Keep the yes.</h3>
+      <p>One-to-one coaching for business owners and professionals: we build your voice file, your morning brief and your approval routine on your real accounts, then add the agents one at a time.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="coaching-room-2026-11-15-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-agent.html" class="cta-secondary" data-cta="coaching-room-2026-11-15-end-agent">Your own AI agent</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> Andrew (@s4yonnara), <a href="https://x.com/s4yonnara/status/2119777956423700863?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">"6 Grok Bots Do the Work, You Just Say Yes: The $30 Social Media Team"</a>, X, Nov 2026: the six-agent design, the posting-tool gap, "Ask first" rules, routines and usage tips. Grok Bot pricing and plan: <a href="https://twitterapi.io/blog/grok-bot?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">twitterapi.io</a>, <a href="https://www.llmmatchmaker.com/blog/grok-bot-x-subscription?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">LLM Matchmaker</a>. Platform rules: <a href="https://help.x.com/articles/20174732?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">X automation rules</a>, <a href="https://docs.x.com/developer-guidelines?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">X developer guidelines</a>, <a href="https://www.blotato.com/research/social-media-automation-rulebook?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-social-media-team-six-agents-approval" target="_blank" rel="noopener">Blotato, Social Media Automation Rulebook 2026</a>. My own setup and recommendations are from my work.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/blog/perplexity-teammates-ai-agents-hire-first-one.html">Perplexity Teammates: how to hire your first AI agent →</a>
+      <a href="/blog/agent-skills-open-standard-linux-foundation.html">Anthropic and OpenAI just made your AI know-how portable →</a>
+      <a href="/blog/what-is-an-agent-harness.html">What is an agent harness? The 9 parts around the model →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
