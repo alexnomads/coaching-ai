@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [AT&T runs 500 AI agent workflows. Every one started supervised.](https://aicoachalex.com/blog/att-500-ai-agent-workflows-supervised-process-redesign.html): AT&T runs ~500 AI agent workflows, each supervised until accuracy hits the mid-to-high 90s. The small-business version, with a copy-paste prompt.
 - [Jensen Huang Resigns: Nvidia's Key-Person Risk and Decentralized AI](https://aicoachalex.com/blog/jensen-huang-resigns-nvidia-key-person-risk-decentralized-ai.html): Why Jensen Huang resigned as Nvidia CEO, the push to bring him back, and what key-person risk means for AI. Plus Akash (AKT) and Venice (VVV) explained.
 - [Stop telling Claude to think hard. Seven prompting habits to unlearn.](https://aicoachalex.com/blog/claude-opus-5-5-prompting-habits-to-drop.html): Anthropic says old prompting habits slow Claude Opus 5.5 down. What to drop, what to do instead, and a prompt that modernises your saved prompts.
 - [An AI-made sales show just beat its target. Here's the small-business version.](https://aicoachalex.com/blog/hyundai-ai-generated-sales-show-product-video-small-business.html): Hyundai Home Shopping airs a fully AI-generated sales show, cutting supplier video costs 80%+. How to make your first AI product video in 5 steps.
