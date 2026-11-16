@@ -53,3 +53,4 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-16 | linkedin | 9 Step-by-step guide | S1 | Hyundai Home Shopping AI-REAL sales show (Korea Herald) | He walked a building site and talked into his phone.
 2026-11-16 | instagram | 9 Step-by-step guide | S1 | — | He talked into his phone on site. AI wrote the report.
 2026-11-16 | blog-lesson | 2 Contrarian take + 33 Stealable template | S1 (mention) | Anthropic Opus 5.5 prompting guidance (The Decoder, 14 Nov) | Stop telling Claude to think hard. Seven prompting habits to unlearn.
+2026-11-16 | blog-news | 3 Industry take + 32 Industry prediction | — | Jensen Huang resigns as Nvidia CEO (12 Nov) + reinstatement push; Akash AKT on Solana; Venice VVV | Jensen Huang's exit and the $4 trillion single point of failure
