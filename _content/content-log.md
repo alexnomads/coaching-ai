@@ -52,3 +52,4 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-16 | blog-daily | 3 Industry take | S5 (mention) | Hyundai Home Shopping AI-REAL fully AI-generated sales show (Korea Herald, 15 Nov) + Google Antigravity /teamwork + Bland Tofu-1 | An AI-made sales show just beat its target. Here's the small-business version.
 2026-11-16 | linkedin | 9 Step-by-step guide | S1 | Hyundai Home Shopping AI-REAL sales show (Korea Herald) | He walked a building site and talked into his phone.
 2026-11-16 | instagram | 9 Step-by-step guide | S1 | — | He talked into his phone on site. AI wrote the report.
+2026-11-16 | blog-lesson | 2 Contrarian take + 33 Stealable template | S1 (mention) | Anthropic Opus 5.5 prompting guidance (The Decoder, 14 Nov) | Stop telling Claude to think hard. Seven prompting habits to unlearn.

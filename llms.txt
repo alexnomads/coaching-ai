@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [Stop telling Claude to think hard. Seven prompting habits to unlearn.](https://aicoachalex.com/blog/claude-opus-5-5-prompting-habits-to-drop.html): Anthropic says old prompting habits slow Claude Opus 5.5 down. What to drop, what to do instead, and a prompt that modernises your saved prompts.
 - [An AI-made sales show just beat its target. Here's the small-business version.](https://aicoachalex.com/blog/hyundai-ai-generated-sales-show-product-video-small-business.html): Hyundai Home Shopping airs a fully AI-generated sales show, cutting supplier video costs 80%+. How to make your first AI product video in 5 steps.
 - [AI shopping agents just got a front door to every Shopify store. Is yours open?](https://aicoachalex.com/blog/poppy-ai-shopping-agents-shopify-small-business.html): Sierra's Poppy 1.0 lets customers' AI agents talk to businesses, and Shopify switched it on for every store. What it means and a 30-minute prep checklist.
 - [How to Build an AI Social Media Team (6 Agents, One Approval Rule)](https://aicoachalex.com/blog/ai-social-media-team-six-agents-approval.html): Six AI agents for social media: Manager, Scout, Writer, Designer, Scheduler, Analyst. How to set it up for a small business, safely, with 3 copy-paste prompts.
