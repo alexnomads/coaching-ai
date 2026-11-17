@@ -88,3 +88,14 @@ scp -r career-coach/ user@187.124.39.207:/var/www/
 ---
 
 *Generated April 10, 2026*
+
+## Indexing guardrail (Google Search Console)
+
+`_tools/check_seo.py` runs automatically after `build_blog_post.py` / `build_blog_translation.py`
+and on every push to `main` (`.github/workflows/seo-check.yml`). It fails if any public page has
+a missing or wrong canonical (must point to itself on https://aicoachalex.com), is missing from
+`sitemap.xml`, is not linked from any other page, or if a noindex/redirect page is in the sitemap.
+
+- New hand-built page? Give it `<link rel="canonical" href="https://aicoachalex.com/<path>">`, link it from the nav or an index page, then run `python3 _tools/check_seo.py --fix` (adds it to the sitemap and refreshes every `lastmod` from git).
+- Retiring a page? Turn it into a redirect stub (meta refresh + noindex + canonical to the new URL) — the checker removes it from the sitemap on `--fix`.
+- Never copy a `<head>` from another page without changing the canonical and `og:url`.

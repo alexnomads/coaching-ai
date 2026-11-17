@@ -160,3 +160,7 @@ def main(meta_path, article_path):
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
+    # Indexing guardrail: fail loudly if this build left a bad canonical,
+    # a page missing from sitemap.xml, or an orphan page.
+    import subprocess
+    sys.exit(subprocess.call([sys.executable, str(pathlib.Path(__file__).with_name("check_seo.py"))]))
