@@ -82,5 +82,9 @@
  "california-sues-openai-rogue-ai-agents-access-check": {
   "es": "california-demanda-openai-agentes-ia-accesos",
   "it": "california-causa-openai-agenti-ia-accessi"
+ },
+ "gpt-6-2-astra-sol-cheaper-model-everyday-work": {
+  "es": "gpt-6-2-astra-sol-modelo-barato-trabajo-diario",
+  "it": "gpt-6-2-astra-sol-modello-economico-lavoro-quotidiano"
  }
 }
