@@ -583,6 +583,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media (min-width:768px) and (max-width:1099px){nav .nav-links{display:none!important}.nav-hamburger{display:flex!important}}
 </style>
 <link rel="canonical" href="https://aicoachalex.com/index.es.html">
+<link rel="stylesheet" href="/assets/scenes.css?v=1">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -676,17 +677,13 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 </div>
 
 <!-- Hero Section -->
-<section class="hero" id="heroSection">
-  <!-- Content -->
-  <div class="hero-content">
-    <div>
+<section class="scene s-hero" id="heroSection" style="--len:140" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <div class="floor floor-forest"></div>
+    <div class="hero-copy">
       <h1 class="hero-type">Te acomo<em>daste.</em> No es demasiado <em>tarde.</em></h1>
-    </div>
-    
-    <div class="hero-aside">
-      <p>Has construido una carrera sólida. Ahora, con la IA, las reglas están cambiando y nadie te está dando un mapa claro. Ahí es exactamente donde entro yo como tu AI Coach.</p>
-      
-      <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="hero-aside">
+        <p>Has construido una carrera sólida. Ahora, con la IA, las reglas están cambiando y nadie te está dando un mapa claro. Ahí es exactamente donde entro yo como tu AI Coach.</p>
         <a href="#pricing" class="btn-hero">Reservar Diagnóstico — 49€ ↗</a>
         <a href="https://t.me/alexnomads" class="btn-telegram-mobile">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.146.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.623 4.823-4.351c.192-.192-.043-.3-.297-.107L9.63 13.572l-2.55-.8c-.553-.176-.566-.553.1-.832l9.965-3.841c.46-.17.863.112.769.832z"/></svg>
@@ -694,9 +691,17 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
         </a>
       </div>
     </div>
-  </div>
-  
-  <!-- PHONE MOCKUP -->
+    <div class="hero-desk" aria-hidden="true">
+      <div class="laptop" >
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>chat</span></div>
+          <div class="lap-view"><div class="lap-scroll"><p class="ln c-cmd">&gt; ¿va mi carrera en la dirección correcta?</p><p class="ln">  vamos a averiguarlo.<span class="caret-static"></span></p></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
+      </div>
+      <div class="desk"></div>
+    </div>
+    <!-- PHONE MOCKUP -->
   <div class="hero-phone" id="heroPhone">
     <div class="hero-phone-bezel">
       <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" id="heroVideo">
@@ -720,9 +725,8 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-  
-  <!-- Scroll Hint -->
-  <div class="hero-scroll">Desliza para explorar</div>
+    <p class="hero-scroll">Desliza para explorar ↓</p>
+  </div>
 </section>
 
 <!-- Marquee Strip -->
@@ -746,207 +750,176 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <span>Habilidades de IA +177% Desde 2023 · LinkedIn <span class="dot">•</span></span>
   </div>
 </div>
-
-<!-- Quiz Section -->
-<section class="quiz-section">
-  <div class="quiz-grid">
-    <div class="quiz-content">
-      <h2 class="quiz-title">¿Está tu trabajo <em>a salvo</em> de la IA?</h2>
-      <p class="quiz-desc">La mayoría de los profesionales no tiene ni idea de dónde están realmente. Descúbrelo en 2 minutos — obtén tu puntuación personal de riesgo entre 289 roles en 26 industrias, y un plan basado en tu resultado.</p>
-      <a href="career-risk-assessment.html" class="quiz-cta">Haz el Test Gratis →</a>
-    </div>
-    
-    <div class="quiz-stats">
-      <div class="quiz-stat">
-        <div class="quiz-stat-num">289</div>
-        <div class="quiz-stat-label">Profesiones</div>
+<!-- 3 · comfort-able -->
+<section class="scene s-comfort" style="--len:260" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <p class="say" data-words="0.02 0.3">Has construido una carrera sólida.</p>
+    <p class="say" data-words="0.32 0.45">Y luego te</p>
+    <p class="giant" aria-label="acomo-daste."><span data-letters="0.45 0.85">acomo-daste</span><span class="dotmark" data-on="0.85 0.9"></span></p>
+  </div>
+</section>
+<!-- 4 · machines -->
+<section class="scene s-machines" style="--len:340" data-wall="lime" data-nav="light">
+  <div class="stage wall-lime">
+    <div class="floor floor-cloth"></div>
+    <p class="say say-row"><span data-words="0 0.1">y ahora las</span> <span class="giant-mach" data-letters="0.1 0.3">máquinas</span></p>
+    <p class="say" data-words="0.3 0.42">también lo hacen bien.</p>
+    <div class="laptop" data-type="0.4 0.97">
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>terminal — tu trabajo, automatizado</span></div>
+          <div class="lap-view"><div class="lap-scroll"><p class="ln c-cmd">&gt; redacta el informe trimestral</p><p class="ln c-out">  hecho. 12 segundos.</p><p class="ln c-cmd">&gt; vacía mi bandeja de entrada</p><p class="ln c-out">  hecho. 214 emails ordenados.</p><p class="ln c-cmd">&gt; analiza los datos de ventas</p><p class="ln c-out">  hecho. 3 conclusiones, 1 gráfico.</p><p class="ln c-cmd">&gt; escribe la landing page</p><p class="ln c-out">  hecho.</p><p class="ln c-cmd">&gt; monta la presentación para el consejo</p><p class="ln c-out">  hecho. 18 diapositivas.</p><p class="ln c-cmd">&gt; ¿y ahora qué hago yo?</p><p class="ln c-big">orquesta. no compitas.</p></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
       </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-num">26</div>
-        <div class="quiz-stat-label">Industrias</div>
+  </div>
+</section>
+<!-- 5 · eras -->
+<section class="scene s-eras" style="--len:360" data-wall="ink" data-nav="dark" data-wall-steps="0:ink 0.34:forest 0.67:lime" data-nav-steps="0:dark 0.67:light">
+  <div class="stage">
+    <div class="walls" aria-hidden="true"><i class="w1"></i><i class="w2" data-on="0.30 0.38"></i><i class="w3" data-on="0.63 0.71"></i></div>
+    <div class="eras">
+      <div class="era era-1" data-swap="-1 0 0.28 0.34">
+        <span class="era-num" aria-hidden="true">01</span>
+        <h2 class="era-name">La Era<em> Industrial</em></h2>
+        <p class="era-body">Ejecutar era el trabajo. Presentarte, repetir el proceso, especializarte. La máquina necesitaba humanos para funcionar.</p>
+        <span class="era-tag">Ejecución</span>
       </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-num">2</div>
-        <div class="quiz-stat-label">Min para completar</div>
+      <div class="era era-2" data-swap="0.34 0.40 0.61 0.67">
+        <span class="era-num" aria-hidden="true">02</span>
+        <h2 class="era-name">La Era<em> Digital</em></h2>
+        <p class="era-body">El software se comió el mundo. Adaptarse significaba aprender nuevas herramientas, plataformas, flujos de trabajo. Los ganadores se movieron rápido y acumularon habilidades digitales sobre su experiencia.</p>
+        <span class="era-tag">Adaptación</span>
+      </div>
+      <div class="era era-3" data-show="0.67 0.73">
+        <span class="era-num" aria-hidden="true">03</span>
+        <h2 class="era-name">La Era<em> de la IA · Ahora</em></h2>
+        <p class="era-body">La nueva máquina piensa — y la mayoría de los profesionales aún no se ha dado cuenta. La ventana para reposicionarte está abierta. Pero no para siempre. La orquestación le gana a la ejecución cada vez.</p>
+        <span class="era-tag">Orquestación</span>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Era Section -->
-<section class="era-section">
-  <div class="era-col" data-era="1">
-    <span class="era-num">01</span>
-    <div>
-      <h2 class="era-name">La Era<em> Industrial</em></h2>
-      <p class="era-body">Ejecutar era el trabajo. Presentarte, repetir el proceso, especializarte. La máquina necesitaba humanos para funcionar.</p>
-      <span class="era-tag">Ejecución</span>
-    </div>
-  </div>
-  
-  <div class="era-col" data-era="2">
-    <span class="era-num">02</span>
-    <div>
-      <h2 class="era-name">La Era<em> Digital</em></h2>
-      <p class="era-body">El software se comió el mundo. Adaptarse significaba aprender nuevas herramientas, plataformas, flujos de trabajo. Los ganadores se movieron rápido y acumularon habilidades digitales sobre su experiencia.</p>
-      <span class="era-tag">Adaptación</span>
-    </div>
-  </div>
-  
-  <div class="era-col active-era" data-era="3">
-    <span class="era-num">03</span>
-    <div>
-      <h2 class="era-name">La Era<em> de la IA · Ahora</em></h2>
-      <p class="era-body">La nueva máquina piensa — y la mayoría de los profesionales aún no se ha dado cuenta. La ventana para reposicionarte está abierta. Pero no para siempre. La orquestación le gana a la ejecución cada vez.</p>
-      <span class="era-tag">Orquestación</span>
-    </div>
+<!-- 6 · too late -->
+<section class="scene s-late" style="--len:280" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <p class="late" data-swap="0 0.12 0.28 0.36">¿Demasiado tarde?</p>
+    <p class="late late-no" data-swap="0.38 0.46 0.56 0.62">No.</p>
+    <div class="late-wrap" data-show="0.64 0.76"><h2 class="statement-text">Las habilidades que te trajeron aquí <em>no</em> te llevarán allá.</h2></div>
   </div>
 </section>
-
-<!-- Problem Statement -->
-<section class="statement">
+<section class="statement flow" data-wall="cream" data-nav="light">
+  <div><span class="stmt-label">El Problema</span></div>
   <div>
-    <span class="stmt-label">El Problema</span>
-  </div>
-  <div>
-    <h2 class="statement-text">Las habilidades que te trajeron aquí <em>no</em> te llevarán allá.</h2>
     <p style="margin-top:1.5rem;font-size:1rem;line-height:1.75;color:var(--muted);">Los profesionales de media carrera no se estancan por falta de capacidad. Se estancan porque <strong>no han actualizado su sistema operativo.</strong> Los profesionales que están avanzando no son más listos — simplemente han descubierto cómo usar la IA como palanca en lugar de temerle como amenaza.</p>
     <p style="margin-top:1rem;font-size:1rem;line-height:1.75;color:var(--muted);">El mercado te ofrece dos malas opciones: pagar más de 15k€ por un coach que jamás ha tocado una herramienta de IA, o suscribirte a un chatbot de 29€/mes que le da a todo el mundo el mismo consejo genérico. Ninguno de los dos te dice realmente dónde estás ni qué deberías hacer a continuación.</p>
   </div>
 </section>
-
-<!-- THE METHOD - CARD DECK CAROUSEL -->
-<section class="method-deck" id="method">
-  <div class="method-container">
-    <span class="method-label">El Método</span>
-    <h2 class="method-title">Un diagnóstico construido sobre <em>sistemas reales.</em></h2>
-    <p class="method-subtitle">Nada de marcos genéricos. Un proceso estructurado construido en torno a tu rol, tu industria, y lo que realmente está cambiando en tu campo.</p>
-    
-    <div class="card-deck" id="cardDeck">
-      
-      <!-- Card 1: Diagnostic -->
-      <div class="method-card" data-card="1">
-        <div class="card-number">01</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        <h3 class="card-title">La Llamada de Diagnóstico</h3>
-        <p class="card-preview">49€ · 50 minutos. No una consultoría — una auditoría estructurada.</p>
-        <div class="card-full">
-          <p>Al final sabes exactamente dónde estás y qué hacer, sigamos juntos o no. Esto no es un pitch de venta. Es una auditoría de sistemas de tu posicionamiento profesional.</p>
-          <ul class="card-list">
-            <li>Análisis de vulnerabilidad de tu rol actual</li>
-            <li>Emparejamiento de habilidades con el mercado</li>
-            <li>Acciones inmediatas para ejecutar</li>
-          </ul>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-      <!-- Card 2: Where You Are -->
-      <div class="method-card" data-card="2">
-        <div class="card-number">02</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <h3 class="card-title">Dónde Estás Ahora</h3>
-        <p class="card-preview">La mayoría sobreestima su fluidez en IA y subestima cuán expuesto está su rol. Averiguamos exactamente dónde estás — con honestidad.</p>
-        <div class="card-full">
-          <p>¿Estás ejecutando tareas que la IA automatizará, o construyendo un juicio que la IA no puede reemplazar? La mayoría de los profesionales de media carrera están más cerca de lo primero de lo que creen.</p>
-          <ul class="card-list">
-            <li>Auditoría de tu stack de habilidades</li>
-            <li>Análisis de posicionamiento vs. el mercado</li>
-            <li>Reencuadre de identidad</li>
-          </ul>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-      <!-- Card 3: What's Changing -->
-      <div class="method-card" data-card="3">
-        <div class="card-number">03</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </div>
-        <h3 class="card-title">Qué Está Cambiando</h3>
-        <p class="card-preview">Nada de titulares generales de IA — qué está pasando específicamente en tu industria, tu categoría de rol y tu nivel de senioridad ahora mismo.</p>
-        <div class="card-full">
-          <p>Qué roles están siendo comprimidos, qué habilidades se están volviendo indispensables, dónde está la palanca en tu campo. Datos reales, no titulares.</p>
-          <ul class="card-list">
-            <li>Puntuación de riesgo del rol</li>
-            <li>Línea de tiempo de compresión de habilidades</li>
-            <li>Identificación de puntos de palanca</li>
-          </ul>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-      <!-- Card 4: Where You Need To Be -->
-      <div class="method-card card-featured" data-card="4">
-        <div class="card-number">04</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
-        <h3 class="card-title">Dónde Necesitas Estar</h3>
-        <p class="card-preview">Sales con una respuesta clara a: ¿qué hago ahora? No una dirección vaga — una capacidad específica que construir y una narrativa que apropiarte.</p>
-        <div class="card-full">
-          <p>Un plan de pivote concreto: qué capacidades construir, qué narrativa apropiarte, cómo posicionarte como alguien que orquesta la IA en lugar de competir con ella.</p>
-          <ul class="card-list">
-            <li>Hoja de ruta de capacidades</li>
-            <li>Desarrollo de narrativa</li>
-            <li>Estrategia de posicionamiento</li>
-          </ul>
-          <a href="#pricing" class="card-cta">Comienza Tu Camino →</a>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-    </div>
-
-    <!-- Mobile Swipe Indicator -->
-    <div class="swipe-indicator">
-      <span>Swipe</span>
-      <div class="swipe-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-
-    <!-- Desktop Progress -->
-    <div class="deck-progress">
-      <div class="progress-line"></div>
-      <div class="progress-fill" id="progressFill"></div>
-      <span class="progress-text"><span id="currentCard">1</span> / 4</span>
-    </div>
-
+<!-- 7 · quiz -->
+<section class="scene s-quiz" style="--len:300" data-wall="forest" data-nav="dark">
+  <div class="stage wall-forest">
+    <div class="floor floor-cloth"></div>
+    <h2 class="quiz-title" data-words="0 0.2">¿Está tu trabajo <em>a salvo</em> de la IA?</h2>
+    <p class="lede" data-show="0.18 0.3">La mayoría de los profesionales no tiene ni idea de dónde están realmente. Descúbrelo en 2 minutos — obtén tu puntuación personal de riesgo entre 289 roles en 26 industrias, y un plan basado en tu resultado.</p>
+    <div class="qstats"><div class="qstat" data-show="0.3 0.4"><b data-count="0.3 0.45" data-to="289">289</b><span>Profesiones</span></div><div class="qstat" data-show="0.42 0.52"><b data-count="0.42 0.56" data-to="26">26</b><span>Industrias</span></div><div class="qstat" data-show="0.54 0.64"><b data-count="0.54 0.66" data-to="2">2</b><span>Min para completar</span></div></div>
+    <div class="quiz-go" data-show="0.72 0.84"><a href="career-risk-assessment.html" class="btn-lime quiz-cta">Haz el Test Gratis →</a></div>
   </div>
 </section>
-
-<!-- Cases Section -->
-<section class="cases-section">
+<!-- 8 · method -->
+<section class="scene s-method" id="method" style="--len:380" data-wall="cream" data-nav="light">
+  <div class="stage wall-cream">
+    <div class="floor floor-cloth-dim"></div>
+    <div class="m-head">
+      <p class="kicker">El Método</p>
+      <h2 class="big-h" data-words="0 0.15">Un diagnóstico construido sobre <em>sistemas reales.</em></h2>
+      <p class="lede" data-show="0.12 0.22">Nada de marcos genéricos. Un proceso estructurado construido en torno a tu rol, tu industria, y lo que realmente está cambiando en tu campo.</p>
+    </div>
+    <div class="laptop" data-type="0.22 0.97">
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>diagnostico.md</span></div>
+          <div class="lap-view"><div class="lap-scroll"><p class="ln c-head">## el método</p><p class="ln c-title">01  La Llamada de Diagnóstico</p><p class="ln c-out">    49€ · 50 minutos. No una consultoría — una auditoría estructurada.</p><p class="ln c-title">02  Dónde Estás Ahora</p><p class="ln c-out">    La mayoría sobreestima su fluidez en IA y subestima cuán expuesto está su rol. Averiguamos exactamente dónde estás — con honestidad.</p><p class="ln c-title">03  Qué Está Cambiando</p><p class="ln c-out">    Nada de titulares generales de IA — qué está pasando específicamente en tu industria, tu categoría de rol y tu nivel de senioridad ahora mismo.</p><p class="ln c-title">04  Dónde Necesitas Estar</p><p class="ln c-out">    Sales con una respuesta clara a: ¿qué hago ahora? No una dirección vaga — una capacidad específica que construir y una narrativa que apropiarte.</p><p class="ln c-cmd">&gt; ejecutar diagnóstico --tú</p></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
+      </div>
+  </div>
+</section>
+<section class="steps flow" data-wall="cream" data-nav="light">
+  <div class="flow-inner steps-grid">
+      <article class="step">
+        <span class="step-n">01</span>
+        <h3>La Llamada de Diagnóstico</h3>
+        <p class="step-pre">49€ · 50 minutos. No una consultoría — una auditoría estructurada.</p>
+        <p>Al final sabes exactamente dónde estás y qué hacer, sigamos juntos o no. Esto no es un pitch de venta. Es una auditoría de sistemas de tu posicionamiento profesional.</p>
+        <ul><li>Análisis de vulnerabilidad de tu rol actual</li><li>Emparejamiento de habilidades con el mercado</li><li>Acciones inmediatas para ejecutar</li></ul>
+        
+      </article>
+      <article class="step">
+        <span class="step-n">02</span>
+        <h3>Dónde Estás Ahora</h3>
+        <p class="step-pre">La mayoría sobreestima su fluidez en IA y subestima cuán expuesto está su rol. Averiguamos exactamente dónde estás — con honestidad.</p>
+        <p>¿Estás ejecutando tareas que la IA automatizará, o construyendo un juicio que la IA no puede reemplazar? La mayoría de los profesionales de media carrera están más cerca de lo primero de lo que creen.</p>
+        <ul><li>Auditoría de tu stack de habilidades</li><li>Análisis de posicionamiento vs. el mercado</li><li>Reencuadre de identidad</li></ul>
+        
+      </article>
+      <article class="step">
+        <span class="step-n">03</span>
+        <h3>Qué Está Cambiando</h3>
+        <p class="step-pre">Nada de titulares generales de IA — qué está pasando específicamente en tu industria, tu categoría de rol y tu nivel de senioridad ahora mismo.</p>
+        <p>Qué roles están siendo comprimidos, qué habilidades se están volviendo indispensables, dónde está la palanca en tu campo. Datos reales, no titulares.</p>
+        <ul><li>Puntuación de riesgo del rol</li><li>Línea de tiempo de compresión de habilidades</li><li>Identificación de puntos de palanca</li></ul>
+        
+      </article>
+      <article class="step">
+        <span class="step-n">04</span>
+        <h3>Dónde Necesitas Estar</h3>
+        <p class="step-pre">Sales con una respuesta clara a: ¿qué hago ahora? No una dirección vaga — una capacidad específica que construir y una narrativa que apropiarte.</p>
+        <p>Un plan de pivote concreto: qué capacidades construir, qué narrativa apropiarte, cómo posicionarte como alguien que orquesta la IA en lugar de competir con ella.</p>
+        <ul><li>Hoja de ruta de capacidades</li><li>Desarrollo de narrativa</li><li>Estrategia de posicionamiento</li></ul>
+        <a href="#pricing" class="card-cta">Comienza Tu Camino →</a>
+      </article>
+  </div>
+</section>
+<!-- 9 · track record -->
+<section class="scene s-record" style="--len:300" data-wall="forest" data-nav="dark">
+  <div class="stage wall-forest">
+    <p class="kicker">Trayectoria</p>
+    <h2 class="big-h cases-title" data-words="0 0.3">No solo lo enseño. Lo he <em>ejecutado.</em></h2>
+    <div class="bar" data-show="0.28 0.34"></div>
+    <div class="rstats"><div class="rstat" data-show="0.33 0.40"><b data-count="0.35 0.58" data-to="200" data-pre="$" data-suf="k">$200k</b><span>224+ NFTs vendidos · The Sandbox</span></div><div class="rstat" data-show="0.43 0.50"><b data-count="0.45 0.68" data-to="25" data-pre="$" data-suf="M">$25M</b><span>Series B · 30+ alianzas · LandVault</span></div><div class="rstat" data-show="0.53 0.60"><b data-count="0.55 0.78" data-to="500" data-pre="" data-suf="M+">500M+</b><span>gamers alcanzados · 7M vistas en YouTube · BlueStacks + Game.tv</span></div><div class="rstat" data-show="0.63 0.70"><b data-count="0.65 0.88" data-to="550" data-pre="" data-suf="k">550k</b><span>vistas orgánicas · Cero gasto en anuncios · GenLayer</span></div></div>
+  </div>
+</section>
+<section class="cases-section flow" data-wall="ink" data-nav="dark">
   <div class="cases-section-header">
-    <span class="cases-label">Trayectoria</span>
-    <h2 class="cases-title">No solo lo enseño. Lo he <em>ejecutado.</em></h2>
     <p class="cases-subtitle">Los marcos que enseño vienen de lanzamientos GTM reales, productos de IA financiados y campañas que realmente movieron números. Aquí está la trayectoria.</p>
   </div>
-
+  <div class="trust-badges">
+    <div class="trust-badge">
+      <div class="trust-badge-top">
+        <span class="trust-badge-mark" style="background:#0D0D0D;color:#F26207;">R</span>
+        <div>
+          <div class="trust-badge-name">Replit Agent</div>
+          <div class="trust-badge-cat">Agentes de desarrollo de software</div>
+        </div>
+      </div>
+      <div class="trust-badge-rank">🏆 Top 10% de usuarios de Replit Agent</div>
+      <div class="trust-badge-desc">Dirige al agente de IA de Replit para generar y perfeccionar código de producción en sesiones de desarrollo de varios pasos.</div>
+    </div>
+    <div class="trust-badge">
+      <div class="trust-badge-top">
+        <span class="trust-badge-mark" style="background:linear-gradient(135deg,#FF6A3D,#B24BF3);color:#fff;">L</span>
+        <div>
+          <div class="trust-badge-name">Lovable</div>
+          <div class="trust-badge-cat">Software de IA conversacional</div>
+        </div>
+      </div>
+      <div class="trust-badge-rank">🏆 Top 10% de usuarios de Lovable</div>
+      <div class="trust-badge-desc">Construye plataformas web, redes y marketplaces en Lovable.</div>
+    </div>
+  </div>
   <div class="cases-grid">
     <!-- CASE 1: The Sandbox -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/sandbox-snoopdogg.mp4" type="video/mp4">
         </video>
       </div>
@@ -966,7 +939,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 2: LandVault -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/landvault.mp4" type="video/mp4">
         </video>
       </div>
@@ -987,7 +960,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 3: Rose of Jericho -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/roj-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1004,7 +977,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 4: BlueStacks -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/gametv-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1025,7 +998,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 5: GenLayer -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/genlayer-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1042,7 +1015,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 6: Qubit Wallet -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/qubit-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1057,15 +1030,23 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
-
-<!-- Pricing Section -->
-<section class="pricing-section" id="pricing">
-  <div class="pricing-header">
-    <span class="pricing-label">Precios</span>
-    <h2 class="pricing-title">Precios boutique. Sin <em>adornos.</em></h2>
-    <p class="pricing-subtitle">Diseñado para profesionales que necesitan más que un chatbot y no necesitan gastar 15k€ para obtener una respuesta directa.</p>
+<!-- 10 · pricing -->
+<section class="scene s-pricing" id="pricing" style="--len:320" data-wall="lime" data-nav="light">
+  <div class="stage wall-lime">
+    <div class="floor floor-cloth"></div>
+    <p class="kicker">Precios</p>
+    <h2 class="big-h" data-words="0 0.16">Precios boutique. Sin <em>adornos.</em></h2>
+    <p class="lede" data-show="0.12 0.22">Diseñado para profesionales que necesitan más que un chatbot y no necesitan gastar 15k€ para obtener una respuesta directa.</p>
+    <div class="laptop" data-keys="0.2 0.82" data-enters="0.4 0.6 0.8">
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>aicoachalex.com/precios</span></div>
+          <div class="plans-screen"><div class="plan-row" data-show="0.25 0.40"><p class="pp">49€</p><div class="pt"><b>Llamada de Claridad</b><span>Único · 50 minutos</span></div><a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Reservar Diagnóstico →</a></div><div class="plan-row" data-show="0.45 0.60"><p class="pp">Desde 300€</p><div class="pt"><b>Alianza Mensual</b><span>Al mes</span></div><a href="mailto:aicoachalex@gmail.com?subject=Monthly%20Coaching">Comenzar Mensual →</a></div><div class="plan-row" data-show="0.65 0.80"><p class="pp">Inversión Personalizada</p><div class="pt"><b>Transformación Completa</b><span>Definida en tu Diagnóstico</span></div><a href="mailto:aicoachalex@gmail.com?subject=3-Month%20Programme">Aplicar para 3 Meses →</a></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
+      </div>
   </div>
-  
+</section>
+<section class="plans flow" data-wall="cream" data-nav="light">
   <div class="pricing-grid">
     <div class="pricing-card">
       <div class="pricing-tier">Llamada de Claridad</div>
@@ -1111,7 +1092,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 </section>
 
 <!-- Coach Section -->
-<section class="coach-section">
+<section class="coach-section flow" data-wall="forest" data-nav="dark">
   <div class="coach-grid">
     <div>
       <span class="coach-label">El Coach</span>
@@ -1140,17 +1121,26 @@ Ese es el mismo proceso que traigo al coaching de carrera. No te doy un marco qu
     </div>
   </div>
 </section>
-
-<!-- Final CTA -->
-<section class="cta-section">
-  <span class="cta-label">49€ · ¿Listo?</span>
-  <h2 class="cta-title">Reserva tu diagnóstico. <em>Hoy.</em></h2>
-  <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="cta-btn">Reserva Tu Lugar — 49€ →</a>
-  <p class="cta-note">50 minutos · claridad inmediata · No es un pitch de venta. Es una auditoría diagnóstica.</p>
+<!-- 12 · book -->
+<section class="scene s-book" style="--len:280" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <div class="b-head">
+      <p class="kicker">49€ · ¿Listo?</p>
+      <h2 class="big-h" data-words="0 0.22">Reserva tu diagnóstico.</h2>
+      <p class="today" data-show="0.25 0.38">Hoy.</p>
+      <div class="b-notes" data-show="0.4 0.5">
+        <p>50 minutos · claridad inmediata · No es un pitch de venta. Es una auditoría diagnóstica.</p>
+        <a href="https://t.me/alexnomads">Escríbeme por Telegram →</a>
+      </div>
+    </div>
+    <div class="dot-wrap">
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="book-dot" data-scale="0.45 0.8 0.035 1"><span class="bl" data-on="0.75 0.88">Reserva Tu Lugar<b>49€ →</b></span></a>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER WITH SOCIAL LINKS -->
-<footer class="footer">
+<footer class="footer" data-wall="ink" data-nav="dark">
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Alessandro Capezza</div>
@@ -1336,142 +1326,6 @@ document.body.style.overflow='';
 });
 }
 
-// Era Cards
-const eraCols=document.querySelectorAll('.era-col');
-eraCols.forEach(col=>{
-col.addEventListener('mouseenter',()=>{
-if(window.innerWidth>=768){
-eraCols.forEach(c=>c.classList.remove('active-era'));
-col.classList.add('active-era');
-}});
-});
-
-// ============================================
-// METHOD DECK - CARD CAROUSEL (Lazy-loaded)
-// ============================================
-const cardDeck=document.getElementById('cardDeck');
-const cards=document.querySelectorAll('.method-card');
-const progressFill=document.getElementById('progressFill');
-const currentCardText=document.getElementById('currentCard');
-const dots=document.querySelectorAll('.swipe-dots .dot');
-
-let cardObserver=new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-initCardDeck();
-cardObserver.disconnect();
-}
-});
-},{threshold:0.1});
-if(cardDeck)cardObserver.observe(cardDeck);
-
-function initCardDeck(){
-const overlay=document.createElement('div');
-overlay.className='card-overlay';
-document.body.appendChild(overlay);
-let currentCardIndex=0;
-let isExpanded=false;
-
-cards.forEach((card,index)=>{
-card.addEventListener('click',(e)=>{
-if(e.target.classList.contains('card-cta'))return;
-if(window.innerWidth<768)return;
-if(card.classList.contains('expanded')){collapseCard(card);}else{expandCard(card,index,e);}
-});
-const expandBtn=card.querySelector('.card-expand');
-if(expandBtn){
-expandBtn.addEventListener('click',(e)=>{
-e.stopPropagation();
-if(window.innerWidth<768)return;
-if(card.classList.contains('expanded')){collapseCard(card);}else{expandCard(card,index,e);}
-});
-}
-});
-
-function expandCard(card,index,event){
-cards.forEach(c=>collapseCard(c));
-card.classList.add('expanded');
-overlay.classList.add('active');
-isExpanded=true;
-updateProgress(index+1);
-}
-
-function collapseCard(card){
-card.classList.remove('expanded');
-overlay.classList.remove('active');
-isExpanded=false;
-}
-
-overlay.addEventListener('click',()=>{
-cards.forEach(c=>collapseCard(c));
-});
-
-document.addEventListener('keydown',(e)=>{
-if(e.key==='Escape'&&isExpanded){
-cards.forEach(c=>collapseCard(c));
-}
-});
-
-let touchStartX=0;
-if(cardDeck){
-cardDeck.addEventListener('touchstart',e=>{
-touchStartX=e.changedTouches[0].screenX;
-},{passive:true});
-
-cardDeck.addEventListener('touchend',e=>{
-const touchEndX=e.changedTouches[0].screenX;
-handleSwipe(touchStartX,touchEndX);
-},{passive:true});
-
-cardDeck.addEventListener('scroll',()=>{
-if(window.innerWidth>=768)return;
-const deckRect=cardDeck.getBoundingClientRect();
-const deckCenter=deckRect.left+deckRect.width/2;
-cards.forEach((card,index)=>{
-const cardRect=card.getBoundingClientRect();
-const cardCenter=cardRect.left+cardRect.width/2;
-if(Math.abs(deckCenter-cardCenter)<cardRect.width/2){
-updateProgress(index+1);
-}});
-},{passive:true});
-}
-
-function handleSwipe(startX,endX){
-const swipeThreshold=50;
-const diff=startX-endX;
-if(Math.abs(diff)>swipeThreshold){
-if(diff>0){
-if(currentCardIndex<cards.length-1){
-currentCardIndex++;
-scrollToCard(currentCardIndex);
-}
-}else{
-if(currentCardIndex>0){
-currentCardIndex--;
-scrollToCard(currentCardIndex);
-}}
-}}
-
-function scrollToCard(index){
-if(window.innerWidth>=768)return;
-const card=cards[index];
-const deck=cardDeck;
-const cardLeft=card.offsetLeft;
-const deckWidth=deck.offsetWidth;
-const cardWidth=card.offsetWidth;
-deck.scrollTo({left:cardLeft-(deckWidth-cardWidth)/2,behavior:'smooth'});
-updateProgress(index+1);
-}
-
-function updateProgress(cardNum){
-if(progressFill)progressFill.style.width=`${(cardNum/cards.length)*100}%`;
-if(currentCardText)currentCardText.textContent=cardNum;
-dots.forEach((dot,index)=>{dot.classList.toggle('active',index===cardNum-1);});
-currentCardIndex=cardNum-1;
-}
-
-updateProgress(1);
-}
 </script>
 
 <!-- ============================================================
@@ -1783,5 +1637,6 @@ q.classList.add('idx-quiz-m');q.style.left=Math.round(h.left-q.offsetWidth-8)+'p
 place();window.addEventListener('resize',place);window.addEventListener('scroll',place,{passive:true});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);setTimeout(place,700);})();
 </script>
+<script src="/assets/scenes.js?v=1" defer></script>
 </body>
 </html>

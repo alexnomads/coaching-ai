@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/">
+<link rel="alternate" hreflang="es" href="https://aicoachalex.com/index.es.html">
+<link rel="alternate" hreflang="it" href="https://aicoachalex.com/index.it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/">
+<script>
+/* Language auto-detect: on the homepage, redirect first-time visitors to their
+   preferred language if it's ES or IT. Manual switcher clicks save preference. */
+(function(){
+  try{
+    var here = (location.pathname.match(/index\.(es|it)\.html$/) || [])[1] || 'en';
+    var stored = localStorage.getItem('preferred-lang');
+    var target = null;
+    if(stored){
+      if(stored !== here && ['en','es','it'].indexOf(stored)!==-1) target = stored;
+    } else {
+      var bl = ((navigator.language || navigator.userLanguage || 'en') + '').slice(0,2).toLowerCase();
+      if((bl === 'es' || bl === 'it') && bl !== here) target = bl;
+    }
+    if(target){
+      var newPath = target === 'en' ? '/' : '/index.' + target + '.html';
+      if(location.pathname !== newPath){
+        location.replace(newPath + location.search + location.hash);
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<title>AI Coach Alex — Stay Relevant in the AI Era</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta property="og:title" content="AI Coach Alex — Stay Relevant in the AI Era">
+<meta name="description" content="AI coaching for mid-career professionals. A structured diagnostic call to map your risk and your next move.">
+<meta property="og:description" content="AI coaching for mid-career professionals. A structured diagnostic call to map your risk and your next move.">
+<meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<meta property="og:url" content="https://aicoachalex.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Coach Alex">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Coach Alex — Stay Relevant in the AI Era">
+<meta name="twitter:description" content="AI coaching for mid-career professionals. A structured diagnostic call to map your risk and your next move.">
+<meta name="twitter:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--forest:#1a3d00;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+*{cursor:none!important;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:1000000;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;mix-blend-mode:normal;}
+.cursor.big{width:40px;height:40px;}
+@media (hover:none) and (pointer:coarse){*{cursor:auto!important;}.cursor{display:none!important;}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;mix-blend-mode:difference;}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:12px;min-height:44px;min-width:44px;}
+@media (min-width:768px){.nav-hamburger{display:none;}}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform 0.2s,opacity 0.2s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-menu{display:none;position:fixed;inset:0;background:var(--black);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:3rem;padding:2rem;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);cursor:pointer;padding:12px;min-height:44px;min-width:44px;}
+.nav-mobile-close svg{width:28px;height:28px;}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:2rem;text-align:center;}
+.nav-mobile-links a{font-family:'Fraunces',serif;font-size:clamp(1.8rem,6vw,2.5rem);font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;padding:12px;display:block;}
+.nav-mobile-cta{display:inline-flex;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;min-height:44px;align-items:center;justify-content:center;}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;}
+.nav-logo-spacer{display:inline-block;width:42px;height:1px;}
+@media(max-width:767px){.nav-logo-spacer{width:40px;}}
+.site-logo{
+  position:fixed;z-index:150;top:56px;left:50%;
+  width:58px;height:58px;transform:translateX(-50%);
+  transition:top .35s ease,left .35s ease,width .35s ease,height .35s ease,transform .35s ease;
+}
+.site-logo img{width:100%;height:100%;display:block;}
+.site-logo.scrolled{top:19px;left:56px;width:42px;height:42px;transform:translateX(0);}
+@media(max-width:767px){
+  /* .hero-content gets extra padding-top below to make room for this. */
+  .site-logo{top:14px;left:50%;width:46px;height:46px;transform:translateX(-50%);}
+  .site-logo.scrolled{top:15px;left:24px;width:40px;height:40px;transform:translateX(0);}
+}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green);}
+.nav-cta{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);border:1px solid rgba(248,246,241,0.4);padding:0.55rem 1.2rem;display:inline-flex;align-items:center;min-height:44px;}
+.nav-cta:hover{border-color:var(--green);color:var(--green);}
+@media (max-width:767px){.nav-cta{display:none;}}
+.hero{min-height:100vh;background:var(--black);display:flex;flex-direction:column;position:relative;overflow:hidden;}
+@media (min-width:768px){.hero{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto 1fr auto;padding:0 3.5rem 3.5rem;align-items:center;}}
+.hero-era-track{display:flex;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(248,246,241,0.2);overflow:hidden;padding:4.5rem 1rem 1rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.hero-era-track{grid-column:1/-1;grid-row:1;padding:1.5rem 3.5rem;justify-content:flex-start;font-size:0.6rem;letter-spacing:0.2em;}}
+.hero-era-track span{flex:1;padding:0.5rem;border-right:1px solid rgba(248,246,241,0.07);white-space:nowrap;text-align:center;min-width:100px;}
+.hero-era-track span:last-child{border-right:none;}
+.hero-era-track span.current{color:var(--green);}
+.hero-content{display:flex;flex-direction:column;justify-content:center;gap:1.5rem;z-index:3;padding:2rem 1.5rem;text-align:center;flex-grow:1;}
+@media(max-width:767px){
+  /* Extra top clearance so the centered intro logo (fixed, floating
+     above this content) never overlaps the headline -- there's no
+     hero-era-track element on this page to create a natural gap like
+     there normally would be, and unlike desktop's grid layout, the
+     mobile heading is full-width centered with nowhere to hide beside it. */
+  .hero-content{padding-top:5rem;}
+}
+@media (min-width:768px){.hero-content{grid-column:1/2;grid-row:2;justify-content:space-between;gap:2.5rem;padding:0 3rem 0 3.5rem;text-align:left;}}
+.hero-type{font-family:'Fraunces',serif;font-size:clamp(2.2rem,9vw,9rem);font-weight:900;line-height:0.95;letter-spacing:-0.04em;color:var(--white);}
+@media (min-width:768px){.hero-type{line-height:0.9;}}
+.hero-type em{font-style:italic;color:var(--green);}
+.hero-aside{display:flex;flex-direction:column;justify-content:flex-end;gap:1.5rem;max-width:100%;}
+@media (min-width:768px){.hero-aside{max-width:680px;}}
+.hero-aside p{font-size:1rem;line-height:1.55;color:rgba(248,246,241,0.6);}
+@media (min-width:768px){.hero-aside p{font-size:1.8rem;line-height:1.5;color:rgba(248,246,241,0.5);}}
+.btn-hero{display:flex;align-items:center;justify-content:center;gap:0.6rem;background:var(--green);color:var(--black);padding:1.25rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;white-space:nowrap;transition:background 0.2s;min-height:56px;border-radius:4px;}
+.btn-hero:hover{background:#7de050;}
+.btn-telegram-mobile{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:transparent;color:var(--white);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.05em;text-decoration:none;font-weight:500;white-space:nowrap;border:1px solid rgba(248,246,241,0.3);border-radius:4px;min-height:48px;}
+@media (min-width:768px){.btn-telegram-mobile{display:none;}}
+.hero-phone{display:flex;position:relative;justify-content:center;align-items:flex-end;z-index:2;padding:0 1.5rem 2rem;}
+@media (min-width:768px){.hero-phone{grid-column:2/4;grid-row:2;align-self:flex-end;}}
+.hero-phone-bezel{position:relative;width:340px;border-radius:44px;padding:12px;background:linear-gradient(145deg,#2a2a2a,#111);box-shadow:0 40px 120px rgba(0,0,0,0.9),0 0 0 1px rgba(255,255,255,0.05),inset 0 1px 0 rgba(255,255,255,0.1);}
+@media (min-width:768px){.hero-phone-bezel{width:541px;padding:14px;}}
+.hero-phone-bezel::before{content:'';position:absolute;top:20px;left:50%;transform:translateX(-50%);width:152px;height:10px;border-radius:4px;background:rgba(0,0,0,0.7);z-index:5;}
+.hero-video{width:100%;height:100%;border-radius:30px;object-fit:cover;display:block;}
+.hero-phone-controls{display:flex;gap:16px;position:absolute;bottom:30px;right:30px;z-index:10;}
+.hero-phone-controls-left{display:flex;gap:16px;position:absolute;bottom:30px;left:30px;z-index:10;}
+.audio-toggle,.phone-close,.telegram-btn{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 0.15s,background 0.15s;min-height:60px;background:var(--green);color:var(--black);}
+.audio-toggle:hover,.telegram-btn:hover{transform:scale(1.1);background:#7de050;}
+.phone-close{background:rgba(255,255,255,0.1);color:var(--white);backdrop-filter:blur(8px);}
+.phone-close:hover{transform:scale(1.1);background:rgba(255,255,255,0.2);}
+.audio-toggle svg,.phone-close svg,.telegram-btn svg{width:30px;height:30px;}
+.hero-phone.floating{position:fixed;bottom:2rem;right:2rem;top:auto;left:auto;z-index:1000;padding:0;animation:fadeInPhone 0.3s ease;}
+.hero-phone.floating .hero-phone-bezel{width:220px;border-radius:32px;padding:10px;}
+.hero-phone.floating .hero-video{border-radius:22px;max-height:none;}
+.hero-phone.floating .hero-phone-controls{bottom:14px;right:14px;}
+.hero-phone.floating .hero-phone-controls-left{bottom:14px;left:14px;}
+.hero-phone.floating .audio-toggle,.hero-phone.floating .phone-close,.hero-phone.floating .telegram-btn{width:32px;height:32px;}
+.hero-phone.floating .audio-toggle svg,.hero-phone.floating .phone-close svg,.hero-phone.floating .telegram-btn svg{width:16px;height:16px;}
+.hero-phone.hidden{display:none;}
+.hero-scroll{font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(248,246,241,0.25);display:flex;align-items:center;gap:0.8rem;padding:2rem 1.5rem;justify-content:center;}
+@media (min-width:768px){.hero-scroll{grid-column:1/-1;grid-row:3;align-self:end;padding-top:2rem;justify-content:flex-start;font-size:0.58rem;letter-spacing:0.2em;}}
+.hero-scroll::before{content:'';display:block;width:1.5rem;height:1px;background:currentColor;}
+@keyframes fadeInPhone{from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
+.marquee-strip{background:var(--green);overflow:hidden;padding:0.85rem 0;}
+.marquee-track{display:flex;gap:2rem;white-space:nowrap;animation:marquee 22s linear infinite;width:max-content;}
+@media (min-width:768px){.marquee-track{gap:3rem;}}
+.marquee-track span{font-family:'Fraunces',serif;font-size:0.75rem;font-weight:700;font-style:italic;color:var(--black);letter-spacing:-0.01em;}
+@media (min-width:768px){.marquee-track span{font-size:0.85rem;}}
+.marquee-track .dot{color:var(--green-deep);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.quiz-section{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;}
+@media (min-width:768px){.quiz-section{padding:4rem 3.5rem;}}
+.quiz-grid{display:flex;flex-direction:column;gap:2rem;max-width:1400px;margin:0 auto;}
+@media (min-width:768px){.quiz-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:center;}}
+.quiz-content{text-align:center;}
+@media (min-width:768px){.quiz-content{text-align:left;}}
+.quiz-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1;letter-spacing:-0.03em;margin-bottom:1rem;}
+.quiz-title em{font-style:italic;color:var(--green);}
+.quiz-desc{font-size:1rem;color:rgba(159,232,112,0.7);margin-bottom:1.5rem;}
+@media (min-width:768px){.quiz-desc{font-size:1.1rem;}}
+.quiz-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 1.5rem;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;min-height:48px;}
+@media (min-width:768px){.quiz-cta{padding:1.1rem 2rem;font-size:0.85rem;}}
+.quiz-stats{display:flex;justify-content:center;gap:2rem;}
+@media (min-width:768px){.quiz-stats{justify-content:flex-end;gap:3rem;}}
+.quiz-stat{text-align:center;}
+.quiz-stat-num{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;line-height:1;letter-spacing:-0.03em;color:var(--green);}
+@media (min-width:768px){.quiz-stat-num{font-size:3.5rem;}}
+.quiz-stat-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(159,232,112,0.5);margin-top:0.5rem;}
+.era-section{display:flex;flex-direction:column;border-top:1px solid var(--border);}
+@media (min-width:768px){.era-section{display:grid;grid-template-columns:repeat(3,1fr);}}
+.era-col{padding:2.5rem 1.5rem;border-bottom:1px solid var(--border);border-right:none;display:flex;flex-direction:column;justify-content:space-between;transition:background 0.3s;}
+@media (min-width:768px){.era-col{padding:5rem 6rem 5rem 3.5rem;border-right:1px solid var(--border);border-bottom:none;}}
+.era-col:last-child{border-bottom:none;border-right:none;}
+.era-col:hover,.era-col.active-era{background:var(--green-deep);}
+.era-col:hover .era-num,.era-col.active-era .era-num{color:rgba(159,232,112,0.12);}
+.era-col:hover .era-name,.era-col.active-era .era-name{color:var(--green);}
+.era-col:hover .era-body,.era-col.active-era .era-body{color:rgba(159,232,112,0.6);}
+.era-col:hover .era-tag,.era-col.active-era .era-tag{background:var(--green);color:var(--black);border-color:var(--green);}
+.era-num{font-family:'Fraunces',serif;font-size:4rem;font-weight:900;line-height:1;letter-spacing:-0.05em;color:rgba(13,12,10,0.08);margin-bottom:auto;transition:color 0.3s;}
+@media (min-width:768px){.era-num{font-size:7rem;}}
+.era-name{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin:1.5rem 0 0.75rem;transition:color 0.3s;}
+@media (min-width:768px){.era-name{font-size:2.2rem;margin:2rem 0 1rem;}}
+.era-name em{font-style:italic;}
+.era-body{font-size:0.95rem;line-height:1.7;color:var(--muted);transition:color 0.3s;}
+@media (min-width:768px){.era-body{font-size:1rem;line-height:1.75;}}
+.era-tag{display:inline-block;margin-top:1.5rem;padding:0.3rem 0.8rem;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);transition:all 0.3s;}
+@media (min-width:768px){.era-tag{margin-top:2rem;}}
+.statement{padding:4rem 1.5rem;display:flex;flex-direction:column;gap:2rem;align-items:flex-start;border-top:1px solid var(--border);}
+@media (min-width:768px){.statement{padding:8rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}}
+.stmt-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;}
+@media (min-width:768px){.stmt-label{margin-bottom:2rem;}}
+.stmt-label::before{content:'';display:block;width:2rem;height:1px;background:currentColor;}
+.statement-text{font-family:'Fraunces',serif;font-size:clamp(1.6rem,6vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;}
+.statement-text em{font-style:italic;color:var(--green);}
+
+/* ============================================
+   METHOD DECK - CARD CAROUSEL 
+   ========================================= */
+.method-deck{padding:6rem 1.5rem;background:var(--white);border-top:1px solid var(--border);position:relative;overflow:hidden;}
+@media (min-width:768px){.method-deck{padding:8rem 3.5rem;}}
+.method-container{max-width:1200px;margin:0 auto;}
+.method-label{display:block;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;text-align:center;}
+@media (min-width:768px){.method-label{text-align:left;}}
+.method-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;text-align:center;margin-bottom:0.5rem;line-height:1.1;}
+@media (min-width:768px){.method-title{text-align:left;}}
+.method-title em{color:var(--green-deep);font-style:italic;}
+.method-subtitle{text-align:center;color:var(--muted);margin-bottom:3rem;font-size:1rem;}
+@media (min-width:768px){.method-subtitle{text-align:left;margin-bottom:4rem;}}
+
+/* Card Deck */
+.card-deck{position:relative;display:flex;justify-content:center;align-items:center;min-height:500px;perspective:1200px;}
+@media (max-width:767px){.card-deck{min-height:450px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:0 1rem;gap:1rem;}.card-deck::-webkit-scrollbar{display:none;}}
+
+/* Individual Cards */
+.method-card{background:var(--white);border:2px solid var(--border);border-radius:16px;padding:2rem;width:280px;min-height:380px;position:relative;transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease;cursor:pointer;transform-style:preserve-3d;display:flex;flex-direction:column;}
+@media (min-width:768px){
+.method-card:nth-child(1){transform:translateX(-40%) translateZ(-100px) rotateY(8deg) rotateZ(-2deg);z-index:1;}
+.method-card:nth-child(2){transform:translateX(-15%) translateZ(-50px) rotateY(3deg) rotateZ(-1deg);z-index:2;}
+.method-card:nth-child(3){transform:translateX(10%) translateZ(-50px) rotateY(-3deg) rotateZ(1deg);z-index:2;}
+.method-card:nth-child(4){transform:translateX(35%) translateZ(-100px) rotateY(-8deg) rotateZ(2deg);z-index:1;}
+}
+@media (max-width:767px){.method-card{flex-shrink:0;scroll-snap-align:center;width:85vw;max-width:320px;min-height:400px;transform:none;}}
+.method-card:hover{border-color:var(--green);box-shadow:0 25px 50px rgba(0,0,0,0.15);}
+@media (min-width:768px){.method-card:hover{transform:translateX(0) translateZ(50px) rotateY(0) rotateZ(0) scale(1.05)!important;z-index:10!important;}.method-card.expanded{transform:translateX(0) translateZ(100px) rotateY(0) scale(1.1)!important;z-index:20!important;width:400px;min-height:500px;position:absolute;left:50%;margin-left:-200px;box-shadow:0 30px 60px rgba(0,0,0,0.2);}}
+.card-featured{border-color:var(--green);background:linear-gradient(135deg,var(--white) 0,rgba(159,232,112,0.05) 100%);}
+.card-featured .card-number{background:var(--green);color:var(--black);}
+.card-number{position:absolute;top:-12px;left:1.5rem;background:var(--black);color:var(--white);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:0.9rem;font-weight:700;}
+.card-icon{width:60px;height:60px;background:var(--white);border:2px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:var(--green-deep);transition:all 0.3s ease;}
+.method-card:hover .card-icon,.method-card.expanded .card-icon{background:var(--green);border-color:var(--green);color:var(--black);}
+.card-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;line-height:1.2;}
+.card-preview{font-size:0.95rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;}
+.card-full{max-height:0;overflow:hidden;opacity:0;transition:all 0.4s ease;}
+@media (min-width:768px){.method-card.expanded .card-full{max-height:300px;opacity:1;margin-top:1rem;}}
+@media (max-width:767px){.card-full{max-height:none;opacity:1;margin-top:1rem;}}
+.card-full p{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;}
+.card-list{list-style:none;margin-bottom:1.5rem;}
+.card-list li{font-size:0.85rem;padding:0.5rem 0;padding-left:1.5rem;position:relative;color:var(--black);}
+.card-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:bold;}
+.card-cta{display:inline-block;background:var(--green);color:var(--black);padding:0.75rem 1.5rem;font-size:0.85rem;font-weight:600;text-decoration:none;border-radius:4px;margin-top:0.5rem;transition:all 0.2s ease;}
+.card-cta:hover{background:#7de050;transform:translateY(-2px);}
+
+/* FIXED: Clean card-expand styles */
+.card-expand{
+  position:absolute;
+  bottom:1.5rem;
+  right:1.5rem;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:2px solid var(--border);
+  background:transparent;
+  color:var(--muted);
+  font-size:1.2rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.3s ease;
+}
+@media (max-width:767px){.card-expand{display:none;}}
+.method-card:hover .card-expand{border-color:var(--green);color:var(--green-deep);transform:rotate(90deg);}
+.method-card.expanded .card-expand{transform:rotate(45deg);border-color:var(--green);background:var(--green);color:var(--black);}
+
+.card-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(13,12,10,0);
+  backdrop-filter:none;
+  pointer-events:none;
+  z-index:15;
+  transition:all 0.3s ease;
+}
+.card-overlay.active{
+  background:rgba(13,12,10,0);
+  backdrop-filter:none;
+  pointer-events:all;
+}
+.swipe-indicator{display:flex;flex-direction:column;align-items:center;gap:0.75rem;margin-top:2rem;color:var(--muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;}
+@media (min-width:768px){.swipe-indicator{display:none;}}
+.swipe-dots{display:flex;gap:0.5rem;}
+.swipe-dots .dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all 0.3s ease;}
+.swipe-dots .dot.active{background:var(--green);width:24px;border-radius:4px;}
+.deck-progress{display:none;position:relative;margin-top:4rem;max-width:600px;margin-left:auto;margin-right:auto;}
+@media (min-width:768px){.deck-progress{display:block;}}
+.progress-line{height:2px;background:var(--border);position:relative;}
+.progress-fill{position:absolute;top:0;left:0;height:100%;background:var(--green);width:25%;transition:width 0.4s ease;}
+.progress-text{position:absolute;right:0;top:-8px;transform:translateY(-100%);font-size:0.75rem;color:var(--muted);font-family:'Fraunces',serif;}
+
+/* Cases Section */
+.cases-section{padding:4rem 0;border-top:1px solid var(--border);}
+@media (min-width:768px){.cases-section{padding:6rem 0;}}
+.cases-section-header{padding:0 1.5rem 2.5rem;}
+@media (min-width:768px){.cases-section-header{padding:0 3.5rem 4rem;}}
+.cases-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.cases-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1;letter-spacing:-0.03em;margin-bottom:1rem;}
+.cases-title em{font-style:italic;color:var(--green-deep);}
+.cases-subtitle{font-size:1rem;color:var(--muted);max-width:600px;}
+.trust-badges{display:flex;flex-direction:column;gap:1rem;padding:0 1.5rem 2.5rem;}
+@media (min-width:640px){.trust-badges{flex-direction:row;padding:0 3.5rem 4rem;}}
+.trust-badge{flex:1;border:1px solid var(--border);padding:1.5rem;display:flex;flex-direction:column;gap:0.9rem;}
+.trust-badge-top{display:flex;align-items:center;gap:0.85rem;}
+.trust-badge-mark{width:40px;height:40px;flex-shrink:0;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;}
+.trust-badge-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;line-height:1.2;}
+.trust-badge-cat{font-size:0.78rem;color:var(--muted);margin-top:0.15rem;}
+.trust-badge-rank{font-size:0.85rem;font-weight:600;border-top:1px solid var(--border);padding-top:0.9rem;}
+.trust-badge-desc{font-size:0.88rem;line-height:1.5;color:var(--muted);}
+.cases-grid{display:flex;flex-direction:column;gap:0;}
+@media (min-width:768px){.cases-grid{display:grid;grid-template-columns:repeat(2,1fr);}}
+.case-card{border-top:1px solid var(--border);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:1.5rem;}
+@media (min-width:768px){.case-card{border-right:1px solid var(--border);padding:3rem;}}
+.case-card:nth-child(2n){border-right:none;}
+.case-card:nth-child(3),.case-card:nth-child(4),.case-card:nth-child(5){border-top:1px solid var(--border);}
+@media (min-width:768px){.case-card:nth-child(3),.case-card:nth-child(4),.case-card:nth-child(5){border-top:none;}}
+.case-meta{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.case-tag{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-deep);background:var(--green);padding:0.25rem 0.5rem;}
+.case-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:0;}
+@media (min-width:768px){.case-title{font-size:1.5rem;}}
+.case-desc{font-size:0.95rem;line-height:1.6;color:var(--muted);}
+@media (min-width:768px){.case-desc{font-size:1rem;}}
+.case-stat{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;line-height:1;letter-spacing:-0.03em;margin-top:auto;padding-top:1.5rem;}
+@media (min-width:768px){.case-stat{font-size:3rem;padding-top:2rem;}}
+.case-stat span{display:block;font-family:'Instrument Sans',sans-serif;font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;}
+.case-image{width:100%;height:280px;margin-bottom:1.5rem;border-radius:8px;overflow:hidden;position:relative;}
+.case-image-placeholder{width:100%;height:100%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--muted);border:2px dashed var(--border);}
+.case-image img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+.case-card:nth-child(1) .case-image img{object-position:70% 5%;}
+.case-card:nth-child(2) .case-image img{object-position:50% 5%;}
+.case-quote{margin-top:1.5rem;padding:1.25rem;background:rgba(159,232,112,0.05);border-left:3px solid var(--green);font-size:0.9rem;line-height:1.6;font-style:italic;color:var(--muted);}
+.case-quote cite{display:block;margin-top:0.75rem;font-style:normal;font-weight:600;color:var(--black);font-size:0.8rem;}
+.case-video-wide{width:100%;height:280px;margin-bottom:1.5rem;border-radius:8px;overflow:hidden;background:#1a0a2e;position:relative;}
+.case-video-wide video{width:100%;height:100%;object-fit:cover;object-position:center center;}
+@media (max-width:767px){.case-image{height:220px;}.case-video-wide{height:240px;}}
+
+/* Pricing */
+.pricing-section{padding:4rem 0;border-top:1px solid var(--border);}
+@media (min-width:768px){.pricing-section{padding:6rem 0;}}
+.pricing-header{text-align:center;padding:0 1.5rem 2.5rem;}
+@media (min-width:768px){.pricing-header{padding:0 3.5rem 4rem;}}
+.pricing-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.pricing-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1;letter-spacing:-0.03em;margin-bottom:1rem;}
+.pricing-title em{font-style:italic;color:var(--green-deep);}
+.pricing-subtitle{font-size:1rem;color:var(--muted);max-width:700px;margin:0 auto;}
+.pricing-grid{display:flex;flex-direction:column;padding:0 1.5rem;gap:1.5rem;}
+@media (min-width:768px){.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0;}}
+.pricing-card{border:1px solid var(--border);padding:2rem 1.5rem;display:flex;flex-direction:column;background:var(--white);}
+@media (min-width:768px){.pricing-card{border-right:none;padding:3rem;}}
+.pricing-card:first-child{border-left:none;}
+.pricing-card.featured{background:var(--green-deep);color:var(--white);border-color:var(--green-deep);}
+.pricing-tier{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.pricing-card.featured .pricing-tier{color:var(--green);}
+.pricing-price{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;line-height:1;letter-spacing:-0.03em;margin-bottom:0.25rem;}
+@media (min-width:768px){.pricing-price{font-size:3rem;}}
+.pricing-price span{font-family:'Instrument Sans',sans-serif;font-size:0.75rem;font-weight:400;color:var(--muted);}
+.pricing-card.featured .pricing-price span{color:rgba(255,255,255,0.7);}
+.pricing-divider{height:1px;background:var(--border);margin:1.5rem 0;}
+.pricing-card.featured .pricing-divider{background:rgba(255,255,255,0.1);}
+.pricing-features{list-style:none;flex-grow:1;margin-bottom:1.5rem;}
+.pricing-features li{font-size:0.9rem;line-height:1.6;padding:0.6rem 0;border-bottom:1px solid var(--border);padding-left:1.5rem;position:relative;}
+@media (min-width:768px){.pricing-features li{font-size:0.95rem;padding:0.75rem 0;}}
+.pricing-card.featured .pricing-features li{border-color:rgba(255,255,255,0.1);}
+.pricing-features li::before{content:'—';position:absolute;left:0;color:var(--green);}
+.pricing-card.featured .pricing-features li::before{color:var(--green);}
+.pricing-cta{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--black);color:var(--white);padding:1rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;text-align:center;min-height:48px;width:100%;}
+@media (min-width:768px){.pricing-cta{padding:1.1rem 1.5rem;}}
+.pricing-card.featured .pricing-cta{background:var(--green);color:var(--black);}
+
+/* Coach Section */
+.coach-section{padding:4rem 1.5rem;border-top:1px solid var(--border);}
+@media (min-width:768px){.coach-section{padding:6rem 3.5rem;}}
+.coach-grid{display:flex;flex-direction:column;gap:2.5rem;max-width:1200px;margin:0 auto;}
+@media (min-width:768px){.coach-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}}
+.coach-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.coach-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.coach-title em{font-style:italic;color:var(--green-deep);}
+.coach-bio{font-size:1rem;line-height:1.75;color:var(--muted);margin-bottom:2rem;}
+@media (min-width:768px){.coach-bio{font-size:1.05rem;}}
+.coach-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2.5rem;}
+@media (min-width:768px){.coach-stats{grid-template-columns:repeat(2,1fr);gap:2rem;}}
+.coach-stat{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;line-height:1;letter-spacing:-0.03em;}
+@media (min-width:768px){.coach-stat{font-size:2.5rem;}}
+.coach-stat span{display:block;font-family:'Instrument Sans',sans-serif;font-size:0.65rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;}
+.coach-principles{list-style:none;}
+.coach-principle{padding:1.25rem 0;border-top:1px solid var(--border);font-size:0.95rem;line-height:1.6;display:flex;gap:0.75rem;}
+@media (min-width:768px){.coach-principle{padding:1.5rem 0;font-size:1rem;}}
+.coach-principle::before{content:'→';color:var(--green-deep);font-weight:700;}
+.coach-principle strong{display:block;margin-bottom:0.25rem;}
+.coach-principle:first-child{border-top:none;}
+
+/* CTA & Footer */
+.cta-section{background:var(--green);padding:4rem 1.5rem;text-align:center;}
+@media (min-width:768px){.cta-section{padding:6rem 3.5rem;}}
+.cta-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-deep);margin-bottom:1rem;}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(2rem,6vw,4rem);font-weight:900;line-height:1;letter-spacing:-0.03em;color:var(--black);margin-bottom:2rem;}
+.cta-title em{font-style:italic;}
+.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--black);color:var(--white);padding:1.25rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;min-height:56px;}
+@media (min-width:768px){.cta-btn{padding:1.5rem 3rem;font-size:1rem;}}
+.cta-note{font-size:0.85rem;color:var(--green-deep);margin-top:1.5rem;opacity:0.7;}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:var(--green);}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:var(--green);text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(248,246,241,0.4);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--white);}
+.nav-lang .sep{color:rgba(248,246,241,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(248,246,241,0.2);}
+.nav-dropdown{position:relative;}
+.nav-dropdown>a::after{content:' \25BE';font-size:0.6em;}
+.nav-dropdown-menu{position:fixed;z-index:300;background:var(--black);border:1px solid rgba(248,246,241,0.15);box-shadow:0 20px 40px rgba(0,0,0,0.4);min-width:190px;padding:0.5rem 0;list-style:none;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.15s,transform 0.15s,visibility 0.15s;isolation:isolate;}
+.nav-dropdown-menu.open{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu li a{display:block;padding:0.65rem 1.1rem;white-space:nowrap;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--white);}
+.nav-dropdown-menu li a:hover{color:var(--green);}
+@media(max-width:767px){.nav-dropdown-menu{display:none!important;}}
+.nav-mobile-sublabel{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,246,241,0.4);margin-top:-1rem;}
+</style>
+<style id="idx-quiz-css">
+.idx-quiz{position:fixed;z-index:101;display:none;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.45rem 0.95rem}
+.nav-mobile-links a.nav-quiz{display:inline-flex;padding:6px 26px}
+.idx-quiz.idx-quiz-m{font-size:0.62rem;letter-spacing:0.08em;padding:0.4rem 0.75rem}
+.nav-mobile-links .nav-mobile-sublabel a{display:inline;padding:0;font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit}
+</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://aicoachalex.com/#website",
+      "url": "https://aicoachalex.com/",
+      "name": "AI Coach Alex",
+      "alternateName": [
+        "AICoachAlex",
+        "aicoachalex.com"
+      ],
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aicoachalex.com/#alessandro"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aicoachalex.com/#alessandro",
+      "name": "Alessandro Capezza",
+      "alternateName": "AI Coach Alex",
+      "jobTitle": "AI Coach",
+      "url": "https://aicoachalex.com/",
+      "email": "mailto:aicoachalex@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://www.instagram.com/alexislimitless/",
+        "https://www.youtube.com/@alexislimitless",
+        "https://www.linkedin.com/in/alessandrocapezza/",
+        "https://x.com/alexNomads"
+      ]
+    }
+  ]
+}
+</script>
+<style id="idx-mobile-menu">
+/* mobile menu: scrollable, left-aligned list (the old centred layout pushed the top items off-screen) */
+.nav-mobile-menu{align-items:stretch;justify-content:flex-start;gap:0;padding:76px 24px 40px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.nav-mobile-close{position:fixed;top:14px;right:14px;z-index:201;background:rgba(13,12,10,.92);border-radius:50%}
+.nav-mobile-links{gap:0;text-align:left;width:100%;max-width:520px;margin:0 auto}
+.nav-mobile-links>li{border-bottom:1px solid rgba(248,246,241,.12)}
+.nav-mobile-links a{font-size:1.5rem;line-height:1.2;padding:15px 2px;letter-spacing:-.01em}
+.nav-mobile-links a.nav-quiz{display:inline-flex;font-family:'Instrument Sans',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0;padding:9px 20px;margin:14px 0}
+.nav-mobile-links>li.nav-mobile-sublabel{margin-top:0;padding:22px 2px 4px;border-bottom:none}
+.nav-mobile-links .nav-mobile-sublabel a{color:var(--green);font-size:.72rem;letter-spacing:.14em}
+.nav-mobile-links>li.nav-mobile-course{border-bottom-color:rgba(248,246,241,.06)}
+.nav-mobile-links li.nav-mobile-course a{font-family:'Instrument Sans',sans-serif;font-size:1.05rem;font-weight:500;letter-spacing:0;padding:11px 2px 11px 16px;color:rgba(248,246,241,.82)}
+.nav-mobile-links li.nav-mobile-course a:hover,.nav-mobile-links a:hover{color:var(--green)}
+.nav-mobile-cta{align-self:center;width:100%;max-width:520px;margin-top:28px;font-size:.8rem;padding:1.1rem 1.5rem}
+.nav-mobile-lang{justify-content:center;margin-top:18px}
+/* tablet: the full row no longer fits below 1100px, use the menu button */
+@media (min-width:768px) and (max-width:1099px){nav .nav-links{display:none!important}.nav-hamburger{display:flex!important}}
+</style>
+<link rel="canonical" href="https://aicoachalex.com/">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+
+<!-- Navigation -->
+<nav>
+  <span class="nav-logo-spacer" aria-hidden="true"></span>
+
+  <ul class="nav-links">
+    <li><a href="#method">Method</a></li>
+    <li><a href="career-risk-assessment.html" class="idx-quiz-src">Risk Quiz</a></li>
+    <li><a href="blog/">Blog</a></li>
+        <li><a href="openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a></li>
+    <li class="nav-dropdown">
+      <a href="/courses.html" class="nav-dropdown-toggle" id="coursesDropdownToggle" aria-haspopup="true">Courses</a>
+    </li>
+    <li><a href="https://aicoachalex.com/who-i-work-with/">Who I Work With</a></li>
+    <li><a href="https://aicoachalex.com/ai-lessons-for-kids/">AI for Kids</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li class="nav-lang"><a href="/" class="active" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></li>
+        <li><a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="nav-cta">Book Diagnostic</a></li>
+  </ul>
+  
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<a class="nav-quiz idx-quiz" id="idxQuiz" href="career-risk-assessment.html">Risk Quiz</a>
+
+<!-- Site logo: rendered OUTSIDE <nav> for the same reason as the Courses
+     dropdown below -- <nav> uses mix-blend-mode:difference, which would
+     make an opaque logo image blend/vanish against whatever's behind it
+     instead of staying solid. Also lets it animate independently: it
+     starts centered and larger near the top of the page, then shrinks
+     into the nav's top-left corner once the user scrolls. -->
+<a href="/" class="site-logo" id="siteLogo" aria-label="AI Coach Alex — home">
+  <img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex">
+</a>
+
+<!-- Courses dropdown menu: rendered OUTSIDE <nav> on purpose. <nav> uses
+     mix-blend-mode:difference (for the white-text-over-video look), which
+     would blend this panel's solid background against whatever's behind
+     it and make it look transparent/unreadable. Positioned via JS instead
+     of CSS so it still visually sits under the "Courses" toggle. -->
+<ul class="nav-dropdown-menu" id="coursesDropdownMenu">
+  <li><a href="/personal-ai-agent.html">Your Own AI</a></li>
+  <li><a href="/ai-video-course-booking.html">AI VideoGen</a></li>
+  <li><a href="/voice-ai-agents.html">Voice AI Agents</a></li>
+  <li><a href="/personal-ai-setup.html">Personal AI Setup</a></li>
+  <li><a href="/120-prompts.html">120 Prompts</a></li><li><a href="/ai-for-your-finances.html">AI for Your Finances</a></li>
+  <li><a href="/graph-engineering.html">Graph Engineering</a></li>
+</ul>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <button class="nav-mobile-close" id="navMobileClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 6L6 18M6 6l12 12"/>
+    </svg>
+  </button>
+  <ul class="nav-mobile-links">
+    <li><a href="#method">Method</a></li>
+    <li><a href="career-risk-assessment.html" class="nav-quiz">Risk Quiz</a></li>
+    <li><a href="blog/">Blog</a></li>
+        <li><a href="openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a></li>
+    <li class="nav-mobile-sublabel"><a href="/courses.html">Courses →</a></li>
+    <li class="nav-mobile-course"><a href="/personal-ai-agent.html">Your Own AI</a></li>
+    <li class="nav-mobile-course"><a href="/ai-video-course-booking.html">AI VideoGen</a></li>
+    <li class="nav-mobile-course"><a href="/voice-ai-agents.html">Voice AI Agents</a></li>
+    <li class="nav-mobile-course"><a href="/personal-ai-setup.html">Personal AI Setup</a></li>
+    <li class="nav-mobile-course"><a href="/120-prompts.html">120 Prompts</a></li><li class="nav-mobile-course"><a href="/ai-for-your-finances.html">AI for Your Finances</a></li>
+    <li class="nav-mobile-course"><a href="/graph-engineering.html">Graph Engineering</a></li>
+    <li><a href="https://aicoachalex.com/who-i-work-with/">Who I Work With</a></li>
+    <li><a href="https://aicoachalex.com/ai-lessons-for-kids/">AI for Kids</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="nav-mobile-cta">Book Diagnostic — 49€</a>
+  <div class="nav-mobile-lang"><a href="/" class="active" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="heroSection">
+  <!-- Content -->
+  <div class="hero-content">
+    <div>
+      <h1 class="hero-type">You got <em>comfort-</em><em>able.</em> It's not too late.</h1>
+    </div>
+    
+    <div class="hero-aside">
+      <p>You've built a solid career. Now with AI, rules are changing and nobody's giving you a clear roamap. That's exactly where I come in as your AI Coach.</p>
+      
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <a href="#pricing" class="btn-hero">Book Diagnostic — 49€ ↗</a>
+        <a href="https://t.me/alexnomads" class="btn-telegram-mobile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.146.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.623 4.823-4.351c.192-.192-.043-.3-.297-.107L9.63 13.572l-2.55-.8c-.553-.176-.566-.553.1-.832l9.965-3.841c.46-.17.863.112.769.832z"/></svg>
+          Message on Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PHONE MOCKUP -->
+  <div class="hero-phone" id="heroPhone">
+    <div class="hero-phone-bezel">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" id="heroVideo">
+        <source src="assets/first_content_Ua09.5.mp4" type="video/mp4">
+      </video>
+      
+      <div class="hero-phone-controls-left">
+        <a href="https://t.me/alexnomads" class="telegram-btn" title="Message on Telegram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.146.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.623 4.823-4.351c.192-.192-.043-.3-.297-.107L9.63 13.572l-2.55-.8c-.553-.176-.566-.553.1-.832l9.965-3.841c.46-.17.863.112.769.832z"/></svg>
+        </a>
+      </div>
+      
+      <div class="hero-phone-controls">
+        <button class="audio-toggle" id="audioToggle" title="Toggle audio">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+          <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+        <button class="phone-close" id="phoneClose" title="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Hint -->
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- Marquee Strip -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Industrial Era <span class="dot">•</span></span>
+    <span>Digital Era <span class="dot">•</span></span>
+    <span class="current">AI Era · Today <span class="dot">•</span></span>
+    <span>Orchestrate, Don't Compete <span class="dot">•</span></span>
+    <span>39% Of Skills Change By 2030 · WEF <span class="dot">•</span></span>
+    <span>49€ Diagnostic Audit <span class="dot">•</span></span>
+    <span>Stay Relevant <span class="dot">•</span></span>
+    <span>AI Skills Up 177% Since 2023 · LinkedIn <span class="dot">•</span></span>
+    <span>Industrial Era <span class="dot">•</span></span>
+    <span>Digital Era <span class="dot">•</span></span>
+    <span class="current">AI Era · Today <span class="dot">•</span></span>
+    <span>Orchestrate, Don't Compete <span class="dot">•</span></span>
+    <span>39% Of Skills Change By 2030 · WEF <span class="dot">•</span></span>
+    <span>49€ Diagnostic Audit <span class="dot">•</span></span>
+    <span>Stay Relevant <span class="dot">•</span></span>
+    <span>AI Skills Up 177% Since 2023 · LinkedIn <span class="dot">•</span></span>
+  </div>
+</div>
+
+<!-- Quiz Section -->
+<section class="quiz-section">
+  <div class="quiz-grid">
+    <div class="quiz-content">
+      <h2 class="quiz-title">Is your job  <em>safe</em> from AI?</h2>
+      <p class="quiz-desc">Most professionals have no idea where they actually stand. Find out in 2 minutes — get your personal risk score across 289 roles in 26 industries, and a plan based on your result.</p>
+      <a href="career-risk-assessment.html" class="quiz-cta">Take the Free Quiz →</a>
+    </div>
+    
+    <div class="quiz-stats">
+      <div class="quiz-stat">
+        <div class="quiz-stat-num">289</div>
+        <div class="quiz-stat-label">Professions</div>
+      </div>
+      <div class="quiz-stat">
+        <div class="quiz-stat-num">26</div>
+        <div class="quiz-stat-label">Industries</div>
+      </div>
+      <div class="quiz-stat">
+        <div class="quiz-stat-num">2</div>
+        <div class="quiz-stat-label">Min to complete</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Era Section -->
+<section class="era-section">
+  <div class="era-col" data-era="1">
+    <span class="era-num">01</span>
+    <div>
+      <h2 class="era-name">The Industrial<em> Era</em></h2>
+      <p class="era-body">Execution was the job. Show up, repeat the process, specialise. The machine needed humans to run it.</p>
+      <span class="era-tag">Execution</span>
+    </div>
+  </div>
+  
+  <div class="era-col" data-era="2">
+    <span class="era-num">02</span>
+    <div>
+      <h2 class="era-name">The Digital<em> Era</em></h2>
+      <p class="era-body">Software ate the world. Adapting meant learning new tools, platforms, workflows. Winners moved fast and accumulated digital skills on top of domain expertise.</p>
+      <span class="era-tag">Adaptation</span>
+    </div>
+  </div>
+  
+  <div class="era-col active-era" data-era="3">
+    <span class="era-num">03</span>
+    <div>
+      <h2 class="era-name">The AI<em> Era · Now</em></h2>
+      <p class="era-body">The new machine thinks — and most professionals haven't noticed yet. The window to reposition is open. But not forever. Orchestration beats execution every time.</p>
+      <span class="era-tag">Orchestration</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Statement -->
+<section class="statement">
+  <div>
+    <span class="stmt-label">The Problem</span>
+  </div>
+  <div>
+    <h2 class="statement-text">The skills that got you here <em>won't</em> get you there.</h2>
+    <p style="margin-top:1.5rem;font-size:1rem;line-height:1.75;color:var(--muted);">Mid-career professionals don't plateau because they lack ability. They plateau because <strong>they haven't updated their operating system.</strong>  The professionals pulling ahead aren't smarter — they've just figured out how to use AI as leverage instead of fearing it as a threat.</p>
+    <p style="margin-top:1rem;font-size:1rem;line-height:1.75;color:var(--muted);">The market gives you two bad options: pay €15k+ for a coach who's never touched an AI tool, or subscribe to a €29/month chatbot that gives everyone the same generic advice. Neither actually tells you where you stand or what you should do next.</p>
+  </div>
+</section>
+
+<!-- THE METHOD - CARD DECK CAROUSEL -->
+<section class="method-deck" id="method">
+  <div class="method-container">
+    <span class="method-label">The Method</span>
+    <h2 class="method-title">A diagnostic built on <em>real systems.</em></h2>
+    <p class="method-subtitle">No generic frameworks. A structured process built around your role, your industry, and what's actually changing in your field.</p>
+    
+    <div class="card-deck" id="cardDeck">
+      
+      <!-- Card 1: Diagnostic -->
+      <div class="method-card" data-card="1">
+        <div class="card-number">01</div>
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3 class="card-title">The Diagnostic Call</h3>
+        <p class="card-preview">49€ · 50 minutes. Not a consultation — a structured audit.</p>
+        <div class="card-full">
+          <p>By the end, you know exactly where you stand and what to do, whether we continue or not. This isn't a sales pitch. It's a systems audit of your career positioning.</p>
+          <ul class="card-list">
+            <li>Current role vulnerability analysis</li>
+            <li>Skill-to-market matching</li>
+            <li>Immediate action items</li>
+          </ul>
+        </div>
+        <button class="card-expand" aria-label="Expand card">→</button>
+      </div>
+
+      <!-- Card 2: Where You Are -->
+      <div class="method-card" data-card="2">
+        <div class="card-number">02</div>
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Where Are You Now</h3>
+        <p class="card-preview">Most people overestimate their AI fluency and underestimate how exposed their role is. We find out exactly where you sit — honestly.</p>
+        <div class="card-full">
+          <p>Are you executing tasks AI will automate, or building judgment AI cannot replace? Most mid-career professionals are closer to the former than they realize.</p>
+          <ul class="card-list">
+            <li>Skill stack audit</li>
+            <li>Positioning analysis vs. market</li>
+            <li>Identity reframing</li>
+          </ul>
+        </div>
+        <button class="card-expand" aria-label="Expand card">→</button>
+      </div>
+
+      <!-- Card 3: What's Changing -->
+      <div class="method-card" data-card="3">
+        <div class="card-number">03</div>
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3 class="card-title">What's Changing</h3>
+        <p class="card-preview">Not general AI headlines — what's specifically happening in your industry, your role category, and your seniority level right now.</p>
+        <div class="card-full">
+          <p>Which roles are being compressed, which skills are becoming table stakes, where the leverage is in your field. Real data, not headlines.</p>
+          <ul class="card-list">
+            <li>Role risk scoring</li>
+            <li>Skill compression timeline</li>
+            <li>Leverage point identification</li>
+          </ul>
+        </div>
+        <button class="card-expand" aria-label="Expand card">→</button>
+      </div>
+
+      <!-- Card 4: Where You Need To Be -->
+      <div class="method-card card-featured" data-card="4">
+        <div class="card-number">04</div>
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Where You Need To Be</h3>
+        <p class="card-preview">You leave with a clear answer to: what do I do next? Not a vague direction — a specific capability to build and a narrative to own.</p>
+        <div class="card-full">
+          <p>A concrete pivot plan: which capabilities to build, which narrative to own, how to position as someone who orchestrates AI rather than competes with it.</p>
+          <ul class="card-list">
+            <li>Capability roadmap</li>
+            <li>Narrative development</li>
+            <li>Positioning strategy</li>
+          </ul>
+          <a href="#pricing" class="card-cta">Start Your Journey →</a>
+        </div>
+        <button class="card-expand" aria-label="Expand card">→</button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Swipe Indicator -->
+    <div class="swipe-indicator">
+      <span>Swipe</span>
+      <div class="swipe-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- Desktop Progress -->
+    <div class="deck-progress">
+      <div class="progress-line"></div>
+      <div class="progress-fill" id="progressFill"></div>
+      <span class="progress-text"><span id="currentCard">1</span> / 4</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- Cases Section -->
+<section class="cases-section">
+  <div class="cases-section-header">
+    <span class="cases-label">Track Record</span>
+    <h2 class="cases-title">I don't just coach it. I've <em>shipped it.</em></h2>
+    <p class="cases-subtitle">The frameworks I teach come from real GTM launches, funded AI products, and campaigns that actually moved numbers. Here's the track record.</p>
+  </div>
+
+  <div class="trust-badges">
+    <div class="trust-badge">
+      <div class="trust-badge-top">
+        <span class="trust-badge-mark" style="background:#0D0D0D;color:#F26207;">R</span>
+        <div>
+          <div class="trust-badge-name">Replit Agent</div>
+          <div class="trust-badge-cat">Software Development Agents</div>
+        </div>
+      </div>
+      <div class="trust-badge-rank">🏆 Top 10% of Replit Agent users</div>
+      <div class="trust-badge-desc">Directs the Replit AI Agent to generate and refine substantial production code across multi-step build sessions.</div>
+    </div>
+    <div class="trust-badge">
+      <div class="trust-badge-top">
+        <span class="trust-badge-mark" style="background:linear-gradient(135deg,#FF6A3D,#B24BF3);color:#fff;">L</span>
+        <div>
+          <div class="trust-badge-name">Lovable</div>
+          <div class="trust-badge-cat">Conversational AI Software</div>
+        </div>
+      </div>
+      <div class="trust-badge-rank">🏆 Top 10% of Lovable users</div>
+      <div class="trust-badge-desc">Builds web platforms, networks, and marketplaces in Lovable.</div>
+    </div>
+  </div>
+
+  <div class="cases-grid">
+    <!-- CASE 1: The Sandbox -->
+    <div class="case-card">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/sandbox-snoopdogg.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="case-meta">
+        <span class="case-tag">Gaming</span>
+        <span class="case-tag">Community</span>
+      </div>
+      <h3 class="case-title">The Sandbox — Gaming Community Growth</h3>
+      <p class="case-desc">Reached $200k in sales selling 224+ NFT LANDs through affiliates and KOLs. Built partnerships with exchanges &amp; gaming schools. Educated thousands via IRL meetups and National TV podcasts.</p>
+      <div class="case-stat">$200k<span>224+ NFTs sold</span></div>
+      <blockquote class="case-quote">
+        "Alex has been hosting meetups in art galleries in Barcelona to present the potential of NFTs to aspiring artists! He educates and shows the benefits for Creators."
+        <cite>— Sebastien Borget, Founder, The Sandbox</cite>
+      </blockquote>
+    </div>
+
+    <!-- CASE 2: LandVault -->
+    <div class="case-card">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/landvault.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="case-meta">
+        <span class="case-tag">Series B</span>
+        <span class="case-tag">Marketing Team Building</span>
+        <span class="case-tag">Partnerships</span>
+      </div>
+      <h3 class="case-title">LandVault — Series B &amp; Napster Rebrand</h3>
+      <p class="case-desc">Built 30+ partnerships (Chainlink, DappRadar), hired &amp; trained marketing team, led rebrand following $25M Series B, launched Matera protocol, and joined 100+ conferences increasing reach 15%.</p>
+      <div class="case-stat">$25M<span>Series B · 30+ partnerships · Rebranded to Napster</span></div>
+      <blockquote class="case-quote">
+        "Alex is a wealth of knowledge, he has a proven ability to build relationships internally and externally and evangelise complex products to non-native stakeholders. He was a critical part of launching LandVault. I recommend Alex to anyone who is building!"
+        <cite>— Sam Huber, CEO, LandVault</cite>
+      </blockquote>
+    </div>
+
+    <!-- CASE 3: Rose of Jericho -->
+    <div class="case-card">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/roj-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="case-meta">
+        <span class="case-tag">AI</span>
+        <span class="case-tag">Web3</span>
+        <span class="case-tag">Product</span>
+      </div>
+      <h3 class="case-title">Rose of Jericho — AI Wellness App</h3>
+      <p class="case-desc">Built MVP combining AI personalisation, onchain rewards, and N8N agent workflows. Won Polygon ecosystem grant and Soonami hackathon to fund development.</p>
+      <div class="case-stat">18h+<span>Avg session time · Polygon grant awarded</span></div>
+    </div>
+
+    <!-- CASE 4: BlueStacks -->
+    <div class="case-card">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/gametv-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="case-meta">
+        <span class="case-tag">Gaming</span>
+        <span class="case-tag">Esports</span>
+        <span class="case-tag">Content</span>
+      </div>
+      <h3 class="case-title">BlueStacks + Game.tv — 500M+ Users</h3>
+      <p class="case-desc">Generated 100k eSports participants, produced 1,300+ videos reaching 2.4M impressions, organized LIVE events (300+ attendees), grew affiliate traffic 271%.</p>
+      <div class="case-stat">500M+<span>gamers reached · 7M YouTube views · 271% affiliate growth</span></div>
+      <blockquote class="case-quote">
+        "Among the top performers with 100,000+ mobile app installs, managed large external stakeholders while leading a massive community."
+        <cite>— Fürkan Aslım, Affiliate Manager</cite>
+      </blockquote>
+    </div>
+
+    <!-- CASE 5: GenLayer -->
+    <div class="case-card">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/genlayer-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="case-meta">
+        <span class="case-tag">AI</span>
+        <span class="case-tag">Content</span>
+        <span class="case-tag">Virality</span>
+      </div>
+      <h3 class="case-title">GenLayer — Video Content Pipeline</h3>
+      <p class="case-desc">LLM-assisted script generation, editorial workflows, automated scheduler for \$7.5M AI blockchain company. One video crossed half a million views.</p>
+      <div class="case-stat">550k<span>organic views · Zero ad spend</span></div>
+    </div>
+
+    <!-- CASE 6: Qubit Wallet -->
+    <div class="case-card">
+      <div class="case-video-wide">
+        <video autoplay muted loop playsinline>
+          <source src="assets/qubit-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="case-meta">
+        <span class="case-tag">Web3</span>
+        <span class="case-tag">GTM</span>
+        <span class="case-tag">Product</span>
+      </div>
+      <h3 class="case-title">Qubit Wallet — GTM From Scratch</h3>
+      <p class="case-desc">Crafted GTM &amp; brand identity from scratch, secured 500 Beta testers, reached 8.4% engagement rate, 54% community growth, secured partnerships (Polygon, Arbitrum, Optimism, Safe).</p>
+      <div class="case-stat">500+<span>Beta testers · 54% community growth · 8.4% engagement</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-header">
+    <span class="pricing-label">Pricing</span>
+    <h2 class="pricing-title">Boutique pricing. No <em>fluff.</em></h2>
+    <p class="pricing-subtitle">Designed for professionals who need more than a chatbot and don't need to spend €15k to get a straight answer.</p>
+  </div>
+  
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-tier">Clarity Call</div>
+      <div class="pricing-price">€49 <span>One-time · 50 minutes</span></div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>AI-era readiness assessment</li>
+        <li>Role risk &amp; opportunity mapping</li>
+        <li>Custom pivot direction</li>
+        <li>Clear next steps regardless of continuing</li>
+      </ul>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="pricing-cta">Book Diagnostic →</a>
+    </div>
+    
+    <div class="pricing-card featured">
+      <div class="pricing-tier">Monthly Partnership</div>
+      <div class="pricing-price">From €300 <span>· Per month</span></div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Weekly 1:1 strategy sessions</li>
+        <li>AI tools &amp; frameworks between sessions</li>
+        <li>LinkedIn positioning &amp; narrative work</li>
+        <li>Career Risk Assessment framework</li>
+        <li>Async support via Telegram</li>
+      </ul>
+      <a href="mailto:aicoachalex@gmail.com?subject=Monthly%20Coaching" class="pricing-cta">Start Monthly →</a>
+    </div>
+    
+    <div class="pricing-card">
+      <div class="pricing-tier">Full Transformation</div>
+      <div class="pricing-price">Custom Investment <span>· Defined In Your Diagnostic</span></div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Everything in Monthly</li>
+        <li>Full narrative development &amp; positioning</li>
+        <li>AI tool stack setup for your role</li>
+        <li>LinkedIn authority content plan</li>
+        <li>Case study of your transformation</li>
+      </ul>
+      <a href="mailto:aicoachalex@gmail.com?subject=3-Month%20Programme" class="pricing-cta">Apply for 3-Month →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Coach Section -->
+<section class="coach-section">
+  <div class="coach-grid">
+    <div>
+      <span class="coach-label">The Coach</span>
+      <h2 class="coach-title">I treat career strategy like an engineering <em>problem.</em></h2>
+      <p class="coach-bio">I've spent 7 years building products and GTM systems at the edge of where tech was going next — web3 before it was mainstream, AI agents before most companies had a strategy for them. I didn't learn any of this in a classroom. I learned it by shipping, failing fast, and adapting.
+
+
+That's the same process I bring to career coaching. I don't give you a framework someone else built. I help you diagnose your actual situation and build a plan that fits it.</strong></p>
+      
+      <div class="coach-stats">
+        <div class="coach-stat">7+<span>Years AI, Web3, GTM</span></div>
+        <div class="coach-stat">550k<span>Organic video views</span></div>
+        <div class="coach-stat">4+<span>Funded grants &amp; projects</span></div>
+        <div class="coach-stat">Series B<span>GTM execution track record</span></div>
+      </div>
+    </div>
+    
+    <div>
+      <ul class="coach-principles">
+        <li><strong>Treat marketing like engineering</strong> — Inputs, levers, outputs. Testable hypotheses. Ship fast, measure, iterate. No vibes-based strategy.</li>
+        <li><strong>Move with small, testable builds</strong> — Clarity comes from working prototypes, not planning decks. Same for career transitions — we test, don't theorise.</li>
+        <li><strong>Use agents to multiply, not replace judgment</strong> — This is the AI-era mindset shift: orchestrate AI, don't compete with it. I'll show you exactly how.</li>
+        <li><strong>Thrive in ambiguity</strong> — Mid-career transitions are inherently ambiguous. I'm built for wide scope without a large team — I'll coach you to do the same.</li>
+        <li><strong>Real network, active ecosystems</strong> — Polygon grants, The Sandbox, Series B launches, GenLayer. When relevant, doors open.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section">
+  <span class="cta-label">49€ · Ready?</span>
+  <h2 class="cta-title">Book your diagnostic. <em>Today.</em></h2>
+  <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="cta-btn">Reserve Your Spot — 49€ →</a>
+  <p class="cta-note">50 minutes · immediate clarity · Not a sales pitch. A diagnostic audit.</p>
+</section>
+
+<!-- FOOTER WITH SOCIAL LINKS -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+    
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+      
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+      
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/personal-ai-agent.html" class="footer-link">Your Own AI</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/graph-engineering.html" class="footer-link">Graph Engineering</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// Custom Cursor
+const cursor=document.getElementById('cursor');let cursorX=0,cursorY=0,targetX=0,targetY=0;
+if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+document.addEventListener('mousemove',e=>{targetX=e.clientX;targetY=e.clientY;});
+function animateCursor(){cursorX+=(targetX-cursorX)*0.15;cursorY+=(targetY-cursorY)*0.15;cursor.style.left=cursorX+'px';cursor.style.top=cursorY+'px';requestAnimationFrame(animateCursor);}
+animateCursor();
+const interactives=document.querySelectorAll('a,button,.era-col');
+interactives.forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'));});}
+
+// Video Controls
+const audioToggle=document.getElementById('audioToggle');
+const heroVideo=document.getElementById('heroVideo');
+let audioWasOn=false;
+if(audioToggle&&heroVideo){
+audioToggle.addEventListener('click',()=>{
+heroVideo.muted=!heroVideo.muted;
+audioWasOn=!heroVideo.muted;
+updateAudioIcon();
+});
+function updateAudioIcon(){
+const mutedIcon=audioToggle.querySelector('.icon-muted');
+const unmutedIcon=audioToggle.querySelector('.icon-unmuted');
+if(heroVideo.muted){mutedIcon.style.display='';unmutedIcon.style.display='none';}
+else{mutedIcon.style.display='none';unmutedIcon.style.display='';}
+}}
+
+// Floating Phone
+const heroPhone=document.getElementById('heroPhone');
+const heroSection=document.getElementById('heroSection');
+const phoneClose=document.getElementById('phoneClose');
+let phoneClosed=false;
+let isMobile=window.matchMedia('(max-width:767px)').matches;
+const makeFloating=()=>{if(isMobile||phoneClosed||!heroPhone)return;heroPhone.classList.add('floating');};
+const removeFloating=()=>{if(isMobile||phoneClosed||!heroPhone)return;heroPhone.classList.remove('floating');};
+window.addEventListener('scroll',()=>{
+if(!heroSection||phoneClosed||!heroPhone)return;
+const heroBottom=heroSection.getBoundingClientRect().bottom;
+if(heroBottom<0)makeFloating();else removeFloating();
+});
+if(phoneClose&&heroPhone){
+phoneClose.addEventListener('click',()=>{
+phoneClosed=true;
+heroPhone.classList.remove('floating');
+heroPhone.classList.add('hidden');
+if(heroVideo&&!heroVideo.muted){
+heroVideo.muted=true;
+audioWasOn=false;
+if(audioToggle)updateAudioIcon();
+}});
+}
+window.addEventListener('scroll',()=>{
+if(!heroSection||!heroPhone)return;
+if(phoneClosed){
+const heroBottom=heroSection.getBoundingClientRect().bottom;
+if(heroBottom>window.innerHeight*0.5){
+phoneClosed=false;
+heroPhone.classList.remove('hidden');
+if(window.scrollY===0)removeFloating();
+}}
+});
+window.addEventListener('resize',()=>{
+isMobile=window.matchMedia('(max-width:767px)').matches;
+if(isMobile&&heroPhone)heroPhone.classList.remove('floating');
+});
+
+// Site logo: shrink into the nav corner once the page is scrolled
+(function(){
+var logo=document.getElementById('siteLogo');
+if(!logo)return;
+function update(){
+if(window.scrollY>40)logo.classList.add('scrolled');
+else logo.classList.remove('scrolled');
+}
+update();
+window.addEventListener('scroll',update);
+})();
+
+// Mobile Menu
+const navHamburger=document.getElementById('navHamburger');
+const navMobileMenu=document.getElementById('navMobileMenu');
+const navMobileClose=document.getElementById('navMobileClose');
+(function(){
+var toggle=document.getElementById('coursesDropdownToggle');
+var menu=document.getElementById('coursesDropdownMenu');
+if(!toggle||!menu)return;
+var closeTimer=null;
+function positionMenu(){
+var r=toggle.getBoundingClientRect();
+menu.style.top=(r.bottom+12)+'px';
+menu.style.left=r.left+'px';
+}
+function openMenu(){
+clearTimeout(closeTimer);
+positionMenu();
+menu.classList.add('open');
+}
+function closeMenu(){
+menu.classList.remove('open');
+}
+function scheduleClose(){
+clearTimeout(closeTimer);
+closeTimer=setTimeout(closeMenu,150);
+}
+toggle.addEventListener('mouseenter',openMenu);
+toggle.addEventListener('mouseleave',scheduleClose);
+menu.addEventListener('mouseenter',function(){clearTimeout(closeTimer);});
+menu.addEventListener('mouseleave',scheduleClose);
+toggle.addEventListener('click',function(e){
+if(window.matchMedia('(hover:hover)').matches||menu.classList.contains('open'))return;
+e.preventDefault();
+openMenu();
+});
+toggle.addEventListener('focus',openMenu);
+document.addEventListener('click',function(e){
+if(!e.target.closest('#coursesDropdownToggle')&&!e.target.closest('#coursesDropdownMenu')){
+closeMenu();
+}
+});
+window.addEventListener('resize',function(){if(menu.classList.contains('open'))positionMenu();});
+window.addEventListener('scroll',function(){if(menu.classList.contains('open'))positionMenu();},true);
+})();
+if(navHamburger&&navMobileMenu){
+navHamburger.addEventListener('click',()=>{
+navMobileMenu.classList.add('open');
+navHamburger.classList.add('open');
+document.body.style.overflow='hidden';
+});
+if(navMobileClose){
+navMobileClose.addEventListener('click',()=>{
+navMobileMenu.classList.remove('open');
+navHamburger.classList.remove('open');
+document.body.style.overflow='';
+});
+}
+navMobileMenu.querySelectorAll('a').forEach(a=>{
+a.addEventListener('click',()=>{
+navMobileMenu.classList.remove('open');
+navHamburger.classList.remove('open');
+document.body.style.overflow='';
+});
+});
+}
+
+// Era Cards
+const eraCols=document.querySelectorAll('.era-col');
+eraCols.forEach(col=>{
+col.addEventListener('mouseenter',()=>{
+if(window.innerWidth>=768){
+eraCols.forEach(c=>c.classList.remove('active-era'));
+col.classList.add('active-era');
+}});
+});
+
+// ============================================
+// METHOD DECK - CARD CAROUSEL (Lazy-loaded)
+// ============================================
+const cardDeck=document.getElementById('cardDeck');
+const cards=document.querySelectorAll('.method-card');
+const progressFill=document.getElementById('progressFill');
+const currentCardText=document.getElementById('currentCard');
+const dots=document.querySelectorAll('.swipe-dots .dot');
+
+let cardObserver=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+initCardDeck();
+cardObserver.disconnect();
+}
+});
+},{threshold:0.1});
+if(cardDeck)cardObserver.observe(cardDeck);
+
+function initCardDeck(){
+const overlay=document.createElement('div');
+overlay.className='card-overlay';
+document.body.appendChild(overlay);
+let currentCardIndex=0;
+let isExpanded=false;
+
+cards.forEach((card,index)=>{
+card.addEventListener('click',(e)=>{
+if(e.target.classList.contains('card-cta'))return;
+if(window.innerWidth<768)return;
+if(card.classList.contains('expanded')){collapseCard(card);}else{expandCard(card,index,e);}
+});
+const expandBtn=card.querySelector('.card-expand');
+if(expandBtn){
+expandBtn.addEventListener('click',(e)=>{
+e.stopPropagation();
+if(window.innerWidth<768)return;
+if(card.classList.contains('expanded')){collapseCard(card);}else{expandCard(card,index,e);}
+});
+}
+});
+
+function expandCard(card,index,event){
+cards.forEach(c=>collapseCard(c));
+card.classList.add('expanded');
+overlay.classList.add('active');
+isExpanded=true;
+updateProgress(index+1);
+}
+
+function collapseCard(card){
+card.classList.remove('expanded');
+overlay.classList.remove('active');
+isExpanded=false;
+}
+
+overlay.addEventListener('click',()=>{
+cards.forEach(c=>collapseCard(c));
+});
+
+document.addEventListener('keydown',(e)=>{
+if(e.key==='Escape'&&isExpanded){
+cards.forEach(c=>collapseCard(c));
+}
+});
+
+let touchStartX=0;
+if(cardDeck){
+cardDeck.addEventListener('touchstart',e=>{
+touchStartX=e.changedTouches[0].screenX;
+},{passive:true});
+
+cardDeck.addEventListener('touchend',e=>{
+const touchEndX=e.changedTouches[0].screenX;
+handleSwipe(touchStartX,touchEndX);
+},{passive:true});
+
+cardDeck.addEventListener('scroll',()=>{
+if(window.innerWidth>=768)return;
+const deckRect=cardDeck.getBoundingClientRect();
+const deckCenter=deckRect.left+deckRect.width/2;
+cards.forEach((card,index)=>{
+const cardRect=card.getBoundingClientRect();
+const cardCenter=cardRect.left+cardRect.width/2;
+if(Math.abs(deckCenter-cardCenter)<cardRect.width/2){
+updateProgress(index+1);
+}});
+},{passive:true});
+}
+
+function handleSwipe(startX,endX){
+const swipeThreshold=50;
+const diff=startX-endX;
+if(Math.abs(diff)>swipeThreshold){
+if(diff>0){
+if(currentCardIndex<cards.length-1){
+currentCardIndex++;
+scrollToCard(currentCardIndex);
+}
+}else{
+if(currentCardIndex>0){
+currentCardIndex--;
+scrollToCard(currentCardIndex);
+}}
+}}
+
+function scrollToCard(index){
+if(window.innerWidth>=768)return;
+const card=cards[index];
+const deck=cardDeck;
+const cardLeft=card.offsetLeft;
+const deckWidth=deck.offsetWidth;
+const cardWidth=card.offsetWidth;
+deck.scrollTo({left:cardLeft-(deckWidth-cardWidth)/2,behavior:'smooth'});
+updateProgress(index+1);
+}
+
+function updateProgress(cardNum){
+if(progressFill)progressFill.style.width=`${(cardNum/cards.length)*100}%`;
+if(currentCardText)currentCardText.textContent=cardNum;
+dots.forEach((dot,index)=>{dot.classList.toggle('active',index===cardNum-1);});
+currentCardIndex=cardNum-1;
+}
+
+updateProgress(1);
+}
+</script>
+
+<!-- ============================================================
+  BOOKING INTERSTITIAL — paste this whole block right before </body>
+  in index.html (and any other page that has a "Book Diagnostic" link).
+
+  What it does:
+  1. Watches every link that goes to youcanbook.me
+  2. When someone clicks one, remembers it (this tab only)
+  3. When they come back to this tab later, asks "Did you book?"
+     - Yes -> just closes, no nagging again this session
+     - No  -> offers the newsletter, captures email into your Google Sheet
+  4. Doesn't show if they never left, or already answered
+
+  SETUP: replace YOUR_FORM_ID and YOUR_ENTRY_ID below with the values
+  from your Google Form's pre-filled link.
+============================================================ -->
+<style>
+  #aicoach-interstitial-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 13, 0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  #aicoach-interstitial-card {
+    background: #F7F4EF;
+    color: #0F0F0D;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 14px;
+    padding: 32px 28px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  #aicoach-interstitial-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+  }
+  #aicoach-interstitial-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 14px 0;
+  }
+  #aicoach-interstitial-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #3a3a38;
+    margin: 0 0 20px 0;
+  }
+  .aicoach-btn-row {
+    display: flex;
+    gap: 10px;
+  }
+  .aicoach-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+  }
+  .aicoach-btn-yes {
+    background: #0F0F0D;
+    color: #99E46B;
+  }
+  .aicoach-btn-no {
+    background: transparent;
+    color: #0F0F0D;
+    border: 1px solid #0F0F0D;
+  }
+  #aicoach-email-panel {
+    display: none;
+    margin-top: 18px;
+  }
+  #aicoach-email-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  #aicoach-email-submit {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    background: #172D07;
+    color: #99E46B;
+  }
+  #aicoach-thankyou-msg {
+    display: none;
+    font-size: 15px;
+    color: #172D07;
+    font-weight: 600;
+  }
+  .aicoach-optional-label {
+    font-size: 12px;
+    color: #666;
+    margin: 14px 0 8px;
+    font-weight: 600;
+  }
+  #aicoach-name-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .aicoach-radio-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #3a3a38;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .aicoach-radio-row input[type="radio"] {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  #aicoach-situation-other-input {
+    width: calc(100% - 26px);
+    margin-left: 26px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    display: none;
+  }
+</style>
+
+<div id="aicoach-interstitial-overlay">
+  <div id="aicoach-interstitial-card">
+    <button id="aicoach-interstitial-close" aria-label="Close">&times;</button>
+
+    <div id="aicoach-question-panel">
+      <h3>Did you book your call?</h3>
+      <p>Just checking in — want to make sure you got taken care of.</p>
+      <div class="aicoach-btn-row">
+        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Yes, all booked</button>
+        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Not yet</button>
+      </div>
+    </div>
+
+    <div id="aicoach-email-panel">
+      <h3>Still thinking it over?</h3>
+      <p>Take your time. In the meantime, get weekly AI Superpowers — practical AI tips for your career, once a week, no fluff.</p>
+      <input type="email" id="aicoach-email-input" placeholder="you@email.com" />
+      <input type="text" id="aicoach-name-input" placeholder="Your name (optional)" />
+      <div class="aicoach-optional-label">Your current situation (optional)</div>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am working for a company"> I am working for a company</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am an entrepreneur"> I am an entrepreneur</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am studying / I am looking for employment"> I am studying / I am looking for employment</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Other:</label>
+      <input type="text" id="aicoach-situation-other-input" placeholder="Please specify" />
+      <button id="aicoach-email-submit">Send me the tips</button>
+    </div>
+
+    <div id="aicoach-thankyou-msg">You're in! 🎯</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
+  var ENTRY_ID = '1582122762'; // Email field on the "AI SUPERPOWERS" form
+  var NAME_ENTRY_ID = '731407510';
+  var SITUATION_ENTRY_ID = '881740245';
+
+  var CLICK_KEY = 'aicoach_clicked_book_at';
+  var ANSWERED_KEY = 'aicoach_booking_answered';
+  var MIN_AWAY_MS = 4000; // ignore accidental instant-return clicks
+
+  function $(id) { return document.getElementById(id); }
+
+  // 1. Watch every link to youcanbook.me
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="youcanbook.me"]');
+    if (link) {
+      sessionStorage.setItem(CLICK_KEY, Date.now().toString());
+      sessionStorage.removeItem(ANSWERED_KEY);
+    }
+  });
+
+  // 2. When the tab becomes visible again, decide whether to ask
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState !== 'visible') return;
+
+    var clickedAt = sessionStorage.getItem(CLICK_KEY);
+    var alreadyAnswered = sessionStorage.getItem(ANSWERED_KEY);
+    if (!clickedAt || alreadyAnswered) return;
+
+    var elapsed = Date.now() - parseInt(clickedAt, 10);
+    if (elapsed < MIN_AWAY_MS) return;
+
+    $('aicoach-interstitial-overlay').style.display = 'flex';
+  });
+
+  function closeModal() {
+    $('aicoach-interstitial-overlay').style.display = 'none';
+  }
+
+  $('aicoach-interstitial-close').addEventListener('click', function() {
+    closeModal();
+  });
+
+  $('aicoach-btn-yes').addEventListener('click', function() {
+    sessionStorage.setItem(ANSWERED_KEY, 'yes');
+    // Optional: fire a non-PII GA4 signal that a booking was self-reported
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'self_reported_booking_yes' });
+    closeModal();
+  });
+
+  $('aicoach-btn-no').addEventListener('click', function() {
+    $('aicoach-question-panel').style.display = 'none';
+    $('aicoach-email-panel').style.display = 'block';
+  });
+
+  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      $('aicoach-situation-other-input').style.display =
+        (radio.value === '__other_option__' && radio.checked) ? 'block' : 'none';
+    });
+  });
+
+  $('aicoach-email-submit').addEventListener('click', function() {
+    var email = $('aicoach-email-input').value.trim();
+    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValid) {
+      $('aicoach-email-input').style.borderColor = '#c0392b';
+      return;
+    }
+
+    var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
+    var params = ['entry.' + ENTRY_ID + '=' + encodeURIComponent(email)];
+
+    var name = $('aicoach-name-input').value.trim();
+    if (name) {
+      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
+    }
+
+    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
+    if (situationRadio) {
+      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationRadio.value));
+      if (situationRadio.value === '__other_option__') {
+        var otherText = $('aicoach-situation-other-input').value.trim();
+        if (otherText) {
+          params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(otherText));
+        }
+      }
+    }
+
+    var body = params.join('&');
+
+    fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors', // Google Forms doesn't return CORS headers; this is expected and fine
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    }).catch(function() { /* no-cors means we can't read the response anyway */ });
+
+    // Non-PII GA4 signal — do NOT push the raw email into dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'newsletter_signup' });
+
+    sessionStorage.setItem(ANSWERED_KEY, 'no_email_captured');
+    $('aicoach-email-panel').style.display = 'none';
+    $('aicoach-thankyou-msg').style.display = 'block';
+    setTimeout(closeModal, 2200);
+  });
+})();
+</script>
+
+<script id="idx-quiz-js">
+(function(){var src=document.querySelector('.idx-quiz-src'),q=document.getElementById('idxQuiz'),hb=document.getElementById('navHamburger');if(!src||!q)return;
+function place(){var r=src.getBoundingClientRect();q.style.display='inline-flex';
+if(r.width){src.style.visibility='hidden';q.classList.remove('idx-quiz-m');
+q.style.left=Math.round(r.left+r.width/2-q.offsetWidth/2)+'px';q.style.top=Math.round(r.top+r.height/2-q.offsetHeight/2)+'px';return;}
+src.style.visibility='';var h=hb&&hb.getBoundingClientRect();if(!h||!h.width){q.style.display='none';return;}
+q.classList.add('idx-quiz-m');q.style.left=Math.round(h.left-q.offsetWidth-8)+'px';q.style.top=Math.round(h.top+h.height/2-q.offsetHeight/2)+'px';}
+place();window.addEventListener('resize',place);window.addEventListener('scroll',place,{passive:true});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);setTimeout(place,700);})();
+</script>
+</body>
+</html>

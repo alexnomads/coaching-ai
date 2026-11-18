@@ -593,6 +593,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media (min-width:768px) and (max-width:1099px){nav .nav-links{display:none!important}.nav-hamburger{display:flex!important}}
 </style>
 <link rel="canonical" href="https://aicoachalex.com/">
+<link rel="stylesheet" href="/assets/scenes.css?v=1">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -686,17 +687,13 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 </div>
 
 <!-- Hero Section -->
-<section class="hero" id="heroSection">
-  <!-- Content -->
-  <div class="hero-content">
-    <div>
+<section class="scene s-hero" id="heroSection" style="--len:140" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <div class="floor floor-forest"></div>
+    <div class="hero-copy">
       <h1 class="hero-type">You got <em>comfort-</em><em>able.</em> It's not too late.</h1>
-    </div>
-    
-    <div class="hero-aside">
-      <p>You've built a solid career. Now with AI, rules are changing and nobody's giving you a clear roamap. That's exactly where I come in as your AI Coach.</p>
-      
-      <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="hero-aside">
+        <p>You've built a solid career. Now with AI, rules are changing and nobody's giving you a clear roamap. That's exactly where I come in as your AI Coach.</p>
         <a href="#pricing" class="btn-hero">Book Diagnostic — 49€ ↗</a>
         <a href="https://t.me/alexnomads" class="btn-telegram-mobile">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.146.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.623 4.823-4.351c.192-.192-.043-.3-.297-.107L9.63 13.572l-2.55-.8c-.553-.176-.566-.553.1-.832l9.965-3.841c.46-.17.863.112.769.832z"/></svg>
@@ -704,9 +701,17 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
         </a>
       </div>
     </div>
-  </div>
-  
-  <!-- PHONE MOCKUP -->
+    <div class="hero-desk" aria-hidden="true">
+      <div class="laptop" >
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>chat</span></div>
+          <div class="lap-view"><div class="lap-scroll"><p class="ln c-cmd">&gt; is my career going in the right direction?</p><p class="ln">  let's find out.<span class="caret-static"></span></p></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
+      </div>
+      <div class="desk"></div>
+    </div>
+    <!-- PHONE MOCKUP -->
   <div class="hero-phone" id="heroPhone">
     <div class="hero-phone-bezel">
       <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" id="heroVideo">
@@ -730,9 +735,8 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-  
-  <!-- Scroll Hint -->
-  <div class="hero-scroll">Scroll to explore</div>
+    <p class="hero-scroll">Scroll to explore ↓</p>
+  </div>
 </section>
 
 <!-- Marquee Strip -->
@@ -756,202 +760,147 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <span>AI Skills Up 177% Since 2023 · LinkedIn <span class="dot">•</span></span>
   </div>
 </div>
-
-<!-- Quiz Section -->
-<section class="quiz-section">
-  <div class="quiz-grid">
-    <div class="quiz-content">
-      <h2 class="quiz-title">Is your job  <em>safe</em> from AI?</h2>
-      <p class="quiz-desc">Most professionals have no idea where they actually stand. Find out in 2 minutes — get your personal risk score across 289 roles in 26 industries, and a plan based on your result.</p>
-      <a href="career-risk-assessment.html" class="quiz-cta">Take the Free Quiz →</a>
-    </div>
-    
-    <div class="quiz-stats">
-      <div class="quiz-stat">
-        <div class="quiz-stat-num">289</div>
-        <div class="quiz-stat-label">Professions</div>
+<!-- 3 · comfort-able -->
+<section class="scene s-comfort" style="--len:260" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <p class="say" data-words="0.02 0.3">You've built a solid career.</p>
+    <p class="say" data-words="0.32 0.45">Then you got</p>
+    <p class="giant" aria-label="comfort-able."><span data-letters="0.45 0.85">comfort-able</span><span class="dotmark" data-on="0.85 0.9"></span></p>
+  </div>
+</section>
+<!-- 4 · machines -->
+<section class="scene s-machines" style="--len:340" data-wall="lime" data-nav="light">
+  <div class="stage wall-lime">
+    <div class="floor floor-cloth"></div>
+    <p class="say say-row"><span data-words="0 0.1">and now the</span> <span class="giant-mach" data-letters="0.1 0.3">machines</span></p>
+    <p class="say" data-words="0.3 0.42">are good at it too.</p>
+    <div class="laptop" data-type="0.4 0.97">
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>terminal — your job, automated</span></div>
+          <div class="lap-view"><div class="lap-scroll"><p class="ln c-cmd">&gt; draft the quarterly report</p><p class="ln c-out">  done. 12 seconds.</p><p class="ln c-cmd">&gt; clear my inbox</p><p class="ln c-out">  done. 214 emails sorted.</p><p class="ln c-cmd">&gt; analyse the sales data</p><p class="ln c-out">  done. 3 insights, 1 chart.</p><p class="ln c-cmd">&gt; write the landing page</p><p class="ln c-out">  done.</p><p class="ln c-cmd">&gt; build the board deck</p><p class="ln c-out">  done. 18 slides.</p><p class="ln c-cmd">&gt; so what do I do now?</p><p class="ln c-big">orchestrate. don't compete.</p></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
       </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-num">26</div>
-        <div class="quiz-stat-label">Industries</div>
+  </div>
+</section>
+<!-- 5 · eras -->
+<section class="scene s-eras" style="--len:360" data-wall="ink" data-nav="dark" data-wall-steps="0:ink 0.34:forest 0.67:lime" data-nav-steps="0:dark 0.67:light">
+  <div class="stage">
+    <div class="walls" aria-hidden="true"><i class="w1"></i><i class="w2" data-on="0.30 0.38"></i><i class="w3" data-on="0.63 0.71"></i></div>
+    <div class="eras">
+      <div class="era era-1" data-swap="-1 0 0.28 0.34">
+        <span class="era-num" aria-hidden="true">01</span>
+        <h2 class="era-name">The Industrial<em> Era</em></h2>
+        <p class="era-body">Execution was the job. Show up, repeat the process, specialise. The machine needed humans to run it.</p>
+        <span class="era-tag">Execution</span>
       </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-num">2</div>
-        <div class="quiz-stat-label">Min to complete</div>
+      <div class="era era-2" data-swap="0.34 0.40 0.61 0.67">
+        <span class="era-num" aria-hidden="true">02</span>
+        <h2 class="era-name">The Digital<em> Era</em></h2>
+        <p class="era-body">Software ate the world. Adapting meant learning new tools, platforms, workflows. Winners moved fast and accumulated digital skills on top of domain expertise.</p>
+        <span class="era-tag">Adaptation</span>
+      </div>
+      <div class="era era-3" data-show="0.67 0.73">
+        <span class="era-num" aria-hidden="true">03</span>
+        <h2 class="era-name">The AI<em> Era · Now</em></h2>
+        <p class="era-body">The new machine thinks — and most professionals haven't noticed yet. The window to reposition is open. But not forever. Orchestration beats execution every time.</p>
+        <span class="era-tag">Orchestration</span>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Era Section -->
-<section class="era-section">
-  <div class="era-col" data-era="1">
-    <span class="era-num">01</span>
-    <div>
-      <h2 class="era-name">The Industrial<em> Era</em></h2>
-      <p class="era-body">Execution was the job. Show up, repeat the process, specialise. The machine needed humans to run it.</p>
-      <span class="era-tag">Execution</span>
-    </div>
-  </div>
-  
-  <div class="era-col" data-era="2">
-    <span class="era-num">02</span>
-    <div>
-      <h2 class="era-name">The Digital<em> Era</em></h2>
-      <p class="era-body">Software ate the world. Adapting meant learning new tools, platforms, workflows. Winners moved fast and accumulated digital skills on top of domain expertise.</p>
-      <span class="era-tag">Adaptation</span>
-    </div>
-  </div>
-  
-  <div class="era-col active-era" data-era="3">
-    <span class="era-num">03</span>
-    <div>
-      <h2 class="era-name">The AI<em> Era · Now</em></h2>
-      <p class="era-body">The new machine thinks — and most professionals haven't noticed yet. The window to reposition is open. But not forever. Orchestration beats execution every time.</p>
-      <span class="era-tag">Orchestration</span>
-    </div>
+<!-- 6 · too late -->
+<section class="scene s-late" style="--len:280" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <p class="late" data-swap="0 0.12 0.28 0.36">Too late?</p>
+    <p class="late late-no" data-swap="0.38 0.46 0.56 0.62">No.</p>
+    <div class="late-wrap" data-show="0.64 0.76"><h2 class="statement-text">The skills that got you here <em>won't</em> get you there.</h2></div>
   </div>
 </section>
-
-<!-- Problem Statement -->
-<section class="statement">
+<section class="statement flow" data-wall="cream" data-nav="light">
+  <div><span class="stmt-label">The Problem</span></div>
   <div>
-    <span class="stmt-label">The Problem</span>
-  </div>
-  <div>
-    <h2 class="statement-text">The skills that got you here <em>won't</em> get you there.</h2>
     <p style="margin-top:1.5rem;font-size:1rem;line-height:1.75;color:var(--muted);">Mid-career professionals don't plateau because they lack ability. They plateau because <strong>they haven't updated their operating system.</strong>  The professionals pulling ahead aren't smarter — they've just figured out how to use AI as leverage instead of fearing it as a threat.</p>
     <p style="margin-top:1rem;font-size:1rem;line-height:1.75;color:var(--muted);">The market gives you two bad options: pay €15k+ for a coach who's never touched an AI tool, or subscribe to a €29/month chatbot that gives everyone the same generic advice. Neither actually tells you where you stand or what you should do next.</p>
   </div>
 </section>
-
-<!-- THE METHOD - CARD DECK CAROUSEL -->
-<section class="method-deck" id="method">
-  <div class="method-container">
-    <span class="method-label">The Method</span>
-    <h2 class="method-title">A diagnostic built on <em>real systems.</em></h2>
-    <p class="method-subtitle">No generic frameworks. A structured process built around your role, your industry, and what's actually changing in your field.</p>
-    
-    <div class="card-deck" id="cardDeck">
-      
-      <!-- Card 1: Diagnostic -->
-      <div class="method-card" data-card="1">
-        <div class="card-number">01</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        <h3 class="card-title">The Diagnostic Call</h3>
-        <p class="card-preview">49€ · 50 minutes. Not a consultation — a structured audit.</p>
-        <div class="card-full">
-          <p>By the end, you know exactly where you stand and what to do, whether we continue or not. This isn't a sales pitch. It's a systems audit of your career positioning.</p>
-          <ul class="card-list">
-            <li>Current role vulnerability analysis</li>
-            <li>Skill-to-market matching</li>
-            <li>Immediate action items</li>
-          </ul>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-      <!-- Card 2: Where You Are -->
-      <div class="method-card" data-card="2">
-        <div class="card-number">02</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <h3 class="card-title">Where Are You Now</h3>
-        <p class="card-preview">Most people overestimate their AI fluency and underestimate how exposed their role is. We find out exactly where you sit — honestly.</p>
-        <div class="card-full">
-          <p>Are you executing tasks AI will automate, or building judgment AI cannot replace? Most mid-career professionals are closer to the former than they realize.</p>
-          <ul class="card-list">
-            <li>Skill stack audit</li>
-            <li>Positioning analysis vs. market</li>
-            <li>Identity reframing</li>
-          </ul>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-      <!-- Card 3: What's Changing -->
-      <div class="method-card" data-card="3">
-        <div class="card-number">03</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </div>
-        <h3 class="card-title">What's Changing</h3>
-        <p class="card-preview">Not general AI headlines — what's specifically happening in your industry, your role category, and your seniority level right now.</p>
-        <div class="card-full">
-          <p>Which roles are being compressed, which skills are becoming table stakes, where the leverage is in your field. Real data, not headlines.</p>
-          <ul class="card-list">
-            <li>Role risk scoring</li>
-            <li>Skill compression timeline</li>
-            <li>Leverage point identification</li>
-          </ul>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-      <!-- Card 4: Where You Need To Be -->
-      <div class="method-card card-featured" data-card="4">
-        <div class="card-number">04</div>
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div>
-        <h3 class="card-title">Where You Need To Be</h3>
-        <p class="card-preview">You leave with a clear answer to: what do I do next? Not a vague direction — a specific capability to build and a narrative to own.</p>
-        <div class="card-full">
-          <p>A concrete pivot plan: which capabilities to build, which narrative to own, how to position as someone who orchestrates AI rather than competes with it.</p>
-          <ul class="card-list">
-            <li>Capability roadmap</li>
-            <li>Narrative development</li>
-            <li>Positioning strategy</li>
-          </ul>
-          <a href="#pricing" class="card-cta">Start Your Journey →</a>
-        </div>
-        <button class="card-expand" aria-label="Expand card">→</button>
-      </div>
-
-    </div>
-
-    <!-- Mobile Swipe Indicator -->
-    <div class="swipe-indicator">
-      <span>Swipe</span>
-      <div class="swipe-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-
-    <!-- Desktop Progress -->
-    <div class="deck-progress">
-      <div class="progress-line"></div>
-      <div class="progress-fill" id="progressFill"></div>
-      <span class="progress-text"><span id="currentCard">1</span> / 4</span>
-    </div>
-
+<!-- 7 · quiz -->
+<section class="scene s-quiz" style="--len:300" data-wall="forest" data-nav="dark">
+  <div class="stage wall-forest">
+    <div class="floor floor-cloth"></div>
+    <h2 class="quiz-title" data-words="0 0.2">Is your job  <em>safe</em> from AI?</h2>
+    <p class="lede" data-show="0.18 0.3">Most professionals have no idea where they actually stand. Find out in 2 minutes — get your personal risk score across 289 roles in 26 industries, and a plan based on your result.</p>
+    <div class="qstats"><div class="qstat" data-show="0.3 0.4"><b data-count="0.3 0.45" data-to="289">289</b><span>Professions</span></div><div class="qstat" data-show="0.42 0.52"><b data-count="0.42 0.56" data-to="26">26</b><span>Industries</span></div><div class="qstat" data-show="0.54 0.64"><b data-count="0.54 0.66" data-to="2">2</b><span>Min to complete</span></div></div>
+    <div class="quiz-go" data-show="0.72 0.84"><a href="career-risk-assessment.html" class="btn-lime quiz-cta">Take the Free Quiz →</a></div>
   </div>
 </section>
-
-<!-- Cases Section -->
-<section class="cases-section">
+<!-- 8 · method -->
+<section class="scene s-method" id="method" style="--len:380" data-wall="cream" data-nav="light">
+  <div class="stage wall-cream">
+    <div class="floor floor-cloth-dim"></div>
+    <div class="m-head">
+      <p class="kicker">The Method</p>
+      <h2 class="big-h" data-words="0 0.15">A diagnostic built on <em>real systems.</em></h2>
+      <p class="lede" data-show="0.12 0.22">No generic frameworks. A structured process built around your role, your industry, and what's actually changing in your field.</p>
+    </div>
+    <div class="laptop" data-type="0.22 0.97">
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>diagnostic.md</span></div>
+          <div class="lap-view"><div class="lap-scroll"><p class="ln c-head">## the method</p><p class="ln c-title">01  The Diagnostic Call</p><p class="ln c-out">    49€ · 50 minutes. Not a consultation — a structured audit.</p><p class="ln c-title">02  Where Are You Now</p><p class="ln c-out">    Most people overestimate their AI fluency and underestimate how exposed their role is. We find out exactly where you sit — honestly.</p><p class="ln c-title">03  What's Changing</p><p class="ln c-out">    Not general AI headlines — what's specifically happening in your industry, your role category, and your seniority level right now.</p><p class="ln c-title">04  Where You Need To Be</p><p class="ln c-out">    You leave with a clear answer to: what do I do next? Not a vague direction — a specific capability to build and a narrative to own.</p><p class="ln c-cmd">&gt; run diagnostic --you</p></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
+      </div>
+  </div>
+</section>
+<section class="steps flow" data-wall="cream" data-nav="light">
+  <div class="flow-inner steps-grid">
+      <article class="step">
+        <span class="step-n">01</span>
+        <h3>The Diagnostic Call</h3>
+        <p class="step-pre">49€ · 50 minutes. Not a consultation — a structured audit.</p>
+        <p>By the end, you know exactly where you stand and what to do, whether we continue or not. This isn't a sales pitch. It's a systems audit of your career positioning.</p>
+        <ul><li>Current role vulnerability analysis</li><li>Skill-to-market matching</li><li>Immediate action items</li></ul>
+        
+      </article>
+      <article class="step">
+        <span class="step-n">02</span>
+        <h3>Where Are You Now</h3>
+        <p class="step-pre">Most people overestimate their AI fluency and underestimate how exposed their role is. We find out exactly where you sit — honestly.</p>
+        <p>Are you executing tasks AI will automate, or building judgment AI cannot replace? Most mid-career professionals are closer to the former than they realize.</p>
+        <ul><li>Skill stack audit</li><li>Positioning analysis vs. market</li><li>Identity reframing</li></ul>
+        
+      </article>
+      <article class="step">
+        <span class="step-n">03</span>
+        <h3>What's Changing</h3>
+        <p class="step-pre">Not general AI headlines — what's specifically happening in your industry, your role category, and your seniority level right now.</p>
+        <p>Which roles are being compressed, which skills are becoming table stakes, where the leverage is in your field. Real data, not headlines.</p>
+        <ul><li>Role risk scoring</li><li>Skill compression timeline</li><li>Leverage point identification</li></ul>
+        
+      </article>
+      <article class="step">
+        <span class="step-n">04</span>
+        <h3>Where You Need To Be</h3>
+        <p class="step-pre">You leave with a clear answer to: what do I do next? Not a vague direction — a specific capability to build and a narrative to own.</p>
+        <p>A concrete pivot plan: which capabilities to build, which narrative to own, how to position as someone who orchestrates AI rather than competes with it.</p>
+        <ul><li>Capability roadmap</li><li>Narrative development</li><li>Positioning strategy</li></ul>
+        <a href="#pricing" class="card-cta">Start Your Journey →</a>
+      </article>
+  </div>
+</section>
+<!-- 9 · track record -->
+<section class="scene s-record" style="--len:300" data-wall="forest" data-nav="dark">
+  <div class="stage wall-forest">
+    <p class="kicker">Track Record</p>
+    <h2 class="big-h cases-title" data-words="0 0.3">I don't just coach it. I've <em>shipped it.</em></h2>
+    <div class="bar" data-show="0.28 0.34"></div>
+    <div class="rstats"><div class="rstat" data-show="0.33 0.40"><b data-count="0.35 0.58" data-to="200" data-pre="$" data-suf="k">$200k</b><span>224+ NFTs sold · The Sandbox</span></div><div class="rstat" data-show="0.43 0.50"><b data-count="0.45 0.68" data-to="25" data-pre="$" data-suf="M">$25M</b><span>Series B · 30+ partnerships · LandVault</span></div><div class="rstat" data-show="0.53 0.60"><b data-count="0.55 0.78" data-to="500" data-pre="" data-suf="M+">500M+</b><span>gamers reached · 7M YouTube views · BlueStacks + Game.tv</span></div><div class="rstat" data-show="0.63 0.70"><b data-count="0.65 0.88" data-to="550" data-pre="" data-suf="k">550k</b><span>organic views · Zero ad spend · GenLayer</span></div></div>
+  </div>
+</section>
+<section class="cases-section flow" data-wall="ink" data-nav="dark">
   <div class="cases-section-header">
-    <span class="cases-label">Track Record</span>
-    <h2 class="cases-title">I don't just coach it. I've <em>shipped it.</em></h2>
     <p class="cases-subtitle">The frameworks I teach come from real GTM launches, funded AI products, and campaigns that actually moved numbers. Here's the track record.</p>
   </div>
-
   <div class="trust-badges">
     <div class="trust-badge">
       <div class="trust-badge-top">
@@ -976,12 +925,11 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
       <div class="trust-badge-desc">Builds web platforms, networks, and marketplaces in Lovable.</div>
     </div>
   </div>
-
   <div class="cases-grid">
     <!-- CASE 1: The Sandbox -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/sandbox-snoopdogg.mp4" type="video/mp4">
         </video>
       </div>
@@ -1001,7 +949,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 2: LandVault -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/landvault.mp4" type="video/mp4">
         </video>
       </div>
@@ -1022,7 +970,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 3: Rose of Jericho -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/roj-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1039,7 +987,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 4: BlueStacks -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/gametv-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1060,7 +1008,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 5: GenLayer -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/genlayer-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1077,7 +1025,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     <!-- CASE 6: Qubit Wallet -->
     <div class="case-card">
       <div class="case-video-wide">
-        <video autoplay muted loop playsinline>
+        <video muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/qubit-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -1092,15 +1040,23 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
-
-<!-- Pricing Section -->
-<section class="pricing-section" id="pricing">
-  <div class="pricing-header">
-    <span class="pricing-label">Pricing</span>
-    <h2 class="pricing-title">Boutique pricing. No <em>fluff.</em></h2>
-    <p class="pricing-subtitle">Designed for professionals who need more than a chatbot and don't need to spend €15k to get a straight answer.</p>
+<!-- 10 · pricing -->
+<section class="scene s-pricing" id="pricing" style="--len:320" data-wall="lime" data-nav="light">
+  <div class="stage wall-lime">
+    <div class="floor floor-cloth"></div>
+    <p class="kicker">Pricing</p>
+    <h2 class="big-h" data-words="0 0.16">Boutique pricing. No <em>fluff.</em></h2>
+    <p class="lede" data-show="0.12 0.22">Designed for professionals who need more than a chatbot and don't need to spend €15k to get a straight answer.</p>
+    <div class="laptop" data-keys="0.2 0.82" data-enters="0.4 0.6 0.8">
+        <div class="lap-lid"><div class="lap-screen">
+          <div class="lap-bar" aria-hidden="true"><i></i><i></i><i></i><span>aicoachalex.com/pricing</span></div>
+          <div class="plans-screen"><div class="plan-row" data-show="0.25 0.40"><p class="pp">€49</p><div class="pt"><b>Clarity Call</b><span>One-time · 50 minutes</span></div><a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic →</a></div><div class="plan-row" data-show="0.45 0.60"><p class="pp">From €300</p><div class="pt"><b>Monthly Partnership</b><span>Per month</span></div><a href="mailto:aicoachalex@gmail.com?subject=Monthly%20Coaching">Start Monthly →</a></div><div class="plan-row" data-show="0.65 0.80"><p class="pp">Custom Investment</p><div class="pt"><b>Full Transformation</b><span>Defined In Your Diagnostic</span></div><a href="mailto:aicoachalex@gmail.com?subject=3-Month%20Programme">Apply for 3-Month →</a></div></div>
+        </div></div>
+        <div class="lap-base" aria-hidden="true"><div class="lap-kb"></div></div>
+      </div>
   </div>
-  
+</section>
+<section class="plans flow" data-wall="cream" data-nav="light">
   <div class="pricing-grid">
     <div class="pricing-card">
       <div class="pricing-tier">Clarity Call</div>
@@ -1146,7 +1102,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 </section>
 
 <!-- Coach Section -->
-<section class="coach-section">
+<section class="coach-section flow" data-wall="forest" data-nav="dark">
   <div class="coach-grid">
     <div>
       <span class="coach-label">The Coach</span>
@@ -1175,17 +1131,26 @@ That's the same process I bring to career coaching. I don't give you a framework
     </div>
   </div>
 </section>
-
-<!-- Final CTA -->
-<section class="cta-section">
-  <span class="cta-label">49€ · Ready?</span>
-  <h2 class="cta-title">Book your diagnostic. <em>Today.</em></h2>
-  <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="cta-btn">Reserve Your Spot — 49€ →</a>
-  <p class="cta-note">50 minutes · immediate clarity · Not a sales pitch. A diagnostic audit.</p>
+<!-- 12 · book -->
+<section class="scene s-book" style="--len:280" data-wall="ink" data-nav="dark">
+  <div class="stage wall-ink">
+    <div class="b-head">
+      <p class="kicker">49€ · Ready?</p>
+      <h2 class="big-h" data-words="0 0.22">Book your diagnostic.</h2>
+      <p class="today" data-show="0.25 0.38">Today.</p>
+      <div class="b-notes" data-show="0.4 0.5">
+        <p>50 minutes · immediate clarity · Not a sales pitch. A diagnostic audit.</p>
+        <a href="https://t.me/alexnomads">Message on Telegram →</a>
+      </div>
+    </div>
+    <div class="dot-wrap">
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" class="book-dot" data-scale="0.45 0.8 0.035 1"><span class="bl" data-on="0.75 0.88">Reserve Your Spot<b>49€ →</b></span></a>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER WITH SOCIAL LINKS -->
-<footer class="footer">
+<footer class="footer" data-wall="ink" data-nav="dark">
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Alessandro Capezza</div>
@@ -1371,142 +1336,6 @@ document.body.style.overflow='';
 });
 }
 
-// Era Cards
-const eraCols=document.querySelectorAll('.era-col');
-eraCols.forEach(col=>{
-col.addEventListener('mouseenter',()=>{
-if(window.innerWidth>=768){
-eraCols.forEach(c=>c.classList.remove('active-era'));
-col.classList.add('active-era');
-}});
-});
-
-// ============================================
-// METHOD DECK - CARD CAROUSEL (Lazy-loaded)
-// ============================================
-const cardDeck=document.getElementById('cardDeck');
-const cards=document.querySelectorAll('.method-card');
-const progressFill=document.getElementById('progressFill');
-const currentCardText=document.getElementById('currentCard');
-const dots=document.querySelectorAll('.swipe-dots .dot');
-
-let cardObserver=new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-initCardDeck();
-cardObserver.disconnect();
-}
-});
-},{threshold:0.1});
-if(cardDeck)cardObserver.observe(cardDeck);
-
-function initCardDeck(){
-const overlay=document.createElement('div');
-overlay.className='card-overlay';
-document.body.appendChild(overlay);
-let currentCardIndex=0;
-let isExpanded=false;
-
-cards.forEach((card,index)=>{
-card.addEventListener('click',(e)=>{
-if(e.target.classList.contains('card-cta'))return;
-if(window.innerWidth<768)return;
-if(card.classList.contains('expanded')){collapseCard(card);}else{expandCard(card,index,e);}
-});
-const expandBtn=card.querySelector('.card-expand');
-if(expandBtn){
-expandBtn.addEventListener('click',(e)=>{
-e.stopPropagation();
-if(window.innerWidth<768)return;
-if(card.classList.contains('expanded')){collapseCard(card);}else{expandCard(card,index,e);}
-});
-}
-});
-
-function expandCard(card,index,event){
-cards.forEach(c=>collapseCard(c));
-card.classList.add('expanded');
-overlay.classList.add('active');
-isExpanded=true;
-updateProgress(index+1);
-}
-
-function collapseCard(card){
-card.classList.remove('expanded');
-overlay.classList.remove('active');
-isExpanded=false;
-}
-
-overlay.addEventListener('click',()=>{
-cards.forEach(c=>collapseCard(c));
-});
-
-document.addEventListener('keydown',(e)=>{
-if(e.key==='Escape'&&isExpanded){
-cards.forEach(c=>collapseCard(c));
-}
-});
-
-let touchStartX=0;
-if(cardDeck){
-cardDeck.addEventListener('touchstart',e=>{
-touchStartX=e.changedTouches[0].screenX;
-},{passive:true});
-
-cardDeck.addEventListener('touchend',e=>{
-const touchEndX=e.changedTouches[0].screenX;
-handleSwipe(touchStartX,touchEndX);
-},{passive:true});
-
-cardDeck.addEventListener('scroll',()=>{
-if(window.innerWidth>=768)return;
-const deckRect=cardDeck.getBoundingClientRect();
-const deckCenter=deckRect.left+deckRect.width/2;
-cards.forEach((card,index)=>{
-const cardRect=card.getBoundingClientRect();
-const cardCenter=cardRect.left+cardRect.width/2;
-if(Math.abs(deckCenter-cardCenter)<cardRect.width/2){
-updateProgress(index+1);
-}});
-},{passive:true});
-}
-
-function handleSwipe(startX,endX){
-const swipeThreshold=50;
-const diff=startX-endX;
-if(Math.abs(diff)>swipeThreshold){
-if(diff>0){
-if(currentCardIndex<cards.length-1){
-currentCardIndex++;
-scrollToCard(currentCardIndex);
-}
-}else{
-if(currentCardIndex>0){
-currentCardIndex--;
-scrollToCard(currentCardIndex);
-}}
-}}
-
-function scrollToCard(index){
-if(window.innerWidth>=768)return;
-const card=cards[index];
-const deck=cardDeck;
-const cardLeft=card.offsetLeft;
-const deckWidth=deck.offsetWidth;
-const cardWidth=card.offsetWidth;
-deck.scrollTo({left:cardLeft-(deckWidth-cardWidth)/2,behavior:'smooth'});
-updateProgress(index+1);
-}
-
-function updateProgress(cardNum){
-if(progressFill)progressFill.style.width=`${(cardNum/cards.length)*100}%`;
-if(currentCardText)currentCardText.textContent=cardNum;
-dots.forEach((dot,index)=>{dot.classList.toggle('active',index===cardNum-1);});
-currentCardIndex=cardNum-1;
-}
-
-updateProgress(1);
-}
 </script>
 
 <!-- ============================================================
@@ -1818,5 +1647,6 @@ q.classList.add('idx-quiz-m');q.style.left=Math.round(h.left-q.offsetWidth-8)+'p
 place();window.addEventListener('resize',place);window.addEventListener('scroll',place,{passive:true});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);setTimeout(place,700);})();
 </script>
+<script src="/assets/scenes.js?v=1" defer></script>
 </body>
 </html>
