@@ -29,7 +29,7 @@ BASE = "https://aicoachalex.com/"
 SITEMAP = ROOT / "sitemap.xml"
 
 # Pages that are deliberately not indexed. Keep this list short.
-INTENTIONAL_NOINDEX = {"thank-you.html"}
+INTENTIONAL_NOINDEX = {"thank-you.html", "index-old.html", "index-old.es.html"}  # pre-redesign homepage backups
 
 
 def url_of(rel: str) -> str:
