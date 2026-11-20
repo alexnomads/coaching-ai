@@ -93,7 +93,7 @@ code{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.88em;backgrou
    "name": "AI Competitor Monitoring: an Automated Weekly Market Watch with Claude, Grok and Apify",
    "description": "A real case: an automated weekly competitor market watch for a CEO. Grok reads X, Claude and Apify read LinkedIn and the press, one Google Sheet, one Monday report. About $0.20 a week.",
    "inLanguage": "en",
-   "dateModified": "2026-11-30",
+   "dateModified": "2026-11-20",
    "primaryImageOfPage": "https://aicoachalex.com/assets/blog/ai-competitor-monitoring-claude-grok-apify/cover-blog-1200x630.png",
    "breadcrumb": {
     "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html#breadcrumb"
@@ -340,7 +340,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   </figure>
   <ol class="uc-steps">
     <li><span><strong>Grok reads X.</strong> Every Sunday at 20:00 it writes competitors' X posts into the sheet as rows.</span></li>
-    <li><span><strong>Claude reads LinkedIn and the press.</strong> LinkedIn blocks AI tools, so Claude uses the <a href="[AFFILIATE_APIFY]" target="_blank" rel="noopener sponsored">Apify</a> connector (<code>harvestapi/linkedin-post-search</code>, no LinkedIn login) on the competitors' official company pages, plus a lighter run on posts that mention them.</span></li>
+    <li><span><strong>Claude reads LinkedIn and the press.</strong> LinkedIn blocks AI tools, so Claude uses the <a href="https://apify.com/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=use-case&amp;utm_content=ai-competitor-market-watch-apify" target="_blank" rel="noopener sponsored">Apify</a> connector (<code>harvestapi/linkedin-post-search</code>, no LinkedIn login) on the competitors' official company pages, plus a lighter run on posts that mention them.</span></li>
     <li><span><strong>One Google Sheet is the single source of truth.</strong> Same columns for every tool, and a reliability column that only accepts ✅ or ⚠️.</span></li>
     <li><span><strong>Claude becomes editor-in-chief.</strong> It merges duplicates (the same news in two sources = ✅), keeps facts apart from interpretation, and flags any source that came back empty.</span></li>
     <li><span><strong>The report arrives on its own.</strong> A Claude scheduled task runs every Monday at 07:00 and sends a phone notification.</span></li>
