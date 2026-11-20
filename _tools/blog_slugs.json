@@ -90,5 +90,9 @@
  "gemini-tasks-free-ai-agent-calls-your-business": {
   "es": "gemini-tasks-agente-ia-gratis-llama-tu-negocio",
   "it": "gemini-tasks-agente-ia-gratis-chiama-tua-attivita"
+ },
+ "chatgpt-for-accounting-quickbooks-xero-small-business": {
+  "es": "chatgpt-contabilidad-quickbooks-xero-pymes",
+  "it": "chatgpt-contabilita-quickbooks-xero-piccole-imprese"
  }
 }
