@@ -94,5 +94,9 @@
  "chatgpt-for-accounting-quickbooks-xero-small-business": {
   "es": "chatgpt-contabilidad-quickbooks-xero-pymes",
   "it": "chatgpt-contabilita-quickbooks-xero-piccole-imprese"
+ },
+ "ai-competitor-monitoring-claude-grok-apify": {
+  "es": "vigilancia-competidores-ia",
+  "it": "monitoraggio-concorrenti-ia"
  }
 }
