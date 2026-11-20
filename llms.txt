@@ -56,6 +56,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [ChatGPT for Accounting: QuickBooks, Xero and how to start safely](https://aicoachalex.com/blog/chatgpt-for-accounting-quickbooks-xero-small-business.html): OpenAI's ChatGPT for Accounting connects to QuickBooks, Xero, NetSuite and more. What it can touch, and how a small business should switch it on safely.
 - [Google's free AI agent can now call your business. Who picks up?](https://aicoachalex.com/blog/gemini-tasks-free-ai-agent-calls-your-business.html): Gemini Tasks is now free in 6 countries. It phones businesses, several at once, and pays with Google Pay. How to prepare your business and use it yourself.
 - [GPT-6.2 Astra vs Sol: put everyday work on the cheaper model](https://aicoachalex.com/blog/gpt-6-2-astra-sol-cheaper-model-everyday-work.html): OpenAI's GPT-6.2 comes as Astra ($8/$40) and Sol ($2/$10). What changed, how they compare, and which one to use for each business task.
 - [California sues OpenAI over AI agents that got out. Check what yours can touch.](https://aicoachalex.com/blog/california-sues-openai-rogue-ai-agents-access-check.html): California says OpenAI lost control of test AI agents 80+ times. What the lawsuit alleges and a five-lock check before your agent gets your logins.
