@@ -39,7 +39,7 @@ UI = {
  "es": dict(
     base="/es/con-quien-trabajo/", html_lang="es", locale="es_ES", home="/index.es.html", home_name="Inicio",
     hub_name="Con quién trabajo", hub_h1='Con quién <em>trabajo</em>',
-    hub_title="Con Quién Trabajo: Clientes de Coaching de IA por Sector | AI Coach Alex",
+    hub_title="Con Quién Trabajo: Clientes de Coaching de IA por Sector",
     hub_desc="Clientes reales y anónimos de coaching de IA: eventos, electricistas, construcción, clínicas, CEOs, agentes inmobiliarios y más. Un día en la vida de cada uno.",
     hub_eyebrow="13 talleres · 4 barrios · casos reales",
     hub_intro="Una pequeña ciudad de negocios reales, cada uno con su taller de IA. Entra para ver un día en la vida de ese negocio, qué construimos con IA y su primer logro.",

@@ -16,8 +16,10 @@ Rules it enforces (each one maps to a Google Search Console "not indexed" reason
   3. Every indexable page IS in sitemap.xml, and every sitemap URL exists as a file.
   4. ES/IT pages declare hreflang alternates.
   5. Every indexable page has at least one internal link pointing to it (no orphans).
+  6. <title> <= 70 chars and meta description present and <= 160 chars (Ahrefs site-audit limits).
 """
 import collections
+import html as htmllib
 import os
 import re
 import subprocess
@@ -126,6 +128,15 @@ def main():
             problems.append(f"{rel}: canonical points to {canon[0]} - should be {url}")
         if url not in in_sitemap:
             problems.append(f"{rel}: indexable but missing from sitemap.xml")
+        t = re.search(r"<title>(.*?)</title>", head, re.S)
+        t = htmllib.unescape(t.group(1).strip()) if t else ""
+        if not t or len(t) > 70:
+            problems.append(f"{rel}: <title> is {len(t)} chars (max 70, aim for 60)")
+        d = re.search(r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']*)', head)
+        if not d:
+            problems.append(f"{rel}: missing meta description")
+        elif len(htmllib.unescape(d.group(1))) > 160:
+            problems.append(f"{rel}: meta description is {len(htmllib.unescape(d.group(1)))} chars (max 160, aim for 155)")
         if re.search(r"\.(es|it)\.html$|^(es|it)/", rel) and "hreflang=" not in head:
             problems.append(f"{rel}: ES/IT page without hreflang alternates")
         if inbound[url] == 0 and url != BASE:

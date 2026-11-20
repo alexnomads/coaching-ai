@@ -69,6 +69,41 @@ def link_versions(slug):
         p.write_text(s)
 
 
+
+TITLE_SUFFIX = " — AI Coach Alex"
+
+
+def _shorten(text, limit):
+    """Cut text to <= limit chars at a sentence/word boundary (used instead of failing the daily job)."""
+    if len(text) <= limit:
+        return text
+    cut = text[:limit - 1]
+    for sep in (". ", ": ", " — ", " - ", "; ", ", "):
+        i = cut.rfind(sep)
+        if i >= 30:
+            return cut[:i].rstrip(" .:;,-—")
+    return cut.rsplit(" ", 1)[0].rstrip(" .:;,-—") + "…"
+
+
+def seo_meta(m):
+    """Return the <title> text and validate lengths (Ahrefs/Google: title <= 70, description <= 160).
+
+    Over-long values are auto-shortened with a WARNING (a daily job must never fail on length): shorten
+    "title" (aim for <= 60 chars; "og_title" can stay long) or "description" (aim for <= 155) in meta.json.
+    """
+    core = re.sub(r"\s*\((?:AI news|Noticias IA|Notizie IA)?\s*\d{1,2} \w{3,4}\.? 20\d\d\)", "", m["title"]).strip()
+    if len(core + TITLE_SUFFIX) <= 70:
+        page_title = core + TITLE_SUFFIX
+    elif len(core) <= 70:
+        page_title = core
+    else:
+        page_title = _shorten(core, 70)
+        print(f'WARNING: meta.json "title" is {len(core)} chars; <title> shortened to "{page_title}". Use <= 60 next time ("og_title" can stay long).')
+    if len(m["description"]) > 160:
+        m["description"] = _shorten(m["description"], 157)
+        print(f'WARNING: meta.json "description" was over 160 chars; shortened. Keep it <= 155 next time.')
+    return page_title
+
 def main(meta_path, article_path):
     m = json.loads(pathlib.Path(meta_path).read_text())
     slug, lang = m["slug"], m["lang"]
@@ -99,7 +134,7 @@ def main(meta_path, article_path):
                   f"b.textContent='{L['copied']}';setTimeout(function(){{b.textContent='{L['copy']}'}}")
 
     # head metadata
-    s = re.sub(r"<title>.*?</title>", f"<title>{esc(m['title'])} — AI Coach Alex</title>", s, count=1)
+    s = re.sub(r"<title>.*?</title>", lambda _: f"<title>{esc(seo_meta(m))}</title>", s, count=1)
     for prop in ["og:title", "twitter:title"]:
         s = re.sub(rf'(<meta (?:property|name)="{prop}" content=")[^"]*', rf"\g<1>{esc(m['og_title'])}", s)
     for prop in ["description", "og:description", "twitter:description"]:

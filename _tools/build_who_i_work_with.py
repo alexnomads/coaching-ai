@@ -181,7 +181,34 @@ def footer(lang):
 </div></footer>"""
 
 
+def first_published(canonical):
+    """Date the page's file first appeared in git (stable across rebuilds); TODAY for brand-new pages."""
+    import subprocess
+    rel = canonical.replace(SITE + "/", "")
+    rel = rel + "index.html" if rel.endswith("/") or rel == "" else rel
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out = subprocess.run(["git", "log", "--diff-filter=A", "--follow", "--format=%cs", "--", rel],
+                         cwd=root, capture_output=True, text=True).stdout.split()
+    return out[-1] if out else TODAY
+
+
+def with_article(schema, lang, title, desc, canonical):
+    """Content pages (a WebPage node in the graph) also get an Article node, so search and AI
+    engines see headline, author and dates. Hub/collection pages are left as they are."""
+    graph = schema.get("@graph") if isinstance(schema, dict) else None
+    if not graph or not any(n.get("@type") == "WebPage" for n in graph):
+        return schema
+    if any(n.get("@type") in ("Article", "BlogPosting", "NewsArticle") for n in graph):
+        return schema
+    graph.append({"@type": "Article", "@id": canonical + "#article", "headline": title, "description": desc,
+                  "url": canonical, "mainEntityOfPage": {"@id": canonical}, "inLanguage": lang, "image": SHARE,
+                  "datePublished": first_published(canonical), "dateModified": TODAY,
+                  "author": {"@id": SITE + "/#alessandro"}, "publisher": {"@id": SITE + "/#alessandro"}})
+    return schema
+
+
 def page(lang, title, desc, canonical, alts, schema, body, extra_js=""):
+    schema = with_article(schema, lang, title, desc, canonical)
     u = UI[lang]
     alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{h}">\n' for l, h in alts)
     og_alt = "".join(f'<meta property="og:locale:alternate" content="{UI[l]["locale"]}">\n' for l in LANGS if l != lang)
