@@ -62,3 +62,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-18 | instagram | 22 Hidden costs | S9 | OpenAI GPT-6.2 Astra + Sol | Your biggest AI cost isn't the model.
 2026-11-19 | blog-daily | 3 Industry take | S2 (mention) | Google Tasks in Gemini free in 6 countries, agentic calling + Google Pay (Unite.AI/Android Central, 17 Nov) + Anthropic IPO $83 + Sierra $30B talks + Genie 4 | Google's free AI agent can now call your business. Who picks up?
 2026-11-19 | linkedin | 39 Start-over advice | S7 | Gemini Tasks free calling (17 Nov) + Sierra $1.5B at ~$30B talks (AI Weekly, 18 Nov) | This week, answering the phone became an AI skill.
+2026-11-20 | blog-daily | 3 Industry take | S2, S8 (mentions) | OpenAI ChatGPT for Accounting (QuickBooks/Xero/NetSuite plugins, 18 Nov) + Citi/Citizens/PNC AI-agent liability (TechCrunch) + Gemini 4 Neon + Anthropic opens $111.50 | ChatGPT can now open your books. Start it on read-only.
+2026-11-20 | linkedin | 5 Objection handling | S8 | ChatGPT for Accounting (18 Nov) | The best AI users I coach are the ones who distrust it.
+2026-11-20 | instagram | 5 Objection handling | S8 | ChatGPT for Accounting (18 Nov) | "AI will make mistakes." So do people.
