@@ -125,7 +125,8 @@ def nav(lang, alts):
     sw = lang_switch(lang, alts)
     if lang == "en":
         courses = ('<a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a>'
-                   '<a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a>')
+                   '<a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a>'
+                   '<a href="/ai-for-your-finances.html">AI for Your Finances</a><a href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a>')
         mob = courses.replace('<a href=', '<a class="sn-mob-course" href=')
         return f"""<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
   <div class="sn-in">
