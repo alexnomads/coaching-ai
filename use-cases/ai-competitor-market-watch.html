@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Competitor Monitoring: Automated Weekly Market Watch | Claude, Grok, Apify</title>
+<meta name="description" content="Your competitors&#x27; week, on your desk every Monday at 8:00. A real case: Grok reads X, Claude and Apify read LinkedIn and the press, one sheet, one report. ~$0.20 a week.">
+<link rel="canonical" href="https://aicoachalex.com/use-cases/ai-competitor-market-watch.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<meta property="og:site_name" content="AI Coach Alex">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Your competitors' week, on your desk every Monday at 8:00">
+<meta property="og:description" content="Your competitors&#x27; week, on your desk every Monday at 8:00. A real case: Grok reads X, Claude and Apify read LinkedIn and the press, one sheet, one report. ~$0.20 a week.">
+<meta property="og:url" content="https://aicoachalex.com/use-cases/ai-competitor-market-watch.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/ai-competitor-monitoring-claude-grok-apify/cover-blog-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="One report, three AI tools, $0.20 a week: the Claude, Grok and Apify market watch workflow">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your competitors' week, on your desk every Monday at 8:00">
+<meta name="twitter:description" content="Your competitors&#x27; week, on your desk every Monday at 8:00. A real case: Grok reads X, Claude and Apify read LinkedIn and the press, one sheet, one report. ~$0.20 a week.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/ai-competitor-monitoring-claude-grok-apify/cover-blog-1200x630.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="theme-color" content="#f8f6f1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/wiw.css?v=6">
+
+<style id="usecase-css">
+.uc-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:start;padding:1rem 0 2.5rem}
+.uc-hero h1{font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1.02;margin:.6rem 0 1.2rem}
+.uc-hero h1 em{background:#9fe870;color:#0d0c0a;padding:0 .12em;border-radius:.08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.uc-card{background:#0d0c0a;color:#f8f6f1;border-radius:14px;padding:1.6rem 1.6rem 1.2rem}
+.uc-card .eyebrow{color:#9fe870}
+.uc-card ol{list-style:none;margin:.9rem 0 0;padding:0}
+.uc-card li{display:grid;grid-template-columns:4.2rem 1fr;gap:.6rem;padding:.7rem 0;border-top:1px solid rgba(248,246,241,.14);font-size:.95rem;line-height:1.45}
+.uc-card time{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem;color:#9fe870;padding-top:.15rem}
+.uc-fig{margin:1.5rem 0 0}
+.uc-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(13,12,10,.12)}
+.uc-fig figcaption{font-size:.85rem;color:#6f6b64;margin-top:.6rem}
+.uc-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem}
+.uc-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:1.5rem}
+.uc-box{border:1.5px solid #0d0c0a;border-radius:12px;padding:1.3rem 1.3rem 1.1rem;background:#f8f6f1}
+.uc-box h3{font-family:'Fraunces',serif;font-size:1.2rem;line-height:1.2;margin:.4rem 0 .5rem}
+.uc-box p{font-size:.97rem;line-height:1.55;color:#4a4740;margin:0}
+.uc-box .eyebrow{font-size:.7rem}
+.uc-steps{counter-reset:s;list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.8rem}
+.uc-steps li{counter-increment:s;display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;align-items:start;font-size:1.02rem;line-height:1.55}
+.uc-steps li::before{content:counter(s,decimal-leading-zero);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.8rem;background:#9fe870;border-radius:6px;padding:.25rem 0;text-align:center}
+.uc-lesson time{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#163300}
+.uc-stat{background:#9fe870;border-color:#9fe870}
+.uc-stat.dark{background:#0d0c0a;border-color:#0d0c0a;color:#f8f6f1}
+.uc-stat.dark p{color:#c9c5bd}
+.uc-stat b{display:block;font-family:'Fraunces',serif;font-size:2.3rem;font-weight:900;line-height:1;letter-spacing:-.03em}
+.uc-stat.dark b{color:#9fe870}
+.uc-bump{border-left:5px solid #9fe870;padding:.2rem 0 .2rem 1.1rem;margin:1rem 0}
+.uc-bump p{margin:0;font-size:1.02rem;line-height:1.6}
+.uc-read{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+code{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.88em;background:rgba(13,12,10,.06);padding:.05em .3em;border-radius:4px}
+@media (max-width:1000px){.uc-hero{grid-template-columns:1fr;gap:1.5rem}.uc-grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.uc-grid3,.uc-grid4{grid-template-columns:1fr}.uc-stat b{font-size:2rem}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://aicoachalex.com/#alessandro",
+   "name": "Alessandro Capezza",
+   "alternateName": "AI Coach Alex",
+   "jobTitle": "AI Coach",
+   "url": "https://aicoachalex.com/",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Barcelona",
+    "addressCountry": "ES"
+   },
+   "sameAs": [
+    "https://www.instagram.com/alexislimitless/",
+    "https://www.youtube.com/@alexislimitless",
+    "https://www.linkedin.com/in/alessandrocapezza/",
+    "https://x.com/alexNomads"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html",
+   "url": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html",
+   "name": "AI Competitor Monitoring: an Automated Weekly Market Watch with Claude, Grok and Apify",
+   "description": "A real case: an automated weekly competitor market watch for a CEO. Grok reads X, Claude and Apify read LinkedIn and the press, one Google Sheet, one Monday report. About $0.20 a week.",
+   "inLanguage": "en",
+   "dateModified": "2026-11-20",
+   "primaryImageOfPage": "https://aicoachalex.com/assets/blog/ai-competitor-monitoring-claude-grok-apify/cover-blog-1200x630.png",
+   "breadcrumb": {
+    "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html#service"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     ".answer"
+    ]
+   }
+  },
+  {
+   "@type": "Service",
+   "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html#service",
+   "name": "AI competitor monitoring: automated weekly market watch",
+   "serviceType": "AI coaching",
+   "description": "One-to-one coaching to build an automated weekly competitor report: Grok reads X, Claude reads the press and public LinkedIn company pages through Apify, all findings go into one Google Sheet, and Claude writes one report every Monday on a schedule.",
+   "provider": {
+    "@id": "https://aicoachalex.com/#alessandro"
+   },
+   "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "SME owners and executives"
+   },
+   "areaServed": "Worldwide",
+   "availableLanguage": [
+    "en",
+    "es",
+    "it"
+   ],
+   "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://alessandrocapezza.youcanbook.me/"
+   },
+   "offers": {
+    "@type": "Offer",
+    "name": "AI diagnostic (50 minutes, 1:1)",
+    "price": "49",
+    "priceCurrency": "EUR",
+    "url": "https://alessandrocapezza.youcanbook.me/",
+    "availability": "https://schema.org/InStock"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "AI competitor market watch",
+     "item": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://aicoachalex.com/use-cases/ai-competitor-market-watch.html#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is AI competitor monitoring?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AI competitor monitoring means AI tools collect what your competitors publish (press, LinkedIn, X) into one place every week, tag each item as confirmed or to verify, and write you a short report. You read it; you don't run it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does an automated market watch cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In this engagement the only extra cost is LinkedIn data through Apify: about $0.20 a week (around $0.002 per post), capped at $0.50 a week and $5 a month. Claude and Grok run on paid plans the client already had, and Google Sheets is free."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can AI read my competitors' LinkedIn posts?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most AI chat tools can't read LinkedIn posts directly. Claude can use the Apify connector, which collects public posts from company pages without a LinkedIn login. We only watch official company pages and posts that mention them, at low volume."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it allowed under LinkedIn and X terms?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Both platforms restrict automated collection, and their terms change. This setup only reads public posts, never logs in to anyone's account, never posts or messages, and keeps volumes low. Check the current terms for your own use, and ask your lawyer if your business depends on it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What about data privacy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Only public information about competitor companies is collected. The shared sheet lives in your own Google account, and the report goes only to you. Nothing about your own company or clients needs to be shared with the tools."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which tools do I need?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Claude (writing, checking, merging and the weekly schedule), Grok (reading X), Apify (reaching public LinkedIn posts) and one Google Sheet. If you already pay for Claude and Grok, the rest is a few cents a week."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need to know how to code?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Everything is built with written instructions, a spreadsheet, connectors and scheduled tasks. This one was built in four 50-minute lessons with a CEO, not a developer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can the report be in my language?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The client's report is written in his own language, whatever language the sources are in."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark-96.webp" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><a class="sn-dd-t" href="/courses.html" aria-haspopup="true" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></a><div class="sn-dd-m"><a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a>
+      <a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/use-cases/ai-competitor-market-watch.html" class="on" hreflang="en">EN</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <a class="sn-mob-sub" href="/courses.html">Courses →</a>
+    <a class="sn-mob-course" href="/personal-ai-agent.html">Your Own AI</a><a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a>
+    <a href="/who-i-work-with/">Who I Work With</a>
+    <a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/use-cases/ai-competitor-market-watch.html" class="on" hreflang="en">EN</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<main>
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">AI competitor market watch</li></ol></nav>
+  <header class="uc-hero">
+    <div>
+      <div class="eyebrow">Use case · AI competitor monitoring</div>
+      <h1 class="display">Your competitors' week, on your desk every Monday at <em>8:00</em></h1>
+      <div class="ws-meta"><span class="win"><small>Real engagement</small>Live after 4 lessons</span><span class="chip">Real estate</span><span class="chip">7 competitors</span><span class="chip">4 markets</span></div>
+      <p class="answer"><b>In short</b>An automated market watch gives each AI tool one job. Grok reads X. Claude reads the press and, through the Apify connector, public LinkedIn company pages. Everything lands in one Google Sheet, and every Monday Claude merges duplicates, tags each item ✅ confirmed or ⚠️ to verify, and sends one report. For this CEO the extra data cost is about $0.20 a week.</p>
+      <div class="hub-ctas"><a class="btn btn-dark" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="usecase-market-watch-hero-book">Book a diagnostic — 49€</a><a class="btn btn-line" href="#how">See how it works ↓</a></div>
+    </div>
+    <aside class="uc-card" aria-label="The weekly rhythm">
+      <span class="eyebrow">The weekly rhythm</span>
+      <ol>
+        <li><time>SUN 20:00</time><span>Grok reads competitors' X posts and writes them into the sheet.</span></li>
+        <li><time>WEEKLY</time><span>Claude collects press and LinkedIn posts via Apify into the same sheet.</span></li>
+        <li><time>MON 07:00</time><span>Claude merges, checks and writes the report.</span></li>
+        <li><time>MON 08:00</time><span>A phone notification. The CEO opens it and reads.</span></li>
+      </ol>
+    </aside>
+  </header>
+</div>
+
+<section class="section wrap" aria-labelledby="h-problem">
+  <h2 class="display" id="h-problem">The problem: competitor news arrives late, or by accident</h2>
+  <p class="lead">The CEO's brief was one line: every Monday, tell me what my competitors did last week. The news existed. It was just in three places nobody had time to read.</p>
+  <div class="uc-grid3">
+    <div class="uc-box"><span class="eyebrow">Press</span><h3>Thin and late</h3><p>Local coverage of his market is sparse. By the time a story runs, competitors announced it days or weeks earlier.</p></div>
+    <div class="uc-box"><span class="eyebrow">LinkedIn</span><h3>Where they announce first</h3><p>Launches and partnerships appear on company pages first, and LinkedIn blocks AI tools from reading posts.</p></div>
+    <div class="uc-box"><span class="eyebrow">X</span><h3>Fast, but noisy</h3><p>Sales events and conference appearances show up on X before anywhere else, buried in noise.</p></div>
+  </div>
+  <p class="lead" style="margin-top:1.5rem">Hearing about a rival's launch three weeks late means answering questions in meetings you should have walked into prepared.</p>
+</section>
+
+<section class="section wrap" id="how" aria-labelledby="h-how">
+  <h2 class="display" id="h-how">How it works: one notebook, three specialists</h2>
+  <p class="lead">Each tool does the one job it's best at. They all write to the same Google Sheet. One of them writes the final answer.</p>
+  <figure class="uc-fig">
+    <picture>
+      <source media="(max-width: 640px)" srcset="/assets/blog/ai-competitor-monitoring-claude-grok-apify/flow-v.webp" width="1080" height="1100">
+      <img src="/assets/blog/ai-competitor-monitoring-claude-grok-apify/flow-h.webp" width="1600" height="620" loading="lazy" alt="Workflow diagram: X posts go to Grok on Sunday at 20:00; LinkedIn official pages and the press go to Apify and Claude; both write into one Google Sheet that tags items confirmed or to verify; on Monday at 07:00 Claude, as editor-in-chief, writes the CEO report, which arrives at 08:00 with a phone alert.">
+    </picture>
+    <figcaption>The workflow. The green box is the shared notebook every tool writes to.</figcaption>
+  </figure>
+  <ol class="uc-steps">
+    <li><span><strong>Grok reads X.</strong> Every Sunday at 20:00 it writes competitors' X posts into the sheet as rows.</span></li>
+    <li><span><strong>Claude reads LinkedIn and the press.</strong> LinkedIn blocks AI tools, so Claude uses the <a href="https://apify.com/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=use-case&amp;utm_content=ai-competitor-market-watch-apify" target="_blank" rel="noopener sponsored">Apify</a> connector (<code>harvestapi/linkedin-post-search</code>, no LinkedIn login) on the competitors' official company pages, plus a lighter run on posts that mention them.</span></li>
+    <li><span><strong>One Google Sheet is the single source of truth.</strong> Same columns for every tool, and a reliability column that only accepts ✅ or ⚠️.</span></li>
+    <li><span><strong>Claude becomes editor-in-chief.</strong> It merges duplicates (the same news in two sources = ✅), keeps facts apart from interpretation, and flags any source that came back empty.</span></li>
+    <li><span><strong>The report arrives on its own.</strong> A Claude scheduled task runs every Monday at 07:00 and sends a phone notification.</span></li>
+  </ol>
+</section>
+
+<section class="section wrap" aria-labelledby="h-path">
+  <h2 class="display" id="h-path">The 4-lesson path</h2>
+  <p class="lead">Four 50-minute lessons, one working system. No code.</p>
+  <div class="uc-grid4">
+    <div class="uc-box uc-lesson"><time>Lesson 1</time><h3>Claude vs Grok, same brief</h3><p>Claude wrote the better report: clear structure, facts apart from opinion, every item ✅ or ⚠️. Grok found two moves that only existed on X. Each tool got a job.</p></div>
+    <div class="uc-box uc-lesson"><time>Lesson 2</time><h3>One shared sheet</h3><p>Grok writes X rows on Sundays. Claude reaches LinkedIn through Apify. Claude itself proposed splitting one $0.29 search into two lighter runs.</p></div>
+    <div class="uc-box uc-lesson"><time>Lesson 3</time><h3>Claude as editor-in-chief</h3><p>Merge, tag, write one report in the CEO's language. First run: 14 new rows for about $0.20.</p></div>
+    <div class="uc-box uc-lesson"><time>Lesson 4</time><h3>Autopilot</h3><p>A scheduled task every Monday at 07:00 and a phone notification. The CEO's only job: open and read.</p></div>
+  </div>
+</section>
+
+<section class="section wrap" aria-labelledby="h-numbers">
+  <h2 class="display" id="h-numbers">Real numbers</h2>
+  <p class="lead">From the client's own accounts. The AI subscriptions for Claude and Grok are separate and were already in place.</p>
+  <div class="uc-grid4">
+    <div class="uc-box uc-stat"><b>≈ $0.20</b><p>a week for LinkedIn data via Apify, about $0.002 per post</p></div>
+    <div class="uc-box uc-stat dark"><b>$0.50 · $5</b><p>weekly cap and monthly limit, so a runaway search can't surprise anyone</p></div>
+    <div class="uc-box uc-stat"><b>4 × 50 min</b><p>lessons to build it, from first test to autopilot</p></div>
+    <div class="uc-box uc-stat dark"><b>1 page</b><p>to read on Monday morning, about five minutes</p></div>
+  </div>
+</section>
+
+<section class="section wrap" aria-labelledby="h-get">
+  <div class="twocol">
+    <div>
+      <h2 class="display" id="h-get" style="font-size:clamp(1.8rem,3vw,2.4rem)">What you get every Monday</h2>
+      <ul class="gets">
+        <li>3 headlines: what mattered this week</li>
+        <li>Competitor by competitor, each item ✅ confirmed or ⚠️ to verify</li>
+        <li>Signals from X and LinkedIn, before the press notices</li>
+        <li>The week by country or market</li>
+        <li>What it means for your company, kept apart from the facts</li>
+        <li>3 questions for your team's Monday meeting</li>
+        <li>A footer with rows per source and the week's data cost</li>
+      </ul>
+    </div>
+    <figure class="uc-fig" style="margin:0">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/assets/blog/ai-competitor-monitoring-claude-grok-apify/report-v.webp" width="1080" height="1350">
+        <img src="/assets/blog/ai-competitor-monitoring-claude-grok-apify/report-h.webp" width="1600" height="900" loading="lazy" alt="Anatomy of the Monday report: 3 headlines, competitor by competitor, signals from X and LinkedIn, by country, what it means for us, 3 questions for the team, and a footer with rows per source and the Apify cost.">
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<section class="section wrap" aria-labelledby="h-bumps">
+  <h2 class="display" id="h-bumps">What broke, and how we fixed it</h2>
+  <div class="uc-bump"><p><strong>Grok's first Sunday run failed silently.</strong> No error, no rows. A quiet week and a broken pipe look the same. Fix: if the X rows are missing, the report says so at the top.</p></div>
+  <div class="uc-bump"><p><strong>An X row arrived with "Visitor" in the reliability column.</strong> Fix: the column became a dropdown that only accepts ✅ or ⚠️.</p></div>
+  <p class="lead" style="margin-top:1rem">The lesson: one AI tool rarely does everything. Give each tool the job it's best at, give them one shared notebook, and let one of them write the final answer.</p>
+  <div class="uc-read"><a class="btn btn-line" href="/blog/ai-competitor-monitoring-claude-grok-apify.html">Read the full story →</a><a class="btn btn-line" href="/blog/vigilancia-competidores-ia.es.html" hreflang="es">En español</a><a class="btn btn-line" href="/blog/monitoraggio-concorrenti-ia.it.html" hreflang="it">In italiano</a></div>
+</section>
+
+<section class="faq wrap" id="faq"><h2 class="display">Questions about AI competitor monitoring</h2><details><summary>What is AI competitor monitoring?</summary><p>AI competitor monitoring means AI tools collect what your competitors publish (press, LinkedIn, X) into one place every week, tag each item as confirmed or to verify, and write you a short report. You read it; you don&#x27;t run it.</p></details><details><summary>How much does an automated market watch cost?</summary><p>In this engagement the only extra cost is LinkedIn data through Apify: about $0.20 a week (around $0.002 per post), capped at $0.50 a week and $5 a month. Claude and Grok run on paid plans the client already had, and Google Sheets is free.</p></details><details><summary>Can AI read my competitors&#x27; LinkedIn posts?</summary><p>Most AI chat tools can&#x27;t read LinkedIn posts directly. Claude can use the Apify connector, which collects public posts from company pages without a LinkedIn login. We only watch official company pages and posts that mention them, at low volume.</p></details><details><summary>Is it allowed under LinkedIn and X terms?</summary><p>Both platforms restrict automated collection, and their terms change. This setup only reads public posts, never logs in to anyone&#x27;s account, never posts or messages, and keeps volumes low. Check the current terms for your own use, and ask your lawyer if your business depends on it.</p></details><details><summary>What about data privacy?</summary><p>Only public information about competitor companies is collected. The shared sheet lives in your own Google account, and the report goes only to you. Nothing about your own company or clients needs to be shared with the tools.</p></details><details><summary>Which tools do I need?</summary><p>Claude (writing, checking, merging and the weekly schedule), Grok (reading X), Apify (reaching public LinkedIn posts) and one Google Sheet. If you already pay for Claude and Grok, the rest is a few cents a week.</p></details><details><summary>Do I need to know how to code?</summary><p>No. Everything is built with written instructions, a spreadsheet, connectors and scheduled tasks. This one was built in four 50-minute lessons with a CEO, not a developer.</p></details><details><summary>Can the report be in my language?</summary><p>Yes. The client&#x27;s report is written in his own language, whatever language the sources are in.</p></details></section>
+
+<div class="wrap"><section class="book" aria-label="Your next step">
+  <div><h2 class="display">Build your own market watch</h2><p style="margin:0">Start with a 50-minute diagnostic. We write your competitor brief together and test it on two AI tools, so you see what each one finds before you build anything.</p><ul><li>1:1, online</li><li>Your competitors, your markets, your accounts</li><li>A written plan after the call</li></ul></div>
+  <div><div class="price">49€<small>50 minutes</small></div><a class="btn btn-dark" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="usecase-market-watch-end-book">Book Diagnostic →</a>
+  <p style="margin:.9rem 0 0;font-size:.9rem">Prefer Preply? <a href="https://preply.in/ALESSANDRO6EN35979626102?ts=17873109&amp;utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=use-case&amp;utm_content=ai-competitor-market-watch-preply" target="_blank" rel="noopener" data-cta="usecase-market-watch-preply">Book a lesson with me on Preply →</a></p></div>
+</section></div>
+</main>
+<footer class="foot"><div class="wrap foot-in">
+  <div class="foot-brand"><img src="/assets/aicoachalex-mark-96.webp" alt="" width="48" height="48" loading="lazy"><div><b>Alessandro Capezza</b><span>AI Coach · Barcelona</span></div></div>
+  <nav aria-label="Footer"><a href="/who-i-work-with/">Who I work with</a><a href="/ai-lessons-for-kids/">AI for Kids</a><a href="/ai-for-business-owners.html">AI for Business Owners</a><a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/openclaw-ai-agent-setup.html">OpenClaw Agent Setup</a><a href="/blog/">Blog</a><a href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/alexislimitless/" target="_blank" rel="noopener">Instagram</a><a href="https://x.com/alexNomads" target="_blank" rel="noopener">X</a></nav>
+  <p class="copy">Use cases come from real coaching engagements. Names, companies and places are removed. Contact: aicoachalex@gmail.com</p>
+</div></footer>
+<!-- ============================================================
+  BOOKING INTERSTITIAL — paste this whole block right before </body>
+  in index.html (and any other page that has a "Book Diagnostic" link).
+
+  What it does:
+  1. Watches every link that goes to youcanbook.me
+  2. When someone clicks one, remembers it (this tab only)
+  3. When they come back to this tab later, asks "Did you book?"
+     - Yes -> just closes, no nagging again this session
+     - No  -> offers the newsletter, captures email into your Google Sheet
+  4. Doesn't show if they never left, or already answered
+
+  SETUP: replace YOUR_FORM_ID and YOUR_ENTRY_ID below with the values
+  from your Google Form's pre-filled link.
+============================================================ -->
+<style>
+  #aicoach-interstitial-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 13, 0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  #aicoach-interstitial-card {
+    background: #F7F4EF;
+    color: #0F0F0D;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 14px;
+    padding: 32px 28px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  #aicoach-interstitial-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+  }
+  #aicoach-interstitial-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 14px 0;
+  }
+  #aicoach-interstitial-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #3a3a38;
+    margin: 0 0 20px 0;
+  }
+  .aicoach-btn-row {
+    display: flex;
+    gap: 10px;
+  }
+  .aicoach-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+  }
+  .aicoach-btn-yes {
+    background: #0F0F0D;
+    color: #99E46B;
+  }
+  .aicoach-btn-no {
+    background: transparent;
+    color: #0F0F0D;
+    border: 1px solid #0F0F0D;
+  }
+  #aicoach-email-panel {
+    display: none;
+    margin-top: 18px;
+  }
+  #aicoach-email-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  #aicoach-email-submit {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    background: #172D07;
+    color: #99E46B;
+  }
+  #aicoach-thankyou-msg {
+    display: none;
+    font-size: 15px;
+    color: #172D07;
+    font-weight: 600;
+  }
+  .aicoach-optional-label {
+    font-size: 12px;
+    color: #666;
+    margin: 14px 0 8px;
+    font-weight: 600;
+  }
+  #aicoach-name-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .aicoach-radio-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #3a3a38;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .aicoach-radio-row input[type="radio"] {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  #aicoach-situation-other-input {
+    width: calc(100% - 26px);
+    margin-left: 26px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    display: none;
+  }
+</style>
+
+<div id="aicoach-interstitial-overlay">
+  <div id="aicoach-interstitial-card">
+    <button id="aicoach-interstitial-close" aria-label="Close">&times;</button>
+
+    <div id="aicoach-question-panel">
+      <h3>Did you book your call?</h3>
+      <p>Just checking in — want to make sure you got taken care of.</p>
+      <div class="aicoach-btn-row">
+        <button class="aicoach-btn aicoach-btn-yes" id="aicoach-btn-yes">Yes, all booked</button>
+        <button class="aicoach-btn aicoach-btn-no" id="aicoach-btn-no">Not yet</button>
+      </div>
+    </div>
+
+    <div id="aicoach-email-panel">
+      <h3>Still thinking it over?</h3>
+      <p>Take your time. In the meantime, get weekly AI Superpowers — practical AI tips for your career, once a week, no fluff.</p>
+      <input type="email" id="aicoach-email-input" placeholder="you@email.com" />
+      <input type="text" id="aicoach-name-input" placeholder="Your name (optional)" />
+      <div class="aicoach-optional-label">Your current situation (optional)</div>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am working for a company"> I am working for a company</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am an entrepreneur"> I am an entrepreneur</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="I am studying / I am looking for employment"> I am studying / I am looking for employment</label>
+      <label class="aicoach-radio-row"><input type="radio" name="aicoach-situation" value="__other_option__" id="aicoach-situation-other-radio"> Other:</label>
+      <input type="text" id="aicoach-situation-other-input" placeholder="Please specify" />
+      <button id="aicoach-email-submit">Send me the tips</button>
+    </div>
+
+    <div id="aicoach-thankyou-msg">You're in! 🎯</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var FORM_ID = '1FAIpQLSfH0CszjE1gNCxj6CSMX4WQsIQpt6AoHvbGvXo2LheBm6HNoQ';
+  var ENTRY_ID = '1582122762'; // Email field on the "AI SUPERPOWERS" form
+  var NAME_ENTRY_ID = '731407510';
+  var SITUATION_ENTRY_ID = '881740245';
+
+  var CLICK_KEY = 'aicoach_clicked_book_at';
+  var ANSWERED_KEY = 'aicoach_booking_answered';
+  var MIN_AWAY_MS = 4000; // ignore accidental instant-return clicks
+
+  function $(id) { return document.getElementById(id); }
+
+  // 1. Watch every link to youcanbook.me
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="youcanbook.me"]');
+    if (link) {
+      sessionStorage.setItem(CLICK_KEY, Date.now().toString());
+      sessionStorage.removeItem(ANSWERED_KEY);
+    }
+  });
+
+  // 2. When the tab becomes visible again, decide whether to ask
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState !== 'visible') return;
+
+    var clickedAt = sessionStorage.getItem(CLICK_KEY);
+    var alreadyAnswered = sessionStorage.getItem(ANSWERED_KEY);
+    if (!clickedAt || alreadyAnswered) return;
+
+    var elapsed = Date.now() - parseInt(clickedAt, 10);
+    if (elapsed < MIN_AWAY_MS) return;
+
+    $('aicoach-interstitial-overlay').style.display = 'flex';
+  });
+
+  function closeModal() {
+    $('aicoach-interstitial-overlay').style.display = 'none';
+  }
+
+  $('aicoach-interstitial-close').addEventListener('click', function() {
+    closeModal();
+  });
+
+  $('aicoach-btn-yes').addEventListener('click', function() {
+    sessionStorage.setItem(ANSWERED_KEY, 'yes');
+    // Optional: fire a non-PII GA4 signal that a booking was self-reported
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'self_reported_booking_yes' });
+    closeModal();
+  });
+
+  $('aicoach-btn-no').addEventListener('click', function() {
+    $('aicoach-question-panel').style.display = 'none';
+    $('aicoach-email-panel').style.display = 'block';
+  });
+
+  document.querySelectorAll('input[name="aicoach-situation"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      $('aicoach-situation-other-input').style.display =
+        (radio.value === '__other_option__' && radio.checked) ? 'block' : 'none';
+    });
+  });
+
+  $('aicoach-email-submit').addEventListener('click', function() {
+    var email = $('aicoach-email-input').value.trim();
+    var isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!isValid) {
+      $('aicoach-email-input').style.borderColor = '#c0392b';
+      return;
+    }
+
+    var formUrl = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
+    var params = ['entry.' + ENTRY_ID + '=' + encodeURIComponent(email)];
+
+    var name = $('aicoach-name-input').value.trim();
+    if (name) {
+      params.push('entry.' + NAME_ENTRY_ID + '=' + encodeURIComponent(name));
+    }
+
+    var situationRadio = document.querySelector('input[name="aicoach-situation"]:checked');
+    if (situationRadio) {
+      params.push('entry.' + SITUATION_ENTRY_ID + '=' + encodeURIComponent(situationRadio.value));
+      if (situationRadio.value === '__other_option__') {
+        var otherText = $('aicoach-situation-other-input').value.trim();
+        if (otherText) {
+          params.push('entry.' + SITUATION_ENTRY_ID + '.other_option_response=' + encodeURIComponent(otherText));
+        }
+      }
+    }
+
+    var body = params.join('&');
+
+    fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors', // Google Forms doesn't return CORS headers; this is expected and fine
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    }).catch(function() { /* no-cors means we can't read the response anyway */ });
+
+    // Non-PII GA4 signal — do NOT push the raw email into dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'newsletter_signup' });
+
+    sessionStorage.setItem(ANSWERED_KEY, 'no_email_captured');
+    $('aicoach-email-panel').style.display = 'none';
+    $('aicoach-thankyou-msg').style.display = 'block';
+    setTimeout(closeModal, 2200);
+  });
+})();
+</script>
+
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){if(window.matchMedia('(hover:hover)').matches||dd.classList.contains('open'))return;e.preventDefault();e.stopPropagation();dd.classList.add('open');t.setAttribute('aria-expanded','true');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+
+</body>
+</html>

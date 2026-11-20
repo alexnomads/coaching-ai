@@ -65,3 +65,5 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-20 | blog-daily | 3 Industry take | S2, S8 (mentions) | OpenAI ChatGPT for Accounting (QuickBooks/Xero/NetSuite plugins, 18 Nov) + Citi/Citizens/PNC AI-agent liability (TechCrunch) + Gemini 4 Neon + Anthropic opens $111.50 | ChatGPT can now open your books. Start it on read-only.
 2026-11-20 | linkedin | 5 Objection handling | S8 | ChatGPT for Accounting (18 Nov) | The best AI users I coach are the ones who distrust it.
 2026-11-20 | instagram | 5 Objection handling | S8 | ChatGPT for Accounting (18 Nov) | "AI will make mistakes." So do people.
+2026-11-20 | blog-weekly | 6 Customer win + 29 Behind the scenes + 33 Stealable template | S-new (anonymised real estate CEO) | own client engagement (Market Watch, lessons 3–27 Nov) | His competitors' week now lands on his desk every Monday at 8:00
+2026-11-23 | linkedin | 6 Customer win | S-new | own client engagement | My client heard about his competitors' moves weeks late. Now it arrives every Monday at 8:00.

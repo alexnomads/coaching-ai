@@ -18,6 +18,7 @@
 - [AI for sales professionals and business developers](https://aicoachalex.com/who-i-work-with/sales-professionals/): The Sales Pro Wanting an Edge, sales & business development, Europe. Salespeople get the most from AI in research and preparation: account research, call prep and first drafts of outreach. The human part stays the relationship and the judgement about what to say.
 - [AI for real estate agents](https://aicoachalex.com/who-i-work-with/real-estate-agents/): The Real Estate Agent, residential real estate, United Arab Emirates. Real estate agents get the most from AI when their leads and listings are clean first. With a working spreadsheet-based CRM connected to an AI workspace, the next step is marketing to existing contacts: a brand book, a landing page and messaging campaigns.
 - [AI career coaching for career changers](https://aicoachalex.com/who-i-work-with/career-changers/): The Career Changer, cross-industry transition, Spain. A career changer can use AI to research what target roles really pay and need, shortlist companies, and rewrite a varied background into one clear story. The value is the evidence, not a nicer CV.
+- [AI competitor monitoring: an automated weekly market watch](https://aicoachalex.com/use-cases/ai-competitor-market-watch.html): a real engagement with a real estate CEO. Grok reads X, Claude reads the press and public LinkedIn company pages through Apify, everything goes into one Google Sheet, and Claude writes one report every Monday. About $0.20 a week in data costs; built in four lessons, no code.
 
 ## AI lessons for kids (10–17)
 
@@ -56,6 +57,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [AI Competitor Monitoring with Claude, Grok and Apify: A Real Case Study](https://aicoachalex.com/blog/ai-competitor-monitoring-claude-grok-apify.html): How a real estate CEO gets an automated weekly competitor report from Claude, Grok, Apify and one Google Sheet: 4 lessons, real costs, what broke.
 - [ChatGPT for Accounting: QuickBooks, Xero and how to start safely](https://aicoachalex.com/blog/chatgpt-for-accounting-quickbooks-xero-small-business.html): OpenAI's ChatGPT for Accounting connects to QuickBooks, Xero, NetSuite and more. What it can touch, and how a small business should switch it on safely.
 - [Google's free AI agent can now call your business. Who picks up?](https://aicoachalex.com/blog/gemini-tasks-free-ai-agent-calls-your-business.html): Gemini Tasks is now free in 6 countries. It phones businesses, several at once, and pays with Google Pay. How to prepare your business and use it yourself.
 - [GPT-6.2 Astra vs Sol: put everyday work on the cheaper model](https://aicoachalex.com/blog/gpt-6-2-astra-sol-cheaper-model-everyday-work.html): OpenAI's GPT-6.2 comes as Astra ($8/$40) and Sol ($2/$10). What changed, how they compare, and which one to use for each business task.
