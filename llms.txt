@@ -40,6 +40,7 @@
 ## Courses and services
 
 - [About Alessandro Capezza](https://aicoachalex.com/about.html): Alessandro Capezza is the growth and product operator behind AI Coach Alex: Web3, gaming and AI startups, from early-stage strategy to GTM execution. Now helping professionals use AI as a force multiplier.
+- [AI × Crypto GTM case histories](https://aicoachalex.com/ai-crypto-gtm/): Alessandro Capezza's Web3 go-to-market work: LandVault Series B marketing (30+ partnerships incl. Chainlink and DappRadar), $200k+ in LAND sales for The Sandbox, Qubit Wallet GTM from zero (8.4% engagement; Polygon, Arbitrum, Optimism, Safe), GenLayer's AI video pipeline (550k organic views), and the six-agent GTM system he adapts for crypto teams.
 - [Personal AI Setup](https://aicoachalex.com/personal-ai-setup.html): Stop using AI like a smarter Google. Set it up as a working member of your team — with real skills, not prompt tricks.
 - [AI Tools Assessment for Business Owners](https://aicoachalex.com/ai-for-business-owners.html): A single paid session that tells a small business exactly which AI tools fix its actual bottlenecks — with a written report, a 4-day start plan, and a refund if it doesn't identify at least 5 hours/week.
 - [Your Own AI](https://aicoachalex.com/personal-ai-agent.html): Your own AI, for your own life. Remembers your family, drafts your week, keeps track of the boring stuff — in the messaging app you already use. No terminal, no software to install, no jargon.
