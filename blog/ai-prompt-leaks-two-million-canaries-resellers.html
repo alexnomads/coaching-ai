@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html">
+<title>2 million planted secrets show where your AI prompts really go — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="A researcher hid 2 million fake secrets in AI prompts. Three AI hosts were breached and keys were stolen. Six habits to keep your data safe.">
+<link rel="canonical" href="https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="2 million planted secrets show where your AI prompts really go">
+<meta property="og:description" content="A researcher hid 2 million fake secrets in AI prompts. Three AI hosts were breached and keys were stolen. Six habits to keep your data safe.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-11-22-ai-prompt-leaks/og.png">
+<meta property="article:published_time" content="2026-11-22">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2 million planted secrets show where your AI prompts really go">
+<meta name="twitter:description" content="A researcher hid 2 million fake secrets in AI prompts. Three AI hosts were breached and keys were stolen. Six habits to keep your data safe.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-11-22-ai-prompt-leaks/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html#article",
+   "headline": "2 million planted secrets show where your AI prompts really go",
+   "description": "A researcher hid 2 million fake secrets in AI prompts. Three AI hosts were breached and keys were stolen. Six habits to keep your data safe.",
+   "image": "https://aicoachalex.com/assets/blog/2026-11-22-ai-prompt-leaks/og.png",
+   "datePublished": "2026-11-22",
+   "dateModified": "2026-11-22",
+   "inLanguage": "en",
+   "keywords": "AI prompt leak, is it safe to paste passwords into ChatGPT, AI data privacy, zero data retention, AI router reseller, Dragos HD Moore canaries, AI supply chain security",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "2 million planted secrets show where your AI prompts really go",
+     "item": "https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What did the Dragos AI prompt research find?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "HD Moore of Dragos sent about two million AI prompts containing unique fake secrets and tracked their use. He found evidence that attackers had breached three AI hosting providers, around 200 planted AWS keys were exposed in late October, and some prompts were routed through undisclosed marketplaces or reached Chinese AI organisations."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it safe to paste passwords or API keys into ChatGPT or other AI tools?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Replace them with placeholders like [PASSWORD]. The AI doesn't need the real value to help, and this research shows secrets in prompts can be logged or stolen along the way. If you've already pasted one into a tool you're not sure about, change it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does \"zero data retention\" mean my prompts are never stored?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not reliably. Some compromised requests in the research were marked zero data retention, and the label didn't protect them from attackers already inside a host. Dragos advises treating retention promises as requirements to test, not guarantees."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Were ChatGPT, Claude or Gemini breached?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The research doesn't say so. The breached AI hosting providers weren't named, and the problems were in the chain of hosts, resellers and marketplaces that serve models for others. Using a model maker's own app keeps that chain short."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is an AI router or reseller?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A service that sits between an app and the AI model, choosing which company runs the model for each request, often to cut cost. Many multi-model apps and extensions rely on them, and each adds a company that can see your prompt."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How can I check which AI tools are safe for client data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "List every AI app, extension and automation you use, note which model each uses and who hosts it, and ask vendors in writing which companies process your prompts. Keep client data in tools that can answer clearly."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a><a href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/ai-prompt-leaks-two-million-canaries-resellers.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a><a class="sn-mob-course" href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a>
+    <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/blog/ai-prompt-leaks-two-million-canaries-resellers.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/index.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/index.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI News</span>
+      <span>7 min read</span>
+      <span>22 Nov 2026</span>
+      <span>By <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">2 million planted secrets show where your AI prompts <em>really</em> go</h1>
+    <p class="article-dek">A security researcher hid nearly two million fake passwords and keys inside AI prompts and watched where they turned up. Some were stolen from breached AI hosts, some were read days later, one surfaced in a company's internal chat 24 days on. Here's what happened, what it means if you use AI at work, and the six habits I'd adopt this week.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-11-22-ai-prompt-leaks/hero.webp" width="1600" height="900" alt="2 million planted secrets show where your prompts really go. About 2 million planted secrets, 3 breached AI hosts, about 200 AWS keys taken, and 24 days until one planted link surfaced elsewhere." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>HD Moore, chief research officer at the security firm Dragos, sent about two million AI prompts containing unique fake secrets (unused cloud keys, passwords, private links) and tracked where they went.</strong> He found evidence that attackers had breached three AI hosting providers, saw around 200 of the planted cloud keys exposed in late October, and found prompts routed through resellers and undisclosed marketplaces, some reaching Chinese AI companies. "Zero data retention" labels didn't stop it. If you use AI at work: never paste live passwords or keys, prefer tools that talk to the model maker directly, and ask every AI vendor who actually runs the model.</p>
+    </div>
+
+    <p>When clients ask me "is it safe to paste this into AI?", they usually picture one company: OpenAI, Google, Anthropic. This week's research shows that's often not the picture. Between you and the model there can be an app, a router, a marketplace and a reseller, and each one is a place your words can be logged, read or stolen.</p>
+
+    <p>Most of the people I coach will never touch an API. But plenty of the cheap "all models in one app" tools, browser extensions and plugins they use do. So this one is worth ten minutes.</p>
+
+    <h2>What did the AI prompt leak research find?</h2>
+
+    <p>Dragos published the research on 19 November, and <a href="https://www.cybrsecmedia.com/two-million-ai-prompts-expose-breaches-data-theft-and-supply-chain-failures/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">CyberSec Media</a> summarised it the next day. <a href="https://aiweekly.co/alerts/hd-moore-seeds-2m-ai-canaries-exposes-prompt-leaks-to-china?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">AI Weekly</a> added details from <a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Ars Technica's write-up</a>. The method is simple: each prompt carried a "canary", a fake secret used nowhere else and linked to a server the researcher controlled. If anyone ever used it, he'd know which prompt, and which provider, it came from.</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>What</th><th>The detail</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Who and when</strong></td><td>HD Moore, chief research officer at Dragos. About five months of testing, from July to November 2026. Report dated 19 November.</td></tr>
+        <tr><td><strong>What he planted</strong></td><td>About two million prompts, each with a unique secret: never-used AWS access keys, SSH passwords, unique URLs, DNS names and private code repository references.</td></tr>
+        <tr><td><strong>Breaches</strong></td><td>Evidence that attackers had breached three AI hosting providers. They weren't named.</td></tr>
+        <tr><td><strong>Stolen keys</strong></td><td>Around 200 planted AWS keys were exposed in late October, some from requests rejected before the model even processed them. Attackers then made tens of thousands of AWS calls looking for files, stored secrets and AI services.</td></tr>
+        <tr><td><strong>Hidden middlemen</strong></td><td>About 2,000 routes traced; hundreds passed through systems he couldn't identify. One request went through an extra marketplace without disclosure.</td></tr>
+        <tr><td><strong>Where prompts ended up</strong></td><td>Some reached Chinese AI organisations through US-based providers. One planted URL appeared in a Chinese company's internal chat 24 days after it was sent.</td></tr>
+        <tr><td><strong>The router case</strong></td><td>AI Weekly reports links sent through OpenRouter were opened 40 to 130 hours after the model replied, and that three resellers forwarded requests to the Chinese model maker MiniMax between 23 September and 19 October. OpenRouter removed the "zero data retention" label from the affected MiniMax endpoints while it investigates.</td></tr>
+      </tbody>
+    </table>
+
+    <p>The line that stayed with me, from CyberSec Media's summary: "Some sellers could access and retain prompts simply by enabling standard request logging". No hacking needed. Just a setting.</p>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-22-ai-prompt-leaks/prompt-route.webp" width="1600" height="900" alt="The trip your prompt takes: you, the app, a router or marketplace, a reseller host, then the model. Leaks showed up at the router and reseller stages. About 2,000 routes traced, hundreds through unidentified systems; zero data retention didn't stop attackers already inside a host; one request went through an undisclosed marketplace." loading="lazy">
+      <figcaption>Not every tool works like this. ChatGPT, Claude and Gemini's own apps send your prompt to their own models. Many third-party tools add the middle steps.</figcaption>
+    </figure>
+
+    <h2>Does this mean ChatGPT, Claude or Gemini leak my data?</h2>
+
+    <p>That's not what the research says. The problems sat in the chain of hosts, resellers and marketplaces that serve models on behalf of others, and the breached hosts weren't named. If you type into the official ChatGPT, Claude or Gemini app, your prompt goes to the company that made the model, under that company's terms.</p>
+
+    <p>The risk grows with every hop you can't see: the kind of cheap app that offers dozens of models for one small subscription, the Chrome extension that "rewrites any email", the automation that calls whichever model is cheapest today. You may never know which company actually ran your prompt, and its privacy promise may not bind the reseller behind it. Dragos's own advice is to treat retention promises as requirements to test, not guarantees.</p>
+
+    <blockquote>The model name on the button tells you what answered. It doesn't tell you who read the question.</blockquote>
+
+    <h2>Why it matters to you</h2>
+
+    <ul>
+      <li><strong>People paste secrets into AI every day.</strong> Passwords in a "fix this config" request, API keys in a script, client names and bank details in a "summarise this email". Those are exactly the things this research planted, and exactly what got used.</li>
+      <li><strong>"Zero data retention" is a label, not a lock.</strong> Some compromised requests were marked zero data retention. The label didn't help against attackers who were already inside a host.</li>
+      <li><strong>Leaks are slow and quiet.</strong> One planted link resurfaced after 24 days. You wouldn't connect the two events.</li>
+      <li><strong>It's the same lesson as the Notion leak.</strong> Last week I wrote about <a href="/blog/notion-ai-chats-leaked-fireworks-ai-vendor-check.html">Notion's AI chats leaking through a vendor</a>. The weakest link is rarely the brand you chose. It's the company behind the company.</li>
+    </ul>
+
+    <h2>How do I keep my data safe when using AI tools?</h2>
+
+    <ol>
+      <li><strong>Never paste a live password, API key or card number.</strong> Replace it with <code>[PASSWORD]</code> or <code>[KEY]</code>. The AI doesn't need the real value to help you.</li>
+      <li><strong>If you already did, rotate it.</strong> Change any password or key you've pasted into an AI tool you're not sure about. It takes five minutes and closes the door this research found open.</li>
+      <li><strong>Prefer the direct route for sensitive work.</strong> Use the official ChatGPT, Claude or Gemini app, or your company's approved business plan, for client and company data. Keep the multi-model apps for low-stakes tasks.</li>
+      <li><strong>List your AI tools.</strong> Apps, extensions, plugins, automations. For each, write down which model it uses and whether it says who hosts it. Anything you can't answer goes on a "no client data" list.</li>
+      <li><strong>Ask vendors one question in writing.</strong> "Which companies process my prompts, and do your data retention terms bind all of them?" Keep the answer. The prompt below drafts it for you.</li>
+      <li><strong>Strip names before you paste.</strong> Swap client names, emails and amounts for placeholders when the task doesn't need them. "Client A owes €X" gets the same email draft.</li>
+    </ol>
+
+    <p>If you use AI agents with access to your accounts, the stakes are higher: my post on <a href="/blog/ai-agent-cyberattack-old-passwords-small-business.html">AI agents breaking in with old passwords</a> covers the password side.</p>
+
+    <h3>Copy this prompt: audit your AI tools in ten minutes</h3>
+
+    <p>Paste this into the official ChatGPT, Claude or Gemini app (not a third-party tool), then fill in your list.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">AI tool supply-chain check</span>
+      <button class="copy-btn" data-copy="aiToolAudit" type="button">Copy</button>
+<pre id="aiToolAudit">You are helping a non-technical professional check the privacy of the AI tools they use for work. Do not guess: if something isn't known, write "ASK VENDOR".
+
+Here are the AI tools I use (apps, browser extensions, plugins, automations), what I use each for, and what kind of data I put in:
+[TOOL 1] - [what I use it for] - [data: e.g. client emails, contracts, passwords, nothing sensitive]
+[TOOL 2] - ...
+[TOOL 3] - ...
+
+For each tool, give me a table with:
+1. Who makes the AI model it uses (if known).
+2. Whether it likely sends my prompts to the model maker directly or through a router, marketplace or reseller.
+3. A risk level (low / medium / high) based on the data I put in.
+4. One concrete change, e.g. "remove client names", "use the official app instead", "fine as is".
+
+Then:
+- List every tool where I should stop pasting client or company data until the vendor answers.
+- Write a short, polite email I can send to those vendors asking: which companies process my prompts, whether prompts are logged or used for training, and whether their data retention promises bind every company in that chain.
+- Remind me which passwords or keys I should change if I've ever pasted them into a "high" tool.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Before</span><p>Paste the config file with the real password into whichever AI tool is open, because the button says "GPT" or "Claude" so it must be fine.</p></div>
+      <div class="compare-good"><span class="compare-label">After</span><p>Placeholders instead of secrets, client work only in the model maker's own app, and a written answer from every vendor about who sees your prompts.</p></div>
+    </div>
+
+    <div class="article-cta inline">
+      <h3>Not sure which of your AI tools are safe for client work?</h3>
+      <p>In a 49€ diagnostic call we list the AI tools you use, sort them into "safe for client data" and "not yet", and set up the direct, private version of the ones you need.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-22-ai-prompt-leaks-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>Also today in AI</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-22-ai-prompt-leaks/also-today.webp" width="1600" height="900" alt="Three numbers worth knowing: $83, Anthropic's IPO price per share, valuing it at about $1.51 trillion; 26.4 billion parameters in Thinking Machines' open-weight Inkling 2 Mini, with a self-reported 79.2% on SWE-bench Verified; plus 129% year-on-year growth in US use of Walmart's Sparky shopping agent." loading="lazy">
+    </figure>
+
+    <h3>Anthropic goes public at about $1.51 trillion</h3>
+
+    <p>Anthropic, the company behind Claude, priced its IPO at $83 a share, valuing it at about $1.51 trillion, according to headlines collected by the <a href="https://aiuniversejournal.org/issues/2026-11-21/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Journal of the AI Universe</a> on 21 November. A Reuters headline in the same roundup says wider tech stocks fell as the debut failed to ease concerns about AI.</p>
+
+    <p><strong>What it means for you:</strong> nothing changes in the Claude app tomorrow. Over time, public companies answer to shareholders every quarter, so keep an eye on pricing and plan changes, and don't build your whole workflow on one provider.</p>
+
+    <h3>A small open model from Thinking Machines scores high on coding</h3>
+
+    <p>Thinking Machines released Inkling 2 Mini, a 26.4-billion-parameter open-weight model with a self-reported 79.2% on the SWE-bench Verified coding test, <a href="https://riorundown.substack.com/p/ai-news-nov-22-2026-autonomous-systems?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Rio Rundown</a> reports, citing MarkTechPost on 21 November.</p>
+
+    <p><strong>What it means for you:</strong> models this size can run on your own hardware or a private server, which is the cleanest answer to today's lead story. If you have a technical partner, ask whether a self-hosted model could take over your most sensitive tasks.</p>
+
+    <h3>Walmart's shopping agent more than doubles, and gets a gate for outside agents</h3>
+
+    <p>US use of Walmart's Sparky shopping assistant rose 129% year on year in its third quarter, and Walmart is launching an Agent Gateway to set rules for outside AI shopping agents, <a href="https://riorundown.substack.com/p/ai-news-nov-21-2026-enterprise-infrastructure?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Rio Rundown</a> reports, citing AIM Media House.</p>
+
+    <p><strong>What it means for you:</strong> big retailers are deciding which AI agents can shop on their sites. If you sell online, check your product pages are readable by agents; my post on <a href="/blog/poppy-ai-shopping-agents-shopify-small-business.html">AI shopping agents and Shopify</a> walks through it.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What did the Dragos AI prompt research find?</summary><p>HD Moore of Dragos sent about two million AI prompts containing unique fake secrets and tracked their use. He found evidence that attackers had breached three AI hosting providers, around 200 planted AWS keys were exposed in late October, and some prompts were routed through undisclosed marketplaces or reached Chinese AI organisations.</p></details>
+      <details><summary>Is it safe to paste passwords or API keys into ChatGPT or other AI tools?</summary><p>No. Replace them with placeholders like [PASSWORD]. The AI doesn't need the real value to help, and this research shows secrets in prompts can be logged or stolen along the way. If you've already pasted one into a tool you're not sure about, change it.</p></details>
+      <details><summary>Does "zero data retention" mean my prompts are never stored?</summary><p>Not reliably. Some compromised requests in the research were marked zero data retention, and the label didn't protect them from attackers already inside a host. Dragos advises treating retention promises as requirements to test, not guarantees.</p></details>
+      <details><summary>Were ChatGPT, Claude or Gemini breached?</summary><p>The research doesn't say so. The breached AI hosting providers weren't named, and the problems were in the chain of hosts, resellers and marketplaces that serve models for others. Using a model maker's own app keeps that chain short.</p></details>
+      <details><summary>What is an AI router or reseller?</summary><p>A service that sits between an app and the AI model, choosing which company runs the model for each request, often to cut cost. Many multi-model apps and extensions rely on them, and each adds a company that can see your prompt.</p></details>
+      <details><summary>How can I check which AI tools are safe for client data?</summary><p>List every AI app, extension and automation you use, note which model each uses and who hosts it, and ask vendors in writing which companies process your prompts. Keep client data in tools that can answer clearly.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Use AI every day. Know who reads your prompts.</h3>
+      <p>One-to-one coaching for professionals and business owners: we set up a private, direct AI workspace for your real work, and a simple rule for what never goes into a prompt.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-22-ai-prompt-leaks-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="news-2026-11-22-ai-prompt-leaks-end-setup">Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://www.cybrsecmedia.com/two-million-ai-prompts-expose-breaches-data-theft-and-supply-chain-failures/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">CyberSec Media</a> (20 Nov 2026) on the Dragos research by HD Moore; <a href="https://aiweekly.co/alerts/hd-moore-seeds-2m-ai-canaries-exposes-prompt-leaks-to-china?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">AI Weekly</a> (22 Nov 2026), summarising <a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Ars Technica</a>; <a href="https://aiuniversejournal.org/issues/2026-11-21/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Journal of the AI Universe</a> (21 Nov 2026) on Anthropic's IPO; <a href="https://riorundown.substack.com/p/ai-news-nov-22-2026-autonomous-systems?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Rio Rundown</a> (22 Nov 2026) on Inkling 2 Mini; <a href="https://riorundown.substack.com/p/ai-news-nov-21-2026-enterprise-infrastructure?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=ai-prompt-leaks-two-million-canaries-resellers" target="_blank" rel="noopener">Rio Rundown</a> (21 Nov 2026) on Walmart Sparky. Recommendations from my own coaching work; not security or legal advice.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/blog/notion-ai-chats-leaked-fireworks-ai-vendor-check.html">Notion's AI chats leaked through a vendor you never heard of. Is your data next? →</a>
+      <a href="/blog/ai-agent-cyberattack-old-passwords-small-business.html">Hackers just sent AI agents after 200 organisations. Old passwords let them in. →</a>
+      <a href="/blog/california-sues-openai-rogue-ai-agents-access-check.html">California sues OpenAI over AI agents that got out. Check what yours can touch. →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
