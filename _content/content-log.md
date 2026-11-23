@@ -67,3 +67,6 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-20 | instagram | 5 Objection handling | S8 | ChatGPT for Accounting (18 Nov) | "AI will make mistakes." So do people.
 2026-11-20 | blog-weekly | 6 Customer win + 29 Behind the scenes + 33 Stealable template | S-new (anonymised real estate CEO) | own client engagement (Market Watch, lessons 3–27 Nov) | His competitors' week now lands on his desk every Monday at 8:00
 2026-11-23 | linkedin | 6 Customer win | S-new | own client engagement | My client heard about his competitors' moves weeks late. Now it arrives every Monday at 8:00.
+2026-11-23 | blog-daily | 3 Industry take | S11 (mention) | OpenAI dots: Plus test + all US Business Standard (19 Nov, Startup Fortune/AI Weekly) + Perplexity Monitor API + Siri AI iOS 27.3 | ChatGPT's always-on agents reach the $20 plan. Hire yours properly.
+2026-11-23 | linkedin | 16 Hiring approach | S11 | OpenAI dots on Plus / US Business Standard (19 Nov) | The AI that drafts my blog every morning has a job description.
+2026-11-23 | instagram | 16 Hiring approach | S11 | OpenAI dots on Plus / US Business Standard | ChatGPT can now work while you sleep.
