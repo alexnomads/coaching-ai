@@ -58,6 +58,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [ChatGPT's always-on agents (dots) reach the $20 plan. Hire yours properly.](https://aicoachalex.com/blog/openai-dots-chatgpt-plus-always-on-agents-job-description.html): OpenAI is testing dots, its always-on ChatGPT agents, on Plus and opened them to US Business Standard. What they are, who gets them, and how to set one up.
 - [2 million planted secrets show where your AI prompts really go](https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html): A researcher hid 2 million fake secrets in AI prompts. Three AI hosts were breached and keys were stolen. Six habits to keep your data safe.
 - [Etsy can train AI on your shop. Check where else you upload.](https://aicoachalex.com/blog/etsy-ai-training-terms-sellers-december-16.html): Etsy's new terms let it train AI on seller listings from 16 December. What they say, who can opt out, and a 5-question check for any platform.
 - [AI Competitor Monitoring with Claude, Grok and Apify: A Real Case Study](https://aicoachalex.com/blog/ai-competitor-monitoring-claude-grok-apify.html): How a real estate CEO gets an automated weekly competitor report from Claude, Grok, Apify and one Google Sheet: 4 lessons, real costs, what broke.
