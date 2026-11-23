@@ -98,5 +98,9 @@
  "ai-competitor-monitoring-claude-grok-apify": {
   "es": "vigilancia-competidores-ia",
   "it": "monitoraggio-concorrenti-ia"
+ },
+ "openai-dots-chatgpt-plus-always-on-agents-job-description": {
+  "es": "chatgpt-dots-agentes-siempre-activos-plan-plus",
+  "it": "chatgpt-dots-agenti-sempre-attivi-piano-plus"
  }
 }
