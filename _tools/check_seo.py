@@ -109,6 +109,8 @@ def main():
     indexable = {}
     for url, (rel, p, html) in sorted(pages.items()):
         head = head_of(html)
+        if "AW-18591414066" not in head and "</head>" in html:
+            problems.append(f"{rel}: Google Ads tag (AW-18591414066) missing from <head>")
         canon = canonical_of(head)
         noindex, redirect = is_noindex(head), is_redirect(head)
         if noindex or redirect:
