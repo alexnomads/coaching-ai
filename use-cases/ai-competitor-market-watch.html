@@ -350,7 +350,7 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
   </figure>
   <ol class="uc-steps">
     <li><span><strong>Grok reads X.</strong> Every Sunday at 20:00 it writes competitors' X posts into the sheet as rows.</span></li>
-    <li><span><strong>Claude reads LinkedIn and the press.</strong> LinkedIn blocks AI tools, so Claude uses the <a href="https://apify.com/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=use-case&amp;utm_content=ai-competitor-market-watch-apify" target="_blank" rel="noopener sponsored">Apify</a> connector (<code>harvestapi/linkedin-post-search</code>, no LinkedIn login) on the competitors' official company pages, plus a lighter run on posts that mention them.</span></li>
+    <li><span><strong>Claude reads LinkedIn and the press.</strong> LinkedIn blocks AI tools, so Claude uses the <a href="https://www.apify.com/?fpr=tozqk0" target="_blank" rel="noopener sponsored">Apify</a> connector (<code>harvestapi/linkedin-post-search</code>, no LinkedIn login) on the competitors' official company pages, plus a lighter run on posts that mention them.</span></li>
     <li><span><strong>One Google Sheet is the single source of truth.</strong> Same columns for every tool, and a reliability column that only accepts ✅ or ⚠️.</span></li>
     <li><span><strong>Claude becomes editor-in-chief.</strong> It merges duplicates (the same news in two sources = ✅), keeps facts apart from interpretation, and flags any source that came back empty.</span></li>
     <li><span><strong>The report arrives on its own.</strong> A Claude scheduled task runs every Monday at 07:00 and sends a phone notification.</span></li>
