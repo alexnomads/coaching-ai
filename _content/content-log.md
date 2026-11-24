@@ -72,3 +72,4 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-23 | instagram | 16 Hiring approach | S11 | OpenAI dots on Plus / US Business Standard | ChatGPT can now work while you sleep.
 2026-11-24 | blog-daily | 3 Industry take | S1, S3 (mentions) | OpenAI OpenWorks: up to $8k/month stipends for local AI partners, free help + 3 months ChatGPT Business for US small businesses, 20 cities (23 Nov) + Nvidia reinstates Huang + Sierra $30B + AWS APAC ROI survey | OpenAI is paying people to teach small businesses AI. The tools were never the hard part.
 2026-11-24 | linkedin | 10 Why you built it | S1 | OpenAI OpenWorks (23 Nov) | OpenAI just put a price on the job I do every day.
+2026-11-24 | blog-weekly | 20 Use case demo + 5 Objection handling | S5, S2 (mention) | Greg Isenberg ep. Gemini 4 Neon: the most underrated model of the year (solo, 20 Nov 2026), custom-demo pitch idea | Don't send a proposal. Send the demo.

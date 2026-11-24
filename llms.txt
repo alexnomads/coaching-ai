@@ -58,6 +58,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [Don't Send a Proposal. Send the Demo. (AI Consultants and Buyers)](https://aicoachalex.com/blog/send-the-demo-not-the-proposal-ai-consultants.html): The fastest way to win or hire AI help: a small demo built from the buyer's own material. Greg Isenberg's idea, a client story and 5 moves with 2 prompts.
 - [OpenAI is paying people to teach small businesses AI. The tools were never the hard part.](https://aicoachalex.com/blog/openai-openworks-free-ai-help-small-businesses.html): OpenAI's OpenWorks pays local AI experts up to $8,000 a month to help US small businesses for free. How it works, who qualifies, how to prepare.
 - [ChatGPT's always-on agents (dots) reach the $20 plan. Hire yours properly.](https://aicoachalex.com/blog/openai-dots-chatgpt-plus-always-on-agents-job-description.html): OpenAI is testing dots, its always-on ChatGPT agents, on Plus and opened them to US Business Standard. What they are, who gets them, and how to set one up.
 - [2 million planted secrets show where your AI prompts really go](https://aicoachalex.com/blog/ai-prompt-leaks-two-million-canaries-resellers.html): A researcher hid 2 million fake secrets in AI prompts. Three AI hosts were breached and keys were stolen. Six habits to keep your data safe.
