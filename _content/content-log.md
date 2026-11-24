@@ -70,3 +70,5 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-23 | blog-daily | 3 Industry take | S11 (mention) | OpenAI dots: Plus test + all US Business Standard (19 Nov, Startup Fortune/AI Weekly) + Perplexity Monitor API + Siri AI iOS 27.3 | ChatGPT's always-on agents reach the $20 plan. Hire yours properly.
 2026-11-23 | linkedin | 16 Hiring approach | S11 | OpenAI dots on Plus / US Business Standard (19 Nov) | The AI that drafts my blog every morning has a job description.
 2026-11-23 | instagram | 16 Hiring approach | S11 | OpenAI dots on Plus / US Business Standard | ChatGPT can now work while you sleep.
+2026-11-24 | blog-daily | 3 Industry take | S1, S3 (mentions) | OpenAI OpenWorks: up to $8k/month stipends for local AI partners, free help + 3 months ChatGPT Business for US small businesses, 20 cities (23 Nov) + Nvidia reinstates Huang + Sierra $30B + AWS APAC ROI survey | OpenAI is paying people to teach small businesses AI. The tools were never the hard part.
+2026-11-24 | linkedin | 10 Why you built it | S1 | OpenAI OpenWorks (23 Nov) | OpenAI just put a price on the job I do every day.
