@@ -37,21 +37,21 @@ fbq('track', 'PageView');
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">
 <link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">
-<title>Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5: Which Model to Use (2026) — AI Coach Alex</title>
+<title>Haiku 5.5 vs Sonnet 4.6 vs Opus 5.5: Which to Use — AI Coach Alex</title>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<meta name="description" content="Haiku 5.5 costs 40× less than Opus 5.5. A $700, 11-test comparison shows where it matches Sonnet and Opus, where it loses, the 100k token price cliff, and which Claude model to use for each task.">
+<meta name="description" content="Haiku 5.5 vs Sonnet 4.6: $0.10 vs $3 per million input tokens. An 11-test comparison, real bills, and which Claude model to use for each task.">
 <link rel="canonical" href="https://aicoachalex.com/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Alessandro Capezza">
 <meta property="og:title" content="Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5: 40× Cheaper Isn't 40× Worse">
-<meta property="og:description" content="What a $700 head-to-head test of Claude Haiku 5.5, Sonnet 5.5 and Opus 5.5 means for which model you should use, and how to stop overpaying for AI.">
+<meta property="og:description" content="Haiku 5.5 vs Sonnet 4.6: $0.10 vs $3 per million input tokens. An 11-test comparison, real bills, and which Claude model to use for each task.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://aicoachalex.com/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html">
 <meta property="og:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
 <meta property="article:published_time" content="2026-10-09">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5: 40× Cheaper Isn't 40× Worse">
-<meta name="twitter:description" content="What a $700 head-to-head test of Claude Haiku 5.5, Sonnet 5.5 and Opus 5.5 means for which model you should use, and how to stop overpaying for AI.">
+<meta name="twitter:description" content="Haiku 5.5 vs Sonnet 4.6: $0.10 vs $3 per million input tokens. An 11-test comparison, real bills, and which Claude model to use for each task.">
 <meta name="twitter:image" content="https://aicoachalex.com/ALEXAICOACH-SHAREv2.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
 <script>
@@ -215,10 +215,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
    "@type": "BlogPosting",
    "@id": "https://aicoachalex.com/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html#article",
    "headline": "Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5: 40× Cheaper Isn't 40× Worse",
-   "description": "Haiku 5.5 costs 40× less than Opus 5.5. A $700, 11-test comparison shows where it matches Sonnet and Opus, where it loses, the 100k token price cliff, and which Claude model to use for each task.",
+   "description": "Haiku 5.5 vs Sonnet 4.6: $0.10 vs $3 per million input tokens. An 11-test comparison, real bills, and which Claude model to use for each task.",
    "image": "https://aicoachalex.com/ALEXAICOACH-SHAREv2.png",
    "datePublished": "2026-10-09",
-   "dateModified": "2026-10-09",
+   "dateModified": "2026-11-25",
    "inLanguage": "en",
    "keywords": "Claude Haiku 5.5, Haiku 5.5 vs Opus 5.5, Haiku 5.5 vs Sonnet 5.5, Claude model comparison, Claude Opus 5.5 pricing, Haiku 5.5 pricing, which Claude model to use, Claude 100k token pricing, AI cost optimisation, plan with Opus execute with Haiku, Claude sub-agents",
    "mainEntityOfPage": "https://aicoachalex.com/blog/claude-haiku-5-5-vs-sonnet-vs-opus.html",
@@ -264,6 +264,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   {
    "@type": "FAQPage",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is Haiku 5.5 better than Sonnet 4.6?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sonnet 4.6 wasn't part of the tests, so I can't say which is better on quality. On price, Haiku 5.5 is 30× cheaper per token on prompts up to 100,000 tokens ($0.10 vs $3 input, $0.50 vs $15 output per million). In the 11-test comparison this article covers, Haiku 5.5 matched the bigger Sonnet 5.5 and Opus 5.5 on text tasks, so it's worth testing on your own work before paying more."
+     }
+    },
     {
      "@type": "Question",
      "name": "Is Claude Haiku 5.5 good enough to replace Opus?",
@@ -544,6 +552,12 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
 
     <p>Haiku 5.5 also has a 1 million token context window, up to 128,000 tokens of output and adjustable effort. It comes with one catch, the 100k cliff, which I explain <a href="#cliff">further down</a>.</p>
 
+    <h2 id="sonnet-4-6">What about Haiku 5.5 vs Sonnet 4.6?</h2>
+
+    <p>The 11-test comparison in this article used Haiku 5.5, Sonnet 5.5 and Opus 5.5. It did not include Sonnet 4.6, so I can't give you a measured score for it, and I won't guess one. What I can compare is price. According to <a href="https://platform.claude.com/docs/en/about-claude/pricing?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=claude-haiku-5-5-vs-sonnet-vs-opus" target="_blank" rel="noopener">Anthropic's pricing page</a>, Sonnet 4.6 costs $3 per million input tokens and $15 per million output tokens. Haiku 5.5 costs $0.10 and $0.50 on prompts up to 100,000 tokens, so Sonnet 4.6 is 30× more expensive per token (6× above the 100k line, where Haiku 5.5 moves to $0.50 and $2.50). The newer Sonnet 5.5 is listed at $2 and $10.</p>
+
+    <p>If you're weighing Haiku 5.5 against Sonnet 4.6 today, the Sonnet 5.5 results above are the closest evidence I have for Sonnet-class quality. Before you pay 30× more per token, run your own tasks through both with the prompt further down.</p>
+
     <h2>What did the real bills look like?</h2>
 
     <p>Across seven of the builds, the totals on screen were:</p>
@@ -694,6 +708,7 @@ My tasks:
     <h2>FAQ</h2>
 
     <div class="faq">
+      <details><summary>Is Haiku 5.5 better than Sonnet 4.6?</summary><p>Sonnet 4.6 wasn't part of the tests, so I can't say which is better on quality. On price, Haiku 5.5 is 30× cheaper per token on prompts up to 100,000 tokens ($0.10 vs $3 input, $0.50 vs $15 output per million). In the 11-test comparison this article covers, Haiku 5.5 matched the bigger Sonnet 5.5 and Opus 5.5 on text tasks, so it's worth testing on your own work before paying more.</p></details>
       <details><summary>Is Claude Haiku 5.5 good enough to replace Opus?</summary><p>For text work like summarising, classifying, extracting data and drafting, mostly yes: in an 11-test comparison all three models scored 8/8 on a fraud audit. For visual, design-heavy or complex multi-step builds, Opus 5.5 is still clearly better.</p></details>
       <details><summary>How much cheaper is Haiku 5.5 than Opus 5.5?</summary><p>Haiku 5.5 costs $0.10 per million input tokens and $0.50 per million output tokens. Opus 5.5 costs $4 and $20, so Haiku is 40× cheaper. Above 100,000 tokens in one conversation, Haiku's price rises 5× to $0.50 and $2.50.</p></details>
       <details><summary>What is the Haiku 5.5 100k token price cliff?</summary><p>Below 100,000 tokens, Haiku 5.5 costs $0.10 in and $0.50 out per million tokens. Above that it costs $0.50 and $2.50. Cache reads cost $0.01 and $0.05, so the cheapest approach is short threads that reuse the same context, restarted with a summary at around 100k tokens.</p></details>
