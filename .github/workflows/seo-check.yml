@@ -1,6 +1,7 @@
 name: SEO indexing check
 # Fails the commit (red X + email) if a page has a wrong/missing canonical,
 # is missing from sitemap.xml, is orphaned, or a noindex/redirect page is in the sitemap.
+# Also fails if a new English blog post (26 Nov 2026 onwards) still has no ES/IT version a day later.
 on:
   push:
     branches: [main]
@@ -14,3 +15,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 _tools/check_seo.py
+      - run: python3 _tools/check_translations.py

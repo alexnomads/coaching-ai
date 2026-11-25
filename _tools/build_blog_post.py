@@ -208,6 +208,8 @@ def main(meta_path, article_path):
             t = t[:j] + f"- [{m['title']}]({url}): {m['description']}\n" + t[j:]
             llms.write_text(t)
     print("built", out)
+    print("NEXT: build the ES and IT versions in this same run (build_blog_translation.py with meta.es.json / meta.it.json);\n"
+          "      _tools/check_translations.py fails the next day if they are missing.")
 
 
 if __name__ == "__main__":
