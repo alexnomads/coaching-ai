@@ -118,5 +118,13 @@
  "openai-openworks-free-ai-help-small-businesses": {
   "es": "openai-openworks-ayuda-ia-gratis-pequenos-negocios",
   "it": "openai-openworks-aiuto-ia-gratis-piccole-imprese"
+ },
+ "ai-business-audit-evidence-first": {
+  "es": "auditoria-negocio-ia-con-pruebas",
+  "it": "audit-attivita-ia-con-prove"
+ },
+ "jensen-huang-resigns-nvidia-key-person-risk-decentralized-ai": {
+  "es": "jensen-huang-dimite-nvidia-riesgo-persona-clave-ia-descentralizada",
+  "it": "jensen-huang-dimissioni-nvidia-rischio-persona-chiave-ia-decentralizzata"
  }
 }
