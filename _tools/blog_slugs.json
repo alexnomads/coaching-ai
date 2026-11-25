@@ -150,5 +150,25 @@
  "ai-layoffs-reversed-companies-rehiring": {
   "es": "empresas-recontratan-personas-sustituidas-por-ia",
   "it": "aziende-riassumono-persone-sostituite-dall-ia"
+ },
+ "claude-haiku-5-5-vs-sonnet-vs-opus": {
+  "es": "claude-haiku-5-5-vs-sonnet-vs-opus-que-modelo-usar",
+  "it": "claude-haiku-5-5-vs-sonnet-vs-opus-quale-modello-usare"
+ },
+ "what-is-an-agent-harness": {
+  "es": "que-es-un-agent-harness",
+  "it": "cose-un-agent-harness"
+ },
+ "gpt-6-1-terra-computer-use-ai-agents": {
+  "es": "gpt-6-1-terra-ia-usa-ordenador-agentes",
+  "it": "gpt-6-1-terra-ia-usa-computer-agenti"
+ },
+ "sell-ai-to-small-business-fix-the-leak": {
+  "es": "deja-de-vender-ia-arregla-la-fuga",
+  "it": "smetti-di-vendere-ia-ripara-la-perdita"
+ },
+ "ai-agents-next-customers-small-business": {
+  "es": "agentes-ia-proximos-clientes-pequeno-negocio",
+  "it": "agenti-ia-prossimi-clienti-piccola-impresa"
  }
 }

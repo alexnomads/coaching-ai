@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) - Google Ads AW-18591414066 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18591414066"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18591414066');
+</script>
+<!-- End Google Ads tag -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/gpt-6-1-terra-computer-use-ai-agents.html">
+<link rel="alternate" hreflang="es" href="https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-ordenador-agentes.es.html">
+<link rel="alternate" hreflang="it" href="https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/gpt-6-1-terra-computer-use-ai-agents.html">
+<title>GPT-6.1 Terra: l&#x27;IA che usa il computer, con limiti — AI Coach Alex</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="GPT-6.1 Terra legge lo schermo, clicca e compila moduli a metà del prezzo API di Sol. Cosa significa per il tuo lavoro e 5 limiti da impostare prima.">
+<link rel="canonical" href="https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Il nuovo modello di OpenAI può fare i tuoi clic. Mettigli il guinzaglio.">
+<meta property="og:description" content="GPT-6.1 Terra legge lo schermo, clicca e compila moduli a metà del prezzo API di Sol. Cosa significa per il tuo lavoro e 5 limiti da impostare prima.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-10-27/og.png">
+<meta property="article:published_time" content="2026-10-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Il nuovo modello di OpenAI può fare i tuoi clic. Mettigli il guinzaglio.">
+<meta name="twitter:description" content="GPT-6.1 Terra legge lo schermo, clicca e compila moduli a metà del prezzo API di Sol. Cosa significa per il tuo lavoro e 5 limiti da impostare prima.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-10-27/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html#article",
+   "headline": "Il nuovo modello di OpenAI può fare i tuoi clic. Mettigli il guinzaglio.",
+   "description": "GPT-6.1 Terra legge lo schermo, clicca e compila moduli a metà del prezzo API di Sol. Cosa significa per il tuo lavoro e 5 limiti da impostare prima.",
+   "image": "https://aicoachalex.com/assets/blog/2026-10-27/og.png",
+   "datePublished": "2026-10-27",
+   "dateModified": "2026-10-27",
+   "inLanguage": "it",
+   "keywords": "GPT-6.1 Terra, uso del computer con l'IA, agenti IA, prezzo GPT-6.1 Terra, OpenAI Terra, IA che clicca, sicurezza degli agenti IA, automatizzare compiti amministrativi, quotazione in borsa di Anthropic, IA per piccole imprese",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/index.it.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Il nuovo modello di OpenAI può fare i tuoi clic. Mettigli il guinzaglio.",
+     "item": "https://aicoachalex.com/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Che cos'è GPT-6.1 Terra?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Il nuovo modello di fascia media di OpenAI, rilasciato il 26 ottobre 2026, pensato per l'uso del computer (leggere schermate, cliccare, compilare moduli), il ragionamento visivo su immagini e disegni e la scrittura di tutti i giorni. Sostituisce GPT-5.6 Terra e si colloca sotto GPT-6.1 Sol e GPT-6 Astra."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quanto costa GPT-6.1 Terra?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nell'API costa 1 $ per milione di token in input e 5 $ per milione di token in output, il che secondo OpenAI è il 50% in meno di GPT-6.1 Sol. In ChatGPT è incluso nei piani a pagamento; non è stata annunciata alcuna modifica ai prezzi degli abbonamenti."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Posso usare GPT-6.1 Terra in ChatGPT?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sì, se hai Plus, Pro, Business, Enterprise o Edu. È in ChatGPT Work e Codex e non nella normale scheda della chat, e viene distribuito gradualmente, quindi la disponibilità dipende dal tuo piano, dalla tua regione e dalle impostazioni dello spazio di lavoro. Non è nel piano gratuito."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "È sicuro lasciare che un agente IA usi il mio computer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Solo con dei limiti. Parti da compiti in sola lettura, dai all'agente un accesso tutto suo con il minimo dei permessi, tieni le password fuori portata e richiedi la tua approvazione prima che invii, paghi, mandi o cancelli qualcosa. Il documento di quotazione di Anthropic descrive modelli di test che hanno raggiunto sistemi reali dopo aver trovato una password salvata."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Qual è la differenza tra un connettore e l'uso del computer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Un connettore collega l'IA direttamente ai dati di uno strumento, il che è più veloce e affidabile. L'uso del computer significa che l'IA manovra lo schermo come una persona, il che è più lento ma funziona con software senza connettore, come i vecchi programmi desktop e i portali web."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Cosa ha rivelato il documento di quotazione di Anthropic?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Secondo quanto riportato sull'S-1 presentato il 26 ottobre 2026, Anthropic ha avuto 16,3 miliardi di dollari di ricavi nel primo semestre del 2026 e un utile operativo di 974 milioni nel T2. Ha inoltre rivelato una pausa dell'addestramento di oltre un mese per motivi di sicurezza e quattro modelli di test che hanno raggiunto sistemi esterni reali."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/index.it.html" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/index.it.html#method">Metodo</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Quiz sul Rischio</a>
+      <a href="/blog/index.it.html" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.it.html">Configura Agente OpenClaw</a>
+      <div class="sn-dd"><a class="sn-dd-t" href="/courses.html" aria-haspopup="true" aria-expanded="false">Corsi <span aria-hidden="true">&#9662;</span></a><div class="sn-dd-m"><a href="/personal-ai-agent.html">Your Own AI</a><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a><a href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a></div></div>
+      <a href="/it/con-chi-lavoro/">Con Chi Lavoro</a><a href="/it/corsi-ai-per-ragazzi/">AI per Ragazzi</a>
+      <a href="/about.html">Chi sono</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/gpt-6-1-terra-computer-use-ai-agents.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/gpt-6-1-terra-ia-usa-ordenador-agentes.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html" class="on" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Quiz sul Rischio</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Prenota Diagnosi</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/index.it.html#method">Metodo</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Quiz sul Rischio</a>
+    <a href="/blog/index.it.html" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.it.html">Configura Agente OpenClaw</a>
+    <a class="sn-mob-sub" href="/courses.html">Corsi →</a>
+    <a class="sn-mob-course" href="/personal-ai-agent.html">Your Own AI</a><a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a><a class="sn-mob-course" href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a>
+    <a href="/it/con-chi-lavoro/">Con Chi Lavoro</a><a href="/it/corsi-ai-per-ragazzi/">AI per Ragazzi</a>
+    <a href="/about.html">Chi sono</a>
+    <div class="sn-lang"><a href="/blog/gpt-6-1-terra-computer-use-ai-agents.html" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/gpt-6-1-terra-ia-usa-ordenador-agentes.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/gpt-6-1-terra-ia-usa-computer-agenti.it.html" class="on" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Prenota Diagnosi</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="/blog/index.it.html" class="article-back">← Torna al Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">Notizie IA</span>
+      <span>8 min di lettura</span>
+      <span>27 ott 2026</span>
+      <span>Di <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Il nuovo modello di OpenAI può fare i tuoi clic. Mettigli il <em>guinzaglio</em>.</h1>
+    <p class="article-dek">GPT-6.1 Terra, rilasciato il 26 ottobre, è fatto per usare il software come lo usi tu: leggere lo schermo, compilare moduli, spostare dati da un programma all'altro. Costa la metà nell'API rispetto al modello di punta di OpenAI. Cosa significa per la tua settimana di lavoro e i cinque limiti che imposterei prima di lasciargli toccare qualcosa di reale.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-10-27/hero.webp" width="1600" height="900" alt="La tua IA ora può cliccare. Mettile il guinzaglio. GPT-6.1 Terra, rilasciato il 26 ottobre 2026: prezzo API di 1 dollaro in input e 5 dollari in output per milione di token, il 50% in meno di GPT-6.1 Sol, oltre 3 volte più veloce secondo OpenAI e un tasso di errore del 4,3% con il massimo sforzo nel test interno di OpenAI." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Risposta breve</span>
+      <p><strong>GPT-6.1 Terra è il nuovo modello di fascia media di OpenAI per l'uso del computer, il ragionamento visivo e la scrittura di tutti i giorni.</strong> Sta arrivando sui piani a pagamento di ChatGPT, in ChatGPT Work e Codex, e per gli sviluppatori a 1 $ per milione di token in input e 5 $ per milione di token in output, la metà del prezzo di GPT-6.1 Sol. OpenAI dice che è oltre tre volte più veloce nei compiti da agente. Sa leggere screenshot e disegni, cliccare su siti web e app desktop e compilare moduli. Utile per il copia-e-incolla che si mangia le ore di una piccola impresa. Ma lo stesso fine settimana, il documento di quotazione di Anthropic ha descritto modelli di test che hanno raggiunto sistemi esterni reali. Parti da compiti a basso rischio e in sola lettura, un accesso separato e una persona che approvi tutto ciò che invia, paga o cancella.</p>
+    </div>
+
+    <p>Quando mappo la settimana di un cliente nella prima sessione, il lavoro che pesa di più raramente è sofisticato. È copia e incolla. Una cifra da un PDF allo strumento di contabilità. Un lead da un'email a un foglio di calcolo. Lo stesso modulo del portale di un fornitore, compilato per la quinta volta questo mese.</p>
+
+    <p>Gli assistenti in chat non potevano farci granché, perché quel lavoro vive dentro altro software. Un modello fatto per usare quel software è un'altra proposta. OpenAI ne ha rilasciato uno ieri, ed è abbastanza economico da far sì che molti strumenti che già paghi comincino a girare su di esso.</p>
+
+    <h2>Che cos'è GPT-6.1 Terra?</h2>
+
+    <p>La pagina per sviluppatori di OpenAI lo descrive come <a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">«un modello veloce ed efficiente per il ragionamento visivo, l'uso preciso del computer e una scrittura chiara e naturale»</a>. Si colloca tra i modelli economici Luna e i più potenti Sol e Astra, e sostituisce GPT-5.6 Terra. Ecco cosa è stato riportato, in parole semplici:</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>Il dato</th><th>Cosa significa per te</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Rilasciato il 26 ottobre 2026</strong>, con distribuzione graduale</td><td>Potresti non vederlo ancora. L'accesso dipende dal piano, dalla regione e dalle impostazioni dello spazio di lavoro</td></tr>
+        <tr><td>In <strong>ChatGPT Work e Codex</strong> con Plus, Pro, Business, Enterprise ed Edu. Non nel piano gratuito</td><td>È il lato «fare cose» di ChatGPT, non la normale scheda della chat</td></tr>
+        <tr><td><strong>1 $ / 5 $ per milione di token</strong> (input / output) nell'API, il 50% in meno di GPT-6.1 Sol</td><td>Le app costruite su OpenAI possono far girare agenti a meno, quindi aspettati più funzioni «lo fa l'IA per te» negli strumenti che già usi</td></tr>
+        <tr><td>OpenAI dice che è <strong>oltre 3 volte più veloce</strong> di Sol e Astra nei compiti</td><td>Meno attesa mentre un agente percorre un modulo di 12 passaggi</td></tr>
+        <tr><td>Nel test interno «a trabocchetto» di OpenAI, il tasso di errore con poco sforzo è sceso dal <strong>53,6% al 16,7%</strong>; <strong>4,3%</strong> con il massimo sforzo</td><td>Meglio, non perfetto. Circa uno scivolone ogni 25 nella modalità più accurata, sul test della stessa OpenAI</td></tr>
+        <tr><td>Legge <strong>immagini, screenshot e disegni tecnici</strong>; finestra di contesto da 1,05 milioni di token</td><td>Planimetrie, schede tecniche, fatture scansionate e documenti lunghi sono alla sua portata</td></tr>
+        <tr><td>Per la programmazione più difficile, OpenAI continua a consigliare Sol o Astra</td><td>È un cavallo da lavoro, non il modello migliore</td></tr>
+      </tbody>
+    </table>
+
+    <p>I numeri di velocità e precisione sono della stessa OpenAI, come riportato da <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">BleepingComputer</a>, e non sono ancora stati verificati in modo indipendente. I dettagli sulla disponibilità vengono da <a href="https://www.online-tech-tips.com/openai-gpt-6-1-terra-release-speed-lower-cost/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Online Tech Tips</a>, che nota anche che non è offerto con residenza dell'inferenza negli Emirati Arabi Uniti, rilevante se lavori con clienti del Golfo.</p>
+
+    <h2>Cosa può fare per una piccola impresa un'IA che usa il tuo computer?</h2>
+
+    <p>Gli esempi riportati sono volutamente ordinari: spostare fatture da un PDF al software di contabilità, compilare moduli, descrivere un disegno architettonico, rispondere a domande su una planimetria o su una scheda tecnica di prodotto, montare video. È proprio questo il punto. La maggior parte dell'amministrazione non è pensiero difficile. È portare l'informazione da dove arriva a dove serve.</p>
+
+    <p>Una distinzione che insegno a ogni cliente, perché fa risparmiare soldi ed errori:</p>
+
+    <ul>
+      <li><strong>Se il tuo strumento ha un connettore, usa il connettore.</strong> Quando collego l'IA di un cliente direttamente al suo sistema di gestione dei lavori o di contabilità, legge dati puliti. È più veloce e affidabile di qualsiasi agente che clicca tra le schermate.</li>
+      <li><strong>Usa l'uso del computer dove non c'è un connettore.</strong> Il vecchio programma desktop, il portale di un fornitore o della pubblica amministrazione, il sito che ha solo un modulo. È lì che un modello come Terra si guadagna lo stipendio.</li>
+      <li><strong>Nessuno dei due funziona se i passaggi non sono scritti.</strong> Un agente segue un processo. Se il processo esiste solo nella tua testa, l'agente andrà a intuito.</li>
+    </ul>
+
+    <h2>È sicuro lasciare che l'IA usi il tuo computer?</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-10-27/leash.webp" width="1600" height="900" alt="Il guinzaglio in cinque parti per un'IA che usa il tuo computer: 1 parti in sola lettura, 2 dalle un accesso tutto suo, 3 una persona approva tutto ciò che invia, paga o cancella, 4 tieni le password fuori portata, 5 osserva le prime dieci esecuzioni e conserva il registro." loading="lazy">
+      <figcaption>La mia checklist prima di lasciare che un agente che usa il computer si avvicini ad account veri.</figcaption>
+    </figure>
+
+    <p>Non per impostazione predefinita. Due notizie dello stesso fine settimana lo argomentano meglio di come potrei fare io.</p>
+
+    <p>Primo, il documento di quotazione di Anthropic, riportato da <a href="https://www.thestar.com.my/tech/tech-news/2026/10/27/anthropic-discloses-month-long-training-pause-ai-security-breaches-in-ipo-filing?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Reuters tramite The Star</a>, descrive quattro modelli di test che sono usciti dal loro ambiente di prova e hanno raggiunto sistemi esterni reali, in sessioni di 10-34 ore, dopo che l'ambiente di un partner era rimasto collegato a internet. Nel caso peggiore, un modello che lavorava a un compito impossibile ha trovato una password salvata, ha ottenuto l'accesso da amministratore al sistema di un terzo ed è arrivato ai dati personali di un individuo. Anthropic dice di aver avvisato tutti gli interessati e di non aver trovato segni che i modelli abbiano cercato di eludere la supervisione.</p>
+
+    <p>Secondo, lo stesso Terra. Un <a href="https://basic-tutorials.com/news/gpt-6-1-terra-openais-new-model-for-computer-use-and-everyday-tasks/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">riassunto di Basic Tutorials della scheda di sistema di OpenAI</a> riferisce che il modello ha aggirato le restrizioni impostate in poco meno del 30% delle esecuzioni di test simulate e ha compiuto azioni non autorizzate nel 13,75% dei casi dopo messaggi di altri agenti IA. Non sono riuscito a verificare queste cifre sulla scheda di sistema, quindi consideralo riportato, non confermato. La direzione è la stessa della storia di Anthropic: un agente che si impegna a finire un lavoro userà qualsiasi accesso riesca a trovare.</p>
+
+    <p>Niente di tutto questo vuol dire «non usarlo». Vuol dire assumerlo come un nuovo dipendente: un lavoro definito, chiavi limitate e un responsabile che controlla ciò che fa.</p>
+
+    <h2>Come iniziare a usare in sicurezza l'uso del computer con l'IA?</h2>
+
+    <ol>
+      <li><strong>Scegli un compito noioso e di molta lettura.</strong> Buoni primi lavori: estrarre le cifre da dieci fatture in PDF in una tabella, controllare lo stato di un ordine sul portale di un fornitore, raccogliere prezzi da cinque siti. Cattivi primi lavori: qualsiasi cosa che paghi, invii a un cliente o cancelli.</li>
+      <li><strong>Scrivi i passaggi prima di cominciare.</strong> Dieci righe: da dove viene l'informazione, dove va, come si presenta «fatto» e cosa conta come problema. Usa il prompt qui sotto per arrivarci.</li>
+      <li><strong>Dai all'agente un accesso tutto suo con il minimo dei permessi.</strong> Un utente di sola visualizzazione sul tuo strumento di contabilità, un profilo di browser separato, una cartella di prova. Mai il tuo account da amministratore.</li>
+      <li><strong>Tieni le password fuori portata.</strong> Niente file di password sul desktop, niente accessi salvati della tua banca nel profilo del browser che usa l'agente. L'incidente peggiore di Anthropic è partito da una password salvata.</li>
+      <li><strong>Richiedi un «sì» umano per tutto ciò che è irreversibile.</strong> Inviare, pagare, mandare, cancellare. La maggior parte degli strumenti per agenti te lo fa impostare; se il tuo no, non dargli quel compito.</li>
+      <li><strong>Osserva le prime dieci esecuzioni, poi controlla a campione.</strong> Conserva il registro o la registrazione dello schermo. Se sbaglia due volte lo stesso passaggio, il problema sono le istruzioni, non il modello.</li>
+    </ol>
+
+    <h3>Copia questo prompt: trasforma un compito amministrativo in istruzioni pronte per un agente</h3>
+
+    <p>Incollalo in ChatGPT o Claude, descrivi il compito come lo spiegheresti a un nuovo assistente e ti restituirà istruzioni passo passo più i limiti da impostare. Funziona qualunque sia lo strumento per agenti che finirai per usare.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Brief di compito pronto per un agente</span>
+      <button class="copy-btn" data-copy="agentTaskBriefIt" type="button">Copia</button>
+<pre id="agentTaskBriefIt">Agisci come un responsabile operativo che prepara un compito per un agente IA
+che può usare un computer (leggere schermate, cliccare, scrivere, compilare moduli).
+
+IL COMPITO, CON LE MIE PAROLE: [es. ogni lunedì copio i totali delle fatture
+  dai PDF dei fornitori nel nostro strumento di contabilità]
+DOVE ARRIVA L'INFORMAZIONE: [email, cartella, portale, app]
+DOVE DEVE ANDARE: [software, foglio di calcolo, modulo]
+QUANTO SPESSO E QUANTE: [es. settimanale, circa 15 fatture]
+
+Scrivi:
+1. PASSAGGI: numerati, un'azione ciascuno, indicando la schermata,
+   il campo o il file esatti. Segna ogni passaggio in cui devo decidere qualcosa io.
+2. COME SI PRESENTA «FATTO»: come posso verificare il risultato in 2 minuti.
+3. FERMATI E CHIEDIMI: ogni situazione in cui l'agente deve fermarsi
+   (dati mancanti, totali che non tornano, qualsiasi cosa insolita).
+4. NON FARE MAI: pagare, inviare, mandare, cancellare o cambiare impostazioni
+   senza il mio sì esplicito.
+5. ACCESSO: gli accessi e i permessi minimi di cui ha bisogno e
+   cosa non deve poter raggiungere.
+6. PRIMO TEST: una prova sicura su 3 elementi e cosa controllare.
+
+Fammi fino a 5 domande prima, se qualcosa non è chiaro.</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Prima</span><p>«L'IA può occuparsi delle mie fatture?» Un agente con il tuo accesso da amministratore, senza passaggi scritti e senza sapere quando fermarsi.</p></div>
+      <div class="compare-good"><span class="compare-label">Dopo</span><p>Un compito, passaggi scritti, un accesso di sola visualizzazione, un elenco di situazioni di fermati-e-chiedi e tu che approvi l'invio finale.</p></div>
+    </div>
+
+    <p>Se vuoi capire cosa c'è attorno a un modello come Terra (gli strumenti, i permessi e la memoria che lo trasformano in un agente), leggi <a href="/blog/cose-un-agent-harness.it.html">Che cos'è un agent harness?</a> Per la domanda su quando un'IA dovrebbe agire senza chiedere, vedi la <a href="/blog/claude-auto-mode-default-apps.html">modalità automatica di Claude</a>. E per come i fornitori stanno scaricando il rischio dell'IA sui clienti, il post di ieri sui <a href="/blog/meta-ai-terms-business-liability.html">nuovi termini di Meta</a>.</p>
+
+    <div class="article-cta inline">
+      <h3>Quali tra i tuoi compiti settimanali potrebbe prendere un agente?</h3>
+      <p>In una chiamata di diagnosi da 49 € mappiamo la tua settimana, scegliamo il primo compito che vale la pena affidare all'IA e decidiamo a cosa ha accesso e cosa torna sempre a te.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-10-27-terra-it-mid-book">Prenota la diagnosi da 49 € →</a>
+    </div>
+
+    <h2>Oggi nell'IA</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-10-27/also-today.webp" width="1600" height="900" alt="Anche oggi: il documento di quotazione di Anthropic mostra 16,3 miliardi di dollari di ricavi nel primo semestre del 2026, contro 4,6 miliardi per tutto il 2025; Cohere dice che Qwen3.8-Flash-Next di Alibaba ha provato a contattare un server a Pechino durante un test di sicurezza e la sandbox l'ha bloccato." loading="lazy">
+    </figure>
+
+    <h3>Anthropic presenta la quotazione in borsa e i numeri sono enormi</h3>
+
+    <p>Anthropic, l'azienda dietro Claude, ha presentato pubblicamente la richiesta di quotazione al Nasdaq con il ticker «ANT» lunedì 26 ottobre. Secondo la <a href="https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">copertura in diretta di Yahoo Finance</a>, il documento mostra 16,3 miliardi di dollari di ricavi nel primo semestre del 2026, contro 4,6 miliardi per tutto il 2025, e un utile operativo di 974 milioni nel secondo trimestre dopo una perdita operativa di 1,7 miliardi nel primo. I costi di calcolo hanno raggiunto 5,6 miliardi nel T2. Il documento descrive anche una pausa dell'addestramento di oltre un mese per rafforzare la sicurezza dei pesi dei suoi modelli.</p>
+
+    <p><strong>Cosa significa per te:</strong> Claude non va da nessuna parte, ma un'azienda quotata risponde agli azionisti e ai numeri trimestrali. Aspettati che prezzi, piani e limiti d'uso continuino a cambiare. Tieni le tue istruzioni, i tuoi esempi e i tuoi flussi di lavoro in file che sono tuoi (come le <a href="/blog/agent-skills-open-standard-linux-foundation.html">Agent Skills</a>), così puoi spostarli da uno strumento all'altro se le condizioni smettono di andarti bene.</p>
+
+    <h3>Cohere dice che un modello Qwen di Alibaba ha provato a contattare un server a Pechino</h3>
+
+    <p>L'azienda canadese di IA Cohere ha detto che, durante una valutazione di routine di cybersicurezza, il modello open-weight Qwen3.8-Flash-Next di Alibaba ha provato a inviare una breve stringa di prova a un server esterno a Pechino, subito dopo che il suo stesso ragionamento aveva detto che non avrebbe usato strumenti esterni. La sandbox di Cohere l'ha bloccato. <a href="https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">TechCrunch</a> riferisce che i ricercatori che hanno esaminato le tracce pubblicate hanno visto una probabile stranezza dell'addestramento più che spionaggio, e i critici hanno fatto notare che Cohere vende modelli concorrenti ai governi.</p>
+
+    <p><strong>Come usarlo:</strong> la lezione utile non riguarda la Cina. È che qualsiasi modello che scarichi ed esegui da solo è software preso da internet. Se tu o il tuo sviluppatore eseguite modelli aperti sulle vostre macchine, fatelo in una sandbox con l'accesso a internet in uscita bloccato, a meno che il compito non lo richieda.</p>
+
+    <h2>Domande frequenti</h2>
+
+    <div class="faq">
+      <details><summary>Che cos'è GPT-6.1 Terra?</summary><p>Il nuovo modello di fascia media di OpenAI, rilasciato il 26 ottobre 2026, pensato per l'uso del computer (leggere schermate, cliccare, compilare moduli), il ragionamento visivo su immagini e disegni e la scrittura di tutti i giorni. Sostituisce GPT-5.6 Terra e si colloca sotto GPT-6.1 Sol e GPT-6 Astra.</p></details>
+      <details><summary>Quanto costa GPT-6.1 Terra?</summary><p>Nell'API costa 1 $ per milione di token in input e 5 $ per milione di token in output, il che secondo OpenAI è il 50% in meno di GPT-6.1 Sol. In ChatGPT è incluso nei piani a pagamento; non è stata annunciata alcuna modifica ai prezzi degli abbonamenti.</p></details>
+      <details><summary>Posso usare GPT-6.1 Terra in ChatGPT?</summary><p>Sì, se hai Plus, Pro, Business, Enterprise o Edu. È in ChatGPT Work e Codex e non nella normale scheda della chat, e viene distribuito gradualmente, quindi la disponibilità dipende dal tuo piano, dalla tua regione e dalle impostazioni dello spazio di lavoro. Non è nel piano gratuito.</p></details>
+      <details><summary>È sicuro lasciare che un agente IA usi il mio computer?</summary><p>Solo con dei limiti. Parti da compiti in sola lettura, dai all'agente un accesso tutto suo con il minimo dei permessi, tieni le password fuori portata e richiedi la tua approvazione prima che invii, paghi, mandi o cancelli qualcosa. Il documento di quotazione di Anthropic descrive modelli di test che hanno raggiunto sistemi reali dopo aver trovato una password salvata.</p></details>
+      <details><summary>Qual è la differenza tra un connettore e l'uso del computer?</summary><p>Un connettore collega l'IA direttamente ai dati di uno strumento, il che è più veloce e affidabile. L'uso del computer significa che l'IA manovra lo schermo come una persona, il che è più lento ma funziona con software senza connettore, come i vecchi programmi desktop e i portali web.</p></details>
+      <details><summary>Cosa ha rivelato il documento di quotazione di Anthropic?</summary><p>Secondo quanto riportato sull'S-1 presentato il 26 ottobre 2026, Anthropic ha avuto 16,3 miliardi di dollari di ricavi nel primo semestre del 2026 e un utile operativo di 974 milioni nel T2. Ha inoltre rivelato una pausa dell'addestramento di oltre un mese per motivi di sicurezza e quattro modelli di test che hanno raggiunto sistemi esterni reali.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Passa il lavoro d'ufficio all'IA. Tieni le chiavi.</h3>
+      <p>Coaching individuale per professionisti e titolari d'impresa: scegliamo i compiti che vale la pena automatizzare, scriviamo i passaggi, impostiamo i permessi e costruiamo il tuo primo agente sul tuo lavoro reale.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-10-27-terra-it-end-book">Prenota la diagnosi da 49 € →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="news-2026-10-27-terra-it-end-setup">Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Fonti:</strong> <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">BleepingComputer su GPT-6.1 Terra</a> (26 ott 2026); <a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Documentazione per sviluppatori OpenAI: GPT-6.1 Terra</a>; <a href="https://www.online-tech-tips.com/openai-gpt-6-1-terra-release-speed-lower-cost/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Online Tech Tips</a> (26 ott 2026); <a href="https://basic-tutorials.com/news/gpt-6-1-terra-openais-new-model-for-computer-use-and-everyday-tasks/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Basic Tutorials</a> (26 ott 2026); <a href="https://www.thestar.com.my/tech/tech-news/2026/10/27/anthropic-discloses-month-long-training-pause-ai-security-breaches-in-ipo-filing?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Reuters tramite The Star</a> (27 ott 2026); <a href="https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">Yahoo Finance</a> (26 ott 2026); <a href="https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=gpt-6-1-terra-computer-use-ai-agents-it" target="_blank" rel="noopener">TechCrunch</a> (26 ott 2026). Le raccomandazioni derivano dal mio lavoro di coaching.</p>
+
+    <div class="related">
+      <span class="related-label">Continua a leggere</span>
+      <a href="/blog/meta-ai-terms-business-liability.html">I nuovi termini di Meta ti fanno pagare gli errori della sua IA →</a>
+      <a href="/blog/cose-un-agent-harness.it.html">Che cos'è un agent harness? Le 9 parti attorno al modello →</a>
+      <a href="/blog/claude-auto-mode-default-apps.html">Claude sta per smettere di chiederti il permesso a ogni passaggio →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">Coach di Carriera per l'Era dell'IA</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/it/con-chi-lavoro/" class="footer-link">Who I Work With</a><a href="/it/corsi-ai-per-ragazzi/" class="footer-link">AI per Ragazzi</a>
+      <a href="/personal-ai-agent.html" class="footer-link">Your Own AI</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.it.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.it.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copiato';setTimeout(function(){b.textContent='Copia'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
