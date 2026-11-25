@@ -23,7 +23,7 @@ localised slugs existed have no entry and keep blog/<slug>.<lang>.html.
 import json, re, sys, html, pathlib, datetime
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from build_blog_post import add_utm, ROOT  # noqa: E402
+from build_blog_post import add_utm, ensure_ctas, ROOT  # noqa: E402
 
 LOCALE_TEMPLATE_SLUG = "how-to-stay-relevant-ai-era"   # existing post with EN/ES/IT versions
 L10N = {
@@ -84,6 +84,8 @@ def main(meta_path, article_path):
     base = (ROOT / f"blog/{slug}.html").read_text()
     loc = (ROOT / f"blog/{LOCALE_TEMPLATE_SLUG}.{lang}.html").read_text()
     article = add_utm(pathlib.Path(article_path).read_text(), f"{slug}-{lang}").strip()
+    # translations mirror the English post; only guarantee the end booking block exists
+    article = ensure_ctas(article, lang, f"news-{m['date']}-{slug}-{lang}", early=False).strip()
 
     s = base
     s = s.replace('<html lang="en">', f'<html lang="{lang}">', 1)
