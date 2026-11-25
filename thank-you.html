@@ -335,6 +335,29 @@ src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
     value: value,
     currency: 'EUR'
   });
+
+  // Google Ads conversion: "Book appointment" (AW-18591414066).
+  // transaction_id lets Google drop duplicates; the sessionStorage guard
+  // stops a page refresh from counting the same booking twice.
+  try {
+    var adsKey = 'ads_conv_' + bookingRef;
+    if (!sessionStorage.getItem(adsKey)) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18591414066/AluTCPbhtr8dELLuiaFF',
+        'value': value,
+        'currency': 'EUR',
+        'transaction_id': bookingRef
+      });
+      sessionStorage.setItem(adsKey, '1');
+    }
+  } catch (e) {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18591414066/AluTCPbhtr8dELLuiaFF',
+      'value': value,
+      'currency': 'EUR',
+      'transaction_id': bookingRef
+    });
+  }
 </script>
 
 <script id="site-nav-js">
