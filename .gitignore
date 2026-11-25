@@ -1,3 +1,5 @@
 # Keep assets but exclude original video backup
 assets/hero-original.mp4
 assets/hero-compressed-bak.mp4
+__pycache__/
+*.pyc
