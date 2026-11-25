@@ -1,0 +1,13 @@
+{
+  "_readme": "Cadence for NEW English AI-news posts. Default 7 = one per day (current behaviour). Set to 1-6 to post less often; the days are listed in post_days_by_count. ES/IT translations of an existing English post are NOT affected by this setting.",
+  "ai_news_posts_per_week": 7,
+  "post_days_by_count": {
+    "7": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "6": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "5": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "4": ["Mon", "Tue", "Thu", "Fri"],
+    "3": ["Mon", "Wed", "Fri"],
+    "2": ["Tue", "Fri"],
+    "1": ["Wed"]
+  }
+}
