@@ -134,5 +134,13 @@
  "claude-opus-5-5-prompting-habits-to-drop": {
   "es": "deja-de-decirle-a-claude-que-piense-a-fondo-habitos-prompts",
   "it": "smetti-di-dire-a-claude-di-pensare-a-fondo-abitudini-prompt"
+ },
+ "ai-social-media-team-six-agents-approval": {
+  "es": "equipo-redes-sociales-ia-seis-agentes-aprobacion",
+  "it": "team-social-ia-sei-agenti-approvazione"
+ },
+ "ai-proof-business-8-moats": {
+  "es": "negocio-a-prueba-de-ia-8-fosos",
+  "it": "attivita-a-prova-di-ia-8-fossati"
  }
 }
