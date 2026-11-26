@@ -76,3 +76,4 @@ One line per published piece. Newest at the bottom. Format:
 2026-11-25 | blog-daily | 3 Industry take | S4 (mention) | ShellBench (OpenClaw Foundation, 24 Nov): best agents ~62.5%, 40.3% wrong/duplicate invoice payments + NCSC AI-driven attacks + Google AI Mode Wallet/Drive + Claude Ship | The best AI agents still fail 4 in 10 everyday tasks. Test yours on your own mess.
 2026-11-25 | linkedin | 35 Surprising data | S4 | ShellBench (24 Nov, TechCrunch/Techstrong/The Deep View) | The best AI agent tested this week failed almost 4 in 10 tasks.
 2026-11-25 | instagram | 35 Surprising data | S4 | ShellBench (24 Nov) | The best AI agents still fail 4 in 10 everyday tasks.
+2026-11-26 | linkedin | 27 Advice you needed | S12 | — | One note I'd send myself on my first day with AI.
