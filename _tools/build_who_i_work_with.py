@@ -203,7 +203,7 @@ def with_article(schema, lang, title, desc, canonical):
     graph.append({"@type": "Article", "@id": canonical + "#article", "headline": title, "description": desc,
                   "url": canonical, "mainEntityOfPage": {"@id": canonical}, "inLanguage": lang, "image": SHARE,
                   "datePublished": first_published(canonical), "dateModified": TODAY,
-                  "author": {"@id": SITE + "/#alessandro"}, "publisher": {"@id": SITE + "/#alessandro"}})
+                  "author": {"@type": "Person", "name": "Alessandro Capezza", "url": SITE + "/about.html"}, "publisher": {"@type": "Person", "name": "Alessandro Capezza", "url": SITE + "/about.html"}})
     return schema
 
 
@@ -568,7 +568,7 @@ def build_workshop(lang, p):
          "isPartOf": {"@id": SITE + "/#website"}, "dateModified": TODAY, "breadcrumb": {"@id": page_url + "#breadcrumb"},
          "mainEntity": {"@id": page_url + "#service"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer"]}},
         {"@type": "Service", "@id": page_url + "#service", "name": p["h1"], "serviceType": U["service_type"], "description": p["answer"],
-         "provider": {"@id": SITE + "/#alessandro"}, "audience": {"@type": "BusinessAudience", "audienceType": f'{p["persona_plain"]} ({p["sector"]})'},
+         "provider": {"@type": "Person", "name": "Alessandro Capezza", "url": SITE + "/about.html"}, "audience": {"@type": "BusinessAudience", "audienceType": f'{p["persona_plain"]} ({p["sector"]})'},
          "areaServed": "Worldwide", "availableLanguage": ["en", "es", "it"], "availableChannel": {"@type": "ServiceChannel", "serviceUrl": BOOK},
          "offers": {"@type": "Offer", "name": U["offer"], "price": "49", "priceCurrency": "EUR", "url": BOOK, "availability": "https://schema.org/InStock"}},
         {"@type": "BreadcrumbList", "@id": page_url + "#breadcrumb", "itemListElement": [

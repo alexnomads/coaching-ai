@@ -59,10 +59,10 @@ def course_schema(lang, t):
     tr = K[lang]["tracks"][t]
     lo, hi = tr["ages"].replace("–", "-").split("-")
     return {"@type": "Course", "@id": url(lang, t) + "#course", "url": url(lang, t), "name": tr["h1"], "description": tr["answer"],
-            "inLanguage": lang, "provider": {"@id": SITE + "/#alessandro"}, "image": SITE + f"/assets/kids/{SPRITE[t]}.png",
+            "inLanguage": lang, "provider": {"@type": "Person", "name": "Alessandro Capezza", "url": SITE + "/about.html"}, "image": SITE + f"/assets/kids/{SPRITE[t]}.png",
             "audience": {"@type": "EducationalAudience", "educationalRole": "student", "audienceType": f"Kids and teenagers {tr['ages']}"},
             "typicalAgeRange": f"{lo}-{hi}", "educationalLevel": "Beginner",
-            "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT50M", "instructor": {"@id": SITE + "/#alessandro"}},
+            "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT50M", "instructor": {"@type": "Person", "name": "Alessandro Capezza", "url": SITE + "/about.html"}},
             "offers": [{"@type": "Offer", "name": "Single lesson", "price": "65", "priceCurrency": "EUR", "category": "Paid", "url": BOOK},
                        {"@type": "Offer", "name": "Pack of 8 (price per lesson)", "price": "60", "priceCurrency": "EUR", "category": "Paid", "url": BOOK}]}
 
