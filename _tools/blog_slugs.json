@@ -170,5 +170,9 @@
  "ai-agents-next-customers-small-business": {
   "es": "agentes-ia-proximos-clientes-pequeno-negocio",
   "it": "agenti-ia-prossimi-clienti-piccola-impresa"
+ },
+ "google-workspace-ai-agents-mcp-cli-february-2027": {
+  "es": "agentes-ia-google-workspace-mcp-cli-febrero-2027",
+  "it": "agenti-ia-google-workspace-mcp-cli-febbraio-2027"
  }
 }
