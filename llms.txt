@@ -69,6 +69,7 @@
 ## Blog: AI news and guides for professionals and small businesses
 
 - [Blog index](https://aicoachalex.com/blog/) · [Español](https://aicoachalex.com/blog/index.es.html) · [Italiano](https://aicoachalex.com/blog/index.it.html)
+- [Google Workspace AI agents must use MCP or CLI from February 2027](https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html): From 1 Feb 2027, AI agents must use Google's Workspace MCP servers or CLI. What changes for Gmail, Drive and Calendar users, and what to check now.
 - [How to Get Your Business Found in ChatGPT & AI Search](https://aicoachalex.com/blog/get-your-business-found-in-chatgpt-claude-gemini-perplexity.html): Seven practical steps to get your business found in ChatGPT, Claude, Gemini and Perplexity: claim your profile, fix your facts, check every month.
 - [The best AI agents still fail 4 in 10 everyday tasks. Test yours on your own mess.](https://aicoachalex.com/blog/shellbench-ai-agents-fail-4-in-10-everyday-tasks.html): ShellBench tested AI agents on 100 messy everyday tasks. The top score was 62.5%. What went wrong, and a three-pass test before you trust an agent.
 - [Don't Send a Proposal. Send the Demo. (AI Consultants and Buyers)](https://aicoachalex.com/blog/send-the-demo-not-the-proposal-ai-consultants.html): The fastest way to win or hire AI help: a small demo built from the buyer's own material. Greg Isenberg's idea, a client story and 5 moves with 2 prompts.

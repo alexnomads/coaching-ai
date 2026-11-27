@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T93CHX6Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696345404134131');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) - Google Ads AW-18591414066 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18591414066"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18591414066');
+</script>
+<!-- End Google Ads tag -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" hreflang="en" href="https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html">
+<link rel="alternate" hreflang="es" href="https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027-que-modelo-usar.es.html">
+<link rel="alternate" hreflang="it" href="https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027-quale-modello-usare.it.html">
+<link rel="alternate" hreflang="x-default" href="https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html">
+<title>Google Workspace AI agents must use MCP or CLI from February 2027</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta name="description" content="From 1 Feb 2027, AI agents must use Google&#x27;s Workspace MCP servers or CLI. What changes for Gmail, Drive and Calendar users, and what to check now.">
+<link rel="canonical" href="https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Alessandro Capezza">
+<link rel="author" href="https://www.linkedin.com/in/alessandrocapezza/">
+<meta property="og:title" content="Google just put a door on your Gmail and Drive for AI agents">
+<meta property="og:description" content="From 1 Feb 2027, AI agents must use Google&#x27;s Workspace MCP servers or CLI. What changes for Gmail, Drive and Calendar users, and what to check now.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html">
+<meta property="og:image" content="https://aicoachalex.com/assets/blog/2026-11-27/og.png">
+<meta property="article:published_time" content="2026-11-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google just put a door on your Gmail and Drive for AI agents">
+<meta name="twitter:description" content="From 1 Feb 2027, AI agents must use Google&#x27;s Workspace MCP servers or CLI. What changes for Gmail, Drive and Calendar users, and what to check now.">
+<meta name="twitter:image" content="https://aicoachalex.com/assets/blog/2026-11-27/og.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL6X6FVDWQ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-KL6X6FVDWQ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#f8f6f1;--black:#0d0c0a;--green:#9fe870;--green-deep:#163300;--muted:#7a7670;--border:rgba(13,12,10,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:'Instrument Sans',sans-serif;font-weight:400;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--white);border-bottom:1px solid var(--border);}
+@media (min-width:768px){nav{padding:1.5rem 3.5rem;}}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:none;gap:2rem;list-style:none;}
+@media (min-width:768px){.nav-links{display:flex;}}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--black);padding:12px 0;display:inline-block;}
+.nav-links a:hover{color:var(--green-deep);}
+.article-header{padding:8rem 1.5rem 3rem;max-width:720px;margin:0 auto;}
+@media (min-width:768px){.article-header{padding:10rem 3.5rem 4rem;}}
+.article-meta{display:flex;gap:1rem;align-items:center;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.article-tag{background:var(--green);color:var(--black);padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+.article-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.article-title em{font-style:italic;color:var(--green-deep);}
+.article-body{max-width:720px;margin:0 auto;padding:0 1.5rem 6rem;}
+@media (min-width:768px){.article-body{padding:0 3.5rem 8rem;}}
+.article-body h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:3rem 0 1rem;}
+.article-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.3;margin:2rem 0 0.75rem;}
+.article-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body em{font-style:italic;color:var(--green-deep);}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;font-size:1.1rem;line-height:1.8;color:var(--muted);}
+.article-body li{margin-bottom:0.5rem;}
+.article-body blockquote{border-left:3px solid var(--green);padding:1rem 1.5rem;margin:2rem 0;background:rgba(159,232,112,0.05);font-style:italic;color:var(--muted);font-size:1.1rem;line-height:1.7;}
+.risk-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.risk-table th{text-align:left;padding:0.75rem 1rem;border-bottom:2px solid var(--black);font-family:'Fraunces',serif;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;}
+.risk-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.95rem;}
+.risk-table tr:hover{background:rgba(159,232,112,0.03);}
+.risk-high{color:#c0392b;font-weight:600;}
+.risk-med{color:#e67e22;font-weight:600;}
+.risk-low{color:var(--green-deep);font-weight:600;}
+.article-cta{background:var(--green-deep);color:var(--white);padding:3rem 1.5rem;margin:3rem 0;border-radius:8px;text-align:center;}
+@media (min-width:768px){.article-cta{padding:4rem 3rem;}}
+.article-cta h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;}
+.article-cta p{color:rgba(159,232,112,0.7);margin-bottom:1.5rem;font-size:1rem;}
+.article-cta a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--green);color:var(--black);padding:1rem 2rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:4px;}
+.article-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+.article-back:hover{color:var(--green-deep);}
+.footer{background:var(--black);color:var(--white);padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;}
+.footer-tagline{font-size:0.85rem;color:var(--muted);margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+.footer-link{color:var(--white);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.footer-link:hover{color:var(--green);}
+.nav-lang{display:inline-flex;align-items:center;gap:0.15rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;list-style:none;}
+.nav-lang a{color:rgba(13,12,10,0.45);text-decoration:none;padding:0.35rem 0.5rem;transition:color 0.15s;display:inline-block;}
+.nav-lang a.active{color:var(--green);}
+.nav-lang a:hover{color:var(--black);}
+.nav-lang .sep{color:rgba(13,12,10,0.2);padding:0 0.1rem;}
+.nav-mobile-lang{display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;justify-content:center;}
+.nav-mobile-lang a{color:rgba(248,246,241,0.5);text-decoration:none;padding:0.5rem 0.75rem;}
+.nav-mobile-lang a.active{color:var(--green);}
+.nav-mobile-lang .sep{color:rgba(13,12,10,0.2);}
+</style>
+<style id="site-footer-css">
+.footer{background:#0d0c0a;color:#f8f6f1;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);display:block;font-size:inherit;margin:0}
+@media (min-width:768px){.footer{padding:4rem 3.5rem;}}
+.footer-grid{display:flex;flex-direction:column;gap:2rem;max-width:1200px;margin:0 auto;align-items:center;text-align:center;}
+@media (min-width:768px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;}}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:#f8f6f1}
+.footer-tagline{font-size:0.85rem;color:#7a7670;margin-top:0.25rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+@media (min-width:768px){.footer-links{gap:2rem;}}
+.footer-link{display:flex;align-items:center;gap:0.5rem;color:#f8f6f1;text-decoration:none;font-size:0.9rem;transition:color 0.2s;min-height:44px;}
+.footer-link:hover{color:#9fe870;}
+.footer-link svg{width:20px;height:20px;}
+.footer-email{display:inline-flex;align-items:center;gap:0.5rem;color:#9fe870;text-decoration:none;font-size:0.9rem;min-height:44px;}
+.footer-email:hover{text-decoration:underline;}
+</style>
+<style id="page-nav-fix">.blog-header,.article-header{padding-top:3.5rem}@media(min-width:768px){.blog-header,.article-header{padding-top:5rem}}.risk-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+<style id="site-nav-css">
+/* ===== Shared site nav (same on every page) ===== */
+.nav-quiz{display:inline-flex;align-items:center;background:#9fe870;color:#0d0c0a!important;padding:5px 12px;border-radius:999px;font-weight:600;text-decoration:none!important;white-space:nowrap;line-height:1.25;animation:navQuizPulse 2.6s ease-out infinite}
+.nav-quiz:hover{background:#b3f08c}
+@keyframes navQuizPulse{0%{box-shadow:0 0 0 0 rgba(159,232,112,.6)}70%{box-shadow:0 0 0 9px rgba(159,232,112,0)}100%{box-shadow:0 0 0 0 rgba(159,232,112,0)}}
+@media (prefers-reduced-motion:reduce){.nav-quiz{animation:none}}
+.sn{position:sticky;top:0;z-index:900;background:rgba(248,246,241,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(13,12,10,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.4;text-align:left;mix-blend-mode:normal}
+.sn *{box-sizing:border-box}
+.sn-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.sn-logo{display:block;flex:0 0 auto;line-height:0}
+.sn-logo img{width:38px;height:38px;display:block}
+.sn-links{display:flex;align-items:center;gap:20px;margin-left:6px;flex:1 1 auto;min-width:0}
+.sn .sn-links>a,.sn .sn-dd-t{font-size:13.5px;font-weight:500;color:#5e5a52;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;margin:0;cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none}
+.sn .sn-links>a:hover,.sn .sn-dd-t:hover{color:#0d0c0a}
+.sn .sn-links>a.sn-cur{color:#0d0c0a;font-weight:700}
+.sn a.nav-quiz,.sn-dark a.nav-quiz{background:#9fe870;color:#0d0c0a!important;padding:5px 12px;font-weight:600}
+.sn a.nav-quiz:hover,.sn-dark a.nav-quiz:hover{background:#b3f08c}
+.sn-dd{position:relative}
+.sn-dd-m{position:absolute;top:calc(100% + 12px);left:-14px;min-width:210px;background:#fff;border:1px solid rgba(13,12,10,.12);border-radius:10px;box-shadow:0 12px 30px rgba(13,12,10,.14);padding:6px;display:none;flex-direction:column;z-index:2}
+.sn-dd-m::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.sn-dd.open .sn-dd-m{display:flex}
+@media (hover:hover){.sn-dd:hover .sn-dd-m{display:flex}}
+.sn .sn-dd-m a{padding:9px 12px;border-radius:7px;font-size:13.5px;color:#0d0c0a;text-decoration:none;white-space:nowrap}
+.sn .sn-dd-m a:hover{background:#eef7e6}
+.sn-right{display:flex;align-items:center;gap:14px;margin-left:auto;flex:0 0 auto}
+.sn-lang{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.sn .sn-lang a{color:#8a8577;text-decoration:none;padding:2px 3px}
+.sn .sn-lang a.on{color:#0d0c0a;font-weight:600}
+.sn .sn-lang .sep{color:rgba(13,12,10,.25)}
+.sn a.sn-cta{display:inline-block;background:#0d0c0a;color:#f8f6f1!important;text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:999px;white-space:nowrap;letter-spacing:0;text-transform:none;border:0;line-height:1.3}
+.sn a.sn-cta:hover{background:#163300}
+.sn-quiz-m{display:none!important}
+.sn-burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:10px 6px;margin:0}
+.sn-burger span{display:block;width:22px;height:2px;background:#0d0c0a;transition:transform .2s,opacity .2s}
+.sn.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.sn.sn-open .sn-burger span:nth-child(2){opacity:0}
+.sn.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.sn-mob{display:none;border-top:1px solid rgba(13,12,10,.1);padding:6px 20px 20px;max-height:calc(100vh - 60px);overflow-y:auto}
+.sn .sn-mob a{display:block;padding:12px 0;border-bottom:1px solid rgba(13,12,10,.08);color:#0d0c0a;text-decoration:none;font-size:15px;font-weight:500}
+.sn .sn-mob a.nav-quiz{display:inline-flex;border-bottom:0;margin:12px 0 4px;padding:7px 16px}
+.sn .sn-mob a.sn-cur{font-weight:700}
+.sn-mob-sub{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8577;padding:16px 0 2px}
+.sn .sn-mob .sn-mob-course{padding-left:14px}
+.sn .sn-mob .sn-lang{padding:16px 0 4px}
+.sn .sn-mob .sn-lang a{display:inline;border:0;padding:2px 4px;font-size:12px}
+.sn .sn-mob a.sn-cta{display:inline-block;margin-top:14px;border:0;font-size:14px;padding:11px 18px}
+@media (max-width:1100px){.sn-links,.sn-right>.sn-lang{display:none!important}.sn-burger{display:flex}.sn-quiz-m{display:inline-flex!important}.sn.sn-open .sn-mob{display:block}}
+@media (max-width:560px){.sn-right>.sn-cta{display:none!important}.sn-in{gap:10px;padding:8px 16px}.sn .sn-quiz-m{font-size:12.5px;padding:5px 11px}}
+/* dark variant */
+.sn.sn-dark{background:rgba(13,12,10,.94);border-bottom-color:rgba(248,246,241,.1)}
+.sn-dark .sn-links>a,.sn-dark .sn-dd-t{color:rgba(248,246,241,.68)!important}
+.sn-dark .sn-links>a:hover,.sn-dark .sn-dd-t:hover,.sn-dark .sn-links>a.sn-cur{color:#f8f6f1!important}
+.sn-dark .sn-dd-m{background:#1a1917;border-color:rgba(248,246,241,.12)}
+.sn-dark .sn-dd-m a{color:#f8f6f1!important}
+.sn-dark .sn-dd-m a:hover{background:rgba(159,232,112,.12)}
+.sn-dark .sn-lang a{color:rgba(248,246,241,.45)!important}
+.sn-dark .sn-lang a.on{color:#9fe870!important}
+.sn-dark .sn-lang .sep{color:rgba(248,246,241,.25)}
+.sn-dark a.sn-cta{background:#9fe870;color:#0d0c0a!important}
+.sn-dark a.sn-cta:hover{background:#b3f08c}
+.sn-dark .sn-burger span{background:#f8f6f1}
+.sn-dark .sn-mob{border-top-color:rgba(248,246,241,.1)}
+.sn-dark .sn-mob a{color:#f8f6f1!important;border-bottom-color:rgba(248,246,241,.08)}
+.sn-dark .sn-mob a.nav-quiz,.sn-dark .sn-mob a.sn-cta{color:#0d0c0a!important}
+.sn-dark .sn-links>a.nav-quiz,.sn-dark .sn-right>a.nav-quiz{color:#0d0c0a!important}
+@media (max-width:1240px){.sn-links{gap:14px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NewsArticle",
+   "@id": "https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html#article",
+   "headline": "Google just put a door on your Gmail and Drive for AI agents",
+   "description": "From 1 Feb 2027, AI agents must use Google's Workspace MCP servers or CLI. What changes for Gmail, Drive and Calendar users, and what to check now.",
+   "image": "https://aicoachalex.com/assets/blog/2026-11-27/og.png",
+   "datePublished": "2026-11-27",
+   "dateModified": "2026-11-27",
+   "inLanguage": "en",
+   "keywords": "Google Workspace AI agents, Workspace MCP servers, Workspace CLI, AI agent security, Gmail AI agent access, Google Drive AI agents, MCP, AI for small business",
+   "mainEntityOfPage": "https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html",
+   "author": {
+    "@type": "Person",
+    "name": "Alessandro Capezza",
+    "url": "https://www.linkedin.com/in/alessandrocapezza/",
+    "jobTitle": "AI Coach",
+    "sameAs": [
+     "https://www.linkedin.com/in/alessandrocapezza/",
+     "https://www.instagram.com/alexislimitless/",
+     "https://www.youtube.com/@alexislimitless"
+    ]
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "AI Coach Alex",
+    "url": "https://aicoachalex.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://aicoachalex.com/assets/aicoachalex-mark.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI Coach Alex",
+     "item": "https://aicoachalex.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://aicoachalex.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Google just put a door on your Gmail and Drive for AI agents",
+     "item": "https://aicoachalex.com/blog/google-workspace-ai-agents-mcp-cli-february-2027.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is changing for AI agents in Google Workspace?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "From 1 February 2027, Google will technically enforce that AI agents access Workspace through its official MCP servers or Workspace CLI rather than traditional REST APIs. The servers and CLI became generally available on 25 November 2026."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is an MCP server?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "MCP (Model Context Protocol) is an open standard that lets AI agents connect to apps and data in a consistent way. A Workspace MCP server is Google's official connection point between an AI agent and apps like Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this affect me if I only use Gemini in Gmail or Docs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Google's announcement targets external AI agents and agent-style tools that connect to Workspace. Traditional apps keep using the existing APIs. Using Gemini inside Gmail or Docs does not require any change from you."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens to AI tools that still use the old Google API?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Their vendors need to move to the MCP servers or CLI before 1 February 2027. Ask each vendor whether they will, and keep a backup way of doing the task in case a tool stops working."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will AI agents still be able to send emails or share files for me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, but Google says high-impact actions such as sending external emails, changing Drive sharing and bulk edits will require human confirmation, enforced by the MCP servers and the CLI."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When does billing for Workspace agent usage start?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Google says usage quotas apply and billing begins on 1 April 2027. Check the details with your Workspace admin or the tool vendor if you run agents at volume."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style id="article-extra">
+.article-dek{font-size:1.2rem;line-height:1.6;color:var(--muted);max-width:640px;}
+.article-meta{flex-wrap:wrap;}
+.tldr{border:1px solid var(--black);border-left:6px solid var(--green);background:#fff;padding:1.25rem 1.5rem;margin:0 0 2.5rem;border-radius:4px;}
+.tldr-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:600;margin-bottom:0.5rem;}
+.tldr p{margin:0;color:var(--black);font-size:1.05rem;line-height:1.7;}
+.article-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:3px;}
+.article-body .article-cta a,.article-body .deal a,.article-body .related a{text-decoration:none;}
+.article-cta.inline{padding:2.25rem 1.5rem;text-align:left;}
+.article-cta .cta-secondary{background:transparent;color:var(--green);border:1px solid rgba(159,232,112,0.5);margin-left:0.5rem;margin-top:0.5rem;}
+.prompt-box{position:relative;background:var(--black);color:var(--white);border-radius:8px;padding:1.5rem;margin:1.5rem 0 2rem;}
+.prompt-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.75rem;}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.85rem;line-height:1.65;color:var(--white);}
+.copy-btn{position:absolute;top:1rem;right:1rem;background:var(--green);color:var(--black);border:0;border-radius:999px;padding:0.35rem 0.85rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;cursor:pointer;}
+.compare{display:grid;grid-template-columns:1fr;gap:0.75rem;margin:1.5rem 0 2rem;}
+@media (min-width:640px){.compare{grid-template-columns:1fr 2fr;}}
+.compare-bad,.compare-good{padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.compare-bad{background:#fbeceb;}
+.compare-good{background:rgba(159,232,112,0.18);border-color:rgba(22,51,0,0.25);}
+.compare-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.compare-bad .compare-label{color:#c0392b;}
+.compare-good .compare-label{color:var(--green-deep);}
+.compare p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;background:var(--green);color:var(--black);padding:1.5rem;border-radius:8px;margin:2rem 0 0.5rem;}
+@media (min-width:640px){.deal{flex-direction:row;align-items:center;justify-content:space-between;}}
+.deal-label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--green-deep);margin-bottom:0.35rem;}
+.deal p{margin:0;color:var(--black);font-size:1rem;line-height:1.6;}
+.deal-btn{flex-shrink:0;background:var(--black);color:var(--white)!important;padding:0.85rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;white-space:nowrap;}
+.disclosure{font-size:0.8rem!important;color:var(--muted);margin-bottom:2rem!important;}
+.faq{margin:1rem 0 2rem;border-top:1px solid var(--black);}
+.faq details{border-bottom:1px solid var(--border);padding:1rem 0;}
+.faq summary{cursor:pointer;font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';color:var(--green-deep);}
+.faq details[open] summary::after{content:'–';}
+.faq details p{margin:0.75rem 0 0;font-size:1rem;}
+.sources{font-size:0.85rem!important;line-height:1.6!important;}
+.related{margin-top:2.5rem;border-top:1px solid var(--black);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem;}
+.related-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.related a{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);}
+.related a:hover{color:var(--green-deep);}
+</style>
+<style id="news-extra">
+.byline{color:var(--black);text-decoration:underline;text-underline-offset:3px;}
+.byline:hover{color:var(--green-deep);}
+.post-figure{margin:0 0 2.5rem;}
+.post-figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);}
+.post-figure figcaption{font-size:0.85rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
+.hero-figure{margin-top:-1rem;}
+.post-figure picture{display:block;}
+.post-figure img.tall{max-width:460px;margin:0 auto;}
+@media (max-width:640px){.post-figure img.tall{max-width:100%;}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T93CHX6Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696345404134131&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="sn" id="siteNav" role="navigation" aria-label="Menu">
+  <div class="sn-in">
+    <a class="sn-logo" href="/" aria-label="AI Coach Alex"><img src="/assets/aicoachalex-mark.png" alt="AI Coach Alex" width="38" height="38"></a>
+    <div class="sn-links">
+      <a href="/#method">Method</a>
+      <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a href="/blog/" class="sn-cur">Blog</a>
+      <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+      <div class="sn-dd"><button class="sn-dd-t" type="button" aria-expanded="false">Courses <span aria-hidden="true">&#9662;</span></button><div class="sn-dd-m"><a href="/ai-video-course-booking.html">AI VideoGen</a><a href="/voice-ai-agents.html">Voice AI Agents</a><a href="/personal-ai-setup.html">Personal AI Setup</a><a href="/120-prompts.html">120 Prompts</a><a href="/ai-for-your-finances.html">AI for Your Finances</a><a href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a></div></div>
+      <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="sn-right">
+      <div class="sn-lang"><a href="/blog/google-workspace-ai-agents-mcp-cli-february-2027.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus-que-modelo-usar.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus-quale-modello-usare.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+      <a class="nav-quiz sn-quiz-m" href="/career-risk-assessment.html">Risk Quiz</a>
+      <a class="sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+      <button class="sn-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-mob">
+    <a href="/#method">Method</a>
+    <a class="nav-quiz" href="/career-risk-assessment.html">Risk Quiz</a>
+    <a href="/blog/" class="sn-cur">Blog</a>
+    <a href="/openclaw-ai-agent-setup.html">Configure OpenClaw Agent</a>
+    <div class="sn-mob-sub">Courses</div>
+    <a class="sn-mob-course" href="/ai-video-course-booking.html">AI VideoGen</a><a class="sn-mob-course" href="/voice-ai-agents.html">Voice AI Agents</a><a class="sn-mob-course" href="/personal-ai-setup.html">Personal AI Setup</a><a class="sn-mob-course" href="/120-prompts.html">120 Prompts</a><a class="sn-mob-course" href="/ai-for-your-finances.html">AI for Your Finances</a><a class="sn-mob-course" href="/use-cases/ai-competitor-market-watch.html">How To Build An AI Competitor Watch</a>
+    <a href="/who-i-work-with/">Who I Work With</a><a href="/ai-lessons-for-kids/">AI for Kids</a>
+    <a href="/about.html">About</a>
+    <div class="sn-lang"><a href="/blog/google-workspace-ai-agents-mcp-cli-february-2027.html" class="on" onclick="try{localStorage.setItem('preferred-lang','en')}catch(e){}">EN</a><span class="sep">·</span><a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus-que-modelo-usar.es.html" onclick="try{localStorage.setItem('preferred-lang','es')}catch(e){}">ES</a><span class="sep">·</span><a href="/blog/claude-haiku-5-5-vs-sonnet-vs-opus-quale-modello-usare.it.html" onclick="try{localStorage.setItem('preferred-lang','it')}catch(e){}">IT</a></div>
+    <a class="sn-cta-m sn-cta" href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener">Book Diagnostic</a>
+  </div>
+</div>
+
+<article>
+  <header class="article-header">
+    <a href="./" class="article-back">← Back to Blog</a>
+    <div class="article-meta">
+      <span class="article-tag">AI News</span>
+      <span>7 min read</span>
+      <span>27 Nov 2026</span>
+      <span>By <a class="byline" href="https://www.linkedin.com/in/alessandrocapezza/" target="_blank" rel="noopener author">Alessandro Capezza</a></span>
+    </div>
+    <h1 class="article-title">Google just put a <em>door</em> on your Gmail and Drive for AI agents</h1>
+    <p class="article-dek">From 1 February 2027, AI agents must reach Gmail, Drive, Calendar and Docs through Google's official MCP servers or CLI. Here's what changes, what it means if you use AI with Google Workspace, and what to check this week.</p>
+  </header>
+
+  <div class="article-body">
+
+    <figure class="post-figure hero-figure">
+      <img src="/assets/blog/2026-11-27/hero.webp" width="1600" height="900" alt="AI agents now enter Google Workspace through one official door: MCP servers or the Workspace CLI, with enforcement from 1 February 2027." fetchpriority="high">
+    </figure>
+
+    <div class="tldr">
+      <span class="tldr-label">Short answer</span>
+      <p><strong>On 25 November 2026, Google made its Workspace MCP servers and Workspace CLI generally available, and said AI agents must use them instead of the old REST APIs. Technical enforcement starts on 1 February 2027.</strong> Regular apps and people are not affected. The change targets AI agents that read your Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks. For you, it means safer access (permission checks, human confirmation before risky actions, an admin kill switch) and one job to do before February: find out which AI tools are connected to your Google account and what they can touch.</p>
+    </div>
+
+    <p>A few weeks ago a student told me, half proud and half nervous: <em>"I connected an AI agent to my Gmail and Drive and now it just does things."</em> I asked him one question. Can you tell me what it is allowed to do, and how you'd switch it off? He couldn't.</p>
+
+    <p>Google's announcement this week is aimed at exactly that gap. It's technical, but the consequences are very practical for anyone who lets an AI near their inbox.</p>
+
+    <h2>What did Google announce about AI agents and Workspace?</h2>
+
+    <p>On 25 November, Google Workspace and Google Cloud published <a href="https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">new protections and developer tools for AI agents in Google Workspace</a>. Three things became generally available, meaning ready for everyone to use:</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr><th>What</th><th>In plain English</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Workspace MCP servers</strong></td><td>An official connection point that lets AI agents work with Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks. (MCP is the open protocol that lets AI connect to apps.) Google Keep is listed as coming soon.</td></tr>
+        <tr><td><strong>Workspace CLI</strong></td><td>A command-line tool for agents that run on your own computer or in automations, with structured output and scoped sign-in.</td></tr>
+        <tr><td><strong>Agent Gateway (Google Cloud)</strong></td><td>A checkpoint that sits in front of AI model, MCP and agent-to-agent traffic for companies running their own agents.</td></tr>
+      </tbody>
+    </table>
+
+    <p>The rule that matters: under a new Workspace AI Tools Addendum, AI agents have to connect through the MCP servers or the CLI, not the traditional REST APIs. Google says <a href="https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">"Technical enforcement begins on February 1, 2027."</a> Traditional apps keep using the existing APIs. Outside agents also need their own dedicated OAuth client IDs, which is the "login" an app uses to act on your behalf. Usage quotas apply, with billing starting on 1 April 2027.</p>
+
+    <blockquote>For two years we've been handing AI the keys to the inbox. Google is now installing a front door with a lock, a log and a light switch.</blockquote>
+
+    <div class="article-cta inline">
+      <h3>Want your business to show up when people ask ChatGPT?</h3>
+      <p>In a 49€ diagnostic call we check what ChatGPT and other AI assistants say about your business today, and what to fix first.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-27-google-workspace-ai-agents-mcp-cli-february-2027-early-book">Book a 49€ diagnostic call →</a>
+    </div>
+
+    <h2>What protections come with the new Workspace AI agent access?</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-27/two-paths.webp" width="1600" height="900" alt="Before: an AI agent calls Workspace through the REST API. From 1 February 2027: the agent goes through MCP servers or CLI, where permissions, data-loss rules and human confirmation are checked on every request." loading="lazy">
+      <figcaption>The old path trusts a valid token. The new one checks every request against your permissions and rules.</figcaption>
+    </figure>
+
+    <p>Google lists six protections in its announcement. The ones a non-technical user will notice:</p>
+
+    <ul>
+      <li><strong>Checks on every request.</strong> Each agent call is tested against your Workspace permissions, data-loss-prevention rules and classification labels.</li>
+      <li><strong>Human confirmation for high-impact actions.</strong> Google gives examples: sending external emails, changing Drive sharing permissions and bulk edits. The agent has to ask first.</li>
+      <li><strong>Visibility and revocation.</strong> Admins can view, audit and revoke agents in the admin console. Google says users will soon be able to see agent activity and revoke access themselves.</li>
+      <li><strong>Data rules.</strong> The Addendum prohibits permanent raw storage of your data, model training on it, extended retention of derived data and API scraping.</li>
+      <li><strong>Coming soon, not live yet:</strong> time-limited approvals, and settings that let you block external agents from specific Gmail messages or Drive files and folders.</li>
+    </ul>
+
+    <p>One caveat on the coverage. Google's own wording targets AI agents, while some security press says every Workspace user will be required to connect agents this way. I'm following Google's wording. If you only use Gemini inside Gmail or Docs, nothing in your day changes.</p>
+
+    <h2>Why should a non-developer care?</h2>
+
+    <p>Because the tools you may already be using are probably "agents" under this rule: an AI assistant that reads your email, a scheduling bot that edits your Calendar, an automation that fills a Google Sheet. If one of them relies on the old connection method, its vendor has until February to move. If the vendor doesn't, it may simply stop working.</p>
+
+    <p>And because "it just does things" is not a security policy. Most of the damage I see from AI in small businesses isn't clever hacking. It's an over-permissioned tool, forgotten and still connected.</p>
+
+    <h2>How do I get ready, starting this week?</h2>
+
+    <ol>
+      <li><strong>List every AI tool connected to your Google account.</strong> In your Google Account, open the security settings and look for third-party apps with access. Write down each AI tool, what it can read and what it can change.</li>
+      <li><strong>Remove what you no longer use.</strong> Every forgotten connection is a door left open. Revoke it.</li>
+      <li><strong>Ask each vendor one question.</strong> "Will you connect to Google Workspace through the official MCP servers or CLI before 1 February 2027?" Keep the answers. A tool with no answer is a risk to your workflow.</li>
+      <li><strong>Decide what needs a human.</strong> Sending external email, sharing files and deleting things should always pause for your yes. Check whether your tools do that today.</li>
+      <li><strong>If you run a team, tell your Workspace admin.</strong> Google recommends admins review connected apps and agents, configure data-loss-prevention policies and watch OAuth activity logs.</li>
+    </ol>
+
+    <h3>Copy this prompt: audit your AI-to-Google connections</h3>
+
+    <p>Paste this into Claude, ChatGPT or Gemini, then fill in the list you made in step 1.</p>
+
+    <div class="prompt-box">
+      <span class="prompt-label">Agent access audit prompt</span>
+      <button class="copy-btn" data-copy="workspaceAudit" type="button">Copy</button>
+<pre id="workspaceAudit">I use Google Workspace (Gmail, Drive, Calendar, Docs, Sheets) for my work. Google now requires AI agents to connect through its official MCP servers or CLI instead of the old REST APIs, with enforcement from 1 February 2027.
+
+Below is the list of AI tools connected to my Google account, with what each can read and change. Help me audit it.
+
+For each tool, tell me:
+1. Does it really need that level of access? What is the minimum it needs?
+2. What is the worst realistic thing that could happen if it made a mistake or was compromised?
+3. Which actions should always ask for my confirmation first (sending external email, sharing files, deleting)?
+4. Keep, restrict or remove? Give a one-line reason.
+
+Then write me a short email I can send to each vendor asking whether they will connect through the official Workspace MCP servers or CLI before 1 February 2027, and what happens to my data when I disconnect.
+
+Finish with a one-page checklist I can repeat every quarter.
+
+My connected tools:
+[paste your list here]</pre>
+    </div>
+
+    <div class="compare">
+      <div class="compare-bad"><span class="compare-label">Before</span><p>"I connected an agent to my Drive a year ago. I think it still has access."</p></div>
+      <div class="compare-good"><span class="compare-label">After</span><p>A short list of named tools, minimum permissions, human confirmation on risky actions, and a quarterly check.</p></div>
+    </div>
+
+    <h2>Also today in AI</h2>
+
+    <figure class="post-figure">
+      <img src="/assets/blog/2026-11-27/also-today.webp" width="1600" height="900" alt="Three numbers from today's AI news: 69 percent of 250 surveyed estate agents use AI daily, 220,000 mammography studies used to train an FDA-cleared risk tool, and weekly automated speed tests of open models on AMD hardware." loading="lazy">
+    </figure>
+
+    <h3>Estate agents: 69% use AI daily, often without approval</h3>
+
+    <p>A survey by software firm Alto of 250 estate agents, <a href="https://riorundown.substack.com/p/ai-news-nov-27-2026-ai-infrastructure?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">summarised in the RIO Rundown</a>, found that 69% use AI daily, often without approval, and only 34% of agencies adopted it through a leadership decision. Compliance and data protection worry 33%.</p>
+
+    <p><strong>What it means for you:</strong> this is the same story as the Google rule, from the people side. If your team uses AI and nobody decided how, you have shadow AI. A one-page policy (which tools, what data never goes in, who checks the output) fixes most of it in an afternoon.</p>
+
+    <h3>FDA clears an AI tool that predicts breast cancer risk from existing 3D mammograms</h3>
+
+    <p>According to the same <a href="https://riorundown.substack.com/p/ai-news-nov-27-2026-ai-infrastructure?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">RIO Rundown briefing</a>, DeepHealth's Mammo Risk received FDA clearance. It estimates a woman's 3 to 5 year breast cancer risk from scans she has already had, and was trained on 220,000 studies. A billing code takes effect on 1 January 2027, though reimbursement isn't guaranteed.</p>
+
+    <p><strong>What it means for you:</strong> the AI wins that get approved fastest reuse data an organisation already collects. Ask yourself which data you already have, in invoices, enquiries or support tickets, that an AI could read for a new insight.</p>
+
+    <h3>A public speed dashboard for running AI on AMD computers</h3>
+
+    <p>Hugging Face launched a public dashboard tracking how fast open models run locally on AMD Ryzen and Radeon hardware, with weekly automated results for prompt processing and text generation, as <a href="https://riorundown.substack.com/p/ai-news-nov-27-2026-ai-infrastructure?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">reported by the RIO Rundown</a>. It covers machines such as the Radeon 8060S and Radeon AI Pro R9700S, and the raw data is public.</p>
+
+    <p><strong>How to use it:</strong> if you want to run an AI model privately on your own computer, with client data that never leaves it, check real speed numbers before you buy hardware, not the marketing page.</p>
+
+    <div class="article-cta inline">
+      <h3>Not sure what your AI tools can see?</h3>
+      <p>In a 49€ diagnostic call we map the AI tools connected to your work, cut the risky access and set up your next step on the Google tools you already use.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-27-mid-book">Book a 49€ diagnostic →</a>
+    </div>
+
+    <h2>FAQ</h2>
+
+    <div class="faq">
+      <details><summary>What is changing for AI agents in Google Workspace?</summary><p>From 1 February 2027, Google will technically enforce that AI agents access Workspace through its official MCP servers or Workspace CLI rather than traditional REST APIs. The servers and CLI became generally available on 25 November 2026.</p></details>
+      <details><summary>What is an MCP server?</summary><p>MCP (Model Context Protocol) is an open standard that lets AI agents connect to apps and data in a consistent way. A Workspace MCP server is Google's official connection point between an AI agent and apps like Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks.</p></details>
+      <details><summary>Does this affect me if I only use Gemini in Gmail or Docs?</summary><p>Google's announcement targets external AI agents and agent-style tools that connect to Workspace. Traditional apps keep using the existing APIs. Using Gemini inside Gmail or Docs does not require any change from you.</p></details>
+      <details><summary>What happens to AI tools that still use the old Google API?</summary><p>Their vendors need to move to the MCP servers or CLI before 1 February 2027. Ask each vendor whether they will, and keep a backup way of doing the task in case a tool stops working.</p></details>
+      <details><summary>Will AI agents still be able to send emails or share files for me?</summary><p>Yes, but Google says high-impact actions such as sending external emails, changing Drive sharing and bulk edits will require human confirmation, enforced by the MCP servers and the CLI.</p></details>
+      <details><summary>When does billing for Workspace agent usage start?</summary><p>Google says usage quotas apply and billing begins on 1 April 2027. Check the details with your Workspace admin or the tool vendor if you run agents at volume.</p></details>
+    </div>
+
+    <div class="article-cta">
+      <h3>Use AI on your Google tools, without losing sleep.</h3>
+      <p>One-to-one coaching for professionals and business owners: we set up your AI assistant on your real work, with sensible permissions and a clear off switch.</p>
+      <a href="https://alessandrocapezza.youcanbook.me/" target="_blank" rel="noopener" data-cta="news-2026-11-27-end-book">Book a 49€ diagnostic →</a>
+      <a href="/personal-ai-setup.html" class="cta-secondary" data-cta="news-2026-11-27-end-setup">Personal AI Setup</a>
+    </div>
+
+    <p class="sources"><strong>Sources:</strong> <a href="https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">Google Workspace blog</a> (25 Nov 2026); <a href="https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">Google Cloud blog</a> (25 Nov 2026); <a href="https://www.helpnetsecurity.com/2026/11/26/google-ai-agent-security-requirements/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">Help Net Security</a> (26 Nov 2026); <a href="https://www.infosecurity-magazine.com/news/google-cloud-ai-agents-workspace/?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">Infosecurity Magazine</a>; <a href="https://riorundown.substack.com/p/ai-news-nov-27-2026-ai-infrastructure?utm_source=aicoachalex.com&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=google-workspace-ai-agents-mcp-cli-february-2027" target="_blank" rel="noopener">RIO Rundown, 27 Nov 2026</a> for the three "Also today" items. Recommendations from my own coaching work.</p>
+
+    <div class="related">
+      <span class="related-label">Keep reading</span>
+      <a href="/blog/what-is-an-agent-harness.html">What is an agent harness? The 9 parts around the model →</a>
+      <a href="/blog/agent-skills-open-standard-linux-foundation.html">Anthropic and OpenAI just made your AI know-how portable →</a>
+      <a href="/blog/ai-agent-cyberattack-old-passwords-small-business.html">An AI agent attack that starts with old passwords →</a>
+      <a href="/blog/ai-agents-next-customers-small-business.html">AI agents are your next customers: what to do now →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Alessandro Capezza</div>
+      <div class="footer-tagline">AI Era Career Coach</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alessandrocapezza/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+
+      <a href="https://x.com/alexNomads" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L3.99 21.75H.69l7.73-8.835L.03 2.25h6.164l4.715 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X/Twitter
+      </a>
+
+      <a href="https://www.instagram.com/alexislimitless/" class="footer-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <a href="mailto:aicoachalex@gmail.com" class="footer-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        aicoachalex@gmail.com
+      </a>
+      <a href="/who-i-work-with/" class="footer-link">Who I Work With</a><a href="/ai-lessons-for-kids/" class="footer-link">AI for Kids</a>
+      <a href="/ai-video-course-booking.html" class="footer-link">AI VideoGen</a>
+      <a href="/voice-ai-agents.html" class="footer-link">Voice AI Agents</a>
+      <a href="/personal-ai-setup.html" class="footer-link">Personal AI Setup</a>
+      <a href="/120-prompts.html" class="footer-link">120 Prompts</a>
+      <a href="/ai-for-your-finances.html" class="footer-link">AI for Your Finances</a>
+      <a href="/ai-for-business-owners.html" class="footer-link">AI for Business Owners</a>
+      <a href="/openclaw-ai-agent-setup.html" class="footer-link">OpenClaw Agent Setup</a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-nav-js">
+(function(){var n=document.getElementById('siteNav');if(!n)return;
+var b=n.querySelector('.sn-burger'),dd=n.querySelector('.sn-dd'),t=n.querySelector('.sn-dd-t');
+function closeDD(){if(dd){dd.classList.remove('open');t.setAttribute('aria-expanded','false');}}
+if(b)b.addEventListener('click',function(){var o=n.classList.toggle('sn-open');b.setAttribute('aria-expanded',o?'true':'false');});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();var o=dd.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))closeDD();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDD();n.classList.remove('sn-open');if(b)b.setAttribute('aria-expanded','false');}});
+var ml=n.querySelectorAll('.sn-mob a');for(var i=0;i<ml.length;i++)ml[i].addEventListener('click',function(){n.classList.remove('sn-open');});
+})();
+</script>
+<script id="article-copy-js">
+document.querySelectorAll('.copy-btn').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;var ok=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok)}if(window.dataLayer){dataLayer.push({event:'blog_prompt_copied',page:location.pathname})}})});
+</script>
+</body>
+</html>
